@@ -1,0 +1,6115 @@
+; ------------------------------------------------------------------------------------------------------
+; ------------- URPHANOMEN III -------------------------------------------------------------------------
+; --------- Sasha J. Blondeau - 2019 -------------------------------------------------------------------
+; ------------------------------------------------------------------------------------------------------
+; version 21 janvier 2020
+
+ $IP := "127.0.0.1"
+ $port := 4002
+ ;oscsend to_matrix 127.0.0.1 : 4222 "to_matrix"
+ ;oscsend to_vbap 127.0.0.1 : 4222 "/"
+ ;oscsend test 127.0.0.1 : 4222 "test"
+
+
+; antescofo::bypass_temporeset on  ; si le tempo a tendance à décroître
+; _______ DECLENCHEMENTS : 
+
+
+
+; tous les labels à déclencher à la main commence par "D_"
+
+BPM 48.00
+VARIANCE 0.25
+;antescofo::analysis 2048 1024
+antescofo::analysis 1024 512
+;antescofo-pedal 0
+
+;suivi 0
+;suivi 1
+
+@INSERT ATLAS_macroDef2019.asco.txt
+@INSERT ATLAS_dicoSPAT.asco.txt
+@set_max_message_sent_instantaneously(4000)
+
+; DECLARATION CANAUX OSC
+
+oscsend track/1/ade $IP : $port "/track/1/ade"
+oscsend track/2/ade $IP : $port "/track/2/ade"
+oscsend track/3/ade $IP : $port "/track/3/ade"
+oscsend track/4/ade $IP : $port "/track/4/ade"
+oscsend track/5/ade $IP : $port "/track/5/ade"
+oscsend track/6/ade $IP : $port "/track/6/ade"
+oscsend track/7/ade $IP : $port "/track/7/ade"
+oscsend track/8/ade $IP : $port "/track/8/ade"
+oscsend track/9/ade $IP : $port "/track/9/ade"
+oscsend track/10/ade $IP : $port "/track/10/ade"
+oscsend track/11/ade $IP : $port "/track/11/ade"
+oscsend track/12/ade $IP : $port "/track/12/ade"
+oscsend track/13/ade $IP : $port "/track/13/ade"
+oscsend track/14/ade $IP : $port "/track/14/ade"
+oscsend track/15/ade $IP : $port "/track/15/ade"
+oscsend track/16/ade $IP : $port "/track/16/ade"
+
+oscsend track/1/xyz $IP : $port "/track/1/xyz"
+oscsend track/2/xyz $IP : $port "/track/2/xyz"
+oscsend track/3/xyz $IP : $port "/track/3/xyz"
+oscsend track/4/xyz $IP : $port "/track/4/xyz"
+oscsend track/5/xyz $IP : $port "/track/5/xyz"
+oscsend track/6/xyz $IP : $port "/track/6/xyz"
+oscsend track/7/xyz $IP : $port "/track/7/xyz"
+oscsend track/8/xyz $IP : $port "/track/8/xyz"
+oscsend track/9/xyz $IP : $port "/track/9/xyz"
+oscsend track/10/xyz $IP : $port "/track/10/xyz"
+oscsend track/11/xyz $IP : $port "/track/11/xyz"
+oscsend track/12/xyz $IP : $port "/track/12/xyz"
+oscsend track/13/xyz $IP : $port "/track/13/xyz"
+oscsend track/14/xyz $IP : $port "/track/14/xyz"
+oscsend track/15/xyz $IP : $port "/track/15/xyz"
+oscsend track/16/xyz $IP : $port "/track/16/xyz"
+
+oscsend track/1/pres $IP : $port "/track/1/pres"
+oscsend track/2/pres $IP : $port "/track/2/pres"
+oscsend track/3/pres $IP : $port "/track/3/pres"
+oscsend track/4/pres $IP : $port "/track/4/pres"
+oscsend track/5/pres $IP : $port "/track/5/pres"
+oscsend track/6/pres $IP : $port "/track/6/pres"
+oscsend track/7/pres $IP : $port "/track/7/pres"
+oscsend track/8/pres $IP : $port "/track/8/pres"
+oscsend track/9/pres $IP : $port "/track/9/pres"
+oscsend track/10/pres $IP : $port "/track/10/pres"
+oscsend track/11/pres $IP : $port "/track/11/pres"
+oscsend track/12/pres $IP : $port "/track/12/pres"
+oscsend track/13/pres $IP : $port "/track/13/pres"
+oscsend track/14/pres $IP : $port "/track/14/pres"
+oscsend track/15/pres $IP : $port "/track/15/pres"
+oscsend track/16/pres $IP : $port "/track/16/pres"
+
+oscsend track/2/reverb/mute $IP : $port "/track/2/reverb/mute"
+oscsend track/3/reverb/mute $IP : $port "/track/3/reverb/mute"
+oscsend track/4/reverb/mute $IP : $port "/track/4/reverb/mute"
+oscsend track/5/reverb/mute $IP : $port "/track/5/reverb/mute"
+oscsend track/6/reverb/mute $IP : $port "/track/6/reverb/mute"
+oscsend track/7/reverb/mute $IP : $port "/track/7/reverb/mute"
+oscsend track/8/reverb/mute $IP : $port "/track/8/reverb/mute"
+oscsend track/9/reverb/mute $IP : $port "/track/9/reverb/mute"
+oscsend track/10/rerverb/mute $IP : $port "/track/10/reverb/mute"
+oscsend track/11/rerverb/mute $IP : $port "/track/11/reverb/mute"
+oscsend track/12/rerverb/mute $IP : $port "/track/12/reverb/mute"
+oscsend track/13/rerverb/mute $IP : $port "/track/13/reverb/mute"
+oscsend track/14/rerverb/mute $IP : $port "/track/14/reverb/mute"
+oscsend track/15/rerverb/mute $IP : $port "/track/15/reverb/mute"
+oscsend track/16/rerverb/mute $IP : $port "/track/16/reverb/mute"
+
+lvl_del1 0.
+lvl_del2 0.
+lvl_del3 0.
+lvl_del4 0.
+lvl_del1_feed 0.
+lvl_del2_feed 0.
+lvl_del3_feed 0.
+lvl_del4_feed 0.
+
+
+track/1/ade 0 2 0
+track/2/ade 0 2 0
+track/3/ade 0 2 0
+track/4/ade 0 2 0
+track/5/ade 0 2 0
+track/6/ade 0 2 0
+track/7/ade 0 2 0
+track/8/ade 0 2 0
+track/9/ade 0 2 0
+track/10/ade 0 2 0
+track/11/ade 0 2 0
+track/12/ade 0 2 0
+track/13/ade 0 2 0
+track/14/ade 0 2 0
+track/15/ade 0 2 0
+track/16/ade 0 2 0
+
+$grain_curve := 0.05
+
+;suiviauto 0
+
+to_matrix clear
+
+print READY
+; ----------- mes 1 --- beat 0 --- time signature 13/4
+
+BPM 48
+
+NOTE A6 1/16 mes1
+;@set_max_message_sent_instantaneously(512)	
+GROUP @target [2]
+	{
+		::ASCOtoCS_BUZZ(numGen = "gb2",
+						dur = 15,
+						amp = 0.,
+						noteMidi = 67,
+						ktable = 4.,
+						klh = 1,
+						kmul = 0.5,
+						knh = 45,
+						sortie = 3) 
+
+		obj::spat("gb2",15,"csound3","vbap",::spat_traj_xye,[[$XC1,$XR2,"linear",2],[$XR2,$XL2,"linear",6],[$XL2,$XC2,"linear",4]])
+	;	::spat_trans("csound3",17)
+
+			curve ampG2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb2.amp $ampGb2
+				{ $ampGb2
+					{		{ 0. } @type "quad_out" 
+						1/12 { 1.6 } @type "cubic_out"
+						1/12{ 0.01 } @type "quad"
+						3	{ 0.3 }
+						3 	{ 0.1 } @type "quad_out"
+						5 	{ 0.0 }
+					}
+				}
+		;	curve tableGb2 @grain := 0.05, @action := ASCOtoCS_SYNTH c gb2.table $tableGb2
+		;		{ $tableGb2
+		;			{		{ 2 } 
+		;				1 	{ 3 } @type "cubic"
+		;				2	{ 7 }
+		;				6	{ 2 }
+		;			}
+		;		}
+;
+		obj::spat("ginh1",30,"csound1","vbap",::spat_traj_fun,[::lissaj2inv,4,30,0,0.])
+
+		ASCOtoCS_SYNTH e i "\"AddInHarmo\"" 0 (@b2sec(30)) 502 1
+	;	::spat_trans("csound1",30)
+			curve kampInharm @grain := 0.005, @action := ASCOtoCS_SYNTH c kampInharm ($kampInharm*0.1)
+					{ $kampInharm
+						{		{ 0. } @type "quad"
+							12 	{ 0.9 } 
+							9 	{ 0.55 } @type "cubic_out"
+							8 	{ 0.0 }
+						}
+					}
+
+			curve kfreqInharm @grain := 0.005, @action := ASCOtoCS_SYNTH c kfreqInharm (@midi2hz($kfreqInharm))
+					{ $kfreqInharm
+						{		{ 81. }
+							12 	{ 81.5 }
+							12	{ 81. }
+						}
+					}
+			curve kcpsOsc @grain := 0.005, @action := ASCOtoCS_SYNTH c cpsOsc $kcpsOsc
+					{ $kcpsOsc
+						{		{ 19. } ;@type "cubic"
+							11 	{ 0.01 }
+							15	{ 13. }
+						}
+					}
+
+		CS-Player e i "\"Player1\"" 0 50 1001 ; mes1_fondGRA
+		CS-Player c Player1.cps 1.
+		obj::spat("Play1_mes1",50,"Player1","vbap",::spat_traj_fun,[::lissaj2,5,90,0,0.])
+		;to_vbap source (($assign_spat("Play1_mes1"))[2]) "/reverb/mute" 0
+
+	 	curve ampPlayer1 @grain := 0.05, @action := {CS-Player c Player1.amp $ampPlayer1}
+	 		{ $ampPlayer1
+	 			{
+	 					{ 0. } @type "cubic"
+	 				1/12	{ 0.8 }	
+	 			}
+	 		} 
+	}
+
+NOTE C7 1/3
+CHORD (-C7 C#7) 1/3
+CHORD (-C7 C#7) 1/12
+CHORD (A#6 -C#7) 1/4
+CHORD (-A#6 D7) 1/8
+CHORD (C#7 -D7) 7/13
+CHORD (-C#7 D7) 4/19
+CHORD (C7 -D7) 1/8
+CHORD (-C7 -D7) 1/2
+CHORD (-C7 -D7) 1/8
+CHORD (A6 C#7) 1/8
+CHORD (A#6 -C#7) 1/8
+CHORD (A6 -C#7) 1/8
+CHORD (-A6 C7) 1/8
+CHORD (B6 -C7) 1/8
+CHORD (A#6 -C7) 1/8
+CHORD (-C7 C#7) 1/8
+CHORD (A6 C7) 1/12
+CHORD (-A6 B6) 1/12
+CHORD (G#6 C#7) 1/12
+CHORD (-G#6 D7) 1/12
+CHORD (G6 A#6) 1/12
+CHORD (-G6 A6) 1/12
+CHORD (-G6 C7) 1/8
+CHORD (G#6 -C7) 1/8
+CHORD (G6 -C7) 1/8
+CHORD (F#6 -C7) 1/8
+CHORD (F6 A6) 1/4
+CHORD (-F6 A#6) 1/4
+CHORD (-F6 -A#6) 1/8
+CHORD (-A#6 C7) 3/8
+CHORD (-C7 D7) 1/8
+CHORD (A#6 -D7) 1/25
+CHORD (-A#6 C7) 1/12
+CHORD (A6 -C7) 1/12
+CHORD (-A6 D#7) 1/23
+CHORD (C#7 -D#7) 1/8
+CHORD (-C#7 -D#7) 1/4
+CHORD (-C#7 F#7) 1/4
+CHORD (A6 -F#7) 1/6
+CHORD (G6 -F#7) 1/6
+CHORD (A#6 -F#7) 1/6
+CHORD (G6 -F#7) 1/8
+CHORD (F#6 -F#7) 1/8
+CHORD (F6 -F#7) 1/8
+CHORD (E6 -F#7) 1/8
+CHORD (E6 A6) 1/10
+CHORD (D6 -A6) 1/10
+CHORD (G#6 -A6) 1/10
+CHORD (G6 -A6) 1/10
+CHORD (F#6 -A6) 1/10
+CHORD (-F#6 -A6) 1/8
+CHORD (-F#6 C7) 1/8
+CHORD (-F#6 A6) 1/8
+CHORD (-F#6 C#7) 1/8
+CHORD (G#6 C7) 1/6
+CHORD (-G#6 B6) 1/6
+CHORD (-G#6 A#6) 1/6
+NOTE -G#6 1/8
+NOTE G6 1/8 
+NOTE G6 1/8 
+NOTE G6 1/8 
+; suiviauto 0
+NOTE G#6 1/12 mes1_2
+
+GROUP @target [2]
+	{
+		::ASCOtoCS_SYNTH("g1",
+					dur = 20,
+					noteMidiL = 81,
+					kamp = 0.,
+					icnt = 9,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 7,
+					numSortie = 4)
+
+		obj::spat("g1mes1",20,"csound4","vbap",::spat_traj_fun,[::lissaj2,3,45,0,0.])
+
+			curve ampG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*0.6)
+				{ $ampG1
+					{		{ 0. } @type "quad"
+						1	{ 0.8 } 
+						5	{ 0.5 }
+						14	{ 0. }
+					}
+				}
+			curve batG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.multidel $multidelG1
+				{ $multidelG1
+					{		{ 1.01 } @type "cubic"
+						8 	{ 1.02 } 
+						5	{ 1.0001 }
+					}
+				}
+			curve freqG1 @grain := 0.01, @action := ASCOtoCS_SYNTH c g1.freq (@midi2hz($freqG1-12))
+				{ $freqG1
+					{		{ 89 } @type "exp"
+						1 	{ 94 } @type "cubic" 
+						3/2	{ 92 } @type "quad"
+						3/2	{ 95 } @type "cubic"
+						3	{ 91 }
+					}
+				}
+			curve iterG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.tempiter $tempiterG1
+				{ $tempiterG1
+					{		{ 9.3 } 
+						10	{ 5.4 }
+						10	{ 11.3 }
+					}
+				}
+
+		::ASCOtoCS_SYNTH("g2",
+					dur = 20,
+					noteMidiL = 81,
+					kamp = 0.,
+					icnt = 2,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.01,
+					mfo = 8,
+					numSortie = 5)
+
+		obj::spat("g2mes1",20,"csound5","vbap",::spat_traj_fun,[::lissaj2inv,3,45,0,0.])
+
+			curve ampG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.amp ($ampG2*0.6)
+				{ $ampG2
+					{		{ 0. } @type "quad"
+						1	{ 0.8 } 
+						5	{ 0.5 }
+						14	{ 0. }
+					}
+				}
+			curve freqG2 @grain := 0.01, @action := ASCOtoCS_SYNTH c g2.freq (@midi2hz($freqG2-12))
+				{ $freqG2
+					{		{ 91 } @type "exp"
+						1 	{ 98 } @type "cubic" 
+						3/2	{ 95 } @type "quad"
+						3/2	{ 89 } @type "cubic"
+						7	{ 91 }
+					}
+				}
+			curve iterG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.tempiter $tempiterG2
+				{ $tempiterG2
+					{		{ 4.3 } 
+						10	{ 11.4 }
+						10	{ 6.3 }
+					}
+				}
+
+		1 ::ASCOtoCS_SYNTH("g3",
+					dur = 20,
+					noteMidiL = 65,
+					kamp = 0.,
+					icnt = 10,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 9,
+					numSortie = 6)
+
+		obj::spat("g3mes1",20,"csound6","vbap",::spat_traj_fun,[::lissaj2inv,2,30,0,0.])
+
+			curve ampG3 @grain := 0.01s, @action := ASCOtoCS_SYNTH c g3.amp ($ampG3*0.4)
+				{ $ampG3
+					{		{ 0. } @type "quad"
+						1	{ 0.5 } 
+						5	{ 0.5 }
+						14	{ 0. }
+					}
+				}
+			curve freqG3 @grain := 0.01, @action := ASCOtoCS_SYNTH c g3.freq (@midi2hz($freqG3))
+				{ $freqG3
+					{		{ 65 } @type "exp"
+						1 	{ 74 } @type "exp" 
+						2	{ 81 } @type "cubic"
+						3/2	{ 73 } @type "cubic"
+						7	{ 67 }
+					}
+				}
+			curve iterG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.tempiter $tempiterG3
+				{ $tempiterG3
+					{		{ 0.3 } 
+						1	{ 1.4 }
+						2	{ 0.3 }
+						3/2	{ 7. }
+						7	{ 3.3 }
+						5	{ 13. }
+					}
+				}
+	}
+
+NOTE A6 1/12 
+NOTE A6 1/12 
+NOTE A6 1/12 
+NOTE A6 1/12 
+NOTE A6 1/12 
+NOTE 0 3
+
+; ----------- mes 2 --- beat 13 --- time signature 7/4
+
+BPM 68
+NOTE 0 7 mes2
+
+	GROUP @tempo := $RT_TEMPO
+		{
+			6+1/2  print mmmmmmmmmmmes2
+			CS-Player e i "\"Player2\"" 0 5 1002 ; mes2_attakclav
+			CS-Player c Player2.cps 1.
+			CS-Player c Player2.amp 0.5
+			obj::spat("Play2_mes2",5,"Player2","vbap",::spat_traj_pos,[0.,1.8,0.])
+		
+			::ASCOtoCS_SYNTH("g4",
+						dur = 21,
+						noteMidiL = 76,
+						kamp = 0.,
+						icnt = 6,
+						enviter = 0.1,
+						iter = 13.7,
+						del = 1.001,
+						mfo = 6,
+						numSortie = 6)
+	
+			obj::spat("g4mes1",21,"csound6","vbap",::spat_traj_pos,$XC_2)
+	
+				curve ampG4 @grain := 0.01s, @action := ASCOtoCS_SYNTH c g4.amp ($ampG4*0.4)
+					{ $ampG4
+						{		{ 0. } @type "quad"
+							1/2	{ 1.2 } 
+							9	{ 0.7 }
+							9	{ 0. }
+						}
+					}
+
+				curve delG4 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g4.multidel $multidelG4
+					{ $multidelG4
+						{		{ 1.01 } 
+							3	{ 1.0001 } @type "cubic"
+							3	{ 1.1 }
+							9	{ 1.0001 }
+						}
+					}
+		}
+
+; ----------- mes 3 --- beat 20 --- time signature 9/4
+BPM 58 ;; cela juste pour essayer de ralentir le suivi (qui a tendance à avancer)
+CHORD (G4 G#4 B4) 1/6 mes3
+
+	$ampPerc := 0.005
+	$notePerc := 67
+	$instrP := 4
+	obj::spat("Aleames3",25,"csound7","vbap",::spat_traj_fun,[::lissaj2,2,35,35,0.])
+
+	loop plicploc 1/6
+			{
+				$randInst := (@rand_int(16))+3
+				::ASCOtoCS_percu($randInst,1,$ampPerc,$notePerc,0.001,13.,7)
+			}
+		during [25]
+
+	curve ampPerc @grain := 0.01s
+		{ $ampPerc
+			{		{ 0.01 } @type "cubic"
+				1	{ 0.16 } @type "cubic_out"
+				1	{ 0.01 } @type "cubic"
+				1	{ 0.16 } @type "cubic_out"
+				1	{ 0.01 } @type "cubic"
+				1	{ 0.16 } @type "cubic_out"
+				1	{ 0.01 } @type "cubic"
+				1	{ 0.16 } @type "cubic_out"
+				1	{ 0.01 } @type "cubic"
+				1	{ 0.18 } @type "cubic_out"
+				2	{ 0.03 } @type "cubic"
+				1	{ 0.14 } @type "cubic_out"
+				2	{ 0.01 } @type "cubic"
+				1	{ 0.09 }
+				7	{ 0. }
+			}
+		}
+
+
+CHORD (D4 E4 F4) 1/6
+CHORD (D#4 F4 G4) 1/6
+CHORD (D4 E4 F4 G#4) 1/6
+CHORD (C4 C#4 F4 G4) 1/6
+CHORD (G4 G#4 C5) 1/6
+CHORD (F4 G4 G#4) 1/6
+CHORD (E4 F4 G4) 1/6
+CHORD (C4 C#4 D4) 1/6
+CHORD (E4 F4 G4 A4) 1/6
+CHORD (D4 D#4 E4) 1/6
+CHORD (C4 D4 E4 F4) 1/6
+CHORD (G#3 D4 E4) 1/6
+CHORD (G3 C#4 D4 E4 F4) 1/6
+CHORD (F#3 G3 G4 A4 B4) 1/6
+CHORD (C4 F4 G4 G#4 A4) 1/6
+CHORD (G3 G#3 F4 G4 A4) 1/6
+CHORD (F3 C4 D4 E4) 1/6
+CHORD (F#3 G3 C#4 D4) 1/6
+CHORD (G3 A#3 C4 D#4 F4) 1/6
+CHORD (A3 D4 F4 F#4 G4) 1/6
+CHORD (G3 A3 E4 G4 G#4) 1/6
+CHORD (A3 C4 C#4 F4 G4 B4) 1/6
+CHORD (E3 G3 D4 D#4 F4 G4) 1/6
+CHORD (G3 G#3 C4 D4) 1/6
+CHORD (F3 G3 C4 D4) 1/6
+CHORD (G3 B3 E4 F4) 1/6
+CHORD (A3 A#3 D#4 E4 F4) 1/6
+CHORD (F#3 G3 C4 D4 D#4) 1/6
+CHORD (G3 G#3 D4 D#4 G#4) 1/6
+CHORD (F#3 G3 C4 E4 F4) 1/6
+CHORD (-F#3 -G3 -C4 D#4 E4 F4) 1/6
+CHORD (-F#3 -G3 C4 D4 E4) 1/6
+CHORD (-F#3 -G3 -C4 D4 D#4) 1/6
+CHORD (G3 B3 D4 F4 G4) 1/6
+CHORD (G#3 C4 D#4 F#4 G4) 1/6
+CHORD (C4 D4 F4 F#4 G4) 1/6
+CHORD (A#3 D4 D#4 F4 G4) 1/6
+CHORD (A3 C#4 F4 G4 G#4) 1/6
+CHORD (C4 D4 D#4) 1/6
+CHORD (G3 C#4 D4 G4 G#4 B4) 1/6
+CHORD (G#3 B3 C4 D4 F#4 G4 G#4) 1/6
+CHORD (F3 G4) 1/6
+CHORD (-F3 F#4 G4) 1/6
+CHORD (F#3 E4 F4 G4) 1/6
+CHORD (F#3 G3 D4 D#4 F4 G4) 1/6
+CHORD (G#3 C#4 D4 F4 G4) 1/6
+CHORD (G3 G#3 C4 D4 D#4 F4 G4) 1/6
+CHORD (E3 F3 G3 F#4 G4 G#4) 1/6
+CHORD (D3 G3 G4 G#4 C5) 1/6
+CHORD (D3 F3 E4 G4 G#4) 1/6
+CHORD (F3 G3 G#3 D4 G4 G#4 B4) 1/6
+CHORD (D3 D#3 F4 G4) 1/6
+CHORD (D3 D#3 F4 F#4 G4) 1/6
+
+; NOTE 0 1/8  ;;;;; ajout pour éviter le saut trop rapide à la suite
+
+; ----------- mes 4 --- beat 29 --- time signature 4/4
+
+TRILL (C#4 D4 G4 G#4) 3/2 mes4
+
+	$notePerc := 62
+	curve ampPlayer1 @grain := 0.05, @action := {CS-Player c Player1.amp $ampPlayer1}
+	 		{ $ampPlayer1
+	 			{
+	 					{ $ampPlayer1 } @type "cubic"
+	 				19	{ 0. }	
+	 			}
+	 		} 
+		
+	GROUP attak	
+		{
+			CS-Player e i "\"Player2\"" 0 5 1002 ; mes2_attakclav
+			CS-Player c Player2.cps 1.
+			CS-Player c Player2.amp 0.5
+			obj::spat("Play2_mes2",5,"Player2","vbap",::spat_traj_pos,[180.,1.2,0.])
+
+			1/8 CS-Player e i "\"Player3\"" 0 5 1002 ; mes2_attakclav
+			CS-Player c Player3.cps 1.03
+			CS-Player c Player3.amp 0.9
+			obj::spat("Play3_mes2",5,"Player3","vbap",::spat_traj_pos,[-45.,3.8,0.])
+
+		}
+
+	;del1 ((@b2sec(12))*1000)
+
+	3/2 curve ampGenDecresc @grain := 0.05s
+		{ $coefdec
+			{		{ 1.3 } 
+				12	{ 0.2 } 
+			}
+		}
+
+	GROUP ;@target [1]; rajouter un plus de la ligne des points lumineux fixes en périph
+		{
+			::ASCOtoCS_SYNTH("g1",
+					dur = 15,
+					noteMidiL = 81,
+					kamp = 0.,
+					icnt = 10,
+					enviter = 0.9,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 4,
+					numSortie = 1)
+
+			obj::spat("g1mes4",15,"csound1","vbap",::spat_traj_fun,[::lissaj2,3,45,0,0.])
+
+			curve ampG1 @grain := 0.03s, @action := ASCOtoCS_SYNTH c g1.amp (($ampG1*1.7)*$coefdec)
+				{ $ampG1
+					{		{ 0. } @type "quad"
+						1/5	{ 0.7 } @type "cubic_out"
+						4/5	{ 0.2 } @type "cubic"
+						1	{ 0.5 } @type "cubic_out"
+						1	{ 0.2 } @type "cubic"
+						3/2	{ 0.5 } @type "cubic_out"
+						5/2	{ 0.2 } @type "cubic"
+						2	{ 0.4 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+			
+			curve freqG1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c g1.freq (@midi2hz($freqG1-12))
+				{ $freqG1
+					{		{ 70 } @type "exp"
+						1 	{ 76 } @type "exp"
+						1	{ 65 } @type "exp"
+						1	{ 79 } @type "cubic"
+						3/2	{ 68 } @type "cubic"
+						5/2	{ 77 } @type "quad"
+						11/6{ 72 } 
+					}
+				}
+			curve iterG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.tempiter $tempiterG1
+				{ $tempiterG1
+					{		{ 0.3 } @type "quad_out"
+						15	{ 19.4 }
+					}
+				}
+
+			::ASCOtoCS_percuBow("percbow1",2,5,70,2)
+			obj::spat("Pbow1mes4",5,"csound2","vbap",::spat_traj_pos,[-45.,1.8,0.])
+	
+			curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp ($amppercbow1*$coefdec)
+				{ $amppercbow1
+					{		{ 0. } 
+						1/5	{ 0.11 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+			1 ::ASCOtoCS_percuBow("percbow2",3,5,76,3)
+			obj::spat("Pbow2mes4",5,"csound3","vbap",::spat_traj_pos,[135.,1.8,0.])
+	
+			curve ampbow2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.amp ($amppercbow2*$coefdec)
+				{ $amppercbow2
+					{		{ 0. } 
+						1/5	{ 0.2 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+			1 ::ASCOtoCS_percuBow("percbow3",4,5,65,4)
+			obj::spat("Pbow3mes4",5,"csound4","vbap",::spat_traj_pos,[225.,1.8,0.])
+	
+			curve ampbow3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow3.amp ($amppercbow3*$coefdec)
+				{ $amppercbow3
+					{		{ 0. }  @type "cubic"
+						1	{ 0.2 } @type "cubic_out"
+						3	{ 0. }
+					}
+				}
+			1 ::ASCOtoCS_percuBow("percbow4",7,5,79,8)
+			obj::spat("Pbow4mes4",5,"csound8","vbap",::spat_traj_pos,[0.,1.8,0.])
+	
+			curve ampbow4 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow4.amp ($amppercbow4*$coefdec)
+				{ $amppercbow4
+					{		{ 0. } 
+						1/5	{ 0.2 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+			3/2 ::ASCOtoCS_percuBow("percbow5",16,5,68,5)
+			obj::spat("Pbow5mes4",5,"csound5","vbap",::spat_traj_pos,[45.,1.8,0.])
+	
+			curve ampbow5 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow5.amp ($amppercbow5*$coefdec)
+				{ $amppercbow5
+					{		{ 0. } 
+						1/5	{ 0.08 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+			5/2 ::ASCOtoCS_percuBow("percbow6",17,5,77,2)
+			obj::spat("Pbow6mes4",5,"csound2","vbap",::spat_traj_pos,[270.,1.8,0.])
+	
+			curve ampbow6 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow6.amp ($amppercbow6*$coefdec)
+				{ $amppercbow6
+					{		{ 0. } 
+						1/5	{ 0.15 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+			11/6 ::ASCOtoCS_percuBow("percbow1",12,5,72,3)
+			obj::spat("Pbow1mes4",5,"csound3","vbap",::spat_traj_pos,[135.,1.8,0.])
+	
+			curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp ($amppercbow1*$coefdec)
+				{ $amppercbow1
+					{		{ 0. } 
+						1/5	{ 0.15 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+		}
+
+TRILL (C#4 D4 G4 G#4 Bb4) 1/2
+TRILL (C#4 D4 G4 G#4) 1/8
+TRILL (G#3 C#4 D4 G4 G#4) 3/8
+TRILL (C#4 D4 G4 G#4) 1 
+
+; ----------- mes 5 --- beat 33 --- time signature 4/4
+
+TRILL (F3 C#4 D4 G4 G#4) 1/2 ;mes5
+TRILL (F3 C#4 D4 G4 G#4 G5) 1/2
+TRILL (C#4 D4 G4 G#4 G5) 1/4
+TRILL (B3 C#4 D4 G4 G#4 G5) 1/4
+TRILL (B3 C#4 D4 G4 G#4) 1/2
+TRILL (C#4 D4 G4 G#4) 1
+TRILL (C#4 D4 G4 G#4) 2/3
+TRILL (E3 C#4 D4 G4 G#4) 1/3
+
+; ----------- mes 6 --- beat 37 --- time signature 4/4
+
+TRILL (C#4 D4 G4 G#4) 1/2 ;mes6
+TRILL (C#4 D4 G4 G#4 F5) 1
+TRILL (C#4 D4 G4 G#4) 1/2
+TRILL (C#4 D4 G4 G#4) 1/3
+TRILL (C#4 D4 G4 G#4 C5) 2/3
+CHORD (C#4 D4 G4 G#4) 1
+
+; ----------- mes 7 --- beat 41 --- time signature 7/4
+
+CHORD (D4 G4 G#4) 1/6 ;mes7
+
+	;obj::spat("delai_mes7",14,"transp","vbap",::spat_traj_ade,[[[0,4.,0],[270,6.5,0],"linear",9],[[270,6.5,0],[180,6.5,0],"linear",20]])
+	;lvl_del1 0.3 500
+
+GROUP fond
+	{
+
+		::ASCOtoCS_SYNTH_Ant(19,62,0.,0.15,0.01,0.9,0.8,9,4)
+		obj::spat("inharm_mes7",19,"csound4","vbap",::spat_traj_ade,[[[475,4.,0],[360,1.2,0],"linear",6],[[360,1.2,0],[225,6.5,0],"linear",8]])
+		; obj::spat("grav_mes28_bis",45,"csound1","vbap",::spat_traj_pos,$C_1)
+
+		::SYNTH_Ant_curveBat([0.,7,0.9,6,0.1])
+
+			curve ampsynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+				{ $kampAntes
+					{		{ 0. } @type "quad"
+						1	{ 0.1 } @type "quad"
+						6	{ 1.1 } @type "quad_out"
+						10	{ 0. }
+					}
+				}
+			curve mfosynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c mfoAntes $mfoAntes
+				{ $mfoAntes
+					{		{ 9. } @type "quad"
+						16	{ 7. }
+					}
+				}
+
+		12 lvl_del1 0. 1000
+	}
+
+CHORD (F4 D5) 1/6
+CHORD (B3 C4 F4 B4) 1/6
+CHORD (D4 F4 G4) 1/6
+CHORD (D4 D#4 G4 G#4 D#5) 1/6
+CHORD (D#4 F4 B4 D5) 1/6
+CHORD (B3 G#4 D5 F5) 1/6
+CHORD (B3 C4 D4 G4) 1/6
+CHORD (G#3 C5 C#5) 1/6
+CHORD (G3 D4 D#4 D5 F5 G5) 1/6
+CHORD (G#3 C#5 D5 G5) 1/6
+CHORD (A#3 C4 D5 D#5 F5 G5) 1/6
+CHORD (F3 G#3 C5 F5 G5) 1/6
+CHORD (F3 G3 D5) 1/6
+CHORD (G3 B4 D5 D#5) 1/6
+CHORD (B3 C4 G4 G#4) 1/6
+CHORD (B3 D#4 F4 B4 C5 D5) 1/6
+CHORD (F4 G4 C5 F#5 G#5) 1/6
+CHORD (B3 C4 C5 D5) 1/6
+CHORD (G3 B3 C5 D5) 1/6
+CHORD (G3 B3 C5 D5 D#5) 1/6
+CHORD (F3 G3 B3 B4 D5) 1/6
+CHORD (F3 C4 D4 B4 D#5 F5) 1/6
+CHORD (F3 C4 D#4 C5 F#5 G5) 1/6
+CHORD (G3 B3 C4 D4 D5 G5 B5) 1/6
+CHORD (B3 C4 F5) 1/6
+CHORD (A3 D5 D#5 F5) 1/6
+CHORD (G3 G#3 C5 D5 F5) 1/6
+CHORD (F3 C5 D5 D#5 F5) 1/6
+CHORD (D3 D#3 G4 G#4 B4) 1/6
+CHORD (G3 C4 D4 E4) 1/6
+CHORD (F3 G3 G4 G#4 C5) 1/6
+CHORD (D3 D#3 F3 F4 G4) 1/6
+CHORD (B2 F4 B4 C5) 1/6
+CHORD (C3 D3 G4 C#5 D5) 1/6
+CHORD (B2 D3 G#3 G4 D#5 F#5) 1/6
+CHORD (C3 D#3 B3 C5 D5 F5) 1/6
+CHORD (D3 D#3 B3 C5 D5 F5) 1/6
+CHORD (D3 F3 G3 B4 C5 D5 F5) 1/6
+CHORD (D3 F3 G3 G#3 B4 C5 F5 B5) 1/6
+CHORD (B2 D3 D#3 G3 C5 C#5 G5) 1/6
+CHORD (C#3 F#3 G3 C5 D5 G5) 1/6
+
+; ----------- mes 8 --- beat 48 --- time signature 6/4
+
+CHORD (B2 G#4 C5 D5 G5) 1/6 ;mes8
+
+CHORD (D3 F3 G#4 C5 D5 D#5) 1/6
+CHORD (D3 D#3 A3 -G#4 -C5 -D5 -D#5) 1/6
+CHORD (C3 F#3 G3 -G#4 -C5 -D5 -D#5) 1/6
+CHORD (D3 B4 F5 G5 B5) 1/6
+CHORD (-D3 C5 D5 F5 G#5) 1/6
+CHORD (D3 D#3 C5) 1/8
+CHORD (F3 -C5) 1/25
+CHORD (-F3 D#5 F5) 1/12
+CHORD (D3 F#3 -D#5 -F5) 1/12
+CHORD (-D3 -F#3 F4 C5 C#5 G5) 1/23
+CHORD (G3 G#3 -F4 -C5 -C#5 -G5) 1/8
+CHORD (E3 -F4 -C5 -C#5 -G5) 1/8
+CHORD (D3 D#3 -F4 -C5 -C#5 -G5) 1/8
+CHORD (C3 F3 -F4 -C5 -C#5 -G5) 1/12
+CHORD (-C3 -F3 B4 C5 D5 D#5) 1/23
+CHORD (F#3 -B4 -C5 -D5 -D#5) 1/8
+CHORD (F3 G3 F4 G4 G#4) 1/6
+CHORD (-F3 -G3 E4) 1/6
+CHORD (-F3 -G3 D#4) 1/6
+CHORD (A3 F4 G4) 1/6
+CHORD (F3 G#3 C4 D4) 1/6
+CHORD (D3 D#3 G3 -C4 -D4) 1/6
+CHORD (F#3 G3 B3 D4 D#4) 1/6
+CHORD (-F#3 -G3 E4) 1/6
+CHORD (D#3 F#3 D4 F4) 1/6
+CHORD (F3 G#3 F4 G4) 1/6
+CHORD (C3 D3 C#4 G4 G#4) 1/6
+CHORD (D3 F3 E4) 1/6
+CHORD (E3 G4 A#4) 1/6
+CHORD (F3 G4 A4) 1/6
+CHORD (C3 D3 D#3 F4 G#4) 1/6
+CHORD (A3 B3 -F4 -G#4) 1/6
+CHORD (G3 E4 F4) 1/6
+CHORD (F3 G3 D4 D#4 F#4) 1/6
+CHORD (G3 F4 F#4 G4) 1/6
+CHORD (G#3 F4 F#4 G4) 1/6
+CHORD (F#3 D4 D#4 A4) 1/6
+CHORD (A3 F4 G4 G#4) 1/6
+CHORD (G#3 D4 D#4) 1/6
+CHORD (G3 D4 D#4 F4) 1/6
+
+NOTE 0 1/8  ;;;;; ajout pour éviter le saut trop rapide à la suite
+
+; ----------- mes 9 --- beat 54 --- time signature 3/4
+
+BPM 58
+CHORD (B0 G2) 1/10 mes9
+
+	CS-Player e i "\"Player2\"" 0 9 1002 ; mes2_attakclav
+	CS-Player c Player2.cps 0.77
+	CS-Player c Player2.amp 0.5
+	obj::spat("Play2_mes2",9,"Player2","vbap",::spat_traj_pos,[0.,1.2,0.])
+
+	CS-Player e i "\"Player1\"" 0 26 1003 ; mes9_fondGRA
+	CS-Player c Player1.cps 1.
+	obj::spat("Play1_mes1",26,"Player1","vbap",::spat_traj_pos,[0.,1.2,0.])
+
+ 	curve ampPlayer1 @grain := 0.05, @action := {CS-Player c Player1.amp $ampPlayer1}
+ 		{ $ampPlayer1
+ 			{
+ 					{ 0. } @type "cubic"
+ 				1/12	{ 0.6 }	
+ 			}
+ 		} 
+
+
+CHORD (C1 G#2) 1/10
+CHORD (G0 F#2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (G#0 G2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (D#1 G2) 1/10
+CHORD (B0 G#2) 1/10
+CHORD (F#0 D3) 1/10
+CHORD (D0 G3) 1/10
+CHORD (F0 C#3) 1/10
+CHORD (B0 F2) 1/10
+CHORD (A#0 F#2) 1/10
+CHORD (E0 G2) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (D0 D#3) 1/10
+CHORD (F0 D3) 1/10
+CHORD (G#0 B2) 1/10
+CHORD (E0 C#3) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (D0 D3) 1/10
+CHORD (G0 B2) 1/10
+CHORD (G0 A#2) 1/10
+CHORD (G#0 E3) 1/10
+CHORD (G0 F#3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (B0 F#3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (D#1 C3) 1/10
+CHORD (B0 A2) 1/10
+
+; ----------- mes 10 --- beat 57 --- time signature 4/4
+
+CHORD (C1 G#2) 1/10 ;mes10
+CHORD (C#1 G2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (G#0 F2) 1/10
+CHORD (B0 C#3) 1/10
+CHORD (A#0 C3) 1/10
+CHORD (A0 G3) 1/10
+CHORD (G#0 D3) 1/10
+CHORD (G0 B2) 1/10
+CHORD (D0 F2) 1/10
+CHORD (D#0 F#2) 1/10
+CHORD (B0 G2) 1/10
+CHORD (G0 G#2) 1/10
+CHORD (F0 B2) 1/10
+CHORD (F#0 A#2) 1/10
+CHORD (D#0 G2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (B0 D3) 1/10
+CHORD (C#1 G3) 1/10
+CHORD (C1 C#3) 1/10
+CHORD (D1 G#3) 1/10
+CHORD (C1 D3) 1/10
+CHORD (D#1 A3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (A0 C3) 1/10
+CHORD (C1 D#3) 1/10
+CHORD (B0 G2) 1/10
+CHORD (C1 G#2) 1/10
+CHORD (C#1 B2) 1/10
+CHORD (D1 G2) 1/10
+CHORD (F1 G#2) 1/10
+CHORD (F#1 D3) 1/10
+CHORD (B1 G3) 1/10
+CHORD (G1 C#3) 1/10
+CHORD (C#1 A2) 1/10
+CHORD (F1 A3) 1/10
+CHORD (G1 E3) 1/10
+CHORD (C#1 A#2) 1/10
+CHORD (G0 E3) 1/10
+CHORD (D#1 A3) 1/10
+
+; ----------- mes 11 --- beat 61 --- time signature 7/4
+
+CHORD (B0 C4) 1/10 ;mes11
+CHORD (G0 E3) 1/10
+CHORD (C#1 A#2) 1/10
+CHORD (F1 E3) 1/10
+CHORD (G1 G#3) 1/10
+CHORD (C#1 A2) 1/10
+CHORD (G1 C#3) 1/10
+CHORD (B1 G3) 1/10
+CHORD (F#1 D3) 1/10
+CHORD (F1 G#2) 1/10
+CHORD (D1 G2) 1/10
+CHORD (C#1 B2) 1/10
+CHORD (C1 G#2) 1/10
+CHORD (B0 G2) 1/10
+CHORD (C1 D#3) 1/10
+CHORD (A0 C3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (D#1 A3) 1/10
+CHORD (C1 D3) 1/10
+CHORD (D1 G#3) 1/10
+CHORD (C1 C#3) 1/10
+CHORD (C#1 G3) 1/10
+CHORD (B0 D3) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (D#0 G2) 1/10
+CHORD (F#0 A#2) 1/10
+CHORD (F0 B2) 1/10
+CHORD (G0 G#2) 1/10
+CHORD (B0 G2) 1/10
+CHORD (D#0 F#2) 1/10
+CHORD (D0 F2) 1/10
+CHORD (G0 B2) 1/10
+CHORD (G#0 D3) 1/10
+CHORD (A0 G3) 1/10
+CHORD (A#0 C3) 1/10
+CHORD (B0 C#3) 1/10
+CHORD (G#0 F2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (C#1 G2) 1/10
+CHORD (C1 G#2) 1/10
+CHORD (B0 A2) 1/10
+CHORD (D#1 C3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (B0 F#3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (G0 F#3) 1/10
+CHORD (G#0 E3) 1/10
+CHORD (G0 A#2) 1/10
+CHORD (G0 B2) 1/10
+CHORD (D0 D3) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (E0 C#3) 1/10
+CHORD (G#0 B2) 1/10
+CHORD (F0 D3) 1/10
+CHORD (D0 D#3) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (E0 G2) 1/10
+CHORD (A#0 F#2) 1/10
+CHORD (B0 F2) 1/10
+CHORD (F0 C#3) 1/10
+CHORD (D0 G3) 1/10
+CHORD (F#0 D3) 1/10
+CHORD (B0 G#2) 1/10
+CHORD (D#1 G2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (G#0 G2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (G0 F#2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (B0 G2) 1/10
+
+; ----------- mes 12 --- beat 68 --- time signature 7/4
+
+NOTE 0 1/2
+
+CHORD (-B0 -G2) 1/2 mes12
+
+	curve ampPlayer1 @grain := 0.01s, @action := {CS-Player c Player1.amp $ampPlayer1}
+ 		{ $ampPlayer1
+ 			{
+ 					{ $ampPlayer1 } @type "cubic_out"
+ 				1/2	{ 0.2 }	@type "cubic_out"
+ 				9	{ 0. }
+ 			}
+ 		}
+
+ 	GROUP
+		{
+		 	::ASCOtoCS_SYNTH_Ant(12,92,0.,0.15,0.01,0.9,0.6,9,1)
+			obj::spat("mes12_synth",12,"csound1","vbap",::spat_traj_pos,[180,3,0.])
+			; obj::spat("grav_mes28_bis",45,"csound1","vbap",::spat_traj_pos,$C_1)
+
+			::SYNTH_Ant_curveBat([0.9,8,0.5])
+
+			curve ampsynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+				{ $kampAntes
+					{		{ 0. } @type "quad"
+						1	{ 0.1 } @type "quad"
+						5	{ 0.15 } @type "quad_out"
+						6	{ 0. }
+					}
+				}
+			curve mfosynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c mfoAntes $mfoAntes
+				{ $mfoAntes
+					{		{ 9. } @type "quad"
+						7	{ 7. }
+					}
+				}
+
+			6 ::spat_trans("Player2",18)
+			CS-Player e i "\"Player2\"" 0 18 1007 ; metal3gliss
+			CS-Player c Player2.cps 0.9
+			CS-Player c Player2.amp 1.
+
+			::ASCOtoCS_SYNTH("g1",
+						dur = 35,
+						noteMidiL = 83,
+						kamp = 0.,
+						icnt = 10,
+						enviter = 0.9,
+						iter = 0.7,
+						del = 1.001,
+						mfo = 3,
+						numSortie = 2)
+
+			::spat_trans("csound2",35)
+
+				curve ampG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*0.6)
+					{ $ampG1
+						{		{ 0. } @type "quad"
+							1	{ 0.6 } 
+							10	{ 0.6 }
+							15	{ 0. }
+						}
+					}
+				curve batG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.multidel $multidelG1
+					{ $multidelG1
+						{		{ 1.01 } @type "cubic"
+							8 	{ 1.02 } 
+							13	{ 1.0001 }
+						}
+					}
+				curve iterG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.tempiter $tempiterG1
+					{ $tempiterG1
+						{		{ 0.3 } 
+							8	{ 15.4 }
+							7	{ 2.3 }
+							5	{ 11.3 }
+							5	{ 0.1 }
+
+						}
+					}
+
+			2 ::spat_trans("Player3",60)
+			CS-Player e i "\"Player3\"" 0 60 1004 ; mes13_fondmetal
+			CS-Player c Player3.cps 0.9
+			CS-Player c Player3.amp 0.2
+
+		}
+
+
+CHORD (D3 F3) 1/8 
+CHORD (-D3 B3) 1/25
+CHORD (G3 -B3) 1/12
+CHORD (-G3 D#4) 1/12
+CHORD (F3 -D#4) 1/23
+CHORD (-F3 C#4) 1/8
+CHORD (G#3 G4) 1/8
+CHORD (B3 -G4) 1/25
+CHORD (-B3 A4) 1/12
+CHORD (G3 -A4) 1/12
+CHORD (-G3 C5) 1/23
+CHORD (C#4 -C5) 1/8
+CHORD (C4 A#4) 1/8
+CHORD (G#4 -A#4) 1/25
+CHORD (-G#4 D5) 1/12
+CHORD (G4 -D5) 1/12
+CHORD (-G4 E5) 1/23
+CHORD (D4 -E5) 1/25
+CHORD (-D4 B4) 1/12
+CHORD (E4 G5) 1/12
+CHORD (-E4 G#5) 1/12
+CHORD (-E4 E5) 1/12
+CHORD (F4 G5) 1/12
+CHORD (-F4 F5) 1/12
+CHORD (-F4 B5) 1/12
+CHORD (G#4 F#5) 1/12
+CHORD (-G#4 G5) 1/23
+CHORD (G4 -G5) 1/25
+CHORD (-G4 F5) 1/12
+CHORD (B4 C6) 1/12
+CHORD (-B4 E5 D6) 1/23
+CHORD (A4 -E5 -D6) 1/8
+CHORD (D5 F6) 1/8
+CHORD (F5 G#6) 1/8
+CHORD (B4 G6) 1/12
+CHORD (C5 -G6) 1/23
+CHORD (-C5 F#6) 1/25
+CHORD (G#5 -F#6) 1/12
+CHORD (F5 A6) 1/8
+CHORD (-F5 F6) 1/25
+CHORD (E5 -F6) 1/12
+CHORD (-E5 B6) 1/12
+CHORD (G5 -B6) 1/23
+CHORD (-G5 A#6) 1/8
+CHORD (A#5 G6) 1/12
+CHORD (-A#5 C7) 1/23
+CHORD (B5 -C7) 1/25
+CHORD (-B5 C#7) 1/12
+CHORD (G#5 D7) 1/8
+CHORD (B5 F7) 1/8
+CHORD (D6 F#7) 1/8
+CHORD (-D6 D7) 1/25
+CHORD (F6 -D7) 1/12
+CHORD (-F6 D#7) 1/12
+CHORD (F#6 -D#7) 1/23
+CHORD (-F#6 D7) 1/8
+CHORD (G6 F7) 1/8
+CHORD (-G6 C#7) 1/25
+CHORD (A#6 -C#7) 1/12
+CHORD (-A#6 F7) 1/12
+CHORD (A6 -F7) 1/23
+CHORD (-A6 F#7) 1/8
+CHORD (F6 G#7) 1/8
+CHORD (-F6 G7) 1/25
+CHORD (F#6 -G7) 1/12
+CHORD (-F#6 B7) 1/12
+CHORD (D6 -B7) 1/23
+CHORD (-D6 G#7) 1/8
+NOTE 0 1
+
+; ----------- mes 13 --- beat 75 --- time signature 7/4
+
+NOTE 0 1 ;mes13
+NOTE B7 1
+NOTE B7 1
+NOTE B7 1
+NOTE B7 1
+NOTE B7 1
+NOTE 0 1
+
+; ----------- mes 14 --- beat 82 --- time signature 7/4
+
+NOTE 0 1 ;mes14
+NOTE B7 1
+NOTE 0 1
+NOTE B7 1
+NOTE B7 1
+
+suivi 0
+
+NOTE 0 2
+
+; ----------- mes 15 --- beat 89 --- time signature 5/4
+
+BPM 56
+NOTE G#5 20 D_mes15 ;1/8 mes15
+
+GROUP
+	{
+		::ASCOtoCS_percuBow("percbow1",17,11,80,3)
+		::spat_trans("csound3",11)
+
+		curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp ($amppercbow1)
+			{ $amppercbow1
+				{		{ 0. } 
+					1/5	{ 0.3 } @type "cubic_out"
+					10	{ 0. }
+				}
+			}
+		::ASCOtoCS_percuBow("percbow2",8,11,93,3)
+
+		curve ampbow2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.amp ($amppercbow2)
+			{ $amppercbow2
+				{		{ 0. } 
+					1/5	{ 0.3 } @type "cubic_out"
+					10	{ 0. }
+				}
+			}
+	}
+/*
+NOTE G4 3/4
+NOTE F6 1/8
+NOTE F6 2/3
+NOTE C#7 1/3
+NOTE -C#7 1/2
+NOTE A6 1/2
+NOTE A6 1/2
+CHORD (D#3 E3) 1/2
+NOTE 0 2/3
+NOTE B1 1/3
+
+; ----------- mes 16 --- beat 94 --- time signature 5/4
+
+NOTE 0 5/4 ;mes16
+NOTE G4 3/4
+NOTE 0 2/3
+CHORD (D#5 F#5) 1/3
+NOTE 0 5/4
+NOTE B7 3/4
+
+; ----------- mes 17 --- beat 99 --- time signature 3/4
+
+NOTE 0 1 ;mes17
+NOTE D#4 1/10
+NOTE A#4 1/10
+NOTE D#5 1/10
+NOTE G5 1/10
+NOTE A#5 1/10
+NOTE C#6 1/10
+NOTE D#6 1/10
+NOTE F6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE 0 1
+
+; ----------- mes 18 --- beat 102 --- time signature 5/4
+
+NOTE 0 1 ;mes18
+NOTE D#4 1/10
+NOTE B4 1/10
+NOTE D#5 1/10
+NOTE G5 1/10
+NOTE A#5 1/10
+NOTE D6 1/10
+NOTE D#6 1/10
+NOTE F6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE 0 1
+NOTE D#4 1/10
+NOTE A#4 1/10
+NOTE E5 1/10
+NOTE G5 1/10
+NOTE A#5 1/10
+NOTE C#6 1/10
+NOTE E6 1/10
+NOTE F6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE 0 1
+
+; ----------- mes 19 --- beat 107 --- time signature 5/4
+
+NOTE 0 2 
+
+*/
+NOTE D#4 3 D_mes19 ; 1/10 mes19
+
+	::spat_trans("Player4",15)
+	CS-Player e i "\"Player4\"" 0 15 1005 ; mes13_metal1
+	CS-Player c Player4.cps 1.5
+	CS-Player c Player4.amp 0.3
+
+suivi 0
+/*
+NOTE A4 1/10
+NOTE D#5 1/10
+NOTE F#5 1/10
+NOTE A5 1/10
+NOTE C#6 1/10
+NOTE E6 1/10
+NOTE F6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE 0 2
+*/
+; ----------- mes 20 --- beat 112 --- time signature 5/4
+
+BPM 68
+CHORD (D3 D#3 F4 F#4 G4) 1/6 D_mes20
+
+suivi 1
+
+	CS-Player e i "\"Player5\"" 0 5 1002 ; mes2_attakclav
+	CS-Player c Player5.cps 1.
+	CS-Player c Player5.amp 0.5
+	obj::spat("Play5_mes2",5,"Player5","vbap",::spat_traj_pos,[180.,1.8,0.])
+		
+GROUP
+	{	
+		::ASCOtoCS_SYNTH("g1",
+					dur = 21,
+					noteMidiL = 76,
+					kamp = 0.,
+					icnt = 6,
+					enviter = 0.1,
+					iter = 13.7,
+					del = 1.001,
+					mfo = 6,
+					numSortie = 1)
+
+		obj::spat("g1mes1",21,"csound1","vbap",::spat_traj_pos,$XC1)
+
+			curve ampG1 @grain := 0.01s, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*0.5)
+				{ $ampG1
+					{		{ 0. } @type "quad"
+						1/4	{ 1.4 } 
+						8	{ 0.9 } @type "cubic"
+						1	{ 0. }
+					}
+				}
+
+			curve delG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.multidel $multidelG1
+				{ $multidelG1
+					{		{ 1.01 } 
+						3	{ 1.0001 } @type "cubic"
+						3	{ 1.1 }
+						9	{ 1.0001 }
+					}
+				}
+
+		$ampPerc := 0.005
+		$notePerc := 67
+		$instrP := 4
+		obj::spat("Aleames3",10,"csound2","vbap",::spat_traj_fun,[::lissaj2inv,2,15,50,0.])
+
+		loop plicploc 1/6
+				{
+					$randInst := (@rand_int(16))+3
+					::ASCOtoCS_percu($randInst,1,$ampPerc,$notePerc,0.001,13.,2)
+				}
+			during [9]
+
+		curve ampPerc @grain := 0.01s
+			{ $ampPerc
+				{		{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.01 } @type "cubic"
+				}
+			}
+
+
+		::ASCOtoCS_BUZZ_RM(numGen = "gb1",
+						dur = 11,
+						amp = 0.,
+						noteMidi = 55,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						RMmodFreq = 18,
+						sortie = 3) 
+
+		obj::spat("mes20_gb1",11,"csound3","vbap",::spat_traj_xye,[[$XL1,$XC_2,"linear",9]])
+	;	::spat_trans("csound2",20)
+
+			curve ampGb1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb1.amp ($ampGb1*0.4)
+				{ $ampGb1
+					{		{ 0. } @type "quad_out"
+						1 { 1.5 } 
+						15/2 { 1. } @type "quad"
+						1/4 { 0.0 }
+					}
+				}
+
+		::ASCOtoCS_BUZZ(numGen = "gb2",
+						dur = 11,
+						amp = 0.,
+						noteMidi = 41,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						sortie = 4) 
+
+		obj::spat("mes20_gb2",11,"csound4","vbap",::spat_traj_xye,[[$XR1,$XC_2,"linear",8]])
+	;	::spat_trans("csound2",20)
+
+			curve ampGb2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb2.amp ($ampGb2*0.28)
+				{ $ampGb2
+					{		{ 0. } @type "quad_out"
+						1 { 1. } 
+						15/2 { 1. } @type "quad"
+						1/4 { 0.0 }
+					}
+				}
+	}
+
+CHORD (-D3 -D#3 F4 G4) 1/6
+CHORD (F3 G3 G#3 G4 G#4 B4) 1/6
+CHORD (D3 F3 E4 G4 G#4) 1/6
+CHORD (D3 G3 E4 G4 G#4 C5) 1/6
+CHORD (E3 F3 G3 F#4 G4 G#4) 1/6
+CHORD (G3 G#3 C4 D4 D#4 F4 G4) 1/6
+CHORD (G#3 C#4 D4 F4 G4) 1/6
+CHORD (F#3 G3 D4 D#4 F4 G4) 1/6
+CHORD (F#3 E4 F4 G4) 1/6
+CHORD (F3 F#4 G4) 1/6
+CHORD (-F3 G4) 1/6
+CHORD (G#3 B3 C4 D4 F#4 G4 G#4) 1/6
+CHORD (G3 C#4 D4 G4 G#4 B4) 1/6
+CHORD (C4 D4 D#4) 1/6
+CHORD (A3 C#4 F4 G4 G#4) 1/6
+CHORD (A#3 D4 D#4 F4 G4) 1/6
+CHORD (C4 D4 F4 F#4 G4) 1/6
+CHORD (G#3 C4 D#4 F#4 G4) 1/6
+CHORD (G3 B3 D4 F4 G4) 1/6
+CHORD (F#3 G3 C4 D4 D#4) 1/6
+CHORD (-F#3 -G3 C4 D4 E4) 1/6
+CHORD (-F#3 -G3 -C4 D#4 E4 F4) 1/6
+CHORD (-F#3 -G3 -C4 E4 F4) 1/6
+CHORD (G3 G#3 D4 D#4 G#4) 1/6
+CHORD (F#3 G3 C4 D4 D#4) 1/6
+CHORD (A3 A#3 D#4 E4 F4) 1/6
+CHORD (G3 B3 E4 F4) 1/6
+CHORD (F3 G3 C4 D4) 1/6
+CHORD (G3 G#3 -C4 -D4) 1/6
+
+; ----------- mes 21 --- beat 117 --- time signature 4/4
+
+CHORD (E3 G3 D4 D#4 F4 G4) 1/6 ;mes21
+CHORD (A3 C4 C#4 F4 G4 B4) 1/6
+CHORD (G3 A3 E4 G4 G#4) 1/6
+CHORD (A3 D4 F4 F#4 G4) 1/6
+CHORD (G3 A#3 C4 D#4 F4) 1/6
+CHORD (F#3 G3 C#4 D4) 1/6
+CHORD (F3 C4 D4 E4) 1/6
+CHORD (G3 G#3 F4 G4 A4) 1/6
+CHORD (C4 F4 G4 G#4 A4) 1/6
+CHORD (F#3 G3 G4 A4 B4) 1/6
+CHORD (G3 C#4 D4 E4 F4) 1/6
+CHORD (-G3 D4 E4) 1/6
+CHORD (G3 C4 D4 E4 F4) 1/6
+CHORD (D3 D4 D#4 E4) 1/6
+CHORD (D#3 E4 F4 G4 A4) 1/6
+CHORD (F3 C4 C#4 D4) 1/6
+CHORD (F#3 E4 F4 G4) 1/6
+CHORD (C3 F4 G4 G#4) 1/6
+CHORD (D3 D#3 G4 G#4 C5) 1/6
+CHORD (B2 C4 C#4 F4 G4) 1/6
+CHORD (C3 D4 E4 F4 G#4) 1/6
+CHORD (F3 D#4 F4 G4) 1/6
+CHORD (G3 D4 E4 F4) 1/6
+CHORD (D4 G4 G#4 B4) 1/6
+
+; ----------- mes 22 --- beat 121 --- time signature 7/4
+
+CHORD (E4 F4) 7 D_mes22 ; 1/3 mes22
+
+suivi 0
+
+	GROUP
+	{	::spat_trans("Player1",10)
+		CS-Player e i "\"Player1\"" 0 10 1008 ; mes13_metal4
+		CS-Player c Player1.cps 1.5
+		CS-Player c Player1.amp 0.8
+
+		::spat_trans("Player2",19)
+		CS-Player e i "\"Player2\"" 0 19 1009 ; mes22_voilesMet
+		CS-Player c Player2.cps 1.
+		
+		curve ampPlayer2 @grain := 0.05, @action := {CS-Player c Player2.amp $ampPlayer2}
+	 		{ $ampPlayer2
+	 			{
+	 					{ 0. } @type "cubic"
+	 				1	{ 0.3 } @type "cubic_out"
+	 				1	{ 0.08 } @type "cubic"
+	 				1	{ 0.6 } @type "cubic_out"
+	 				1	{ 0.08 } @type "cubic"
+	 				1	{ 0.2 } @type "cubic_out"
+	 				1	{ 0.08 } @type "cubic"
+	 				3	{ 0.2 } @type "cubic_out"
+	 				8	{ 0. }	
+	 			}
+	 		}
+
+	 	CS-Player e i "\"Player5\"" 0 18 1010 ; mes22_loin
+		CS-Player c Player5.cps 1.
+		CS-Player c Player5.amp 0.2
+		obj::spat("Play5_mes22",18,"Player5","vbap",::spat_traj_pos,[0.,7.8,0.])
+	}
+
+/*
+NOTE F4 1/12
+NOTE C5 1/12
+NOTE C#5 1/12
+NOTE A5 1/12
+NOTE E6 1/12
+NOTE F6 1/12
+NOTE B6 1/12
+NOTE G#7 1/12
+NOTE C7 1/12
+NOTE G6 1/12
+NOTE E6 1/12
+NOTE B7 1/12
+NOTE G#5 1/12
+NOTE D5 1/12
+NOTE A#4 1/12
+NOTE G4 1/12
+NOTE 0 5/12
+NOTE C#5 1/12
+NOTE E5 1/12
+NOTE F5 1/12
+NOTE G#5 1/12
+NOTE D6 1/12
+NOTE G6 1/12
+NOTE A6 1/12
+NOTE C7 1/12
+NOTE E6 1/12
+NOTE C#6 1/12
+NOTE A7 1/12
+NOTE A4 1/12
+NOTE D5 1/12
+NOTE E5 1/12
+NOTE G#5 1/12
+NOTE C6 1/12
+NOTE C#6 1/12
+NOTE F6 1/12
+NOTE G6 1/12
+NOTE A#6 1/12
+NOTE C7 1/12
+NOTE F7 1/12
+NOTE B7 1/12
+NOTE G7 1/12
+NOTE D7 1/12
+NOTE A#6 1/12
+NOTE F6 1/12
+NOTE D#6 1/12
+NOTE F#7 1/12
+NOTE D5 1/12
+NOTE E5 1/12
+NOTE D5 1/12
+NOTE A4 1/12
+NOTE F#4 1/12
+NOTE D#4 1/12
+NOTE A4 2/3
+NOTE C5 1/12
+NOTE A#5 1/12
+NOTE F#6 1/12
+NOTE A6 1/12
+NOTE G7 1/12
+NOTE C8 1/12
+NOTE F7 1/12
+NOTE B6 1/12
+NOTE G6 1/12
+NOTE G#7 1/12
+NOTE D5 1/12
+NOTE G4 1/12
+NOTE -G4 1/3
+
+*/
+; ----------- mes 23 --- beat 128 --- time signature 7/4
+
+NOTE B1 7 D_mes23 ; 0 1/2 mes23
+
+	::spat_trans("Player3",10)
+	CS-Player e i "\"Player3\"" 0 10 1011 ; mes23_taule
+	CS-Player c Player3.cps 1.
+	
+	curve ampPlayer3 @grain := 0.05, @action := {CS-Player c Player3.amp $ampPlayer3}
+ 		{ $ampPlayer3
+ 			{
+ 					{ 0. } @type "cubic"
+ 				4	{ 0.7 } @type "cubic_out"
+ 				4	{ 0. }	
+ 			}
+ 		}
+
+ 	1.5s ::spat_trans("Player4",10)
+	CS-Player e i "\"Player4\"" 0 10 1012 ; mes23_metrevers
+	CS-Player c Player4.cps 1.
+	CS-Player c Player4.amp 1.
+	
+/*	
+
+NOTE B1 9/2
+NOTE 0 2
+*/
+; ----------- mes 24 --- beat 135 --- time signature 6/4
+
+NOTE B5 1/10 D_mes24
+
+	suivi 1
+
+	obj::spat("Play1_mes24",60,"Player1","vbap",::spat_traj_fun,[::lissaj2,3,50,30,0.])
+	CS-Player e i "\"Player1\"" 0 60 1013 ; mes24_fond
+	CS-Player c Player1.cps 1.5
+	CS-Player c Player1.amp 0.2
+
+	::essaim("Player2",1014,0.1,1,6,2,17)
+	obj::spat("Play2_mes24",17,"Player2","vbap",::spat_traj_fun,[::lissaj2inv,3,40,0,0.])
+
+	curve ampPlayer2 @grain := 0.05, @action := {CS-Player c Player2.amp $ampPlayer2}
+ 		{ $ampPlayer2
+ 			{
+ 					{ 0. } @type "cubic" 
+ 				7	{ 0.2 } @type "quad_out"
+ 				9	{ 0. }	
+ 			}
+ 		}
+
+
+NOTE A#5 1/10
+NOTE A5 1/10
+NOTE C6 1/10
+NOTE G#5 1/10
+NOTE D6 1/10
+NOTE G#5 1/10
+NOTE G6 1/10
+NOTE E6 1/10
+NOTE D#6 1/10
+NOTE F6 1/10
+NOTE D6 1/10
+NOTE G5 1/10
+NOTE A5 1/10
+NOTE D#6 1/10
+NOTE F5 1/10
+NOTE D6 1/10
+NOTE C#6 1/10
+NOTE A5 1/10
+NOTE B5 1/10
+NOTE A#5 1/10
+NOTE G5 1/10
+NOTE D#5 1/10
+NOTE F5 1/10
+NOTE G5 1/10
+NOTE A5 1/10
+NOTE C#5 1/10
+NOTE G5 1/10
+NOTE D6 1/10
+NOTE G#5 1/10
+NOTE B5 1/10
+NOTE A#5 1/10
+NOTE A5 1/10
+NOTE C6 1/10
+NOTE G#5 1/10
+NOTE D6 1/10
+NOTE E6 1/10
+NOTE D6 1/10
+NOTE E6 1/10
+NOTE D#6 1/10
+NOTE F6 1/10
+NOTE D6 1/10
+NOTE G5 1/10
+NOTE A5 1/10
+NOTE D#6 1/10
+NOTE B5 1/10
+NOTE D6 1/10
+NOTE C#6 1/10
+NOTE A5 1/10
+NOTE B5 1/10
+NOTE A#5 1/10
+NOTE G5 1/10
+NOTE D#5 1/10
+NOTE F5 1/10
+NOTE G5 1/10
+NOTE A5 1/10
+NOTE C#5 1/10
+NOTE G5 1/10
+NOTE D6 1/10
+NOTE G#5 1/10
+
+; ----------- mes 25 --- beat 141 --- time signature 6/4
+
+NOTE C6 1/10 mes25
+	
+
+	curve templic @grain := 0.05s
+		{ $templic
+			{		{ ($RT_TEMPO-20) }
+				3	{ ($RT_TEMPO+10) }
+				3	{ ($RT_TEMPO-15) } 
+				4	{ ($RT_TEMPO+15) }
+				4	{ ($RT_TEMPO-15) }
+				4	{ ($RT_TEMPO+15) }
+			}
+		}
+
+GROUP @tempo := $templic
+	{
+		$notePerc := 84
+		obj::spat("Aleames3",18,"csound2","vbap",::spat_traj_fun,[::lissaj2inv,5,50,50,0.])
+
+		loop plicploc 1/5
+				{
+					$randInst := (@rand_int(16))+3
+					::ASCOtoCS_percu($randInst,3/2,$ampPerc,$notePerc,0.1,7.,2)
+				}
+			during [16]
+
+		curve ampPerc @grain := 0.01s
+			{ $ampPerc
+				{		{ 0.05 } @type "cubic"
+					4	{ 0.16 } @type "cubic_out"
+					4	{ 0.1 } @type "cubic"
+					4	{ 0.16 } @type "cubic_out"
+					4	{ 0.08 } @type "cubic"
+				}
+			}
+
+		curve notePerc @grain := 0.01s
+			{ $notePerc
+				{		{ 84. } 
+					3/2	{ 87. } 
+					3/2	{ 84. } 
+					3/2	{ 81. } 
+					3/2	{ 81. } 
+					3/2	{ 83. }
+					3/2	{ 88. }
+					3/2	{ 85. }
+					2	{ 91. }
+				}
+			}
+	}
+
+NOTE D6 1/10
+NOTE E6 1/10
+NOTE A#5 1/10
+NOTE G5 1/10
+NOTE G#5 1/10
+NOTE A5 1/10
+NOTE B5 1/10
+NOTE F5 1/10
+NOTE G#5 1/10
+NOTE E5 1/10
+NOTE F5 1/10
+NOTE G5 1/10
+NOTE C#5 1/10
+NOTE G#5 1/10
+NOTE D#6 1/10
+NOTE B5 1/10
+NOTE G5 1/10
+NOTE F5 1/10
+NOTE G#5 1/10
+NOTE E5 1/10
+NOTE F5 1/10
+NOTE G4 1/10
+NOTE D5 1/10
+NOTE C#5 1/10
+NOTE D5 1/10
+NOTE D#5 1/10
+NOTE A5 1/10
+NOTE A#5 1/10
+NOTE D5 1/10
+NOTE C6 1/10
+NOTE G5 1/10
+NOTE G#5 1/10
+NOTE A5 1/10
+NOTE F5 1/10
+NOTE G5 1/10
+NOTE F#6 1/10
+NOTE C6 1/10
+NOTE D5 1/10
+NOTE A5 1/10
+NOTE C6 1/10
+NOTE D#6 1/10
+NOTE D6 1/10
+NOTE B5 1/10
+NOTE A#5 1/10
+NOTE A5 1/10
+NOTE C#5 1/10
+NOTE G5 1/10
+NOTE F5 1/10
+NOTE E6 1/10
+NOTE C#6 1/10
+NOTE F#5 1/10
+NOTE C5 1/10
+NOTE A5 1/10
+NOTE D5 1/10
+NOTE E5 1/10
+NOTE A#4 1/10
+NOTE F5 1/10
+NOTE G5 1/10
+NOTE D6 1/10
+
+; ----------- mes 26 --- beat 147 --- time signature 5/4
+
+NOTE A6 1/10 mes26
+
+
+	GROUP
+		{
+			::ASCOtoCS_percuBow("percbow1",7,25,81,1)
+			obj::spat("Pbow1mes4",25,"csound1","vbap",::spat_traj_pos,[180.,1.8,0.])
+			ASCOtoCS_SYNTH c percbow1.jitdep 0.9
+			ASCOtoCS_SYNTH c percbow1.jitrat 6
+	
+			curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp $amppercbow1
+				{ $amppercbow1
+					{		{ 0. } 
+						2	{ 0.1 } 
+						12	{ 0.1 } @type "cubic_out"
+						6	{ 0. }
+					}
+				}
+			curve freqbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.freq (@midi2hz($freqpercbow1))
+				{ $freqpercbow1
+					{		{ 81. } 
+						3/2	{ 83. } 
+						2	{ 83. } 
+						6	{ 88. } 
+					}
+				}
+		}
+
+
+CHORD (C#5 -A6) 1/10
+CHORD (G#5 -A6) 1/10
+CHORD (F4 -A6) 1/10
+CHORD (C5 -A6) 1/10
+NOTE C7 1/10
+CHORD (F#5 -C7) 1/10
+CHORD (D4 -C7) 1/10
+CHORD (G#4 -C7) 1/10
+CHORD (G5 -C7) 1/10
+NOTE D#3 1/10
+CHORD (-D#3 B4) 2/20
+CHORD (-D#3 D5) 2/20
+CHORD (-D#3 F4) 2/20
+CHORD (-D#3 B5) 2/20
+NOTE B6 1/10
+CHORD (C#5 -B6) 1/10
+CHORD (A5 -B6) 1/10
+CHORD (F4 -B6) 1/10
+CHORD (E5 -B6) 1/10
+NOTE F6 1/10
+CHORD (D5 -F6) 1/10
+CHORD (A#4 -F6) 1/10
+CHORD (G5 -F6) 1/10
+CHORD (F#5 -F6) 1/10
+NOTE F3 1/10
+CHORD (-F3 E5) 2/20
+CHORD (-F3 C#5) 2/20
+CHORD (-F3 C5) 2/20
+CHORD (-F3 A5) 2/20
+NOTE E7 1/10
+CHORD (F5 -E7) 1/10
+CHORD (D5 -E7) 1/10
+CHORD (G#4 -E7) 1/10
+CHORD (G5 -E7) 1/10
+NOTE E5 1/10
+NOTE G5 1/10
+NOTE D#5 1/10
+NOTE A4 1/10
+NOTE A5 1/10
+NOTE F4 1/10
+NOTE B4 1/10
+NOTE E5 1/10
+NOTE A4 1/10
+NOTE D3 1/10
+NOTE C#7 1/10
+CHORD (G5 -C#7) 1/10
+CHORD (B5 -C#7) 1/10
+CHORD (G5 -C#7) 1/10
+CHORD (A#4 -C#7) 1/10
+
+; ----------- mes 27 --- beat 152 --- time signature 5/4
+
+CHORD (D3 E4) 1/10 ;mes27
+CHORD (-D3 F5) 2/20
+CHORD (-D3 D5) 2/20
+CHORD (-D3 D#6) 2/20
+CHORD (-D3 D5) 2/20
+NOTE G7 1/10
+CHORD (D5 -G7) 1/10
+CHORD (F4 -G7) 1/10
+CHORD (E5 -G7) 1/10
+CHORD (B4 -G7) 1/10
+NOTE A#4 1/10
+NOTE D5 1/10
+NOTE A5 1/10
+NOTE D#5 1/10
+NOTE B3 1/10
+NOTE G7 1/10
+CHORD (A4 -G7) 1/10
+CHORD (C5 -G7) 1/10
+CHORD (E4 -G7) 1/10
+CHORD (A#5 -G7) 1/10
+NOTE F5 1/10
+NOTE G5 1/10
+NOTE G#5 1/10
+NOTE E5 1/10
+NOTE D6 1/10
+NOTE F6 1/10
+NOTE A4 1/10
+NOTE C5 1/10
+NOTE C#5 1/10
+NOTE G4 1/10
+
+NOTE G7 1/10 
+CHORD (C#5 -G7) 1/10
+CHORD (D5 -G7) 1/10
+CHORD (C#5 -G7) 1/10
+CHORD (D5 -G7) 1/10
+CHORD (G#4 -G7) 1/10
+CHORD (F5 -G7) 1/10
+CHORD (B4 -G7) 1/10
+CHORD (E5 -G7) 1/10
+CHORD (A4 -G7) 1/10
+NOTE B2 1/10
+CHORD (-B2 D#5) 2/20
+CHORD (-B2 F#5) 2/20
+CHORD (-B2 G4) 2/20
+CHORD (-B2 C5) 2/20
+NOTE F5 1/10
+NOTE G#5 1/10
+NOTE G5 1/10
+NOTE C#6 1/10
+NOTE A6 1/10
+
+; ----------- mes 28 --- beat 157 --- time signature 5/4
+
+BPM 56
+CHORD (D6 A#6) 1/10 mes28
+
+	obj::spat("Play3_mes27_2",5,"Player3","vbap",::spat_traj_ade,[[$R0,$L2,"linear",1]])
+	CS-Player e i "\"Player3\"" 0 5 1016 ; mes29_attakwat
+	CS-Player c Player3.cps 1.
+	CS-Player c Player3.amp 0.5
+
+
+GROUP @target [2]
+	{
+		::ASCOtoCS_SYNTH("g1",
+					dur = 15,
+					noteMidiL = 94,
+					kamp = 0.,
+					icnt = 3,
+					enviter = 0.7,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 7,
+					numSortie = 2)
+
+		obj::spat("g1mes1",15,"csound2","vbap",::spat_traj_fun,[::lissaj2inv,3,45,5,0.])
+
+			curve ampG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*0.8)
+				{ $ampG1
+					{		{ 0. } @type "quad"
+						5	{ 1.4 } @type "cubic_out"
+						9	{ 0. }
+					}
+				}
+			curve batG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.multidel $multidelG1
+				{ $multidelG1
+					{		{ 1.0001 } @type "cubic"
+						5 	{ 1.01 } 
+						7	{ 1.0001 }
+					}
+				}
+			curve freqG1 @grain := 0.01, @action := ASCOtoCS_SYNTH c g1.freq (@midi2hz($freqG1-12))
+				{ $freqG1
+					{		{ 94 } @type "cubic"
+						4 	{ 100 } 
+						3	{ 104 } @type "cubic"
+						3	{ 105 } 
+						2	{ 104 }
+					}
+				}
+			curve iterG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.tempiter $tempiterG1
+				{ $tempiterG1
+					{		{ 2. } @type "cubic"
+						5	{ 17. }
+						6	{ 4. }
+					}
+				}
+
+
+		::ASCOtoCS_SYNTH_Ant(15,86,0.,0.15,0.01,0.9,0.14,9,3)
+		obj::spat("grav_mes28",15,"csound3","vbap",::spat_traj_pos,$R2)
+		
+		::SYNTH_Ant_curveBat([0.6,5,0.2,5,0.7])
+
+		curve ampG8 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+			{ $kampAntes
+				{		{ 0. } @type "quad"
+					6	{ 0.7 } @type "cubic_out"
+					6	{ 0. }
+				}
+			}
+		curve mfoG8 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c mfoAntes $mfoAntes
+			{ $mfoAntes
+				{		{ 9. } @type "quad"
+					10	{ 6. }
+				}
+			}
+
+	}
+
+CHORD (C6 A6) 1/10
+CHORD (G6 C#7) 1/10
+CHORD (E6 C7) 1/10
+CHORD (D#6 A6) 1/10
+CHORD (D6 G#6) 1/10
+CHORD (F6 A6) 1/10
+CHORD (C#6 F6) 1/10
+CHORD (A5 F#6) 1/10
+CHORD (G5 A#6) 1/10
+CHORD (G#5 E6) 1/10
+CHORD (B5 C7) 1/10
+CHORD (F5 C#7) 1/10
+CHORD (F#5 A6) 1/10
+CHORD (B5 D7) 1/10
+CHORD (C6 A#6) 1/10
+CHORD (A#5 C#7) 1/10
+CHORD (C#6 A6) 1/10
+CHORD (A5 G#6) 1/10
+CHORD (C6 A6) 1/10
+CHORD (A#5 E6) 1/10
+CHORD (D6 G6) 1/10
+CHORD (D#6 B6) 1/10
+CHORD (C6 A6) 1/10
+CHORD (D6 A6) 1/10
+CHORD (-D6 G#6) 2/20
+CHORD (A#5 A6) 1/10
+CHORD (A5 C7) 1/10
+CHORD (G#5 D#6) 1/10
+CHORD (D6 B6) 1/10
+CHORD (F6 A6) 1/10
+CHORD (E6 A#6) 1/10
+CHORD (A#5 A6) 1/10
+CHORD (C#6 C7) 1/10
+CHORD (A5 A6) 1/10
+CHORD (A#5 G6 A#6) 2/20
+CHORD (G5 E6) 1/10
+CHORD (A5 F6 G6) 2/20
+CHORD (F5 A6) 1/10
+CHORD (B5 G#6 A6) 2/20
+CHORD (D6 E6 C7) 2/20
+CHORD (C6 D6 B6 C7) 2/20
+CHORD (F6 B6 C7) 2/20
+CHORD (A5 A#5 A6) 2/20
+CHORD (C6 D7 E7) 2/20
+CHORD (G5 A5 D7 E7 F7) 2/20
+CHORD (C#6 E7) 1/10
+CHORD (C6 C#6 D#7) 2/20
+CHORD (A5 F7 F#7) 2/20
+CHORD (A5 A#5 D7) 2/20
+
+; ----------- mes 29 --- beat 162 --- time signature 5/4
+
+CHORD (D6 E6 F7) 2/20 ;mes29
+CHORD (C#6 D7 E7) 2/20
+CHORD (C6 D6 D#7 F7) 2/20
+CHORD (B5 F#7) 2/20
+CHORD (D6 D#6 F6 C7 D7) 2/20
+CHORD (B5 D7 E7 F7) 2/20
+CHORD (C6 D6 E7) 2/20
+CHORD (A5 D#7) 1/10
+CHORD (G5 A5 A#5 F7 F#7) 2/20
+CHORD (E6 D7) 1/10
+CHORD (D6 F7) 1/10
+CHORD (C6 D7 E7) 2/20
+CHORD (C#6 D#7 F7) 2/20
+CHORD (A5 F#7) 1/10
+CHORD (A#5 C6 C7 D7) 2/20
+CHORD (D6 E7) 1/10
+CHORD (F6 D#7) 1/10
+CHORD (E6 D7) 1/10
+CHORD (A#5 C7 C#7) 2/20
+CHORD (E6 C7) 1/10
+CHORD (C6 G#6) 1/10
+CHORD (D6 B6) 1/10
+CHORD (E6 A6 A#6) 2/20
+CHORD (A#5 G6) 1/10
+CHORD (A5 F6 F#6) 2/20
+CHORD (C#6 B6 C7) 2/20
+CHORD (C6 A6) 1/10
+CHORD (D6 B6 C7) 2/20
+CHORD (C6 F#6) 1/10
+CHORD (G#5 F6) 1/10
+CHORD (E6 G6 G#6) 2/20
+CHORD (C6 A6) 1/10
+CHORD (C#6 C7) 1/10
+CHORD (D6 C7) 1/10
+CHORD (G#5 C7) 1/10
+CHORD (G5 G#6) 1/10
+CHORD (A#5 G6) 1/10
+CHORD (G5 B6) 1/10
+CHORD (F#5 A#6) 1/10
+CHORD (C6 A6) 1/10
+CHORD (G5 G#6) 1/10
+CHORD (A#5 G6) 1/10
+CHORD (A5 F#6) 1/10
+CHORD (G#5 G#6) 1/10
+CHORD (C6 G6) 1/10
+CHORD (G5 E6) 1/10
+CHORD (A5 G6) 1/10
+CHORD (G5 B6) 1/10
+CHORD (A#5 F6) 1/10
+CHORD (A5 D6 E6) 2/20
+
+
+
+; ----------- mes 30 --- beat 167 --- time signature 7/4
+
+NOTE C1 14 mes30
+
+suivi 0
+	
+	curve ampPlayer1 @grain := 0.01s, @action := {CS-Player c Player1.amp $ampPlayer1}
+ 		{ $ampPlayer1
+ 			{
+ 					{ 0.2 } @type "cubic_out" 
+ 				7	{ 0.0 }
+ 			}
+ 		}
+
+	obj::spat("Play2_mes30",32,"Player2","vbap",::spat_traj_pos,$C_1)
+	CS-Player e i "\"Player2\"" 0 32 1017 ; mes30_flotte
+	CS-Player c Player2.cps 1.
+	
+	curve ampPlayer2 @grain := 0.01s, @action := {CS-Player c Player2.amp $ampPlayer2}
+ 		{ $ampPlayer2
+ 			{
+ 					{ 0. } @type "quad" 
+ 				13	{ 1.9 } 
+ 				1	{ 1.9 }
+ 				1/4	{ 0.3 }
+ 				10	{ 0.1 } @type "cubic_out"
+ 				4	{ 0. }	
+ 			}
+ 		}
+
+ 	obj::spat("gV1",52,"csound4","vbap",::spat_traj_fun,[::lissaj5,4,30,0,0.])
+
+	ASCOtoCS_SYNTH e i "\"AddInHarmo\"" 0 (@b2sec(52)) 505 4
+
+		curve kampInharm @grain := 0.01s, @action := ASCOtoCS_SYNTH c kampInharm ($kampInharm*0.8)
+				{ $kampInharm
+					{		{ 0. } @type "quad"
+						14 	{ 0.8 } 
+						1/4 { 0.3 } @type "cubic_out"
+						12 	{ 0.0 }
+					}
+				}
+
+		curve kfreqInharm @grain := 0.05, @action := ASCOtoCS_SYNTH c kfreqInharm (@midi2hz($kfreqInharm))
+				{ $kfreqInharm
+					{		{ 45. }
+						10 	{ 45.5 }
+						10	{ 45. }
+					}
+				}
+		curve kcpsOsc @grain := 0.005, @action := ASCOtoCS_SYNTH c cpsOsc $kcpsOsc
+				{ $kcpsOsc
+					{		{ 7. } ;@type "cubic"
+						4 	{ 12. }
+						5	{ 6. }
+						5	{ 3.2 }
+						5	{ 9. }
+						5 	{ 7. }
+					}
+				}
+
+	obj::spat("Play3_mes30",6,"Player3","vbap",::spat_traj_ade,[[$L0,$R2,"linear",3/2]])
+	CS-Player e i "\"Player3\"" 0 6 1015 ; mes24_eaugeste
+	CS-Player c Player3.cps 0.6
+	CS-Player c Player3.amp 0.09
+
+	5/2 ::ASCOtoCS_percuBow("percbow1",2,7,70,5)
+	obj::spat("Pbow1mes30",7,"csound5","vbap",::spat_traj_ade,[[$R1,$L_2,"linear",3/2]])
+
+	curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp $amppercbow1
+		{ $amppercbow1
+			{		{ 0. } 
+				2	{ 0.25 } @type "cubic_out"
+				4	{ 0. }
+			}
+		}
+
+	1/2 ::ASCOtoCS_percuBow("percbow2",7,7,80,6)
+	obj::spat("Pbow2mes30",7,"csound6","vbap",::spat_traj_ade,[[$R_1,$L2,"linear",3/2]])
+
+	curve ampbow2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.amp $amppercbow2
+		{ $amppercbow2
+			{		{ 0. } @type "cubic"
+				1	{ 0.14} @type "cubic_out"
+				4	{ 0. }
+			}
+		}
+
+	2 ::ASCOtoCS_percuBow("percbow3",11,7,84,7)
+	obj::spat("Pbow3mes30",7,"csound7","vbap",::spat_traj_pos,$C2)
+
+	curve ampbow3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow3.amp $amppercbow3
+		{ $amppercbow3
+			{		{ 0. } 
+				2	{ 0.2 } @type "cubic_out"
+				4	{ 0. }
+			}
+		}
+
+	::essaim("Player4",1014,0.1,1,6,2,13)
+	obj::spat("Play4_mes30",14,"Player4","vbap",::spat_traj_fun,[::lissaj5,3,40,20,0.])
+
+	curve ampPlayer4 @grain := 0.05, @action := {CS-Player c Player4.amp $ampPlayer4}
+ 		{ $ampPlayer4
+ 			{
+ 					{ 0. } @type "quad" 
+ 				8	{ 0.6 } @type "cubic_out"
+ 				4	{ 0. }	
+ 			}
+ 		}
+
+	1 ::ASCOtoCS_percuBow("percbow4",16,9,91,8)
+	obj::spat("Pbow4mes30",11,"csound8","vbap",::spat_traj_pos,$C_2)
+
+	curve ampbow4 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow4.amp $amppercbow4
+		{ $amppercbow4
+			{		{ 0. } @type "quad"
+				2	{ 1.7 } @type "cubic_out"
+				5	{ 0. }
+			}
+		}
+
+ 	13/2 obj::spat("Play6_mes30",8,"Player6","vbap",::spat_traj_ade,[[$L1,$R_2,"linear",1]])
+	CS-Player e i "\"Player6\"" 0 8 1016 ; mes29_attakwat
+	CS-Player c Player6.cps 0.6
+	CS-Player c Player6.amp 0.6
+
+
+; ----------- mes 31 --- beat 171.0 --- time signature 7/4
+
+;NOTE 0 7
+
+; ----------- mes 32 --- beat 178.0 --- time signature 5/4
+
+NOTE C#7 1/10 D_mes32
+
+suivi 1
+
+	GROUP @target [1]
+		{
+			::ASCOtoCS_percuBow("percbow1",17,7,97,1)
+			obj::spat("Pbow1mes30",7,"csound1","vbap",::spat_traj_ade,[[$L1,$R2,"linear",1]])
+
+			curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp $amppercbow1
+				{ $amppercbow1
+					{		{ 0. } 
+						1/2	{ 1.3 } @type "cubic_out"
+						6	{ 0. }
+					}
+				}
+
+			5/2 ::ASCOtoCS_percuBow("percbow2",8,9,101,2)
+			obj::spat("Pbow2mes30",9,"csound2","vbap",::spat_traj_ade,[[$L_1,$R_2,"linear",3/2]])
+
+			curve ampbow2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.amp $amppercbow2
+				{ $amppercbow2
+					{		{ 0. } 
+						2	{ 1.1 } @type "quad_out"
+						6	{ 0. }
+					}
+				}
+
+			11/2 ::ASCOtoCS_percuBow("percbow3",16,9,103,3)
+			obj::spat("Pbow3mes30",9,"csound3","vbap",::spat_traj_ade,[[$R_2,$L2,"linear",2]])
+
+			curve ampbow3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow3.amp $amppercbow3
+				{ $amppercbow3
+					{		{ 0. } 
+						2	{ 1.4 } @type "quad_out"
+						5	{ 0. }
+					}
+				}
+
+		}
+
+CHORD (A4 -C#7) 1/10
+CHORD (F5 -C#7) 1/10
+CHORD (G#4 -C#7) 1/10
+CHORD (E4 -C#7) 1/10
+CHORD (E5 -C#7) 1/10
+CHORD (D5 -C#7) 1/10
+CHORD (F#4 -C#7) 1/10
+CHORD (C5 -C#7) 1/10
+CHORD (A#5 -C#7) 1/10
+NOTE G#5 1/10
+NOTE D5 1/10
+NOTE E5 1/10
+NOTE F4 1/10
+NOTE C5 1/10
+NOTE D7 1/10
+CHORD (A5 -D7) 1/10
+CHORD (E5 -D7) 1/10
+CHORD (A5 -D7) 1/10
+CHORD (C#5 -D7) 1/10
+NOTE G4 1/10
+NOTE F5 1/10
+NOTE D#5 1/10
+NOTE B4 1/10
+NOTE C5 1/10
+NOTE G3 1/10
+CHORD (-G3 G#4) 2/20
+CHORD (-G3 D5) 2/20
+CHORD (-G3 E4) 2/20
+CHORD (-G3 G#5) 2/20
+NOTE F7 1/10
+CHORD (D5 -F7) 1/10
+CHORD (E5 -F7) 1/10
+CHORD (C6 -F7) 1/10
+CHORD (A#4 -F7) 1/10
+CHORD (E5 -F7) 1/10
+CHORD (F5 -F7) 1/10
+CHORD (A5 -F7) 1/10
+CHORD (G#5 -F7) 1/10
+CHORD (F4 -F7) 1/10
+NOTE C#5 1/10
+NOTE G5 1/10
+NOTE D6 1/10
+NOTE F5 1/10
+NOTE B4 1/10
+NOTE C5 1/10
+NOTE F4 1/10
+NOTE E5 1/10
+NOTE D4 1/10
+NOTE F6 1/10
+
+; ----------- mes 33 --- beat 183.0 --- time signature 5/4
+
+NOTE B6 1/10 ;mes33
+CHORD (G5 -B6) 1/10
+CHORD (C#5 -B6) 1/10
+CHORD (A5 -B6) 1/10
+CHORD (C6 -B6) 1/10
+NOTE C#6 1/10
+NOTE G5 1/10
+NOTE A#5 1/10
+NOTE E5 1/10
+NOTE G#5 1/10
+NOTE D5 1/10
+NOTE F5 1/10
+NOTE G#5 1/10
+NOTE E5 1/10
+NOTE A#4 1/10
+NOTE C7 1/10
+CHORD (A5 -C7) 1/10
+CHORD (F5 -C7) 1/10
+CHORD (G#4 -C7) 1/10
+CHORD (D5 -C7) 1/10
+NOTE E3 1/10
+CHORD (-E3 E5) 2/20
+CHORD (-E3 A5) 2/20
+CHORD (-E3 C#5) 2/20
+CHORD (-E3 F4) 2/20
+NOTE D5 1/10
+NOTE A#5 1/10
+NOTE G5 1/10
+NOTE G#4 1/10
+NOTE D5 1/10
+NOTE G#7 1/10
+CHORD (E5 -G#7) 1/10
+CHORD (F5 -G#7) 1/10
+CHORD (E5 -G#7) 1/10
+CHORD (A#4 -G#7) 1/10
+NOTE D5 1/10
+NOTE A4 1/10
+NOTE G5 1/10
+NOTE C#6 1/10
+NOTE A5 1/10
+NOTE B5 1/10
+NOTE F5 1/10
+NOTE E4 1/10
+NOTE D5 1/10
+NOTE G#5 1/10
+NOTE F4 1/10
+NOTE C#5 1/10
+NOTE G4 1/10
+NOTE A4 1/10
+NOTE D#4 1/10
+
+; ----------- mes 34 --- beat 188.0 --- time signature 2/4
+
+NOTE A2 1/10 mes34
+
+
+	;obj::spat("gV1",11,"csound4","vbap",::spat_traj_fun,[::lissaj5,4,30,1,0.])
+
+	;ASCOtoCS_SYNTH e i "\"AddInHarmo\"" 0 (@b2sec(11)) 504 4
+	abort kampInharm
+	abort kfreqInharm
+	abort kcpsOsc
+
+	curve kampInharm @grain := 0.01s, @action := ASCOtoCS_SYNTH c kampInharm ($kampInharm*0.4)
+		{ $kampInharm
+			{		{ 0. } @type "quad"
+				1/4 { 0.9 } 
+				5	{ 0.03 } @type "cubic_out"
+				2 	{ 0.0 }
+			}
+		}
+
+	curve kfreqInharm @grain := 0.05, @action := ASCOtoCS_SYNTH c kfreqInharm (@midi2hz($kfreqInharm))
+			{ $kfreqInharm
+				{		{ 46. } @type "cubic"
+					5 	{ 108 }
+				}
+			}
+	curve kcpsOsc @grain := 0.005, @action := ASCOtoCS_SYNTH c cpsOsc $kcpsOsc
+			{ $kcpsOsc
+				{		{ 30.2 } ;@type "cubic"
+					5 	{ 0.5 }
+				}
+			}
+
+	::ASCOtoCS_SYNTH_Ant(11,96,0.,0.15,0.01,0.9,0.6,9,5)
+	obj::spat("mes34_synth",11,"csound5","vbap",::spat_traj_pos,[180,3,0.])
+	; obj::spat("grav_mes28_bis",45,"csound1","vbap",::spat_traj_pos,$C_1)
+
+	::SYNTH_Ant_curveBat([0.9,5,0.2])
+
+	curve ampsynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+		{ $kampAntes
+			{		{ 0. } @type "quad"
+				2	{ 0.4 } @type "quad_out"
+				4	{ 0. }
+			}
+		}
+	curve mfosynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c mfoAntes $mfoAntes
+		{ $mfoAntes
+			{		{ 6. } @type "quad"
+				5	{ 9. }
+			}
+		}
+
+
+NOTE C3 1/10
+NOTE G#3 1/10
+NOTE E3 1/10
+NOTE G3 1/10
+NOTE A#3 1/10
+NOTE C#4 1/10
+NOTE C4 1/10
+NOTE G#3 1/10
+NOTE B3 1/10
+NOTE D4 1/10
+NOTE F4 1/10
+NOTE E4 1/10
+NOTE F4 1/10
+NOTE F#4 1/10
+NOTE G#4 1/10
+NOTE G4 1/10
+NOTE C#5 1/10
+NOTE D5 1/10
+NOTE G5 1/10
+
+; ----------- mes 35 --- beat 190.0 --- time signature 3/4
+
+NOTE D#5 1/10 ;mes35
+NOTE A5 1/10
+NOTE F#5 1/10
+NOTE A5 1/10
+NOTE F5 1/10
+NOTE E6 1/10
+NOTE F6 1/10
+NOTE C#6 1/10
+NOTE C6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE F#6 1/10
+NOTE F6 1/10
+NOTE E7 1/10
+NOTE A#6 1/10
+NOTE C#7 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE D#6 1/10
+NOTE B6 1/10
+NOTE C7 1/10
+NOTE C#7 1/10
+NOTE D7 1/10
+NOTE F7 1/10
+NOTE B6 1/10
+NOTE D#7 1/10
+NOTE G#7 1/10
+NOTE G7 1/10
+NOTE C#7 1/10
+NOTE C8 1/10
+
+; ----------- mes 36 --- beat 193.0 --- time signature 4/4
+
+BPM 48
+NOTE 0 12 mes36 ; 4 mes36
+
+suivi 0
+GROUP @loose 
+{
+	::spat_trans("Player6",6)
+	CS-Player e i "\"Player6\"" 0 6 1018 ; mes36_attpiano
+	CS-Player c Player6.cps 1.
+	CS-Player c Player6.amp 1.
+
+
+	::spat_trans("Player5",25)
+	::bbpulse(25,3.5,0.1,5)
+
+	CS-Player c bb.kbeta 3.9
+	CS-Player c pulse.interv 0.9
+
+	curve bbpulse_mes36 @grain := $grain_curve, @action := { CS-Player c bb.amp ($bbamp*0.4)
+															CS-Player c pulse.amp ($bbamp*60) }
+		{$bbamp
+			{		{ 0. } @type "quad"
+				1	{ 0.02 }
+				12	{ 0.02 }
+				2	{ 0.01 }
+				2	{ 0.01 }
+				4	{ 0. }
+			}
+		}
+	curve intpulse_mes36 @grain := $grain_curve, @action := CS-Player c pulse.interv  $intpulse
+		{$intpulse
+			{		{ 0.05 } 
+				12	{ 1.3 }
+				7	{ 2. }
+			}
+		}
+
+	4 ::ASCOtoCS_SYNTH("g1",
+					dur = 20,
+					noteMidiL = 57,
+					kamp = 0.,
+					icnt = 5,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 7,
+					numSortie = 1)
+
+	::spat_trans("csound1",20)
+	;obj::spat("g1mes101",25,"csound3","vbap",::spat_traj_fun,[::lissaj2,3,45,0,0.])
+
+	curve ampG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*0.8)
+		{ $ampG1
+			{		{ 0. } @type "quad"
+				1	{ 0.7 } 
+				8 	{ 0.7 } 
+				7	{ 0. }
+			}
+		}
+	curve batG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.multidel $multidelG1
+		{ $multidelG1
+			{		{ 1.0001 } @type "cubic"
+				8 	{ 1.02 } 
+				7	{ 1.0001 }
+			}
+		}
+	curve iterG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.tempiter $tempiterG1
+		{ $tempiterG1
+			{		{ 11.3 } 
+				5 	{ 5.3 } 
+				5	{ 7.4 }
+				5	{ 0.3 }
+			}
+		}
+	curve freqG1 @grain := 0.01, @action := ASCOtoCS_SYNTH c g1.freq (@midi2hz($freqG1))
+		{ $freqG1
+			{		{ 57 } @type "quad"
+				8 	{ 56 }
+			}
+		}
+
+}
+
+/*
+; ----------- mes 37 --- beat 197.0 --- time signature 4/4
+
+NOTE 0 1/4 ;mes37
+NOTE G3 3/4
+NOTE 0 1/2
+TRILL ((A2 F4) (A2)) 3/2
+NOTE 0 1
+
+; ----------- mes 38 --- beat 201.0 --- time signature 4/4
+
+NOTE 0 1/2 ;mes38
+NOTE B3 1/2
+NOTE A#3 1/6
+NOTE C#4 1/6
+NOTE A3 1/6
+NOTE G#3 1/6
+NOTE 0 5/6
+TRILL ((A2 A4) (A2)) 3/2
+*/
+; ----------- mes 39 --- beat 205.0 --- time signature 7/4
+
+NOTE 0 7 D_mes39 ; 4/3 D_mes39
+
+	::spat_trans("Player6",16)
+	CS-Player e i "\"Player6\"" 0 16 1019 ; mes39_spectre
+	CS-Player c Player6.cps 1.
+	CS-Player c Player6.amp 0.2
+
+/*
+NOTE A1 2/3
+NOTE -A1 3
+NOTE 0 2
+*/
+; ----------- mes 40 --- beat 212.0 --- time signature 5/4
+
+BPM 68
+NOTE C0 13 D_mes40 ; 3/2 D_mes40
+
+
+
+GROUP
+	{
+		::ASCOtoCS_BUZZ_RM(numGen = "gb1",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 61,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						RMmodFreq = 18,
+						sortie = 2) 
+
+		obj::spat("mes40_gb1",21,"csound2","vbap",::spat_traj_xye,[[$XL1,$XC_2,"linear",13]])
+
+			curve ampGb1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb1.amp ($ampGb1*0.24)
+				{ $ampGb1
+					{		{ 0. } @type "quad_out"
+						1 { 1. } 
+						13 { 1. } @type "quad"
+						5 { 0.0 }
+					}
+				}
+
+		::ASCOtoCS_BUZZ(numGen = "gb2",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 62,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						sortie = 3) 
+
+		obj::spat("mes40_gb2",21,"csound3","vbap",::spat_traj_xye,[[$XR1,$XC_2,"linear",13]])
+
+			curve ampGb2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb2.amp ($ampGb2*0.1)
+				{ $ampGb2
+					{		{ 0. } @type "quad_out"
+						1 { 1. } 
+						13 { 1. } @type "quad"
+						5 { 0.0 }
+					}
+				}
+
+		::ASCOtoCS_BUZZ_RM(numGen = "gb3",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 68,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						RMmodFreq = 18,
+						sortie = 4) 
+
+		obj::spat("mes40_gb3",21,"csound4","vbap",::spat_traj_xye,[[$XL_1,$XC2,"linear",13]])
+
+			curve ampGb3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb3.amp ($ampGb3*0.28)
+				{ $ampGb3
+					{		{ 0. } @type "quad_out"
+						1 { 1. } 
+						13 { 1. } @type "quad"
+						5 { 0.0 }
+					}
+				}
+
+		::ASCOtoCS_BUZZ(numGen = "gb4",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 67,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						sortie = 5) 
+
+		obj::spat("mes40_gb4",21,"csound5","vbap",::spat_traj_xye,[[$XR_1,$XC2,"linear",13]])
+
+			curve ampGb4 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb4.amp ($ampGb4*0.15)
+				{ $ampGb4
+					{		{ 0. } @type "quad_out"
+						1 { 1. } 
+						13 { 1. } @type "quad"
+						5 { 0.0 }
+					}
+				}
+	}
+
+/*
+TRILL (A#4 ) 1/2
+TRILL (A#4 ) 1/8
+TRILL ((G#3 A#4) (G#3)) 3/8
+TRILL ((G#3 E5) (G#3)) 1/2
+TRILL (E5 ) 1/2
+TRILL (F4 ) 1/6
+TRILL ((C#3 F4) (C#3)) 1/3
+TRILL ((F3 F4) (F3)) 1/2
+CHORD (-F3 G5) 1/2
+
+; ----------- mes 41 --- beat 217.0 --- time signature 5/4
+
+NOTE -G5 1/4 ;mes41
+CHORD (B3 -G5) 1/4
+NOTE -B3 1/2
+TRILL (G#4 ) 1
+TRILL (G#4 ) 2/3
+TRILL ((E3 G#4) (E3)) 1/3
+NOTE 0 1/2
+TRILL (F5 ) 1
+NOTE 0 1/2
+
+; ----------- mes 42 --- beat 222.0 --- time signature 3/4
+
+NOTE 0 1/3 ;mes42
+TRILL (C5 ) 2/3
+NOTE 0 2
+*/
+; ----------- mes 43 --- beat 225.0 --- time signature 5/4
+
+NOTE 0 10 D_mes43 ; 1/3 D_mes43
+
+
+	obj::spat("Addinharm_mes43",15,"csound6","vbap",::spat_traj_pos,[180,3,0.])
+
+	ASCOtoCS_SYNTH e i "\"AddInHarmo\"" 0 (@b2sec(15)) 505 6
+
+		curve kampInharm @grain := 0.01s, @action := ASCOtoCS_SYNTH c kampInharm ($kampInharm*0.8)
+				{ $kampInharm
+					{		{ 0. } @type "quad"
+						10 	{ 1.7 } @type "cubic_out"
+						3 	{ 0.0 }
+					}
+				}
+
+		curve kfreqInharm @grain := 0.05, @action := ASCOtoCS_SYNTH c kfreqInharm (@midi2hz($kfreqInharm))
+				{ $kfreqInharm
+					{		{ 65. }
+						10 	{ 43. }
+					}
+				}
+		ASCOtoCS_SYNTH c cpsOsc 25
+
+/*
+NOTE F5 1/3
+NOTE B4 1/3
+TRILL (C#5 ) 2/3
+NOTE G4 1/3
+NOTE 0 1/5
+NOTE D#4 1/5
+NOTE D4 1/5
+NOTE C#4 1/5
+NOTE A3 1/5
+NOTE 0 1/5
+NOTE C4 1/5
+NOTE B3 2/5
+NOTE G#3 1/5
+NOTE 0 1/4
+NOTE G3 1/8
+NOTE E3 1/8
+NOTE D#3 1/8
+NOTE C#3 1/8
+NOTE B2 1/8
+NOTE C3 1/8
+
+; ----------- mes 44 --- beat 230.0 --- time signature 5/4
+
+NOTE 0 1/2 ;mes44
+NOTE A#2 1/2
+NOTE 0 1/3
+NOTE F2 1/6
+NOTE E2 1/6
+NOTE A#2 1/6
+NOTE A2 1/6
+NOTE F#2 3/4
+NOTE C2 1/4
+NOTE 0 2/3
+NOTE G1 1/3
+NOTE 0 1
+*/
+; ----------- mes 45 --- beat 235.0 --- time signature 5/4
+
+CHORD (D4 G4 G#4 B4) 1/6 D_mes45
+
+suivi 1
+
+	CS-Player e i "\"Player1\"" 0 5 1002 ; mes2_attakclav
+	CS-Player c Player1.cps 1.
+	CS-Player c Player1.amp 0.5
+	obj::spat("Play1_mes45",5,"Player1","vbap",::spat_traj_pos,[180.,1.8,0.])
+		
+GROUP
+	{	
+		::ASCOtoCS_SYNTH("g1",
+					dur = 13,
+					noteMidiL = 76,
+					kamp = 0.,
+					icnt = 6,
+					enviter = 0.1,
+					iter = 13.7,
+					del = 1.001,
+					mfo = 6,
+					numSortie = 1)
+
+		obj::spat("g1mes45",13,"csound1","vbap",::spat_traj_pos,$XC1)
+
+			curve ampG1 @grain := 0.01s, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*1.)
+				{ $ampG1
+					{		{ 0. } @type "quad"
+						1/4	{ 1.4 } 
+						15/2{ 0.9 }
+					}
+				}
+
+			curve delG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.multidel $multidelG1
+				{ $multidelG1
+					{		{ 1.01 } 
+						3	{ 1.0001 } @type "cubic"
+						3	{ 1.1 }
+						9	{ 1.0001 }
+					}
+				}
+
+		$ampPerc := 0.005
+		$notePerc := 67
+		$instrP := 4
+		obj::spat("Aleames45",10,"csound2","vbap",::spat_traj_fun,[::lissaj2inv,2,15,50,0.])
+
+		loop plicploc 1/6
+				{
+					$randInst := (@rand_int(16))+3
+					::ASCOtoCS_percu($randInst,1,$ampPerc,$notePerc,0.001,13.,2)
+				}
+			during [10]
+
+		curve ampPerc @grain := 0.01s
+			{ $ampPerc
+				{		{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.01 } @type "cubic"
+					1	{ 0.16 } @type "cubic_out"
+					1	{ 0.03 } @type "cubic"
+				}
+			}
+
+
+		::ASCOtoCS_BUZZ_RM(numGen = "gb1",
+						dur = 13,
+						amp = 0.,
+						noteMidi = 55,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						RMmodFreq = 18,
+						sortie = 3) 
+
+		obj::spat("mes45_gb1",13,"csound3","vbap",::spat_traj_xye,[[$XL1,$XC_2,"linear",9]])
+	;	::spat_trans("csound2",20)
+
+			curve ampGb1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb1.amp ($ampGb1*0.7)
+				{ $ampGb1
+					{		{ 0. } @type "quad_out"
+						1 { 1.5 } 
+						14/2 { 1.3 } 
+					}
+				}
+
+		::ASCOtoCS_BUZZ(numGen = "gb2",
+						dur = 13,
+						amp = 0.,
+						noteMidi = 41,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						sortie = 4) 
+
+		obj::spat("mes45_gb2",13,"csound4","vbap",::spat_traj_xye,[[$XR1,$XC_2,"linear",8]])
+	;	::spat_trans("csound2",20)
+
+			curve ampGb2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb2.amp ($ampGb2*0.55)
+				{ $ampGb2
+					{		{ 0. } @type "quad_out"
+						1 { 1. } 
+					}
+				}
+	}
+
+
+CHORD (G3 D4 E4 F4) 1/6
+CHORD (F3 D#4 F4 G4) 1/6
+CHORD (C3 D4 E4 F4 G#4) 1/6
+CHORD (B2 C4 C#4 F4 G4) 1/6
+CHORD (D3 D#3 G4 G#4 C5) 1/6
+CHORD (C3 F4 G4 G#4) 1/6
+CHORD (F#3 E4 F4 G4) 1/6
+CHORD (F3 C4 C#4 D4) 1/6
+CHORD (D#3 E4 F4 G4 A4) 1/6
+CHORD (D3 D4 D#4 E4) 1/6
+CHORD (G3 C4 D4 E4 F4) 1/6
+CHORD (G3 D4 E4) 1/6
+CHORD (-G3 C#4 D4 E4 F4) 1/6
+CHORD (F#3 G3 G4 A4 B4) 1/6
+CHORD (C4 F4 G4 G#4 A4) 1/6
+CHORD (G3 G#3 F4 G4 A4) 1/6
+CHORD (F3 C4 D4 E4) 1/6
+CHORD (F#3 G3 C#4 D4) 1/6
+CHORD (G3 A#3 C4 D#4 F4) 1/6
+CHORD (A3 D4 F4 F#4 G4) 1/6
+CHORD (G3 A3 E4 G4 G#4) 1/6
+CHORD (A3 C4 C#4 F4 G4 B4) 1/6
+CHORD (E3 G3 D4 D#4 F4 G4) 1/6
+CHORD (G3 G#3 C4 D4) 1/6
+CHORD (F3 G3 -C4 -D4) 1/6
+CHORD (G3 B3 E4 F4) 1/6
+CHORD (A3 A#3 D#4 E4 F4) 1/6
+CHORD (F#3 G3 C4 D4 D#4) 1/6
+CHORD (G3 G#3 D4 D#4 G#4) 1/6
+
+; ----------- mes 46 --- beat 240.0 --- time signature 5/4
+
+CHORD (F#3 G3 C4 E4 F4) 1/6 ;mes46
+CHORD (-F#3 -G3 -C4 D#4 E4 F4) 1/6
+CHORD (-F#3 -G3 C4 D4 E4) 1/6
+CHORD (-F#3 -G3 -C4 D4 D#4) 1/6
+CHORD (G3 B3 D4 F4 G4) 1/6
+CHORD (G#3 C4 D#4 F#4 G4) 1/6
+CHORD (C4 D4 F4 F#4 G4) 1/6
+CHORD (A#3 D4 D#4 F4 G4) 1/6
+CHORD (A3 C#4 F4 G4 G#4) 1/6
+CHORD (C4 D4 D#4) 1/6
+CHORD (G3 C#4 D4 G4 G#4 B4) 1/6
+CHORD (G#3 B3 C4 D4 F#4 G4 G#4) 1/6
+CHORD (F3 G4) 1/6
+CHORD (-F3 F#4 G4) 1/6
+CHORD (F#3 E4 F4 G4) 1/6
+CHORD (F#3 G3 D4 D#4 F4 G4) 1/6
+CHORD (G#3 C#4 D4 F4 G4) 1/6
+CHORD (G3 G#3 C4 D4 D#4 F4 G4) 1/6
+CHORD (E3 F3 G3 F#4 G4 G#4) 1/6
+CHORD (D3 G3 E4 G4 G#4 C5) 1/6
+CHORD (D3 F3 E4 G4 G#4) 1/6
+CHORD (F3 G3 G#3 G4 G#4 B4) 1/6
+CHORD (D3 D#3 F4 G4) 1/6
+CHORD (D#3 G3 F4 F#4 G4) 1/6
+NOTE 0 1
+
+; ----------- mes 47 --- beat 245.0 --- time signature 5/4
+
+BPM 56
+CHORD (G2 D3 G3) 15 mes47 ; 1/6 mes47
+
+	suivi 0
+
+	CS-Player e i "\"Player1\"" 0 21 1020 ; mes47_tauleSol
+	CS-Player c Player1.cps 1.
+	CS-Player c Player1.amp 0.5
+	::spat_trans("Player1",21)
+
+	curve ampG1 @grain := 0.01s, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*0.9)
+		{ $ampG1
+			{		{ $ampG1 } @type "cubic"
+				1/4	{ 0. }
+			}
+		}
+	curve ampGb1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb1.amp ($ampGb1*0.5)
+		{ $ampGb1
+			{		{ $ampGb1 } @type "quad"
+				1/4 { 0.0 }
+			}
+		}
+	curve ampGb2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb2.amp ($ampGb2*0.35)
+		{ $ampGb2
+			{		{ $ampGb2 } @type "quad"
+				1/4 { 0.0 }
+			}
+		}
+
+/*
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 D4 F4 G4 A4 B4) 1/6
+CHORD (G2 D3 G3 -D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (-G2 -D3 -G3 D4 F4 G4 A4 B4) 1/6
+CHORD (G2 D3 G3 -D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+
+; ----------- mes 48 --- beat 250.0 --- time signature 5/4
+
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6 ;mes48
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 B4 C#5 D#5 E5 F5) 1/6
+CHORD (G2 D3 G3 -B4 -C#5 -D#5 -E5 -F5) 1/6
+CHORD (-G2 -D3 -G3 C#5 D#5 E5 F5 G5) 1/6
+CHORD (G2 D3 G3 -C#5 -D#5 -E5 -F5 -G5) 1/6
+CHORD (-G2 -D3 -G3 B4 C#5 D#5 E5 F5) 1/6
+CHORD (G2 D3 G3 -B4 -C#5 -D#5 -E5 -F5) 1/6
+CHORD (-G2 -D3 -G3 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+
+; ----------- mes 49 --- beat 255.0 --- time signature 5/4
+
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6 ;mes49
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 D4 F4 G4 A4 B4) 1/6
+CHORD (G2 D3 G3 -D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4) 1/6
+*/
+; ----------- mes 50 --- beat 260.0 --- time signature 5/4
+BPM 56
+CHORD (D7 E7) 31/2 D_mes50
+
+	::ASCOtoCS_SYNTH_Ant(20,98,0.,0.15,0.01,0.9,0.14,9,1)
+	obj::spat("grav_mes28",20,"csound1","vbap",::spat_traj_pos,$C2)
+	; obj::spat("grav_mes28_bis",45,"csound1","vbap",::spat_traj_pos,$C_1)
+
+	::SYNTH_Ant_curveBat([0.3,7,0.6,8,0.2])
+
+	curve ampG8 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+		{ $kampAntes
+			{		{ 0. } @type "quad"
+				7	{ 0.12 } @type "quad_out"
+				8	{ 0. }
+			}
+		}
+	curve mfoG8 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c mfoAntes $mfoAntes
+		{ $mfoAntes
+			{		{ 9. } @type "quad"
+				16	{ 7. }
+			}
+		}
+
+	CS-Player e i "\"Player2\"" 0 18 1021 ; mes50_tauleAig
+	CS-Player c Player2.cps 1.
+	CS-Player c Player2.amp 0.2
+	::spat_trans("Player2",21)
+
+	9 CS-Player e i "\"Player3\"" 0 16 1023 ; mes53_cymbChin
+	CS-Player c Player3.cps 1.
+	CS-Player c Player3.amp 0.5
+	::spat_trans("Player3",16)
+
+	3 CS-Player e i "\"Player4\"" 0 13 1024 ; mes53_tam
+	CS-Player c Player4.cps 1.
+	CS-Player c Player4.amp 0.5
+	::spat_trans("Player4",13)
+
+;NOTE 0 2
+
+; ----------- mes 51 --- beat 265.0 --- time signature 5/4
+
+;NOTE 0 5
+
+; ----------- mes 52 --- beat 270.0 --- time signature 5/4
+
+;NOTE 0 5 mes52
+
+; ----------- mes 53 --- beat 275.0 --- time signature 5/4
+
+;NOTE 0 1/2 
+NOTE A4 9/2 D_mes53 ; 1/12 D_mes53
+
+	CS-Player e i "\"Player5\"" 0 16 1025 ; mes53_metal2ext1
+	CS-Player c Player5.cps 1.
+	CS-Player c Player5.amp 0.7
+	obj::spat("Play5_mes53",16,"Player5","vbap",::spat_traj_xye,[[$XC2,$XL_2,"linear",3/2]])
+	
+	3 CS-Player e i "\"Player6\"" 0 21 1026 ; mes53_metal2ext2
+	CS-Player c Player6.cps 1.
+	CS-Player c Player6.amp 0.8
+	::spat_trans("Player6",21)
+	
+/*
+NOTE B4 1/12
+CHORD (A4 A#4) 1/12
+CHORD (B4 C#5) 1/12
+CHORD (A#4 C5) 1/12
+CHORD (A4 C#5) 1/12
+NOTE C5 1/12
+NOTE A4 1/12
+NOTE 0 5/6
+NOTE 0 1
+NOTE A4 1/12
+NOTE B4 1/12
+CHORD (A4 A#4) 1/12
+CHORD (A4 B4 F5) 1/12
+CHORD (A#4 B4 E5) 1/12
+CHORD (A#4 C#5 F5) 1/12
+CHORD (E5 F5) 1/12
+CHORD (C#5 E5) 1/12
+NOTE C#5 1/3
+NOTE 0 1
+*/
+; ----------- mes 54 --- beat 280.0 --- time signature 5/4
+
+NOTE 0 5 D_mes54 ; 1/2 D_mes54
+
+	::ASCOtoCS_percuBow("percbow1",17,25,55,2)
+	::spat_trans("csound2",25)
+
+		curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp ($amppercbow1*0.5)
+			{ $amppercbow1
+				{		{ 0. } 
+					2	{ 0.5 } @type "quad_out"
+					3	{ 0.03 }
+					8	{ 0.6 } @type "cubic_out"
+					8	{ 0. }
+				}
+			}
+/*
+NOTE C5 1/12
+NOTE C#5 1/12
+NOTE C5 1/12
+CHORD (C5 C#5) 1/12
+CHORD (A4 C#5) 1/12
+CHORD (C5 E5) 1/12
+CHORD (C#5 F5) 1/12
+CHORD (A4 B5) 1/12
+CHORD (E5 A5) 1/12
+CHORD (F5 A#5) 1/12
+CHORD (B5 D6) 1/12
+CHORD (A5 E6) 1/12
+CHORD (B5 C#6) 1/12
+CHORD (C6 D6) 1/12
+CHORD (G#5 E6) 1/12
+CHORD (G5 C#6) 1/12
+CHORD (E5 C6) 1/12
+CHORD (A#4 G#5) 1/12
+CHORD (C#5 G5) 1/12
+CHORD (C5 E5) 1/12
+CHORD (A#4 C#5) 1/12
+CHORD (A4 C#5) 1/12
+NOTE A#4 1/12
+NOTE A4 1/12
+NOTE 0 3/2
+NOTE 0 1/3
+NOTE G4 1/12
+NOTE F#4 1/12
+CHORD (G4 A#4) 1/12
+CHORD (F#4 A4) 1/12
+CHORD (G#4 A#4) 1/12
+CHORD (G4 A4) 1/12
+NOTE F#4 1/12
+NOTE C#4 1/12
+*/
+; ----------- mes 55 --- beat 285.0 --- time signature 5/4
+
+CHORD (G2 C#3 G3) 15 D_mes55 ; 1/6 mes55
+
+
+	::ASCOtoCS_SYNTH_Ant(22,43,0.,0.15,0.01,0.9,0.14,7,3)
+	obj::spat("grav_mes55",22,"csound3","vbap",::spat_traj_pos,$C2)
+	; obj::spat("grav_mes28_bis",45,"csound1","vbap",::spat_traj_pos,$C_1)
+
+	::SYNTH_Ant_curveBat([0.,7,0.7,7,0.])
+
+	curve ampG8 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+		{ $kampAntes
+			{		{ 0. } @type "quad"
+				1	{ 0.01 } @type "quad"
+				6	{ 0.7 } @type "quad_out"
+				8	{ 0.04 } @type "quad_out"
+				4	{ 0. }
+			}
+		}
+	
+/*
+CHORD (-G2 -C#3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 D4 F4 G4 A4 B4) 1/6
+CHORD (G2 D3 G3 -D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (-G2 -D3 -G3 D4 F4 G4 A4 B4) 1/6
+CHORD (G2 D3 G3 -D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+
+; ----------- mes 56 --- beat 290.0 --- time signature 5/4
+
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6 ;mes56
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 B4 C#5 D#5 E5 F5) 1/6
+CHORD (G2 D3 G3 -B4 -C#5 -D#5 -E5 -F5) 1/6
+CHORD (-G2 -D3 -G3 C#5 D#5 E5 F5 G5) 1/6
+CHORD (G2 D3 G3 -C#5 -D#5 -E5 -F5 -G5) 1/6
+CHORD (-G2 -D3 -G3 B4 C#5 D#5 E5 F5) 1/6
+CHORD (G2 D3 G3 -B4 -C#5 -D#5 -E5 -F5) 1/6
+CHORD (-G2 -D3 -G3 B4 C#5 D#5 E5 F5) 1/6
+CHORD (G2 D3 G3 -B4 -C#5 -D#5 -E5 -F5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5 E5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5 -E5) 1/6
+CHORD (-G2 -D3 -G3 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5 D#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+
+; ----------- mes 57 --- beat 295.0 --- time signature 5/4
+
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6 ;mes57
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 F4 A4 B4 C#5) 1/6
+CHORD (G2 D3 G3 -F4 -A4 -B4 -C#5) 1/6
+CHORD (-G2 -D3 -G3 D4 F4 G4 A4 B4) 1/6
+CHORD (G2 D3 G3 -D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 C#4 F4 G4 A4) 1/6
+CHORD (G2 D3 G3 -C#4 -F4 -G4 -A4) 1/6
+CHORD (-G2 -D3 -G3 B3 D4 F4 G4) 1/6
+CHORD (G2 D3 G3 -B3 -D4 -F4 -G4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4 G4) 1/6
+CHORD (G2 D3 G3 -B3 -C#4 -F4 -G4) 1/6
+CHORD (-G2 -D3 -G3 B3 C#4 F4) 1/6
+
+*/
+; ----------- mes 58 --- beat 300.0 --- time signature 4/4
+
+NOTE A5 14 D_mes58 ; 1/2 mes58
+
+	CS-Player e i "\"Player1\"" 0 46 1027 ; mes58_loinMet
+	CS-Player c Player1.cps 0.61
+	CS-Player c Player1.amp 0.2
+	obj::spat("mes58_Play1",46,"Player1","vbap",::spat_traj_pos,$C2)
+
+	::ASCOtoCS_percuBow("percbow2",8,25,69.1,4)
+	::spat_trans("csound4",25)
+
+		curve ampbow2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.amp ($amppercbow2*0.2)
+			{ $amppercbow2
+				{		{ 0. } 
+					2	{ 0.4 } @type "quad_out"
+					3	{ 0.03 }
+					3	{ 0.4 } @type "cubic_out"
+					3	{ 0.03 }
+					3	{ 0.4 } @type "cubic_out"
+					8	{ 0. }
+				}
+			}
+
+	4 ::ASCOtoCS_percuBow("percbow3",17,18,82,5)
+	obj::spat("mes58_bow3",18,"csound5","vbap",::spat_traj_pos,$C2)
+
+		curve ampbow3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow3.amp ($amppercbow3*0.5)
+			{ $amppercbow3
+				{		{ 0. } 
+					2	{ 0.4 } @type "quad_out"
+					3	{ 0.03 }
+					3	{ 0.4 } @type "cubic_out"
+					8	{ 0. }
+				}
+			}
+
+/*
+
+NOTE 0 3/2
+NOTE 0 1/2
+CHORD (F#2 A#5) 1/2 ; harmonics
+NOTE -F#2 1 ; harmonics
+
+; ----------- mes 59 --- beat 304.0 --- time signature 4/4
+
+NOTE -F#2 2 ;mes59
+NOTE 0 4/3
+NOTE G6 2/3
+
+; ----------- mes 60 --- beat 308.0 --- time signature 4/4
+
+NOTE G6 3/5 ;mes60
+NOTE G6 3/5
+NOTE G6 3/5
+NOTE G6 3/5
+NOTE G6 3/5
+NOTE 0 1
+
+; ----------- mes 61 --- beat 312.0 --- time signature 4/4
+
+NOTE 0 1/14 ;mes61
+NOTE A#4 1/14
+NOTE F6 1/14
+NOTE C6 1/13
+NOTE G#3 1/14
+NOTE D4 1/14
+NOTE C5 1/13
+NOTE G6 1/14
+NOTE D#4 1/14
+NOTE B4 1/14
+NOTE F3 1/13
+NOTE G#5 1/14
+NOTE E5 1/14
+NOTE C#6 1/13
+NOTE 0 4/3
+*/
+
+NOTE G6 13 D_mes61_2 ; 2/3 mes61_2
+
+	::ASCOtoCS_BUZZ_RM(numGen = "gb1",
+					dur = 16,
+					amp = 0.,
+					noteMidi = 91,
+					ktable = 7,
+					klh = 1,
+					kmul = 0.5,
+					knh = 21,
+					RMmodFreq = 7,
+					sortie = 6) 
+
+	obj::spat("mes45_gb1",16,"csound6","vbap",::spat_traj_xye,[[$XC1,$XR2,"linear",5]])
+;	::spat_trans("csound2",20)
+
+		curve ampGb1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb1.amp ($ampGb1*0.35)
+			{ $ampGb1
+				{		{ 0. } @type "quad"
+					1/2	{ 0.6 } @type "quad_out"
+					15	{ 0. }
+				}
+			}
+
+	CS-Player e i "\"Player2\"" 0 45 1028 ; mes60_pianoIter
+	CS-Player c Player2.cps 0.7
+	CS-Player c Player2.amp 0.07
+	::spat_trans("Player2",45)
+
+/*
+NOTE 0 3/4
+NOTE G8 1/4
+
+; ----------- mes 62 --- beat 316.0 --- time signature 4/4
+
+NOTE 0 9/8 ;mes62
+NOTE G8 7/8
+NOTE 0 2/3
+NOTE G8 1/3
+NOTE 0 1
+
+; ----------- mes 63 --- beat 320.0 --- time signature 4/4
+
+NOTE G8 1 ;mes63
+NOTE 0 4/3
+NOTE G8 2/3
+NOTE 0 1
+
+; ----------- mes 64 --- beat 324.0 --- time signature 7/4
+
+CHORD (F#2 A#5) 1/2 ;mes64 ; harmonics
+NOTE -F#2 1/2
+NOTE -F#2 1
+NOTE -F#2 1
+NOTE -F#2 3
+NOTE 0 1
+
+*/
+; ----------- mes 65 --- beat 331.0 --- time signature 5/4
+
+CHORD (G2 D3 G3 B3 D4 F4 G4 A4 B4 C#5 D5 E5 F5) 15 D_mes65 ; 1/8 D_mes65
+
+	CS-Player c Player2.amp 0.
+
+	curve ampP2 @grain := 0.005s, @action := CS-Player c Player2.amp $ampP2
+		{ $ampP2
+			{		{ 0. } @type "quad"
+				8	{ 0.3 } @type "quad_out"
+				8	{ 0. }
+			}
+		}
+/*
+CHORD (-B3 -D4 -F4 -G4 -A4 -B4 -C#5 -D5 -E5 -F5) 1/25
+CHORD (B3 C#4 F4) 1/3
+CHORD (B3 C#4 F4 G4) 1/3
+CHORD (C#4 F4 G4) 1/6
+CHORD (-C#4 -F4 -G4) 1/6
+CHORD (B3 C#4 F4 G4 A4) 1/3
+CHORD (B3 C#4 F4 G4 A4) 1/3
+CHORD (C#4 F4 G4 A4) 1/6
+CHORD (-C#4 -F4 -G4 -A4) 1/6
+CHORD (B3 D4 F4 G4 A4) 1/3
+CHORD (B3 D4 F4 G4 A4) 1/3
+CHORD (D4 F4 G4 A4 B4) 1/6
+CHORD (-D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (D4 F4 G4 A4 B4) 1/3
+CHORD (F4 A4 B4 C#5) 1/3
+CHORD (A4 B4 C#5) 1/6
+CHORD (-A4 -B4 -C#5) 1/6
+CHORD (F4 A4 B4 C#5) 1/3
+CHORD (F4 A4 B4 C#5) 1/3
+CHORD (F4 A4 B4 C#5 D#5) 1/6
+
+; ----------- mes 66 --- beat 336.0 --- time signature 5/4
+
+CHORD (-F4 -A4 -B4 -C#5 -D#5) 1/6 ;mes66
+CHORD (F4 A4 B4 C#5 D#5) 1/3
+CHORD (F4 A4 B4 C#5 D#5) 1/3
+CHORD (F4 A4 B4 C#5 D#5) 1/6
+CHORD (-F4 -A4 -B4 -C#5 -D#5) 1/6
+CHORD (A4 B4 C#5 D#5 E5) 1/3
+CHORD (A4 B4 C#5 D#5 E5) 1/3
+CHORD (B4 C#5 D#5 E5 F5) 1/6
+CHORD (-B4 -C#5 -D#5 -E5 -F5) 1/6
+CHORD (C#5 D#5 E5 F5 G5) 1/3
+CHORD (C#5 D#5 E5 F5 G5) 1/3
+CHORD (B4 C#5 D#5 E5 F5) 1/6
+CHORD (-B4 -C#5 -D#5 -E5 -F5) 1/6
+CHORD (A4 B4 C#5 D#5 E5) 1/3
+CHORD (A4 B4 C#5 D#5 E5) 1/3
+CHORD (A4 B4 C#5 D#5) 1/6
+CHORD (-A4 -B4 -C#5 -D#5) 1/6
+CHORD (F4 A4 B4 C#5 D#5) 1/3
+CHORD (F4 A4 B4 C#5 D#5) 1/3
+CHORD (F4 A4 B4 C#5) 1/6
+
+; ----------- mes 67 --- beat 341.0 --- time signature 5/4
+
+CHORD (-F4 -A4 -B4 -C#5) 1/6 ;mes67
+CHORD (F4 A4 B4 C#5) 1/3
+CHORD (F4 A4 B4 C#5) 1/3
+CHORD (D4 F4 G4 A4 B4) 1/6
+CHORD (-D4 -F4 -G4 -A4 -B4) 1/6
+CHORD (B3 D4 F4 G4 A4) 1/3
+CHORD (B3 D4 F4 G4 A4) 1/3
+CHORD (C#4 F4 G4 A4) 1/6
+CHORD (-C#4 -F4 -G4 -A4) 1/6
+CHORD (B3 C#4 F4 G4 A4) 1/3
+CHORD (B3 C#4 F4 G4 A4) 1/3
+CHORD (C#4 F4 G4 A4) 1/6
+CHORD (-C#4 -F4 -G4 -A4) 1/6
+CHORD (B3 D4 F4 G4 A4) 1/3
+CHORD (B3 C#4 F4 G4 A4) 1/3
+CHORD (C#4 F4 G4 A4) 1/6
+CHORD (-C#4 -F4 -G4 -A4) 1/6
+CHORD (B3 D4 F4 G4) 1/3
+CHORD (B3 C#4 F4 G4) 1/3
+CHORD (B3 D4 F4 G4 A4 B4 C#5 D5 E5 F5) 1/6
+
+
+; ----------- mes 68 --- beat 346.0 --- time signature 6/4
+
+NOTE 0 1/2 
+*/
+NOTE A6 12 D_mes68 ; 1/12 D_mes68
+
+GROUP 
+{	::ASCOtoCS_BUZZ_RM(numGen = "gb2",
+					dur = 14,
+					amp = 0.,
+					noteMidi = 93,
+					ktable = 7,
+					klh = 1,
+					kmul = 0.5,
+					knh = 24,
+					RMmodFreq = 11.5,
+					sortie = 6) 
+
+	obj::spat("mes45_gb2",14,"csound6","vbap",::spat_traj_xye,[[$XC1,$XR2,"linear",10]])
+;	::spat_trans("csound2",20)
+
+		curve ampGb2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb2.amp ($ampGb2*0.7)
+			{ $ampGb2
+				{		{ 0. } @type "quad_out"
+					1/4	{ 0.6 } 
+					11	{ 1.2 } @type "exp"
+					1/4	{ 0. }
+				}
+			}
+
+	::ASCOtoCS_SYNTH("g1",
+				dur = 20,
+				noteMidiL = 88,
+				kamp = 0.,
+				icnt = 9,
+				enviter = 0.3,
+				iter = 0.7,
+				del = 1.001,
+				mfo = 7,
+				numSortie = 1)
+
+	obj::spat("g1mes1",20,"csound1","vbap",::spat_traj_xye,[[$XC1,$XL2,"linear",10]])
+
+		curve ampG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.amp ($ampG1*0.08)
+			{ $ampG1
+				{		{ 0. } @type "quad_out"
+					1	{ 0.6 } 
+					8	{ 1.2 } @type "quad_out"
+					9/4	{ 0. }
+				}
+			}
+		curve batG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.multidel $multidelG1
+			{ $multidelG1
+				{		{ 1.00001 } @type "cubic"
+					11 	{ 1.02 } 
+				}
+			}
+		curve freqG1 @grain := 0.01, @action := ASCOtoCS_SYNTH c g1.freq (@midi2hz($freqG1))
+			{ $freqG1
+				{		{ 88 } 
+					4 	{ 88.5 } 
+					4	{ 88 } 
+					4	{ 87.5 } 
+				}
+			}
+		curve iterG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.tempiter $tempiterG1
+			{ $tempiterG1
+				{		{ 9.3 } 
+					6	{ 5.4 }
+					6	{ 11.3 }
+				}
+			}
+
+	4 CS-Player e i "\"Player4\"" 0 9 1029 ; mes69_roll
+	CS-Player c Player4.cps 1.
+	CS-Player c Player4.amp 0.2
+	::spat_trans("Player4",9)		
+
+	17/4 CS-Player e i "\"Player3\"" 0 5 1022 ; tauleGliss
+	CS-Player c Player3.cps 0.9
+	CS-Player c Player3.amp 0.9
+	::spat_trans("Player3",5)
+
+
+
+}
+/*
+NOTE B6 1/12
+NOTE A#6 1/12
+NOTE G6 1/12
+NOTE A#6 1/12
+NOTE E7 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE E7 1/12
+NOTE G6 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE E7 1/12
+NOTE A#6 1/12
+NOTE D6 1/12
+NOTE A6 1/12
+NOTE G6 1/12
+NOTE A6 1/12
+NOTE A#6 1/12
+NOTE D6 1/12
+NOTE E7 1/12
+NOTE A6 1/12
+NOTE G6 1/12
+NOTE A6 1/12
+NOTE D6 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE A#6 1/12
+NOTE D6 1/12
+NOTE E7 1/12
+NOTE A6 1/12
+NOTE F6 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE D6 1/12
+NOTE E7 1/12
+NOTE A#6 1/12
+NOTE E7 1/12
+NOTE A6 1/12
+NOTE F6 1/12
+NOTE E7 1/12
+NOTE D6 1/12
+NOTE A6 1/12
+NOTE D#7 1/12
+NOTE F6 1/12
+NOTE D6 1/12
+NOTE A6 1/12
+NOTE A#6 1/12
+NOTE G6 1/12
+NOTE D#7 1/12
+NOTE D6 1/12
+NOTE A6 1/12
+NOTE G6 1/12
+NOTE A6 1/12
+NOTE A#6 1/12
+NOTE E7 1/12
+NOTE D#7 1/12
+NOTE F6 1/12
+NOTE D6 1/12
+NOTE E7 1/12
+NOTE G6 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE D6 1/12
+NOTE F6 1/12
+NOTE D#7 1/12
+
+; ----------- mes 69 --- beat 352.0 --- time signature 6/4
+
+NOTE A6 1/12 ;mes69
+NOTE A#6 1/12
+NOTE E7 1/12
+NOTE G6 1/12
+NOTE F6 1/12
+NOTE A#6 1/12
+NOTE D6 1/12
+NOTE E7 1/12
+NOTE D6 1/12
+NOTE F6 1/12
+NOTE G6 1/12
+NOTE F6 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE D#7 1/12
+NOTE F6 1/12
+NOTE G6 1/12
+NOTE D6 1/12
+NOTE A6 1/12
+NOTE E7 1/12
+NOTE D#7 1/12
+NOTE E7 1/12
+NOTE F6 1/12
+NOTE A6 1/12
+NOTE G6 1/12
+NOTE D6 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE E7 1/12
+NOTE F6 1/12
+NOTE A6 1/12
+NOTE D7 1/12
+NOTE E7 1/12
+NOTE D#7 1/12
+NOTE G6 1/12
+NOTE F6 1/12
+NOTE A#6 1/12
+NOTE D6 1/12
+NOTE F6 1/12
+NOTE A6 1/12
+NOTE G6 1/12
+NOTE A6 1/12
+NOTE D7 1/12
+NOTE E6 1/12
+NOTE A#6 1/12
+NOTE G6 1/12
+NOTE A6 1/12
+NOTE F6 1/12
+NOTE E7 1/12
+NOTE A#6 1/12
+NOTE D6 1/12
+NOTE F6 1/12
+NOTE E7 1/12
+NOTE G6 1/12
+NOTE A#6 1/12
+NOTE A6 1/12
+NOTE E7 1/12
+NOTE D6 1/12
+NOTE G6 1/12
+NOTE F6 1/12
+NOTE D7 1/12
+NOTE A#6 1/12
+NOTE E6 1/12
+NOTE A6 1/12
+NOTE G6 1/12
+NOTE D#7 1/12
+NOTE F6 1/12
+NOTE A6 1/12
+NOTE G6 1/12
+NOTE A#6 1/12
+NOTE D6 1/12
+CHORD (A6 D#7 E7) 1/12
+*/
+; ----------- mes 70 --- beat 358.0 --- time signature 4/4
+
+BPM 38
+NOTE 0 14 D_mes70 ; 4 mes70
+
+GROUP
+	{
+		::spat_trans("Player5",29)
+		::bbpulse(29,3.5,0.1,5)
+
+		CS-Player c bb.kbeta 4.8
+		CS-Player c pulse.interv 3.5
+
+		curve bbpulse_mes70 @grain := $grain_curve, @action := { CS-Player c bb.amp ($bbamp*0.05)
+																CS-Player c pulse.amp ($bbamp*70) }
+			{$bbamp
+				{		{ 0. } @type "quad"
+					1/2	{ 0.02 }
+					23	{ 0.02 }
+					4	{ 0. }
+				}
+			}
+
+	2	::ASCOtoCS_SYNTH("g2",
+					dur = 30,
+					noteMidiL = 103,
+					kamp = 0.,
+					icnt = 4,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.01,
+					mfo = 6,
+					numSortie = 2)
+
+		obj::spat("g2mes1",30,"csound2","vbap",::spat_traj_fun,[::lissaj2,5,45,0,0.])
+
+			curve ampG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.amp ($ampG2*0.4)
+				{ $ampG2
+					{		{ 0. } @type "quad"
+						2	{ 0.2 } 
+						16	{ 0.2 }
+						10	{ 0. }
+					}
+				}
+			curve batG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.multidel $multidelG2
+				{ $multidelG2
+					{		{ 1.01 } @type "cubic"
+						8 	{ 1.02 } 
+						5	{ 1.0001 }
+					}
+				}
+			curve freqG2 @grain := 0.01, @action := ASCOtoCS_SYNTH c g2.freq (@midi2hz($freqG2))
+				{ $freqG2
+					{		{ 103 } 
+						6 	{ 103.5 } 
+						12	{ 106 } 
+					}
+				}
+			curve iterG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.tempiter $tempiterG2
+				{ $tempiterG2
+					{		{ 9.3 } 
+						10	{ 5.4 }
+						10	{ 11.3 }
+					}
+				}
+
+	1/2	::ASCOtoCS_SYNTH("g3",
+					dur = 30,
+					noteMidiL = 98,
+					kamp = 0.,
+					icnt = 4,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 5,
+					numSortie = 2)
+
+		obj::spat("g3mes1",30,"csound2","vbap",::spat_traj_fun,[::lissaj2inv,5,35,20,0.])
+
+			curve ampG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.amp ($ampG3*0.4)
+				{ $ampG3
+					{		{ 0. } @type "quad"
+						3	{ 0.2 } 
+						16	{ 0.2 }
+						7	{ 0. }
+					}
+				}
+			curve freqG3 @grain := 0.01, @action := ASCOtoCS_SYNTH c g3.freq (@midi2hz($freqG3))
+				{ $freqG3
+					{		{ 97.5 } 
+						12 	{ 98.5 } 
+						12	{ 98. } 
+						6	{ 98.5 } 
+					}
+				}
+			curve iterG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.tempiter $tempiterG3
+				{ $tempiterG3
+					{		{ 1.3 } 
+						8	{ 5.4 }
+						8	{ 0.3 }
+						8	{ 13. }
+					}
+				}
+	}
+
+/*
+; ----------- mes 71 --- beat 362.0 --- time signature 4/4
+
+CHORD (A3 A#3) 1 ;mes71
+NOTE 0 7/3
+CHORD (A3 A#3) 2/3
+
+; ----------- mes 72 --- beat 366.0 --- time signature 4/4
+
+NOTE 0 1 ;mes72
+NOTE A2 1
+NOTE 0 5/4
+NOTE F#3 3/4
+
+; ----------- mes 73 --- beat 370.0 --- time signature 4/4
+
+NOTE 0 1/2 
+NOTE A2 1
+NOTE 0 1
+
+*/
+
+NOTE C4 10 D_mes73 ; 1/8 D_mes73 
+
+	CS-Player e i "\"Player3\"" 0 16 1030 ; mes73_seqPiano
+	CS-Player c Player3.cps 0.95
+	CS-Player c Player3.amp 0.55
+	::spat_trans("Player3",16)
+
+/*
+NOTE B3 1/8
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE C4 1/11
+NOTE B3 1/11
+NOTE A#3 1/11
+NOTE A3 1/11
+NOTE G#3 1/11
+NOTE C4 1/11
+NOTE B3 1/11
+NOTE A#3 1/11
+NOTE A3 1/11
+NOTE G#3 1/11
+NOTE G3 1/11
+
+; ----------- mes 74 --- beat 374.0 --- time signature 4/4
+
+NOTE 0 2 ;mes74
+NOTE F#3 1/2
+NOTE 0 3/2
+
+; ----------- mes 75 --- beat 378.0 --- time signature 4/4
+
+NOTE 0 1/2 ;mes75
+CHORD (C#1 F4) 1/2 ; harmonics
+NOTE 0 1
+NOTE A3 2
+NOTE A3 0
+NOTE A3 0
+
+; ----------- mes 76 --- beat 382.0 --- time signature 7/4
+
+BPM 66
+NOTE 0 3/5 
+*/
+BPM 66
+NOTE C5 1/10 D_mes76
+
+suivi 1
+
+GROUP
+	{	$ampP1 := 0.4
+		obj::spat("Play1_mes76",90,"Player1","vbap",::spat_traj_fun,[::lissaj2,1.5,50,30,0.])
+		CS-Player e i "\"Player1\"" 0 90 1031 ; mes76_fondclics
+		CS-Player c Player1.cps 1.
+		CS-Player c Player1.amp $ampP1
+
+
+		3/2 obj::spat("mes76_spatlarg1",40,"csound3","vbap",::spat_traj_fun,[::lissaj5,4,50,30,0.])
+		obj::spat("mes76_spatlarg2",40,"csound4","vbap",::spat_traj_fun,[::lissaj2inv,4,40,30,0.])
+		obj::spat("mes76_spatlarg3",40,"csound5","vbap",::spat_traj_fun,[::lissaj2,4,30,0,0.])
+
+		::ASCOtoCS_percuBow("percbow1",17,6,76,3)
+		curve pb1 @grain := 0.01s, @action := ASCOtoCS_SYNTH c percbow1.amp $ampPbow1
+			{ $ampPbow1
+				{		{ 0. } @type "quad"
+					1	{ 0.08 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+
+		3/2 ::ASCOtoCS_percuBow("percbow2",7,6,79.5,4)
+		curve pb2 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow2.amp $ampPbow2
+			{ $ampPbow2
+				{		{ 0. } @type "quad"
+					1	{ 0.06 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+		3/4 ::ASCOtoCS_percuBow("percbow3",17,6,62,5)
+		curve pb3 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow3.amp $ampPbow3
+			{ $ampPbow3
+				{		{ 0. } @type "quad"
+					1	{ 0.06 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+		1/2 ::ASCOtoCS_percuBow("percbow4",8,6,69,3)
+		curve pb4 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow4.amp $ampPbow4
+			{ $ampPbow4
+				{		{ 0. } @type "quad"
+					1	{ 0.06 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+		2 ::ASCOtoCS_percuBow("percbow5",18,6,72,4)
+		curve pb5 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow5.amp $ampPbow5
+			{ $ampPbow5
+				{		{ 0. } @type "quad"
+					1	{ 0.06 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+		5/4 ::ASCOtoCS_percuBow("percbow6",17,6,79,5)
+		curve pb6 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow6.amp $ampPbow6
+			{ $ampPbow6
+				{		{ 0. } @type "quad"
+					1	{ 0.1 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+
+		::essaim("Player3",1014,0.1,1,6,2,17)
+		obj::spat("Play3_mes76",17,"Player3","vbap",::spat_traj_fun,[::lissaj2,3,40,0,0.])
+
+		curve ampPlayer3 @grain := 0.05, @action := {CS-Player c Player3.amp $ampPlayer3}
+	 		{ $ampPlayer3
+	 			{
+	 					{ 0. } @type "cubic" 
+	 				7	{ 0.3 } @type "quad_out"
+	 				9	{ 0. }	
+	 			}
+	 		}
+
+
+		2 ::ASCOtoCS_percuBow("percbow1",7,8,56.4,3)
+		abort pb1
+		curve pb1 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow1.amp $ampPbow1
+			{ $ampPbow1
+				{		{ 0. } @type "quad"
+					1	{ 0.07 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+		5/3 ::ASCOtoCS_percuBow("percbow2",17,6,93,4)
+		curve pb2 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow2.amp $ampPbow2
+			{ $ampPbow2
+				{		{ 0. } @type "quad"
+					1	{ 0.5 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+
+		2 ::ASCOtoCS_percuBow("percbow3",8,6,93,5)
+		curve pb2 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow3.amp $ampPbow3
+			{ $ampPbow3
+				{		{ 0. } @type "quad"
+					1	{ 0.5 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+
+		3/2 ::ASCOtoCS_percuBow("percbow4",7,6,93,3)
+		curve pb2 @grain := 0.01, @action := ASCOtoCS_SYNTH c percbow4.amp $ampPbow4
+			{ $ampPbow4
+				{		{ 0. } @type "quad"
+					1	{ 0.5 } @type "quad_out"
+					5	{ 0.0 }
+				}
+			}
+
+}
+	
+
+NOTE G#4 1/10
+NOTE E5 1/10
+NOTE D5 1/10
+NOTE F5 1/10
+NOTE B4 1/10
+NOTE A4 1/10
+NOTE B4 1/10
+NOTE F4 1/10
+NOTE C5 1/10
+NOTE E5 1/10
+NOTE D#5 1/10
+NOTE B4 1/10
+NOTE A4 1/10
+NOTE E5 1/10
+NOTE F4 1/10
+NOTE A#4 1/10
+NOTE G5 1/10
+NOTE D5 1/10
+NOTE A4 1/10
+NOTE C5 1/10
+NOTE C#5 1/10
+NOTE A4 1/10
+NOTE E4 1/10
+NOTE G4 1/10
+NOTE G#4 1/10
+NOTE A#4 1/10
+NOTE A4 1/10
+NOTE D#5 1/10
+NOTE B4 1/10
+NOTE A4 1/10
+NOTE F4 1/10
+NOTE F#4 1/10
+NOTE A4 1/10
+NOTE G5 1/10
+NOTE E5 1/10
+NOTE A#4 1/10
+NOTE A5 1/10
+NOTE G#5 1/10
+NOTE F4 1/10
+NOTE D5 1/10
+NOTE C5 1/10
+NOTE B5 1/10
+NOTE F5 1/10
+NOTE E5 1/10
+NOTE A#4 1/10
+NOTE D5 1/10
+NOTE A5 1/10
+NOTE G#5 1/10
+NOTE F5 1/10
+NOTE C#5 1/10
+NOTE C5 1/10
+NOTE A4 1/10
+NOTE D#5 1/10
+NOTE F5 1/10
+CHORD (A4 F#5) 2/20
+CHORD (D#5 C6) 2/20
+CHORD (F5 G5) 2/20
+CHORD (E5 F#5) 2/20
+CHORD (C#5 C6) 2/20
+CHORD (C5 G5) 2/20
+CHORD (F#4 E5) 2/20
+CHORD (C#5 D5) 2/20
+CHORD (C5 E5) 2/20
+
+; ----------- mes 77 --- beat 389.0 --- time signature 4/4
+
+NOTE C#5 1/10 ;mes77
+NOTE C5 1/10
+NOTE A4 1/10
+NOTE G#4 1/10
+NOTE A4 1/10
+NOTE A#4 1/10
+NOTE A4 1/10
+CHORD (G#4 C5) 2/20
+CHORD (A4 C#5) 2/20
+CHORD (A#4 F5) 2/20
+CHORD (A4 G5) 2/20
+CHORD (C5 G#5) 2/20
+CHORD (C#5 B5) 2/20
+CHORD (F5 G5) 2/20
+CHORD (F#5 G5) 2/20
+CHORD (D#5 G#5) 2/20
+CHORD (F5 B5) 2/20
+CHORD (C#5 G5) 2/20
+CHORD (D5 F#5) 2/20
+CHORD (A4 D#5) 2/20
+CHORD (G4 F5) 2/20
+CHORD (F#4 C#5) 2/20
+CHORD (G#4 D5) 2/20
+NOTE B4 1/10
+NOTE A4 1/10
+NOTE C5 1/10
+NOTE D5 1/10
+CHORD (A4 F5) 2/20
+CHORD (C5 E5) 2/20
+CHORD (D5 A5) 2/20
+CHORD (F5 A#5) 2/20
+CHORD (E5 C#6) 2/20
+CHORD (A5 C6) 2/20
+CHORD (A#5 B5) 2/20
+CHORD (G5 C#6) 2/20
+CHORD (D#5 C6) 2/20
+CHORD (A4 B5) 2/20
+CHORD (C5 G5) 2/20
+CHORD (A4 D#5) 2/20
+CHORD (A4 A#4) 2/20
+
+; ----------- mes 78 --- beat 393.0 --- time signature 3/4
+
+CHORD (F#4 C5) 2/20 ;mes78
+CHORD (G4 A4) 2/20
+CHORD (G#4 A#4) 2/20
+CHORD (E4 A4) 2/20
+NOTE F4 1/10
+CHORD (G4 A4) 2/20
+CHORD (G#4 B4) 2/20
+CHORD (E4 A#4) 2/20
+CHORD (F4 D5) 2/20
+CHORD (A4 E5) 2/20
+CHORD (A#4 B4) 2/20
+CHORD (A#4 F5) 2/20
+CHORD (D5 A5) 2/20
+CHORD (D#5 F5) 2/20
+CHORD (D5 E5) 2/20
+CHORD (B4 A5) 2/20
+CHORD (E5 C6) 2/20
+CHORD (F5 B5) 2/20
+CHORD (E5 G#5) 2/20
+CHORD (F5 G5) 2/20
+CHORD (D5 A5) 2/20
+CHORD (D#5 C6) 2/20
+CHORD (B4 A5) 2/20
+CHORD (D5 A#5) 2/20
+CHORD (E5 F5) 2/20
+CHORD (A#4 A5) 2/20
+CHORD (A4 G#5) 2/20
+CHORD (G#4 F5) 2/20
+CHORD (A4 G5) 2/20
+CHORD (C#5 E5) 2/20
+
+; ----------- mes 79 --- beat 396.0 --- time signature 7/4
+
+CHORD (D5 E5 G#5) 1/8 mes79
+
+	obj::spat("Play2_mes79",30,"Player2","vbap",::spat_traj_fun,[::lissaj2inv,2.5,30,30,0.])
+	CS-Player e i "\"Player2\"" 0 30 1032 ; mes79_anguilles
+	CS-Player c Player2.cps 0.813
+	CS-Player c Player2.amp 0.2
+
+CHORD (-D5 -E5 G5) 1/25
+CHORD (F5 -G5) 1/6
+CHORD (A4 B4 -G5) 1/6
+CHORD (D#5 A5) 1/8
+CHORD (-D#5 A5) 1/25
+CHORD (D5 -A5) 1/12
+CHORD (-D5 A5) 1/12
+CHORD (E5 -A5) 1/23
+CHORD (-E5 A5) 1/8
+NOTE A#5 1/10
+NOTE A5 1/15
+CHORD (F5 -A5) 1/27
+CHORD (-F5 A5) 2/20
+CHORD (-F5 A5) 1/27
+CHORD (F4 -A5) 1/15
+CHORD (-F4 A5) 2/20
+NOTE E5 1/6
+NOTE B4 1/6
+NOTE A#4 1/23
+CHORD (-A#4 E5) 1/8
+CHORD (-A#4 F5) 1/8
+CHORD (-A#4 G#5) 1/8
+CHORD (-A#4 E5) 1/12
+CHORD (A4 -E5) 1/23
+CHORD (-A4 B4) 1/8
+CHORD (C5 A5) 1/6
+CHORD (F#4 -A5) 1/6
+CHORD (E5 -A5) 1/23
+CHORD (-E5 C6) 1/8
+CHORD (G5 C#6) 1/6
+CHORD (-G5 A5) 1/6
+CHORD (-G5 A5) 1/6
+CHORD (D5 G#5) 1/8
+CHORD (D5 -G#5) 1/25
+CHORD (-D5 B5) 1/12
+CHORD (D5 -B5) 1/8
+CHORD (D5 -B5) 1/8
+CHORD (E5 -B5) 1/8
+CHORD (-E5 E6) 1/25
+CHORD (F5 -E6) 1/12
+CHORD (-F5 B5) 1/12
+CHORD (E5 -B5) 1/23
+CHORD (-E5 A5) 1/8
+CHORD (A#4 F5) 1/8
+CHORD (-A#4 G6) 1/25
+CHORD (B4 -G6) 1/6
+CHORD (F4 -G6) 1/23
+CHORD (-F4 E6) 1/8
+CHORD (-F4 -E6) 1/8
+CHORD (A#4 -E6) 1/25
+CHORD (-A#4 F6) 1/12
+CHORD (D5 -F6) 1/12
+CHORD (-D5 G#6) 1/6
+CHORD (E5 G6) 1/8
+CHORD (F4 -G6) 1/25
+CHORD (-F4 F#6) 1/12
+CHORD (A4 -F#6) 1/12
+CHORD (-A4 F6) 1/23
+CHORD (G5 -F6) 1/8
+CHORD (G#5 B5) 1/8
+CHORD (-G#5 C6) 1/25
+CHORD (E5 -C6) 1/12
+CHORD (-E5 A#5) 1/12
+CHORD (A5 -A#5) 1/23
+CHORD (-A5 F6) 1/8
+CHORD (A#5 -F6) 1/8
+CHORD (-A#5 E6) 1/25
+CHORD (G#5 -E6) 1/6
+CHORD (A5 -E6) 1/23
+CHORD (-A5 G#6) 1/8
+
+; ----------- mes 80 --- beat 403.0 --- time signature 7/4
+
+CHORD (D6 B6) 1/8 ;mes80
+CHORD (-D6 A6) 1/25
+CHORD (C6 -A6) 1/12
+CHORD (-C6 C7) 1/12
+CHORD (G#5 -C7) 1/23
+CHORD (-G#5 B6) 1/8
+CHORD (-G#5 C#7) 2/20
+CHORD (-G#5 C7) 1/15
+CHORD (G5 -C7) 1/27
+CHORD (-G5 F#6) 2/20
+CHORD (-G5 A6) 1/27
+CHORD (A5 -A6) 1/15
+CHORD (-A5 F6) 2/20
+CHORD (G#5 E7) 1/6
+CHORD (-G#5 A#5) 1/12
+CHORD (E5 -A#5) 1/12
+CHORD (-E5 D6) 1/23
+CHORD (F5 -D6) 1/8
+CHORD (D#5 -D6) 1/8
+CHORD (B4 -D6) 1/25
+CHORD (-B4 A5) 1/12
+CHORD (C#5 -A5) 1/12
+CHORD (-C#5 G#5) 1/23
+CHORD (C5 -G#5) 1/8
+CHORD (D5 A5) 1/8
+CHORD (F5 -A5) 1/25
+CHORD (-F5 C6) 1/6
+CHORD (-F5 A5) 1/6
+CHORD (-F5 G#6) 1/8
+CHORD (E5 -G#6) 1/25
+CHORD (-E5 E6) 1/12
+CHORD (G#4 -E6) 1/12
+CHORD (-G#4 F5) 1/23
+CHORD (D5 -F5) 1/8
+CHORD (B4 C6) 1/8
+CHORD (-B4 E6) 1/25
+CHORD (C5 -E6) 1/12
+CHORD (-C5 B5) 1/12
+CHORD (C#5 -B5) 1/6
+CHORD (A4 -B5) 1/6
+CHORD (C5 -B5) 1/12
+CHORD (-C5 G#5) 1/12
+CHORD (A4 -G#5) 1/23
+CHORD (-A4 F5) 1/8
+CHORD (G#4 B5) 1/8
+CHORD (D5 -B5) 1/13
+CHORD (-D5 G#5) 1/19
+CHORD (E5 -G#5) 1/8
+CHORD (D#5 -G#5) 1/39
+CHORD (-D#5 A5) 2/20
+CHORD (B4 -A5) 1/10
+CHORD (-B4 A#5) 1/5
+CHORD (-B4 A5) 1/5
+CHORD (-B4 -A5) 1/8
+CHORD (-B4 C6) 1/25
+CHORD (C5 -C6) 1/12
+CHORD (-C5 E5) 1/12
+CHORD (A4 -E5) 1/23
+CHORD (-A4 E6) 1/8
+CHORD (A#4 -E6) 1/3
+CHORD (F5 -E6) 1/23
+CHORD (-F5 D#6) 1/8
+CHORD (E5 -D#6) 1/6
+CHORD (G#5 -D#6) 1/6
+CHORD (D5 -D#6) 1/6
+CHORD (E5 B5) 1/8
+CHORD (-E5 B5) 1/25
+CHORD (G5 -B5) 1/12
+CHORD (-G5 B5) 1/12
+CHORD (F4 -B5) 1/23
+CHORD (-F4 B5) 1/8
+
+; ----------- mes 81 --- beat 410.0 --- time signature 7/4
+
+CHORD (G5 A#6) 1/10 mes81
+
+	curve ampP2 @grain := 0.005s, @action := CS-Player c Player2.amp $ampP2
+		{ $ampP2
+			{		{ 0.2 } 
+				4	{ 0.4 } @type "cubic_out"
+				4	{ 0. }
+			}
+		}
+
+	curve ampP1 @grain := 0.005s, @action := CS-Player c Player1.amp $ampP1
+		{ $ampP1
+			{		{ $ampP1 } @type "quad_out"
+				10	{ 0. }
+			}
+		}
+
+	CS-Player e i "\"Player3\"" 0 7 1014 ; 
+	CS-Player c Player3.cps 1.
+	obj::spat("Play3_mes76",7,"Player3","vbap",::spat_traj_fun,[::lissaj5,3,20,20,0.])
+
+	curve ampPlayer3 @grain := 0.05, @action := {CS-Player c Player3.amp $ampPlayer3}
+ 		{ $ampPlayer3
+ 			{
+ 					{ 0. } @type "cubic" 
+ 				2	{ 0.6 } @type "quad_out"
+ 				5	{ 0. }	
+ 			}
+ 		}
+
+CHORD (F5 E6) 1/10
+CHORD (E5 A#5) 1/10
+CHORD (A5 F6) 1/10
+CHORD (D6 C7) 1/10
+CHORD (F5 G#6) 1/10
+CHORD (E5 D7) 1/10
+CHORD (G#5 E6) 1/10
+CHORD (E5 G6) 1/10
+CHORD (D5 G#5) 1/10
+CHORD (F5 E6) 1/10
+CHORD (G5 E7) 1/10
+CHORD (G#5 F6) 1/10
+CHORD (E5 D6) 1/10
+CHORD (G5 A#6) 1/10
+CHORD (C#6 D7) 1/10
+CHORD (C6 F6) 1/10
+CHORD (B5 E6) 1/10
+CHORD (E5 A#5) 1/10
+CHORD (F5 A6) 1/10
+CHORD (A5 G6) 1/10
+CHORD (B5 D7) 1/10
+CHORD (G#5 A6) 1/10
+CHORD (F5 E6) 1/10
+CHORD (E5 A#6) 1/10
+CHORD (G#5 F6) 1/10
+CHORD (G5 D6) 1/10
+CHORD (A5 C7) 1/10
+CHORD (C6 C#7) 1/10
+CHORD (C#6 G6) 1/10
+CHORD (D6 A6) 1/10
+CHORD (E6 F7) 1/10
+CHORD (F6 C#7) 1/10
+CHORD (E6 G6) 1/10
+CHORD (A#5 E6) 1/10
+CHORD (C#6 E7) 1/10
+CHORD (A5 D7) 1/10
+CHORD (C6 G#6) 1/10
+CHORD (A5 G6) 1/10
+CHORD (G#5 F6) 1/10
+CHORD (G5 B6) 1/10
+CHORD (F5 G#6) 1/10
+CHORD (A5 D7) 1/10
+CHORD (A#5 E6) 1/10
+CHORD (C6 E7) 1/10
+CHORD (C#6 A6) 1/10
+CHORD (A5 B6) 1/10
+CHORD (E5 F6) 1/10
+CHORD (F5 D7) 1/10
+CHORD (G5 E6) 1/10
+CHORD (F5 G#6) 1/10
+CHORD (E5 C7) 1/10
+CHORD (G#5 D7) 1/10
+CHORD (D5 B6) 1/10
+CHORD (G5 F6) 1/10
+CHORD (B5 A6) 1/10
+CHORD (A5 B6) 1/10
+CHORD (E5 G#6) 1/10
+CHORD (F5 E6) 1/10
+CHORD (E5 F6) 1/10
+CHORD (B5 D6) 1/10
+CHORD (C6 A6) 1/10
+CHORD (G#5 E7) 1/10
+CHORD (F5 B6) 1/10
+CHORD (E5 F6) 1/10
+CHORD (F5 C7) 1/10
+CHORD (G5 A#6) 1/10
+CHORD (G#5 E6) 1/10
+CHORD (E5 D6) 1/10
+CHORD (-E5 A6) 2/20
+
+; ----------- mes 82 --- beat 417.0 --- time signature 5/4
+
+NOTE 0 5/2 mes82
+
+	obj::spat("Play4_mes82",20,"Player4","vbap",::spat_traj_pos,$C1)
+	CS-Player e i "\"Player4\"" 0 20 1017 ; mes30_flotte
+	CS-Player c Player4.cps 1.
+	
+	curve ampPlayer4 @grain := 0.01s, @action := {CS-Player c Player4.amp $ampPlayer4}
+ 		{ $ampPlayer4
+ 			{		{ 0. } @type "quad" 
+ 				1/2	{ 0.1 }
+ 				10	{ 0.1 } @type "cubic_out"
+ 				4	{ 0. }	
+ 			}
+ 		}
+
+ 	obj::spat("Play5_mes82",5,"Player5","vbap",::spat_traj_pos,$C_1)
+	CS-Player e i "\"Player5\"" 0 5 1033 ; mes82_attak
+	CS-Player c Player5.cps 0.9
+	CS-Player c Player5.amp 1.
+
+	2 obj::spat("Play3_mes82",15,"Player3","vbap",::spat_traj_pos,$C_1)
+	CS-Player e i "\"Player3\"" 0 15 1035 ; mes82_grave
+	CS-Player c Player3.cps 1.
+	CS-Player c Player3.amp 1.
+
+
+NOTE C#5 1/10
+NOTE A4 1/10
+NOTE G#4 1/10
+NOTE A#4 1/10
+NOTE E4 1/10
+NOTE F4 1/10
+CHORD (C4 E4) 1/10
+CHORD (G3 D#4) 1/10
+CHORD (G#3 B3) 1/10
+CHORD (E3 C4) 1/10
+CHORD (F3 G#3) 1/10
+CHORD (C#3 G3) 1/10
+CHORD (C3 F#3) 1/10
+CHORD (B2 G3) 1/10
+CHORD (G2 C#3) 1/10
+CHORD (C3 G#3) 1/10
+CHORD (A2 D3) 1/10
+CHORD (A#2 E3) 1/10
+CHORD (F2 B2) 1/10
+CHORD (G2 A#2) 1/10
+CHORD (C2 G#2) 1/10
+CHORD (D2 E2) 1/10
+CHORD (B1 F2) 1/10
+CHORD (A#1 E2) 1/10
+CHORD (G1 D#2) 1/10
+
+; ----------- mes 83 --- beat 422.0 --- time signature 6/4
+
+CHORD (E1 D2) 1/10 ;mes83
+CHORD (A1 F2) 1/10
+CHORD (G#1 E2) 1/10
+CHORD (D1 F2) 1/10
+CHORD (F1 G#1) 1/10
+CHORD (B0 E1) 1/10
+CHORD (C1 G#1) 1/10
+CHORD (A#0 E1) 1/10
+CHORD (E1 F1) 1/10
+CHORD (D1 B1) 1/10
+CHORD (F1 G#1) 1/10
+CHORD (E1 C2) 1/10
+CHORD (D#1 B1) 1/10
+CHORD (C1 A#1) 1/10
+CHORD (D1 F1) 1/10
+CHORD (B0 G1) 1/10
+CHORD (C1 G#1) 1/10
+CHORD (D#1 D2) 1/10
+CHORD (C#1 E2) 1/10
+CHORD (D1 D#2) 1/10
+CHORD (F1 G#1) 1/10
+CHORD (C2 G#2) 1/10
+CHORD (B1 G2) 1/10
+CHORD (F1 A2) 1/10
+CHORD (G1 D#3) 1/10
+CHORD (A#1 D3) 1/10
+CHORD (C#2 B2) 1/10
+CHORD (C2 C#3) 1/10
+CHORD (A1 C3) 1/10
+CHORD (E2 A2) 1/10
+CHORD (F1 E3) 1/10
+CHORD (G#2 F3) 1/10
+CHORD (C3 B3) 1/10
+CHORD (D3 G#3) 1/10
+CHORD (B2 G3) 1/10
+CHORD (D#3 C4) 1/10
+CHORD (E3 D4) 1/10
+CHORD (F3 B3) 1/10
+CHORD (G#3 C4) 1/10
+CHORD (E3 F4) 1/10
+CHORD (G3 F#4) 1/10
+CHORD (A#3 G4) 1/10
+CHORD (B3 G#4) 1/10
+CHORD (C4 E4) 1/10
+CHORD (E4 G4) 1/10
+CHORD (D#4 A4) 1/10
+CHORD (D4 B4) 1/10
+CHORD (C4 A#4) 1/10
+CHORD (F4 D5) 1/10
+CHORD (F#4 E5) 1/10
+CHORD (A4 F5) 1/10
+CHORD (A#4 E5) 1/10
+CHORD (E4 D#5) 1/10
+CHORD (G4 A5) 1/10
+CHORD (G#4 E5 B5) 2/20
+NOTE 0 1/2
+
+; ----------- mes 84 --- beat 428.0 --- time signature 3/4
+
+NOTE 0 3 mes84
+
+ 	obj::spat("Play6_mes86",15,"Player6","vbap",::spat_traj_pos,$C1)
+	CS-Player e i "\"Player6\"" 0 15 1034 ; mes84_lanceur
+	CS-Player c Player6.cps 1.1
+	CS-Player c Player6.amp 1.
+
+; ----------- mes 85 --- beat 431.0 --- time signature 4/4
+
+BPM 76
+NOTE E6 1/6 ;mes85
+NOTE F5 1/6
+NOTE G6 1/6
+NOTE C#6 1/6
+NOTE A5 1/6
+NOTE A6 1/6
+NOTE C#6 1/6
+NOTE E5 1/6
+NOTE F6 1/6
+NOTE A5 1/6
+NOTE D5 1/6
+NOTE C6 1/6
+NOTE E6 1/6
+NOTE G#5 1/6
+NOTE B4 1/6
+NOTE F6 1/6
+NOTE A4 1/6
+NOTE A#5 1/6
+NOTE C7 1/6
+NOTE F5 1/6
+NOTE B5 1/6
+NOTE E4 1/6
+NOTE A5 1/6
+NOTE E6 1/6
+
+; ----------- mes 86 --- beat 435.0 --- time signature 4/4
+
+NOTE A6 1/6 ;mes86
+NOTE D5 1/6
+NOTE A#4 1/6
+NOTE E6 1/6
+NOTE F4 1/6
+NOTE D6 1/6
+NOTE F6 1/6
+NOTE E4 1/6
+NOTE C#5 1/6
+NOTE C6 1/6
+NOTE A#4 1/6
+NOTE E6 1/6
+NOTE A6 1/7
+NOTE C6 1/7
+NOTE D4 1/7
+NOTE D#5 1/7
+NOTE B5 1/7
+NOTE G4 1/7
+NOTE F6 1/7
+NOTE D5 1/6
+NOTE B6 1/6
+NOTE E5 1/6
+NOTE F4 1/6
+NOTE A5 1/6
+NOTE A#4 1/6
+
+; ----------- mes 87 --- beat 439.0 --- time signature 4/4
+
+CHORD (E5 C7) 1/6 ;mes87
+CHORD (-E5 C#7) 1/12
+CHORD (F6 -C#7) 1/12
+CHORD (-F6 G6) 1/6
+CHORD (B5 E6) 1/6
+CHORD (-B5 F7) 1/12
+CHORD (C6 -F7) 1/12
+CHORD (-C6 B6) 1/6
+CHORD (A5 D7) 1/7
+CHORD (-A5 E7) 1/7
+CHORD (A#5 -E7) 1/27
+CHORD (-A#5 E6) 2/14
+CHORD (-A#5 E7) 2/27
+CHORD (G5 -E7) 1/14
+CHORD (-G5 F6) 2/14
+CHORD (-G5 G#6) 1/25
+CHORD (D#6 -G#6) 2/17
+CHORD (-D#6 B6) 2/14
+CHORD (D6 G6) 1/6
+CHORD (-D6 F#6) 1/12
+CHORD (A#5 -F#6) 1/12
+CHORD (-A#5 G#6) 1/6
+CHORD (G5 E6) 1/6
+CHORD (-G5 F6) 1/12
+CHORD (A5 -F6) 1/12
+CHORD (-A5 E6) 1/6
+CHORD (F4 D6) 1/6
+CHORD (B4 -D6) 1/12
+CHORD (-B4 A6) 1/12
+CHORD (C5 -A6) 1/6
+CHORD (G#5 C7) 1/6
+CHORD (E5 -C7) 1/12
+CHORD (-E5 F6) 1/12
+CHORD (A#5 -F6) 1/6
+
+; ----------- mes 88 --- beat 443.0 --- time signature 4/4
+
+CHORD (D6 E6) 1/8 mes88
+
+
+	obj::spat("Play1_mes88",40,"Player1","vbap",::spat_traj_pos,$C2)
+	CS-Player e i "\"Player1\"" 0 40 1037 ; mes88_piano
+	CS-Player c Player1.cps 1.
+	CS-Player c Player1.amp 0.5
+
+	curve ampPlayer1 @grain := 0.01s, @action := {CS-Player c Player1.amp $ampPlayer1}
+ 		{ $ampPlayer1
+ 			{		{ 0. } @type "quad" 
+ 				4	{ 0.3 }
+ 				10	{ 0.3 } @type "cubic_out"
+ 				11	{ 0. }	
+ 			}
+ 		}
+
+
+	obj::spat("Play3_mes89",30,"Player3","vbap",::spat_traj_fun,[::lissaj2inv,3,35,0,0.])
+	CS-Player e i "\"Player3\"" 0 30 1040 ; mes90_trans
+	CS-Player c Player3.cps 1.
+	CS-Player c Player3.amp 0.3
+
+	curve ampPlayer3 @grain := 0.01s, @action := {CS-Player c Player3.amp $ampPlayer3}
+ 		{ $ampPlayer3
+ 			{		{ 0. } @type "cubic" 
+ 				12	{ 0.05 } @type "cubic" 
+ 				4	{ 0.15 } 
+ 				4	{ 0.4 } @type "cubic_out"
+ 				2	{ 0. }	
+ 			}
+ 		}
+
+	4 obj::spat("Play2_mes88",17,"Player2","vbap",::spat_traj_fun,[::lissaj5,3,35,20,0.])
+	CS-Player e i "\"Player2\"" 0 17 1036 ; mes88_Bestioles
+	CS-Player c Player2.cps 1.
+	CS-Player c Player2.amp 0.3
+
+	curve ampPlayer2 @grain := 0.01s, @action := {CS-Player c Player2.amp $ampPlayer2}
+ 		{ $ampPlayer2
+ 			{		{ 0. } @type "quad" 
+ 				1	{ 0.1 }
+ 				7	{ 0.2 } @type "cubic_out"
+ 				8	{ 0. }	
+ 			}
+ 		}
+
+
+CHORD (-D6 A#6) 1/25
+CHORD (E6 -A#6) 1/12
+CHORD (-E6 A6) 1/12
+CHORD (C6 -A6) 1/23
+CHORD (-C6 G#6) 1/8
+CHORD (G#5 C7) 1/8
+CHORD (-G#5 B6) 1/25
+CHORD (G5 -B6) 1/12
+CHORD (-G5 F6) 1/12
+CHORD (B5 -F6) 1/23
+CHORD (-B5 G7) 1/8
+CHORD (F6 D7) 1/6
+CHORD (-F6 B6) 1/12
+CHORD (D6 -B6) 1/12
+CHORD (-D6 F6) 1/6
+CHORD (C#6 E7) 1/6
+CHORD (-C#6 D6) 1/12
+CHORD (A5 -D6) 1/12
+CHORD (-A5 D#6) 1/6
+CHORD (D6 G#6) 1/8
+CHORD (-D6 G6) 1/25
+CHORD (D#6 -G6) 1/12
+CHORD (-D#6 F#6) 1/12
+CHORD (B5 -F#6) 1/23
+CHORD (-B5 F6) 1/8
+CHORD (G5 E6) 1/8
+CHORD (-G5 A#6) 1/25
+CHORD (G#5 -A#6) 1/12
+CHORD (-G#5 A6) 1/12
+CHORD (C6 -A6) 1/23
+CHORD (-C6 F#6) 1/8
+CHORD (F#5 C6) 1/8
+CHORD (-F#5 C#6) 1/25
+CHORD (D5 -C#6) 1/12
+CHORD (-D5 G6) 1/12
+CHORD (D#5 -G6) 1/23
+CHORD (-D#5 E6) 1/8
+CHORD (A5 F6) 1/6
+CHORD (G#5 E6) 1/6
+CHORD (G5 D#6) 1/6
+
+; ----------- mes 89 --- beat 447.0 --- time signature 4/4
+
+CHORD (B5 D8) 1/8 ;mes89
+
+
+CHORD (-B5 F6) 1/25
+CHORD (A5 -F6) 1/12
+CHORD (-A5 B6) 1/12
+CHORD (C6 -B6) 1/23
+CHORD (-C6 A#6) 1/8
+CHORD (F#5 G6) 1/8
+CHORD (-F#5 G#6) 1/25
+CHORD (G5 -G#6) 1/12
+CHORD (-G5 C7) 1/12
+CHORD (E5 -C7) 1/23
+CHORD (-E5 D6) 1/8
+CHORD (F5 E6) 1/8
+CHORD (-F5 G#6) 1/25
+CHORD (B5 -G#6) 1/12
+CHORD (-B5 G6) 1/12
+CHORD (G#5 -G6) 1/23
+CHORD (-G#5 B6) 1/8
+CHORD (G5 A#6) 1/8
+CHORD (-G5 A6) 1/25
+CHORD (F#5 -A6) 1/12
+CHORD (-F#5 G#6) 1/12
+CHORD (D#5 -G#6) 1/23
+CHORD (-D#5 F6) 1/8
+CHORD (G5 D#6) 1/6
+CHORD (A5 G6) 1/6
+CHORD (F#5 D6) 1/6
+CHORD (D#5 C6) 1/6
+CHORD (G5 F#6) 1/6
+CHORD (A5 D6) 1/6
+CHORD (F#5 C6) 1/6
+CHORD (G5 D#6) 1/6
+CHORD (G#5 F6) 1/6
+CHORD (D5 B6) 1/6
+CHORD (E5 G6) 1/6
+CHORD (F5 B5) 1/6
+
+; ----------- mes 90 --- beat 451.0 --- time signature 4/4
+
+CHORD (B5 E6) 1/6 ;mes90
+CHORD (F5 A5) 1/6
+NOTE E4 1/6
+NOTE F5 1/6
+NOTE C#5 1/6
+NOTE G5 1/6
+NOTE A6 1/6
+NOTE D4 1/6
+NOTE G#5 1/6
+NOTE F5 1/6
+NOTE F4 1/6
+NOTE D5 1/6
+NOTE B5 1/6
+NOTE E3 1/6
+NOTE D5 1/6
+NOTE C6 1/6
+NOTE A4 1/6
+NOTE A5 1/6
+NOTE F4 1/6
+NOTE E6 1/6
+NOTE B5 1/6
+NOTE G#3 1/6
+NOTE A4 1/6
+NOTE E4 1/6
+
+; ----------- mes 91 --- beat 455.0 --- time signature 4/4
+
+NOTE F3 2 ;mes91
+NOTE 0 2
+
+; ----------- mes 92 --- beat 459.0 --- time signature 4/4
+
+NOTE 0 4 ;mes92
+
+; ----------- mes 93 --- beat 463.0 --- time signature 4/4
+
+BPM 68
+NOTE G#4 1/12 mes93
+
+	GROUP
+	{
+		::ASCOtoCS_BUZZ_RM(numGen = "gb1",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 49,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						RMmodFreq = 18,
+						sortie = 2) 
+
+		obj::spat("mes93_gb1",21,"csound2","vbap",::spat_traj_xye,[[$XL1,$XC_2,"linear",11]])
+
+			curve ampGb1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb1.amp ($ampGb1*1.)
+				{ $ampGb1
+					{		{ 0. } @type "quad_out"
+						1/4 { 1. } 
+						10 { 0.5 } @type "quad_out"
+						5 { 0.0 }
+					}
+				}
+
+		::ASCOtoCS_BUZZ(numGen = "gb2",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 62,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						sortie = 3) 
+
+		obj::spat("mes93_gb2",21,"csound3","vbap",::spat_traj_xye,[[$XR1,$XC_2,"linear",11]])
+
+			curve ampGb2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb2.amp ($ampGb2*0.5)
+				{ $ampGb2
+					{		{ 0. } @type "quad_out"
+						1/4 { 1. } 
+						10 { 0.5 } @type "quad_out"
+						5 { 0.0 }
+					}
+				}
+
+		::ASCOtoCS_BUZZ_RM(numGen = "gb3",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 80,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						RMmodFreq = 18,
+						sortie = 4) 
+
+		obj::spat("mes93_gb3",21,"csound4","vbap",::spat_traj_xye,[[$XL_1,$XC2,"linear",11]])
+
+			curve ampGb3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb3.amp ($ampGb3*0.9)
+				{ $ampGb3
+					{		{ 0. } @type "quad_out"
+						1/4 { 1. } 
+						10 { 0.5 } @type "quad_out"
+						5 { 0.0 }
+					}
+				}
+
+		::ASCOtoCS_BUZZ(numGen = "gb4",
+						dur = 21,
+						amp = 0.,
+						noteMidi = 67,
+						ktable = 7,
+						klh = 1,
+						kmul = 0.5,
+						knh = 90,
+						sortie = 5) 
+
+		obj::spat("mes93_gb4",21,"csound5","vbap",::spat_traj_xye,[[$XR_1,$XC2,"linear",11]])
+
+			curve ampGb4 @grain := 0.005s, @action := ASCOtoCS_SYNTH c gb4.amp ($ampGb4*0.5)
+				{ $ampGb4
+					{		{ 0. } @type "quad_out"
+						1/4 { 1. } 
+						10 { 0.5 } @type "quad_out"
+						5 { 0.0 }
+					}
+				}
+
+		3/2 curve ampGenDecresc @grain := 0.05s
+		{ $coefdec
+			{		{ 1.5 } 
+				12	{ 0.4 } 
+			}
+		}
+
+		::ASCOtoCS_SYNTH("g1",
+					dur = 15,
+					noteMidiL = 81,
+					kamp = 0.,
+					icnt = 10,
+					enviter = 0.9,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 8,
+					numSortie = 1)
+
+			obj::spat("g1mes4",15,"csound1","vbap",::spat_traj_fun,[::lissaj2,3,45,0,0.])
+
+			curve ampG1 @grain := 0.03s, @action := ASCOtoCS_SYNTH c g1.amp (($ampG1*2.)*$coefdec)
+				{ $ampG1
+					{		{ 0. } @type "quad"
+						1/5	{ 0.7 } @type "cubic_out"
+						4/5	{ 0.2 } @type "cubic"
+						1	{ 0.5 } @type "cubic_out"
+						1	{ 0.2 } @type "cubic"
+						3/2	{ 0.5 } @type "cubic_out"
+						5/2	{ 0.2 } @type "cubic"
+						2	{ 0.4 } @type "cubic_out"
+						4	{ 0. }
+					}
+				}
+			
+			curve freqG1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c g1.freq (@midi2hz($freqG1-12))
+				{ $freqG1
+					{		{ 72 } @type "exp"
+						1 	{ 73 } @type "exp"
+						1	{ 64 } @type "exp"
+						1	{ 77 } @type "cubic"
+						3/2	{ 71 } @type "cubic"
+						5/2	{ 79 } @type "quad"
+						11/6{ 83 } 
+					}
+				}
+			curve iterG1 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g1.tempiter $tempiterG1
+				{ $tempiterG1
+					{		{ 0.3 } @type "quad_out"
+						15	{ 19.4 }
+					}
+				}
+
+
+
+		::ASCOtoCS_percuBow("percbow1",2,5,72,6)
+			obj::spat("Pbow1mes93",5,"csound6","vbap",::spat_traj_pos,[-45.,1.8,0.])
+	
+			curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp ($amppercbow1*$coefdec)
+				{ $amppercbow1
+					{		{ 0. } 
+						1/8	{ 0.11 } @type "exp_out"
+						4	{ 0. }
+					}
+				}
+			1 ::ASCOtoCS_percuBow("percbow2",3,5,73,7)
+			obj::spat("Pbow2mes93",5,"csound7","vbap",::spat_traj_pos,[135.,1.8,0.])
+	
+			curve ampbow2 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.amp ($amppercbow2*$coefdec)
+				{ $amppercbow2
+					{		{ 0. } 
+						1/8	{ 0.2 } @type "exp_out"
+						4	{ 0. }
+					}
+				}
+			1 ::ASCOtoCS_percuBow("percbow3",4,5,64,8)
+			obj::spat("Pbow3mes93",5,"csound8","vbap",::spat_traj_pos,[225.,1.8,0.])
+	
+			curve ampbow3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow3.amp ($amppercbow3*$coefdec)
+				{ $amppercbow3
+					{		{ 0. }  @type "cubic"
+						1	{ 0.2 } @type "exp_out"
+						3	{ 0. }
+					}
+				}
+			1 ::ASCOtoCS_percuBow("percbow4",7,5,77,1)
+	
+			curve ampbow4 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow4.amp ($amppercbow4*$coefdec)
+				{ $amppercbow4
+					{		{ 0. } 
+						1/8	{ 0.2 } @type "exp_out"
+						4	{ 0. }
+					}
+				}
+			3/2 ::ASCOtoCS_percuBow("percbow5",8,5,71,6)
+			obj::spat("Pbow5mes93",5,"csound6","vbap",::spat_traj_pos,[45.,1.8,0.])
+	
+			curve ampbow5 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow5.amp ($amppercbow5*$coefdec)
+				{ $amppercbow5
+					{		{ 0. } 
+						1/8	{ 0.08 } @type "exp_out"
+						4	{ 0. }
+					}
+				}
+			5/2 ::ASCOtoCS_percuBow("percbow6",17,5,79,7)
+			obj::spat("Pbow6mes93",5,"csound7","vbap",::spat_traj_pos,[270.,1.8,0.])
+	
+			curve ampbow6 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow6.amp ($amppercbow6*$coefdec)
+				{ $amppercbow6
+					{		{ 0. } 
+						1/8	{ 0.15 } @type "exp_out"
+						4	{ 0. }
+					}
+				}
+			11/6 ::ASCOtoCS_percuBow("percbow1",17,5,83,8)
+			obj::spat("Pbow1mes93",5,"csound8","vbap",::spat_traj_pos,[135.,1.8,0.])
+	
+			curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp ($amppercbow1*$coefdec)
+				{ $amppercbow1
+					{		{ 0. } 
+						1/8	{ 0.15 } @type "exp_out"
+						4	{ 0. }
+					}
+				}
+	}
+
+
+
+
+CHORD (C#4 G4) 1
+CHORD (-C#4 -G4 G#4) 0
+CHORD (-C#4 -G4) 1/2
+TRILL ((C#4 G4 C5) (C#4 G4)) 1/2
+TRILL ((C#4 G4 C5) (C#4 G4)) 1/8
+TRILL ((G#3 C#4 G4 C5) (G#3 C#4 G4)) 3/8
+NOTE D4 0
+NOTE 0 0
+TRILL ((G#3 C#4 G4 C#5) (G#3 C#4 G4)) 1/2
+TRILL ((C#4 G4 C#5) (C#4 G4)) 1/2
+CHORD (-C#4 E4 -G4) 1/6
+CHORD (C#3 -C#4 -E4 -G4) 1/3
+NOTE 0 0
+
+; ----------- mes 94 --- beat 467.0 --- time signature 4/4
+
+CHORD (G3 -C#4 -E4 -G4) 1/2 ;mes94
+TRILL ((G3 C#4 G4 F5) (G3 C#4 G4)) 1/2
+TRILL ((C#4 G4 F5) (C#4 G4)) 1/4
+TRILL ((G#3 C#4 G4 F5) (G#3 C#4 G4)) 1/4
+CHORD (-G#3 -C#4 -G4) 1/2
+TRILL ((C#4 G4 B4) (C#4 G4)) 1
+TRILL ((C#4 G4 B4) (C#4 G4)) 2/3
+TRILL ((C#3 C#4 G4 B4) (C#3 C#4 G4)) 1/3
+
+; ----------- mes 95 --- beat 471.0 --- time signature 4/4
+
+CHORD (-C#4 -G4) 1/2 ;mes95
+TRILL ((C#4 G4 G5) (C#4 G4)) 1
+CHORD (-C#4 -G4) 1/2
+CHORD (-C#4 -G4) 1/3
+TRILL ((C#4 G4 B5) (C#4 G4)) 2/3
+CHORD (-C#4 -G4) 1
+
+; ----------- mes 96 --- beat 475.0 --- time signature 7/4
+
+BPM 56
+CHORD (B0 G2) 1/10 mes96
+
+	CS-Player e i "\"Player3\"" 0 9 1002 ; mes2_attakclav
+	CS-Player c Player3.cps 0.77
+	CS-Player c Player3.amp 0.5
+	obj::spat("Play3_mes96",9,"Player3","vbap",::spat_traj_pos,[0.,1.2,0.])
+
+	CS-Player e i "\"Player4\"" 0 22 1038 ; ;grave
+	CS-Player c Player4.cps 1.
+	CS-Player c Player4.amp 0.8
+	obj::spat("Play4_mes96",22,"Player4","vbap",::spat_traj_pos,[0.,-2.2,0.])
+
+	::ASCOtoCS_SYNTH_Ant(19,50,0.,0.15,0.01,0.9,0.8,9,6)
+	obj::spat("inharm_mes96",19,"csound6","vbap",::spat_traj_ade,[[[475,4.,0],[360,1.2,0],"linear",6],[[360,1.2,0],[225,6.5,0],"linear",8]])
+	; obj::spat("grav_mes28_bis",45,"csound1","vbap",::spat_traj_pos,$C_1)
+
+	::SYNTH_Ant_curveBat([0.,7,0.9,7,0.3])
+
+		curve ampsynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+			{ $kampAntes
+				{		{ 0. } @type "quad"
+					7	{ 0.2 } @type "quad_out"
+					8	{ 0. }
+				}
+			}
+		curve mfosynt @grain := $grain_curve, @action := ASCOtoCS_SYNTH c mfoAntes $mfoAntes
+			{ $mfoAntes
+				{		{ 9. } @type "quad"
+					16	{ 7. }
+				}
+			}
+
+CHORD (C1 G#2) 1/10
+CHORD (G0 F#2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (G#0 G2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (D#1 G2) 1/10
+CHORD (B0 G#2) 1/10
+CHORD (F#0 D3) 1/10
+CHORD (D0 G3) 1/10
+CHORD (F0 C#3) 1/10
+CHORD (B0 F2) 1/10
+CHORD (A#0 F#2) 1/10
+CHORD (E0 G2) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (D0 D#3) 1/10
+CHORD (F0 D3) 1/10
+CHORD (G#0 B2) 1/10
+CHORD (E0 C#3) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (D0 D3) 1/10
+CHORD (G0 B2) 1/10
+CHORD (G0 A#2) 1/10
+CHORD (G#0 E3) 1/10
+CHORD (G0 F#3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (B0 F#3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (D#1 C3) 1/10
+CHORD (B0 A2) 1/10
+CHORD (C1 G#2) 1/10
+CHORD (C#1 G2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (G#0 F2) 1/10
+CHORD (B0 C#3) 1/10
+CHORD (A#0 C3) 1/10
+CHORD (A0 G3) 1/10
+CHORD (G#0 D3) 1/10
+CHORD (G0 B2) 1/10
+CHORD (D0 F2) 1/10
+CHORD (D#0 F#2) 1/10
+CHORD (B0 G2) 1/10
+CHORD (G0 G#2) 1/10
+CHORD (F0 B2) 1/10
+CHORD (F#0 A#2) 1/10
+CHORD (D#0 G2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (B0 D3) 1/10
+CHORD (C#1 G3) 1/10
+CHORD (C1 C#3) 1/10
+CHORD (D1 G#3) 1/10
+CHORD (C1 D3) 1/10
+CHORD (D#1 A3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (A0 C3) 1/10
+CHORD (C1 D#3) 1/10
+CHORD (B0 G2) 1/10
+CHORD (C1 G#2) 1/10
+CHORD (C#1 B2) 1/10
+CHORD (D1 G2) 1/10
+CHORD (F1 G#2) 1/10
+CHORD (F#1 D3) 1/10
+CHORD (B1 G3) 1/10
+CHORD (G1 C#3) 1/10
+CHORD (C#1 A2) 1/10
+CHORD (F1 A3) 1/10
+CHORD (G1 E3) 1/10
+CHORD (C#1 A#2) 1/10
+CHORD (G0 E3) 1/10
+CHORD (D#1 A3) 1/10
+
+; ----------- mes 97 --- beat 482.0 --- time signature 3/4
+
+CHORD (B0 C4) 1/10 ;mes97
+CHORD (G0 E3) 1/10
+CHORD (C#1 A#2) 1/10
+CHORD (F1 E3) 1/10
+CHORD (G1 G#3) 1/10
+CHORD (C#1 A2) 1/10
+CHORD (G1 C#3) 1/10
+CHORD (B1 G3) 1/10
+CHORD (F#1 D3) 1/10
+CHORD (F1 G#2) 1/10
+CHORD (D1 G2) 1/10
+CHORD (C#1 B2) 1/10
+CHORD (C1 G#2) 1/10
+CHORD (B0 G2) 1/10
+CHORD (C1 D#3) 1/10
+CHORD (A0 C3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (D#1 A3) 1/10
+CHORD (C1 D3) 1/10
+CHORD (D1 G#3) 1/10
+CHORD (C1 C#3) 1/10
+CHORD (C#1 G3) 1/10
+CHORD (B0 D3) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (D#0 G2) 1/10
+CHORD (F#0 A#2) 1/10
+CHORD (F0 B2) 1/10
+CHORD (G0 G#2) 1/10
+CHORD (B0 G2) 1/10
+CHORD (D#0 F#2) 1/10
+
+; ----------- mes 98 --- beat 485.0 --- time signature 4/4
+
+CHORD (D0 F2) 1/10 ;mes98
+CHORD (G0 B2) 1/10
+CHORD (G#0 D3) 1/10
+CHORD (A0 G3) 1/10
+CHORD (A#0 C3) 1/10
+CHORD (B0 C#3) 1/10
+CHORD (G#0 F2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (C#1 G2) 1/10
+CHORD (C1 G#2) 1/10
+CHORD (B0 A2) 1/10
+CHORD (D#1 C3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (B0 F#3) 1/10
+CHORD (D1 B2) 1/10
+CHORD (G0 F#3) 1/10
+CHORD (G#0 E3) 1/10
+CHORD (G0 A#2) 1/10
+CHORD (G0 B2) 1/10
+CHORD (D0 D3) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (E0 C#3) 1/10
+CHORD (G#0 B2) 1/10
+CHORD (F0 D3) 1/10
+CHORD (D0 D#3) 1/10
+CHORD (D#0 C3) 1/10
+CHORD (E0 G2) 1/10
+CHORD (A#0 F#2) 1/10
+CHORD (B0 F2) 1/10
+CHORD (F0 C#3) 1/10
+CHORD (D0 G3) 1/10
+CHORD (F#0 D3) 1/10
+CHORD (B0 G#2) 1/10
+CHORD (D#1 G2) 1/10
+CHORD (D1 B2) 1/10
+CHORD (G#0 G2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (G0 F#2) 1/10
+CHORD (F0 G#2) 1/10
+CHORD (D0 G2) 1/10
+
+; ----------- mes 99 --- beat 489.0 --- time signature 4/4
+
+BPM 48
+NOTE 0 12 mes99 ; 4 mes99
+
+suivi 0
+
+GROUP
+	{
+		::spat_trans("Player5",130)
+		::bbpulse(130,3.5,0.1,5)
+
+		CS-Player c bb.kbeta 4.8
+		CS-Player c pulse.interv 3.5
+
+		curve bbpulse_mes99 @grain := $grain_curve, @action := { CS-Player c bb.amp ($bbamp*0.05)
+																CS-Player c pulse.amp ($bbamp*150) }
+			{$bbamp
+				{		{ 0. } @type "quad"
+					1/2	{ 0.015 }
+				}
+			}
+
+		1/2	::ASCOtoCS_SYNTH("g2",
+				dur = 40,
+				noteMidiL = 100,
+				kamp = 0.,
+				icnt = 4,
+				enviter = 0.3,
+				iter = 0.7,
+				del = 1.01,
+				mfo = 6,
+				numSortie = 1)
+
+		obj::spat("g2mes99",40,"csound1","vbap",::spat_traj_fun,[::lissaj2,5,45,0,0.])
+
+			curve ampG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.amp ($ampG2*0.15)
+				{ $ampG2
+					{		{ 0. } @type "quad"
+						2	{ 0.2 } 
+						20	{ 0.2 }
+						10	{ 0. }
+					}
+				}
+			curve batG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.multidel $multidelG2
+				{ $multidelG2
+					{		{ 1.01 } @type "cubic"
+						8 	{ 1.02 } 
+						5	{ 1.0001 }
+					}
+				}
+			curve freqG2 @grain := 0.01, @action := ASCOtoCS_SYNTH c g2.freq (@midi2hz($freqG2))
+				{ $freqG2
+					{		{ 100 } 
+						9 	{ 99.5 } 
+						12	{ 100 } 
+					}
+				}
+			curve iterG2 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g2.tempiter $tempiterG2
+				{ $tempiterG2
+					{		{ 9.3 } 
+						10	{ 5.4 }
+						10	{ 11.3 }
+					}
+				}
+
+	1/2	::ASCOtoCS_SYNTH("g3",
+					dur = 40,
+					noteMidiL = 98,
+					kamp = 0.,
+					icnt = 4,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 5,
+					numSortie = 2)
+
+		obj::spat("g3mes99",40,"csound2","vbap",::spat_traj_fun,[::lissaj2inv,5,35,20,0.])
+
+			curve ampG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.amp ($ampG3*0.4)
+				{ $ampG3
+					{		{ 0. } @type "quad"
+						3	{ 0.2 } 
+						25	{ 0.2 }
+						7	{ 0. }
+					}
+				}
+			curve freqG3 @grain := 0.01, @action := ASCOtoCS_SYNTH c g3.freq (@midi2hz($freqG3))
+				{ $freqG3
+					{		{ 105.5 } 
+						12 	{ 107.5 } 
+						12	{ 107. } 
+					}
+				}
+			curve iterG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.tempiter $tempiterG3
+				{ $tempiterG3
+					{		{ 1.3 } 
+						8	{ 5.4 }
+						8	{ 0.3 }
+						8	{ 13. }
+					}
+				}
+	}
+
+; ----------- mes 100 --- beat 493.0 --- time signature 4/4
+/*
+NOTE F#3 1/8 ;mes100
+NOTE G#3 3/8
+NOTE 0 5/6
+NOTE C4 2/3
+NOTE 0 1
+NOTE C#2 1
+
+; ----------- mes 101 --- beat 497.0 --- time signature 4/4
+
+NOTE -C#2 4 ;mes101
+
+; ----------- mes 102 --- beat 501.0 --- time signature 4/4
+*/
+NOTE A2 12 D_mes102 ; 3/2 D_mes102
+
+	CS-Player e i "\"Player1\"" 0 20 1041 ; mes102_draisine
+	CS-Player c Player1.cps 1.
+	::spat_trans("Player1",20)
+
+	curve ampPlayer1 @grain := 0.01s, @action := {CS-Player c Player1.amp $ampPlayer1}
+ 		{ $ampPlayer1
+ 			{		{ 0. } @type "quad" 
+ 				1	{ 0.1 }
+ 				8	{ 0.2 } @type "cubic_out"
+ 				8	{ 0. }	
+ 			}
+ 		}
+/*
+
+NOTE 0 1/2
+TRILL ((C#2 C#6) (C#2)) 1 ; harmonics
+NOTE 0 1/3
+NOTE C3 1/3
+NOTE C3 1/3
+
+; ----------- mes 103 --- beat 505.0 --- time signature 4/4
+
+NOTE 0 1/4 ;mes103
+NOTE C3 1/2
+NOTE 0 1/8
+NOTE C3 1/8
+NOTE 0 2/3
+NOTE C3 1/3
+NOTE 0 4/3
+NOTE C3 1/3
+NOTE C3 1/3
+
+; ----------- mes 104 --- beat 509.0 --- time signature 4/4
+
+NOTE 0 1 ;mes104
+NOTE C3 1
+CHORD (C#2 C#6) 1/2 ; harmonics
+NOTE A2 3/2
+
+*/
+; ----------- mes 105 --- beat 513.0 --- time signature 4/4
+
+NOTE 0 8 D_mes105 ; 4 mes105
+
+	CS-Player e i "\"Player2\"" 0 22 1041 ; mes102_draisine
+	CS-Player c Player2.cps 1.
+	obj::spat("Play2_mes105",22,"Player2","vbap",::spat_traj_ade,[[[225,4.,0],[135,4.,0],"linear",12]])
+
+	curve ampPlayer2 @grain := 0.01s, @action := {CS-Player c Player2.amp $ampPlayer2}
+ 		{ $ampPlayer2
+ 			{		{ 0. } @type "quad" 
+ 				1	{ 0.1 }
+ 				10	{ 0.3 } @type "cubic_out"
+ 				8	{ 0. }	
+ 			}
+ 		}
+
+ 	CS-Player e i "\"Player4\"" 0 14 1042 ; mes105_piano
+	CS-Player c Player4.cps 1.05
+	CS-Player c Player4.amp 0.55
+	::spat_trans("Player4",14)
+
+
+; ----------- mes 106 --- beat 517.0 --- time signature 4/4
+
+;NOTE 0 4 ;mes106
+
+; ----------- mes 107 --- beat 521.0 --- time signature 5/4
+
+CHORD (D7 G7) 4 D_mes107 ; 1/2 D_mes107
+
+	1 CS-Player e i "\"Player6\"" 0 7 1043 ; mes107_piano
+	CS-Player c Player6.cps 1.
+	CS-Player c Player6.amp 1.6
+	obj::spat("Play6_mes107",7,"Player6","vbap",::spat_traj_pos,[0.,5,0.])
+/*
+NOTE C10 1/6
+CHORD (E7 G#7) 1/3
+CHORD (-E7 -G#7) 1/2
+NOTE B7 0
+CHORD (F7 A#7) 1/2
+CHORD (B8 C7) 2/3
+CHORD (D#7 F7) 1/3
+CHORD (-D#7 -F7) 3/4
+CHORD (G7 C10) 1/4
+*/
+CHORD (C7 D7) 1 D_mes107_2
+
+	CS-Player e i "\"Player1\"" 0 13 1044 ; mes107_roll
+	CS-Player c Player1.cps 1.
+	CS-Player c Player1.amp 0.2
+	::spat_trans("Player1",13)
+
+; ----------- mes 108 --- beat 526.0 --- time signature 5/4
+
+NOTE 0 1/2 
+CHORD (G7 G#7 A7 A#7 B7) 17/2 D_mes108 ; 1 D_mes108
+
+	::ASCOtoCS_percuBow("percbow1",17,13,83,3)
+	::spat_trans("csound3",13)
+
+	curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow1.amp ($amppercbow1)
+		{ $amppercbow1
+			{		{ 0. } 
+				2	{ 0.3 } @type "cubic_out"
+				10	{ 0. }
+			}
+		}
+/*
+CHORD (G#7 A7 A#7 B7) 1
+CHORD (A7 A#7 B7) 1
+CHORD (A#7 B7) 1
+NOTE 0 1/2
+
+; ----------- mes 109 --- beat 531.0 --- time signature 5/4
+
+CHORD (A6 F7) 1/8 ;mes109
+NOTE B7 1/8
+CHORD (C7 F7) 1/8
+NOTE B7 1/8
+NOTE 0 1
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE 0 1
+NOTE A6 0
+CHORD (C7 ) 1/3
+CHORD (-C7 C#7) 1/3
+CHORD (-C7 -C#7) 1/12
+CHORD (A#6 -C#7) 1/4
+CHORD (-A#6 D7) 1/8
+CHORD (C#7 D7) 14/26
+CHORD (C#7 D7) 4/19
+CHORD (C7 -D7) 1/8
+
+*/
+; ----------- mes 110 --- beat 536.0 --- time signature 5/4
+
+NOTE 0 10 D_mes110 ; 1/2 D_mes110
+
+	CS-Player e i "\"Player3\"" 0 34 1039 ; mes53_tam
+	CS-Player c Player3.cps 0.9
+	CS-Player c Player3.amp 0.23
+	obj::spat("Play3_mes110",34,"Player3","vbap",::spat_traj_pos,[180.,9.,0.])
+	;::spat_trans("Player1",50)
+/*
+NOTE G4 1
+NOTE G4 1
+NOTE G4 1
+NOTE G4 1
+NOTE 0 1/2
+
+; ----------- mes 111 --- beat 541.0 --- time signature 4/4
+
+NOTE 0 1 ;mes111
+NOTE D#4 1/10
+NOTE A#4 1/10
+NOTE D#5 1/10
+NOTE G5 1/10
+NOTE A#5 1/10
+NOTE C#6 1/10
+NOTE D#6 1/10
+NOTE F6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE 0 2
+
+; ----------- mes 112 --- beat 545.0 --- time signature 4/4
+
+NOTE D#4 1/10 ;mes112
+NOTE B4 1/10
+NOTE D#5 1/10
+NOTE A5 1/10
+NOTE A#5 1/10
+NOTE D6 1/10
+NOTE D#6 1/10
+NOTE F#6 1/10
+NOTE G6 1/10
+*/
+NOTE A6 7 D_mes112_2 ; 1/10 D_mes112_2
+
+	::ASCOtoCS_percuBow("percbow2",17,13,83,4)
+	obj::spat("bow_mes112",13,"csound4","vbap",::spat_traj_ade,[[[45,4.,0],[-45,2.,0],"linear",1]])
+
+	curve ampbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.amp ($amppercbow1)
+		{ $amppercbow1
+			{		{ 0. } 
+				1/4	{ 0.5 } @type "cubic_out"
+				1	{ 0.2 }
+				8	{ 0. }
+			}
+		}
+
+	curve freqbow1 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow2.freq (@midi2hz($freqpercbow1))
+		{ $freqpercbow1
+			{		{ 81 } @type "cubic" 
+				1/2	{ 88 } 
+			}
+		}
+
+/*
+NOTE 0 1
+NOTE D#4 1/10
+NOTE A#4 1/10
+NOTE E5 1/10
+NOTE G5 1/10
+NOTE A#5 1/10
+NOTE C#6 1/10
+NOTE E6 1/10
+NOTE F6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE 0 1
+
+; ----------- mes 113 --- beat 549.0 --- time signature 4/4
+
+NOTE 0 2 ;mes113
+NOTE D#4 1/10
+NOTE A4 1/10
+NOTE D#5 1/10
+NOTE F#5 1/10
+NOTE B5 1/10
+NOTE C#6 1/10
+NOTE E6 1/10
+NOTE F6 1/10
+NOTE G6 1/10
+NOTE A6 1/10
+NOTE 0 1
+*/
+; ----------- mes 114 --- beat 553.0 --- time signature 4/4
+
+NOTE C#1 33/2 D_mes114 ; 4 D_mes114
+
+	CS-Player e i "\"Player2\"" 0 13 1043 ; mes1010_piano
+	CS-Player c Player2.cps 0.75
+	CS-Player c Player2.amp 1.6
+	::spat_trans("Player2",13)
+
+; ----------- mes 115 --- beat 557.0 --- time signature 4/4
+
+NOTE -C#1 4 ;mes115
+
+; ----------- mes 116 --- beat 561.0 --- time signature 4/4
+
+NOTE 0 2/3 ;mes116
+
+;	obj::spat("traitement_piano",40,"treats","vbap",::spat_traj_pos,[180.,4.,0.])
+;	obj::spat("traitement_piano",40,"treats","vbap",::spat_traj_pos,[0.,4.,0.])
+;	lvl_fr 2. 1000
+
+CHORD (D5 G5) 1/3
+TRILL (C#6 ) 2/3
+NOTE D6 1/3
+TRILL ((F#4 F5 C6)) 2
+
+; ----------- mes 117 --- beat 565.0 --- time signature 4/4
+
+NOTE 0 2/3 ;mes117
+CHORD (D5 G5) 1/3
+TRILL (C#6 ) 2/3
+NOTE D6 1/3
+TRILL ((G4 F5 C6)) 2
+
+; ----------- mes 118 --- beat 569.0 --- time signature 4/4
+
+NOTE 0 5/12 
+NOTE A#5 7 D_mes118 ; 1/12 D_mes118
+
+	::ASCOtoCS_percuBow("percbow3",7,13,86,5)
+	::spat_trans("csound5",13)
+
+	curve ampbow3 @grain := 0.005s, @action := ASCOtoCS_SYNTH c percbow3.amp ($amppercbow3)
+		{ $amppercbow3
+			{		{ 0. } @type "cubic"
+				1	{ 0.4 } 
+				1	{ 0.3 } @type "cubic_out"
+				8	{ 0. }
+			}
+		}
+/*
+NOTE A5 1/12
+NOTE G#5 1/12
+NOTE C6 1/12
+NOTE F#5 1/12
+NOTE D#6 1/12
+NOTE A6 1/12
+NOTE 0 1/2
+TRILL (G4 ) 1
+TRILL (G4 ) 1
+NOTE 0 1/2
+
+; ----------- mes 119 --- beat 573.0 --- time signature 4/4
+
+NOTE 0 1/2 ; mes119
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE C4 1/8
+NOTE F#3 1/8
+NOTE B3 1/8
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE G#3 1/2
+NOTE 0 1
+*/
+NOTE A3 28 D_mes119_2 ; 1 mes119_2
+
+	CS-Player e i "\"Player6\"" 0 50 2049 ; et finir
+	CS-Player c Player6.cps 1.
+	CS-Player c Player6.amp 0.6
+	::spat_trans("Player6",50)
+
+	CS-Player c pulse.interv 5.3
+	curve bbpulse_mes99 @grain := $grain_curve, @action := { CS-Player c bb.amp ($bbamp*0.05)
+															CS-Player c pulse.amp ($bbamp*150) }
+		{$bbamp
+			{		{ $bbamp } 
+				20	{ 0. }
+			}
+		}
+/*
+; ----------- mes 120 --- beat 577.0 --- time signature 4/4
+
+NOTE 0 1 mes120
+NOTE A6 1
+NOTE A6 1
+NOTE 0 1
+
+; ----------- mes 121 --- beat 581.0 --- time signature 4/4
+
+NOTE 0 1 mes121
+NOTE A6 1
+NOTE 0 5/4
+NOTE A6 3/4
+
+; ----------- mes 122 --- beat 585.0 --- time signature 4/4
+
+NOTE 0 1 mes122
+NOTE A6 1
+NOTE 0 4/3
+NOTE A6 2/3
+
+; ----------- mes 123 --- beat 589.0 --- time signature 4/4
+
+NOTE 0 1 mes123
+NOTE A6 1
+NOTE A6 1
+NOTE 0 1
+
+; ----------- mes 124 --- beat 593.0 --- time signature 4/4
+
+NOTE 0 1/2 mes124
+NOTE A6 1
+NOTE 0 3/2
+NOTE 0 1/4
+NOTE A6 3/4
+
+; ----------- mes 125 --- beat 597.0 --- time signature 4/4
+
+NOTE 0 1 mes125
+NOTE A6 1
+NOTE 0 2
+
+
+
+*/
+
+
+
+
+
+
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------
+
+/*
+
+
+	obj::spat("gV1",45,"csound1","vbap",::spat_traj_fun,[::lissaj2inv,4,30,0,0.])
+
+	ASCOtoCS_SYNTH e i "\"AddInHarmo\"" 0 (@b2sec(45)) 505 1
+;	::spat_trans("csound1",45)
+		curve kampInharm @grain := 0.005, @action := ASCOtoCS_SYNTH c kampInharm ($kampInharm*0.1)
+				{ $kampInharm
+					{		{ 0. } @type "quad"
+						3 	{ 0.4 } 
+						32 	{ 0.4 } @type "cubic_out"
+						4 	{ 0.0 }
+					}
+				}
+
+		curve kfreqInharm @grain := 0.005, @action := ASCOtoCS_SYNTH c kfreqInharm (@midi2hz($kfreqInharm))
+				{ $kfreqInharm
+					{		{ 81. }
+						10 	{ 81.5 }
+						10	{ 81. }
+					}
+				}
+		curve kcpsOsc @grain := 0.005, @action := ASCOtoCS_SYNTH c cpsOsc $kcpsOsc
+				{ $kcpsOsc
+					{		{ 9. } ;@type "cubic"
+						15 	{ 0.01 }
+						10	{ 13. }
+					}
+				}
+
+
+
+
+
+	::ASCOtoCS_Pluck(dur = 2,
+					amp = 0.3,
+					noteMidi = 60,
+					kpick = 0.5,
+					iplk = 0.2,
+					idamp = 40,
+					ifilt = 200,
+					sortie = 2)
+	obj::spat("gpl",2,"csound2","vbap",::spat_traj_xye,[[$XR2,$XC1,"linear",2]])
+
+
+	; voice  (0=bass; 1=tenor; 2=counter_tenor; 3=alto; 4=soprano)
+	::ASCOtoCS_VoxSynth_RM(numGen = "gV1",
+					dur = 16,
+					amp = 0.,
+					noteMidi = 47,
+					voice = 0,
+					bandwith = 1.5,
+					vowel = 0.8,
+					kSource = 0.,
+					RMmodFreq = 3,
+					sortie = 1)
+
+	obj::spat("gV1",16,"csound1","vbap",::spat_traj_xye,[[$XL2,$XC1,"linear",8],[$XC1,$XR2,"linear",9],[$XR2,$XC2,"linear",5]])
+;	::spat_trans("csound1",16)
+
+		curve ampGv1 @grain := 0.005, @action := ASCOtoCS_SYNTH c gV1.amp ($ampgV1*0.5)
+			{ $ampgV1
+				{			{ 0. } @type "quad"
+					1/16 { 0.8 } 
+					1/4	{ 0.4 }
+					6 	{ 0.4 } @type "cubic_out"
+					8 	{ 0.0 }
+				}
+			}
+		curve vowelGv1 @grain := 0.005, @action := ASCOtoCS_SYNTH c gV1.vowel $vowelgV1
+			{ $vowelgV1
+				{			{ 0.9 } 
+					1/4 { 0.9 } 
+					2	{ 0.75 }
+					6 	{ 0.2 } 
+					8 	{ 0.9 }
+				}
+			}
+		curve kSourceGv1 @grain := 0.005, @action := ASCOtoCS_SYNTH c gV1.kSource $kSourcegV1
+			{ $kSourcegV1
+				{		{ 0. } 
+					5 	{ 0.7 }
+					5 	{ 0. }
+				}
+			}
+		curve bandwithGv1 @grain := 0.005, @action := ASCOtoCS_SYNTH c gV1.bandwith $bandwithgV1
+			{ $bandwithgV1
+				{		{ 1.8 } 
+					12 	{ 0.01 }
+				}
+			}
+
+
+
+
+
+
+	::ASCOtoCS_BUZZ(numGen = "gb1",
+					dur = 16,
+					amp = 0.,
+					noteMidi = 35,
+					ktable = 9,
+					klh = 1,
+					kmul = 0.5,
+					knh = 90,
+					sortie = 2) 
+
+	obj::spat("gb1",16,"csound2","vbap",::spat_traj_xye,[[$XR2,$XC1,"linear",4],[$XC1,$XL2,"linear",4],[$XL2,$XC2,"linear",4]])
+;	::spat_trans("csound2",20)
+
+		curve ampG1 @grain := 0.005, @action := ASCOtoCS_SYNTH c gb1.amp $ampGb1
+			{ $ampGb1
+				{			{ 0. } @type "quad_out"
+					1 { 1.2 } 
+					1/4	{ 0.7 }
+					6 	{ 0.9 } @type "quad_out"
+					8 	{ 0.0 }
+				}
+			}
+		curve knh @grain := 0.05, @action := ASCOtoCS_SYNTH c gb1.knh $knhGb1
+			{ $knhGb1
+				{		{ 3 } 
+					4 	{ 1 }
+					12	{ 9 }
+				}
+			}
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	::spat_trans("Player1",140)
+	::bbpulse(140,3.5,0.1,1)
+
+	CS-Player c bb.kbeta 4.3
+	CS-Player c pulse.interv 0.1
+
+	curve bbpulse_mes1 @grain := $grain_curve, @action := { CS-Player c bb.amp $bbamp
+															CS-Player c pulse.amp ($bbamp*500) }
+		{$bbamp
+			{		{ 0. } @type "quad"
+				3	{ 0.001 }
+				120	{ 0.001 }
+				14	{ 0. }
+			}
+		}
+
+
+	::ASCOtoCS_SYNTH("g3",
+					dur = 120,
+					noteMidiL = 80,
+					kamp = 0.,
+					icnt = 5,
+					enviter = 0.3,
+					iter = 0.7,
+					del = 1.001,
+					mfo = 7,
+					numSortie = 3)
+
+::spat_trans("csound3",120)
+	;obj::spat("g3mes101",120,"csound3","vbap",::spat_traj_fun,[::lissaj2,3,45,0,0.])
+
+	curve ampG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.amp ($ampG3*0.4)
+		{ $ampG3
+			{		{ 0. } @type "quad"
+				1	{ 0.4 } @type "cubic_out"
+				3 	{ 0.4 } 
+			}
+		}
+	curve batG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.multidel $multidelG3
+		{ $multidelG3
+			{		{ 1.0001 } @type "cubic"
+				15 	{ 1.02 } 
+				5	{ 1.0001 }
+				5 	{ 1.02 } 
+				5	{ 1.0001 }
+				5 	{ 1.02 } 
+				15	{ 1.0001 }
+			}
+		}
+curve iterG3 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c g3.tempiter $tempiterG3
+		{ $tempiterG3
+			{		{ 0.3 } 
+				15 	{ 0.3 } 
+				10	{ 7.4 }
+				10	{ 0.3 }
+				5	{ 9.3 }
+				5	{ 0.3 }
+				10	{ 11. }
+				10	{ 0.1 }
+			}
+		}
+
+
+
+
+
+
+	::ASCOtoCS_SYNTH_Ant(45,86,0.,0.15,0.01,0.9,0.14,9,1)
+	obj::spat("grav_mes28",45,"csound1","vbap",::spat_traj_pos,$L2)
+	; obj::spat("grav_mes28_bis",45,"csound1","vbap",::spat_traj_pos,$C_1)
+
+	::SYNTH_Ant_curveBat([0.3,7,0.6,6,0.2])
+
+	curve ampG8 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c kampAntes $kampAntes
+		{ $kampAntes
+			{		{ 0. } @type "quad"
+				7	{ 0.05 } @type "quad_out"
+				8	{ 0. }
+			}
+		}
+	curve mfoG8 @grain := $grain_curve, @action := ASCOtoCS_SYNTH c mfoAntes $mfoAntes
+		{ $mfoAntes
+			{		{ 9. } @type "quad"
+				16	{ 7. }
+			}
+		}
+
+
+
+
+
+			::ASCOtoCS_Moog("moog1",
+						dur = 11,
+						amp = 0.,
+						noteMidi = 38,
+						vamp = 0.001,
+						kvibf = 11.4,
+						kfiltq = 0.81,
+						sortie = 2)
+	
+			obj::spat("moog1mes1",11,"csound2","vbap",::spat_traj_pos,$XC2)
+	
+				curve ampMoog1 @grain := 0.01s, @action := ASCOtoCS_SYNTH c moog1.amp ($ampMoog1*0.1)
+					{ $ampMoog1
+						{		{ 0. } @type "quad"
+							1/4	{ 1.2 } 
+							1/2	{ 0.4 }
+							9	{ 0. }
+						}
+					}
+
+
+
+
+*/
+

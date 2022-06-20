@@ -1,0 +1,882 @@
+; Transferred from NoteAbilityPro score: /Users/keith/Desktop/manouryTest/conversions/PartitiaNewSection3.na
+; Date: 2011 7 16 21:15:01 GMT-07:00
+; Modified by Christophe Lebreton the 8 August 2011
+;
+BPM 46.00
+VARIANCE 0.25
+antescofo-pedal 0
+antescofo-suivi 0
+;antescofo-mess nofharm 10
+
+; ---------- measure 1 beat 0.00 ---------
+
+NOTE 5400 0.0833 Measure1
+NOTE 5800 0.0834
+NOTE 6400 0.0833
+NOTE 6500 0.0833
+NOTE 6900 0.0834
+NOTE 7500 0.0833
+NOTE 8500 0.2500
+NOTE 0 0.5000
+NOTE 6300 0.0833
+cmd-cue 1
+NOTE 7300 0.0834
+NOTE 7900 0.0833
+NOTE 9300 0.2500
+NOTE 0 0.4167
+
+; ---------- measure 2 beat 2.00 ---------
+
+NOTE 7900 0.0833 Measure2
+NOTE 7600 0.0833
+NOTE 6900 0.0834
+NOTE 6800 0.0833
+NOTE 5800 0.2500
+NOTE 0 0.2500
+NOTE 5200 0.0833
+NOTE 5700 0.0834
+NOTE 5800 0.0833
+CHORD ( 6600 7500 ) 0.0833
+CHORD ( 6600 6900 ) 0.0834
+CHORD ( 6600 8000 ) 0.0833
+NOTE 9300 0.2500
+NOTE 0 0.2500
+
+; ---------- measure 3 beat 4.00 ---------
+
+NOTE 6000 0.0833 Measure3
+cmd-cue 2
+antescofo-suivi 1
+NOTE 6100 0.0834
+NOTE 6400 0.0833
+NOTE 6500 0.0833
+cmd-cue 3
+NOTE 6400 0.0834
+NOTE 5800 0.0833
+NOTE 5700 0.0833
+cmd-cue 4
+NOTE 6200 0.0834
+NOTE 6500 0.0833
+NOTE 7100 0.0833
+NOTE 7000 0.0834
+NOTE 7300 0.0833
+
+; ---------- measure 4 beat 5.00 ---------
+
+NOTE 6700 0.1250 Measure4
+cmd-cue 5
+BPM 69.000000 @modulate
+NOTE 6500 0.1250
+NOTE 6600 0.1250
+NOTE 6900 0.1250
+NOTE 6800 0.1250
+cmd-cue 6
+NOTE 6700 0.1250
+NOTE 7300 0.1250
+NOTE 7400 0.1250
+
+; ---------- measure 5 beat 6.00 ---------
+
+NOTE 6700 0.1667 Measure5
+cmd-cue 7
+NOTE 0 0.1666
+TRILL ( 8000 7900 ) 7.666 ; corrected export from NP
+cmd-cue 8
+antescofo-suivi 0
+;NOTE 8000 1.4167
+;NOTE 8000 0.5833
+;NOTE 8000 0.3334
+;NOTE 8000 1.0000
+;NOTE 8000 1.0000
+;NOTE 8000 0.8333
+;NOTE 8000 1.0000
+;NOTE 8000 1.5000
+
+; ---------- measure 6 beat 14.00 ---------
+
+NOTE 0 0.3333 Measure6
+TRILL ( 7900 7800 ) 0.6667 ; corrected export from NP
+cmd-cue 9
+antescofo-suivi 1
+;NOTE 7900 0.6667
+
+; ---------- measure 7 beat 15.00 ---------
+
+NOTE 8100 0.0833 Measure7
+BPM 46.000000 @modulate
+cmd-cue 10
+;NOTE 7800 0.0000 ; error generate by NP from second pitch of previous trill
+;NOTE 0 0.0833 ; error generate by NP from second pitch of previous trill
+NOTE 7600 0.0834
+NOTE 7000 0.0833
+NOTE 7100 0.0833
+NOTE 6500 0.0834
+NOTE 6200 0.0833
+
+; ---------- measure 8 beat 15.50 ---------
+
+NOTE 5600 0.1250 Measure8
+BPM 69.000000 @modulate
+cmd-cue 11
+NOTE 5800 0.1250
+NOTE 5900 0.1250
+NOTE 6200 0.1250
+
+; ---------- measure 9 beat 16.00 ---------
+
+NOTE 6100 0.0833 Measure9
+BPM 46.000000 @modulate
+cmd-cue 12
+NOTE 6200 0.0834
+NOTE 5600 0.0833
+NOTE 5700 0.0833
+cmd-cue 13
+NOTE 5200 0.0834
+NOTE 5500 0.0833
+
+; ---------- measure 10 beat 16.50 ---------
+
+NOTE 4900 0.1250 Measure10
+BPM 69.000000 @modulate
+cmd-cue 14
+NOTE 4800 0.1250
+NOTE 5400 0.1250
+NOTE 5700 0.1250
+NOTE 5100 0.1250
+NOTE 5300 0.1250
+NOTE 5400 0.1250
+NOTE 5100 0.1250
+
+; ---------- measure 11 beat 17.50 ---------
+
+NOTE 5200 0.1250 Measure11
+BPM 55.000000 @modulate
+cmd-cue 15
+NOTE 5300 0.1250
+NOTE 5900 0.1250
+NOTE 5800 0.1250
+NOTE 6200 0.1250
+
+; ---------- measure 12 beat 18.12 ---------
+
+NOTE 5900 0.1250 Measure12
+cmd-cue 16
+NOTE 6500 0.1250
+NOTE 6600 0.1250
+NOTE 6000 0.1250
+NOTE 6300 0.1250
+
+; ---------- measure 13 beat 18.75 ---------
+
+NOTE 6900 0.0833 Measure13
+BPM 46.000000 @modulate
+cmd-cue 17
+NOTE 7100 0.0834
+NOTE 7000 0.0833
+NOTE 6700 0.0833
+cmd-cue 18
+NOTE 6800 0.0834
+NOTE 6700 0.0833
+
+; ---------- measure 14 beat 19.25 ---------
+
+NOTE 7300 1.3750 Measure14
+cmd-cue 19
+antescofo-suivi 0
+NOTE 7300 0.1250
+NOTE 7300 0.1250
+NOTE 7300 0.1250
+NOTE 7300 0.1250
+NOTE 7300 1.1250
+
+; ---------- measure 15 beat 22.25 ---------
+
+NOTE 7300 0.0833 Measure15
+BPM 46.000000 @modulate
+cmd-cue 20
+antescofo-suivi 1
+NOTE 7400 0.0834
+NOTE 6900 0.0833
+NOTE 7200 0.0833
+NOTE 6600 0.0834
+NOTE 6700 0.0833
+
+; ---------- measure 16 beat 22.75 ---------
+
+NOTE 7300 0.1250 Measure16
+BPM 69.000000 @modulate
+cmd-cue 21
+NOTE 6400 0.1250
+NOTE 7000 0.1250
+NOTE 6900 0.1250
+
+; ---------- measure 17 beat 23.25 ---------
+
+NOTE 6700 0.1250 Measure17
+cmd-cue 22
+NOTE 7000 0.1250
+NOTE 6900 0.1250
+cmd-cue 23
+NOTE 7000 0.1250
+NOTE 6400 0.1250
+NOTE 6300 0.1250
+
+; ---------- measure 18 beat 24.00 ---------
+
+NOTE 6800 0.0833 Measure18
+BPM 46.000000 @modulate
+cmd-cue 24
+NOTE 6500 0.0834
+NOTE 7100 0.0833
+NOTE 7200 0.0833
+NOTE 7800 0.0834
+NOTE 7500 0.0833
+
+; ---------- measure 19 beat 24.50 ---------
+
+NOTE 6900 0.1250 Measure19
+BPM 69.000000 @modulate
+cmd-cue 25
+NOTE 6700 0.1250
+NOTE 6800 0.1250
+NOTE 7100 0.1250
+
+; ---------- measure 20 beat 25.00 ---------
+
+NOTE 7200 0.1250 Measure20
+cmd-cue 26
+NOTE 7100 0.1250
+NOTE 6500 0.1250
+NOTE 6600 0.1250
+NOTE 7100 0.1250
+NOTE 6600 0.1250
+NOTE 6200 0.1250
+
+; ---------- measure 21 beat 25.88 ---------
+
+NOTE 7300 0.2500 Measure21
+cmd-cue 27
+NOTE 0 0.2500
+TRILL ( 6200 ) 0.5000 
+TRILL ( 5500 ) 0.2500 
+TRILL ( 6400 ) 0.5000 
+TRILL ( 7000 ) 0.7500 
+
+; ---------- measure 22 beat 27.88 ---------
+
+TRILL ( 5900 ) 0.7500 Measure22
+NOTE 0 0.2500
+
+; ---------- measure 23 beat 29.38 ---------
+
+NOTE 7300 0.1250 Measure23
+BPM 55.000000 @modulate
+cmd-cue 28
+NOTE 6700 0.1250
+NOTE 6400 0.1250
+NOTE 7000 0.1250
+NOTE 7200 0.1250
+
+; ---------- measure 24 beat 30.00 ---------
+
+NOTE 7300 0.1250 Measure24
+BPM 69.000000 @modulate
+cmd-cue 29
+NOTE 7000 0.1250
+NOTE 6900 0.1250
+NOTE 7000 0.1250
+NOTE 6400 0.1250
+NOTE 6500 0.1250
+NOTE 7000 0.1250
+NOTE 6700 0.1250
+
+; ---------- measure 25 beat 31.00 ---------
+
+NOTE 7300 0.0833 Measure25
+BPM 46.000000 @modulate
+cmd-cue 30
+NOTE 7200 0.0834
+NOTE 6600 0.0833
+NOTE 6900 0.0833
+NOTE 6300 0.0834
+NOTE 6500 0.0833
+
+; ---------- measure 26 beat 31.50 ---------
+
+NOTE 6400 0.1250 Measure26
+BPM 69.000000 @modulate
+cmd-cue 31
+NOTE 5500 0.1250
+NOTE 6800 0.1250
+NOTE 6700 0.1250
+
+; ---------- measure 27 beat 32.00 ---------
+
+NOTE 7300 0.1250 Measure27
+BPM 55.000000 @modulate
+cmd-cue 32
+NOTE 6200 0.1250
+NOTE 6900 0.1250
+NOTE 6600 0.1250
+NOTE 7200 0.1250
+
+; ---------- measure 28 beat 32.62 ---------
+
+NOTE 7300 0.1250 Measure28
+cmd-cue 33
+NOTE 6700 0.1250
+NOTE 7000 0.1250
+NOTE 6300 0.1250
+NOTE 6200 0.1250
+NOTE 6300 0.1250
+NOTE 7200 0.1250
+
+; ---------- measure 29 beat 33.50 ---------
+
+NOTE 7300 0.1250 Measure29
+BPM 69.000000 @modulate
+cmd-cue 34
+NOTE 7400 0.1250
+NOTE 6800 0.1250
+NOTE 6700 0.1250
+NOTE 6200 0.1250
+cmd-cue 35
+NOTE 6500 0.1250
+NOTE 7100 0.1250
+NOTE 7200 0.1250
+
+; ---------- measure 30 beat 34.50 ---------
+
+NOTE 6600 0.1250 Measure30
+BPM 55.000000 @modulate
+cmd-cue 36
+NOTE 6100 0.1250
+NOTE 6900 0.1250
+NOTE 7100 0.1250
+NOTE 7000 0.1250
+
+; ---------- measure 31 beat 35.12 ---------
+
+NOTE 7300 0.1250 Measure31
+cmd-cue 37
+NOTE 6200 0.1250
+NOTE 7300 0.1250
+cmd-cue 38
+NOTE 6700 0.1250
+NOTE 6600 0.1250
+NOTE 5900 0.1250
+NOTE 6200 0.1250
+NOTE 6800 0.1250
+cmd-cue 39
+NOTE 6700 0.1250
+
+; ---------- measure 32 beat 36.25 ---------
+
+NOTE 7300 0.1250 Measure32
+BPM 69.000000 @modulate
+cmd-cue 40
+NOTE 7600 0.1250
+NOTE 7000 0.1250
+NOTE 6800 0.1250
+NOTE 7000 0.1250
+cmd-cue 41
+NOTE 7200 0.1250
+NOTE 7100 0.1250
+NOTE 7000 0.1250
+
+; ---------- measure 33 beat 37.25 ---------
+
+NOTE 6400 0.1250 Measure33
+cmd-cue 42
+NOTE 6500 0.1250
+NOTE 6300 0.1250
+NOTE 6400 0.1250
+NOTE 5600 0.1250
+cmd-cue 43
+NOTE 5300 0.1250
+NOTE 5900 0.1250
+NOTE 6100 0.1250
+
+; ---------- measure 34 beat 38.25 ---------
+
+NOTE 6200 0.1250 Measure34
+cmd-cue 44
+antescofo-suivi 0
+NOTE 5300 0.1250
+NOTE 0 0.7500
+
+; ---------- measure 35 beat 39.25 ---------
+
+NOTE 5200 0.1250 Measure35
+cmd-cue 45
+; antescofo-suivi 1
+NOTE 5300 0.1250
+NOTE 5600 0.1250
+NOTE 5700 0.1250
+NOTE 6200 0.1250
+NOTE 6300 0.1250
+NOTE 6600 0.1250
+NOTE 6700 0.1250
+NOTE 7100 0.1250
+NOTE 7500 0.1250
+NOTE 7600 0.1250
+
+; ---------- measure 36 beat 40.62 ---------
+
+CHORD ( 7500 6200 ) 0.1250 Measure36
+CHORD ( 6200 7400 ) 0.1250
+CHORD ( 6200 7300 ) 0.1250
+CHORD ( 6200 7200 ) 0.1250
+NOTE 7300 0.1250
+NOTE 7200 0.1250
+NOTE 7100 0.1250
+NOTE 7000 0.1250
+
+; ---------- measure 37 beat 41.62 ---------
+
+NOTE 6900 0.1250 Measure37
+NOTE 6800 0.1250
+NOTE 6700 0.2500
+CHORD ( 7100 6500 ) 0.1250
+CHORD ( 7100 6600 ) 0.1250
+CHORD ( 7100 6700 ) 0.2500
+CHORD ( 5700 6500 ) 0.1250
+CHORD ( 5700 6400 ) 0.1250
+CHORD ( 5700 6300 ) 0.2500
+CHORD ( 7000 6100 ) 0.1250
+CHORD ( 7000 6200 ) 0.2500
+CHORD ( 5500 6400 ) 0.1250
+
+; ---------- measure 38 beat 43.62 ---------
+
+CHORD ( 5500 6500 ) 0.1250 Measure38
+CHORD ( 5500 6400 ) 0.1250
+CHORD ( 5500 6300 ) 0.1250
+CHORD ( 5500 6200 ) 0.1250
+CHORD ( 6100 5200 ) 0.3750
+CHORD ( 5200 5800 ) 0.1250
+CHORD ( 5200 5900 ) 0.2500
+CHORD ( 6600 6100 ) 0.1250
+CHORD ( 6600 6000 ) 0.3750
+CHORD ( 6900 6300 ) 0.1250
+CHORD ( 6900 6200 ) 0.1250
+
+; ---------- measure 39 beat 45.62 ---------
+
+CHORD ( 6900 6200 ) 0.2500 Measure39
+CHORD ( 6300 5900 ) 0.1250
+CHORD ( 6300 6000 ) 0.3750
+CHORD ( 5300 5700 ) 0.1250
+CHORD ( 5300 5800 ) 0.1250
+CHORD ( 5300 5900 ) 0.3750
+CHORD ( 6200 6200 ) 0.1250
+CHORD ( 6200 6100 ) 0.1250
+CHORD ( 6200 6000 ) 0.1250
+CHORD ( 6200 5900 ) 0.1250
+CHORD ( 6200 5800 ) 0.1250
+
+; ---------- measure 40 beat 47.62 ---------
+
+CHORD ( 6200 5700 ) 0.5000 Measure40
+CHORD ( 5800 6100 ) 0.2500
+CHORD ( 5800 6200 ) 0.2500
+CHORD ( 6400 5900 ) 0.1250
+CHORD ( 6400 5800 ) 0.5000
+CHORD ( 5900 5400 ) 0.1250
+CHORD ( 5900 5500 ) 0.2500
+
+; ---------- measure 41 beat 49.62 ---------
+
+CHORD ( 5500 5900 ) 0.2500 Measure41
+NOTE 5800 0.1250
+NOTE 5700 0.1250
+CHORD ( 5000 5700 ) 0.1250
+CHORD ( 5000 6200 5500 ) 0.1250
+CHORD ( 5000 6200 5600 ) 0.1250
+CHORD ( 6200 5700 ) 0.1250
+CHORD ( 6200 5600 ) 0.1250
+CHORD ( 6200 5500 ) 0.1250
+CHORD ( 6200 5600 ) 0.1250
+CHORD ( 6200 5700 ) 0.6250
+
+; ---------- measure 42 beat 51.62 ---------
+
+CHORD ( 6200 5800 ) 0.1250 Measure42
+cmd-cue 46
+antescofo-suivi 1
+CHORD ( 5800 6100 ) 0.5000
+CHORD ( 5700 5300 ) 0.2500
+CHORD ( 5300 5900 ) 0.6250
+CHORD ( 6900 6400 ) 0.1250
+CHORD ( 6900 6300 ) 0.6250
+
+; ---------- measure 43 beat 53.62 ---------
+
+CHORD ( 5800 5000 ) 0.2500 Measure43
+CHORD ( 5000 5600 ) 0.5000
+NOTE 5600 0.1250
+CHORD ( 6500 6100 ) 0.1250
+CHORD ( 6500 6200 ) 0.1250
+NOTE 6500 0.1250
+NOTE 6000 0.1250
+CHORD ( 6000 5900 ) 0.1250
+CHORD ( 6000 5200 ) 0.1250
+CHORD ( 5200 6100 ) 0.1250
+
+; ---------- measure 44 beat 55.62 ---------
+
+CHORD ( 5200 6100 ) 0.5000 Measure44
+CHORD ( 6000 5500 ) 0.1250
+CHORD ( 6000 5400 ) 0.7500
+CHORD ( 6700 5900 ) 0.3750
+CHORD ( 6700 6200 ) 0.7500
+
+; ---------- measure 45 beat 57.62 ---------
+
+CHORD ( 7200 6800 ) 0.1250 Measure45
+CHORD ( 7200 6700 ) 0.7500
+CHORD ( 7000 6100 ) 0.3750
+cmd-cue 47
+CHORD ( 7000 6400 ) 0.7500
+
+; ---------- measure 46 beat 59.62 ---------
+
+CHORD ( 7000 6400 ) 0.1250 Measure46
+CHORD ( 6400 6800 ) 0.1250
+CHORD ( 6400 6700 ) 0.5000
+CHORD ( 6400 6100 ) 0.1250
+CHORD ( 6100 6500 ) 0.1250
+CHORD ( 6100 6400 ) 0.8750
+
+; ---------- measure 47 beat 61.62 ---------
+
+CHORD ( 5700 5300 ) 0.1250 Measure47
+CHORD ( 5300 5800 ) 0.5000
+CHORD ( 5800 5900 ) 0.1250
+CHORD ( 6900 6300 ) 0.1250
+CHORD ( 6900 6200 ) 0.8750
+
+; ---------- measure 48 beat 63.62 ---------
+
+CHORD ( 7700 6900 ) 0.6250 Measure48
+cmd-cue 48
+CHORD ( 7700 7300 ) 0.7500
+CHORD ( 6900 6600 ) 0.3750
+CHORD ( 6900 6300 ) 0.1250
+
+; ---------- measure 49 beat 65.62 ---------
+
+CHORD ( 6900 6200 ) 0.5000 Measure49
+CHORD ( 6600 5500 ) 0.1250
+CHORD ( 5500 6500 ) 0.1250
+CHORD ( 5500 6400 ) 1.0000
+CHORD ( 7200 6400 ) 0.1250
+CHORD ( 6400 7300 ) 0.8750
+
+; ---------- measure 50 beat 67.62 ---------
+
+CHORD ( 6600 5800 ) 0.6250 Measure50
+cmd-cue 49
+CHORD ( 7300 6500 ) 1.0000
+
+; ---------- measure 51 beat 69.62 ---------
+
+CHORD ( 6900 6500 ) 0.1250 Measure51
+cmd-cue 50
+NOTE 6900 1.1250
+CHORD ( 7300 7100 ) 0.6250
+cmd-cue 51
+
+; ---------- measure 52 beat 71.62 ---------
+
+CHORD ( 5700 5100 ) 1.0000 Measure52
+CHORD ( 6100 5200 ) 1.1250
+cmd-cue 52
+antescofo-suivi 0
+
+; ---------- measure 53 beat 73.62 ---------
+
+CHORD ( 6600 5700 ) 0.1250 Measure53
+CHORD ( 6600 5800 ) 0.6250
+CHORD ( 6800 6300 ) 0.3750
+cmd-cue 53
+CHORD ( 6800 6400 ) 0.1250
+CHORD ( 6800 6300 ) 0.8750
+
+; ---------- measure 54 beat 75.62 ---------
+
+CHORD ( 7200 6800 ) 0.1250 Measure54
+CHORD ( 6800 7100 ) 0.3750
+CHORD ( 6800 7100 ) 0.8750
+CHORD ( 6300 5500 ) 0.7500
+cmd-cue 54
+
+; ---------- measure 55 beat 77.62 ---------
+
+CHORD ( 5700 5400 ) 1.1250 Measure55
+cmd-cue 55
+CHORD ( 7500 6600 ) 0.1250
+cmd-cue 56
+CHORD ( 7500 6700 ) 1.1250
+
+; ---------- measure 56 beat 79.62 ---------
+
+CHORD ( 6600 5800 ) 0.8750 Measure56
+cmd-cue 57
+CHORD ( 5600 5200 ) 1.0000
+cmd-cue 58
+
+; ---------- measure 57 beat 81.62 ---------
+
+CHORD ( 7100 6700 ) 0.6250 Measure57
+CHORD ( 6000 5700 ) 0.1250
+cmd-cue 59
+CHORD ( 5700 6100 ) 0.8750
+
+; ---------- measure 58 beat 83.62 ---------
+
+NOTE 6100 0.2500 Measure58
+CHORD ( 6700 6400 ) 1.0000
+cmd-cue 60
+antescofo-suivi 1
+CHORD ( 5900 5100 ) 0.1250
+CHORD ( 5100 6000 ) 1.2500
+
+; ---------- measure 59 beat 85.62 ---------
+
+CHORD ( 5500 5000 ) 0.1250 Measure59
+CHORD ( 5500 5100 ) 1.1250
+
+; ---------- measure 60 beat 87.62 ---------
+
+CHORD ( 6900 6600 ) 0.8750 Measure60
+cmd-cue 61
+CHORD ( 6100 5300 ) 1.2500
+
+; ---------- measure 61 beat 89.62 ---------
+
+CHORD ( 7500 7100 ) 0.1250 Measure61
+cmd-cue 62
+CHORD ( 7500 7200 ) 1.2500
+NOTE 5000 0.8750
+
+; ---------- measure 62 beat 91.62 ---------
+
+CHORD ( 5500 5000 ) 1.2500 Measure62
+cmd-cue 63
+
+; ---------- measure 63 beat 93.62 ---------
+
+CHORD ( 6500 6100 ) 0.7500 Measure63
+cmd-cue 64
+CHORD ( 8300 7400 ) 0.1250
+CHORD ( 7400 8200 ) 0.8750
+CHORD ( 6300 5700 ) 0.2500
+
+; ---------- measure 64 beat 95.62 ---------
+
+CHORD ( 6300 5700 ) 1.0000 Measure64
+CHORD ( 6300 5700 ) 0.1250
+cmd-cue 65
+CHORD ( 5500 5200 ) 0.1250
+CHORD ( 5500 5300 ) 1.3750
+
+; ---------- measure 65 beat 97.62 ---------
+
+CHORD ( 6800 6400 ) 1.0000 Measure65
+cmd-cue 66
+CHORD ( 7900 7100 ) 1.3750
+cmd-cue 67
+
+; ---------- measure 66 beat 99.62 ---------
+
+CHORD ( 6300 6000 ) 0.1250 Measure66
+cmd-cue 68
+CHORD ( 6300 5900 ) 1.3750
+
+; ---------- measure 67 beat 101.62 ---------
+
+NOTE 4800 1.0000 Measure67
+cmd-cue 69
+CHORD ( 5600 5300 ) 1.3750
+
+; ---------- measure 68 beat 103.62 ---------
+
+CHORD ( 7900 7300 ) 0.8750 Measure68
+CHORD ( 6300 6000 ) 0.1250
+cmd-cue 70
+CHORD ( 6300 5900 ) 1.0000
+
+; ---------- measure 69 beat 105.62 ---------
+
+CHORD ( 7900 7600 ) 0.1250 Measure69
+cmd-cue 71
+CHORD ( 7600 8000 ) 1.3750
+
+; ---------- measure 70 beat 107.62 ---------
+
+CHORD ( 6900 6600 ) 0.1250 Measure70
+cmd-cue 72
+CHORD ( 6600 7000 6600 ) 1.3750
+CHORD ( 5900 5500 ) 1.1250
+cmd-cue 73
+
+; ---------- measure 71 beat 109.62 ---------
+
+CHORD ( 8000 7400 ) 1.3750 Measure71
+cmd-cue 74
+
+; ---------- measure 72 beat 111.62 ---------
+
+CHORD ( 6900 6600 ) 0.1250 Measure72
+cmd-cue 75
+CHORD ( 6600 7000 ) 1.3750
+CHORD ( 5900 5500 ) 1.1250
+cmd-cue 76
+
+; ---------- measure 73 beat 113.62 ---------
+
+CHORD ( 8000 7400 ) 1.3750 Measure73
+cmd-cue 77
+
+; ---------- measure 74 beat 115.62 ---------
+
+CHORD ( 6900 6600 ) 1.0000 Measure74
+cmd-cue 78
+CHORD ( 6200 6100 ) 0.1250
+CHORD ( 6200 6200 ) 1.6250
+
+; ---------- measure 75 beat 117.62 ---------
+
+CHORD ( 6200 5300 ) 0.1250 Measure75
+cmd-cue 79
+CHORD ( 6200 5400 ) 1.5000
+
+; ---------- measure 76 beat 119.62 ---------
+
+CHORD ( 6500 6200 ) 0.1250 Measure76
+CHORD ( 6200 6400 ) 1.2500
+
+; ---------- measure 77 beat 121.62 ---------
+
+CHORD ( 7500 6200 ) 1.2500 Measure77
+cmd-cue 80
+CHORD ( 6200 5300 ) 1.0000
+cmd-cue 81
+
+; ---------- measure 78 beat 123.62 ---------
+
+CHORD ( 7600 6200 ) 0.1250 Measure78
+CHORD ( 6200 7500 ) 1.3750
+CHORD ( 6200 6200 ) 1.1250
+
+; ---------- measure 79 beat 125.62 ---------
+
+;CHORD ( 6200 6200 ) 0.1250 Measure79 ; viré car cause souvent un blocage et après c la mdr
+CHORD ( 7600 6200 ) 1.3750
+cmd-cue 82
+
+; ---------- measure 80 beat 127.62 ---------
+
+CHORD ( 6200 5300 ) 1.0000 Measure80
+cmd-cue 83
+NOTE 5300 0.1250 ; why it's not 6200 like the score ??
+CHORD ( 6200 6200 ) 0.1250
+CHORD ( 6200 6100 ) 1.2500
+
+; ---------- measure 81 beat 129.62 ---------
+
+CHORD ( 7100 6200 ) 0.1250 Measure81
+cmd-cue 84
+CHORD ( 6200 7000 ) 1.3750
+
+; ---------- measure 82 beat 131.62 ---------
+
+CHORD ( 6200 5700 ) 0.1250 Measure82
+cmd-cue 85
+CHORD ( 6200 5600 ) 1.3750
+
+; ---------- measure 83 beat 133.62 ---------
+
+CHORD ( 6700 6200 ) 1.3750 Measure83
+CHORD ( 7800 6200 ) 1.3750
+cmd-cue 86
+
+; ---------- measure 84 beat 135.62 ---------
+
+CHORD ( 5300 6200 ) 0.1250 Measure84
+cmd-cue 87
+CHORD ( 6200 5200 ) 1.3750
+
+; ---------- measure 85 beat 137.62 ---------
+
+CHORD ( 7500 6200 ) 1.3750 Measure85
+cmd-cue 88
+CHORD ( 6200 5200 ) 1.3750
+cmd-cue 89
+
+; ---------- measure 86 beat 139.62 ---------
+
+CHORD ( 7500 6200 ) 1.2500 Measure86
+cmd-cue 90
+
+; ---------- measure 87 beat 141.62 ---------
+
+CHORD ( 6500 6200 ) 0.1250 Measure87
+cmd-cue 91
+CHORD ( 6200 6600 ) 1.3750
+CHORD ( 6200 5700 ) 0.1250
+cmd-cue 92
+CHORD ( 6200 5600 ) 1.3750
+
+; ---------- measure 88 beat 143.62 ---------
+
+CHORD ( 6900 6200 ) 0.1250 Measure88
+cmd-cue 93
+CHORD ( 6200 7000 ) 1.3750
+
+; ---------- measure 89 beat 145.62 ---------
+
+CHORD ( 6200 5900 ) 1.5000 Measure89
+cmd-cue 94
+
+; ---------- measure 90 beat 147.62 ---------
+
+CHORD ( 6200 4800 ) 1.2500 Measure90
+CHORD ( 6200 6100 ) 0.1250
+CHORD ( 6200 6200 ) 0.3750
+
+; ---------- measure 91 beat 149.62 ---------
+
+CHORD ( 6200 6200 6200 ) 1.0000 Measure91
+CHORD ( 6200 5100 ) 1.3750
+cmd-cue 95
+
+; ---------- measure 92 beat 151.62 ---------
+
+CHORD ( 6200 6200 ) 1.2500 Measure92
+cmd-cue 96
+CHORD ( 7300 6200 ) 1.3750
+
+; ---------- measure 93 beat 153.62 ---------
+
+CHORD ( 6200 5000 ) 0.1250 Measure93
+CHORD ( 6200 5100 ) 1.3750
+
+; ---------- measure 94 beat 155.62 ---------
+
+CHORD ( 6400 6200 ) 1.3750 Measure94
+cmd-cue 97
+CHORD ( 6200 5100 ) 1.3750
+
+; ---------- measure 95 beat 157.62 ---------
+
+CHORD ( 6200 6200 ) 1.3750 Measure95
+
+cmd-cue 98
+antescofo-suivi 0
+1. antescofo-choose-score 4
+
+; ---------- measure 96 beat 159.62 ---------
+
+; CHORD ( 7300 6200 ) 1.3750 Measure96

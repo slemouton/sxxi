@@ -1,0 +1,2850 @@
+; score converted from Ftm Track by AntescofoScore3d 
+;-------- 3/4
+BPM 66
+
+@INSERT "macros_def.asco"	; definition des fonctions et macros
+	
+GFWD Init-Synful-sec4
+	{
+		syn_voices 1 flush 1; turn notes off 
+		syn_voices 2 flush 1; turn notes off 
+		Bsyn_voices 1 flush 1; turn notes off 
+		Bsyn_voices 2 flush 1; turn notes off 
+		syn_voices 1 xbend 0; 
+		syn_voices 2 xbend 0; 
+		syn_voices 3 xbend 0; 
+		syn_voices 4 xbend 0; 
+		syn_voices 5 xbend 0;  
+	}
+			
+antescofo-mess analysis 2048 128, tune 442
+VARIANCE 0.2
+
+NOTE 69 0.125 ev4-1
+3fc_mode antescofo_t ; or antescofo
+print PERPETUUM MOBILE
+group perpetuum_sequence1 @latency:= 10 ms @target:={ev4_1,bar2,bar4,bar6,bar8,bar10,bar12,bar14,bar18,bar20,bar22,bar24,bar26,bar28,bar30,bar32,bar34,bar36,bar38,bar40,bar42,bar44,bar46,bar48,bar50,bar52,bar54,bar56,bar58,bar60,bar62,bar64,bar66,bar68,bar70,bar72,bar74}
+{
+0.0  tnote  69 0.125 ev4_1
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+
+0.125  tnote  69 0.125 bar2
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  58 0.125 bar3
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+
+0.125  tnote  69 0.125 bar4
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  62 0.125 
+0.125 tnote  56 0.125 bar5
+0.125  tnote  60 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125 tnote  61 0.125 bar6
+0.125  tnote  62 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.083
+1/12  tnote  68 0.083
+1/12  tnote  67 0.083
+1/12  tnote  64 0.083
+1/12  tnote  67 0.083
+1/12  tnote  64 0.083
+1/12  tnote  61 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  64 0.125 
+0.125 tnote  59 0.125 bar7
+0.125  tnote  64 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  69 0.125 
+0.125 tnote  68 0.125 bar8
+0.125  tnote  69 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  71 0.125 
+0.125 tnote  63 0.125 bar9
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  64 0.125 bar10
+0.125  tnote  72 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  82 0.125 bar11
+0.125  tnote  67 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  74 0.125 bar12
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125
+0.125  tnote  72 0.125 bar13
+0.125  tnote  66 0.125 
+0.125  tnote  57 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  55 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  56 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 bar14
+0.125  tnote  66 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  57 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  77 0.125 bar15
+0.125  tnote  66 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  56 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125 tnote  63 0.125 bar16
+0.125  tnote  69 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  87 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  69 0.125 
+0.125 tnote  66 0.125 bar17
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  58 0.083
+1/12 tnote  59 0.083
+1/12 tnote  62 0.083
+1/12 tnote  65 0.083
+1/12 tnote  63 0.083
+1/12 tnote  64 0.083
+1/12 tnote  66 0.083
+1/12 tnote  67 0.083
+1/12 tnote  70 0.083
+1/12 tnote  69 0.083
+1/12 tnote  72 0.083
+1/12 tnote  78 0.083
+0.125 tnote  80 0.125 bar18
+0.125  tnote  72 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125
+0.125  tnote  64 0.125 bar19
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  55 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  56 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  56 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  59 0.125 bar20
+0.125  tnote  64 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  64 0.125 bar21
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  69 0.125 bar22
+0.125  tnote  75 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  85 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 bar23
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  72 0.125
+0.125 tnote 63 0.125 bar24
+0. tnote 71 0.125
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  62 0.125
+0.125  tnote  65 0.083 ev4_2
+1/12 tnote  66 0.083
+1/12 tnote  67 0.083
+1/12 tnote  68 0.083
+1/12 tnote  69 0.083
+1/12 tnote  72 0.083
+1/12 tnote  71 0.083
+1/12 tnote  70 0.083
+1/12 tnote  67 0.083
+1/12 tnote  69 0.083
+1/12 tnote  68 0.083
+1/12 tnote  65 0.083
+1/12 tnote  64 0.083
+1/12 tnote  61 0.083
+1/12 tnote  70 0.083
+1/12 tnote  67 0.083
+1/12 tnote  69 0.083
+1/12 tnote  73 0.083
+1/12 tnote  76 0.083
+1/12 tnote  77 0.083
+1/12 tnote  82 0.083
+1/12 tnote  84 0.083
+1/12 tnote  83 0.083
+1/12 tnote  82 0.083 bar26
+1/12 tnote  81 0.083
+1/12 tnote  80 0.083
+1/12 tnote  79 0.083
+1/12 tnote  78 0.083
+1/12 tnote  76 0.083
+1/12 tnote  77 0.083
+1/12 tnote  74 0.083
+1/12 tnote  73 0.083
+1/12 tnote  71 0.083
+1/12 tnote  70 0.083
+1/12 tnote  69 0.083
+1/12 tnote  76 0.083
+1/12 tnote  72 0.083
+1/12 tnote  73 0.083
+1/12 tnote  77 0.083
+1/12 tnote  76 0.083
+1/12 tnote  75 0.083
+1/12 tnote  71 0.083
+1/12 tnote  72 0.083
+1/12 tnote  73 0.083
+1/12 tnote  73 0.083
+1/12 tnote  71 0.083
+1/12 tnote  73 0.083
+0.083  tnote  73 0.125 ev4_3
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 bar28
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.25 
+0.25  tnote  0 0.75 
+0.75  tnote  0 6 mes300
+
+6.  tnote  76 0.125 ev4_3.6
+0.125  tnote  67 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  76 0.125 bar30
+0.125  tnote  67 0.125 
+0.125  tnote  57 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  64 0.125 bar31
+0.125  tnote  67 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  77 0.125 bar32
+0.125  tnote  69 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  81 0.125 bar33
+0.125  tnote  76 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  87 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  82 0.125 bar34
+0.125  tnote  76 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  85 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  89 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  87 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  67 0.125 bar35
+0.125  tnote  76 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  0 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  89 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  92 0.125 bar36
+0.125  tnote  76 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  90 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  87 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  76 0.125 bar37
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 bar38
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  76 0.125 bar39
+0.125  tnote  69 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+
+0.125  tnote  76 0.125 ev4_4
+0.125  tnote  76 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  76 0.125 bar41
+0.125  tnote  83 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  76 0.125 bar42
+0.125  tnote  75 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 bar43
+0.125  tnote  70 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  59 0.125
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  78 0.125 bar44
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  59 0.125
+0.125  tnote  62 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  68 0.125
+0.125  tnote  62 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  57 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  62 0.125 bar45
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  79 0.125 bar46
+0.125  tnote  71 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  62 0.125 bar47
+0.125  tnote  59 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  57 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  62 0.125 bar48
+0.125  tnote  78 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  58 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  62 0.125 bar49
+0.125  tnote  77 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 bar50
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  69 0.125 
+0.125 tnote 69 0.25
+0.25 tnote 0 1.75
+1.75 tnote 0 8 bar 326
+8 tnote  77 0.125 ev4_5
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  55 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 bar52
+0.125  tnote  69 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  79 0.125 bar53
+0.125  tnote  71 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  56 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  79 0.125 bar54
+0.125  tnote  75 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  78 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  57 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  80 0.125 bar55
+0.125  tnote  72 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  57 0.125 
+0.125  tnote  65 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  82 0.125 bar56
+0.125  tnote  74 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  84 0.125 bar57
+0.125  tnote  76 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  86 0.125 bar58
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125
+0.125  tnote  69 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  86 0.125 bar59
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  86 0.125 bar60
+0.125  tnote  81 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  86 0.125 bar61
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125
+0.125  tnote 86 0.125 bar341
+0.125  tnote 81 0.125  
+0.125  tnote 71 0.125  
+0.125  tnote 81 0.125  
+0.125  tnote 86 0.125  
+0.125  tnote 81 0.125  
+0.125  tnote 71 0.125  
+0.125  tnote 80 0.125  
+0.125  tnote 86 0.125  
+0.125  tnote 80 0.125  
+0.125  tnote 71 0.125  
+0.125  tnote 81 0.125  
+0.125  tnote  86 0.125 bar62
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  77 0.125 
+0.125 tnote  71 0.083 evt4_6
+1/12  tnote  68 0.083
+1/12  tnote  67 0.083
+1/12  tnote  60 0.083
+1/12  tnote  57 0.083
+1/12  tnote  58 0.083
+1/12  tnote  61 0.083
+1/12  tnote  63 0.083
+1/12  tnote  65 0.083
+1/12  tnote  66 0.083
+1/12  tnote  70 0.083
+1/12  tnote  71 0.083
+1/12  tnote  75 0.083
+1/12  tnote  73 0.083
+1/12  tnote  72 0.083
+1/12  tnote  69 0.083
+1/12  tnote  68 0.083
+1/12  tnote  67 0.083
+1/12  tnote  65 0.083
+1/12  tnote  73 0.083
+1/12  tnote  76 0.083
+1/12  tnote  81 0.083
+1/12  tnote  85 0.083
+1/12  tnote  84 0.083
+1/12  tnote  83 0.083
+1/12  tnote  76 0.083
+1/12  tnote  77 0.083
+1/12  tnote  80 0.083
+1/12  tnote  79 0.083
+1/12  tnote  78 0.083
+1/12  tnote  75 0.083
+1/12  tnote  74 0.083
+1/12  tnote  71 0.083
+1/12  tnote  70 0.083
+1/12  tnote  69 0.083
+1/12  tnote  64 0.083
+1/12 tnote 58 0.25 evt4_6.5
+0.25 tnote 0 1.25
+1.25 tnote 0 1.5 mes346
+
+1/12 tnote  58 0.125 evt4_7
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  55 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  56 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  58 0.125 bar66
+0.125  tnote  64 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  66 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  75 0.125 bar67
+0.125  tnote  67 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  61 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  59 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  62 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  77 0.125 bar68
+0.125  tnote  85 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  55 0.125 
+0.125  tnote  63 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  85 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  85 0.125 bar69
+0.125  tnote  69 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 bar70
+0.125  tnote  85 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  77 0.125 
+0.125  tnote  85 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  87 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  79 0.125 bar71
+0.125  tnote  71 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  89 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  90 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  90 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  89 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  71 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  73 0.125 bar72
+0.125  tnote  81 0.125 
+0.125  tnote  90 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  90 0.125 
+0.125  tnote  81 0.125 
+0.125  tnote  73 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  92 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  93 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  93 0.125 bar73
+0.125  tnote  83 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  93 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  76 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  93 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  92 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  95 0.125 bar74
+0.125  tnote  87 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  87 0.125 
+0.125  tnote  95 0.125 
+0.125  tnote  87 0.125 
+0.125  tnote  79 0.125 
+0.125  tnote  88 0.125 
+0.125  tnote  97 0.125 
+0.125  tnote  88 0.125 
+0.125  tnote  82 0.125 
+0.125  tnote  88 0.125 
+0.125  tnote  99 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  99 0.125 bar75
+0.125  tnote  91 0.125 
+0.125  tnote  99 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  99 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  99 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  99 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  99 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  99 0.250 
+0.250  tnote  0 0.250 
+
+0.25 tnote  57 0.125 ev4_8
+0.125  tnote  58 0.125
+0.125  tnote  59 0.125 
+0.125  tnote  60 0.125 
+0.125  tnote  62 0.125
+0.125  tnote  64 0.125 
+0.125  tnote  68 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  65 0.125
+0.125  tnote  60 0.125
+0.125  tnote  62 0.125 
+0.125  tnote  63 0.125
+0.125  tnote  64 0.125 
+0.125  tnote  64 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  66 0.125
+0.125  tnote  63 0.125
+0.125  tnote  64 0.125 
+0.125  tnote  67 0.125 
+0.125  tnote  68 0.125
+0.125  tnote  71 0.125 
+0.125  tnote  72 0.125 
+0.125  tnote  69 0.125 
+0.125  tnote  70 0.125 
+0.125  tnote  73 0.125
+0.125  tnote  74 0.125 
+0.125  tnote  75 0.125
+0.125  tnote  74 0.125 
+0.125  tnote  75 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  74 0.125 
+0.125  tnote  73 0.125
+0.125  tnote  75 0.125
+0.125  tnote  76 0.125 
+0.125  tnote  78 0.125
+0.125  tnote  79 0.125 
+0.125  tnote  80 0.125 
+0.125  tnote  81 0.125
+0.125  tnote  82 0.125
+0.125  tnote  83 0.125 
+0.125  tnote  84 0.125 
+0.125  tnote  83 0.125 
+0.125  tnote  86 0.125 
+0.125  tnote  87 0.125
+0.125  tnote  88 0.125 
+0.125  tnote  89 0.125 
+0.125  tnote  92 0.125 
+0.125  tnote  91 0.125 
+0.125  tnote  93 0.125 
+0.125  tnote  94 0.125 
+0.125  tnote  96 0.125 
+0.125  tnote  98 0.125 
+0.125  tnote  99 0.125 
+0.125  tnote  100 0.125 
+0.125  tnote  0 1 ev4
+0.125  tnote  101 0.125 
+0.125  tnote  104 0.125 
+0.125  tnote  103 0.125 end
+}
+
+h1_del 0
+h2_del 0
+h3_del 0
+h4_del 0
+0.1 h1tosp1 0
+h1tosp2 100 1000
+h1tosp3 0
+h2tosp1 0
+h2tosp2 100 1000
+h2tosp3 0
+h3tosp1 0
+h3tosp2 0
+h3tosp3 0
+h4tosp1 0
+h4tosp2 0
+h4tosp3 0
+h1 100 1000
+h2 100 1000
+h3 0
+h4 0
+
+s2toh1 0 
+s2toh2 0 
+s2toh3 0 
+s2toh4 0 
+
+s2 0 15000
+3fc 0
+3fc_attack 4;
+3fc_time_length 15;
+3fc_proba 1;
+3fc_amp_jitter 50;
+3fc_max_freqs 6;
+v1_minpower 48;
+v1_stable_time 46;
+v1_vibrato 0.5;
+v1_sigmund_trans 0;
+v2_sigmund_trans 12;
+v3_sigmund_trans 24;
+v1_sigmund 1
+3fctosp1 80 100
+3fctosp2 0 100
+3fctosp3 80 100
+.1 3fc 0,77 2000
+3fctohp1 50,100 4000
+3fctohp2 50,100 4000
+3fctohp3 50,100 4000
+3fctohp4 50,100 4000
+3fctohp5 50,100 4000
+3fctohp6 50,100 4000
+	
+spat1_traj 1
+spat1_traj_time 8000
+spat1_pres 65
+spat1_prer 113
+spat3_pres 65
+spat3_prer 113
+spat3_aperture 180
+spat3_dist_min 2
+spat1_aperture 180
+15s evt_3.0 0
+evt_3.0b 0
+evt_3.4 0
+
+	GFWD cercle-lent 
+	{
+	
+		0.2	spat1_traj_loop 1; 
+			spat3_traj_loop 1; 
+			traj_spat1 1 traj @b(20) 13 ; on/off, nom de la trajectoire ,durée de la boucle, distance	
+			traj_spat3 1 traj3 @b(10) 2
+	}
+	
+	
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125 bar2
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 63 0.125  
+NOTE 67 0.125  
+NOTE 63 0.125  
+NOTE 67 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 61 0.125  
+NOTE 62 0.125  
+NOTE 61 0.125  
+NOTE 62 0.125  
+NOTE 61 0.125  
+NOTE 62 0.125  
+NOTE 58 0.125  
+NOTE 62 0.125  
+;-------- 2/4
+NOTE 58 0.125 bar3
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125 bar4
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 60 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 60 0.125  
+NOTE 62 0.125  
+NOTE 56 0.125 bar5
+NOTE 60 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 72 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 61 0.125  
+NOTE 62 0.125  
+NOTE 61 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 61 0.125 bar6
+NOTE 62 0.125  
+NOTE 61 0.125  
+NOTE 62 0.125  
+NOTE 71 1/12  
+NOTE 68 1/12  
+NOTE 67 1/12  
+NOTE 64 1/12  
+NOTE 67 1/12  
+NOTE 64 1/12  
+NOTE 61 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 58 0.125  
+NOTE 64 0.125  
+NOTE 59 0.125 bar7
+NOTE 64 0.125  
+NOTE 59 0.125  
+NOTE 64 0.125  
+NOTE 59 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 74 0.125  
+NOTE 66 0.125  
+NOTE 74 0.125  
+NOTE 69 0.125  
+NOTE 75 0.125  
+NOTE 69 0.125  
+NOTE 68 0.125 bar8
+NOTE 69 0.125  
+NOTE 68 0.125  
+NOTE 69 0.125  
+NOTE 68 0.125  
+NOTE 69 0.125  
+NOTE 68 0.125  
+NOTE 69 0.125  
+NOTE 68 0.125  
+NOTE 69 0.125  
+NOTE 61 0.125  
+NOTE 71 0.125  
+NOTE 61 0.125  
+NOTE 71 0.125  
+NOTE 60 0.125  
+NOTE 71 0.125  
+NOTE 63 0.125 bar9
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 63 0.125  
+NOTE 71 0.125  
+NOTE 67 0.125  
+NOTE 71 0.125  
+NOTE 66 0.125  
+NOTE 71 0.125  
+NOTE 64 0.125 bar10
+NOTE 72 0.125  
+NOTE 80 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 78 0.125  
+NOTE 69 0.125  
+NOTE 79 0.125  
+NOTE 69 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 83 0.125  
+NOTE 69 0.125  
+NOTE 82 0.125 bar11
+NOTE 67 0.125  
+NOTE 76 0.125  
+NOTE 67 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 64 0.125  
+NOTE 69 0.125  
+NOTE 67 0.125  
+NOTE 69 0.125  
+NOTE 66 0.125  
+NOTE 69 0.125  
+NOTE 66 0.125  
+NOTE 69 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 74 0.125 bar12
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 71 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 62 0.125  
+NOTE 66 0.125  
+NOTE 69 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 72 0.125 bar13
+NOTE 66 0.125  
+NOTE 57 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 55 0.125  
+NOTE 66 0.125  
+NOTE 56 0.125  
+NOTE 66 0.125  
+NOTE 74 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125 bar14
+NOTE 66 0.125  
+NOTE 60 0.125  
+NOTE 66 0.125  
+NOTE 57 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 74 0.125  
+NOTE 66 0.125  
+NOTE 76 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 76 0.125  
+NOTE 66 0.125  
+NOTE 77 0.125 bar15
+NOTE 66 0.125  
+NOTE 63 0.125  
+NOTE 66 0.125  
+NOTE 63 0.125  
+NOTE 66 0.125  
+NOTE 63 0.125  
+NOTE 66 0.125  
+NOTE 56 0.125  
+NOTE 66 0.125  
+NOTE 60 0.125  
+NOTE 66 0.125  
+NOTE 60 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 63 0.125 bar16
+NOTE 69 0.125  
+NOTE 79 0.125  
+NOTE 69 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 83 0.125  
+NOTE 69 0.125  
+NOTE 82 0.125
+NOTE 69 0.125  
+NOTE 86 0.125  
+NOTE 69 0.125  
+NOTE 87 0.125
+NOTE 69 0.125  
+NOTE 66 0.125  
+NOTE 69 0.125  
+;	VARIANCE 0.3
+NOTE 66 0.125 bar17
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 58 0.125  
+NOTE 58 1/12  
+NOTE 59 1/12  
+NOTE 62 1/12  
+NOTE 65 1/12  
+NOTE 63 1/12  
+NOTE 64 1/12  
+NOTE 66 1/12  
+NOTE 67 1/12  
+NOTE 70 1/12  
+NOTE 69 1/12  
+NOTE 72 1/12  
+NOTE 78 1/12
+
+NOTE 80 0.125 bar18
+NOTE 72 0.125  
+NOTE 80 0.125  
+NOTE 72 0.125  
+NOTE 80 0.125  
+NOTE 72 0.125  
+NOTE 80 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 70 0.125  
+NOTE 64 0.125  
+NOTE 74 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125 bar19
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 69 0.125  
+NOTE 64 0.125  
+NOTE 71 0.125  
+NOTE 64 0.125  
+NOTE 71 0.125  
+NOTE 64 0.125  
+NOTE 64 0.125  
+NOTE 55 0.125  
+NOTE 64 0.125  
+NOTE 56 0.125  
+NOTE 64 0.125  
+NOTE 56 0.125  
+NOTE 64 0.125  
+NOTE 59 0.125 bar20
+NOTE 64 0.125  
+NOTE 58 0.125  
+NOTE 64 0.125  
+NOTE 58 0.125  
+NOTE 64 0.125  
+NOTE 58 0.125  
+NOTE 64 0.125  
+NOTE 62 0.125  
+NOTE 58 0.125  
+NOTE 65 0.125  
+NOTE 59 0.125  
+NOTE 68 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 64 0.125 bar21
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 77 0.125  
+NOTE 64 0.125  
+NOTE 74 0.125  
+NOTE 64 0.125  
+NOTE 75 0.125  
+NOTE 84 0.125  
+NOTE 75 0.125  
+NOTE 78 0.125  
+NOTE 75 0.125  
+NOTE 79 0.125  
+NOTE 75 0.125  
+NOTE 69 0.125 bar22
+NOTE 75 0.125  
+NOTE 70 0.125  
+NOTE 75 0.125  
+NOTE 86 0.125  
+NOTE 75 0.125  
+NOTE 85 0.125  
+NOTE 75 0.125  
+NOTE 86 0.125  
+NOTE 75 0.125  
+NOTE 86 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125 bar23
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 72 0.125  
+NOTE 81 0.125  
+NOTE 70 0.125  
+NOTE 80 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 67 0.125  
+NOTE 72 0.125  
+NOTE 63 0.125  
+NOTE 72 0.125  
+CHORD ( 63 71 ) 0.125 bar24
+NOTE 62 0.125 
+NOTE 62 0.125  
+NOTE 62 0.125   
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125   
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+NOTE 62 0.125  
+; or TRILL ( 62 )	2.0
+NOTE 62 1/12 
+/*******************************************/
+NOTE 65 1/12  ev4-2
+	v1_sigmund 0
+	v1tosp2 80
+	v1tosp3 0
+	read_traj3 lacet.traj
+		traj2_time 3000
+		spat2_traj 1
+		spat2_traj_loop 1
+		traj_spat2 1 traj3 3000 0.001
+		spat2_dopp 1
+		spat2_air 1
+		spat2_aperture 94
+		spat3_pres 120
+		spat3_prer 89
+	 
+	spat2_pres 110
+	spat2_prer 95
+	v1toh1 90
+	v1toh2 90
+	h1tosp2 110
+	h2tosp2 110
+	h1tosp3 0
+	h2tosp3 0
+	h1_trans 26
+	h2_trans -26
+;**************************************************************	
+
+
+;**************************************************************	
+;**************************************************************	
+NOTE 66 1/12  
+NOTE 67 1/12  
+NOTE 68 1/12  
+NOTE 69 1/12  
+NOTE 72 1/12  
+NOTE 71 1/12  
+NOTE 70 1/12  
+NOTE 67 1/12  
+NOTE 69 1/12  
+NOTE 68 1/12  
+NOTE 65 1/12  
+NOTE 64 1/12  
+NOTE 61 1/12  
+NOTE 70 1/12  
+NOTE 67  1/12  
+NOTE 69  1/12  
+NOTE 73 1/12  
+NOTE 76 1/12  
+NOTE 77 1/12  
+NOTE 82 1/12  
+NOTE 84  1/12  
+NOTE 83 1/12  
+NOTE 82 1/12 bar26
+NOTE 81 1/12  
+NOTE 80 1/12  
+NOTE 79 1/12  
+NOTE 78 1/12  
+NOTE 76 1/12  
+NOTE 77 1/12  
+NOTE 74 1/12  
+NOTE 73 1/12  
+NOTE 71 1/12  
+NOTE 70 1/12  
+NOTE 69 1/12  
+NOTE 76 1/12  
+NOTE 72 1/12  
+NOTE 73 1/12  
+NOTE 77 1/12  
+NOTE 76 1/12  
+NOTE 75 1/12  
+NOTE 71 1/12  
+NOTE 72 1/12  
+NOTE 73 1/12  
+NOTE 73 1/12  
+NOTE 71 1/12  
+NOTE 73 1/12  
+/*******************************************/
+NOTE 73 0.125 ev4-3
+	v1tosp2 0
+	v1toh1 0
+	v1toh2 0
+	
+	v1tosp3 0
+	h1tosp2 95
+	h2tosp3 95
+	h1_trans 300
+	h2_trans 0
+	
+	v1_sigmund 1
+	3fc_attack 7;
+	3fc_time_length 15;
+	3fc_proba 1;
+	3fc_amp_jitter 0;
+	3fc_max_freqs 3;	
+	v1_minpower 17;
+	v1_stable_time 15;
+	v1_vibrato 0.5;
+	v1_sigmund_trans 0;
+	v2_sigmund_trans 12;
+	v3_sigmund_trans 24;
+	
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125 bar28
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.25 
+NOTE 0 0.75 
+NOTE 0 0.25
+;TRILL (G5 Ab5) 5.75
+TRILL (G5 Ab5) 1.15
+TRILL (G5 Ab5) 0.3
+TRILL (G5 Ab5) 0.8
+TRILL (G5 Ab5) 1
+TRILL (G5 Ab5) 2.5 
+NOTE 76 0.125 ev4-3.6
+NOTE 67 0.125  
+NOTE 76 0.125  
+NOTE 67 0.125  
+NOTE 79 0.125  
+NOTE 67 0.125  
+NOTE 76 0.125  
+NOTE 67 0.125  
+NOTE 81 0.125  
+NOTE 67 0.125  
+NOTE 77 0.125  
+NOTE 67 0.125  
+NOTE 72 0.125  
+NOTE 67 0.125  
+NOTE 74 0.125  
+NOTE 67 0.125  
+NOTE 76 0.125 bar30
+NOTE 67 0.125  
+NOTE 57 0.125  
+NOTE 67 0.125  
+NOTE 59 0.125  
+NOTE 67 0.125  
+NOTE 60 0.125  
+NOTE 67 0.125  
+NOTE 62 0.125  
+NOTE 67 0.125  
+NOTE 64 0.125  
+NOTE 67 0.125  
+NOTE 60 0.125  
+NOTE 67 0.125  
+NOTE 62 0.125  
+NOTE 67 0.125  
+NOTE 64 0.125 bar31
+NOTE 67 0.125  
+NOTE 58 0.125  
+NOTE 66 0.125  
+NOTE 69 0.125  
+NOTE 65 0.125  
+NOTE 69 0.125  
+NOTE 65 0.125  
+NOTE 68 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 65 0.125  
+NOTE 70 0.125  
+NOTE 68 0.125  
+NOTE 70 0.125  
+NOTE 68 0.125  
+;-------- 4/8
+NOTE 77 0.125 bar32
+NOTE 69 0.125  
+NOTE 76 0.125  
+NOTE 73 0.125  
+NOTE 76 0.125  
+NOTE 72 0.125  
+NOTE 76 0.125  
+NOTE 72 0.125  
+NOTE 76 0.125  
+NOTE 72 0.125  
+NOTE 76 0.125  
+NOTE 72 0.125  
+NOTE 74 0.125  
+NOTE 76 0.125  
+NOTE 75 0.125  
+NOTE 76 0.125  
+NOTE 81 0.125 bar33
+NOTE 76 0.125  
+NOTE 82 0.125  
+NOTE 76 0.125  
+NOTE 84 0.125  
+NOTE 76 0.125  
+NOTE 87 0.125  
+NOTE 76 0.125  
+NOTE 86 0.125  
+NOTE 76 0.125  
+NOTE 66 0.125  
+NOTE 76 0.125  
+NOTE 67 0.125  
+NOTE 76 0.125  
+NOTE 68 0.125  
+NOTE 76 0.125  
+NOTE 82 0.125 bar34
+NOTE 76 0.125  
+NOTE 84 0.125  
+NOTE 76 0.125  
+NOTE 85 0.125  
+NOTE 76 0.125  
+NOTE 89 0.125  
+NOTE 76 0.125  
+NOTE 86 0.125  
+NOTE 76 0.125  
+NOTE 87 0.125  
+NOTE 76 0.125  
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 71 0.125  
+NOTE 76 0.125  
+NOTE 67 0.125 bar35
+NOTE 76 0.125  
+NOTE 66 0.125  
+NOTE 76 0.125  
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 69 0.125  
+NOTE 76 0.125  
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 76 0.125  
+NOTE 76 0.125  
+NOTE 89 0.125  
+NOTE 76 0.125  
+NOTE 86 0.125  
+NOTE 76 0.125  
+NOTE 92 0.125 bar36
+NOTE 76 0.125  
+NOTE 91 0.125  
+NOTE 76 0.125  
+NOTE 90 0.125  
+NOTE 76 0.125  
+NOTE 86 0.125  
+NOTE 76 0.125  
+NOTE 87 0.125  
+NOTE 76 0.125  
+NOTE 83 0.125  
+NOTE 76 0.125  
+NOTE 84 0.125  
+NOTE 76 0.125  
+NOTE 81 0.125  
+NOTE 76 0.125  
+NOTE 76 0.125 bar37
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 76 0.125 bar38
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 73 0.125  
+NOTE 76 0.125  
+NOTE 72 0.125  
+NOTE 76 0.125  
+NOTE 73 0.125  
+NOTE 62 0.125  
+NOTE 73 0.125  
+NOTE 62 0.125  
+NOTE 73 0.125  
+NOTE 76 0.125 bar39
+NOTE 69 0.125  
+NOTE 76 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 74 0.125  
+NOTE 76 0.125  
+NOTE 73 0.125  
+NOTE 75 0.125  
+NOTE 75 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125 
+/*******************************************/
+NOTE 76 0.125 ev4-4
+	3fc_attack 13;
+	3fc_time_length 24;
+	3fc_proba 1;
+	3fc_amp_jitter 50;
+	3fc_max_freqs 4;	
+
+	v1_vibrato 0.5;
+	v1_sigmund_trans -12;
+	v2_sigmund_trans 16;
+	v3_sigmund_trans 24;
+		
+	h1_trans 0
+;	3fctosp1 80
+;	3fctosp2 0
+	
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 76 0.125  
+NOTE 76 0.125  
+NOTE 79 0.125  
+NOTE 62 0.125  
+NOTE 79 0.125  
+NOTE 62 0.125  
+NOTE 79 0.125  
+NOTE 76 0.125  
+NOTE 78 0.125  
+NOTE 76 0.125  
+NOTE 81 0.125  
+NOTE 62 0.125  
+NOTE 81 0.125  
+NOTE 62 0.125  
+NOTE 84 0.125  
+NOTE 76 0.125 bar41
+NOTE 83 0.125  
+NOTE 76 0.125  
+NOTE 82 0.125  
+NOTE 62 0.125  
+NOTE 78 0.125  
+NOTE 62 0.125  
+NOTE 81 0.125  
+NOTE 76 0.125  
+NOTE 80 0.125  
+NOTE 76 0.125  
+NOTE 79 0.125  
+NOTE 62 0.125  
+NOTE 74 0.125  
+NOTE 62 0.125  
+NOTE 74 0.125  
+NOTE 76 0.125 bar42
+NOTE 75 0.125  
+NOTE 76 0.125  
+NOTE 78 0.125  
+NOTE 62 0.125  
+NOTE 77 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 76 0.125  
+NOTE 71 0.125  
+NOTE 76 0.125  
+NOTE 72 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+
+NOTE 76 0.125 bar43
+NOTE 70 0.125  
+NOTE 76 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 59 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 78 0.125  
+NOTE 70 0.125  
+NOTE 78 0.125 bar44
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 59 0.125
+NOTE 62 0.125  
+NOTE G3 0.125  
+NOTE 62 0.125  
+NOTE G#3 0.125
+NOTE 62 0.125  
+NOTE 59 0.125  
+NOTE 62 0.125  
+NOTE 57 0.125  
+NOTE 62 0.125  
+NOTE 58 0.125  
+NOTE 62 0.125  
+NOTE 59 0.125 
+
+NOTE 62 0.125 bar45
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 78 0.125  
+NOTE 72 0.125  
+NOTE 62 0.125  
+NOTE 72 0.125  
+NOTE 77 0.125  
+NOTE 72 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 80 0.125  
+NOTE 71 0.125  
+NOTE 76 0.125  
+NOTE 71 0.125  
+NOTE 79 0.125 bar46
+NOTE 71 0.125  
+NOTE 78 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125
+
+NOTE 62 0.125  
+NOTE 72 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 73 0.125  
+NOTE 62 0.125 bar47
+NOTE 59 0.125  
+NOTE 62 0.125  
+NOTE 58 0.125  
+NOTE 62 0.125  
+NOTE 57 0.125  
+NOTE 62 0.125  
+NOTE 72 0.125  
+NOTE 62 0.125  
+NOTE 75 0.125  
+NOTE 62 0.125  
+NOTE 73 0.125  
+NOTE 62 0.125  
+NOTE 74 0.125  
+NOTE 62 0.125  
+NOTE 77 0.125  
+NOTE 62 0.125 bar48
+NOTE 78 0.125
+NOTE 62 0.125  
+NOTE 68 0.125  
+NOTE 62 0.125  
+NOTE 67 0.125  
+NOTE 62 0.125  
+NOTE 64 0.125  
+NOTE 62 0.125  
+NOTE 65 0.125  
+NOTE 62 0.125  
+NOTE 59 0.125  
+NOTE 62 0.125  
+NOTE 58 0.125  
+NOTE 62 0.125  
+NOTE 61 0.125  
+NOTE 62 0.125 bar49
+NOTE 77 0.125  
+NOTE 62 0.125  
+NOTE 81 0.125  
+NOTE 62 0.125  
+NOTE 80 0.125  
+NOTE 62 0.125  
+NOTE 59 0.125  
+NOTE 62 0.125  
+NOTE 65 0.125  
+NOTE 62 0.125  
+NOTE 75 0.125  
+NOTE 62 0.125  
+NOTE 76 0.125  
+NOTE 62 0.125  
+NOTE 69 0.125
+TRILL ( 69 ) 2.	bar50
+NOTE 0 2
+/*NOTE 69 0.125  
+NOTE 69 0.125 bar50
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125  
+NOTE 69 0.125 */ 
+TRILL (C#6 D6) 1
+TRILL (C#6 D6) 1
+TRILL (C#6 D6) 1
+TRILL (C#6 D6) 1
+TRILL (C#6 D6) 1
+TRILL (C#6 D6) 1
+TRILL (C#6 D6) 1
+NOTE 0 1
+/*******************************************/
+NOTE 77 0.125 ev4-5
+
+	3fc 86
+	3fc_attack 4;
+	3fc_time_length 16;
+	3fc_proba 50;
+	3fc_amp_jitter 1;
+	3fc_max_freqs 4;	
+	v1_minpower 66;
+	v1_stable_time 15;
+;	3fctohp1 0
+;	3fctohp2 0
+;	3fctohp3 0
+;	3fctohp4 0
+;	3fctohp5 0
+;	3fctohp6 0
+	spat1_pres 94
+	spat1_prer 87
+	
+	spat3_pres 94
+	spat3_prer 87
+
+NOTE 69 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 63 0.125  
+NOTE 55 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125 bar52
+NOTE 69 0.125  
+NOTE 80 0.125  
+NOTE 69 0.125  
+NOTE 79 0.125  
+NOTE 69 0.125  
+NOTE 64 0.125  
+NOTE 69 0.125  
+NOTE 65 0.125  
+NOTE 59 0.125  
+NOTE 62 0.125  
+NOTE 70 0.125  
+NOTE 79 0.125 bar53
+NOTE 71 0.125  
+NOTE 79 0.125  
+NOTE 70 0.125  
+NOTE 79 0.125  
+NOTE 69 0.125  
+NOTE 66 0.125  
+NOTE 72 0.125  
+NOTE 66 0.125  
+NOTE 56 0.125  
+NOTE 64 0.125  
+NOTE 70 0.125  
+
+NOTE 79 0.125 bar54
+NOTE 75 0.125  
+NOTE 78 0.125  
+NOTE 74 0.125  
+NOTE 78 0.125  
+NOTE 70 0.125  
+NOTE 62 0.125  
+NOTE 71 0.125  
+NOTE 63 0.125  
+NOTE 57 0.125  
+NOTE 63 0.125  
+NOTE 72 0.125  
+
+NOTE 80 0.125 bar55
+NOTE 72 0.125  
+NOTE 81 0.125  
+NOTE 71 0.125  
+NOTE 81 0.125  
+NOTE 71 0.125  
+NOTE 80 0.125  
+NOTE 71 0.125  
+NOTE 65 0.125  
+NOTE 57 0.125  
+NOTE 65 0.125  
+NOTE 74 0.125
+
+NOTE 82 0.125 bar56
+NOTE 74 0.125  
+NOTE 83 0.125  
+NOTE 74 0.125  
+NOTE 69 0.125  
+NOTE 74 0.125  
+NOTE 68 0.125  
+NOTE 74 0.125  
+NOTE 68 0.125  
+NOTE 60 0.125  
+NOTE 68 0.125  
+NOTE 76 0.125 
+
+NOTE 84 0.125 bar57
+NOTE 76 0.125  
+NOTE 81 0.125  
+NOTE 76 0.125  
+NOTE 82 0.125  
+NOTE 76 0.125  
+NOTE 67 0.125  
+NOTE 61 0.125  
+NOTE 67 0.125  
+NOTE 59 0.125  
+NOTE 67 0.125  
+NOTE 77 0.125 
+
+NOTE 86 0.125 bar58
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 64 0.125 
+NOTE 69 0.125  
+NOTE 64 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125  
+NOTE 86 0.125 bar59
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 86 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 76 0.125  
+NOTE 86 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 86 0.125 bar60
+NOTE 81 0.125  
+NOTE 71 0.125  
+NOTE 81 0.125  
+NOTE 86 0.125  
+NOTE 80 0.125  
+NOTE 71 0.125  
+NOTE 80 0.125  
+NOTE 86 0.125  
+NOTE 76 0.125  
+NOTE 71 0.125  
+NOTE 76 0.125  
+NOTE 86 0.125 bar61
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 86 0.125  
+NOTE 76 0.125  
+NOTE 71 0.125  
+NOTE 76 0.125  
+NOTE 86 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 86 0.125 bar341
+NOTE A5 0.125  
+NOTE 71 0.125  
+NOTE A5 0.125  
+NOTE 86 0.125  
+NOTE A5 0.125  
+NOTE 71 0.125  
+NOTE G#5 0.125  
+NOTE 86 0.125  
+NOTE G#5 0.125  
+NOTE 71 0.125  
+NOTE A5 0.125  
+NOTE 86 0.125 bar62
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+NOTE 71 0.125  
+NOTE 77 0.125  
+/*******************************************/
+NOTE 71 1/12 ev4-6
+	v1tosp2 80
+	v1toh1 90
+	v1toh2 90
+	
+	v1_sigmund 0
+	spat3_pres 110
+	spat3_prer 95
+	spat3_aperture 180
+
+	h1tosp2 110
+	h2tosp2 110
+	h1_trans 300
+	h2_trans -600	
+	
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 68 1/12  
+NOTE 67 1/12  
+NOTE 60 1/12  
+NOTE 57 1/12  
+NOTE 58 1/12  
+NOTE 61 1/12  
+NOTE 63 1/12  
+NOTE 65 1/12  
+NOTE 66 1/12  
+NOTE 70 1/12  
+NOTE 71 1/12  
+NOTE 75 1/12  
+NOTE 73 1/12  
+NOTE 72 1/12  
+NOTE 69 1/12  
+NOTE 68 1/12  
+NOTE 67 1/12  
+NOTE 65 1/12 bar64
+NOTE 73 1/12  
+NOTE 76 1/12  
+NOTE 81 1/12  
+NOTE 85 1/12  
+NOTE 84 1/12  
+NOTE 83 1/12  
+NOTE 76 1/12  
+NOTE 77 1/12  
+NOTE 80 1/12  
+NOTE 79 1/12  
+NOTE 78 1/12  
+NOTE 75 1/12  
+NOTE 74 1/12  
+NOTE 71 1/12  
+NOTE 70 1/12  
+NOTE 69 1/12  
+NOTE 64 1/12  
+NOTE Bb3 1/4
+NOTE 0 1.25
+NOTE F#6 1/12
+NOTE Eb6 1/12
+NOTE G5 1/12
+NOTE C#5 1/6
+NOTE E5 1/12
+NOTE A5 1/12
+NOTE Eb6 1/12
+NOTE G6 1/6
+NOTE G5 1/2
+/*******************************************/
+NOTE 59 0.125 ev4-7
+	v1tosp2 0
+	v1toh1 0
+	v1toh2 0
+	
+	v1tosp3 0
+	h1tosp2 95
+	h2tosp3 95
+	h1_trans 0
+	h2_trans 0
+	
+	v1_sigmund 1
+	3fc_attack 4;
+	3fc_time_length 16;
+	3fc_proba 50;
+	3fc_amp_jitter 1;
+	3fc_max_freqs 4;	
+	v1_minpower 66;
+	v1_stable_time 15;
+	3fctosp3 100
+	3fc 77
+	spat1_prer 100
+	spat2_prer 100
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 73 0.125  
+NOTE 64 0.125  
+NOTE 72 0.125  
+NOTE 64 0.125  
+NOTE 59 0.125  
+NOTE 64 0.125  
+NOTE 55 0.125  
+NOTE 64 0.125  
+NOTE 56 0.125  
+NOTE 64 0.125  
+NOTE 59 0.125  
+NOTE 64 0.125  
+CHORD ( 58 59 ) 0.125 bar66
+CHORD ( 59 64 ) 0.125  
+CHORD ( 73 59 ) 0.125  
+CHORD ( 59 64 ) 0.125  
+NOTE 74 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 66 0.125  
+NOTE 75 0.125  
+NOTE 84 0.125  
+NOTE 75 0.125  
+NOTE 81 0.125  
+NOTE 75 0.125  
+NOTE 83 0.125  
+NOTE 75 0.125  
+NOTE 67 0.125  
+NOTE 75 0.125 bar67
+NOTE 67 0.125  
+NOTE 59 0.125  
+NOTE 67 0.125  
+NOTE 61 0.125  
+NOTE 67 0.125  
+NOTE 62 0.125  
+NOTE 67 0.125  
+NOTE 59 0.125  
+NOTE 67 0.125  
+NOTE 63 0.125  
+NOTE 67 0.125  
+NOTE 62 0.125  
+NOTE 67 0.125  
+NOTE 63 0.125  
+NOTE 67 0.125  
+NOTE 77 0.125 bar68
+NOTE 85 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 63 0.125  
+NOTE 55 0.125  
+NOTE 63 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125  
+NOTE 85 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 85 0.125 bar69
+NOTE 69 0.125  
+NOTE 86 0.125  
+NOTE 69 0.125  
+NOTE 82 0.125  
+NOTE 69 0.125  
+NOTE 79 0.125  
+NOTE 69 0.125  
+NOTE 80 0.125  
+NOTE 69 0.125  
+NOTE 83 0.125  
+NOTE 69 0.125  
+NOTE 84 0.125  
+NOTE 69 0.125  
+NOTE 83 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125 bar70
+NOTE 85 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125  
+NOTE 69 0.125  
+NOTE 77 0.125  
+NOTE 85 0.125  
+NOTE 79 0.125  
+NOTE 70 0.125  
+NOTE 79 0.125  
+NOTE 87 0.125  
+NOTE 79 0.125  
+NOTE 70 0.125  
+NOTE 79 0.125  
+NOTE 71 0.125  
+NOTE 79 0.125 bar71
+NOTE 71 0.125  
+NOTE 80 0.125  
+NOTE 89 0.125  
+NOTE 80 0.125  
+NOTE 80 0.125  
+NOTE 90 0.125  
+NOTE 80 0.125  
+NOTE 90 0.125  
+NOTE 80 0.125  
+NOTE 89 0.125  
+NOTE 80 0.125  
+NOTE 71 0.125  
+NOTE 80 0.125  
+NOTE 72 0.125  
+NOTE 80 0.125  
+NOTE 73 0.125 bar72
+NOTE 81 0.125  
+NOTE 90 0.125  
+NOTE 81 0.125  
+NOTE 90 0.125  
+NOTE 81 0.125  
+NOTE 73 0.125  
+NOTE 82 0.125  
+NOTE 91 0.125  
+NOTE 82 0.125  
+NOTE 92 0.125  
+NOTE 82 0.125  
+NOTE 93 0.125  
+NOTE 82 0.125  
+NOTE 74 0.125  
+NOTE 83 0.125  
+NOTE 93 0.125 bar73
+NOTE 83 0.125  
+NOTE 74 0.125  
+NOTE 83 0.125  
+NOTE 75 0.125  
+NOTE 83 0.125  
+NOTE 93 0.125  
+NOTE 83 0.125  
+NOTE 75 0.125  
+NOTE 84 0.125  
+NOTE 76 0.125  
+NOTE 84 0.125  
+NOTE 93 0.125  
+NOTE 84 0.125  
+NOTE 92 0.125  
+NOTE 84 0.125  
+NOTE 95 0.125 bar74
+NOTE 87 0.125  
+NOTE 79 0.125  
+NOTE 70 0.125  
+NOTE 79 0.125  
+NOTE 87 0.125  
+NOTE 95 0.125  
+NOTE 87 0.125  
+NOTE 79 0.125  
+NOTE 88 0.125  
+NOTE 97 0.125  
+NOTE 88 0.125  
+NOTE 82 0.125  
+NOTE 88 0.125  
+NOTE 99 0.125  
+NOTE 91 0.125  
+;-------- 4/4
+NOTE 99 0.125 bar75
+NOTE 91 0.125  
+NOTE 99 0.125  
+NOTE 91 0.125  
+NOTE 99 0.125  
+NOTE 91 0.125  
+NOTE 99 0.125  
+NOTE 91 0.125  
+NOTE 99 0.125  
+NOTE 91 0.125  
+NOTE 99 0.125  
+NOTE 91 0.125  
+NOTE 99 0.250 
+NOTE 0 0.250
+
+/*******************************************/
+NOTE A3 0.125 ev4-8
+
+	v1tosp2 80
+	v1toh1 90
+	v1toh2 90
+	
+	3fc_attack 1;
+	3fc_time_length 10;
+	v1_minpower 82;
+	v1_stable_time 10;
+	3fc 82	
+	h1tosp2 110
+	h2tosp2 110
+
+NOTE A#3 0.125
+NOTE B3 0.125
+NOTE C4 0.125
+NOTE D#4 0.125
+NOTE E4 0.125
+NOTE Ab4 0.125
+NOTE G4 0.125
+NOTE F#4 0.125
+
+NOTE C#4 0.125
+NOTE D4 0.125
+NOTE D#4 0.125
+NOTE F4 0.125
+NOTE E4 0.125
+NOTE G4 0.125
+NOTE Bb4 0.125
+NOTE A4 0.125
+NOTE C5 0.125
+
+NOTE F#4 0.125
+NOTE D#4 0.125
+NOTE E4 0.125
+NOTE G4 0.125
+NOTE G#4 0.125
+NOTE B4 0.125
+NOTE C5 0.125
+NOTE A4 0.125
+NOTE Bb4 0.125
+NOTE C#5 0.125
+NOTE D5 0.125
+NOTE D#5 0.125
+
+NOTE E5 0.125
+NOTE F5 0.125
+NOTE E5 0.125
+NOTE E5 0.125
+NOTE C#5 0.125
+NOTE D#5 0.125
+
+NOTE E5 0.125
+NOTE F#5 0.125
+NOTE G5 0.125
+NOTE A5 0.125
+NOTE G#5 0.125
+NOTE A#5 0.125
+NOTE B5 0.125
+NOTE C6 0.125
+NOTE B5 0.125
+NOTE D6 0.125
+NOTE D#6 0.125
+NOTE E6 0.125
+
+NOTE F6 0.125
+NOTE Ab6 0.125
+NOTE G6 0.125
+NOTE A6 0.125
+NOTE Bb6 0.125
+NOTE C7 0.125
+NOTE D7 0.125
+NOTE Eb7 0.125
+NOTE E7 0.125
+TRILL ((G7)) 10. ev4-9 
+;uniquement pour partita2 (pas Bpartita)
+;	syntosp1 100
+;	synful 0, 57 200;
+;	syn_voices 1	pgm 40 bnk 5 vol 120		; vlon trem
+;	syn_voices 1 91 127 
+NOTE 0 1 ev4-9-SECTION-V
+antescofo_score B-Partita.5.asco
+
+NOTE F6 0.125
+
+

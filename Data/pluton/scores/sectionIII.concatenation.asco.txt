@@ -1,0 +1,808 @@
+ ; pluton lib utility functions
+ @macro_def @pluton_note($notename,$vel,$dur)
+    {
+        if ($notename != "0")
+         {
+			;print $notename,@symb2midicent($notename)
+			tnote $notename $vel $dur			;conversions in MAX
+			;@makenote (tnote2,@/(@symb2midicent($notename),100),$vel,$dur)
+     	}  
+     }
+
+ @macro_def @makenote($name, $p, $vel, $dur) 
+          { 
+                group myMakenote
+               {
+                        $name $p $vel 
+                   $dur $name $p 0
+               }
+          }   
+
+@proc_def pluton_chord($notelist,$vel,$dur)
+    {
+        forall $notename in $notelist
+         {
+			tnote $notename $vel $dur			;conversions in MAX
+			;@makenote (tnote2,@/(@symb2midicent($notename),100),$vel,$dur)
+     	}  
+     }
+
+
+
+_section_ R1
+suivi 1
+BPM 60
+CHORD (F#3 C4 Eb4 B4 D5 Bb5) 2 R1
+ambitus2 127;
+ambitus 127;
+Rout 127;
+ptoR 121;
+Revfb 127;
+Rto4 127;
+tto4 127;
+rto4 127;
+htor 127;
+ttor 127;
+revfb 105;
+hwind 90;
+rto4 121;
+hfreq 67;
+Otor 0;
+otor 0;
+Otoh 0;
+otoh 0;
+sol# 1; pour les sequences fonctionnelles
+trec bang;
+frog1-sampno 157;
+mark clear;
+mark2 clear;
+markdur 3;
+markdur2 3;
+rgate 127;
+rout 127;
+ttoh 127;
+diramp 127;
+hamp 127;
+hto4 127;
+Rtoh 0;
+100ms Rgate 127;
+200ms Rgate 0;
+1000ms Rto4 0 30000;
+CHORD (C#3 F#3 C4 Eb4) 1/3
+trec2 bang
+frog2-sampno 158
+CHORD (D2 G2 -C#3 -F#3 -C4 -Eb4) 2/3
+CHORD (-D2 -G2 -C#3 -F#3 -C4 -Eb4) 4
+Rgate 0
+
+;-----
+
+_section_ A3
+
+;NOTE 0 1/8 A3
+NOTE C7 1/8 A3
+suivi 1
+midi_mode antescofo_novel
+mark record, set 1000;
+Revfb 110;
+400ms mark bang, restart 1;
+group{
+ @pluton_note ("C7",110, "1/8")
+1/8 @pluton_note ("Eb7",110, "1/8")
+1/8 @pluton_note ("B7",110, "1/8")
+1/8 @pluton_note ("D7",110, "1/8")
+1/8 @pluton_note ("C#6",110, "1/8")
+1/8 @pluton_note ("Bb6",110, "1/8")
+1/8 @pluton_note ("Eb7",110, "1/8")
+1/8 @pluton_note ("A7",110, "1/8")
+1/8 @pluton_note ("F#7",110, "1/8")
+1/8 @pluton_note ("G6",110, "1/8")
+1/8 @pluton_note ("E7",110, "1/8")
+1/8 @pluton_note ("D5",110, "1/8")
+1/8 @pluton_note ("F6",110, "1/8")
+1/8 @pluton_note ("E7",110, "1/8")
+1/8 @pluton_note ("C#7",110, "1/8")
+1/8 @pluton_note ("F#7",110, "1/8")
+1/8 @pluton_note ("D5",110, "1/8")
+1/8 @pluton_note ("G#6",110, "1/8")
+1/8 @pluton_note ("A7",110, "1/8")
+1/8 @pluton_note ("D5",110, "1/8")
+1/8 @pluton_note ("Bb5",110, "1/8")
+1/8 @pluton_note ("B4",110, "1/8")
+1/8 @pluton_note ("C7",110, "1/8")
+1/8 @pluton_note ("A7",110, "1/8")
+1/8 @pluton_note ("C#6",110, "1/8")
+1/8 @pluton_note ("B7",110, "1/8")
+1/8 @pluton_note ("G#7",110, "1/8")
+1/8 @pluton_note ("Bb6",110, "1/8")
+1/8 @pluton_note ("C#6",110, "1/8")
+1/8 @pluton_note ("D5",110, "1/8")
+1/8 @pluton_note ("B7",110, "1/8")
+1/8 @pluton_note ("F#7",110, "1/8")
+1/8 @pluton_note ("C7",110, "1/8")
+1/8 @pluton_note ("Eb6",110, "1/8")
+1/8 @pluton_note ("G5",110, "1/8")
+1/8 @pluton_note ("A6",110, "1/8")
+1/8 @pluton_note ("A6",110, "1/8")
+1/8 @pluton_note ("B7",110, "1/8")
+1/8 @pluton_note ("G#7",110, "1/8")
+1/8 @pluton_note ("A6",110, "1/8")
+1/8 @pluton_note ("C6",110, "1/8")
+1/8 @pluton_note ("G5",110, "1/8")
+1/8 @pluton_note ("B7",110, "1/8")
+1/8 @pluton_note ("B7",110, "1/8")
+1/8 @pluton_note ("F7",110, "1/8")
+1/8 @pluton_note ("E6",110, "1/8")
+1/8 @pluton_note ("B7",110, "1/8")
+1/8 @pluton_note ("G5",110, "1/8")
+1/8 @pluton_note ("A6",110, "1/8")
+1/8 @pluton_note ("F#7",110, "1/8")
+1/8 @pluton_note ("Bb6",110, "1/8")	
+}
+NOTE Eb7 1/8
+NOTE B7 1/8
+NOTE D7 1/8
+NOTE C#6 1/8
+NOTE Bb6 1/8
+NOTE Eb7 1/8
+NOTE A7 1/8
+NOTE F#7 1/8
+NOTE G6 1/8
+NOTE E7 1/8
+NOTE D5 1/8
+NOTE F6 1/8
+NOTE E7 1/8
+NOTE C#7 1/8
+NOTE F#7 1/8
+NOTE D5 1/8
+NOTE G#6 1/8
+NOTE A7 1/8
+NOTE D5 1/8
+NOTE Bb5 1/8
+NOTE B4 1/8
+NOTE C7 1/8
+NOTE A7 1/8
+NOTE C#6 1/8
+NOTE 0 3/4
+NOTE B7 1/8
+NOTE G#7 1/8
+NOTE Bb6 1/8
+NOTE C#6 1/8
+
+NOTE D5 1/8 
+NOTE B7 1/8
+NOTE F#7 1/8
+NOTE C7 1/8
+NOTE Eb6 1/8
+NOTE G5 1/8
+NOTE A6 1/8
+NOTE 0 3/8
+NOTE A6 1/8
+NOTE B7 1/8
+NOTE G#7 1/8
+NOTE A6 1/8
+NOTE C6 1/8
+NOTE G5 1/8
+NOTE B7 1/8
+NOTE 0 3/8
+NOTE 0 5/8
+NOTE B7 1/8
+NOTE F7 1/8
+NOTE E6 1/8
+NOTE B7 1/8
+NOTE G5 1/8
+NOTE A6 1/8
+NOTE F#7 1/8
+NOTE Bb6 1/8
+NOTE 0 3/8
+NOTE 0 1/2 @fermata
+
+;----- --- time signature 1/4
+
+NOTE 0 1
+	mark restart 1;
+	300ms mark stoprec;
+
+;----- --- time signature 1/4
+
+_section_ A2
+suivi 1
+midi_mode antescofo_novel
+BPM 40
+NOTE Eb4 1/3 A2
+	mark record, set 4000;
+	mark2 record, set 4000;
+	2000ms mark bang, restart 1;
+	mark2 bang, restart 1;
+group{
+ @pluton_note ("Eb4",110, "1/3")
+1/3 @pluton_note ("F#3",110, "1/6")
+1/6 @pluton_note ("Bb5",110, "1/4")
+1/4 ::pluton_chord (["D5","-Bb5"],110,"1/8")
+1/8 ::pluton_chord (["B4","-Bb5"],110,"1/8")
+1/8 @pluton_note ("-B4",110, "1/8")
+1/8 @pluton_note ("-B4",110, "3/8")
+3/8 @pluton_note ("Db6",110, "1/2")
+1/2 @pluton_note ("A3",110, "1/6")
+1/6 @pluton_note ("C7",110, "1/3")
+1/3 @pluton_note ("Eb4",110, "1/4")
+1/4 ::pluton_chord (["A3","-Eb4"],110,"1/8")
+1/8 ::pluton_chord (["F#3","-Eb4"],110,"1/8")
+1/8 ::pluton_chord (["-F#3","Db6"],110,"1/10")
+1/10 @pluton_note ("-Db6",110, "3/10")
+3/10 @pluton_note ("Bb5",110, "2/5")
+2/5 @pluton_note ("B4",110, "1/4")
+1/4 ::pluton_chord (["-B4","D5"],110,"1/8")
+1/8 ::pluton_chord (["-B4","C7"],110,"1/8")
+2/9 ::pluton_chord (["Eb4","-C7"],110,"2/9")
+2/9 @pluton_note ("-Eb4",110, "1/4")
+1/4 @pluton_note ("-Eb4",110, "1/39")
+1/39 @pluton_note ("B4",110, "1/6")
+1/6 @pluton_note ("A3",110, "1/3")
+1/3 @pluton_note ("Bb5",110, "1/2")
+1/2 @pluton_note ("F#3",110, "1/4")
+1/4 @pluton_note ("Db6",110, "1/2")
+1/2 @pluton_note ("D5",110, "3/8")
+3/8 ::pluton_chord (["F#3","-D5"],110,"1/4")
+3/8 @pluton_note ("C7",110, "1/2")
+1/2 @pluton_note ("Bb5",110, "1/2")
+1/2 @pluton_note ("Eb4",110, "1/6")
+1/6 @pluton_note ("A3",110, "1/3")
+1/3 @pluton_note ("B4",110, "1/4")
+1/4 ::pluton_chord (["-B4","Db6"],110,"1/8")
+1/8 ::pluton_chord (["A3","-B4"],110,"1/8")
+1/8 @pluton_note ("D5",110, "1/8")
+1/8 @pluton_note ("Eb4",110, "1/6")
+1/6 @pluton_note ("F#3",110, "1/4")
+1/4 @pluton_note ("Bb5",110, "1/4")
+1/4 ::pluton_chord (["-Bb5","C7"],110,"1/8")
+1/8 ::pluton_chord (["D5","-Bb5"],110,"1/8")
+1/8 @pluton_note ("Bb5",110, "1/2")
+1/2 @pluton_note ("Db6",110, "1/2")
+1/2 @pluton_note ("A3",110, "1/2")
+1/2 @pluton_note ("F#3",110, "1/6")
+1/6 @pluton_note ("Eb4",110, "1/3")
+1/3 @pluton_note ("D5",110, "1/2")
+}
+NOTE F#3 1/6
+NOTE Bb5 1/4
+CHORD (D5 -Bb5) 1/8
+CHORD (B4 -Bb5) 1/8
+NOTE -B4 1/8
+NOTE -B4 3/8
+NOTE Db6 1/2
+NOTE A3 1/6
+NOTE C7 1/3
+NOTE Eb4 1/4
+CHORD (A3 -Eb4) 1/8
+CHORD (F#3 -Eb4) 1/8
+CHORD (-F#3 Db6) 1/10
+NOTE -Db6 3/10
+NOTE Bb5 2/5
+NOTE B4 1/4
+CHORD (-B4 D5) 1/8
+CHORD (-B4 C7) 1/8
+CHORD (Eb4 -C7) 2/9
+NOTE -Eb4 1/4
+NOTE -Eb4 1/39
+NOTE B4 1/6
+NOTE A3 1/3
+NOTE Bb5 1/2
+NOTE F#3 1/4
+NOTE Db6 1/2
+NOTE D5 3/8
+CHORD (F#3 -D5) 1/4
+;-----
+NOTE C7 1/2 
+NOTE Bb5 1/2
+NOTE Eb4 1/6
+NOTE A3 1/3
+NOTE B4 1/4
+CHORD (-B4 Db6) 1/8
+CHORD (A3 -B4) 1/8
+NOTE D5 1/8
+NOTE Eb4 1/6
+NOTE F#3  1/4
+NOTE Bb5 1/4
+CHORD (-Bb5 C7) 1/8
+CHORD (D5 -Bb5) 1/8
+NOTE Bb5 1/2
+NOTE Db6 1/2
+NOTE A3 1/2
+NOTE F#3 1/6
+NOTE Eb4 1/3
+NOTE D5 1/2 @fermata
+	mark restart 1;
+	mark2 restart 1;
+	300ms mark stoprec;
+	mark2 stoprec;
+;--------
+
+_section_ R2
+suivi 1
+CHORD (C4 G#4 B4) 1/8 R2
+	trec bang;
+	frog1-sampno 159
+	mark stoprec;
+	mark2 stoprec;
+	ttor 120;
+	tto4 120 500;
+	tto2 120 500;
+	ttoh 120 500;
+
+CHORD (-C4 D5 Bb5 Db6) 7/8
+CHORD (F#5 A5) 1/8
+CHORD (-F#5 G5 E6) 7/8
+CHORD (-F#5 -G5 A5 -E6) 1
+CHORD (C4 G#4 B4) 1/3
+	trec2 bang
+	frog2-sampno 160
+CHORD (-C4 G5 E6) 2/3
+CHORD (-G5 -E6) 1/4
+CHORD (D5 G#5 A5 C#6) 1/8
+CHORD (Bb5 -C#6 E6) 1/8
+CHORD (D5 G#5 A5 -Bb5 C#6 -E6) 1/2 @fermata
+	tto2 127;
+	tto4 120;
+	ttoh 120;
+;NOTE 0 8
+;-----
+
+_section_ A1
+suivi 1
+BPM 60
+NOTE F#3 4 A1
+midi_mode antescofo_novel
+
+	mark record, set 4000;
+	mark2 record, set 4000;
+	4000ms mark bang;
+	mark2 bang;
+group{
+@pluton_note ("F#3",110, 4)
+4 @pluton_note ("C#3",110, "1/2")
+1/2 @pluton_note ("G2",110, 4)
+4 @pluton_note ("D5",110, "1/4")
+1/4 @pluton_note ("G#4",110, 4)
+4 @pluton_note ("G2",110, 1)
+1 @pluton_note ("Eb4",110, 4)
+4 @pluton_note ("A3",110, "1/2")
+1/2 @pluton_note ("Eb4",110, "1/4")
+1/4 @pluton_note ("C#3",110, 4)
+4 @pluton_note ("G2",110, "1/2")
+1/2 @pluton_note ("G2",110, 4)
+4 @pluton_note ("G#4",110, "1/4")
+1/4 @pluton_note ("D5",110, 4)
+4 @pluton_note ("G#4",110, 1)
+1 @pluton_note ("C#3",110, 1)
+1 @pluton_note ("G2",110, 4)
+4 @pluton_note ("A3",110, "1/2")
+1/2 @pluton_note ("C#3",110, 4)
+
+}
+
+NOTE C#3 1/2 
+NOTE G2 4
+NOTE D5 1/4 
+NOTE G#4 4
+NOTE G2 1 
+NOTE Eb4 4
+NOTE A3 1/2
+NOTE Eb4 1/4 
+NOTE C#3 4
+NOTE G2 1/2 @staccato 
+NOTE G2 4
+NOTE G#4 1/4 
+NOTE D5 4
+NOTE G#4 1
+NOTE C#3 1
+NOTE G2 4 
+NOTE A3 1/2 
+NOTE C#3 4 @fermata
+	300ms mark stoprec;
+	mark2 stoprec;
+
+;----- ---
+
+_section_ R3
+suivi 1
+CHORD (C4 D4 Gb4 Bb4 D#5 B5) 8 R3
+	mark stoprec;
+	mark2 stoprec;
+	trec bang;
+	trec2 bang;
+	frog1-sampno 161
+	frog2-sampno 161
+	fpos 0;
+	killh bang;
+	revfb 89;
+	rto4 128;
+	fneg 128;
+	fto4 127 500;
+	fto2 102 500;
+	ftor 128;
+	ttof 127;
+	fsfre 65;
+	tto4 127 500;
+	tto2 102 500;
+	ttor 127 500;
+
+CHORD (C4 D4 G#4 B4 E5 Bb5 C#6 D#6 F#6) 8
+	trec bang;
+	trec2 bang;
+	frog1-sampno 162
+	frog2-sampno 162
+CHORD (C4 F#4 G#4 D5 E5 A5 B5 Eb6 Ab6 Bb6) 8
+	trec bang;
+	trec2 bang;
+	frog1-sampno 163
+	frog2-sampno 163
+CHORD (Bb2 F#3 C4 F5 C#6 D#6 G6) 8
+	trec bang;
+	trec2 bang;
+	frog1-sampno 164
+	frog2-sampno 164
+NOTE 0 8
+;-----
+
+_section_ E
+
+ NOTE G#1 1/4 @staccato E
+suivi 0
+midi_mode fiddle
+E 1
+
+; ;-----
+
+; ; repeat (opening)
+; MULTI (F2 -> C#4) 1/4 @staccato @fermata measure22
+; NOTE 0 3/4
+; NOTE C#4 1/4 @staccato @fermata
+; NOTE 0 3/4
+; NOTE B6 1/4 @staccato
+; NOTE 0 1/4
+; NOTE Bb3 1/4 @staccato
+; NOTE 0 1/4
+; NOTE A5 1/4 @staccato @fermata
+; NOTE 0 3/4
+; NOTE C5 1/4 @staccato @fermata
+; NOTE 0 3/4
+; ; repeat (closing)
+
+; ;-----
+NOTE 0 16
+NOTE A1 1/4 @staccato 
+E 0
+ambitus 128;
+ambitus2 128;
+
+; ;-----
+_section_ R4
+suivi 1
+TRILL ((C4 B4 Ab5 F#6) (C4 Bb4 G5 F#6)) 8 R4
+	trec2 bang;
+	frog2-sampno 165
+	mark stoprec;
+	mark2 stoprec;
+	tto4 0;
+;NOTE 0 8
+;-----
+
+_section_ R5
+suivi 1
+CHORD (C4 Ab4 D5 A5 Eb6 B6) 8 R5
+	trec bang;
+	frog1-sampno 166
+	mark stoprec;
+	mark2 stoprec;
+NOTE 0 8
+;-----
+
+_section_ M
+ NOTE D#1 1/4 @staccato M
+suivi 0
+midi_mode fiddle
+M 1
+ttor 0 
+ttoR 0
+spaton 1;
+zdist 69;
+tto4 0;
+zgate 127;
+zout 127;
+spatinc 65;
+
+
+; ;-----
+
+; ; repeat (opening)
+; MULTI (G6 -> Bb3) 1/4 @staccato @fermata measure26
+; NOTE 0 3/4
+; NOTE Bb3 1/4 @staccato
+; NOTE 0 3/4
+; NOTE C5 1/4 @staccato @fermata
+; NOTE 0 3/4
+; ; repeat (closing)
+
+; ;-----
+
+ NOTE 0 16
+ NOTE E1 1/4 @staccato 
+M 0
+revfb 60;
+tto4 128;
+zdist 0;
+spaton 0;
+
+; ;-----
+
+_section_ R6
+suivi 1
+BPM 60
+CHORD (Ab2 C4) 1/4 R6
+	trec bang;
+	trec2 bang;
+	frog1-sampno 167
+	frog2-sampno 167
+	mark stoprec;
+	mark2 stoprec;
+	ttoh 127;
+	diramp 127;
+	hamp 127;
+	hto4 127;
+	fneg 127;
+	ttof 127;
+	hwind 99;
+	hfreq 65;
+	fsfre 72;
+	fto4 114;
+CHORD (D2 Ab2 C#3 F#3 C4 -Ab2 -C4) 3/4
+CHORD (-D2 -Ab2 -C#3 -F#3 -C4) 1/3
+CHORD (G#4 E5 A5 B5 F6 Bb6) 2/3
+CHORD (-G#4 -E5 -A5 -B5 -F6 -Bb6) 1
+;NOTE 0 8
+;-----
+
+_section_ A4
+
+BPM 60
+NOTE C#3 3/8 A4
+suivi 1
+midi_mode antescofo_novel
+	mark2 record, set 2000;
+	1000ms mark2 bang;
+	group{
+@pluton_note ("C#3",110, "3/8")
+3/8 @pluton_note ("A3",110, "1/8")
+1/8 ::pluton_chord (["-A3","C5"],110,"1/6")
+1/6 ::pluton_chord (["-A3","F#4"],110,"1/3")
+1/3 ::pluton_chord (["-A3","Eb5"],110,"1/3")
+1/3 ::pluton_chord (["-A3","E4"],110,"5/12")
+5/12 ::pluton_chord (["G2","-E4"],110,"1/8")
+1/8 ::pluton_chord (["A3","-E4"],110,"1/8")
+1/8 ::pluton_chord (["-G2","-A3","-E4"],110,"2/5" )
+2/5 ::pluton_chord (["-G2","-A3","B5"],110,"1/5")
+1/5 ::pluton_chord (["-G2","-A3","G#5"],110,"1/5")
+1/5 ::pluton_chord (["-G2","-A3","Bb4"],110,"1/5")
+1/5 ::pluton_chord (["-G2","-A3","E4"],110,"1/5")
+1/5 ::pluton_chord (["F3","-E4"],110,"4/5")
+4/5 ::pluton_chord (["-F3","A3"],110,"1/3" )
+1/3 ::pluton_chord (["-F3","Bb4"],110,"1/3")
+1/3 ::pluton_chord (["-F3","F#4"],110,"1/12")
+1/12 ::pluton_chord (["C#3","-F#4"],110,"1/4")
+1/4 ::pluton_chord (["F3","-F#4"],110,"1/12")
+1/12 ::pluton_chord (["C#3","-F#4"],110,"1/12")
+1/12 ::pluton_chord (["A3","-F#4"],110,"1/12")
+1/8 ::pluton_chord (["G2","-F#4"],110,"1/8")
+1/8 ::pluton_chord (["-G2","G#5"],110,"1/8")
+1/8 ::pluton_chord (["-G2","E4"],110,"1/2")
+1/2 ::pluton_chord (["-G2","B5"],110,"1/4" )
+1/4 ::pluton_chord (["-G2","Eb5"],110,"5/12")
+5/12 ::pluton_chord (["F3","E4","-Eb5"],110,"1/12")
+1/12 ::pluton_chord (["-F3","-E4","C5"],110,"1/4")
+1/4 ::pluton_chord (["-F3","-E4"],110,"3/8")
+3/8 ::pluton_chord (["-F3","-E4","Bb4"],110,"1/8")
+1/8 ::pluton_chord (["-F3","-E4","Eb5"],110,"1/4")
+1/4 ::pluton_chord (["F3","E4"],110,"1/4")
+1/4 @pluton_note ("F#4",110, "1/3")
+1/3 @pluton_note ("B5",110, "1/6")
+1/6 ::pluton_chord (["G2","-B5"],110,"1/8")
+1/8 ::pluton_chord (["-G2","C4","-B5"],110,"3/8")
+3/8 ::pluton_chord (["-G2","-C4","G#5"],110,"3/8")
+1/8 ::pluton_chord (["-G2","-C4","E4"],110,"1/8")
+1/8 ::pluton_chord (["-G2","-C4","-E4"],110,"1/6")
+1/6 ::pluton_chord (["C#3","-E4"],110,"1/6")
+1/6 ::pluton_chord (["-C#3","F3","-E4"],110,"1/6")
+1/6 ::pluton_chord (["-C#3","-F3"],110,"1/2" )
+1/2 ::pluton_chord (["-C#3","-F3"],110,"1/6")
+1/6 ::pluton_chord (["-C#3","-F3","B5"],110,"1/6")
+1/6 ::pluton_chord (["-C#3","-F3","Bb4"],110,"1/6")
+1/6 @pluton_note ("Ab5",110, "1/6")
+1/6 @pluton_note ("E4",110, "1/6")
+1/6 @pluton_note ("F3",110, "1/6")
+1/6 @pluton_note ("C#3",110, "1/6")
+1/6 @pluton_note ("F#4",110, "1/3")
+	}
+NOTE A3 1/8
+CHORD (-A3 C5) 1/6
+CHORD (-A3 F#4) 1/3
+CHORD (-A3 Eb5) 1/3
+CHORD (-A3 E4) 5/12
+CHORD (G2 -E4) 1/8
+CHORD (A3 -E4) 1/8
+
+CHORD (-G2 -A3 -E4) 2/5 
+CHORD (-G2 -A3 B5) 1/5
+CHORD (-G2 -A3 G#5) 1/5
+CHORD (-G2 -A3 Bb4) 1/5
+CHORD (-G2 -A3 E4) 1/5
+CHORD (F3 -E4) 4/5
+
+CHORD (-F3 A3) 1/3 
+CHORD (-F3 Bb4) 1/3
+CHORD (-F3 F#4) 1/12
+CHORD (C#3 -F#4) 1/4
+CHORD (F3 -F#4) 1/12
+CHORD (C#3 -F#4) 1/12
+CHORD (A3 -F#4) 1/12
+CHORD (G2 -F#4) 1/8
+CHORD (-G2 G#5) 1/8
+CHORD (-G2 E4) 1/2
+
+CHORD (-G2 B5) 1/4 
+CHORD (-G2 Eb5) 5/12
+CHORD (F3 E4 -Eb5) 1/12
+CHORD (-F3 -E4 C5) 1/4
+CHORD (-F3 -E4) 3/8
+CHORD (-F3 -E4 Bb4) 1/8
+CHORD (-F3 -E4 Eb5) 1/4
+CHORD (F3 E4) 1/4
+
+NOTE F#4 1/3 
+NOTE B5 1/6
+CHORD (G2 -B5) 1/8
+CHORD (-G2 C4 -B5) 3/8
+CHORD (-G2 -C4 G#5) 3/8
+CHORD (-G2 -C4 E4) 1/8
+CHORD (-G2 -C4 -E4) 1/6
+CHORD (C#3 -E4) 1/6
+CHORD (-C#3 F3 -E4) 1/6
+
+CHORD (-C#3 -F3) 1/2 
+CHORD (-C#3 -F3) 1/6
+CHORD (-C#3 -F3 B5) 1/6
+CHORD (-C#3 -F3 Bb4) 1/6
+NOTE Ab5 1/6
+NOTE E4 1/6
+NOTE F3 1/6
+NOTE C#3 1/6
+NOTE F#4 1/3
+	300ms mark2 stoprec;
+NOTE 0 1 @fermata
+
+;----- 
+
+_section_ A5
+BPM 52
+CHORD (G5 C#6 E6 F#6 A6) 1/8 A5
+suivi 1
+midi_mode antescofo_novel
+	mark record, set 6000;
+	mark2 record, set 6000;
+	4000ms mark bang;
+	mark2 bang;
+	group{
+::pluton_chord (["G5","C#6","E6","F#6","A6"],110,"1/8")
+1/8 ::pluton_chord (["Bb4","C5","Eb5","-G5","B5","-C#6","-E6","-F#6","-A6"],110,"7/8")
+7/8 ::pluton_chord (["G2","C#3","A3","C4","E4","F#4","Bb4"],110,"3/2")
+3/2 ::pluton_chord (["G#5","C#6","Bb6","C7","D7","Eb7","B7"],110,"1/2")
+1/2 ::pluton_chord (["-G#5","-C#6","-Bb6","-C7","-D7","-Eb7","-B7"],110,"4/3" )
+4/3 ::pluton_chord (["F#5","C6","Eb6","A6","Bb6","B6","E7","G#7"],110,"2/3")
+2/3 ::pluton_chord (["B5","D6","F6","G#6","Bb6","C#7","E7"],110,"1/2")
+1/2 ::pluton_chord (["D6","G#6","Bb6","C#7","D#7","G#7","B7"],110,"1/2")
+1/2 ::pluton_chord (["G2","F3","A3","C4","A#4","B4","D5"],110,2)
+2 ::pluton_chord (["G5","Bb5","E6","A6","E7","F7","Gb7","B7"],110,1)
+	}
+CHORD (Bb4 C5 Eb5 -G5 B5 -C#6 -E6 -F#6 -A6) 7/8
+CHORD (G2 C#3 A3 C4 E4 F#4 Bb4) 3/2
+CHORD (G#5 C#6 Bb6 C7 D7 Eb7 B7) 1/2
+CHORD (-G#5 -C#6 -Bb6 -C7 -D7 -Eb7 -B7) 4/3 
+CHORD (F#5 C6 Eb6 A6 Bb6 B6 E7 G#7) 2/3
+CHORD (B5 D6 F6 G#6 Bb6 C#7 E7) 1/2
+CHORD (D6 G#6 Bb6 C#7 D#7 G#7 B7) 1/2
+CHORD (G2 F3 A3 C4 A#4 B4 D5) 2
+CHORD (G5 Bb5 E6 A6 E7 F7 Gb7 B7) 1
+	300ms mark2 stoprec;
+_section_ R7
+suivi 1
+NOTE C4 1/8 R7
+	trec2 bang;
+	frog2-sampno 168
+	mark stoprec;
+	mark2 stoprec;
+	tto4 77;
+	ttor 77;
+	ttof 128;
+	fneg 128;
+	fto4 0;
+	fto2 127;
+	rto4 128;
+	ftor 128;
+	fsfre 60;
+	ftor 100;
+NOTE D#4 1/8
+NOTE E4 1/8
+NOTE F#4 1/8
+NOTE A4 1/8
+NOTE Bb4 1/8
+NOTE C#5 1/8
+NOTE D5 1/8
+CHORD (G5 Ab5 B5) 1/2 @fermata
+;NOTE 0 8
+;-----
+
+_section_ R8
+suivi 1
+CHORD (E2 G2 Eb3 F#3 G3 C4) 1/2 @staccato R8
+	trec bang;
+	frog1-sampno 169
+	mark stoprec;
+	mark2 stoprec;
+
+;-----
+
+NOTE 0 3/2
+NOTE 0 8
+;-----
+
+_section_ R9
+suivi 1
+NOTE C4 1/6 R9
+	trec bang;
+	trec2 bang;
+	frog1-sampno 170
+	frog2-sampno 170
+	fto4 0;
+	hto4 0;
+	tto4 0;
+	htor 0;
+	mark stoprec;
+	mark2 stoprec;
+	ftor 128;
+	ttor 128;
+	revfb 97;
+NOTE F#4 1/30 @staccato
+CHORD (A3 -F#4) 2/15 @staccato
+CHORD (-A3 E4) 1/15 @staccato
+CHORD (D#3 -E4) 1/10 @staccato
+CHORD (-D#3 B4) 1/10 @staccato
+CHORD (F#3 -B4) 1/15 @staccato
+CHORD (-F#3 F5) 2/15 @staccato
+CHORD (A#2 -F5) 1/30 @staccato
+CHORD (-A#2 Bb5) 1/6 @staccato @fermata
+NOTE 0 8
+;-----
+_section_ S
+NOTE Bb1 1/4 @staccato S
+suivi 0
+midi_mode fiddle
+SequenceStop 1
+
+; ;-----
+
+; ; repeat (opening)
+; MULTI (C#4 -> F2) 1/4 @staccato measure30
+; NOTE 0 3/4
+; NOTE F2 1/4 @staccato
+; NOTE 0 3/4
+; NOTE A5 1/4 @staccato
+; NOTE 0 3/4
+; ; repeat (closing)
+
+; ;-----
+
+NOTE 0 16
+NOTE B1 1/4 @staccato 
+SequenceStop 0
+;-----
+

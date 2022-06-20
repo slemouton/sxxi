@@ -1,0 +1,234 @@
+﻿; Antescofo score generated using native importer
+; Copyright (c) IRCAM 2015
+; Designed by Robert Piéchaud
+
+; Original file: Test2-Source.mid
+; MIDI file type 1 (multiple tracks)
+; Converted to Antescofo on Fri Jan 22 17:21:55 2021
+
+         $filename := "/Users/lemouton/Projets/Symphonie2020/Data/pianiko/Test2-Target.mid"
+         $option := MAP{ ("jointracks", true),("tracks",[0,1,2]) }
+         $midi := @midi_read($filename, $option)
+
+         // player
+         $index := 0
+         $period := $midi[$index, 0]
+           Loop 0
+           {
+            ForAll $e in $midi[$index, 1]
+              {
+                  print "maxmidi :" $e
+                  $index := $index + 1
+              }
+              } while ($index < @size($midi))
+ 
+         print "period" $period
+         $index := 0
+         Loop $period
+         {
+              print "midi message: " ($midi[$index, 1])
+              ForAll $e in $midi[$index, 1]
+              {
+                  maxmidi $e
+              }
+              $index := $index + 1
+              if ($index < @size($midi)) { $period := $midi[$index, 0] }
+
+         } while ($index < @size($midi))
+
+; start
+
+; ----------- measure 1 --- beat 0 --- time signature 4/4
+
+BPM 52
+CHORD (A2 E3) 1/8 measure1
+CHORD (G3 D4) 1/8
+NOTE 0 1/4
+CHORD (A#2 F3) 1/8
+NOTE 0 1/4
+CHORD (G#3 D#4) 1/8
+NOTE 0 5/8
+CHORD (B2 F#3) 1/8
+NOTE 0 1/2
+CHORD (F#2 C#3) 1/8
+CHORD (E3 B3) 1/8
+NOTE 0 1/4
+CHORD (G2 D3) 1/8
+NOTE 0 1/8
+CHORD (A3 E4) 1/8
+CHORD (F3 C4) 1/8
+NOTE 0 1/4
+CHORD (C3 G3) 1/8
+NOTE 0 1/4
+CHORD (G#2 D#3) 1/8
+
+; ----------- measure 2 --- beat 4 --- time signature 4/4
+
+NOTE 0 1/4 measure2
+CHORD (D#2 A#2) 1/8
+CHORD (C#3 G#3) 1/8
+NOTE 0 1/8
+CHORD (A#3 F4) 1/8
+CHORD (E2 B2) 1/8
+NOTE 0 1/4
+CHORD (D3 A3) 1/8
+CHORD (F#3 C#4) 1/8
+CHORD (C#3 G#3) 1/8
+NOTE 0 1/4
+CHORD (A2 E3) 1/8
+CHORD (F2 C3) 1/8
+CHORD (B3 F#4) 1/8
+CHORD (D3 A3) 1/8
+NOTE 0 1/4
+CHORD (C4 G4) 1/8
+NOTE 0 1/4
+CHORD (G3 D4) 1/8
+NOTE 0 1/4
+CHORD (D#3 A#3) 1/8
+NOTE 0 1/4
+CHORD (A#2 F3) 1/8
+CHORD (F#2 C#3) 1/8
+NOTE 0 1/8
+
+; ----------- measure 3 --- beat 8 --- time signature 4/4
+
+NOTE 0 1/4 measure3
+CHORD (G#3 D#4) 1/8
+CHORD (B2 F#3) 1/8
+NOTE 0 1/4
+CHORD (A3 E4) 1/8
+CHORD (E3 B3) 1/8
+CHORD (D#3 A#3) 1/8
+CHORD (C#4 G#4) 1/8
+NOTE 0 1/4
+CHORD (E3 B3) 1/8
+CHORD (G2 D3) 1/8
+NOTE 0 1/8
+CHORD (D4 A4) 1/8
+NOTE 0 1/4
+CHORD (F3 C4) 1/8
+CHORD (G#2 D#3) 1/8
+NOTE 0 1/8
+CHORD (F3 C4) 1/8
+CHORD (F#3 C#4) 1/8
+NOTE 0 3/8
+CHORD (C3 G3) 1/8
+CHORD (A#3 F4) 1/8
+NOTE 0 1/4
+CHORD (C#3 G#3) 1/8
+NOTE 0 1/8
+
+; ----------- measure 4 --- beat 12 --- time signature 4/4
+
+CHORD (D#4 A#4) 1/8 measure4
+CHORD (B3 F#4) 1/8
+NOTE 0 1/4
+CHORD (F#3 C#4) 1/8
+NOTE 0 1/4
+CHORD (D3 A3) 1/8
+NOTE 0 1/4
+CHORD (A2 E3) 1/8
+CHORD (G3 D4) 1/8
+NOTE 0 1/8
+CHORD (E4 B4) 1/8
+CHORD (A#2 F3) 1/8
+NOTE 0 1/4
+CHORD (G#3 D#4) 1/8
+CHORD (C4 G4) 1/8
+CHORD (G3 D4) 1/8
+NOTE 0 1/4
+CHORD (D#3 A#3) 1/8
+CHORD (B2 F#3) 1/8
+CHORD (F4 C5) 1/8
+CHORD (G#3 D#4) 1/8
+NOTE 0 1/4
+CHORD (F#4 C#5) 1/8
+NOTE 0 1/4
+CHORD (C#4 G#4) 1/8
+
+; ----------- measure 5 --- beat 16 --- time signature 4/4
+
+NOTE 0 1/4 measure5
+CHORD (A3 E4) 1/8
+NOTE 0 1/4
+CHORD (E3 B3) 1/8
+CHORD (C3 G3) 1/8
+NOTE 0 3/8
+CHORD (D4 A4) 1/8
+CHORD (F3 C4) 1/8
+NOTE 0 1/4
+CHORD (D#4 A#4) 1/8
+CHORD (A#3 F4) 1/8
+CHORD (F#4 C#5) 1/8
+CHORD (F#4 C#5) 1/8
+NOTE 0 1/4
+CHORD (F#4 C#5) 1/8
+CHORD (C#3 G#3) 1/8
+NOTE 0 1/8
+CHORD (F#4 C#5) 1/8
+NOTE 0 1/4
+CHORD (B3 F#4) 1/8
+CHORD (D3 A3) 1/8
+NOTE 0 1/8
+CHORD (F#4 C#5) 1/8
+CHORD (C4 G4) 1/8
+NOTE 0 1/8
+
+; ----------- measure 6 --- beat 20 --- time signature 4/4
+
+NOTE 0 1/4 measure6
+CHORD (D#4 A#4) 1/8
+CHORD (D#4 A#4) 1/8
+NOTE 0 1/4
+CHORD (D#4 A#4) 1/8
+NOTE 0 1/8
+CHORD (F#4 C#5) 1/8
+CHORD (D#4 A#4) 1/8
+NOTE 0 1/4
+CHORD (F#4 C#5) 1/8
+NOTE 0 1/4
+CHORD (D#4 A#4) 1/8
+NOTE 0 1/4
+CHORD (C4 G4) 1/8
+CHORD (C4 G4) 1/8
+NOTE 0 1/8
+CHORD (F#4 C#5) 1/8
+CHORD (C4 G4) 1/8
+NOTE 0 1/4
+CHORD (C4 G4) 1/8
+CHORD (D#4 A#4) 1/8
+CHORD (F#4 C#5) 1/8
+NOTE 0 1/4
+CHORD (D#4 A#4) 1/8
+CHORD (C4 G4) 1/8
+
+; ----------- measure 7 --- beat 24 --- time signature 4/4
+
+CHORD (F#4 C#5) 1/8 measure7
+CHORD (F#4 C#5) 1/8
+NOTE 0 1/4
+CHORD (F#4 C#5) 1/8
+NOTE 0 1/4
+CHORD (D#4 A#4) 1/8
+NOTE 0 1/4
+CHORD (C4 G4) 1/8
+NOTE 0 1/4
+CHORD (D#4 A#4) 1/8
+CHORD (C4 G4) 1/8
+NOTE 0 3/8
+CHORD (D#4 A#4) 1/8
+CHORD (D#4 A#4) 1/8
+NOTE 0 1/4
+CHORD (D#4 A#4) 1/8
+CHORD (C4 G4) 1/8
+NOTE 0 5/8
+CHORD (C4 G4) 1/8
+NOTE 0 1/4
+
+; ----------- measure 8 --- beat 28 --- time signature 4/4
+
+NOTE 0 1/4 measure8
+CHORD (C4 G4) 1/8
+CHORD (C4 G4) 1/8
+NOTE 0 1/4
+CHORD (C4 G4) 1/8

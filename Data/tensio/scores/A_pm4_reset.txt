@@ -1,0 +1,344 @@
+; Speakings Reset 
+
+BPM 120				; Tempo now controlled by BPM command
+antescofo::tempo 120
+
+		; ******* set spat corners here ********
+		;print "Spat Speakers Positions at UDK Teater Berlin 19-20 January 2013"
+		;print "WARNING 6 LOUDSPEAKER MODE ... please edit "
+	 	;to_spats loudspeakers az -30 30 55 90 155 -155 -90 -55 ; for 8HP
+	 	to_spats loudspeakers az -31 31 90 140 -140 -90
+	 	;to_spats loudspeakers az -50 0 50 90 140 180 -140 -90 ; Standard 8 HP
+	 	;to_spats loudspeakers az -45 0 45 90 135 180 -135 -90 ; Standard 8 HP
+	 	;to_spats loudspeakers az -30 30 70 110 155 -155 -110 -70 ; for 8HP par paires La Meije2021
+	 	;to_spats loudspeakers az -30 30 65 115 150 -150 -115 -65 ; octophophonie cnsmdp
+	 	; **************************************
+	
+		v1_boost 2;
+		v2_boost 2;
+		a_boost 2;
+		c_boost 2;
+		
+		dsp_overdrive 1
+		dsp_takeover 0
+		fx 100
+		3fc_boost 100
+		3fc_boost_∆ 0
+		print "------- Reset"
+		
+		4t_player_on 0
+		3fc_snd_on 0
+		sndfonk_on 0
+		
+		direct_out.pgm 1
+		monitors.pgm 1
+		
+			; cut sons prÂcÂdents
+		son1 0
+		son2 0
+		son3 0
+		
+		3fc 0
+		synful 0
+		Bsynful 0
+		sampler1 0
+		sampler2 0
+		f1 0
+		
+		; cut smerdyakov walk
+		; 3fc_snd 0
+		3fc_snd_autoplay 0
+		3fc_snd_loop 0
+		3fc_snd_play 0
+		
+		; 4t_player 0
+		4t_player_loop 0
+		4t_player_autoplay 0
+		4t_player_play 0
+		
+		samplors_ stopall 10
+		3fc_sm_onoff 0
+		3fc_sm2_onoff 0
+		3fc_sm_ambitus 100
+		3fc_sm2_ambitus 100
+		
+		; cut sigmund analysis
+		v1_sigmund 0
+		v2_sigmund 0
+		al_sigmund 0
+		cl_sigmund 0
+		
+		spat1_traj 0
+		spat2_traj 0
+		spat3_traj 0
+		
+		s_loop 0
+		s_stop bang ; arrete le string
+		s_config 1
+		
+		s2_loop 0
+		s2_stop bang ; arrete le string
+		s2_config 1
+		
+		; cut descriptors
+		; descriptors_on 0 ; virÂ le 5oct11
+		son1 0
+		son2 0
+		son3 0
+		
+		master 0
+		to_spats wclose ; ferme fenetre graphique spat
+		all_off bang   
+	 	reset bang ; reset  menu display   
+
+		midifaders BCF2000   
+		midifaders_on 1  
+		
+		v1_fk_on 0
+		v2_fk_on 0
+		a_fk_on 0
+		c_fk_on 0
+		
+		
+	 0.5	print "Antescofo setting"   
+	
+	VARIANCE 0.2
+	obs_gate 0 ; cut antescofo observation input   
+	
+	fx_pgm 1;
+	
+	; reset synful
+	syn_voices 1 xbend 0;   
+	syn_voices 2 xbend 0;   
+	syn_voices 3 xbend 0;   
+	syn_voices 4 xbend 0;   
+	syn_voices 5 xbend 0; 
+	syn_voices 6 xbend 0;   
+	syn_voices 7 xbend 0;   
+	syn_voices 8 xbend 0;   
+	syn_voices 9 xbend 0;   
+	syn_voices 10 xbend 0; 
+	syn_voices 11 xbend 0;   
+	syn_voices 12 xbend 0;   
+	syn_voices 13 xbend 0;   
+	syn_voices 14 xbend 0;   
+	syn_voices 15 xbend 0; 
+	syn_voices 16 xbend 0; 
+	
+	Bsyn_voices 1 xbend 0;   
+	Bsyn_voices 2 xbend 0;   
+	Bsyn_voices 3 xbend 0;   
+	Bsyn_voices 4 xbend 0;   
+	Bsyn_voices 5 xbend 0; 
+	Bsyn_voices 6 xbend 0;   
+	Bsyn_voices 7 xbend 0;   
+	Bsyn_voices 8 xbend 0;   
+	Bsyn_voices 9 xbend 0;   
+	Bsyn_voices 10 xbend 0; 
+	Bsyn_voices 11 xbend 0;   
+	Bsyn_voices 12 xbend 0;   
+	Bsyn_voices 13 xbend 0;   
+	Bsyn_voices 14 xbend 0;   
+	Bsyn_voices 15 xbend 0; 
+	Bsyn_voices 16 xbend 0; 
+	
+	synful_flush bang
+	Bsynful_flush bang
+		
+	; reset harmos
+	h0 0
+	h1 0
+	h2 0
+	h3 0
+	h4 0
+	h0_init bang
+	h1_init bang
+	h2_init bang
+	h3_init bang
+	h4_init bang
+	
+	/*
+	h0_leslie_mode 0
+	h1_leslie_mode 0
+	h2_leslie_mode 0
+	h3_leslie_mode 0
+	h4_leslie_mode 0
+	h1_leslie_mode 0 
+			h2_leslie_mode 0 
+			h3_leslie_mode 0 
+			h4_leslie_mode 0 
+			h0_leslie_filter_freq_rate 4
+			h1_leslie_filter_freq_rate 4
+			h2_leslie_filter_freq_rate 4
+			h3_leslie_filter_freq_rate 4
+			h4_leslie_filter_freq_rate 4
+			h0_leslie_filter_freq_gain 6
+			h1_leslie_filter_freq_gain 6
+			h2_leslie_filter_freq_gain 6
+			h3_leslie_filter_freq_gain 6
+			h4_leslie_filter_freq_gain 6
+			h0_leslie_filter_q 3
+			h1_leslie_filter_q 3
+			h2_leslie_filter_q 3
+			h3_leslie_filter_q 3
+			h4_leslie_filter_q 3
+	*/
+	
+	; reset strings 
+	
+	"s"	0	; ne marche pas ?
+	s2 0
+
+	bouge 0   
+		
+	;v1_fonk stop   
+	;v2_fonk stop   
+	;alto_fonk stop   
+	;cello_fonk stop 
+	
+	; reset sigmund
+	
+	v1_sigmund 0
+	v2_sigmund 0
+	al_sigmund 0
+	cl_sigmund 0
+	v1toh0 0
+	v1toh1 0
+	v1toh2 0
+	v1toh3 0
+	v1toh4 0
+	v2toh0 0
+	v2toh1 0
+	v2toh2 0
+	v2toh3 0
+	v2toh4 0
+	atoh0 0
+	atoh1 0
+	atoh2 0
+	atoh3 0
+	atoh4 0
+	ctoh0 0
+	ctoh1 0
+	ctoh2 0
+	ctoh3 0
+	ctoh4 0
+	
+	; *************
+	; sons
+	; *************
+	son1 loop 1, 0
+	son2 loop 1, 0
+	son3 loop 1, 0
+	
+	
+	; *************
+	; spats
+	; *************
+		
+		to_spats reset
+
+		/*
+		1	spat1_ctl bang   
+		print "spat1 reset done"   
+		1	spat2_ctl bang   
+		print "spat2 reset done"   
+		1	spat3_ctl bang   
+		print "spat3 reset done" 
+		*/
+		
+		1 print "Updating Concert Hall Settings ..."   
+		
+		;print "center set to 0.001 to avoid jump"    
+	 	;print "Studio 2 Spat Reverb settings"   
+		/*spat1_ctl radius 0.1, width 20, fact warm 30, fact bril 30, fact prer 48, fact revp 46, fact env 39, fact rev 59, fact heav 21, fact live 19, source air 0, source Dopp 0   
+		spat2_ctl radius 0.1, width 20, fact warm 30, fact bril 30, fact prer 48, fact revp 46, fact env 39, fact rev 59, fact heav 21, fact live 19, source air 0, source Dopp 0   
+		spat3_ctl radius 0.1, width 20, fact warm 30, fact bril 30, fact prer 48, fact revp 46, fact env 39, fact rev 59, fact heav 21, fact live 19, source air 0, source Dopp 0   
+		*/
+		; 1	print "Studio 2 Corners position"   
+	 	/*spat1_ctl corners 35 -35 -145 145 , speedlim 30, DISPLAY 1   
+	 	spat2_ctl corners 35 -35 -145 145 , speedlim 30, DISPLAY 1   
+	 	spat3_ctl corners 35 -35 -145 145 , speedlim 30, DISPLAY 1  
+	 	*/
+
+	 	print "Theatre Orlean 5-6 avr 2012"   
+	 	spat1_ctl corners 35 -35 -140 140 , speedlim 30, DISPLAY 1   
+	 	spat2_ctl corners 35 -35 -140 140 , speedlim 30, DISPLAY 1   
+	 	spat3_ctl corners 35 -35 -140 140 , speedlim 30, DISPLAY 1  
+	 	
+	 	; une initialisation des spats car bug du reset sur la presence
+	 	
+	 	; init spat1
+	 	
+		spat1_dist_min 0.5
+		spat1_dist 1	; cette distance est fondamentale pour le niveau, l'altÂrer revient Â modifier tous les niveaux
+		spat1_az 0
+		spat1_pres 90	; idem pour la presence, la distance et la presence sont liÂs dans le spat
+		spat1_prer 80 ; spat1_ctl fact prer 80
+		spat1_revp 30
+		spat1_env 19
+		spat1_rev 80
+		spat1_aperture 30
+		spat1_width 30
+		spat1_dopp 0
+		
+		
+		;spat1_ctl radius 0.1, dist_min 0.5, aperture 30, width 30, warm 30,  bril 30,  prer 80,  revp 30,  env 19,  rev 90,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		
+		
+		; reglage spat2
+		
+		spat2_dist_min 0.5
+		spat2_dist 1
+		spat2_az  30
+		spat2_pres 90
+		spat2_prer 80 ; spat1_ctl fact prer 80
+		spat2_revp 30
+		spat2_env 19
+		spat2_rev 80
+		spat2_aperture 30
+		spat2_width 30
+		spat2_dopp 0
+		
+		
+		;spat2_ctl radius 0.1, dist_min 0.5, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 85,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		
+		; reglage spat3
+		
+		spat3 _dist_min 0.5
+		spat3_dist 1
+		spat3_az  30
+		spat2_pres 90
+		spat3_prer 80 ; spat1_ctl fact prer 80
+		spat3_revp 30
+		spat3_env 19
+		spat3_rev 80
+		spat3_aperture 30
+		spat3_width 30
+		spat3_dopp 0
+		
+		
+		;spat3_ctl radius 0.1, dist_min 0.5, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 85,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+	 	
+	 	;print "Spat Reverb Reset at UDK Teater Berlin 19-20 January 2013" 
+	 	/*
+	 	spat1_ctl radius 0.3, dist_min 0.3, aperture 30, width 30, warm 30,  bril 30,  prer 80,  revp 30,  env 19,  rev 90,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		spat2_ctl radius 0.3, dist_min 0.3, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 85,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		spat3_ctl radius 0.3, dist_min 0.3, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 85,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		*/
+		
+		print "Spat Reverb Reset at Bruxelles Academie 20-21 Mars 2013" 
+	 	spat1_ctl radius 0.6, dist_min 0.3, aperture 30, width 30, warm 30,  bril 30,  prer 80,  revp 30,  env 19,  rev 100,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		spat2_ctl radius 0.6, dist_min 0.3, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 95,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		spat3_ctl radius 0.6, dist_min 0.3, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 95,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+	 	
+
+	 	
+	 	master 90 1000
+	 	deltas_pm.pgm 1 ; all zero
+	 	
+
+
+	 1	print "------- Reset OK "   
+
+NOTE 72 0.5		Reset_done		; begining
+		print "Ready ..."

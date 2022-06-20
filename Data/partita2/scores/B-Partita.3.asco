@@ -1,0 +1,444 @@
+	@INSERT "macros_def.asco"	; definition des fonctions et macros
+	
+		syntosp3 0
+		Bsyntosp2 0
+		syntohp2 0 2000
+		h1 105
+		h2 114
+		h3 104
+		h4 90
+		
+		spat1 100
+		spat2 100
+		spat3 100
+		
+	 print "Section 3"  
+	 evt_3.0 1
+	 evt_3.0b 1
+;	 LFWD evt3.0 12s
+;	{
+;		s2_vel_scale 0.68, 0.13 6000
+;	6s 	s2_vel_scale 0.68 6000
+;	}
+
+;	LFWD evt3.0b 18s
+;	{
+;		s2_dist_scale 3.2, 2.61 9000
+;	9s 	s2_dist_scale 3.2 9000
+;	}
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+TEMPO ON
+BPM 44
+
+;suivi 0
+	 
+NOTE A6 1/2	III...EVT-1
+
+	antescofo-mess tempo  50
+GFWD enchainement-section2
+		{		
+	v1_sigmund 0
+	3fc_mode off
+
+		syntohp2 0 100
+		s2tohp1 0 100
+		s2tohp3 0 100
+
+	s_buffer replace Partita2_string2_2.40.aif
+		s2 106
+		s2_trans_scale 0
+		s2_force_scale 0.0945 
+		s2_speed 0.011 
+		s2_loop 1;  
+		s2_pitch 69.;  
+		s2_sel_end 432;  
+		s2_sel_start 88; 
+		s2_start bang
+		s2_speed 0.022;  
+		s2tosp3 100 100
+		
+		spat1_width 30	
+		spat1_prer 120 
+		spat1_rev 100 
+		spat1_aperture 180 
+		spat2_width 30
+		spat2_prer 120 
+		spat2_rev 100 
+		spat2_aperture 180 
+		spat3_dist 1.5;
+		spat3_pres 90;
+		spat3_width 30
+		spat3_width 30
+		spat3_dopp 0
+		spat3_prer 120 
+		spat3_rev 100  
+		spat3_aperture 180
+		3fctosp2 0 1000
+
+		h1_trans -2300
+		h2_trans 2300
+		h3_trans 1500
+		h4_trans -300
+		h1_del 4500
+		h2_del 6000
+		h3_del 3500
+		h4_del 2000
+		s2toh1 120 100
+		s2toh2 114 100 
+		s2toh3 115 100
+		s2toh4 106 100
+		h1tosp1 93 200
+		h2tosp2 80 200
+		h3tosp3 80 200
+		h4tosp2 80	200
+		spat1_traj_loop 1
+		spat2_traj_loop 1
+		spat3_traj_loop 1
+
+	traj_spat2 1 traj2 @b(10) 2 ; on/off, nom de la trajectoire ,dur‚àö¬©e de la boucle, distance 
+	traj_spat3 1 traj3 @b(12) 2 ; on/off, nom de la trajectoire ,dur‚àö¬©e de la boucle, distance
+		}
+		
+		
+	GFWD cercle-lent2 
+	{	
+		0.2	spat3_traj_loop 1; 
+			traj_spat1 1 traj @b(20) 2 ; on/off, nom de la trajectoire ,dur‚àö¬©e de la boucle, distance
+		
+	}	
+
+CHORD ( -A6 F#5 ) 4 ; marker: 1
+NOTE 0 1/2
+NOTE E4 1/10
+NOTE F4  1/10
+NOTE G#4 1/10
+NOTE F#4  1/10
+NOTE G4  3/2
+NOTE A#3  1
+NOTE -A#3 1/2		
+NOTE 0 1 
+NOTE E8 3 
+CHORD (-E8 C7) 3/2
+NOTE 0 3/2
+
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+
+NOTE C#5 1/10 	III...EVT-2
+
+	h3_trans 1000
+	
+NOTE D5 1/10 
+NOTE D#5 1/10 
+NOTE F#5 1/10 
+NOTE F5 1/10 
+NOTE A4 1/10 
+NOTE C5 1/10 
+NOTE C#5 1/10 
+NOTE G5 1/10 
+NOTE F#5 1/10 
+NOTE A#5 1/10 
+NOTE F5 1/10 
+NOTE D#5 1/10 
+NOTE E5 11/5 
+NOTE 0 1
+CHORD ( G6 E5 ) 2
+NOTE 0 1/2
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+	 
+TRILL ( F#5 F5 ) 8	III...EVT-3	
+
+	h4_trans -400
+	h1_del 0
+	h1 113 1000 
+	LFWD evt3.3 10s
+		{
+			h1_trans -1980
+		3s 	h1_trans -2175 2000
+		5s  h1_trans -1980 2000
+		}
+
+
+	
+NOTE 0 1/10 
+NOTE A3 1/10
+NOTE A#3 1/10
+NOTE C#4 1/10
+NOTE C4 3/10 
+NOTE B3 1/10
+NOTE C4 1/10
+NOTE D#4 3/10
+NOTE C#4 1/10
+NOTE D4 6/5
+CHORD ( C#5 F5 ) 4
+
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+CHORD ( C#5 E5 ) 3/2 III...EVT-4
+	 evt_3.4 1
+
+;	LFWD evt3.3b 15s
+;		{
+;			s2_force_scale 0.06
+;		1s 	s2_force_scale 6 4000
+;		8s  s2_force_scale 0.06 5000
+;		}				
+;KILL evt3.3b 
+		h1_del 1000
+;		s2_force_scale 6
+	spat1_aperture 30
+	spat2_aperture 30
+	spat3_aperture 30
+TEMPO OFF
+NOTE 0 4
+TEMPO ON
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE E8  3/2 III...EVT-5
+
+	LFWD evt3.5a 18s
+		{
+			spat1_pres 50, 110 9000
+		9s	spat1_pres 110, 50 9000
+		}
+
+	LFWD evt3.5b 16s
+		{
+			spat2_pres 0, 97 8000
+		8s	spat2_pres 97, 0 8000
+		}
+		
+	LFWD evt3.5c 14s
+		{
+			spat3_pres 97, 0 7000
+		7s	spat3_pres 0, 97 7000
+		}
+
+		h2_del 2000
+	1s	h3_del 2000
+	1s	h4_del 2000
+	
+NOTE 0 3/5
+NOTE B3 1/10
+NOTE A#3 1/10
+NOTE F#4 1/2
+NOTE D4 1/10
+NOTE D#4 1/10
+NOTE C4 1/10
+NOTE A3 1/10
+NOTE G4 1/10
+NOTE E4 1/10
+NOTE F4 1/10
+NOTE F#4 1
+NOTE 0 1/10
+NOTE D#4 1/10
+NOTE A4 1/10
+NOTE C#5 1/10
+NOTE F5 3/10
+
+; ----------- measure 13 
+NOTE D5 1/10 
+NOTE C#5 1/10
+NOTE A4 1/10
+NOTE A#4 1/10
+NOTE G#5 1/10
+NOTE E5 1/10
+NOTE F#5 1/10
+NOTE G5 1/10
+NOTE D#5 1/10
+NOTE A#5 1/10
+NOTE C#6 1/10
+NOTE C6 1/10
+NOTE A5 1/10
+NOTE G6 4/5
+NOTE E6 1/10
+NOTE D#6 1/10
+NOTE A5 1/10
+NOTE C6 1/10
+NOTE G#6 1/2
+NOTE E6 1/10
+NOTE D#6 1/10
+NOTE F#5 1/10
+NOTE C6 1/10
+NOTE A5 1/10
+NOTE C#5 1/10
+NOTE A#4 1/10
+NOTE G4 1/10
+
+; ----------- measure 14 
+NOTE E5 1/10 
+NOTE D#5 1/10
+NOTE F4 1/10
+NOTE C#5 3/5
+NOTE A4 1/10
+NOTE C#5 1/5
+NOTE G5 1/10
+NOTE E5 1/10
+NOTE F4 1/10
+NOTE C#5 1/10
+NOTE B5 1/10
+NOTE C#5 1/10
+NOTE A#5 1/10
+NOTE G5 1/10
+NOTE A5 1/10
+NOTE G#5 1/10
+NOTE A#5 1/10
+NOTE B5 1/10
+NOTE C6 1/10
+NOTE D#6 1/10
+NOTE C#6 1/10
+NOTE D6 1/10
+NOTE F6 1/10
+NOTE E6 1/10
+NOTE G6 1/10
+NOTE F#6 1/10
+NOTE G#6 3/10
+NOTE A6 1/10
+NOTE G#6 1/5
+NOTE B6 3/10
+
+; ----------- measure  ------
+NOTE G#6 1/10 
+NOTE C7 1/10
+NOTE G#6 2/5
+NOTE F6 1/10
+NOTE A6 1/10
+NOTE G#6 1/10
+NOTE B6 1/10
+NOTE G#6 3/10
+NOTE A6 2/5
+NOTE G#6 2/5
+NOTE F6 1/10
+NOTE A6 1/10
+NOTE G#6 3/5
+NOTE D7 2/5
+NOTE F#7 8/5
+; ----------- measure --- 
+TEMPO OFF
+NOTE 0 33/8 
+; ----------- measure--- 
+TEMPO ON
+NOTE A4 1/8 
+NOTE G5 1/8
+NOTE A4 1/8
+NOTE E6 1/8
+NOTE A4 1/8
+NOTE D#6 1/8
+NOTE A4 1/8
+NOTE F#6 1/8
+NOTE A4 1/8
+NOTE F6 1/8
+NOTE A4 1/8
+NOTE C#6 1/8
+NOTE A4 1/8
+NOTE A#5 1/8
+NOTE A4 1/8
+NOTE B5 1/8
+NOTE A4 1/8
+NOTE G#6 1/8
+NOTE A4 1/8
+NOTE G#6 1/8
+NOTE A4 1/8
+NOTE C7 1/8
+NOTE A4 1/8
+NOTE C7 1/8
+NOTE A4 1/8
+NOTE C7 1/8
+NOTE A4 1/8
+NOTE C7 1/8
+NOTE A4 1/8
+NOTE C7 1/8
+NOTE A4 1/8
+TEMPO OFF
+NOTE C7 1 
+TEMPO OFF
+NOTE 0 4 
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TEMPO OFF
+CHORD ( G5 G#5 ) 1 III...EVT-6
+
+	rev_tr 12
+	rev_trl 2
+	rev_trm 2
+	rev_trh 6
+	v1torev 105 100
+	revtohp1 100
+	revtohp2 100
+	h1 0 4000
+TEMPO ON
+NOTE 0 4 
+	
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TEMPO OFF
+NOTE B3 1 III...EVT-7	
+	h4 0 4000
+	h1 0
+TEMPO ON
+NOTE 0 4 
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TEMPO OFF
+NOTE D#5 4 III...EVT-8
+
+	h3 0 4000
+	h4 0
+TEMPO OFF
+NOTE 0 4 	
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TEMPO OFF
+NOTE C5 4 III...EVT-9
+ 
+ 	h2 0 4000
+ 	h3 0
+ 	s2 116 500
+ 	s2tohp1 120 4000
+; 	s2tohp2 75 2000
+ 	s2tohp3 63 4000
+ 	s2tosp3 78 5500
+ 	
+ 	KILL evt3.5a 
+	KILL evt3.5b 
+	KILL evt3.5c 
+ 
+TEMPO OFF
+NOTE 0 4 
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+	
+TEMPO OFF
+NOTE E8 4 
+
+TEMPO OFF
+NOTE 0 4 III...EVT-10
+	v1torev 0
+	suivi 0
+antescofo_score B-Partita.4.asco
+
+	
+

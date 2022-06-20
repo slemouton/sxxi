@@ -1,0 +1,618 @@
+; --------------------- Fichier de définition des macros 1.2 -------------------------------
+; ------------------------------- Sasha J. Blondeau ----------------------------------------
+; ------------------------------------- 2020 -----------------------------------------------
+; ------------------------------------------------------------------------------------------
+@global $diapason
+$diapason := 442
+
+; Courbes de spatialisation
+; Modules de synthèse additive CSound
+; synth. granulaire
+
+; conversion beat => secondes
+@fun_def b2sec($val) {$val*(60/$RT_TEMPO)}
+; conversion midi => herz
+@fun_def midi2hz($x)  
+	{$diapason * @exp(($x-69.0) * @log(2.0)/12)}                  
+
+; ----------- MODULES DE TRAITEMENTS ---------------------------------------------
+
+@macro_def @multi_vib($num,$del,$lvl_del,$lvl_feed,$time)
+	{
+		@command("del" + $num) $del $time
+		@command("lvl_del" + $num) $lvl_del $time
+		@command("lvl_del" + $num + "_feed") $lvl_feed $time
+	}
+
+; ------------ MODULES DE SYNTHESE -----------------------------------------------
+
+; ::ASCOtoCS_SYNTH($numGen,$dur,$noteMidiL,$kamp,$icnt,$enviter,$iter,$del,$mfo,$numSortie)
+; ::ASCOtoCS_SYNTH_Ant($dur,$noteMidi,$kamp,$enviter1,$freqiter,$modBattement,$inharm,$mfoAntes,$NumSortie)
+; ::ASCOtoCS_soust($dur,$noteMidi1,$amp1,$numSortie1,$numSortie2,$numGen)
+; ::ASCOtoCS_grain($dur,$pitch1,$pitch2,$pitch3,$pitch4,$numSortie)
+; ::ASCOtoCS_bow($numBow, $dur,$noteMidi,$ampBow,$Sortie) 
+
+; ::ASCOtoCS_BUZZ($numGen,$dur,$amp,$noteMidi,$knh,$klh,$kmul,$sortie)
+; ::ASCOtoCS_BUZZ_RM($numGen,$dur,$amp,$noteMidi,$knh,$klh,$kmul,$RMmodFreq,$sortie)
+; ::ASCOtoCS_VoxSynth($numGen,$dur,$amp,$noteMidi,$voice,$bandwith,$vowel,$kSource,$sortie)
+; ::ASCOtoCS_VoxSynth_RM($numGen,$dur,$amp,$noteMidi,$voice,$bandwith,$vowel,$kSource,$RMmodFreq,$sortie) 
+
+; ----------------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------------
+
+; mfo de 1 à 10, numéro d'index de la table contenant toutes les formes d'ondes (f1 dans le csd)
+; icnt = nombre de partiels
+
+; version "point"
+@proc_def ::ASCOtoCS_SYNTH_C($numGen,$dur,$noteMidiL,$kamp,$icnt,$enviter,$iter,$del,$mfo,$numSortie)
+	{
+		@local $amp
+		::ASCOtoCS_SYNTH($numGen,$dur,$noteMidiL,0.,$icnt,$enviter,$iter,$del,$mfo,$numSortie)
+		curve @grain := 0.01, @action := ASCOtoCS_SYNTH c ($numGen+".amp") $amp
+					{ $amp
+						{					{ 0. } @type "cubic"
+							($dur/10)		{ $kamp } @type "quad_out"
+							(($dur/10)*9) 	{ 0. }
+						}
+					}
+	}
+
+@proc_def ::ASCOtoCS_SYNTH($numGen,$dur,$noteMidiL,$kamp,$icnt,$enviter,$iter,$del,$mfo,$numSortie)
+	{
+		// Enveloppe d'itération 
+		if ($numGen == "g1") { $numTab := 11 }
+		if ($numGen == "g2") { $numTab := 12 }
+		if ($numGen == "g3") { $numTab := 13 }
+		if ($numGen == "g4") { $numTab := 14 }
+		if ($numGen == "g5") { $numTab := 15 }
+		if ($numGen == "g6") { $numTab := 16 }
+		if ($numGen == "g7") { $numTab := 17 }
+		if ($numGen == "g8") { $numTab := 18 }
+		if ($numGen == "g9") { $numTab := 19 }
+		if ($numGen == "g10") { $numTab := 30 }
+		if ($numGen == "g11") { $numTab := 31 }
+		if ($numGen == "g12") { $numTab := 32 }
+		$ampEnviter := $enviter
+		$EnvIter := NIM{ 0 0.05, 15 $ampEnviter "exp", 16 0.05 "exp_out"}
+		$echNIMenv :=  [ $EnvIter($enum) | $enum in 0 .. 32 : 1] ; echantillonage de la NIM pour envoi de la table
+
+		forall $i in @iota(@size($echNIMenv)) ; ENVOI de la table d'enveloppe (size = 512)
+			{
+				ASCOtoCS_SYNTH wsidx $numTab $i ($echNIMenv[$i])
+			}
+
+		ASCOtoCS_SYNTH c ($numGen+".AddTurnoff") 0
+		ASCOtoCS_SYNTH c ($numGen+".freq") (@midi2hz($noteMidiL))
+		ASCOtoCS_SYNTH c ($numGen+".tempiter") $iter
+		ASCOtoCS_SYNTH c ($numGen+".multidel") $del
+		ASCOtoCS_SYNTH c ($numGen+".mfo") $mfo
+		ASCOtoCS_SYNTH c ($numGen+".amp") $kamp
+		ASCOtoCS_SYNTH e i "\"AddSynth\"" 0 (@b2sec($dur)) ("\"" + $numGen + "\"") $icnt $numSortie $numTab 
+	
+	}
+
+// ---------- CURVE sur l'enveloppe d'itération ----------------------------------------------------
+// amplitude du pic de l'enveloppe -------------> à mettre comme action d'une curve contrôlant $ampEnviter
+
+@proc_def ::SYNTH_enviter($ampEnviter)
+		{	
+			$EnvIter := NIM{ 0 0.05, 15 $ampEnviter "exp", 16 0.05 "exp_out"}
+			$echNIMenv :=  [ $EnvIter($enum) | $enum in 0 .. 32 : 1] ; echantillonage de la NIM pour envoi de la table
+			forall $i in @iota(@size($echNIMenv)) ; ENVOI de la table d'enveloppe (size512)
+					{ 
+						ASCOtoCS_SYNTH wsidx 7 ($i+1) ($echNIMenv[$i])
+					}
+					;print (@size($echNIMenv)) ($echNIMenv) 
+		}
+
+
+//-------------------------------------------------------------------------
+; module gbuzz
+
+
+@proc_def ::ASCOtoCS_BUZZ($numGen,$dur,$amp,$noteMidi,$ktable,$klh,$kmul,$knh,$sortie)
+	{
+		ASCOtoCS_SYNTH c ($numGen+".freq") (@midi2hz($noteMidi))
+		ASCOtoCS_SYNTH c ($numGen+".amp") $amp
+	;	ASCOtoCS_SYNTH c ($numGen+".table") $ktable ; nombre total d'harmoniques
+	;	ASCOtoCS_SYNTH c ($numGen+".klh") $klh ; harmonique présent le plus bas
+	;	ASCOtoCS_SYNTH c ($numGen+".kmul") $kmul ; entre 0 et 1
+
+		ASCOtoCS_SYNTH e i "\"buzzAnt\"" 0 (@b2sec($dur)) ("\"" + $numGen + "\"") $knh $sortie  
+	}
+
+@proc_def ::ASCOtoCS_BUZZ_RM($numGen,$dur,$amp,$noteMidi,$ktable,$klh,$kmul,$knh,$RMmodFreq,$sortie)
+	{
+		ASCOtoCS_SYNTH c ($numGen+".freq") (@midi2hz($noteMidi))
+		ASCOtoCS_SYNTH c ($numGen+".amp") $amp
+	;	ASCOtoCS_SYNTH c ($numGen+".table") $ktable
+	;	ASCOtoCS_SYNTH c ($numGen+".klh") $klh
+	;	ASCOtoCS_SYNTH c ($numGen+".kmul") $kmul
+
+		ASCOtoCS_SYNTH e i "\"buzzAnt\"" 0 (@b2sec($dur)) ("\"" + $numGen + "\"") $knh 13 
+
+		ASCOtoCS_SYNTH e i "\"RMod\"" 0 (@b2sec($dur)) $RMmodFreq $sortie  
+	}
+
+
+//-------------------------------------------------------------------------
+; module synthèse PLUCK
+
+@proc_def ::ASCOtoCS_Pluck($dur,$amp,$noteMidi,$kpick,$iplk,$idamp,$ifilt,$sortie)
+	{
+		ASCOtoCS_SYNTH e i 999 0 (@b2sec($dur)) $amp (@midi2hz($noteMidi)) $kpick $iplk $idamp $ifilt $sortie  
+	}
+
+//-------------------------------------------------------------------------
+; module émulateur MOOG
+
+
+@proc_def ::ASCOtoCS_Moog($numGen,$dur,$amp,$noteMidi,$vamp,$kvibf,$kfiltq,$sortie)
+	{
+		ASCOtoCS_SYNTH c ($numGen+".freq") (@midi2hz($noteMidi))
+		ASCOtoCS_SYNTH c ($numGen+".amp") $amp
+		ASCOtoCS_SYNTH c ($numGen+".vamp") $vamp
+		ASCOtoCS_SYNTH c ($numGen+".kvibf") $kvibf
+		ASCOtoCS_SYNTH c ($numGen+".kfiltq") $kfiltq ;Q du filtre, compris entre 0,8 et 0,9
+
+		ASCOtoCS_SYNTH e i "\"Moog\"" 0 (@b2sec($dur)) ("\"" + $numGen + "\"") $sortie 
+	}
+
+
+
+
+
+//-------------------------------------------------------------------------
+; module synthèse vocale
+
+@proc_def ::ASCOtoCS_VoxSynth($numGen,$dur,$amp,$noteMidi,$voice,$bandwith,$vowel,$kSource,$sortie)
+	{
+		ASCOtoCS_SYNTH c ($numGen+".fund") (@midi2hz($noteMidi))
+		ASCOtoCS_SYNTH c ($numGen+".amp") $amp
+		ASCOtoCS_SYNTH c ($numGen+".vowel") $vowel ; vowel select (0 - 1 : a e i o u)
+		ASCOtoCS_SYNTH c ($numGen+".bandwith") $bandwith ; bandwidth factor (suggested range 0 - 2)
+		ASCOtoCS_SYNTH c ($numGen+".kSource") $kSource ; source mix (0 - 1 : VCO - noise)
+
+		; voice  (0=bass; 1=tenor; 2=counter_tenor; 3=alto; 4=soprano)
+		ASCOtoCS_SYNTH e i "\"VoiceSynth\"" 0 (@b2sec($dur)) ("\"" + $numGen + "\"") $voice $sortie  
+	}
+
+@proc_def ::ASCOtoCS_VoxSynth_RM($numGen,$dur,$amp,$noteMidi,$voice,$bandwith,$vowel,$kSource,$RMmodFreq,$sortie)
+	{
+		ASCOtoCS_SYNTH c ($numGen+".fund") (@midi2hz($noteMidi))
+		ASCOtoCS_SYNTH c ($numGen+".amp") $amp
+		ASCOtoCS_SYNTH c ($numGen+".vowel") $vowel ; vowel select (0 - 1 : a e i o u)
+		ASCOtoCS_SYNTH c ($numGen+".bandwith") $bandwith ; bandwidth factor (suggested range 0 - 2)
+		ASCOtoCS_SYNTH c ($numGen+".kSource") $kSource ; source mix (0 - 1 : VCO - noise)
+
+		; voice  (0=bass; 1=tenor; 2=counter_tenor; 3=alto; 4=soprano)
+		ASCOtoCS_SYNTH e i "\"VoiceSynth\"" 0 (@b2sec($dur)) ("\"" + $numGen + "\"") $voice 13
+
+		ASCOtoCS_SYNTH e i "\"RMod\"" 0 (@b2sec($dur)) $RMmodFreq $sortie  
+	}
+
+
+
+//-------------------------------------------------------------------------
+; soustractive
+
+@proc_def ::ASCOtoCS_soust($dur,$noteMidi1,$amp1,$numSortie1,$numSortie2,$numGen) 
+	{
+		ASCOtoCS_SYNTH c ("soust" + $numGen + ".freq") (@midi2hz($noteMidi1)) 
+		ASCOtoCS_SYNTH c ("soust" + $numGen + ".amp") $amp1
+		ASCOtoCS_SYNTH e i "\"SoustSynth\"" 0 (@b2sec($dur)) $numSortie1 $numSortie2 ("\"" + "soust" + $numGen + "\"")
+	}
+
+@proc_def ::ASCOtoCS_bow($numBow, $dur,$noteMidi,$ampBow,$Sortie) 
+	{
+		ASCOtoCS_SYNTH c ($numBow+".AddTurnoff") 0
+		ASCOtoCS_SYNTH c ($numBow+".kfreq") (@midi2hz($noteMidi))
+		ASCOtoCS_SYNTH c ($numBow+".kampBow") $ampBow
+		ASCOtoCS_SYNTH e i "\"StringMod\"" 0 (@b2sec($dur)) ("\"" + $numBow + "\"") $Sortie
+	}
+
+; ----------------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------------
+
+; --- pour le module CSound utilisant l'opcode "wgbow"
+; Declaration des "modes de jeu" pour interpolation
+@global $SulPont,$Ord,$SulTasto,$SulPontVib1,$SulPontVib2,$SulTastoVib1,$SulTastoVib2,$OrdVib1,$OrdVib2
+
+; pression : 0.2 - 5
+; position : 0.028 - 0.22
+
+$SulPont := [3.20, 0.032, 3.6, 0.] ; pression, position, freqVib, vibamp
+$SulPontVib1 := [3.20, 0.032, 1.3, 0.002]
+$SulPontVib2 := [3.20, 0.032, 7.1, 0.003]
+$Ord := [2.5, 0.12, 1.3, 0.]
+$OrdVib1 := [2.5, 0.12, 1.3, 0.002]
+$OrdVib2 := [2.5, 0.12, 7.1, 0.003]
+$SulTasto := [4.23,0.2, 1.3, 0. ]
+$SulTastoVib1 := [0.9,0.22, 1.3, 0.002]
+$SulTastoVib2 := [0.9,0.22, 7.1, 0.003]
+
+; Numero du GenBow, [ModeJeu1,dur1,type1,ModeJeu2, ... , durn,typen,ModeJeun], Grain
+; ex  ::MdJ_bow("bow1",[$SulPont,1,"cubic",$OrdVib2,2,"linear",$SulTasto] ,0.2)
+@proc_def ::MdJ_bow($numBow,$TabMdJ,$grain)
+	{	
+		if ((@size($TabMdJ)>=4))
+			{	::M_dJ_bow1($numBow,$TabMdJ[0],$TabMdJ[3],$TabMdJ[1],$TabMdJ[2],$grain)
+				($TabMdJ[1]) ::MdJ_bow($numBow,(@cdr(@cdr(@cdr($TabMdJ)))),$grain)
+			}
+	}
+
+@proc_def ::M_dJ_bow1($numBow,$MdJ1,$MdJ2,$durInterp,$type,$grain)
+	{
+		@local $interpolMdJB, $x
+		; creation de la courbe entre les valeurs d'interpolations de chaque valeur des 2 tableaux
+		$interpolMdJB := [ NIM{ 0 ($MdJ1[$i]), 1 ($MdJ2[$i]) EXPR{ $type }  } | $i in @size($MdJ1) ] 
+		; "tete de lecture" de la courbe
+		curve interp @grain := $grain s,
+					 @action := { ASCOtoCS_SYNTH c ($numBow+".kpres") ([ $nim($x) | $nim in $interpolMdJB][0] ) ; prend la 1ere valeur du tableau...
+					 			ASCOtoCS_SYNTH c ($numBow+".kpos") ([ $nim($x) | $nim in $interpolMdJB][1] )
+					 			ASCOtoCS_SYNTH c ($numBow+".kvibf") ([ $nim($x) | $nim in $interpolMdJB][2] )
+					 			ASCOtoCS_SYNTH c ($numBow+".kvibamp") ([ $nim($x) | $nim in $interpolMdJB][3] )} 
+			{ $x
+					{			{ 0. }
+					$durInterp	{ 1. }
+					}
+			}
+	}
+
+@macro_def MdJ_bow1($numBow,$modJeu)
+	{
+		ASCOtoCS_SYNTH c ($numBow+".kpres") ( $modJeu[0] ) ; prend la 1ere valeur du tableau...
+		ASCOtoCS_SYNTH c ($numBow+".kpos") ($modJeu[1] )
+		ASCOtoCS_SYNTH c ($numBow+".kvibf") ($modJeu[2] )
+		ASCOtoCS_SYNTH c ($numBow+".kvibamp") ($modJeu[3] )
+	}
+
+; ----------------------------------------------------------------------------------------------------
+; --- CREATION DE TABLE POUR LA SYNTHESE ADDITIVE CSOUND ---------------------------------------------
+; --- freq - amp - enveloppe d'iteration -------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------------
+; Tables qu'on modulera puis envoi a CSound via -->
+; gifrqs2 ftgen 4, 0, 16, 7, 0, 16, 0
+; giamps2 ftgen 5, 0, 16, 7, 0, 16, 0
+; gienv ftgen 6, 0, 512, -7, 0,0 
+
+;modBattement et inharm entre 0 et 1
+
+@proc_def ::ASCOtoCS_SYNTH_Ant($dur,$noteMidi,$kamp,$enviter1,$freqiter,$modBattement,$inharm,$mfoAntes,$NumSortie)
+	{
+		; Mode de battement INIT
+		ASCOtoCS_SYNTH c ad1 ([ $nim($modBattement) | $nim in $ModBat][0] )
+		ASCOtoCS_SYNTH c ad2 ([ $nim($modBattement) | $nim in $ModBat][1] ) 
+		ASCOtoCS_SYNTH c ad3 ([ $nim($modBattement) | $nim in $ModBat][2] ) 
+
+		; Enveloppe d'iteration 
+		$ampEnviter := $enviter1
+		$EnvIter := NIM{ 0 0.05, 15 $ampEnviter "exp", 16 0.05 "exp_out"}
+		$echNIMenv :=  [ $EnvIter($enum) | $enum in 0 .. 32 : 1] ; echantillonage de la NIM pour envoi de la table
+
+		forall $i in @iota(@size($echNIMenv)) ; ENVOI de la table d'enveloppe (size = 512)
+			{
+				ASCOtoCS_SYNTH wsidx 6 $i ($echNIMenv[$i])
+			}
+
+		; Creation de la table des frequences (size = 32)
+		::SYNTH_Ant_tabFreq($noteMidi,"quad",$inharm)
+
+		; Creation de la table d'amplitude
+		$echAmpNIM := [1.,0.343558,0.147239, 0.068712, 0.039264, 0.02454, 0.009816, 0.004908, 0.009816, 0.009816, 0.004908,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.]
+		forall $i in @iota(@size($echAmpNIM)) ; ENVOI de la table des amplitudes(size = 32)
+			{
+				ASCOtoCS_SYNTH wsidx 5 $i ($echAmpNIM[$i])
+			}
+
+		; Envois simples a CSound
+		ASCOtoCS_SYNTH c kAddAntesTurnoff 0
+		ASCOtoCS_SYNTH c mfoAntes $mfoAntes 
+		ASCOtoCS_SYNTH c kiterAntes $freqiter
+		ASCOtoCS_SYNTH c kampAntes $kamp
+		ASCOtoCS_SYNTH c ad1 1. 
+		ASCOtoCS_SYNTH e i "\"AnteSynth\"" 0 (@b2sec($dur)) $NumSortie
+
+		; ::ASCOtoCS_SYNTH("g12",$dur,($kamp*0.7),8,1002,$noteMidi,$freqiter,0.2,$mfoAntes,$NumSortie)
+	}
+
+; ---------- CURVE SUR LES MODES DE BATTEMENTS -------------------------------------
+
+; Modes de battements de la synthese
+@global $modB1,$modB2,$ModBat,$ampEnviter,$echNIMenv,$SynthAnt_freqFond
+
+$modB1 := [1.,1.,1.]
+$modB2 := [1.,0.9,1.1]
+$ModBat := [ NIM{ 0 ($modB1[$i]), 1 ($modB2[$i]) } | $i in @size($modB1) ] ; permet l'interpolation entre les 2 modes 
+; $modBattement doit etre entre 0. (aucun battement) et 1.
+
+; [ ModBat1, dur, ModBat2, ...... durn, ModBatn]
+@proc_def ::SYNTH_Ant_curveBat($TabModBat)
+	{	
+		if ((@size($TabModBat)>=3))
+			{	::c_urveBat1($TabModBat[0],$TabModBat[2],$TabModBat[1])
+				($TabModBat[1]) ::SYNTH_Ant_curveBat((@cdr(@cdr($TabModBat))))
+			}
+	}
+
+@proc_def ::c_urveBat1($Mod1,$Mod2,$dur)
+	{	
+		curve interp @grain := 0.07s,
+					 @action := { 	ASCOtoCS_SYNTH c ad2 ([ $nim($modBattement) | $nim in $ModBat][1] ) 
+									ASCOtoCS_SYNTH c ad3 ([ $nim($modBattement) | $nim in $ModBat][2] )} 
+					{ $modBattement
+							{			{ $Mod1 }
+							$dur		{ $Mod2 }
+							}
+					}
+	}
+
+; ---------- CURVE sur l'enveloppe d'iteration -------------------------------------
+; amplitude du pic de l'enveloppe -------------> a mettre comme action d'une curve controlant $ampEnviter
+; ici la table d'enveloppe d'iteration a ete reduite a 32 (anciennement 512 !) pour eviter
+; les clics causes par un trop grand nombre d'envois de messages a Max
+@proc_def ::SYNTH_Ant_enviter($ampEnviter)
+		{	
+			$EnvIter := NIM{ 0 0.05, 15 $ampEnviter "exp", 16 0.05 "exp_out"}
+			$echNIMenv :=  [ $EnvIter($enum) | $enum in 0 .. 32 : 1] ; echantillonage de la NIM pour envoi de la table
+			forall $i in @iota(@size($echNIMenv)) ; ENVOI de la table d'enveloppe (size512)
+					{
+						ASCOtoCS_SYNTH wsidx 6 ($i+1) ($echNIMenv[$i])
+					}
+		}
+
+; ---------- CURVE sur le spectre des frequence -------------------------------------
+; deviation d'un spectre harmonique -------------> a mettre comme action d'une curve controlant $inharm
+@proc_def ::SYNTH_Ant_tabFreq($SynthAnt_freqFondMid,$type,$inharm)
+	{	
+		@global $interpolSpec
+		$SynthAnt_freqFond := @midi2hz($SynthAnt_freqFondMid)
+		; creation du spectre initial, harmonique
+		$SynthAnt_tableFreq0 := [ $SynthAnt_freqFond | (32) ] * [ ($x+1) | $x in 32]
+		; Cree la fonction de transfert pour le spectre inharmonique
+		$min := @min_val($SynthAnt_tableFreq0)
+		$max := @max_val($SynthAnt_tableFreq0)
+		$NewSpec := NIM{ 0 $min, 31 $max EXPR { $type }}
+		; echantillonage de la NIM pour creer le tableau du spectre inharmonique
+		$NewSpecEch :=  [ $NewSpec($enum+1) | $enum in 0 .. 32 : 1] 
+		; Cree la NIM d'interpolation du spectre initial au spectre module
+		$interpolSpec := [ NIM{ 0 ($SynthAnt_tableFreq0[$i]), 1 ($NewSpecEch[$i]) EXPR{ $type }  } | $i in @size($SynthAnt_tableFreq0) ] 
+		$SpecInterpoled := [ $nim($inharm) | $nim in $interpolSpec]
+		forall $i in @iota(@size($SpecInterpoled)) ; ENVOI de la table de frequence (size = 16)
+			{
+				ASCOtoCS_SYNTH wsidx 4 $i ($SpecInterpoled[$i])
+			}
+	}
+
+@proc_def ::SYNTH_Ant_TabF0 ()
+	{
+		$echAmpNIM := [1.,0.343558,0.147239, 0.068712, 0.039264, 0.02454, 0.009816, 0.004908, 0.009816, 0.009816, 0.004908,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.]
+		forall $i in @iota(@size($echAmpNIM)) ; ENVOI de la table des amplitudes(size = 32)
+			{
+				ASCOtoCS_SYNTH wsidx 5 $i ($echAmpNIM[$i])
+			}
+	}
+; ---------- Envoi du spectre des amplitudes -------------------------------------
+; deviation des amplitudes fortes -------------> a mettre comme action d'une curve controlant $ampGliss
+
+$pi := 3.1415926535897
+; on specifie la courbure de la courbe et la place du "pic" (entre 0.000001 et 1.) !!! ATTENTION ZERO INTERDIT !
+@fun_def @cresdecExp($courbure,$bosse,$x)
+	{	
+		($x <= $bosse ? 
+		(@exp($courbure*$x/$bosse)/@exp($courbure)) * (2+@cos((2*16-1)*$pi*$x))
+		: (@exp($courbure) * (@exp($courbure*($bosse-$x)/1-$bosse))/@exp($courbure)) * (2+@cos((2*16-1)*$pi*$x)) )
+	}
+
+@proc_def ::SYNTH_Ant_tabAmp($courbure,$bosse)
+	{
+		$echAmpNIM :=  [ @cresdecExp($courbure,$bosse,$enum) | $enum in 0. .. 1. : (1/32)]
+		forall $i in @iota(@size($echAmpNIM)) ; ENVOI de la table des amplitudes(size = 32)
+			{
+				ASCOtoCS_SYNTH wsidx 5 $i (($echAmpNIM[$i])*1/@max_val($echAmpNIM))
+			}
+	}
+
+@fun_def @nonNegSin($val)
+	{
+		( @sin($val) < 0. ? 0. : @sin($val))
+	}
+
+@proc_def ::SYNTH_Ant_tabAmpSin($dur,$grainAmp,$freqMir)
+	{	
+		$enumSin := 0
+		$lect :=  NIM{ 0. 0.,1. (2.*$pi)} 
+		;$echLect := [ $lect($enum) | $enum in 0. .. 1. : (1/$freqMir*$grainAmp) ]
+		loop AmpRand $grainAmp 
+			{
+				if ($enumSin >= 1) 
+					{ let $enumSin := 0. }
+					else { let $sinx := $lect($enumSin)}
+				let $TabA := [1.,0.343558,0.147239, 0.068712, 0.039264, 0.02454, 0.009816, 0.004908, 0.009816, 0.009816, 0.004908,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,((@nonNegSin($sinx))*0.05),((@nonNegSin($sinx+(0.5*$pi)))*0.05),((@nonNegSin($sinx+$pi))*0.05),((@nonNegSin($sinx+(1.5*$pi)))*0.05),((@nonNegSin($sinx+(2.*$pi)))*0.05),((@nonNegSin($sinx))*0.05),((@nonNegSin($sinx+(0.5*$pi)))*0.05),((@nonNegSin($sinx+$pi))*0.05),((@nonNegSin($sinx+(1.5*$pi)))*0.1)] 
+				forall $i in @iota(@size($TabA)) ; ENVOI de la table des amplitudes(size = 32)
+					{
+						ASCOtoCS_SYNTH wsidx 5 $i ($TabA[$i])
+					}
+					;print ($TabA)
+				$enumSin := $enumSin+($freqMir*$grainAmp)
+			} 
+		$dur abort AmpRand
+	}
+
+@proc_def ::SYNTH_Ant_tabAmpRand($dur,$grainAmp)
+	{
+		@local $xnim
+		$echAmpNIM := [1.,0.343558,0.147239, 0.068712, 0.039264, 0.02454, 0.009816, 0.004908, 0.009816, 0.009816, 0.004908,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.]
+		$TabA := [1.,0.343558,0.147239, 0.068712, 0.039264, 0.02454, 0.009816, 0.004908, 0.009816, 0.009816, 0.004908,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006)]
+		$TabB := [1.,0.343558,0.147239, 0.068712, 0.039264, 0.02454, 0.009816, 0.004908, 0.009816, 0.009816, 0.004908,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006),((@rand_int(200))*0.0006)]
+
+		$interpRandAmps := NIM { 0. $echAmpNIM, 1. $TabA, 1. $TabB, 1. $echAmpNIM}
+
+		curve scrubNIMspecAmp @grain := $grainAmp s, 
+				@action := { 
+					forall $i in @iota(@size($interpRandAmps($xnim)))
+						{ASCOtoCS_SYNTH wsidx 5 $i ($interpRandAmps($xnim)[$i]) }
+					}
+			{ $xnim
+				{		 { 0. } ;@type "quad"
+					$dur { 3. }
+				}
+			}
+	}
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+
+@proc_def ::ASCOtoCS_percu($instr,$dur,$amp,$noteMidi,$att,$ampvar,$sortie)
+	{
+		ASCOtoCS_SYNTH c percu.amp 1
+		ASCOtoCS_SYNTH e i6666 0 (@b2sec($dur)) $amp (@midi2hz($noteMidi)) $att $ampvar $instr $sortie
+	}
+
+@proc_def ::ASCOtoCS_percuBow($numGen,$instr,$dur,$noteMidi,$sortie)
+	{
+		ASCOtoCS_SYNTH c ($numGen+".amp") 0.
+		ASCOtoCS_SYNTH c ($numGen+".jitdep") 0.4
+		ASCOtoCS_SYNTH c ($numGen+".jitrat") 3
+		ASCOtoCS_SYNTH c ($numGen+".freq") (@midi2hz($noteMidi))
+
+		ASCOtoCS_SYNTH e i "\"BowedModes\"" 0 (@b2sec($dur)) $instr ("\"" + $numGen + "\"") $sortie
+	}
+
+@proc_def ::ASCOtoCS_AleaPerc($dur,$amp,$noteMidi,$maxdur,$sortie)
+	{
+		@local $randInst,$periodL
+		$periodL_init := 0.3
+		$periodL := $periodL_init
+		$maxdur := $maxdur*10
+		loop plicploc $periodL
+			{
+				$periodL := (@rand_int($maxdur)*0.1) + 0.04
+				$randInst := (@rand_int(16))+3
+				::ASCOtoCS_percu($randInst,1,$amp,$noteMidi,0.002,13.,$sortie)
+			}
+		$dur abort $MYSELF
+	}
+
+@proc_def ::ASCOtoCS_regulPercdec($dur,$amp,$noteMidi,$periodL,$sortie)
+	{
+		@local $randInst
+		$periodL_init := 0.3
+
+		curve regulPerc @grain := $periodL/2
+			{ $amp1
+				{
+							{ $amp } @type "cubic_out"
+					$dur 	{ ($amp/3) }
+				}
+			}
+		loop plicploc $periodL
+			{
+				$randInst := (@rand_int(16))+3
+				::ASCOtoCS_percu($randInst,1,$amp1,$noteMidi,0.001,13.,$sortie)
+			}
+		$dur abort $MYSELF
+	}
+
+@proc_def ::ASCOtoCS_regulPerc($dur,$amp,$noteMidi,$periodL,$sortie)
+	{
+		@local $randInst
+		$periodL_init := 0.3
+
+		loop plicploc $periodL
+			{
+				$randInst := (@rand_int(16))+3
+				::ASCOtoCS_percu($randInst,1,$amp,$noteMidi,0.001,13.,$sortie)
+			}
+		$dur abort $MYSELF
+	}
+
+; -----------------------------------------------------------------------------------------------
+; -----------------------------------------------------------------------------------------------
+; -----------------------------------------------------------------------------------------------
+
+; players très rapide contrôlé par Antescofo (voir fichier loscilJBLO.csd)
+
+@proc_def ::essaim($nomInstr,$table,$amp,$cps,$durSamp,$period0,$durloop)
+	{
+		@local $name,$period,$exe
+		CS-Player c ($nomInstr + ".cps") $cps
+		CS-Player c ($nomInstr + ".amp") $amp
+
+		$period := $period0
+
+		$exe := {loop looping $period
+					{
+						CS-Player e i ("\"" + $nomInstr + "\"") 0 $durSamp $table
+					}
+				}
+		$durloop abort $exe
+	}
+
+@proc_def ::PlayFeed($table,$dur,$cps,$delayTime,$feedR,$Mix)
+	{
+		CS-Player c PlayerDelFeed.amp 0.
+		CS-Player c PlayerDelFeed.cps $cps
+		CS-Player e i "\"PlayerDelFeed\"" 0 (@b2sec($dur)) $table $delayTime $Mix $feedR
+	}
+
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+
+@proc_def ::bbpulse($dur,$type,$interv,$sortie)
+	{
+		CS-Player c "bb.kbeta" $type
+		CS-Player c "bb.amp" 0
+		CS-Player c "pulse.interv" (@b2sec($interv))
+		CS-Player c "pulse.amp" 0.
+
+		CS-Player e i "\"BruitSalle\"" 0 (@b2sec($dur)) $sortie
+	}
+
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

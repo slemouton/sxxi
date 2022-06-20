@@ -1,0 +1,33 @@
+; P.Manoury Pluton 
+; slm 2016
+
+; initialisations
+
+BPM 120
+mute 1
+print init
+500ms samples disk
+killh bang;
+killf bang;
+killr bang;
+killR bang;
+killo bang;
+killt bang;
+killgumbo bang;
+kills bang;
+stopmetro1 0;
+stopmetro2 0;
+markov-enable 1;
+mark clear
+mark2 clear
+stereo 0;
+enable-midi-mix 1
+
+spat.rev1_ modaldensity 4, gain 16;
+spat.rev2_ modaldensity 4, gain 16;
+reset bang
+stopmetro1 0
+stopmetro2 0
+50ms revfb 90
+mute 0
+print ready

@@ -1,0 +1,567 @@
+	@INSERT "macros_def.txt"	; definition des fonctions et macros
+
+;antescofo::bypass_temporeset "on" ; le super trick pour éviter que antescofo s'arrête si la machine d'écoute est arrêtée
+
+BPM 60 ; très bizarre. 	
+antescofo::tempo 60 ; pour forcer le tempo i.e. le $RT_TEMPO
+@set_max_message_sent_instantaneously(4000)
+TEMPO ON
+
+
+	v1_boost 2;
+	v2_boost 2;
+	a_boost 2;
+	c_boost 2;
+		
+	s_stop bang
+	s2_stop bang
+	
+	"s"  1 400
+	s2 1 400
+	
+	monitors.pgm 1 ; all off
+	
+	0.5s fx_pgm 1
+
+	; *********
+	; SPAT INIT
+	; *********
+	spat1_dist 1
+	spat2_dist 1
+	spat3_dist 1
+	spat1_pres 90
+	spat3_pres 90
+	spat2_pres 90
+
+	spat1_aperture 20
+	spat2_aperture 20
+	spat3_aperture 20
+	
+	; fx_pgm 1	; matrice à zero  
+	; fx_pgm 20
+	
+	spat3_traj 0 
+	
+;   KILLFWD		loop3_1
+;	KILLFWD		loop3_2
+;	KILLFWD		loop3_3
+
+; routing
+	
+	spat1 100
+	spat2 100  
+	spat3 100  
+
+	; s_reset bang	; reset string parameters  
+	
+	
+			syn_voices 1 flush 1; turn notes off 
+			syn_voices 2 flush 1; turn notes off 
+			Bsyn_voices 1 flush 1; turn notes off 
+			Bsyn_voices 2 flush 1; turn notes off 
+
+	
+		bouge 0				; bouge les spats aleatoire 
+	
+	; Set initial pitch bends
+			syn_voices 1 xbend 0; 
+			syn_voices 2 xbend 0; 
+			syn_voices 3 xbend 0; 
+			syn_voices 4 xbend 0; 
+			syn_voices 5 xbend 0;  
+			
+			syn_voices 1 pgm 4 bnk 1 vol 120;
+			syn_voices 2 pgm 4 bnk 2 vol 127;
+	
+		; synful_vst read strings-ctls4.fxb 
+	
+	 
+	 ;110		; envoie synful dans spat1 
+	 
+	 ; set initial vibratos on available channels
+			syn_voices 3 vibrato 0.2, 4 vibrato 0.2, 5 vibrato 0.2, 6 vibrato 0.2	; etc  
+	
+			sampler2 100 
+			
+			
+			
+			
+	
+			master_toupie_freq 0
+			h1_leslie_mode 0 
+			h2_leslie_mode 0 
+			h3_leslie_mode 0 
+			h4_leslie_mode 0 
+	
+		Bsynful 95			; Volume en DB 
+		synful 95 			; volume synful et spat1 en DB 
+	
+		print "WARNING missing partiels_xbend_range line 96"
+		; partiels_xbend_range 12  ; removed gn15
+		
+		; init spat positions
+		; spat1_ctl source Az 0 5
+		spat1_az 0 ; front
+		spat1_dist 5; 5 m
+		spat1_width 30
+		; spat1_ctl width 30
+		; spat1_aperture 30
+		; spat1_ctl fact rev 55
+		spat1_rev 55
+		
+		
+
+;a suprrimer lors de l'enchaînement à la section II
+spat1_prer 140
+spat1_dist_min 0
+spat1_traj_loop 1 
+
+spat2_prer 140
+spat2_dist_min 0
+spat2_traj_loop 1 
+
+;traj_spat1 1 traj2 @b(8) 3 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+;traj_spat2 1 traj2 @b(8) 3 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+	
+
+	4t_player "loop" 0, 0 ; gn15
+	
+	; load soundfile
+	;4t_player open part_one_16b1.aif
+	;4t_player open violon_pizz
+	
+	; init smerdyakov 
+	
+	; 8oct2020 bizarre le smerdyakov là, maybe pour le stopper ?
+	/*smerdyakov stop
+	smerdyakov clear
+	smerdyakov_walk walk20.txt ; this builts markov matrix
+	*/
+	
+	; cut off sigmund
+	
+	v1_sigmund 0
+	v2_sigmund 0
+	al_sigmund 0
+	cl_sigmund 0
+	
+	; init sigmund pitch analysis
+	f3c_pgm 1	; matrice suivi de pitch vers calcul des frequences à zero
+	
+	; what to follow , how to route sigmund analysis ?
+	v1_mato3fc_1 1 ;	violin 1 midipitch-amplitude to 3fc first frequency , 1=on 0=off
+	v1_mato3fc_2 1
+	v1_mato3fc_3 1
+	
+	; 3fc_1 60.5
+	; 3fc_2 70.5
+	; 3fc_3 80.5
+	
+	; init spat
+	
+	; v1tosp1 100
+	3fctosp2 116
+	syntosp3 100
+
+	
+	traj_spat1 0
+	traj_spat2 0
+	traj_spat3 0
+	
+	 print "Press space to start"  
+		
+	;read_traj lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+read_traj mvt_combines2.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+;read_traj2 mvt_combines2.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+read_traj3 lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+
+		spat2_traj_loop 1; 
+		traj_spat2 1 traj @b(100) 20 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+	3.0 spat1_traj_loop 1; 
+		traj_spat1 1 traj @b(100) 20 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+		spat3_traj_loop 1; 
+		traj_spat3 1 traj3 @b(6) 3 ; on/off, nom de la trajectoire ,durée de la boucle, distance 
+ ;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+TRILL ( 8100 ) 4.0 			IIIA...EVT-1
+
+	deltas_pm.pgm 4
+
+	;s_stop bang
+	;s2_stop bang
+	
+	;s 0 100
+	;s2 0 100
+	
+	;0.5s fx_pgm 1
+	
+	"s"  0
+	s2 0
+
+/* GFWD Simultation_quatuor_clt1
+{
+	son1 open Vn-legno-tratto-A5-mf-2c.aif
+	son2 open Vn-legno-tratto-F5-mf-1c.aif
+	son3 open Vn-legno-tratto-G#4-mf-3c.aif
+	son1 loop 1, 1
+	son2 loop 1, 1
+	son3 loop 1, 1
+	son1tosp2 120
+	son2tosp2 120
+	son3tosp2 120
+	son1toh1 120
+	son3toh2 120
+	son2toh4 120
+}
+*/
+
+	v1tosp3 120
+	v2tosp3 120
+	atosp3 120
+	ctosp3 120
+	
+	; v1tosp1 120
+	; vtosp1 120
+	v1toh1 120
+	; ctosp1 120
+	v1toh1 120
+	ctoh4 120 
+
+; sampler1 90
+
+	smp1tosp1 0 
+	smp1tosp2 115 
+	smp1tosp3 0 
+	smp2tosp1 0
+	smp2tosp2 0
+	smp2tosp3 115
+	
+	sampler1	30, 80 2000 ; 95
+			h0	1, 100 2000 
+			h1	1, 100 2000 
+			h2	1, 100 2000 
+			h3	1, 100 2000
+			h4	1, 100 2000
+			
+	smp1toh1 120
+	smp1toh2 115
+	smp1toh3 115
+	smp1toh4 115
+	
+	h1tosp1 100
+	h2tosp1 100
+	h3tosp1 100
+	h4tosp1 100
+	h1_trans -300
+	h2_trans 300
+	h3_trans 400
+	h4_trans 100
+	h1_del 3000
+	h2_del 4000
+	h3_del 5000
+	h4_del 7000
+	 
+
+	spat1_prer 140
+	spat1_dist_min 5
+	spat1_rev 80 
+	spat2_prer 140 
+	spat2_dist_min 5
+	spat2_rev 80 
+
+	LOOP		loop3_1 13.749  ; @s2b(18.5)
+	{
+		print toto
+		sampler1_play Gliss-DPA-denoise.aif 0 2 427 4583 ; nom  trans amp  début durée
+	}
+	
+	
+	NOTE 0 0.5	
+	
+;**************************************************************	
+NOTE 7100 0.3333		IIIA...EVT-2
+
+	LOOP		loop3_2 18.742 ; @s2b(18.5)
+	{
+		sampler1_play Gliss-DPA-denoise.aif 0 2 116240 7000
+	}
+read_traj3 lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+;**************************************************************	
+NOTE 0 0.3333
+NOTE 7700 0.3333
+NOTE 0 0.3334
+NOTE 7800 0.3333
+NOTE 0 0.5833
+
+; ---------- measure 156 beat 566.00 ---------
+
+CHORD ( 7400 6700 6200 ) 0.2500
+NOTE 6800 0.5000
+NOTE 0 0.3334
+NOTE 7500 0.3333
+NOTE 0 0.6667
+
+; ---------- measure 157 beat 568.00 ---------
+
+NOTE 7100 0.3333
+NOTE 0 0.1667
+NOTE 7800 0.1666
+NOTE 7700 0.3333
+NOTE 0 0.3333
+NOTE 8600 0.3333
+NOTE 0 0.3334
+
+; ---------- measure 158 beat 570.00 ---------
+
+NOTE 7500 0.3333
+NOTE 6800 0.3333
+NOTE 0 0.3334
+NOTE 7100 0.3333
+NOTE 0 0.3333
+
+; ---------- measure 159 beat 572.00 ---------
+
+NOTE 8600 0.3333
+NOTE 0 0.1667
+NOTE 6800 0.1666
+NOTE 7700 0.3333
+NOTE 0 0.3334
+
+; ---------- measure 160 beat 573.00 ---------
+
+NOTE 8100 0.3333			IIIA...EVT-3
+
+	v1_boost 4;
+	v2_boost 2;
+	a_boost 2;
+	c_boost 4;
+	
+	spat3_prer 120
+	spat3_dist_min 5
+	spat3_rev 64 
+	sampler2 80
+	
+	LOOP		loop3_3 10.646 ; @s2b(18.5)
+	{
+		sampler2_play Gliss-DPA-denoise.aif 0 2 17306 3488
+	}
+;**************************************************************	
+NOTE 0 0.1667
+NOTE 6800 0.1667
+NOTE 7800 0.3333
+NOTE 0 0.3334
+NOTE 8900 0.3333
+
+
+
+NOTE 8500 0.3 			IIIA...EVT-4
+
+	v1_boost 4;
+	v2_boost 4;
+	a_boost 4;
+	c_boost 4;
+	
+v2toh2 120	; Luzern
+atoh3 120
+
+h1_trans -600
+h2_trans 400
+h3_trans 100
+h3_trans 300
+	h1_del 2000
+	h2_del 4000
+	h3_del 6000
+	h4_del 5000
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+NOTE 8500 0.3 			IIIA...EVT-5
+
+h2 0
+h3 0
+h4 115
+h1 110
+h1_trans -900
+h4_trans 1000
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+NOTE 8500 0.3 			IIIA...EVT-6
+
+h2 100
+h3 100
+h4 100
+h1 100
+h1_trans -400
+h2_trans 600
+h3_trans 0
+h4_trans 100
+	h1_del 6000
+	h2_del 4500
+	h3_del 3000
+	h4_del 1500
+
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+NOTE 8500 0.3 			IIIA...EVT-7
+
+;KILLFWD		loop3_1
+abort		loop3_1
+
+smp2toh1 110
+smp2toh2 110
+smp2toh3 110
+smp2toh4 110
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+NOTE 8500 0.3 			IIIA...EVT-8
+
+;KILLFWD		loop3_2
+abort		loop3_2
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+NOTE 8500 0.3 			IIIA...EVT-9
+
+abort		loop3_3
+
+	v1_boost 2 2000;
+	v2_boost 2 2000;
+	a_boost 2 2000;
+	c_boost 2 2000;
+
+spat2_pres 120 @b(4) 
+spat2_rev 100 @b(4)
+spat2_aperture 105 @b(4)
+
+sampler1 0 @b(3)
+sampler2 0 @b(3)
+
+GFWD IV_9_quatuor_clt1
+{
+	son1 open Vn-legno-tratto-A5-mf-2c.aif
+	son2 open Vn-legno-tratto-F5-mf-1c.aif
+	son3 open Vn-legno-tratto-G#4-mf-3c.aif
+	son1 loop 1, 1
+	son2 loop 1, 1
+	son3 loop 1, 1
+	son1tosp2 0, 120 @b(4)
+	son2tosp2 0, 120 @b(4)
+	son3tosp2 0, 120 @b(4)
+	son1tosp1 0, 120 @b(4)
+	son2tosp1 0, 120 @b(4)
+	son3tosp1 0, 120 @b(4)
+	son1toh1 120
+	son3toh2 120
+	son2toh4 120
+}
+
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+NOTE 8500 0.3 			IIIA...EVT-10
+
+spat1_pres 93
+spat1_rev 87
+spat1_aperture 58
+
+smp1tosp1 110
+h1tosp1 90
+h2tosp1 90
+h3tosp1 90
+h4tosp1 90
+
+;smp1 100
+;smp2 0
+
+spat1_rev 87
+spat2_rev 87
+synful 109
+sampler1 70
+syntosp1 120
+syntosp2 0
+syntosp3 0
+
+/*
+syn_voices 1 vol 90;
+syn_voices 2 vol 120;
+syn_voices 1 21 120 17000;
+syn_voices 1 27 120 17000;
+syn_voices 2 21 127 500;
+syn_voices 2 27 127 500;
+
+
+	h1_trans 900
+	h2_trans 500
+	h3_trans -400
+	h4_trans 0
+	
+	h1_del 1000
+	h2_del 2000
+	h3_del 3000
+	h4_del 4000
+*/
+
+GFWD label__
+{
+0.6		sampler1_play Gliss-DPA-denoise.aif 0 2 270220 2850
+2.85	sampler1_play Gliss-DPA-denoise.aif 0 2 279000 2520
+2.52	sampler1_play Gliss-DPA-denoise.aif 0 2 283000 3200
+3.2		sampler1_play Gliss-DPA-denoise.aif 0 2 270220 2850
+1.4	 	sampler1_play Gliss-DPA-denoise.aif 0 2 270220 2850
+}
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+NOTE 0 0.5	
+
+NOTE 8500 0.3 			; IIIA...EVT-11
+
+	v1_boost 2;
+	v2_boost 2;
+	a_boost 2;
+	c_boost 2;
+
+
+suivi 0	
+NOTE 0. 1
+;**************************************************************
+NOTE 0. 1 EVT-11-LOAD-4a
+
+; antescofo_score 4a-12-13.asco
+;antescofo_score 4a-05-15.txt
+antescofo_score 4a-01-20.txt ; gn20
+
+	

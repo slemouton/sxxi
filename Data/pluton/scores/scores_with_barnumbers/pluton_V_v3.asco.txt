@@ -1,0 +1,5061 @@
+	; Antescofo score generated using native importer version 0.1.44
+	; Copyright (c) IRCAM 2015
+	; Designed by Robert Piéchaud
+
+	; Original file: Pluton 3_SectionV.xml
+	; exported from Finale 2014 for Mac ~ Dolet Light for Finale 2014
+	; MusicXML version 3.0
+	; Converted to Antescofo on Thu Oct  6 19:34:31 2016
+	; Credits: 40
+
+	; start
+
+	; ----------- measure 1
+
+	BPM 52
+	antescofo::pedal 0
+	@set_max_message_sent_instantaneously(4000)
+	antescofo::bypass_temporeset "on"
+	antescofo::suivi 0
+
+	_section_ VA
+	NOTE B1 1/5 VA
+	NOTE B1 1/10
+	NOTE B1 1/5
+	NOTE B1 1/10
+	CHORD (-B1 D2) 3/10
+	CHORD (B1 -D2) 1/10
+
+	; ----------- measure 2
+
+	CHORD (-B1 -D2) 1/10 measure2
+	CHORD (B1 D2) 1/10
+	CHORD (B1 D2) 3/10
+	CHORD (-B1 -D2) 1/10
+	CHORD (B1 D2) 1/10 @staccato
+	CHORD (-B1 D2) 1/10
+	CHORD (-B1 -D2 Db3) 1/10
+	CHORD (-B1 -D2 Bb2 -Db3) 1/10
+
+	; ----------- measure 3
+
+	CHORD (-B1 -D2 -Bb2 -Db3) 1/10 measure3
+	CHORD (-B1 D2 -Bb2 -Db3) 3/10
+	CHORD (B1 -D2 -Bb2 -Db3) 1/10
+	CHORD (B1 -D2 Bb2 Db3) 1/10
+	CHORD (-B1 -D2 Bb2 Db3) 1/10
+	CHORD (-B1 -D2 Bb2 Db3) 1/5
+	CHORD (B1 D2 -Bb2 -Db3) 1/10
+
+	; ----------- measure 4
+
+	CHORD (-B1 -D2 -Bb2 -Db3) 1/10 measure4
+	CHORD (-B1 -D2 Bb2) 1/10
+	CHORD (-B1 -D2 G2) 1/10
+	CHORD (-B1 -D2 F#3) 1/10
+	CHORD (-B1 -D2 -F#3 A3) 1/10
+	CHORD (B1 D2 -F#3 -A3) 1/5
+	CHORD (-B1 -D2 Bb2 -A3) 1/10
+	CHORD (B1 D2 Bb2 -A3) 1/10
+	CHORD (-B1 -D2 G2 -Bb2) 1/10
+
+	; ----------- measure 5
+
+	CHORD (B1 D2 -G2 -Bb2 F#3 A3) 1/10 measure5
+	CHORD (-B1 -D2 -G2 -Bb2 F#3 A3) 1/10
+	CHORD (-B1 -D2 G2 Bb2 -F#3 -A3) 1/10
+	CHORD (B1 D2 -G2 -Bb2 -F#3 -A3) 1/10
+	CHORD (B1 D2 -G2 -Bb2 -F#3 -A3) 1/10
+	CHORD (-B1 -D2 -G2 -Bb2 -F#3 -A3) 1/10
+	CHORD (-B1 -D2 G2 Bb2 -F#3 -A3) 1/10
+	CHORD (B1 D2 -G2 -Bb2 F#3 A3) 3/10
+
+	; ----------- measure 6
+
+	CHORD (-B1 -D2 -G2 -Bb2 -F#3 -A3) 1/10 measure6
+	CHORD (B1 D2 -G2 -Bb2 -F#3 -A3) 1/5
+	CHORD (-B1 -D2 -G2 -Bb2 F#3 A3) 1/10
+	CHORD (-B1 -D2 -G2 -Bb2 F#3 A3) 1/10
+	CHORD (-B1 -D2 -G2 Bb2 -F#3 -A3) 1/10
+	CHORD (-B1 -D2 G2 -Bb2 -F#3 -A3) 1/10
+	CHORD (-B1 -D2 -G2 Bb2 -F#3 -A3) 1/5
+	CHORD (-B1 -D2 -Bb2 -F#3 -A3) 1/10
+
+	; ----------- measure 7
+
+	NOTE G2 1/10 measure7
+	CHORD (E1 -G2) 1/10
+	CHORD (A1 -G2) 1/10
+	CHORD (Eb2 -G2) 1/10
+	CHORD (-G2 Ab2) 1/10
+	CHORD (Eb2 -G2) 1/2
+
+	; ----------- measure 8
+
+	NOTE 0 3/10 measure8
+	NOTE F2 1/10
+	CHORD (C2 -F2) 1/10
+	CHORD (-C2 F2 F#2) 1/10
+	CHORD (-C2 C#2 -F2) 1/10
+	CHORD (-C2 -F2) 1/5
+	CHORD (C2 F2) 1/10
+
+	; ----------- measure 9
+
+	CHORD (C2 F2) 1/5 measure9
+	CHORD (-C2 C#2 -F2 F#2) 3/10
+	CHORD (C2 -C#2 F2 -F#2) 3/10
+	CHORD (-C2 C#2 -F2 F#2) 1/5
+
+	; ----------- measure 10
+
+	NOTE 0 1/10 measure10
+	NOTE D2 1/10
+	CHORD (B1 -D2) 1/10
+	CHORD (-B1 -D2 Db3) 1/10
+	CHORD (-B1 -D2 Bb2) 1/10
+	CHORD (-B1 -D2 C4) 1/10
+	CHORD (-B1 -D2 G2 Bb2) 1/5
+	CHORD (-B1 -D2 -G2 -Bb2 F#3) 1/10
+	CHORD (F1 -G2 -Bb2 -F#3) 1/10
+
+	; ----------- measure 11
+
+	CHORD (F1 -G2 Bb2 -F#3) 1/10 measure11
+	CHORD (-G2 -Bb2 -F#3) 1/10
+	CHORD (-G2 Bb2 F#3) 1/10
+	CHORD (-G2 Bb2 F#3) 1/5
+	CHORD (-G2 -Bb2 -F#3) 1/10
+	CHORD (F1 -G2 -Bb2 -F#3) 1/10
+	CHORD (F1 -G2 -Bb2 -F#3) 3/10
+
+	; ----------- measure 12
+
+	NOTE -F1 1/9 measure12
+	CHORD (-F1 Eb3) 1/9
+	CHORD (-F1 G3) 1/9
+	CHORD (-F1 D4) 1/9
+	CHORD (-F1 F#4) 1/9
+	NOTE -F1 1/9
+	NOTE E1 1/9
+	NOTE A1 1/9
+	NOTE Eb2 1/9
+	NOTE Ab1 1/9
+	NOTE D2 1/9
+	NOTE Bb2 1/9
+	NOTE -Bb2 1/9
+	CHORD (G2 -Bb2) 1/9
+	CHORD (-Bb2 F#3) 1/9
+	CHORD (-Bb2 A3) 1/9
+	CHORD (-Bb2 F3) 1/9
+	CHORD (-Bb2 Ab4) 1/9
+
+	; ----------- measure 13
+
+	NOTE -Ab4 3/4 measure13
+
+	; ----------- measure 14
+
+	CHORD (Ab4 C5) 2/9 measure14
+	CHORD (A3 -Ab4 -C5) 1/9
+	CHORD (G2 Bb2 -A3 -Ab4 -C5) 2/9
+	CHORD (G2 Bb2 -A3 -Ab4 -C5) 1/9
+	CHORD (-G2 -Bb2 -A3 Ab4 C5) 1/9
+	CHORD (-G2 -Bb2 F#3 A3 -Ab4 -C5) 2/9
+	CHORD (-F#3 -A3 -Ab4 -C5) 1/9
+	CHORD (G2 Bb2 -F#3 -A3 -Ab4 -C5) 1/9
+	CHORD (-G2 -Bb2 -F#3 -A3 Ab4 C5) 1/9
+	CHORD (-G2 -Bb2 F#3 A3 Ab4 C5) 2/3
+
+	; ----------- measure 15
+
+	CHORD (G2 Bb2 -F#3 -A3) 1/9 measure15
+	CHORD (G2 Bb2 -F#3 -A3) 2/9
+	CHORD (-G2 -Bb2 -F#3 -A3) 2/9
+	CHORD (-G2 -Bb2 F#3 A3) 1/9
+	CHORD (-G2 -Bb2 -F#3 -A3 F4 Ab4) 1/9
+	CHORD (-G2 -Bb2 -F#3 -A3 F4 Ab4) 1/9
+	CHORD (-G2 -Bb2 -F#3 -A3 F4 Ab4) 1/9
+	CHORD (-G2 -Bb2 F#3 A3 F4 Ab4) 1/3
+	CHORD (-G2 -Bb2 -F#3 A3 F4 Ab4) 1/6
+	CHORD (-G2 -Bb2 -F#3 -A3 -F4 -Ab4) 1/2
+
+	; ----------- measure 16
+
+	CHORD (G2 Bb2 F#3 A3) 1/9 measure16
+	CHORD (-G2 -Bb2 -F#3 A3) 1/9 @staccato
+	CHORD (-G2 -Bb2 -F#3 Ab4) 1/9
+	CHORD (-G2 -Bb2 -F#3 -Ab4 C5) 1/3
+	CHORD (-G2 -Bb2 -F#3 Ab4 C5) 1/3
+	CHORD (Ab4 C5) 1/9
+	CHORD (Ab4 C5) 1/9
+	CHORD (B2 -Ab4 -C5) 1/9
+	CHORD (D2 -Ab4 -C5) 1/9
+	CHORD (C#3 -Ab4 -C5) 1/9
+	CHORD (Bb3 -Ab4 -C5) 1/9
+	CHORD (-Ab4 -C5) 1/12
+	CHORD (F1 -Ab4 -C5) 1/36 @staccato
+	CHORD (-F1 -Ab4 -C5 A5) 1/10 @staccato
+	CHORD (F1 -Ab4 -C5 -A5) 0.013672 @staccato
+	CHORD (-F1 -Ab4 -C5) 1/9 @staccato
+	NOTE F1 1/8 @staccato
+	NOTE F1 1/8
+	CHORD (-F1 C#2) 1/8 @staccato
+	CHORD (-F1 C#2) 1/8 @staccato
+	CHORD (-F1 F#2) 1/8 @staccato
+	CHORD (-F1 F#2) 1/8 @staccato
+	CHORD (-F1 C#2) 1/8 @staccato
+	CHORD (-F1 G2) 1/8 @staccato
+
+	; ----------- measure 17
+
+	NOTE G2 1/8 measure17
+	NOTE C#2 1/8
+	NOTE 0 3/17
+	NOTE D2 1/7
+	NOTE F#2 1/7
+	NOTE Eb3 1/7
+	NOTE G3 1/7
+	NOTE Ab4 1/7
+	NOTE -Ab4 2/19
+	NOTE 0 1/27
+	NOTE G3 1/7 @staccato
+	NOTE F#2 1/7
+	CHORD (-F#2 D3) 1/7
+	CHORD (-F#2 -D3 F4) 1/14
+	NOTE -F4 1/14
+	NOTE E5 1/7 @staccato
+
+	; ----------- measure 18
+
+	NOTE C5 1/12 measure18
+	NOTE C5 1/12 @staccato
+	NOTE C5 1/12 @staccato
+	NOTE C5 1/12 @staccato
+	NOTE C#5 1/12
+	NOTE C#5 1/12 @staccato
+	NOTE C#5 1/12 @staccato
+	NOTE C#5 1/12 @staccato
+	NOTE D4 1/12
+	NOTE D4 1/12 @staccato
+	NOTE D4 1/12 @staccato
+	NOTE D4 1/12 @staccato
+	NOTE D4 1/12
+	NOTE F#4 1/12
+	NOTE D#5 1/12
+	NOTE G5 1/12
+	NOTE E5 1/12
+	NOTE Bb3 1/12
+	NOTE G3 1/12
+	NOTE F#4 1/12
+	NOTE A5 1/12
+	NOTE F5 1/12
+	NOTE Ab4 1/12
+	NOTE Db6 1/12
+	NOTE B4 1/12
+	NOTE D4 1/12
+	NOTE C#5 1/12
+	NOTE Bb5 1/12
+	NOTE C6 1/12
+	NOTE A3 1/12
+	NOTE F4 1/12 @staccato
+	NOTE F4 1/12 @staccato
+	NOTE F4 1/12
+	NOTE F4 1/12 @staccato
+	NOTE F4 1/12 @staccato
+	NOTE F4 1/12 @staccato
+
+	; ----------- measure 19
+
+	NOTE F4 1/8 measure19
+	CHORD (C3 -F4) 1/8 @staccato
+	NOTE F#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE G2 1/8
+	NOTE C2 1/8 @staccato
+	NOTE E2 1/8 @staccato
+	NOTE E2 1/8 @staccato
+	NOTE E2 1/8
+	NOTE E2 1/8
+	CHORD (E2 A2) 1/8 @staccato
+	CHORD (E2 Eb3) 1/8 @staccato
+	CHORD (E2 Ab2) 1/8 @staccato
+	CHORD (E2 D3) 1/8 @staccato
+	CHORD (E2 G3) 1/8 @staccato
+	CHORD (E2 -G3) 1/8 @staccato
+
+	; ----------- measure 20
+
+	NOTE E2 1/8 measure20
+	NOTE E2 1/8
+	NOTE E2 1/8
+	CHORD (E2 Eb3) 1/8
+	CHORD (E2 G3) 1/8
+	CHORD (E2 D4) 1/8
+	CHORD (E2 F#3) 1/8
+	CHORD (E2 Bb4) 1/8
+	CHORD (E2 G3) 1/8
+	CHORD (E2 F#4 D5) 1/8
+	CHORD (E2 F5) 1/8
+	CHORD (E2 -F5) 1/8
+	CHORD (E2 C5) 1/8
+	CHORD (E2 -C5) 1/8
+	NOTE E2 1/8
+	NOTE E2 1/8
+
+	; ----------- measure 21
+
+	CHORD (G2 Bb2) 1/7 measure21
+	CHORD (F#1 A1 -Bb2) 1/7
+	CHORD (-F#1 -A1 F3 Ab3) 1/7
+	CHORD (G2 Bb2) 1/7
+	CHORD (F#1 A1 -Bb2) 1/7
+	CHORD (-F#1 -A1 C#4 E4) 1/7
+	CHORD (-F#1 -A1 F3 Ab3) 1/7
+	CHORD (C#4 E4) 1/7
+	CHORD (C#4 E4) 1/7
+	CHORD (A1 F3 Ab3 -C#4 -E4) 1/7
+	CHORD (-A1 -F3 -Ab3 -C#4 -E4) 1/7
+	CHORD (A1 -F3 -Ab3 -C#4 -E4) 1/7
+	CHORD (A1 -F3 -Ab3 -C#4 -E4) 1/7
+	CHORD (A1 -F3 -Ab3 -C#4 -E4) 1/7
+
+	; ----------- measure 22
+
+	NOTE C#2 1/10 measure22
+	NOTE C#2 1/10 @staccato
+	NOTE C#2 1/10 @staccato
+	NOTE C3 1/10
+	NOTE C3 1/10 @staccato
+	NOTE F#3 1/9
+	CHORD (D1 -F#3) 1/9
+	CHORD (G1 -F#3) 1/9
+	CHORD (E2 -F#3) 1/9
+	CHORD (C3 -F#3) 1/9
+	CHORD (C#2 -F#3) 1/9
+	CHORD (G2 -F#3) 1/9
+	CHORD (G2 -F#3) 1/9
+	CHORD (G2 -F#3) 1/9
+	NOTE C#2 1/9
+	NOTE C#2 1/9
+	CHORD (C#2 G2) 1/9
+	CHORD (C#2 G2) 1/9
+	CHORD (C#2 -G2) 1/9
+	CHORD (C#2 -G2) 1/9
+	CHORD (C#2 G2 C3) 1/9
+	CHORD (C#2 G2 C3) 1/9
+	CHORD (C#2 G2 C3) 1/9
+	NOTE C3 1/9
+	CHORD (B3 D4) 1/9
+	CHORD (Bb1 Db2 B3 D4) 1/9
+	CHORD (Bb1 Db2 -B3 -D4) 1/9
+	CHORD (Bb1 Db2 -B3 -D4) 1/9
+	CHORD (C3 B3 D4) 1/9
+	CHORD (Bb1 Db2 A3 C4) 1/9
+	CHORD (-Bb1 -Db2 F4 Ab4) 1/9
+	CHORD (-Bb1 -Db2 F4 Ab4) 1/9
+
+	; ----------- measure 23
+
+	NOTE Eb5 1/7 measure23
+	CHORD (G3 -Eb5) 1/7
+	CHORD (D3 -Eb5) 1/7
+	CHORD (F#2 -Eb5) 1/7
+	CHORD (Bb3 -Eb5) 1/7
+	NOTE E4 1/7
+	CHORD (D3 -E4) 1/7
+	CHORD (F#2 -E4) 1/7
+	NOTE E4 1/7
+	CHORD (G3 -E4) 1/7
+	NOTE Eb5 1/7
+	NOTE Ab4 1/7
+	CHORD (Bb3 A5) 1/7 @staccato
+	CHORD (G2 A5) 1/7 @staccato
+	NOTE F#3 1/7
+	CHORD (A3 F4) 1/7
+	NOTE G#4 1/7
+	NOTE C#5 1/7
+	NOTE E5 1/7
+	NOTE D6 1/7 @staccato
+	NOTE 0 1/7
+
+	; ----------- measure 24
+
+	NOTE E2 1/12 measure24
+	NOTE E2 1/12 @staccato
+	NOTE E2 1/12 @staccato
+	NOTE E2 1/12 @staccato
+	NOTE A1 1/12
+	NOTE D#2 1/12 @staccato
+	NOTE G#2 1/12 @staccato
+	NOTE D3 1/12 @staccato
+	NOTE G1 1/12
+	NOTE D#2 1/12 @staccato
+	NOTE D#2 1/12 @staccato
+	NOTE D#2 1/12 @staccato
+	NOTE Eb2 1/12
+	NOTE Eb2 1/12 @staccato
+	CHORD (Eb2 G2) 1/12
+	CHORD (Eb2 D3) 1/12
+	CHORD (Eb2 F#3) 1/12
+	CHORD (Eb2 Bb2) 1/12
+	CHORD (Eb2 E3) 1/12
+	CHORD (Eb2 A3) 1/12
+	CHORD (Eb2 D#4) 1/12
+	CHORD (Eb2 F#3) 1/12
+	CHORD (Eb2 E4 G4) 1/12 @staccato
+	CHORD (Eb2 -E4 -G4) 1/12 @staccato
+	CHORD (Eb2 E4 G4) 1/12
+	CHORD (Eb2 -E4 -G4) 1/12
+	CHORD (Eb2 G#3) 1/12
+	CHORD (Eb2 A4) 1/12 @staccato
+	NOTE Eb2 1/12
+	NOTE Eb2 1/12
+	CHORD (Eb2 G#3) 1/12
+	CHORD (Eb2 -G#3) 1/12
+	CHORD (Eb2 -G#3) 1/12
+	CHORD (Eb2 -G#3) 1/12
+	CHORD (Eb2 A4) 1/12
+	CHORD (Eb2 -A4) 1/12
+
+	; ----------- measure 25
+
+	NOTE F#1 1/7 measure25
+	CHORD (-F#1 C#2) 1/7 @staccato
+	CHORD (-F#1 F2) 1/7 @staccato
+	CHORD (-F#1 E3) 1/7 @staccato
+	CHORD (-F#1 C4) 1/7 @staccato
+	CHORD (-F#1 C#4) 1/7 @staccato
+	CHORD (-F#1 G4) 1/7 @staccato
+
+	; ----------- measure 26
+
+	NOTE G4 1/9 measure26
+	NOTE G4 1/9 @staccato
+	NOTE G4 1/9 @staccato
+	CHORD (D2 F#2 Eb3 Ab4) 1/9 @staccato
+	CHORD (-D2 -F#2 -Eb3 Ab4) 1/9 @staccato
+	CHORD (-D2 -F#2 -Eb3 Ab4) 1/9 @staccato
+	CHORD (C#3 A3 C4 E5 G5) 1/9
+	CHORD (-C#3 -A3 -C4 Ab4 -E5 -G5) 1/18 @staccato
+	CHORD (-C#3 -A3 -C4 -Ab4) 1/17 @staccato
+	CHORD (-C#3 -A3 -C4 Ab4) 1/9 @staccato
+	NOTE Ab4 1/9 @staccato
+	NOTE Ab4 1/9 @staccato
+	NOTE Ab4 1/9 @staccato
+	CHORD (D3 G3 Eb4 E5 A5) 1/9
+	CHORD (-D3 -G3 -Eb4 Ab4 -E5 -A5) 1/18 @staccato
+	CHORD (-D3 -G3 -Eb4 -Ab4) 1/18 @staccato
+	CHORD (-D3 -G3 -Eb4 Ab4) 1/9 @staccato
+	CHORD (Bb2 Ab4) 1/9 @staccato
+	CHORD (-Bb2 Ab4) 1/9 @staccato
+	CHORD (-Bb2 Ab4) 1/9 @staccato
+
+	; ----------- measure 27
+
+	CHORD (G2 Eb4) 1/7 @staccato measure27
+	CHORD (-G2 Eb4) 1/7 @staccato
+	CHORD (-G2 Eb4) 1/7 @staccato
+	CHORD (Bb2 E3 A3 F#4 D5) 1/7
+	CHORD (-Bb2 -E3 -A3 Eb4) 1/7 @staccato
+	CHORD (-Bb2 -E3 -A3 Eb4) 1/7 @staccato
+	CHORD (-Bb2 -E3 -A3 Eb4) 1/7 @staccato
+	CHORD (G3 Bb3 A4 C#5) 1/7
+	CHORD (-G3 -Bb3 Eb4) 1/7 @staccato
+	CHORD (-G3 -Bb3 Eb4) 1/7 @staccato
+	CHORD (G#2 F#3 A3 C#5 F5) 1/7
+	CHORD (-G#2 -F#3 -A3 Eb4) 1/7 @staccato
+	CHORD (-G#2 -F#3 -A3 Eb4) 1/7 @staccato
+	CHORD (-G#2 -F#3 -A3 Eb4) 1/7 @staccato
+	CHORD (C#4 E4 B4 D5) 1/7
+	CHORD (-C#4 Eb4 -E4) 1/7 @staccato
+	CHORD (-C#4 Eb4 -E4) 1/7 @staccato
+	CHORD (-C#4 Eb4 -E4) 1/14 @staccato
+	NOTE -Eb4 1/14 @staccato
+	CHORD (Bb3 C#4 B4 D5) 1/7
+	NOTE Eb4 1/7 @staccato
+	NOTE Eb4 1/7 @staccato
+	CHORD (A4 C5 Bb5 Db6) 1/7
+	CHORD (-A4 -C5 D5) 1/7 @staccato
+	CHORD (-A4 -C5 D5) 1/7 @staccato
+	CHORD (-A4 -C5 F#5 D#6) 1/7
+	CHORD (-A4 -C5 F#5) 1/7 @staccato
+	CHORD (-A4 -C5 F#5) 1/7 @staccato
+	CHORD (-A4 -C5 F#5) 1/7 @staccato
+
+	; ----------- measure 28
+
+	CHORD (Ab3 G4 A5 E6) 1/9 measure28
+	CHORD (-Ab3 -G4 E5 -A5 -E6) 1/18 @staccato
+	CHORD (-Ab3 -G4 -E5) 1/18 @staccato
+	CHORD (-Ab3 -G4 E5) 1/9 @staccato
+	CHORD (-Ab3 -G4 E5) 1/9 @staccato
+	CHORD (-Ab3 -G4 E5) 1/9 @staccato
+	CHORD (-Ab3 -G4 E5) 1/9 @staccato
+	CHORD (Bb4 D#5 E5 D6 G6) 1/6
+	CHORD (-Bb4 E5 -D6 -G6) 1/6 @staccato
+	CHORD (C4 Ab4 E5 C#6 F6) 1/9 @staccato
+	CHORD (-C4 -Ab4 -E5 F5 -C#6 -F6) 1/18 @staccato
+	CHORD (-C4 -Ab4 -F5) 1/18 @staccato
+	CHORD (-C4 -Ab4 F5) 1/9 @staccato
+	CHORD (-C4 -Ab4 F5) 1/9 @staccato
+	CHORD (F#4 D5 C#6 G6) 1/9
+	CHORD (-F#4 -D5 F5) 1/9 @staccato
+	CHORD (-F#4 -D5 F5) 1/9 @staccato
+	NOTE F5 1/9 @staccato
+	NOTE F5 1/9 @staccato
+
+	; ----------- measure 29
+
+	CHORD (C#5 F5 C7 E7) 1/10 measure29
+	CHORD (-C#5 -F5 D6 -E7) 1/38 @staccato
+	CHORD (-C#5 -F5 -D6) 1/13 @staccato
+	CHORD (-C#5 -F5 D6) 1/20 @staccato
+	CHORD (-C#5 -F5 -D6) 1/20 @staccato
+	CHORD (-C#5 -F5 D6) 1/10 @staccato
+	CHORD (-C#5 -F5 D6) 1/10 @staccato
+	CHORD (B4 Bb5 G6 C7) 1/10
+	CHORD (-B4 -Bb5 D6 -C7) 1/38 @staccato
+	CHORD (-B4 -Bb5 -D6) 1/13 @staccato
+	CHORD (-B4 -Bb5 D6) 1/20 @staccato
+	CHORD (-B4 -Bb5 -D6) 1/20 @staccato
+	CHORD (-B4 -Bb5 D6) 1/10 @staccato
+	CHORD (-B4 -Bb5 D6) 1/10 @staccato
+	CHORD (C#4 Bb4 B5 D6) 1/10
+	CHORD (-C#4 -Bb4 C5 -D6) 1/38 @staccato
+	NOTE -C5 1/13 @staccato
+	NOTE C5 1/20 @staccato
+	NOTE -C5 1/20 @staccato
+	NOTE C5 1/10 @staccato
+	NOTE C5 1/10 @staccato
+	NOTE C5 1/10 @staccato
+	CHORD (A4 F5) 1/38 @staccato
+	CHORD (-A4 -F5 Ab5) 1/13 @staccato
+	CHORD (A4 -Ab5) 1/20 @staccato
+	NOTE -A4 1/20 @staccato
+	NOTE A4 1/10 @staccato
+	NOTE A4 1/10 @staccato
+	CHORD (F#3 Eb4 B4 G5) 1/10
+	CHORD (-F#3 Eb4 -G5) 1/38 @staccato
+	NOTE -Eb4 1/13 @staccato
+	NOTE Eb4 1/20 @staccato
+	NOTE -Eb4 1/20 @staccato
+	NOTE Eb4 1/10 @staccato
+	NOTE Eb4 1/10 @staccato
+	NOTE Eb4 1/10 @staccato
+	NOTE Eb4 1/10 @staccato
+	NOTE Eb4 1/10 @staccato
+	NOTE Eb4 1/10 @staccato
+	NOTE Eb4 1/10 @staccato
+
+	; ----------- measure 30
+
+	CHORD (C3 F3) 1/8 measure30
+	CHORD (C#5 G5) 1/8
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	CHORD (Ab4 D5 B5) 1/8
+	NOTE Eb4 1/8 @staccato
+	CHORD (Eb4 F#4 D5) 1/8
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	CHORD (E3 C#4 C5 F5) 1/8
+	NOTE F#4 1/8 @staccato
+	NOTE F#4 1/8 @staccato
+	NOTE F#4 1/8 @staccato
+	CHORD (C#4 B4 G5 Bb5) 1/8
+	NOTE F#4 1/8 @staccato
+	NOTE F#4 1/8 @staccato
+	NOTE F#4 1/8 @staccato
+	CHORD (Eb5 G5) 1/8
+	NOTE F#4 1/8 @staccato
+	NOTE F#4 1/8 @staccato
+	NOTE F#4 1/8 @staccato
+	CHORD (E3 Bb3 F#4 D5) 1/8
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	CHORD (C#3 A3 Bb4 G5) 1/8
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+	NOTE Eb4 1/8 @staccato
+
+	; ----------- measure 31
+
+	NOTE Eb4 1/8 measure31
+	NOTE Eb4 1/8
+	NOTE Eb4 1/8
+	NOTE Eb4 1/8
+	CHORD (E3 A3 Eb4 Ab4) 1/8 @staccato
+	CHORD (E3 -A3 -Eb4 -Ab4) 1/8 @staccato
+	CHORD (E3 -A3 -Eb4 -Ab4) 1/8 @staccato
+	CHORD (E3 -A3 -Eb4 -Ab4) 1/8 @staccato
+	CHORD (D2 G2 Bb3 Eb4) 1/8
+	CHORD (-D2 -G2 E3) 1/8 @staccato
+	CHORD (G#2 C#3 E3) 1/8 @staccato
+	CHORD (-G#2 -C#3 E3) 1/8 @staccato
+
+	; ----------- measure 32
+
+	CHORD (Bb1 E3) 1/8 @staccato measure32
+	NOTE Bb1 1/8 @staccato
+	NOTE Bb1 1/8 @staccato
+	NOTE Bb1 1/8 @staccato
+	CHORD (Bb1 G2) 1/8 @staccato
+	CHORD (Bb1 -G2) 1/8 @staccato
+	CHORD (Bb1 F#3 A3) 1/8 @staccato
+	CHORD (Bb1 -F#3 -A3) 1/8 @staccato
+	CHORD (Bb1 A3) 1/8 @staccato
+	CHORD (Bb1 A4 Cb5) 1/8 @staccato
+	NOTE Bb1 1/8 @staccato
+	NOTE Bb1 1/8 @staccato
+	CHORD (Bb1 E4 C#5) 1/8 @staccato
+	CHORD (Bb1 B5) 1/8 @staccato
+	CHORD (Bb1 B5 D6) 1/8 @staccato
+	CHORD (Bb1 -B5 -D6) 1/8 @staccato
+
+	; ----------- measure 33
+
+	NOTE F1 1/11 measure33
+	CHORD (-F1 F#2) 1/11
+	CHORD (-F1 D#3) 1/11
+	CHORD (-F1 B3) 1/11
+	CHORD (-F1 G3) 1/11
+	CHORD (-F1 G#2) 1/11
+	CHORD (-F1 A4) 1/11
+	CHORD (-F1 C4) 1/11
+	CHORD (-F1 C#3) 1/11
+	CHORD (-F1 G3) 1/11
+	CHORD (-F1 G#2 A4) 1/11
+
+	; ----------- measure 34
+
+	NOTE A4 1/12 measure34
+	CHORD (G4 -A4) 1/12
+	CHORD (-A4 D5) 1/12
+	CHORD (-A4 F#5) 1/12
+	CHORD (-A4 Bb5) 1/12
+	CHORD (-A4 E5) 1/12
+	NOTE A4 1/12
+	CHORD (-A4 C#6) 1/12
+	CHORD (-A4 Eb5) 1/12
+	CHORD (-A4 G5) 1/12
+	CHORD (-A4 D6) 1/12
+	NOTE F#4 1/12
+	NOTE D#5 1/12
+	CHORD (-D#5 G5) 1/12
+	CHORD (-D#5 E6) 1/12
+	CHORD (-D#5 G#6) 1/12
+	NOTE A4 1/12
+	CHORD (-A4 C5) 1/12
+	CHORD (-A4 Bb5) 1/12
+	CHORD (-A4 Db6) 1/12
+	CHORD (-A4 F6) 1/12
+	CHORD (-A4 C6) 1/12
+	NOTE F#4 1/12
+	CHORD (-F#4 Db6) 1/12
+	CHORD (-F#4 G6) 1/12
+	CHORD (-F#4 F6) 1/12
+	CHORD (-F#4 G#5) 1/12
+	CHORD (-F#4 B5) 1/12
+	CHORD (-F#4 Bb5) 1/12
+	CHORD (-F#4 E6) 1/12
+	NOTE A4 1/12
+	CHORD (-A4 E6) 1/12
+	CHORD (-A4 A5) 1/12
+	CHORD (-A4 D5) 1/12
+	CHORD (-A4 G5) 1/12
+	CHORD (-A4 Bb5) 1/12
+	NOTE F#4 1/12
+	CHORD (-F#4 C#5) 1/12
+	CHORD (-F#4 E6) 1/12
+	NOTE A4 1/12
+	NOTE -A4 2/3
+
+	; ----------- measure 35
+
+	NOTE A4 1/12 measure35
+	NOTE G5 1/12
+	NOTE D6 1/12
+	NOTE F#6 1/12
+	NOTE D#5 1/12
+	NOTE C#6 1/12
+	NOTE G6 1/12
+	NOTE D#7 1/12
+	NOTE B4 1/12
+	NOTE E5 1/12
+	NOTE A5 1/12
+	NOTE G6 1/12
+	NOTE D#6 1/12
+	NOTE E6 1/12
+	NOTE F#5 1/12
+	NOTE D5 1/12
+	NOTE G#4 1/12
+	NOTE A5 1/12
+	NOTE C5 1/12 @staccato
+	NOTE C#4 1/12
+	NOTE Bb2 1/12 @staccato
+	NOTE A5 1/12 @staccato
+	NOTE C#4 1/12 @staccato
+	NOTE C5 1/12 @staccato
+
+	; ----------- measure 36
+
+	NOTE Bb2 1/6 measure36
+	CHORD (-Bb2 C5 F5) 1/6
+	CHORD (-Bb2 F#4) 1/6 @staccato
+	CHORD (D3 G3 C#4 F#4) 1/6
+	CHORD (-D3 -G3 -C#4 G#5 B5) 1/6
+	CHORD (G#3 B3 Bb4) 1/6 @staccato
+	CHORD (-G#3 -B3 E5 A5) 1/6
+	CHORD (D4 G4 G#6) 1/6 @staccato
+	CHORD (F#5 Bb5) 1/6
+	NOTE C#7 1/6
+	CHORD (F5 A5) 1/6
+	CHORD (G4 Bb5) 1/6 @staccato
+	CHORD (F#5 A5) 1/6
+	CHORD (F4 G#6) 1/6 @staccato
+	CHORD (-F4 C#7) 1/6 @staccato
+	CHORD (D4 E5) 1/6
+	CHORD (G4 Bb5) 1/6 @staccato
+	CHORD (B3 D6) 1/6 @staccato
+	NOTE C#7 1/6
+	CHORD (A4 F5 C6 Bb6) 1/6
+	CHORD (F#4 -C6 -Bb6) 1/6
+	CHORD (B4 Eb5) 1/6
+	CHORD (C3 G#3 D4) 1/6
+	CHORD (A2 -D4) 1/6
+
+	; ----------- measure 37
+
+	CHORD (F#5 F6) 1/11 measure37
+	CHORD (-F#5 C6) 1/30
+	CHORD (B5 -C6) 1/17
+	CHORD (F#5 -B5) 1/15
+	CHORD (G4 -F#5) 1/44
+	CHORD (-G4 C#5) 1/11
+	NOTE G4 0.011719
+	CHORD (B3 -G4) 1/13
+	CHORD (-B3 D4) 1/21
+	NOTE -D4 1/21
+	NOTE F#5 1/11
+	NOTE B5 1/11
+	NOTE G#4 1/11
+	NOTE Bb3 1/11
+	NOTE A3 1/11
+	NOTE F#5 1/11
+	NOTE D5 1/11
+	NOTE F4 1/11
+	NOTE E3 1/11
+	NOTE C4 1/11
+	NOTE C#3 1/11
+	NOTE G4 1/11
+	NOTE B3 1/11
+	NOTE Bb2 1/11
+	NOTE A1 1/11
+	NOTE D2 1/11
+
+	; ----------- measure 38
+
+	NOTE D2 1/10 measure38
+	NOTE D2 1/10 @staccato
+	NOTE D2 1/10 @staccato
+	NOTE D2 1/10 @staccato
+	NOTE D2 1/10 @staccato
+	CHORD (D2 F#4) 1/10 @staccato
+	CHORD (D2 F#4) 1/10 @staccato
+	CHORD (D2 F#4) 1/10 @staccato
+	CHORD (D2 F#4) 1/10 @staccato
+	CHORD (D2 F#4) 1/10 @staccato
+	CHORD (D2 D#5 G5) 1/10 @staccato
+	CHORD (D2 E5) 1/10 @staccato
+	CHORD (D2 A4) 1/10 @staccato
+	CHORD (D2 G#4 C5) 1/10 @staccato
+	CHORD (D2 Bb3) 1/10 @staccato
+	NOTE D2 1/10 @staccato
+	NOTE D2 1/10
+	NOTE Eb2 1/10 @staccato
+	NOTE Eb2 1/10 @staccato
+	NOTE Eb2 1/10 @staccato
+	CHORD (Eb2 D5 G5) 1/10 @staccato
+	CHORD (Eb2 F#4 -D5) 1/38 @staccato
+	CHORD (-Eb2 -F#4) 1/13 @staccato
+	CHORD (Eb2 F#4) 1/10 @staccato
+	CHORD (Eb2 F#4) 1/10 @staccato
+	CHORD (Eb2 F#4) 1/10 @staccato
+	CHORD (Eb2 Bb4 E5) 1/10 @staccato
+	CHORD (Eb2 C#4 -Bb4) 1/38 @staccato
+	CHORD (-Eb2 -C#4) 1/13 @staccato
+	CHORD (Eb2 C#4) 1/10 @staccato
+	CHORD (Eb2 C#4 A4) 1/10 @staccato
+	CHORD (Eb2 -C#4 -A4) 1/10 @staccato
+	NOTE Eb2 1/10 @staccato
+	NOTE Eb2 1/10 @staccato
+	NOTE Eb2 1/10 @staccato
+	NOTE Eb2 1/10 @staccato
+	NOTE Eb2 1/10 @staccato
+	CHORD (Eb2 D5 G5) 1/10 @staccato
+	CHORD (Eb2 F#4 -G5) 1/38 @staccato
+	CHORD (-Eb2 -F#4) 1/13 @staccato
+	CHORD (Eb2 F#4) 1/10 @staccato
+	CHORD (Eb2 F#4) 1/10 @staccato
+	CHORD (Eb2 F#4) 1/10 @staccato
+
+	; ----------- measure 39
+
+	CHORD (Eb2 D5 G5) 1/9 measure39
+	CHORD (-Eb2 F#4 -G5) 1/9 @staccato
+	CHORD (-Eb2 F#4 -G5) 1/36 @staccato
+	CHORD (-Eb2 -F#4) 1/12 @staccato
+	NOTE Eb2 1/9 @staccato
+	NOTE Eb2 1/9 @staccato
+	NOTE Eb2 1/9 @staccato
+	CHORD (Eb2 A3 G#4) 1/9
+	CHORD (-Eb2 C4 -G#4) 1/9 @staccato
+	CHORD (-Eb2 C4 -G#4) 1/34 @staccato
+	CHORD (-Eb2 -C4) 1/12 @staccato
+	CHORD (E2 D#4 F#4) 1/9
+	CHORD (-E2 G3 -F#4) 1/9 @staccato
+	CHORD (-E2 G3 -F#4) 1/36 @staccato
+	CHORD (-E2 -G3) 1/12 @staccato
+	NOTE E2 1/9 @staccato
+	NOTE E2 1/9 @staccato
+	NOTE E2 1/9 @staccato
+	CHORD (E2 A3 G#4) 1/9
+	CHORD (-E2 C4 -G#4) 1/9 @staccato
+	CHORD (-E2 C4 -G#4) 1/34 @staccato
+	CHORD (-E2 -C4) 1/12 @staccato
+	CHORD (F#1 Bb3 C#4) 1/9
+	CHORD (-F#1 D3 -C#4) 1/9 @staccato
+	CHORD (-F#1 D3 -C#4) 1/36 @staccato
+	CHORD (-F#1 -D3) 1/12 @staccato
+	CHORD (F#1 Eb3 G3) 1/9
+	CHORD (-F#1 D3 -G3) 1/9 @staccato
+	CHORD (-F#1 D3 -G3) 1/36 @staccato
+	CHORD (-F#1 -D3) 1/12 @staccato
+	CHORD (F#1 Bb3 E4) 1/9
+	CHORD (F#1 -Bb3 -E4) 1/9
+	CHORD (F#1 -Bb3 -E4) 1/9
+	CHORD (-F#1 A3 C#4) 1/9
+	CHORD (Eb1 G1 -A3 -C#4) 1/9
+	CHORD (D2 -A3 -C#4) 1/9
+	CHORD (-D2 Bb2 F#3) 1/9
+	CHORD (Eb1 G1 A3 C#4) 1/9
+	CHORD (D2 -A3 -C#4) 1/9
+	CHORD (D2 Bb2 F#3) 1/9
+	CHORD (Eb1 G1 -Bb2 -F#3) 1/9
+	CHORD (D2 -Bb2 -F#3) 1/9
+	CHORD (-D2 E3 A3) 1/9
+	CHORD (-D2 G#2 D3) 1/9
+	CHORD (Eb1 G1 -G#2 -D3) 1/9
+	CHORD (C#2 -G#2 -D3) 1/9
+	CHORD (-C#2 G#2 Bb3) 1/9
+	CHORD (-C#2 E2 C3) 1/9
+	CHORD (C#2 -E2 -C3) 1/9
+	CHORD (G1 -E2 -C3) 1/9
+	CHORD (-G1 B2 F#3) 1/9
+
+	; ----------- measure 40
+
+	NOTE 0 1/10 measure40
+	NOTE F#3 1/10
+	CHORD (F1 A1) 1/10
+	CHORD (-F1 E2) 1/38 @staccato
+	NOTE E2 1/13
+	CHORD (-E2 C4) 1/20
+	NOTE -C4 1/20
+	CHORD (C#3 G3 -C4) 1/38
+	CHORD (-C#3 G3) 1/13 @staccato
+	CHORD (Bb1 -G3) 1/19 @staccato
+	NOTE -Bb1 1/20
+	CHORD (A2 B3) 1/10
+	CHORD (F#3 -B3) 1/38
+	NOTE F#3 1/13 @staccato
+	CHORD (C2 F2 -F#3) 1/20 @staccato
+	CHORD (-C2 -F2) 1/20
+	CHORD (C#3 F#3) 1/10
+	CHORD (G2 -F#3) 1/38
+	NOTE G2 1/13 @staccato
+	CHORD (F1 -G2) 1/20 @staccato
+	NOTE -F1 1/20
+	CHORD (F#3 B3) 1/10
+	CHORD (Bb2 -B3) 1/40
+	NOTE Bb2 1/13 @staccato
+	CHORD (A1 -Bb2) 1/20 @staccato
+	NOTE -A1 1/20
+	NOTE E2 1/10
+	CHORD (F#3 B3) 1/10
+	CHORD (A1 -B3) 1/38
+	NOTE -A1 1/13
+	CHORD (-A1 F2 Bb2) 1/40 @staccato
+	CHORD (F2 -Bb2) 1/13
+	NOTE -F2 1/20
+
+	; ----------- measure 41
+
+	CHORD (A1 F2) 1/7 measure41
+	NOTE B2 1/7
+	NOTE D3 1/7
+	CHORD (Bb3 Db4) 1/7
+	CHORD (C2 A2) 1/7 @staccato
+	CHORD (F3 Ab3) 1/7
+	CHORD (D#4 F#4) 1/7
+	CHORD (B2 D3) 1/7
+	NOTE C#4 1/7
+	NOTE C5 1/7
+	CHORD (G2 Bb2 C#4 A4) 1/7 @staccato
+	NOTE A4 1/7
+	CHORD (F5 Ab5) 1/7
+	CHORD (C#4 E4) 1/7
+	CHORD (B4 D5) 1/7
+	CHORD (G5 Bb5) 1/7
+	NOTE F#6 1/7
+	NOTE 0 1/14
+	CHORD (G5 Bb5) 1/10
+	CHORD (F#6 A6) 1/10
+	CHORD (F5 Ab5) 1/10
+	CHORD (E4 C#5) 1/10
+	NOTE 0 1/10
+
+	; ----------- measure 42
+
+	CHORD (D5 B5) 1/10 measure42
+	CHORD (Bb4 -B5) 1/38
+	NOTE Bb4 1/13 @staccato
+	CHORD (G3 F#4 -Bb4) 1/20 @staccato
+	CHORD (-G3 -F#4) 1/20
+	CHORD (-G3 A4) 1/38 @staccato
+	NOTE A4 1/13
+	NOTE -A4 1/20
+	NOTE -A4 1/20 @staccato
+
+	; ----------- measure 43
+
+	NOTE G4 1/12 measure43
+	CHORD (C#4 -G4) 1/24
+	NOTE -C#4 1/24
+	NOTE D3 1/12
+	NOTE G#2 1/12
+	NOTE F#2 1/12
+	NOTE G4 1/12
+	CHORD (E4 -G4) 1/24
+	NOTE -E4 1/24
+	NOTE G#3 1/12
+	NOTE A2 1/12
+	NOTE C3 1/12
+	NOTE C#2 1/12
+	NOTE G4 1/12
+	CHORD (Bb3 -G4) 1/24
+	NOTE -Bb3 1/24
+	NOTE B2 1/12
+	NOTE A1 1/12
+	NOTE C2 1/12
+	NOTE F#1 1/12
+	NOTE D#1 1/12
+	NOTE G4 1/12
+	CHORD (D4 -G4) 1/24
+	NOTE -D4 1/24
+	NOTE F#3 1/12
+	NOTE Bb2 1/12
+	NOTE E2 1/12
+	NOTE A2 1/12
+	NOTE C#2 1/12
+	NOTE Eb1 1/12
+	NOTE G4 1/12
+	CHORD (D4 -G4) 1/24
+	NOTE -D4 1/24
+	NOTE F#3 1/12
+	NOTE Bb2 1/12
+	NOTE B1 1/12
+	NOTE D2 1/12
+	NOTE C#3 1/12
+	NOTE Bb2 1/12
+	NOTE C2 1/12
+	NOTE A1 1/12 @staccato
+	CHORD (-A1 F2) 1/24
+	NOTE -F2 1/24
+	NOTE Ab2 1/12
+	NOTE F#2 1/12
+	NOTE D#3 1/12
+	NOTE B3 1/12
+	NOTE D4 1/12
+	NOTE Db5 1/12
+	NOTE Bb4 1/12
+	NOTE C6 1/6
+	CHORD (D2 F#2) 1/6
+
+	; ----------- measure 44
+
+	CHORD (C#3 E3 C4 Bb4 G5) 1/6 measure44
+	CHORD (A5 F6) 1/6
+	CHORD (B3 D4) 1/6
+	CHORD (F5 C6 F#6) 1/6
+	CHORD (G4 C#5 Ab5 D6) 1/6
+	CHORD (B4 A5 Bb5 F6) 1/6
+	NOTE C7 1/4
+	NOTE 0 3/4
+	NOTE 0 1
+
+	; ----------- measure 45
+
+	NOTE 0 1/6 measure45
+	NOTE E2 1/6
+	NOTE A3 1/6
+	NOTE Eb4 1/6
+	NOTE Ab5 1/6
+	NOTE D5 1/6
+	NOTE G6 1/6
+	NOTE Bb2 1/6
+	NOTE Eb4 1/6
+	NOTE G#5 1/6
+	NOTE C#7 1/6
+	NOTE E2 1/6
+	NOTE A3 1/2
+	NOTE Ab5 1/6
+	NOTE G6 1/3
+	NOTE 0 1
+
+	; ----------- measure 46
+
+	NOTE 0 2
+
+	; ----------- measure 47
+
+	NOTE 0 1/5 measure47
+	NOTE B2 1/10
+	NOTE D4 1/10
+	NOTE Db6 1/10
+	NOTE Bb4 1/10
+	NOTE C7 1/10
+	NOTE A5 1/10
+	NOTE F2 1/10
+	NOTE Ab3 1/10
+	NOTE F#7 1/10
+	NOTE D#6 1/10
+	NOTE B2 1/10
+	NOTE D4 1/10
+	NOTE Db6 1/10
+	NOTE Bb4 1/10
+	NOTE C7 1/10 @staccato
+	NOTE Bb4 1/10
+	NOTE G3 1/10
+	NOTE F#5 1/10
+	NOTE A6 1/10
+	NOTE F2 1/10
+	NOTE Ab3 1/10
+	NOTE C#6 1/10
+	NOTE E7 1/10
+	NOTE D4 1/10
+	NOTE B2 1/10
+	NOTE A#4 1/10
+	NOTE G3 1/10
+	NOTE F#5 1/10
+	NOTE A6 1/10
+	NOTE F2 1/10 @staccato
+	NOTE 0 4/5
+
+	; ----------- measure 48
+
+	_section_ VB
+	NOTE 0 1/10 VB
+	antescofo::pedalcoeff 0.25
+	antescofo::pedal 1
+	NOTE Eb2 1/10
+_event_ 1
+	; ******* 0 1 ------------------------ 10; ********
+		frog1-sampno 61;
+		frog2-sampno 61;
+		otor 0;
+		Otor 0;
+		otoh 0;
+		Otoh 0;
+		hdel 0;
+		fneg 0;
+		tto2 0;
+		amp1 0;
+		amp2 0;
+		amp3 0;
+		amp4 0;
+; ***************
+	NOTE B2 1/10
+	NOTE D3 1/10
+	NOTE C#4 1/10
+	CHORD (E2 B2 D3 Bb3) 1/10
+	CHORD (-E2 -B2 -D3 A4) 1/10
+	CHORD (-E2 -B2 -D3 F#4) 1/10
+	CHORD (Bb3 C#4 -F#4 A4 E5 G5) 1/5
+_event_ 2
+	; ******* 0 2 ------------------------ 30; ********
+		ptor 127;
+		stor~ 127
+		sampler2_ sample61;
+		revfb 127;
+		rgate 127;
+		rout 127;
+		rto4 127;
+		spaton 1;
+		spat-radius 156;
+		zevfb 106;
+		zout 127;
+		zgate 127;
+		zdist 95;
+		500ms trecx 0;
+		rgate 0;
+		spatinc 127;
+		100ms spatinc 64 4000;
+		spat-radius 24 4000;
+; ***************
+	CHORD (-Bb3 -C#4 -F#4 -A4 -E5 -G5) 1/20 @fermata
+	CHORD (-Bb3 -C#4 -F#4 -A4 -E5 -G5) 19/20 @fermata
+
+	; ----------- measure 49
+
+	NOTE 0 1/10 measure49
+	NOTE G2 1/10
+_event_ 3
+	; ******* 0 3 ------------------------ 40; ********
+		htoR 114;
+		Revfb 111;
+		Rgate 127;
+		Rout 127;
+		Rto4 120;
+		htoh 115;
+		ptoh 127;
+		hdel 7;
+		hamp 127;
+		diramp 127;
+		hwind 116;
+		hfreq 72;
+		hto4 128;
+		hto2 109;
+		rto4 108 4000;
+		ptor 117;
+		spatinc 64;
+		rgate 0;
+		trecx 0;
+; ***************
+	NOTE C3 1/10
+	NOTE Eb3 1/10
+	NOTE B3 1/10
+	NOTE D4 1/10
+	NOTE Db5 1/10
+	NOTE Bb4 1/10
+	NOTE D4 1/10
+	NOTE Eb3 1/10
+	NOTE B3 1/10
+	NOTE Db5 1/10
+	NOTE B3 1/10
+	NOTE C3 1/10
+	NOTE Eb3 1/10
+	NOTE D4 1/10
+	NOTE C4 1/10
+	NOTE A3 1/10
+	NOTE G#4 1/10
+	NOTE B4 1/10
+	NOTE G5 1/12
+	NOTE G#4 1/12
+	NOTE A3 1/12
+	NOTE C4 1/12
+	NOTE B4 1/12
+	NOTE G5 1/12
+	NOTE E6 1/10
+	NOTE D5 1/10
+	NOTE F5 1/10
+	NOTE C#6 1/10
+	NOTE Bb6 1/10
+	NOTE E6 1/10
+	NOTE D5 1/10
+	NOTE F5 1/10
+	NOTE Bb6 1/10
+	NOTE C#6 1/10 @staccato
+	NOTE C7 1/10
+	NOTE A6 1/10
+	NOTE G#7 1/10
+	NOTE F5 1/10
+	NOTE C#6 1/10
+	NOTE G#7 1/4
+_event_ 4
+	; ******* 0 4 ------------------------ 60; ********
+		revfb 117;
+		rto4 108;
+		3000ms go-sampler1-sec5-evt4 bang;
+		tto4 127;
+		tto2 127;
+		hto4 127;
+		hto2 127;
+		lego1 2000;
+		startseq bang;
+		spatinc 65;
+		ptor 0;
+		revfb 118;
+		rto4 0;
+		rgate 127;
+		rout 127;
+; ***************
+	NOTE 0 3/4
+
+	; ----------- measure 50
+
+	NOTE 0 5
+
+	; ----------- measure 51
+
+	NOTE 0 5
+
+	; ----------- measure 52
+
+	CHORD (B2 E3 G3 C4 F4 A#4 C#5 F#5) 5 @fermata measure52
+_event_ 5
+	; ******* 0 5 ------------------------ 70; ********
+		stopseq bang;
+		ttor 0;
+		ptor 127;
+		revfb 127;
+		rgate 127;
+		spatinc 65;
+		spat-radius 144;
+		ptoh 140, 90 300;
+		hdel 0 100;
+		tto4 127;
+		lego1 2000;
+		rto4 127;
+		rout 127;
+		300ms rgate 0;
+		spatinc 10 3000;
+		rto4 116 2000;
+; ***************
+	CHORD (-B2 -E3 -G3 -C4 -F4 -A#4 -C#5 -F#5) 3 @fermata
+
+	; ----------- measure 53
+
+	NOTE 0 1/3 measure53
+	NOTE C4 1/6
+_event_ 6
+	; ******* 0 6 ------------------------ 80; ********
+		ptoh 0;
+		htoh 117;
+		hdel 13;
+		hwind 127;
+		hfreq 74;
+		hto4 116;
+		Rto4 114;
+		htoR 0;
+		rgate 0;
+		spatinc 10;
+		rto4 116;
+; ***************
+	CHORD (C4 F4) 1/12
+	CHORD (C4 F4) 1/12
+	CHORD (B2 -C4 -F4) 1/6
+	CHORD (-B2 C4 F4) 1/6
+	CHORD (B3 -C4 -F4) 1/12
+	CHORD (B2 B2) 1/4
+	CHORD (C4 F4) 1/12
+	NOTE B2 1/6
+	CHORD (-B2 F4 Bb4) 1/12
+	CHORD (-F4 -Bb4) 1/4
+	CHORD (C4 -F4 -Bb4) 1/12
+	CHORD (C4 -Bb4 Db5) 1/24
+	CHORD (-C4 Db5) 1/8
+	CHORD (B2 D3) 1/12
+	CHORD (A3 Eb4 Ab4) 1/12
+	CHORD (-A3 -Eb4 -Ab4) 1/3
+	CHORD (G2 E3 Bb3 C4 Eb4) 1/3
+	CHORD (F#3 Bb3) 1/12
+	CHORD (-F#3 Eb4 C#5) 1/6
+	CHORD (-F#3 Eb4 C#5) 1/12
+	CHORD (-F#3 -Eb4 -C#5) 1/2
+	CHORD (D2 F3 -F#3) 1/6
+	NOTE B5 1/6
+	CHORD (C4 Ab4) 1/6
+	CHORD (-C4 G5) 1/6
+	CHORD (-C4 Bb6) 1/2
+_event_ 7
+	; ******* 0 7 ------------------------ 100; ********
+		ptoR 113;
+		Revfb 127;
+		revfb 120;
+		Rgate 127;
+		Rto4 127;
+		Rtof 127;
+		fpos 127;
+		fneg 0;
+		fsfre 123;
+		fto4 127;
+		spatinc 128;
+		tto2 140;
+		ttoh 120;
+		hto2 127;
+		htor 135;
+		rto2 110;
+		tto4 0;
+		hto4 0;
+		rto4 0;
+		300ms Rgate 0;
+		ptoh 0;
+		1700ms go-sampler2-sec5-evt7 bang;
+		ptor 0;
+		rto2 0;
+		revfb 124;
+		rgate 128;
+		hto2 0;
+		300ms lego1 2000;
+		startseq bang;
+		spatinc 71;
+		spat-radius 12;
+		zdist 95;
+		zevfb 116;
+		tto2 143;
+		tto4 120;
+		ttor 0;
+		9000ms go-sampler3-sec5-evt7b bang;
+		5ms lego2 2000;
+		startseq2 bang;
+		ttoh 0;
+		ptoh 0;
+		hwind 125;
+		hfreq 98;
+		ptor 0;
+		tto2 0;
+		tto4 127;
+		hto2 0;
+		ttor 0;
+		rto2 0 500;
+; ***************
+
+	; ----------- measure 54
+
+	NOTE C4 5 measure54
+	NOTE -C4 3
+
+	; ----------- measure 55
+
+	NOTE C4 1/8 measure55
+	NOTE C4 1/4
+	NOTE C4 1/8
+	NOTE -C4 1/2
+	NOTE C4 1/2
+	NOTE C4 1/2
+	NOTE C4 1/8
+	NOTE C4 3/8
+	NOTE -C4 1/2
+	NOTE C4 1
+	NOTE 0 1
+
+	; ----------- measure 56
+
+	NOTE 0 4 measure56
+	NOTE C4 1
+
+	; ----------- measure 57
+
+	NOTE C4 1/3 measure57
+	NOTE C4 1/12
+	NOTE C4 1/12
+	NOTE C4 1/12
+	NOTE C4 1/12
+	NOTE C4 1/12
+	NOTE C4 1/12
+	NOTE C4 1/12
+	NOTE C4 1/12
+	NOTE C4 1/12
+	CHORD (-C4 G#6) 1/12
+	CHORD (-C4 B5) 1/12
+	CHORD (-C4 G5) 1/12
+	CHORD (-C4 E6) 1/12
+	CHORD (-C4 D5) 1/12
+	CHORD (-C4 F5) 1/12
+	CHORD (-C4 C#6) 1/12
+	CHORD (-C4 Bb6) 1/12
+	NOTE C4 1/12
+	NOTE A3 1/12
+	CHORD (-A3 G#6) 1/12
+	CHORD (-A3 D7) 1/12
+	CHORD (-A3 E6) 1/12
+	CHORD (-A3 G#6) 1/12
+	NOTE C4 1/12
+	CHORD (-C4 F5) 1/12
+	CHORD (-C4 C#6) 1/12
+	CHORD (-C4 D#6) 1/12
+	CHORD (-C4 G5) 1/12
+	CHORD (-C4 D5) 1/12
+	CHORD (-C4 Ab4) 1/12
+	NOTE C4 1/12
+	CHORD (-C4 E4) 1/12
+	CHORD (-C4 B4) 1/12
+	CHORD (-C4 Eb6) 1/12 @staccato
+	CHORD (-C4 C5) 1/12
+	CHORD (-C4 Ab5) 1/12
+	CHORD (-C4 F5) 1/12
+	CHORD (-C4 F#4) 1/12
+	NOTE A3 1/12
+	CHORD (-A3 Eb4) 1/12 @staccato
+	NOTE E3 1/12
+	CHORD (-E3 G4) 1/12
+	CHORD (-E3 Ab3) 1/12
+	CHORD (-E3 C4) 1/12
+
+	; ----------- measure 58
+
+	NOTE A2 1/8 measure58
+	NOTE C#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE Bb2 1/8
+_event_ 8
+	; ******* 0 8 ------------------------ 120; ********
+		stopseq bang;
+		spaton 0;
+		Rgate 0;
+		ptoh 0;
+		revfb 128;
+		rgate 128;
+		lego1 2000;
+		lego2 2000;
+		ttoh 127;
+		hwind 125;
+		hfreq 98;
+		ptor 0;
+		tto2 0;
+		hto2 0;
+		htor 120;
+		ttor 0;
+		rto2 100;
+; ***************
+	NOTE C#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE 0 1/2
+	NOTE C#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE C#3 1/8 @staccato
+	NOTE G2 1/8
+_event_ 9
+	; ******* 0 9 ------------------------ 130; ********
+		spaton 1;
+; ***************
+	NOTE G2 1/8 @staccato
+	NOTE G2 1/8 @staccato
+	NOTE G2 1/8 @staccato
+	NOTE G2 1/8
+	NOTE G2 1/8 @staccato
+	NOTE G2 1/8 @staccato
+	NOTE G2 1/8
+	NOTE G2 1/8
+	NOTE G2 1/8 @staccato
+	NOTE G2 1/8 @staccato
+	NOTE G2 1/8 @staccato
+	NOTE 0 1/2
+
+	; ----------- measure 59
+
+	NOTE A2 1/10 measure59
+_event_ 10
+	; ******* 0 10 ------------------------ 160; ********
+		revfb 116;
+		Revfb 116;
+		fto4 64 20000;
+; ***************
+	NOTE -A2 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE -A2 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE -A2 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE -A2 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+
+	; ----------- measure 60
+
+	CHORD (B1 D2 A2) 1/10 measure60
+	CHORD (-B1 A2) 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	CHORD (Bb1 Db2 A2) 1/10
+	CHORD (-Bb1 A2) 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	CHORD (E2 F#2 A2) 1/10
+	CHORD (-E2 A2) 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	CHORD (Eb1 C3 G3) 1/10
+	CHORD (-Eb1 A2) 1/40
+	NOTE -A2 1/13
+	CHORD (A2 G3) 1/10
+	CHORD (A2 -G3) 1/38
+	NOTE -A2 1/13
+	CHORD (C#2 B2 D3) 1/10
+	CHORD (-C#2 A2) 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	CHORD (A2 D3) 1/10
+	CHORD (-A2 -D3) 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE -A2 1/38
+	NOTE -A2 1/13
+	NOTE A2 1/10
+	NOTE A2 1/10
+	NOTE -A2 1/40
+	NOTE -A2 1/13
+
+	; ----------- measure 61
+
+	CHORD (D2 A2 C#3 Bb3) 1/7 measure61
+	CHORD (-D2 A2 -C#3 -Bb3) 1/7
+	CHORD (-D2 A2 -C#3 -Bb3) 1/7
+	CHORD (-D2 A2 -C#3 -Bb3) 1/7
+	CHORD (-D2 A2 -C#3 -Bb3) 1/7
+	CHORD (D2 A2 C#3 Bb3) 1/7
+	CHORD (-D2 A2 -C#3 -Bb3) 1/7
+	CHORD (F#2 A2 G3 C4) 1/7
+	CHORD (F#2 A2 G3 C4) 1/7
+	CHORD (-F#2 A2 -G3 -C4) 1/7
+	CHORD (-F#2 A2 -G3 -C4) 1/7
+	CHORD (-F#2 A2 -G3 -C4) 1/7
+	CHORD (-F#2 A2 -G3 -C4) 1/7
+	CHORD (-F#2 A2 -G3 -C4) 1/7
+	CHORD (C#2 A2 D3 B3 Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (C#2 A2 D3 B3 Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (C#2 A2 D3 B3 Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+	CHORD (-C#2 A2 -D3 -B3 -Eb4) 1/7
+
+	; ----------- measure 62
+
+	NOTE Bb3 1/7 measure62
+	NOTE -Bb3 2/19
+	NOTE -Bb3 1/27
+	NOTE Bb3 1/7
+	NOTE A2 1/7
+	NOTE -A2 2/19
+	NOTE -A2 1/28
+	NOTE A2 1/7
+	NOTE A2 1/7
+	NOTE C#3 1/7
+	NOTE -C#3 2/19
+	NOTE -C#3 1/27
+	NOTE C#3 1/7
+	NOTE C#3 1/7
+	NOTE C4 1/7
+	NOTE -C4 2/19
+	NOTE -C4 1/27
+	NOTE C4 1/7
+	NOTE C4 1/4
+	NOTE 0 3/4
+
+	; ----------- measure 63
+
+	NOTE A2 1/7 measure63
+	NOTE G#3 1/7
+	NOTE B3 1/7
+	NOTE G4 1/7
+	NOTE E4 1/7
+	CHORD (C#3 D5) 1/7
+	CHORD (Bb3 F5) 1/7
+	NOTE C4 1/7
+	NOTE A4 1/7
+	NOTE Ab5 1/7
+	CHORD (B4 F5) 1/7
+	CHORD (D5 Db6) 1/7
+	CHORD (Ab5 C7) 1/7
+	NOTE Eb5 1/7
+	NOTE Bb5 1/7
+	NOTE A6 1/7
+	CHORD (C#6 E6) 1/7
+	CHORD (D6 F#6) 1/7
+	CHORD (F5 D#7) 1/7
+	NOTE B4 1/7
+	NOTE C6 1/7
+	NOTE F5 1/7
+	NOTE G#5 1/7
+	NOTE Bb6 1/7
+	NOTE G#5 1/7
+	NOTE Bb6 1/7
+	NOTE 0 9/7
+
+	; ----------- measure 64
+
+	CHORD (F#1 C2 G2 C#3) 2/5 measure64
+_event_ 11
+	; ******* 0 11 ------------------------ 170; ********
+		spatinc 71;
+		htoh 0;
+		ttoh 0;
+		ptoh 127;
+		hwind 69;
+		hfreq 74;
+		hto4 127;
+		diramp 127;
+		hamp 127;
+		hdel 0;
+		Rtoh 127;
+		ptoR 112;
+		Revfb 116;
+		Rgate 127;
+		Rout 127;
+		Rto4 127;
+		fto4 0;
+; ***************
+	CHORD (-F#1 -C2 G2 -C#3) 1/5
+	CHORD (-F#1 -C2 G2 -C#3) 2/5
+	CHORD (-F#1 -C2 -G2 -C#3) 1/5
+	CHORD (-F#1 -C2 -G2 C#3) 1/5
+	CHORD (F#1 -C2 -G2 -C#3) 1/5
+	CHORD (F#1 -C2 -G2 -C#3) 1/5
+	CHORD (F#1 -C2 -G2 -C#3) 1/5
+	CHORD (-F#1 -C2 -G2 -C#3) 2/5
+	CHORD (-F#1 C2 G2 -C#3) 2/5
+	CHORD (-F#1 -C2 -G2 C#3) 1/5
+	CHORD (-F#1 -C2 -G2 C#3) 1/5
+	CHORD (F#1 C2 G2 -C#3) 4/5
+	CHORD (-F#1 -C2 -G2 -C#3) 1 @fermata
+
+	; ----------- measure 65
+
+	NOTE E1 1/9 measure65
+_event_ 12
+	; ******* 0 12 ------------------------ 180; ********
+		ptoh 0;
+		hwind 0;
+		hfreq 64;
+		diramp 0;
+		hamp 0;
+		Rtoh 0;
+		ptoR 0;
+		Revfb 0;
+		Rgate 0;
+; ***************
+	CHORD (-E1 G2) 1/9
+	CHORD (-E1 C3) 1/9
+	CHORD (-E1 Bb1) 1/9
+	CHORD (-E1 -Bb1 F3) 1/9
+	CHORD (-E1 -Bb1 -F3 C#4) 1/9
+	CHORD (-E1 -Bb1 -F3 -C#4 F#4) 1/3
+	CHORD (-E1 Bb1 B1) 1/9
+	CHORD (-E1 -Bb1 C3) 1/9
+	CHORD (-E1 -Bb1 F3) 1/9
+	CHORD (-E1 -Bb1 B3) 1/9
+	CHORD (-E1 F1 -Bb1 -B3) 1/9
+	CHORD (-E1 -Bb1 G#4) 1/9
+	CHORD (E1 -Bb1 B3 -G#4) 1/3 @fermata
+	NOTE -G#4 1/9
+	CHORD (C3 -G#4) 1/9
+	CHORD (F3 -G#4) 1/9
+	CHORD (C3 -F3 C#4 -G#4) 1/6
+	CHORD (-C3 -F3 -C#4 -G#4 D#5) 1/18
+	CHORD (G2 -G#4 -D#5) 1/9
+	CHORD (-G2 -G#4 -D#5) 1/6
+	CHORD (-G2 -G#4 -D#5) 1/6
+	CHORD (-G#4 -D#5) 1/9
+	CHORD (C3 -G#4 -D#5) 1/9
+	CHORD (E4 -G#4 -D#5) 1/9
+	CHORD (C3 -E4 -G#4 B5) 1/3
+	CHORD (C#4 -G#4 -B5) 1/9
+	CHORD (F3 -G#4 -B5) 1/9
+	CHORD (-F3 C#4 F#4 -G#4 -B5) 1/9
+	CHORD (-F#4 G5) 1/9
+	CHORD (E4 -F#4 -G5) 1/9
+	CHORD (-E4 G#4 -G5) 1/9
+	NOTE C4 1/9
+	NOTE A3 1/9
+	NOTE C#3 1/9
+	NOTE Bb2 1/9
+	NOTE D2 1/9
+	NOTE D2 1/9
+	NOTE G#1 1/9
+	NOTE -G#1 1/9
+	NOTE -G#1 1/36
+	NOTE -G#1 1/12
+	NOTE G#1 1/9
+	NOTE -G#1 1/9
+	NOTE -G#1 1/36
+	NOTE -G#1 1/12
+	NOTE G#1 1/9
+	NOTE -G#1 1/9
+	NOTE -G#1 1/36
+	NOTE -G#1 1/12
+	NOTE 0 1
+
+	; ----------- measure 66
+_section_ VC
+	NOTE G#1 1/10 VC
+_event_ 13
+	; ******* 0 13 ------------------------ 200; ********
+		fto4 0;
+		htoh 113;
+		ptoh 127;
+		hdel 126;
+		hwind 87;
+		hfreq 69;
+		hto4 126;
+		diramp 127;
+		hamp 127;
+		Rtof 0;
+		rto2 0;
+; ***************
+	NOTE C#2 1/10
+	NOTE F2 1/10
+	NOTE C3 1/10
+	NOTE Eb4 1/10
+	NOTE G3 1/10
+	NOTE Ab4 1/10
+	NOTE D2 1/10
+	NOTE C3 1/10
+	NOTE E4 1/10
+	NOTE B3 1/10
+	NOTE F#2 1/10
+	NOTE F3 1/10
+	NOTE E4 1/10
+	NOTE G3 1/10
+	NOTE Ab1 1/10
+	NOTE C2 1/10
+	NOTE A2 1/10
+	NOTE C#4 1/10
+	NOTE D3 1/10
+	NOTE Bb1 1 @fermata
+
+	; ----------- measure 67
+
+	NOTE 0 3/11 measure67
+_event_ 14
+	; ******* 0 14 ------------------------ 210; ********
+		ptoh 0;
+		hto4 0;
+		ptof 0;
+		fto4 0;
+		htoh 0;
+		htor 0;
+		spaton 0;
+		frog1-sampno 62;
+		frog2-sampno 62;
+; ***************
+	NOTE D3 1/11
+	NOTE C#4 1/11
+	NOTE F5 1/11
+	NOTE B5 1/11
+	NOTE C5 1/11
+	NOTE Ab5 1/11
+	NOTE G6 1/11
+	NOTE Bb6 1/11
+	CHORD (C5 F5 A5 B5 G6 -Bb6) 1/2
+	NOTE 0 1/2
+	NOTE Ab1 4/11
+_event_ 15
+	; ******* 0 15 ------------------------ 220; ********
+; ***************
+	NOTE D2 2/11
+	CHORD (-D2 Eb4) 2/11
+	CHORD (B2 -Eb4) 2/11
+	CHORD (-B2 A3 -Eb4) 2/11
+	CHORD (E3 -A3 -Eb4) 2/11
+	CHORD (-E3 -Eb4 C5) 2/11
+	CHORD (C#4 -Eb4 -C5) 1/11
+_event_ 16
+	; ******* 0 16 ------------------------ 230; ********
+		go-sampler4-sec5-evt16 bang;
+		2000ms hdel 0;
+		tto4 0;
+		tto2 132;
+		ttor 110;
+		revfb 105;
+		rtoh 125;
+		hwind 90;
+		hfreq 66;
+		hto4 128;
+		lego1 4000;
+		startseq bang;
+		ttoh 125;
+		rto4 116;
+		70ms startseq2 bang;
+; ***************
+	CHORD (-C#4 -C5) 1/11
+	CHORD (-C#4 -C5 Bb5) 2/15 @staccato
+	CHORD (-C#4 -Bb5) 5/22
+	CHORD (-C#4 -Bb5) 1 @fermata
+
+	; ----------- measure 68
+
+	NOTE 0 5
+
+	; ----------- measure 69
+
+	NOTE 0 5
+
+	; ----------- measure 70
+
+	NOTE A2 1/6 @staccato measure70
+	NOTE -A2 1/12
+	NOTE -A2 1/12 @staccato
+	NOTE A2 1/6 @staccato
+	NOTE G#3 1/6
+	NOTE -G#3 1/12 @staccato
+	NOTE -G#3 1/12 @staccato
+	NOTE G#3 1/6 @staccato
+	NOTE C4 1/4 @staccato
+	NOTE 0 3/4
+
+	; ----------- measure 71
+
+	CHORD (A3 C4 F4 Ab4 B4 E5 G5 Bb5 C#6) 1 @fermata measure71
+_event_ 17
+	; ******* 0 17 ------------------------ 240; ********
+		stopseq bang;
+		frog1-sampno 63;
+		frog2-sampno 64;
+		ttoh 0;
+		ttoh 127;
+		hdel 0;
+		tto4 127;
+		ttor 110;
+		revfb 105;
+		rtoh 128;
+		hwind 90;
+		hfreq 66;
+		hto4 128;
+		lego1 4000;
+		rto4 116;
+; ***************
+	NOTE C4 1/6
+	NOTE A3 1/6
+	NOTE F4 1/6
+	CHORD (A3 C4 -F4 Ab4) 1/6
+	CHORD (-A3 -C4 -F4 E5) 1/6
+	CHORD (-A3 -C4 -F4 B4) 1/6
+	CHORD (-A3 -C4 -F4 Ab4 D5) 1/6 @fermata
+	CHORD (-A3 -C4 -F4 -Ab4 G5) 1/6 @fermata
+	CHORD (-A3 -C4 -F4 -Ab4 C#6) 1/6 @fermata
+	CHORD (-A3 -C4 -F4 -Ab4 D5 G5 Bb5 -C#6) 1/2 @fermata
+
+	; ----------- measure 72
+
+	CHORD (A3 Bb3 C#4) 1/2 measure72
+_event_ 18
+	; ******* 0 18 ------------------------ 250; ********
+		ptof 127;
+		fpos 114;
+		fneg 128;
+		fsfre 57;
+		fto4 114;
+		fto2 127;
+		Revfb 95;
+		Rgate 128;
+		Rto4 128;
+		ttoh 0;
+		rtoh 0;
+		spaton 1;
+		spatinc 68;
+		2000ms go-sampler5-sec5-evt18 bang;
+		tto4 127;
+		ttor 104;
+		revfb 105;
+		rto4 127;
+		rgate 127;
+		rout 127;
+		lego1 3000;
+		startseq bang;
+		lego2 4000;
+		startseq2 bang;
+; ***************
+	CHORD (-A3 -Bb3 -C#4) 1/3
+	CHORD (-A3 -Bb3 -C#4 G4 E5 F#5) 1/6
+	CHORD (-A3 -Bb3 -C#4 -G4 -E5 -F#5) 1/3
+	CHORD (C3 Eb3 B3 -G4 -E5 -F#5) 1/6
+	CHORD (-C3 -Eb3 -B3 -G4 -E5 -F#5) 1/3
+	CHORD (-C3 -Eb3 -B3 E4 C#5 F#5 D6) 1/6
+	CHORD (-C3 -Eb3 -B3 -E4 -C#5 -F#5 -D6) 1/12
+	CHORD (-C3 -Eb3 -B3 -E4 -C#5 -F#5 -D6) 1/4
+	CHORD (E2 Ab2 D3 G3 C4 -C#5 -F#5 -D6) 1/6
+	CHORD (-E2 -Ab2 -D3 -G3 Bb3 -C4 Db4 A4) 1/2
+	CHORD (-E2 -Ab2 -D3 -G3 -Bb3 -C4 -Db4 -A4) 1/3
+	CHORD (-E2 -Ab2 -D3 -G3 C4 D4 G#4 B4) 1/6
+	CHORD (Bb2 Eb3 E3 A3 -C4 -D4 -G#4 -B4) 1/2
+	CHORD (-Bb2 -Eb3 -E3 -A3 -C4 -D4 -G#4 -B4) 1/3
+	CHORD (-Bb2 -Eb3 -E3 F#3 -A3 E4 G4) 1/3
+	CHORD (-F#3 -E4 -G4 A4 C5 G#5) 1/3
+	CHORD (-F#3 -E4 -G4 -A4 -C5 -G#5) 1/3
+	CHORD (C#3 -F#3 Bb3 C4 -E4 -G4) 1/3
+	CHORD (-C#3 -Bb3 -C4 F4 Eb5 G5) 1/3
+	CHORD (-C#3 -Bb3 -C4 -F4 -Eb5 -G5) 2/3
+	CHORD (C4 -F4 Ab4 D5 -Eb5 -G5) 1/3
+	CHORD (-C4 -Ab4 -D5 E5 B5 Eb6) 2/3
+	CHORD (G#2 C3 G3 A3 -E5 -B5 -Eb6) 1/3
+	CHORD (-G#2 -C3 -G3 -A3 -E5 -B5 -Eb6) 1 @fermata
+
+	; ----------- measure 73
+
+	NOTE 0 4
+
+	; ----------- measure 74
+
+	NOTE 0 2/11 measure74
+	NOTE E5 1/11 @staccato
+	NOTE G3 1/11
+	NOTE G#2 1/11
+	NOTE C5 1/11
+	NOTE A4 1/11
+	NOTE C#4 1/11
+	NOTE Bb3 1/11
+	NOTE 0 17/33
+	CHORD (Bb3 F#4 A4) 1/6
+	CHORD (-Bb3 -F#4 -A4) 1/6
+	CHORD (-Bb3 -F#4 -A4 E5 G5 C6 Eb6) 1/3
+	CHORD (-Bb3 -F#4 -A4 -E5 -G5 -C6 -Eb6) 1/6
+	CHORD (B2 D3 Db4 -E5 -G5 -C6 -Eb6) 1/3
+	CHORD (-B2 -D3 -Db4 -E5 -G5 -C6 -Eb6) 1/2
+	NOTE 0 1
+
+	; ----------- measure 75
+
+	NOTE 0 1/8 measure75
+	NOTE G1 1/8
+_event_ 19
+	; ******* 0 19 ------------------------ 260; ********
+		stopseq bang;
+		ptoh 140;
+		ptof 0;
+		fto4 0;
+		ftoR 0;
+		htoh 109;
+		ttoh 124;
+		hdel 6;
+		hwind 93;
+		hfreq 69;
+		hto4 121;
+		ttor 124;
+		htor 112;
+		revfb 109;
+		rto4 120;
+		diramp 128;
+		hamp 128;
+		rout 128;
+		rgate 128;
+		spatinc 68;
+		zdist 0;
+		tto4 127;
+		tto2 127;
+		lego1 3000;
+		lego2 4000;
+; ***************
+	NOTE C2 1/8
+	NOTE Bb2 1/8
+	NOTE F3 1/8
+	NOTE C#4 1/8
+	NOTE F#4 1/8
+	NOTE 0 1/4
+	NOTE C3 1/8
+	NOTE F3 1/8
+	NOTE B3 1/8
+	NOTE F3 1/8
+	NOTE C#4 1/8
+	NOTE D#4 1/8
+	NOTE G4 1/8
+	NOTE D5 1/4
+	NOTE 0 3/4
+
+	; ----------- measure 76
+
+	NOTE 0 1/8 measure76
+	NOTE G#4 1/8 @staccato
+	NOTE C3 1/8
+	NOTE E4 1/8 @staccato
+	NOTE B5 1/8 @staccato
+	NOTE 0 3/8
+	NOTE D3 1/8
+	NOTE C#4 1/8
+	NOTE C5 1/8
+	NOTE F5 1/8
+	NOTE B5 1/8
+	NOTE G#4 1/8 @staccato
+	NOTE G5 1/8
+	NOTE Bb6 1/8
+	NOTE 0 7/8
+	NOTE B1 1/8
+
+	; ----------- measure 77
+
+	NOTE E2 1/8 measure77
+	NOTE G#3 1/8
+	NOTE D#3 1/8
+	NOTE A2 1/8
+	NOTE E2 1/8
+	NOTE Bb2 1/8
+	NOTE B3 1/8
+	NOTE G3 1/8
+	NOTE E4 1/8
+	NOTE F3 1/8
+	NOTE D3 1/8 @staccato
+	NOTE C#4 1/8
+	NOTE Bb4 1/8
+	NOTE C5 1/8
+	NOTE A5 1/8
+	NOTE G#6 1/8 @staccato
+	NOTE 0 1/2
+	NOTE C7 1/4 @staccato
+	NOTE 0 3/4
+	NOTE B6 1/4 @staccato
+	NOTE 0 1/4
+
+	; ----------- measure 78
+
+	NOTE 0 1 measure78
+	CHORD (C5 F5 B5) 1/3 @fermata
+_event_ 20
+	; ******* 0 20 ------------------------ 270; ********
+		frog1-sampno 65;
+		frog2-sampno 66;
+		ptoh 0;
+; ***************
+	CHORD (Ab3 D4 Gb4 -C5 -F5 -B5) 1/6 @fermata
+	CHORD (-Ab3 -D4 -Gb4 Bb4 -F5 -B5) 1/2 @fermata
+	NOTE 0 1
+	CHORD (E3 D#4 G#4) 2/9
+	CHORD (A#2 -E3 A3 -D#4 -G#4) 1/9
+	CHORD (-A#2 -E3 -A3 -D#4 -G#4) 2/9
+	CHORD (-A#2 -E3 -A3 C#5 Bb5 C6) 1/9
+	CHORD (-A#2 -E3 -A3 -C#5 -Bb5 -C6) 1/9
+	CHORD (F#3 C4 F4 -C#5 -Bb5 -C6) 2/9
+	CHORD (-F#3 -C4 -F4 -C#5 -Bb5 -C6) 1/9
+	CHORD (-F#3 C4 F4 B4) 2/9
+_event_ 21
+	; ******* 0 21 ------------------------ 300; ********
+		2000ms go-sampler6-sec5-evt21 bang;
+		ttoh 128;
+		tto4 138;
+		tto2 0;
+		spat-radius 127;
+		lego1 2000;
+		startseq bang;
+		startseq2 bang;
+; ***************
+	CHORD (-F#3 -C4 -F4 -B4) 1/6 @fermata
+	CHORD (-C4 -F4 -B4) 1/2 @fermata
+
+	; ----------- measure 79
+
+	NOTE 0 11
+
+	; ----------- measure 80
+
+	NOTE 0 1 measure80
+	NOTE Ab1 1/4
+	NOTE 0 5/12
+	NOTE G1 1/6
+	NOTE 0 7/6
+
+	; ----------- measure 81
+
+	CHORD (E4 G4 D5 F5) 1/2 measure81
+_event_ 22
+	; ******* 0 22 ------------------------ 305; ********
+		stopseq bang;
+		ptoh 129;
+		hto4 132;
+		tto4 127;
+		ttor 132;
+		revfb 113;
+		rto4 130;
+		rto2 0;
+		lego1 2000;
+		trecx 0;
+; ***************
+	CHORD (Bb2 Db3 C4 -E4 -G4 -D5 -F5) 1/6
+	CHORD (-Bb2 -Db3 -C4 A4 Ab5) 1/3
+	CHORD (-Bb2 -Db3 -C4 -A4 -Ab5) 1/3
+	CHORD (E3 G3 F#4 -A4 -Ab5) 1/6
+	CHORD (-E3 -G3 -F#4 -A4 -Ab5) 1/6
+	CHORD (-E3 -G3 -F#4 C5 Eb5 B5) 1/3
+	CHORD (-E3 -G3 -F#4 -C5 -Eb5 -B5) 1/3
+	CHORD (Bb2 D3 A3 C#4 -C5 -Eb5 -B5) 1/6
+	CHORD (-Bb2 -D3 -A3 -C#4 Eb4 G4) 1/2
+	CHORD (-Bb2 -D3 -A3 -C#4 -Eb4 -G4) 1/3
+	CHORD (D3 C4 G4 B4 E5 Ab5) 1/6
+	CHORD (-D3 -C4 -G4 -B4 -E5 -Ab5) 1/2
+	CHORD (-D3 -C4 -G4 -B4 -E5 -Ab5) 1/6
+	CHORD (-D3 -C4 F#5 Bb5 F6) 1/3
+	CHORD (-D3 -C4 -F#5 -Bb5 -F6) 1/6
+	CHORD (C4 F4 B4 -F#5 -Bb5 C#6 -F6) 1/3 @fermata
+
+	; ----------- measure 82
+
+	NOTE 0 1/3 measure82
+	NOTE C2 1/6
+_event_ 23
+	; ******* 0 23 ------------------------ 310; ********
+		ptoh 0;
+		3000ms go-sampler7-sec5-evt23 bang;
+		tto4 127;
+		lego2 2000;
+		startseq2 bang;
+		hfreq 128;
+; ***************
+	NOTE 0 1/3
+	NOTE C#2 1/6
+	NOTE 0 1
+
+	; ----------- measure 83
+
+	NOTE 0 10
+
+	; ----------- measure 84
+
+	NOTE 0 1 measure84
+	CHORD (G3 Bb3 Ab4 C5 A5) 1
+_event_ 24
+	; ******* 0 24 ------------------------ 315; ********
+		stopseq bang;
+		frog1-sampno 67;
+		frog2-sampno 68;
+		ptoh 114;
+		tto4 127;
+		lego2 2000;
+		hfreq 128;
+; ***************
+	NOTE 0 1/2
+	NOTE D2 1/10 @staccato
+_event_ 25
+	; ******* 0 25 ------------------------ 320; ********
+		ptoh 0;
+; ***************
+	NOTE 0 1/5
+	NOTE G#1 1/10 @staccato
+	NOTE G1 1/10 @staccato
+	NOTE 0 1/3
+	CHORD (C5 F5 B5) 1/6
+_event_ 26
+	; ******* 0 26 ------------------------ 330; ********
+		ptoh 114;
+		go-sampler8-sec5-evt26 bang;
+		2000ms tto4 127, 149 22000;
+		tto2 60, 143 20000;
+		hto4 127, 143 22000;
+		hto2 60, 143 20000;
+		lego1 2000;
+		startseq bang;
+		1000ms lego2 2000;
+		startseq2 bang;
+		11000ms startseq bang;
+		1000ms startseq2 bang;
+		11000ms sec4-ev26 bang;
+		tto2 105 11200;
+		tto4 105 11200;
+		hto4 105 11200;
+		hto2 105 11200;
+		rto4 105 11200;
+; ***************
+	CHORD (-C5 -F5 -B5) 1/6
+	CHORD (G3 Bb3 Ab4 -C5 -F5 -B5) 1/3
+	CHORD (-G3 -Bb3 -Ab4 -C5 -F5 -B5) 1 @fermata
+
+	; ----------- measure 85
+
+	; repeat (opening)
+	NOTE 0 4 @fermata measure85
+	; repeat (closing)
+
+	; ----------- measure 86
+
+	NOTE 0 4
+
+	; ----------- measure 87
+
+	NOTE 0 5/4 measure87
+	NOTE F#1 0
+	NOTE G1 1/4 @staccato
+	NOTE 0 1/4
+	NOTE G#1 1/4 @staccato
+	NOTE 0 1
+
+	CHORD (Ab4 G5) 1/8 
+	_section_ VD
+_event_ 0
+	; ******* 0 0 ------------------------ 0;
+		kill41 bang;
+		ptoh 0;
+		ttoh 0;
+		fpos 0;
+		fneg 0;
+		fsfre 0;
+		htor 0;
+		ttor 0;
+		revfb 0;
+		rgate 0;
+		rout 0;
+		rto4 0;
+		Revfb 0;
+		Rgate 0;
+		Rout 0;
+		Rto4 0;
+		spaton 0;
+		spatinc 64;
+
+_event_ 1
+	; ******* 0 1 ------------------------ 10; ********
+		diramp 127;
+		hamp 127;
+		hfreq 65;
+		hwind 80;
+		hto4 127;
+		htoh 109;
+		ptoh 127;
+		hwind 93;
+		hfreq 127;
+; ***************
+	NOTE Eb2 1/8
+	CHORD (Bb4 C#5 D5 A5 C6) 3/4
+	CHORD (-Bb4 -C#5 -D5 -A5 -C6) 1/2
+	NOTE 0 1/2
+
+	; ----------- measure 89
+
+	CHORD (Eb2 G5) 1/6 measure89
+	CHORD (-Eb2 Ab4) 1/12
+	CHORD (Eb2 -Ab4) 1/12
+	CHORD (Eb2 -Ab4) 1/12
+	CHORD (Eb2 -Ab4) 1/4
+	CHORD (-Eb2 G5) 1/12
+	CHORD (-Eb2 Ab4) 1/12
+	CHORD (-Eb2 C6) 1/12
+	CHORD (Eb2 -C6) 1/12
+	CHORD (-Eb2 A5 C6) 1/12
+	CHORD (Eb2 -A5 -C6) 1/12
+	CHORD (-Eb2 Bb4 C#5) 1/12
+	CHORD (-Eb2 D5) 1/12
+	CHORD (-Eb2 G5) 1/12
+	CHORD (-Eb2 D5) 1/12
+	CHORD (-Eb2 Ab4) 1/12 @staccato
+	CHORD (-Eb2 C5) 1/12 @staccato
+	CHORD (-Eb2 E4) 1/12
+	CHORD (-Eb2 B3) 1/12
+	CHORD (Eb2 -B3) 1/12
+	CHORD (Eb2 -B3) 1/12
+	NOTE Eb2 1/6
+	CHORD (C#4 E4) 1/6
+	NOTE F#2 1/12
+	NOTE C3 1/12
+	NOTE F3 1/12
+	NOTE B3 1/12
+	NOTE E2 1/3
+
+	; ----------- measure 90
+
+	NOTE 0 1/7 measure90
+	NOTE F#2 1/7
+	NOTE E2 1/7
+	CHORD (G1 C4) 1/7
+	NOTE Eb3 1/7
+	NOTE B3 1/7
+	NOTE D4 1/7
+	CHORD (A4 C#5) 1/7
+	CHORD (G#3 Bb5) 1/7 @staccato
+	NOTE G#3 1/7
+	NOTE C4 1/7
+	NOTE A4 1/7
+	NOTE C#5 1/7
+	NOTE Bb5 1/7
+	NOTE D4 1/7 @staccato
+	NOTE D4 1/7
+	NOTE G#4 1/7
+	NOTE C6 1/7
+	NOTE E5 1/7
+	CHORD (D#6 B6) 1/7
+	NOTE 0 1/7
+
+	; ----------- measure 91
+
+	CHORD (F2 D3) 1/3 measure91
+_event_ 2
+	; ******* 0 2 ------------------------ 30; ********
+		hto4 0;
+		spaton 1;
+		spatinc 65;
+		htoh 101;
+		ptoh 127;
+		diramp 127;
+		hamp 127;
+		htor 127;
+		revfb 106;
+		rgate 127;
+		rout 127;
+		rto4 113;
+		70ms hdel 6;
+		hwind 121;
+		hfreq 92;
+		300ms hto4 117, 127 200;
+		hto2 117, 127 200;
+; ***************
+	CHORD (-F2 -D3 C4 A4 Db5 Bb5) 2/9
+	CHORD (-F2 -D3 C4 A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (F2 D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (F2 D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 -C4 -A4 -Db5 -Bb5) 2/9
+	CHORD (-F2 -D3 -C4 -A4 Db5 Bb5) 1/9
+	CHORD (-F2 -D3 C4 A4 Db5 Bb5) 1/9
+	CHORD (-F2 -D3 -C4 -A4 Db5 Bb5) 2/9
+	CHORD (F2 D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 C4 A4 -Db5 -Bb5) 2/9
+	CHORD (-F2 -D3 C4 A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 C4 A4 -Db5 -Bb5) 2/9
+	CHORD (-F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (F2 D3 -C4 -A4 -Db5 -Bb5) 2/9
+	CHORD (-F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 -C4 -A4 Db5 Bb5) 2/9
+	CHORD (F2 D3 C4 A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 -C4 -A4 Db5 Bb5) 2/9
+	CHORD (F2 D3 -C4 -A4 -Db5 -Bb5) 1/3
+	CHORD (-F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 C4 A4 -Db5 -Bb5) 2/9
+	CHORD (-F2 -D3 -C4 -A4 Db5 Bb5) 2/9
+	CHORD (F2 D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-F2 -D3 -C4 -A4 Db5 Bb5) 1/9
+	CHORD (Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 C4 A4 -Db5 -Bb5) 1/3
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 2/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 Db5 Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 Db5 Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 Db5 Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 2/9
+	CHORD (-Ab1 F2 D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 2/9
+	CHORD (Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 C4 A4 -Db5 -Bb5) 2/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 2/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 Db5 Bb5) 1/9
+	CHORD (-Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 1/3
+	CHORD (Ab1 -F2 -D3 -C4 -A4 -Db5 -Bb5) 2/3
+
+	; ----------- measure 92
+
+	NOTE Ab1 1/9 measure92
+_event_ 3
+	; ******* 0 3 ------------------------ 40; ********
+		hto4 0;
+		50ms htoh 109;
+		hwind 93;
+		hfreq 127;
+		300ms hto4 107, 117 200;
+		hto2 107, 117 200;
+; ***************
+	NOTE Ab1 1/9
+	CHORD (Ab1 G2) 1/9
+	CHORD (Ab1 G2 C3) 1/9
+	CHORD (Ab1 -G2 -C3) 1/9
+	CHORD (Ab1 G2 C3) 1/9
+	NOTE Ab1 1/9
+	CHORD (Ab1 G2) 1/9
+	CHORD (Ab1 G2 C3) 1/9
+	NOTE Ab1 1/9
+	CHORD (Db2 G2 C3) 1/9
+	NOTE Db2 1/9
+	NOTE Db2 1/9
+	CHORD (B1 G2 C3) 1/9
+	NOTE B1 1/9
+	NOTE B1 1/9
+	NOTE B1 1/9
+	CHORD (F#1 G2 C3) 1/9
+	NOTE F#1 1/9
+	NOTE F#1 1/9
+	NOTE F#1 1/9
+	CHORD (F#1 B1) 1/9
+	CHORD (F#1 C3) 1/9
+	CHORD (F#1 G#2) 1/9
+	CHORD (F#1 G3) 1/9
+	CHORD (F#1 Bb3) 1/9
+	NOTE F#1 1/9
+	NOTE F#1 1/9
+	CHORD (F#1 C3) 1/9
+	CHORD (F#1 C3) 1/9
+	CHORD (F#1 C3 Db4) 1/9
+	CHORD (F#1 C3 Db4) 1/9
+	CHORD (F#1 C3 Db4) 1/9
+	CHORD (F#1 C3 Db4) 1/9
+	CHORD (F#1 -C3 -Db4) 1/9
+	CHORD (F#1 -C3 -Db4) 1/9
+
+	; ----------- measure 93
+
+	CHORD (C3 Eb4 E5 G6) 3/7 measure93
+_event_ 4
+	; ******* 0 4 ------------------------ 60; ********
+		htoh 0;
+		ptoh 126;
+		diramp 127;
+		hamp 127;
+		hto4 0;
+		hto2 0;
+		htor 0;
+		revfb 106;
+		rto4 0;
+		rtof 127;
+		fpos 127;
+		fneg 127;
+		fsfre 10;
+		fto4 117;
+		50ms hwind 126;
+		hfreq 112;
+		hdel 0;
+		300ms htor 105;
+		hto4 117, 117 200;
+		hto2 117, 117 200;
+; ***************
+	CHORD (A1 -C3 -Eb4 -E5 -G6) 1/7
+	CHORD (-A1 -C3 -Eb4 B4 -E5 D6 -G6) 1/7
+	CHORD (A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (A1 C3 Eb4 -B4 -E5 -D6 -G6) 2/7
+	CHORD (-A1 -C3 -Eb4 -B4 E5 -D6 G6) 1/7
+	CHORD (-A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (-A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (-A1 -C3 -Eb4 B4 -E5 D6 -G6) 1/7
+	CHORD (-A1 -C3 -Eb4 B4 -E5 D6 -G6) 1/7
+	CHORD (-A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 2/7
+	CHORD (-A1 C3 Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 3/7
+	CHORD (-A1 -C3 -Eb4 -B4 E5 -D6 G6) 1/7
+
+	; ----------- measure 94
+
+	CHORD (-A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 2/7 measure94
+	CHORD (-A1 -C3 -Eb4 -B4 E5 -D6 G6) 1/7
+	CHORD (-A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (-A1 -C3 -Eb4 -B4 -E5 -D6 -G6) 2/7
+	CHORD (-A1 -C3 -Eb4 -B4 E5 -D6 G6) 1/7
+	CHORD (-A1 -C3 -Eb4 -B4 E5 -D6 G6) 1/7
+	CHORD (A1 C#2 -C3 -Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (A1 C#2 -C3 -Eb4 -B4 -E5 -D6 -G6) 1/7
+	CHORD (-A1 -C#2 C3 Eb4 -B4 -E5 -D6 -G6) 4/7
+	CHORD (-A1 -C#2 -C3 -Eb4 -B4 -E5 -D6 -G6) 3/7
+	CHORD (-A1 -C#2 -C3 -Eb4 -B4 E5 -D6 G6) 3/7
+	CHORD (-A1 -C#2 C3 Eb4 -B4 -E5 -D6 -G6) 1/7
+
+	; ----------- measure 95
+
+	CHORD (-A1 -C#2 -C3 -Eb4 -B4 -E5 -D6 -G6) 4/7 measure95
+	CHORD (-A1 -C#2 -C3 -Eb4 B4 -E5 D6 -G6) 3/7
+	CHORD (A1 C#2 -C3 -Eb4 -B4 -E5 -D6 -G6) 4/7
+	CHORD (-A1 -C#2 -C3 -Eb4 -B4 E5 -D6 G6) 3/7
+	CHORD (-A1 -C#2 -C3 -Eb4 -B4 -E5 -D6 -G6) 3/7 @fermata
+	CHORD (-A1 -C#2 C3 Eb4 B4 -E5 D6 -G6) 4/7 @fermata
+
+	; ----------- measure 96
+
+	NOTE Bb1 1/4 measure96
+_event_ 5
+	; ******* 0 5 ------------------------ 70; ********
+		htoh 109;
+		ptoh 114;
+		hto4 0;
+		hto2 0;
+		htor 0;
+		revfb 0;
+		rtof 0;
+		fpos 0;
+		fneg 0;
+		fsfre 0;
+		fto4 0;
+		70ms hdel 6;
+		hwind 93;
+		hfreq 127;
+		300ms hto4 117, 127 200;
+		hto2 117, 127 200;
+; ***************
+	NOTE Bb1 1/8
+	NOTE Bb1 1/8
+	CHORD (-Bb1 C3) 1/8 @staccato
+	CHORD (-Bb1 G#2) 1/8 @staccato
+	CHORD (Bb1 G3) 1/8 @staccato
+	CHORD (F#1 Bb3) 1/8 @staccato
+	NOTE F#1 1/8 @staccato
+	NOTE F#1 1/8 @staccato
+	NOTE F#1 1/8
+	NOTE G1 1/8 @staccato
+	CHORD (G1 G#2) 1/8 @staccato
+	CHORD (G1 C#3) 1/8 @staccato
+	CHORD (-G1 E4) 1/8 @staccato
+	CHORD (G1 B3) 1/8 @staccato
+	CHORD (Eb1 C#3) 1/8 @staccato
+	CHORD (-Eb1 F#3) 1/8 @staccato
+	CHORD (Eb1 C4) 1/8 @staccato
+	CHORD (E1 B3) 1/8 @staccato
+	CHORD (E1 F4) 1/8 @staccato
+	CHORD (E1 G#4) 1/8 @staccato
+	CHORD (E1 D#4) 1/8 @staccato
+	CHORD (E1 A3) 1/8 @staccato
+	CHORD (F1 E4) 1/8 @staccato
+	CHORD (F1 B4) 1/8
+	CHORD (-F1 C#4) 1/8
+	CHORD (F1 Bb4) 1/8
+	CHORD (-F1 C5) 1/8
+	CHORD (-F1 A4) 1/8
+	CHORD (F1 G#5) 1/8
+	CHORD (F1 -G#5) 1/8
+
+	; ----------- measure 97
+
+	NOTE F1 1/8 measure97
+	NOTE B1 1/8 @staccato
+	CHORD (B1 Bb4) 1/8 @staccato
+	CHORD (B1 Eb5) 1/8 @staccato
+	CHORD (Bb1 F#4) 1/8
+	CHORD (-Bb1 B5) 1/8
+	CHORD (-Bb1 D5) 1/8
+	CHORD (Bb1 A5 C#6) 1/8
+	CHORD (-Bb1 -A5 -C#6) 1/12
+	CHORD (Bb1 -A5 -C#6) 1/12 @staccato
+	CHORD (Bb1 C5) 1/12 @staccato
+	CHORD (Bb1 A5 C#6) 1/12 @staccato
+	CHORD (Bb1 -A5 -C#6) 1/12 @staccato
+	CHORD (Bb1 -A5 -C#6) 1/12 @staccato
+	CHORD (Bb1 C5) 1/12 @staccato
+	CHORD (Bb1 A5 C#6) 1/12 @staccato
+	CHORD (D2 -A5 -C#6) 1/12
+	CHORD (Db2 -A5 -C#6) 1/12
+	CHORD (C2 F#6 Bb6) 1/12
+	CHORD (C2 -F#6 -Bb6) 1/12
+	CHORD (C2 -F#6 -Bb6) 1/6
+	CHORD (-C2 G5) 1/12
+	CHORD (-C2 F#6 Bb6) 1/12
+	CHORD (-C2 -F#6 -Bb6) 1/12
+	CHORD (C2 -F#6 -Bb6) 1/12 @staccato
+	CHORD (C2 -F#6 -Bb6) 1/12 @staccato
+	CHORD (C2 G5) 1/12
+	CHORD (-C2 F#6 Bb6) 1/12
+	CHORD (C2 -F#6 -Bb6) 1/12 @staccato
+	CHORD (C2 -F#6 -Bb6) 1/12 @staccato
+	CHORD (C2 -F#6 -Bb6) 1/12 @staccato
+
+	; ----------- measure 98
+
+	NOTE F#6 1/7 measure98
+	NOTE G5 1/7
+	NOTE Bb6 1/7
+	NOTE F#6 1/7
+	NOTE G5 1/7
+	NOTE 0 1/7
+	NOTE G#4 1/7
+	CHORD (A3 -G#4) 1/7
+	CHORD (-A3 -G#4 C#5) 1/7
+	CHORD (-A3 -G#4 Bb6) 1/7
+	CHORD (-A3 D4 -G#4) 1/7
+	CHORD (-A3 -D4 -G#4 Db5) 3/17
+	CHORD (Eb3 -A3 -D4 -G#4 -Db5) 1/8
+	CHORD (A3 -D4 -G#4 -Db5) 1/8
+
+	; ----------- measure 99
+
+	CHORD (F1 A3) 1/8 measure99
+	CHORD (-F1 Bb2 Eb3) 1/8
+	CHORD (-F1 Bb2 A3) 1/8
+	CHORD (-F1 -Bb2 A3) 1/8
+	CHORD (-F1 E2 Eb3) 1/8
+	CHORD (-F1 E2 Eb3) 1/4
+	CHORD (F1 -E2 -Eb3) 1/8
+	CHORD (F1 Ab4 C5) 1/9
+	CHORD (-F1 C#3 -Ab4 -C5) 0.013672
+	CHORD (F1 -C#3 -Ab4 -C5) 1/10
+	CHORD (-F1 Bb3 -Ab4 -C5) 1/36
+	CHORD (-Bb3 -Ab4 -C5) 1/12
+	CHORD (-Ab4 -C5) 1/9
+	CHORD (-Ab4 -C5 A5) 1/9
+	CHORD (-Ab4 -C5 G#6) 1/9
+	CHORD (-Ab4 -C5 B6) 2/9
+	CHORD (Ab4 C5 -B6) 1/9
+	CHORD (Bb1 D2 C#3 Ab4 C5) 1/3
+_event_ 6
+	; ******* 0 6 ------------------------ 80; ********
+		hto4 0;
+		hto2 0;
+		htoh 101;
+		ptoh 120;
+		revfb 106;
+		rgate 127;
+		rout 127;
+		rto4 113;
+		50ms hwind 123;
+		hfreq 91;
+		300ms hto4 117, 127 200;
+		hto2 117, 127 200;
+		htor 100;
+; ***************
+	CHORD (-Bb1 -D2 -C#3 Ab4 C5) 1/9
+	CHORD (-Bb1 -D2 -C#3 -Ab4 -C5 D#5 F#7) 2/9
+	CHORD (-Bb1 -D2 -C#3 -Ab4 -C5 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -D2 -C#3 A3 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -D2 -C#3 A3 -D#5 -F#7) 1/9
+
+	; ----------- measure 100
+
+	CHORD (-Bb1 -D2 -C#3 -A3 D#5 F#7) 2/3 measure100
+	CHORD (-Bb1 -D2 -C#3 -A3 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -D2 -C#3 A3 -D#5 -F#7) 2/9
+	CHORD (Bb1 Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 2/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 -D#5 -F#7) 2/3
+	CHORD (Bb1 Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 2/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 2/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 2/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 -B3 -D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 2/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 2/9
+	CHORD (Bb1 Db3 -B3 -D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 -B3 -D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 -B3 -D4 -D#5 -F#7) 1/9
+	CHORD (-Bb1 -Db3 B3 D4 -D#5 -F#7) 2/9
+	CHORD (-Bb1 -Db3 -B3 -D4 -D#5 -F#7) 1/3
+	CHORD (-Bb1 -Db3 -B3 -D4 D#5 F#7) 1/3
+	CHORD (-Bb1 -Db3 -B3 -D4 -D#5 -F#7) 1
+
+	; ----------- measure 101
+
+	CHORD (-Bb1 -Db3 -B3 -D4 -D#5 -F#7) 3/4 measure101
+
+	; ----------- measure 102
+
+	NOTE F#7 1/9 measure102
+	NOTE D#5 1/9
+	NOTE B3 1/9
+	NOTE D4 1/9
+	NOTE C#3 1/9
+	NOTE Bb1 1/9
+	NOTE -Bb1 1/9
+	NOTE F#2 1/9
+	NOTE C3 1/9
+	NOTE F3 1/9
+	NOTE B3 1/9
+	NOTE E4 1/9
+	NOTE 0 1/9
+	NOTE C3 1/9
+	NOTE E4 1/9
+	NOTE B3 1/9
+	NOTE D#5 1/9
+	NOTE 0 1/9
+
+	; ----------- measure 103
+
+	NOTE A1 1/8 measure103
+_event_ 7
+	; ******* 0 7 ------------------------ 100; ********
+		hto4 0;
+		hto2 0;
+		htoh 109;
+		htor 0;
+		revfb 0;
+		rgate 0;
+		rout 0;
+		rto4 0;
+		50ms hwind 96;
+		hfreq 127;
+		200ms hto4 117, 127 200;
+		hto2 117, 127 200;
+; ***************
+	NOTE A1 1/4
+	CHORD (-A1 D3 B4 D#5) 1/8
+	CHORD (-A1 -D3 -B4 -D#5) 1/8
+	CHORD (-A1 -D3 C#4 -B4 -D#5) 3/8
+	CHORD (-A1 -D3 -C#4 B4 D#5) 1/8
+	CHORD (-A1 -D3 -C#4 B4 D#5) 1/4
+	CHORD (-A1 D3 C#4 -B4 -D#5) 1/8
+	CHORD (-A1 -D3 -C#4 B4 D#5) 1/4
+	CHORD (A1 -D3 -C#4 -B4 -D#5) 1/4
+
+	; ----------- measure 104
+
+	NOTE -A1 1/10 measure104
+	NOTE A1 1/38
+	NOTE -A1 1/13
+	NOTE C2 1/10
+	NOTE Bb1 1/10
+	NOTE Ab2 1/10
+	NOTE 0 1/10
+	NOTE B3 1/10
+	CHORD (A2 -B3) 1/10
+	CHORD (-A2 E3 -B3) 1/10
+	CHORD (Bb1 A2 -B3) 1/10
+	CHORD (-Bb1 A2 E3 -B3) 1/5
+	CHORD (Bb1 A2 -E3 -B3) 3/10
+	CHORD (-Bb1 -A2 E3 B3) 1/10
+	CHORD (Bb1 A2 -E3 -B3) 2/5
+
+	; ----------- measure 105
+
+	CHORD (Bb1 A2 -E3 -B3) 1/2 measure105
+	CHORD (C2 -E3 -B3) 1/8
+_event_ 8
+	; ******* 0 8 ------------------------ 120; ********
+		hto4 0;
+		50ms hwind 93;
+		200ms hto4 117, 127 200;
+		hto2 117, 127 200;
+		ptoh 127;
+; ***************
+	CHORD (F1 -C2 -E3 -B3) 1/8
+	CHORD (-F1 -C2 E4) 1/8
+	CHORD (-F1 -C2 B3 -E4) 1/8
+
+	; ----------- measure 106
+
+	CHORD (-F1 -C2 B3 -E4) 1/2 measure106
+	CHORD (-F1 -C2 B3 E4) 1/10
+	CHORD (-F1 -C2 B3 E4) 1/5
+	CHORD (F1 C2 -B3 -E4) 1/5
+	CHORD (-F1 -C2 -B3 -E4) 1/5
+	CHORD (F1 C2 -B3 -E4) 1/10
+	CHORD (-F1 -C2 B3 E4) 1/5
+	CHORD (-F1 -C2 B3 E4) 1/10
+	CHORD (-F1 -C2 B3 E4) 1/5
+	CHORD (F1 C2 -B3 -E4) 1/5
+	CHORD (-F1 -C2 -B3 -E4) 1/5
+	CHORD (-F1 -C2 B3 E4) 1/5
+	CHORD (F1 C2 -B3 -E4) 2/5
+	CHORD (-F1 -C2 B3 E4) 1/5
+	CHORD (-F1 -C2 -B3 -E4) 2/5
+	CHORD (-F1 -C2 B3 E4) 2/5
+	CHORD (F1 C2 -B3 -E4) 1/5
+
+	; ----------- measure 107
+
+	CHORD (-F1 -C2 -B3 -E4) 2/5 measure107
+	CHORD (-F1 -C2 -B3 -E4) 1/5
+	CHORD (F1 C2 B3 E4) 2/5
+	CHORD (-F1 -C2 -B3 -E4) 3/5
+	CHORD (F1 C2 B3 E4) 2/5
+	CHORD (Bb1 Db2 B3 D4) 1/3
+	CHORD (Bb1 Db2 B3 D4) 1/9
+	CHORD (-Bb1 -Db2 B3 D4) 2/9
+	CHORD (-Bb1 -Db2 -B3 -D4) 2/9
+	CHORD (Bb1 Db2 -B3 -D4) 1/9
+	CHORD (-Bb1 -Db2 -B3 -D4) 1/6
+	CHORD (Bb1 Db2 -B3 -D4) 1/6
+	CHORD (-Bb1 -Db2 B3 D4) 1/6
+	CHORD (-Bb1 -Db2 -B3 -D4) 1/6
+	CHORD (-Bb1 -Db2 -B3 -D4) 1/9
+	CHORD (-Bb1 -Db2 B3 D4) 2/9
+
+	; ----------- measure 108
+
+	CHORD (B1 D2 -B3 -D4) 2/3 measure108
+	CHORD (-B1 -D2 B3 D4) 1/9
+	CHORD (B1 D2 -B3 -D4) 2/9
+	CHORD (-B1 -D2 -B3 -D4) 2/3
+	CHORD (-B1 -D2 -B3 -D4) 2/9
+	CHORD (B1 D2 B3 D4) 1/9
+	CHORD (G#1 B1 A3 C4) 1/3
+	CHORD (-G#1 -B1 A3 C4) 1/3
+	CHORD (G#1 B1 -A3 -C4) 1/3
+	CHORD (-G#1 -B1 -A3 -C4) 1/9
+	CHORD (-G#1 -B1 A3 C4) 2/9
+	CHORD (-G#1 -B1 -A3 -C4) 1/3
+	CHORD (G#1 B1 -A3 -C4) 2/9
+	CHORD (-G#1 -B1 G#3 B3) 1/9
+
+	; ----------- measure 109
+
+	CHORD (-G#1 -B1 -G#3 -B3) 2/9 measure109
+	CHORD (G#1 B1 -G#3 -B3) 1/9
+	CHORD (-G#1 -B1 -G#3 -B3) 1/3
+	CHORD (A1 C2 G#3 B3) 1/3
+	CHORD (-A1 -C2 -G#3 -B3) 3/2 @fermata
+	NOTE 0 3/2
+	 
+
+	; ----------- measure 110
+
+	NOTE B3 1/8 VE
+	_section_ VE
+
+_event_ 0
+	;0 0 ------------------------ 0;
+		stopmetro1 0;
+		stopmetro2 0;
+
+_event_ 1
+		hamp 0;
+		30ms htoh 109;
+		hd-jump 0;
+		diramp 127;
+		hamp 127;
+		hw-jump 93;
+		hfreq 127;
+		ptoh 127;
+		hto4 127;
+		frog1-dur 2000;
+		frog2-dur 2000;
+		nosteal 1;
+
+	CHORD (D2 -B3) 1/8
+	CHORD (Db3 -B3) 1/8
+	CHORD (Bb2 -B3) 1/8
+	CHORD (C3 -B3) 1/8
+	CHORD (A3 -B3) 1/8
+	CHORD (Ab1 -B3) 1/8
+	NOTE Bb3 1/8
+	CHORD (G3 -Bb3) 1/8
+	CHORD (-Bb3 F#4) 1/8
+	CHORD (-Bb3 A4) 1/8
+	CHORD (C#3 -Bb3) 1/8
+	CHORD (D2 -Bb3) 1/8
+	CHORD (B1 -Bb3) 1/8
+	NOTE E3 1/8
+	CHORD (A1 -E3) 1/8
+
+	; ----------- measure 111
+
+	CHORD (D#2 -E3) 1/8 measure111
+	CHORD (G#2 -E3) 1/8
+	CHORD (B2 -E3) 1/8
+	CHORD (-E3 F3) 1/8
+	CHORD (C3 -E3) 1/8
+	NOTE F3 1/8
+	CHORD (C3 -F3) 1/8
+	CHORD (F#2 -F3) 1/8
+	CHORD (C#2 -F3) 1/8
+	CHORD (Bb1 -F3) 1/8
+	CHORD (E1 -F3) 1/8
+	CHORD (A1 -F3) 1/8
+	NOTE B3 1/10
+	CHORD (D2 -B3) 1/10
+	CHORD (Db3 -B3) 1/10
+	CHORD (Bb2 -B3) 1/10
+	CHORD (A3 -B3) 1/10
+
+	; ----------- measure 112
+
+	CHORD (A3 -B3) 1/10 measure112
+	CHORD (Ab1 -B3) 1/10
+	CHORD (G2 -B3) 1/10
+	CHORD (C3 -B3) 1/10
+	CHORD (Bb3 -B3) 1/10
+	CHORD (Bb3 B3) 1/10
+	CHORD (G2 -B3) 1/10
+	CHORD (F#3 -B3) 1/10
+	CHORD (A2 -B3) 1/10
+	CHORD (F2 -B3) 1/10
+	CHORD (-B3 C#4) 1/10
+	CHORD (D3 -B3) 1/10
+	CHORD (B2 -B3) 1/10
+	CHORD (-B3 Eb4) 1/10
+	NOTE A3 1/10
+	NOTE -A3 1/6
+	NOTE D#4 1/9
+	CHORD (-D#4 G4) 1/9
+	CHORD (D3 -D#4) 1/9
+
+	; ----------- measure 113
+
+	CHORD (G#2 -D#4) 1/9 measure113
+	CHORD (B3 -D#4) 1/9
+	CHORD (-D#4 E4) 1/9
+	CHORD (C4 -D#4) 1/9
+	NOTE E4 1/9
+	CHORD (A2 -E4) 1/9
+	CHORD (D#3 -E4) 1/9
+	CHORD (G#3 -E4) 1/9
+	CHORD (D4 -E4) 1/9
+	CHORD (-E4 F4) 1/9
+	CHORD (C4 -E4) 1/9
+	CHORD (F#3 -E4) 1/9
+	NOTE Bb3 1/9
+	CHORD (G2 -Bb3) 1/9
+	CHORD (F#3 -Bb3) 1/9
+	CHORD (A3 -Bb3) 1/9
+	CHORD (-Bb3 F4) 1/9
+	CHORD (G#2 -Bb3) 1/9
+
+	; ----------- measure 114
+
+	CHORD (C#3 -Bb3) 1/9 measure114
+	CHORD (-Bb3 D4) 1/9
+	CHORD (-Bb3 B3) 1/9
+	CHORD (F#2 -Bb3) 1/9
+	CHORD (D#3 -Bb3) 1/9
+	CHORD (A3 -Bb3) 1/9
+	NOTE Ab4 1/9
+	NOTE C5 1/9
+	NOTE B3 1/9
+	NOTE D4 1/9
+	NOTE Db5 1/9
+	NOTE Bb2 1/9
+	CHORD (-Bb2 C5) 1/9
+	CHORD (-Bb2 A3 -C5) 1/9
+	CHORD (-Bb2 G#4 -C5) 1/9
+	CHORD (-Bb2 A3 -C5) 1/9
+	CHORD (-Bb2 C5) 1/9
+	CHORD (Bb2 -C5) 1/9
+
+	; ----------- measure 115
+
+	NOTE C#5 1/7 measure115
+	NOTE F5 1/7
+	CHORD (C5 -F5) 1/7
+	CHORD (F#4 -F5) 1/7
+	CHORD (C#4 -F5) 1/7
+	CHORD (G3 -F5) 1/7
+	CHORD (Bb3 -F5) 1/7
+	CHORD (C4 -F5) 1/7
+	CHORD (A4 -F5) 1/7
+	CHORD (Eb4 -F5) 1/21
+	CHORD (-Eb4 C#5) 1/12
+	CHORD (-Eb4 D5) 0.011719
+	NOTE -D5 1/14
+	CHORD (F#4 -D5) 1/12
+	CHORD (D#4 -D5) 1/12
+	CHORD (G3 -D5) 1/15
+	CHORD (Bb4 -D5) 1/15
+	CHORD (C#5 -D5) 1/15
+	CHORD (A4 -D5) 1/15
+	CHORD (C4 -D5) 1/15
+
+	; ----------- measure 116
+
+	NOTE Ab5 1/8 measure116
+	NOTE G5 1/8
+	NOTE F#5 1/8
+	CHORD (D4 -F#5) 1/8
+	CHORD (F4 -F#5) 1/8
+	CHORD (E5 -F#5) 1/8
+	CHORD (Bb4 -F#5) 1/8
+	CHORD (G4 -F#5) 1/8
+	NOTE F#5 1/8
+	NOTE C5 1/8
+	NOTE C#5 1/8
+	NOTE D5 1/8
+	CHORD (-D5 F#5) 1/8
+	CHORD (-D5 Eb5) 1/8
+	CHORD (G4 -D5) 1/8
+	CHORD (E4 -D5) 1/8
+
+	; ----------- measure 117
+
+	CHORD (Bb4 -D5) 1/8 measure117
+	CHORD (Db5 -D5) 1/8
+	CHORD (-D5 A5) 1/8
+	CHORD (-D5 C6) 1/8
+	NOTE Bb4 1/10
+	CHORD (G4 -Bb4) 1/10
+	CHORD (-Bb4 F#5) 1/10
+	CHORD (-Bb4 A5) 1/10
+	CHORD (-Bb4 F6) 1/10
+	CHORD (-Bb4 Ab6) 1/10
+	CHORD (-Bb4 C#5) 1/10
+	CHORD (-Bb4 D5) 1/10
+	CHORD (-Bb4 B4) 1/10
+	CHORD (-Bb4 F#5) 1/10
+	CHORD (-Bb4 D#6) 1/10
+	NOTE A#4 1/10
+	NOTE B4 1/10
+	CHORD (-B4 D6) 1/10
+	CHORD (-B4 C#5) 1/10
+
+	; ----------- measure 118
+
+	CHORD (-B4 Bb5) 1/10 measure118
+	CHORD (-B4 C6) 1/10
+	CHORD (-B4 A6) 1/10
+	CHORD (-B4 F5) 1/10
+	CHORD (-B4 Ab5) 1/10
+	CHORD (-B4 A6) 1/10
+	CHORD (-B4 C6) 1/10
+	CHORD (-B4 Bb5) 1/10
+	CHORD (-B4 C#5) 1/10
+	CHORD (-B4 F5) 1/10
+	NOTE F5 1/10
+	CHORD (C3 -F5) 1/10
+	CHORD (F#3 -F5) 1/10
+	CHORD (C#4 -F5) 1/10
+	CHORD (D3 -F5) 1/10
+	CHORD (G3 -F5) 1/10
+	CHORD (Bb4 -F5) 1/10
+	CHORD (E4 -F5) 1/10
+	CHORD (A4 -F5) 1/10
+	CHORD (Eb5 -F5) 1/10
+
+	; ----------- measure 119
+
+	CHORD (-F5 Ab5) 1/10 measure119
+	NOTE E5 1/10
+	CHORD (A4 -E5) 1/10
+	CHORD (Eb5 -E5) 1/10
+	CHORD (-E5 Ab5) 1/10
+	CHORD (D4 -E5) 1/10
+	CHORD (G4 -E5) 1/10
+	CHORD (-E5 B5) 1/10
+	CHORD (-E5 F5) 1/10
+	CHORD (C5 -E5) 1/10
+	CHORD (E5 F#5) 1/10
+	CHORD (C#5 -F#5) 1/10
+	NOTE D#5 1/10
+	CHORD (G4 -D#5) 1/10
+	CHORD (D4 -D#5) 1/10
+	CHORD (-D#5 F#5) 1/10
+	CHORD (Bb4 -D#5) 1/10
+	CHORD (-D#5 B5) 1/10
+	CHORD (-D#5 E5) 1/10
+	CHORD (C5 -D#5) 1/10
+
+	; ----------- measure 120
+
+	CHORD (-D#5 Ab5) 1/10 measure120
+	NOTE G5 1/10
+	NOTE F#5 1/10
+	CHORD (D4 -F#5) 1/10
+	CHORD (F4 -F#5) 1/10
+	CHORD (E5 -F#5) 1/10
+	CHORD (C5 -F#5) 1/10
+	CHORD (-F#5 Bb5) 1/10
+	CHORD (-F#5 G5) 1/10
+	CHORD (Ab4 -F#5) 1/10
+	CHORD (-F#5 C6) 1/12
+	NOTE Bb5 1/12
+	CHORD (G5 -Bb5) 1/12
+	CHORD (F#5 -Bb5) 1/12
+	CHORD (A4 -Bb5) 1/12
+	CHORD (F4 -Bb5) 1/12
+	CHORD (G#4 -Bb5) 1/12
+	CHORD (C#5 -Bb5) 1/12
+	CHORD (E5 -Bb5) 1/12
+	CHORD (C#5 -Bb5) 1/12
+	CHORD (D5 -Bb5) 1/12
+	CHORD (-Bb5 B5) 1/12
+
+	; ----------- measure 121
+
+	NOTE C7 1/12 measure121
+	NOTE Eb6 1/12
+	NOTE G5 1/12
+	NOTE E6 1/12
+	NOTE A6 1/12
+	NOTE 0 7/12
+	NOTE C#6 0
+	NOTE C7 1/4
+	NOTE 0 3/4
+
+	; ----------- measure 122
+
+	NOTE F#6 1/4 measure122
+
+_event_ 2
+		ptoh 0;
+		hto4 0;
+		100ms ptoR 127;
+		stor~ 0
+		stoR~ 127
+		sampler2_ VE02;
+		Revfb 127;
+		Rout 127;
+		Rgate 127;
+		Rto2 127;
+		ttoh 127;
+		diramp 127;
+		hamp 127;
+		hwind 96;
+		hfreq 65;
+		htoh 0;
+		hto4 127;
+		tto4 127;
+		temp-hipass bang;
+		600ms Rgate 0;
+	NOTE 0 3/4
+	CHORD (C#4 E4 C5 D5 F5) 1 @fermata ev3
+
+_event_ 3
+		trec2 bang;
+		frog2-sampno 403
+		500ms godel2 1577 1294 1512;
+	CHORD (G3 Bb3 C4 G#4 B4) 1/4 ev4
+
+_event_ 4
+		200ms trec bang;
+		frog1-sampno 404
+		500ms godel 1577 1294 1512;
+
+	NOTE 0 3/17
+	NOTE F#6 4/7
+	NOTE 0 1
+	NOTE F#6 0
+	NOTE F#6 0
+	NOTE F#6 0
+	NOTE F#6 0
+	NOTE F#6 0
+
+	; ----------- measure 123
+	NOTE 0 1/7 measure123
+	NOTE C4 1/7
+	NOTE C#4 1/7
+	NOTE D4 1/7
+	NOTE E4 1/7
+	NOTE F4 1/7
+	NOTE G4 1/7
+	NOTE G#4 1/7
+	NOTE A#4 1/7
+	NOTE B4 1/7
+	NOTE 0 4/7
+	NOTE 0 1
+
+	; ----------- measure 124
+	CHORD (G5 C6 Db6) 1/3 measure124
+	NOTE B1 2/3 @fermata ev5
+
+_event_ 5
+		200ms trec2 bang;
+		frog2-sampno 405
+
+	CHORD (A3 D4 F4 Bb4 C5 A5 C#6) 1 @fermata ev6
+
+_event_ 6
+		30ms trec bang;
+		frog1-sampno 406
+		ttoh 127;
+		hamp 127;
+		hw-jump 70;
+		hfreq 72;
+		hto4 119;
+		tto4 122;
+
+	NOTE 0 1/3
+	CHORD (A3 D4 F4 Bb4 C5 A5 C#6) 2/3 ev7
+
+_event_ 7
+	CHORD (-A3 -D4 -F4 -Bb4 -C5 -A5 -C#6) 1 @fermata
+	; ----------- measure 125
+	NOTE 0 1/3 measure125
+	NOTE A2 1/3
+	NOTE C#3 1/9
+	NOTE Bb2 1/9
+	NOTE 0 1/9
+	NOTE D3 1/3
+	NOTE F3 1/3
+	NOTE G#3 1/9
+	NOTE A3 1/9
+	NOTE Bb3 1/9
+	NOTE 0 2/9
+	NOTE C4 1/9
+	NOTE 0 5/9
+	NOTE Db4 1/9
+	NOTE -Db4 1
+
+	; ----------- measure 126
+	NOTE Eb6 1/4 measure126
+
+_event_ 8
+		Revfb 0;
+		100ms Revfb 127;
+		sampler2_ VE08;
+		Rgate 127;
+		200ms Rgate 0;
+; ***************
+	NOTE 0 3/4
+	CHORD (D3 G3 E4 Bb4 F#5) 1 @fermata
+
+_event_ 9
+		trec2 bang;
+		sampler2_ VE09
+		500ms godel2 377 194 212;
+
+	CHORD (C4 G#4 D5 B5 E6) 1/12
+
+_event_ 10
+		trec bang;
+		sampler2_ VE10
+	CHORD (C4 G#4 D5 B5 E6) 1/6
+	CHORD (C4 G#4 D5 B5 E6) 1/12
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1/6
+	CHORD (C4 G#4 D5 B5 E6) 1/6
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1/6
+	CHORD (C4 G#4 D5 B5 E6) 1/6
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1/4
+	CHORD (C4 G#4 D5 B5 E6) 1/12
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1/3
+	CHORD (C4 G#4 D5 B5 E6) 1/3
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1/4
+	CHORD (C4 G#4 D5 B5 E6) 1/12
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1/3
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1/6
+	CHORD (-C4 -G#4 D5 B5 E6) 1/12
+	CHORD (C4 G#4 -D5 -B5 -E6) 1/12
+	CHORD (-C4 -G#4 -D5 -B5 -E6) 1 @fermata
+	NOTE Eb6 0
+	NOTE Eb6 0
+	NOTE Eb6 0
+
+	; ----------- measure 127
+	NOTE F#3 1/12 measure127
+	NOTE A3 1/12
+	NOTE Bb3 1/12
+	NOTE C#4 1/12
+	NOTE D4 1/15
+	NOTE E4 1/15
+	NOTE G4 1/15
+	NOTE Ab4 1/15
+	NOTE Bb4 1/15
+	NOTE C5 1/3
+	NOTE D6 1/4
+	NOTE 0 3/4
+	CHORD (Ab2 E3 G3 D#4 F#4) 1 @fermata
+
+_event_ 11
+		200ms trec2 bang;
+		sampler2_ VE11
+		ttof 117;
+		fpos 127;
+		fneg 0;
+		fsfre 2;
+		fto4 127;
+		spatinc 71;
+		spaton 1;
+		1300ms stopmetro2 0;
+		sec43-evt11 1;
+
+	CHORD (Bb3 Db4 A4 C5 G#5) 1 @fermata
+
+_event_ 12
+		ttof 110;
+		fpos 127;
+		fneg 0;
+		fsfre 2;
+		fto4 127;
+		spatinc 71;
+		spaton 1;
+		100ms trec bang;
+		sampler2_ VE12
+		450ms stopmetro1 0;
+		50ms sec43-evt12 1;
+
+	; ----------- measure 128
+	NOTE 0 1/3 measure128
+	NOTE D#4 1/4
+	NOTE G4 1/12 @staccato
+	NOTE F#4 1/6 @staccato
+	NOTE G4 1/6 @staccato
+	NOTE 0 1/12
+	NOTE G#4 1/12
+	NOTE A4 1/12
+	NOTE B4 1/12
+	NOTE C5 1/4
+	NOTE C#5 1/12
+	NOTE D#5 1/4
+	NOTE F#5 1/12
+	NOTE G5 1/6
+	NOTE C#6 1/6 @staccato
+	NOTE D6 1/6 @staccato
+	NOTE E6 1/6 @staccato
+	NOTE 0 2/3
+	NOTE 0 1/12
+	NOTE G#6 1/12
+	NOTE A6 1/12
+	NOTE 0 5/12
+
+	; ----------- measure 129
+	NOTE Bb6 1/4 measure129
+
+_event_ 13
+		Revfb 0;
+		150ms Revfb 127;
+		sampler2_ VE13;
+		Rgate 127;
+		150ms Rgate 0;
+
+	NOTE 0 3/4
+	NOTE A#6 0
+	NOTE A#6 0
+	NOTE A#6 0
+	NOTE A#6 0
+	NOTE A#6 0
+	NOTE A#6 0
+	NOTE A#6 0
+	CHORD (F#2 C#3 C4 D4 E4 B4 D#5 G5) 1 @fermata
+
+_event_ 14
+		spatinc 64;
+		trec2 bang;
+		sampler2_ VE14
+		Revfb 127;
+		Rgate 0;
+		450ms sec43-evt11 0;
+		50ms godel2 200 220 450;
+
+	CHORD (F4 G#4 C#5 E5 G5 D6 F#6) 1 @fermata
+
+_event_ 15
+		trec bang;
+		405ms sec43-evt12 0;
+		stopmetro1 0;
+		50ms sec43-evt15 1;
+
+	; ----------- measure 130
+	NOTE 0 1/2 measure130
+	NOTE D#4 1/8
+	NOTE E4 1/8
+	NOTE Gb4 1/8
+	NOTE F4 1/8
+	NOTE G4 1/8
+	NOTE G#4 1/8
+	NOTE A4 1/8
+	NOTE C5 1/8
+	NOTE B4 1/8
+	NOTE C5 1/8
+	NOTE C#5 1/8
+	NOTE D5 1/8
+	NOTE 0 1
+	; ----------- measure 131
+	NOTE E6 0 @staccato measure131
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 0 @staccato
+	NOTE E6 1/4
+	NOTE 0 3/4
+	CHORD (C3 F3 B3 C#4 E4 F#4) 1 @fermata
+
+_event_ 16
+		sec43-evt16 bang;
+		trec2 bang;
+		sampler2_ VE16;
+		killf bang;
+		hamp 0;
+		hto4 64 2000;
+		hto2 64 2000;
+		tto4 127 1000;
+		spatinc 64;
+		450ms stopmetro2 0;
+		50ms godel2 377 194 212;
+
+	CHORD (Eb3 G3 A3 D4 E4 Bb4) 1 @fermata
+
+_event_ 17
+		sec43-evt15 0;
+		50ms trec bang;
+		400ms stopmetro1 0;
+		2550ms godel 1577 1294 1512;
+		hto2 80;
+		ttoh 125;
+		diramp 127;
+		hamp 127;
+		hwind 106;
+		hdel 110;
+		hfreq 127;
+		hto4 64;
+		zevfb 111;
+		zout 127;
+		zgate 127;
+		zdist 0;
+		4000ms hto2 80, 127 3000;
+		8000ms spatinc 71 5000;
+		tto2 64 10000;
+		hwind 127 5000;
+		hto2 112 10000;
+		hto4 127 3000;
+		zgate 127;
+		zdist 113 15000;
+		13000ms ttoh 0;
+		tto4 120 2000;
+		hto4 108 2000;
+		hto2 81 2000;
+		zevfb 118;
+		zdist 127 5000;
+		spat-radius 32 5000;
+
+	; ----------- measure 132
+	NOTE 0 3
+
+	; ----------- measure 133
+	NOTE B2 1/8 measure133
+
+_event_ 18
+		ptof 114;
+		fpos 127;
+		fneg 127;
+		fsfre 81;
+		fto4 127;
+		ttoh 110;
+		tto4 64;
+		hto4 64;
+		htor 105;
+		Revfb 0;
+
+	NOTE C3 1/8
+	NOTE E3 1/8
+	NOTE F#3 1/8
+	NOTE G3 1/8
+	NOTE Ab3 1/8
+	NOTE Bb3 1/8
+	NOTE D4 1/8
+	NOTE E4 1/8
+	NOTE G4 1/8
+	NOTE A4 1/8
+
+_event_ 19
+		ftoR 127;
+		ptoR 120;
+		Revfb 127;
+		Rgate 0;
+		Rout 127;
+		Rto4 120;
+		100ms Rgate 127;
+		sampler2_ sample51;
+		200ms Rgate 0;
+		ptof 0;
+		spat-radius 64;
+
+	NOTE 0 5/8
+
+	; ----------- measure 134
+	NOTE Eb6 1/4 measure134
+	NOTE 0 3/4
+	CHORD (A2 D3 G3 E4 A#4 F#5) 1 @fermata
+
+_event_ 20
+	; ******* 0 20 ------------------------ 270; ********
+		Rto4 64 2000;
+		killf bang;
+		spatinc 77;
+		hwind 127;
+		hdel 0;
+		hfreq 80;
+		htor 123;
+		ttoh 110;
+		tto2 127 3000;
+		tto4 64;
+		hto4 64;
+		killR bang;
+		200ms trec2 bang;
+		250ms stopmetro2 0;
+		50ms godel2 1577 1294 1512;
+	CHORD (G3 C4 G#4 D5 B5 E6) 1/8
+
+_event_ 21
+		trec bang;
+		sampler2_ VE21;	
+		rto4 0 10000;
+		450ms stopmetro1 0;
+		tto4 108 5000;
+		hto2 110 5000;
+		ttoh 126 5000;
+		htor 80 10000;
+		50ms godel 1577 1294 1512;
+		tto2 127;
+
+	CHORD (G3 C4 G#4 D5 B5 E6) 1/4
+	CHORD (G3 C4 G#4 D5 B5 E6) 1/8
+	CHORD (-G3 -C4 -G#4 -D5 -B5 -E6) 3/8
+	CHORD (G3 C4 G#4 D5 B5 E6) 1/8
+	CHORD (-G3 -C4 -G#4 -D5 -B5 -E6) 1/2
+	CHORD (G3 C4 G#4 D5 B5 E6) 3/2
+
+	; ----------- measure 135
+	NOTE 0 2
+
+	; ----------- measure 136
+	NOTE 0 3/8 measure136
+	NOTE G#3 1/8
+	NOTE A3 3/8
+	NOTE D#4 1/8
+	NOTE -D#4 1/4
+	NOTE F#4 1/4
+	NOTE G4 1/8
+	NOTE G#4 1/8
+	NOTE A4 1/4
+	NOTE -A4 3/8
+	NOTE Bb4 1/8
+	NOTE C5 1/4
+	NOTE C#5 1/4
+	NOTE -C#5 1/4
+	NOTE G5 3/4 @fermata
+
+	; ----------- measure 137
+	NOTE 0 1/4 measure137
+	NOTE D6 3/4
+	CHORD (Ab2 E3 G3 D#4 F#4 A4) 1 @fermata
+
+_event_ 22
+		trec2 bang;
+		sampler2_ VE22
+		spatinc 74 7000;
+		revfb 116;
+		ttor 100;
+		rto4 100 2000;
+		hto4 80 20000;
+		tto4 108;
+		ttoh 126;
+		htor 80;
+		sec43-evt15 0;
+		450ms stopmetro2 0;
+		50ms godel2 377 194 212;
+
+	CHORD (G3 Bb3 Db4 A4 C5 G#5) 1 @fermata
+
+_event_ 23
+		spatinc 74;
+		rto4 100;
+		hto4 80;
+		50ms trec bang;
+		sampler2_ VE23;
+		ttor 117 3000;
+		tto4 117 3000;
+
+	; ----------- measure 138
+	NOTE 0 3/8 measure138
+	NOTE G3 1/8
+	NOTE G#3 3/8
+	NOTE Bb3 1/8
+	NOTE -Bb3 1/4
+	NOTE C4 1/8
+	NOTE B3 1/8
+	NOTE -B3 3/8
+	NOTE D4 1/8
+	NOTE -D4 1/2
+	NOTE F4 1/4
+	NOTE E4 1/8
+	NOTE F4 1/8
+	NOTE -F4 3/8
+	NOTE C5 1/8
+	NOTE -C5 1/2
+
+	; ----------- measure 139
+	NOTE C5 1/4 measure139
+	NOTE C#5 3/4
+	NOTE -C#5 3/2
+	NOTE Ab6 1/8
+	NOTE G6 1/8
+	NOTE F#6 1
+	NOTE 0 1/4
+
+	; ----------- measure 140
+	NOTE F#6 1/2 measure140
+	NOTE F#6 3/2
+
+	; ----------- measure 141
+	NOTE 0 1 measure141
+	CHORD (C#4 G4 C5 E5 B5 D6) 6/7
+
+_event_ 24
+		trec2 bang;
+		sampler2_ VE24;
+		tto4 127;
+		ttor 127;
+		rto4 0;
+		stopmetro2 0;
+		hto4 106;
+		hto2 0;
+		ttoh 126;
+		hdel 0;
+		hwind 96;
+		hfreq 124;
+		zdist 0;
+		htor 80;
+		spatinc 65 5000;
+		450ms stopmetro2 0;
+		stopmetro1 0;
+		50ms godel2 1377 1294 1512;
+
+	CHORD (C#4 G4 C5 E5 B5 D6) 1/7
+	CHORD (-C#4 -G4 -C5 -E5 -B5 -D6) 1 @fermata
+
+	; ----------- measure 142
+	NOTE 0 2/7 measure142
+	NOTE Bb3 2/7
+
+_event_ 25
+		50ms trec bang;
+		450ms stopmetro1 0;
+		50ms godel 1377 1294 1512;
+		5000ms ttof 120;
+		fneg 0;
+		fpos 119;
+		fsfre 92;
+		fto4 127;
+		killh bang;
+		tto4 90 5000;
+
+	NOTE G4 2/7
+	NOTE C5 1/7
+	NOTE -C5 1/7
+	NOTE B5 2/7
+	NOTE Ab5 2/7
+	NOTE F6 2/7
+	CHORD (Bb3 G4 C5 Ab5 B5 F6) 1 @fermata
+
+	; ----------- measure 143
+	NOTE 0 1/7 measure143
+	NOTE Bb4 1/7
+
+_event_ 26
+		mix1 1;
+		ttor 107;
+		htoh 109;
+		ptoh 114;
+		hwind 96;
+		hfreq 127;
+		hto4 127;
+		ttof 120;
+		fneg 0;
+		fpos 119;
+		fsfre 92;
+		fto4 127;
+		tto4 90;
+		spatinc 65;
+		ttoh 0;
+
+	NOTE Db5 1/7
+	NOTE C5 1/7
+	NOTE A4 1/7
+	NOTE Ab4 1/7
+	NOTE G4 1/7
+	NOTE D#4 1/7
+	NOTE E4 1/7
+	NOTE G4 1/7
+	NOTE F#4 1/7
+	NOTE G#4 1/7
+	NOTE A4 1/7
+	NOTE 0 8/7
+
+	; ----------- measure 144
+	NOTE G1 2/3 measure144
+
+_event_ 27
+	NOTE G#1 1/3
+	NOTE D1 3/2
+
+_event_ 28
+		ptoR 127;
+		Rto4 120;
+		rcapt bang;
+		500ms hwind 93;
+	NOTE 0 1/2
+
+	; ----------- measure 145
+	NOTE Bb5 1/12 measure145
+
+_event_ 29
+		norcapt bang;
+		htoh 109;
+		ptoh 114;
+		hwind 93;
+		hfreq 127;
+		hto4 127;
+		hto2 127;
+		diramp 127;
+		hamp 127;
+
+	NOTE F#6 1/12
+	NOTE C#5 1/12
+	NOTE D#6 1/12
+	NOTE A6 1/12
+	NOTE G5 1/12
+	NOTE E5 1/12
+	NOTE C6 1/12
+	NOTE G#5 1/12
+	NOTE G#5 1/12
+	NOTE A5 1/12
+	NOTE B6 1/12
+	NOTE 0 1
+
+	; ----------- measure 146
+	NOTE C2 1/3 measure146
+
+_event_ 30
+		ptoh 0;
+	NOTE C#2 1/3
+	NOTE E2 1/3
+
+_event_ 31
+		Revfb 0;
+		50ms rcapt bang;
+		500ms hwind 93;
+	NOTE -E2 1/2
+	NOTE 0 1/2
+
+	; ----------- measure 147
+	NOTE Bb6 1/10 measure147
+
+_event_ 32
+		norcapt bang;
+		htoh 109;
+		ptoh 114;
+		hwind 93;
+		hfreq 127;
+		hto4 127;
+		hto2 127;
+
+	NOTE A5 1/10
+	NOTE D#6 1/10
+	NOTE C#5 1/10
+	NOTE G#5 1/10
+	NOTE A5 1/10
+	NOTE D6 1/10
+	NOTE C5 1/10
+	NOTE G5 1/10
+	NOTE G#5 1/10
+	NOTE D#6 1/10
+	NOTE G#5 1/10
+	NOTE Bb6 1/10
+	NOTE G5 1/10
+	NOTE 0 3/5
+
+	; ----------- measure 148
+	NOTE 0 3/5 measure148
+	NOTE Eb2 2/5
+
+_event_ 33
+		Revfb 0;
+		50ms rcapt bang;
+		ptoh 0;
+	NOTE -Eb2 1
+
+	; ----------- measure 149
+	CHORD (G4 C#5 D5 F#5 Bb5 D#6 E6 A6) 6/5 measure149
+
+_event_ 34
+		trec2 bang;
+		sampler2_ sampleVE34;
+		450ms stopmetro2 0;
+		50ms godel2 1377 1294 1512;
+	CHORD (G4 C#5 D5 F#5 Bb5 D#6 E6 A6) 4/5
+	CHORD (-G4 -C#5 -D5 -F#5 -Bb5 -D#6 -E6 -A6) 1
+
+	; ----------- measure 150
+	NOTE 0 1/5 measure150
+	NOTE Ab3 1/5
+
+_event_ 35
+		trec bang;
+		sampler2_ sampleVE35;
+		450ms stopmetro1 0;
+		50ms godel 1377 1294 1512;
+	NOTE E4 1/5
+	NOTE C4 1/5
+	NOTE D5 1/5
+	NOTE G5 1/5
+	NOTE Eb5 1/5
+	NOTE D6 1/5
+	NOTE C#6 1/5
+	NOTE 0 1/5
+
+	; ----------- measure 151
+	NOTE 0 2 measure151
+	NOTE A2 1/10
+
+_event_ 36
+		Revfb 0;
+		50ms rcapt bang;
+		ptoh 0;
+		500ms hwind 93;
+	NOTE Bb2 2/5
+	NOTE 0 1/2
+
+	; ----------- measure 152
+	NOTE 0 1/10 measure152
+	NOTE C#6 1/10
+
+_event_ 37
+		htoh 109;
+		ptoh 114;
+		hwind 93;
+		hfreq 127;
+		hto4 127;
+		hto2 127;
+
+	NOTE G5 1/10
+	NOTE F#5 1/10
+	NOTE D6 1/10
+	NOTE B5 1/10
+	NOTE A5 1/10
+	NOTE F6 1/10
+	NOTE Eb6 1/10
+	NOTE Ab6 1/10
+	NOTE C5 1/10
+	NOTE C#6 1/10
+	NOTE G5 1/10
+	NOTE E5 1/10
+	NOTE B5 1/10
+	NOTE D6 1/10
+	NOTE F#5 1/10
+	NOTE A5 1/10
+	NOTE B5 1/10
+	NOTE 0 1/10
+
+	; ----------- measure 153
+	NOTE 0 1 measure153
+	NOTE B2 1/2
+
+_event_ 38
+		Revfb 0;
+		rcapt bang;
+		ptoh 0;
+		200ms hwind 93;
+
+	NOTE 0 1/2
+
+	; ----------- measure 154
+	NOTE 0 1/10 measure154
+	NOTE D5 1/10
+
+_event_ 39
+		htoh 109;
+		ptoh 114;
+		hwind 93;
+		hfreq 127;
+		hto4 127;
+		hto2 127;
+	NOTE Db6 1/10
+	NOTE Bb5 1/10
+	NOTE C6 1/10
+	NOTE A5 1/10
+	NOTE F6 1/10
+	NOTE Ab5 1/10
+	NOTE F#5 1/10
+	NOTE D#6 1/10
+	NOTE Ab5 1/10
+	NOTE A5 1/10
+	NOTE C6 1/10
+	NOTE Bb5 1/10
+	NOTE Db6 1/10
+	NOTE F5 1/10
+	NOTE D5 1/10
+	NOTE E6 1/10
+	NOTE G6 1/10
+	NOTE 0 1/10
+
+	; ----------- measure 155
+	NOTE 0 1 measure155
+	NOTE G2 2/5
+
+_event_ 40
+		ptoh 0;
+		Revfb 110;
+	NOTE G#2 2/5
+	NOTE E2 6/5
+
+_event_ 41
+		rcapt bang;
+
+	NOTE -E2 1 @fermata
+
+	; ----------- measure 156
+	NOTE 0 6/7 measure156
+	NOTE B5 2/7
+
+_event_ 42
+		trec2 bang;
+		sampler2_ sampleVE42;
+		450ms stopmetro2 0;
+		50ms godel2 1377 1294 1512;
+	NOTE F6 2/7
+	NOTE C5 2/7
+	NOTE F#5 2/7
+	NOTE C#6 2/7
+	NOTE F6 2/7
+	NOTE Bb6 2/7
+	NOTE C5 2/7
+	NOTE 0 6/7
+
+	; ----------- measure 157
+	NOTE 0 6/7 measure157
+	NOTE A5 2/7
+
+_event_ 43
+		trec bang;
+		sampler2_ VE43;
+		450ms stopmetro1 0;
+		50ms godel 1377 1294 1512;
+	NOTE D#5 2/7
+	NOTE G#5 2/7
+	NOTE D6 2/7
+	NOTE G6 2/7
+	NOTE Eb6 2/7
+	NOTE Bb4 2/7
+	NOTE Ab5 2/7
+	NOTE 0 6/7
+
+	; ----------- measure 158
+	NOTE 0 2 measure158
+	NOTE F1 2
+
+_event_ 44
+		Revfb 0;
+		50ms rcapt bang;
+
+	; ----------- measure 159
+	CHORD (C#5 F5 F#5 G#5 C6 D6 G6) 12/7 measure159
+	CHORD (Bb3 E4 A4 Eb5 Ab5 D6) 16/7
+
+	; ----------- measure 160
+	NOTE 0 4
+	; ----------- measure 161
+
+_section_ VF
+	NOTE F#2 1/3 VF
+	CHORD (D1 F1 -F#2) 1/6
+	CHORD (C2 E2 -F#2) 1/3
+	CHORD (-C2 -E2 G3 Bb3) 1/6
+	CHORD (-C2 -E2 -G3 -Bb3) 1/6
+	CHORD (C2 E2 -G3 -Bb3) 1/3
+	CHORD (-C2 -E2 G3 Bb3) 1/3
+	CHORD (C2 E2 -G3 -Bb3) 1/6
+	CHORD (-C2 -E2 -G3 -Bb3) 1/3
+	CHORD (-C2 -E2 Ab2 C3) 1/6
+	CHORD (G1 C#2 -Ab2 -C3) 1/3
+	CHORD (-G1 -C#2 Ab2 C3) 1/6
+	CHORD (-G1 -C#2 -Ab2 -C3) 1/6
+	CHORD (-G1 -C#2 Ab2 C3) 1/6
+	CHORD (-G1 -C#2 Ab2 C3) 1/3
+	CHORD (G1 C#2 -Ab2 -C3) 1/3
+
+	; ----------- measure 162
+	CHORD (B1 C#2 F2 Bb2 D3) 1/6 measure162
+	CHORD (-B1 -C#2 -F2 Bb2 D3) 1/6
+	CHORD (-B1 -C#2 -F2 Bb2 D3) 1/6
+	CHORD (-B1 -C#2 -F2 -Bb2 -D3) 1/3
+	CHORD (B1 C#2 F2 -Bb2 -D3) 1/6
+	CHORD (-B1 -C#2 -F2 -Bb2 -D3) 1/3
+	CHORD (-B1 -C#2 -F2 Bb2 D3) 1/3
+	CHORD (B1 C#2 F2 -Bb2 -D3) 1/3
+	CHORD (-B1 -C#2 -F2 -Bb2 -D3) 1/3
+	CHORD (B1 C#2 F2 -Bb2 -D3) 2/3
+	CHORD (-B1 -C#2 -F2 -Bb2 -D3) 1
+
+	; ----------- measure 163
+	CHORD (C2 -Bb2 -D3) 1/10 @staccato measure163
+	CHORD (C2 -Bb2 -D3) 1/10 @staccato
+	CHORD (C2 -Bb2 -D3) 1/10 @staccato
+	CHORD (C2 -Bb2 -D3) 1/10 @staccato
+	CHORD (C2 -Bb2 -D3) 1/10 @staccato
+	CHORD (C2 -Bb2 -D3) 1/10 @staccato
+	CHORD (C2 -Bb2 -D3) 1/10 @staccato
+	CHORD (C2 -Bb2 -D3) 3/10
+	CHORD (-C2 -Bb2 -D3) 1
+
+	; ----------- measure 164
+	CHORD (D2 Bb2 Db3 G#3 C4) 3/10 measure164
+	CHORD (Ab3 C4) 1/10
+	CHORD (-Ab3 A3 -C4) 1/10
+	CHORD (-Ab3 -A3 -C4) 1/5
+	CHORD (D2 Bb2 Db3 -Ab3 -C4) 3/10
+	CHORD (-D2 -Bb2 -Db3 Ab3 C4) 1/5
+	CHORD (-Ab3 A3 -C4) 3/10
+	CHORD (-Ab3 -A3 -C4) 1/10
+	CHORD (D2 Bb2 Db3 -Ab3 -C4) 2/5
+	CHORD (Bb2 Db3 F3 A3 -C4) 1/5
+	CHORD (-Bb2 -Db3 -F3 -A3 C4) 3/5
+	CHORD (F#2 G#2 -C4) 1/10
+	CHORD (F#2 G#2 -C4) 1/10
+	CHORD (-F#2 -G#2 -C4) 1/5
+	CHORD (D2 E2 -F#2 G2 -G#2) 3/10
+	CHORD (-D2 -E2 F#2 -G2 G#2) 1/5
+	CHORD (D2 E2 -F#2 G2 -G#2) 3/10
+	CHORD (-D2 -E2 -F#2 -G2 -G#2) 3/5
+	CHORD (D2 E2 F#2 G2 G#2) 2/5
+
+	; ----------- measure 165
+	CHORD (-D2 -E2 -F#2 -G2 -G#2) 1/10 measure165
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (A1 -D2 -E2 -F#2 -G2 -G#2) 1/10
+	CHORD (-A1 -D2 -E2 -F#2 -G2 -G#2) 4/5
+
+	; ----------- measure 166
+	CHORD (D#3 E3 A3 Bb3) 1/5 measure166
+	CHORD (C2 -D#3 -E3 -A3 -Bb3) 1/10
+	CHORD (F#2 -D#3 -E3 -A3 -Bb3) 1/10
+	CHORD (C2 -D#3 -E3 -A3 -Bb3) 1/10
+	CHORD (-C2 D#3 E3 A3 Bb3) 3/10
+	CHORD (-C2 D#3 E3 A3 Bb3) 1/10
+	CHORD (-C2 D#3 E3 A3 Bb3) 1/10
+	CHORD (C#2 F#2 G2 -D#3 -E3 -A3 -Bb3) 2/5
+	CHORD (-C#2 -F#2 -G2 D#3 E3 A3 Bb3) 1/10
+	CHORD (-C#2 -F#2 -G2 -D#3 -E3 -A3 -Bb3) 1/5
+	CHORD (C#2 F#2 G2 -D#3 -E3 -A3 -Bb3) 1/10
+	CHORD (C#2 F#2 G2 -D#3 -E3 -A3 -Bb3) 1/10
+	CHORD (C#2 F#2 G2 -D#3 -E3 -A3 -Bb3) 1/10
+
+	; ----------- measure 167
+	CHORD (-C#2 -F#2 -G2 -D#3 -E3 -A3 -Bb3) 1/10 measure167
+	CHORD (-C#2 -F#2 -G2 D#3 E3 A3 Bb3) 2/5
+	CHORD (-C#2 -F#2 -G2 -D#3 -E3 -A3 -Bb3) 1/10
+	CHORD (C#2 F#2 G2 -D#3 -E3 -A3 -Bb3) 3/10
+	CHORD (-C#2 -F#2 -G2 D#3 E3 A3 Bb3) 1/10
+	CHORD (-C#2 -F#2 -G2 -D#3 -E3 -A3 -Bb3) 2/5
+	CHORD (-C#2 -F#2 -G2 E3 F#3 B3 D#4) 2/5
+	CHORD (D2 G2 Ab2 -E3 -F#3 -B3 -D#4) 1/5
+
+	; ----------- measure 168
+	CHORD (-D2 -G2 -Ab2 -E3 -F#3 -B3 -D#4) 1/2 measure168
+	CHORD (-E3 -F#3 -B3 -D#4) 1/10
+	CHORD (D2 G2 Ab2 -E3 -F#3 -B3 -D#4) 1/10
+	CHORD (-E3 -F#3 -B3 -D#4) 1/10
+	CHORD (D2 G2 Ab2 -E3 -F#3 -B3 -D#4) 1/10
+	CHORD (-D2 -E3 -F#3 -B3 -D#4) 1/10
+	CHORD (-D2 G2 Ab2 E3 F#3 B3 D#4) 1/20
+	CHORD (-D2 -G2 -Ab2 -E3 -F#3 -B3 -D#4) 6/17
+	CHORD (D2 G2 Ab2 -E3 -F#3 -B3 -D#4) 3/5
+	CHORD (-D2 -G2 -Ab2 E3 F#3 B3 D#4) 1/5
+	CHORD (D2 G2 Ab2 -E3 -F#3 -B3 -D#4) 3/5
+	CHORD (-D2 -G2 -Ab2 E3 F#3 B3 D#4) 1/5
+	CHORD (-D2 -G2 -Ab2 -E3 -F#3 -B3 -D#4) 1/2
+	NOTE 0 1/2
+
+	; ----------- measure 169
+	NOTE F#1 2 @fermata measure169
+
+_event_ 1
+		Rto4 0 10000;
+		ptoh 127;
+		diramp 127;
+		hamp 127;
+		hwind 71;
+		hfreq 80;
+		hto4 127;
+		hto2 0;
+		mix1 0;
+		tto4 0;
+		fto4 0;
+		stopmetro1 0;
+		stopmetro2 0;
+		spaton 1;
+		spatinc 66;
+		nosteal 0;
+	NOTE 0 2
+
+	; ----------- measure 170
+
+	CHORD (D4 F4) 1/5 measure170
+
+_event_ 2
+		ramp 127;
+		rmax 127;
+		rspeed 3;
+		tto4 139;
+		ftor 116;
+		ttor 116;
+		revfb 107;
+		rgate 127;
+		rout 127;
+		rto4 127;
+		spatinc 68;
+		Rto4 0;
+		Revfb 0;
+	CHORD (C2 E2 -D4 -F4) 1/10
+	CHORD (G2 C#3 Bb3 -D4 -F4) 1/5
+	CHORD (C2 E2 -G2 -C#3 B3 -D4 -F4) 1/5
+	CHORD (-C2 -E2 -G2 -C#3 B3 C4 F4) 3/10
+	NOTE C#5 0
+	TRILL ((C2 E2 G2 C#3 D5) (C2 E2 G2 C#3)) 1/5
+	TRILL ((G2 Bb2 Ab3 D5) (G2 Bb2 Ab3)) 1/5
+	TRILL ((G2 Bb2 Ab3 F4 D5) (G2 Bb2 Ab3 F4)) 1/10
+	NOTE A#5 0
+	TRILL ((G2 Bb2 Ab3 F4 B5) (G2 Bb2 Ab3 F4)) 1/2 @fermata
+
+	; ----------- measure 171
+
+	CHORD (Eb1 G1) 3 measure171
+_event_ 3
+	; ******* 0 3 ------------------------ 40; ********
+		revfb 118;
+		frog1-sampno 69;
+		fto2 127;
+		tto2 127;
+		ttof 107;
+		htof 107;
+		fto2 127;
+		fpos 127;
+		fneg 127;
+		fsfre-random 1;
+		ptoh 117;
+		fto2 0;
+		fto4 127;
+		hfreq 65;
+		hwind 107;
+		hto2 127;
+		hto4 0;
+		spat-radius 64;
+		rwind 53;
+		rspeed 1;
+		tplay 1;
+		3500ms tplay 9;
+		9000ms tplay 27;
+		5000ms tplay 44;
+		4000ms tplay 54;
+		3000ms tplay 69;
+		3000ms tplay 84;
+		4000ms rspeed 6;
+; ***************
+	NOTE 0 1
+
+	; ----------- measure 172
+
+	CHORD (D1 G1 Ab1 C2 E2 B2) 6/5 measure172
+	CHORD (F2 Db3 Eb3) 4/5
+	CHORD (-F2 -Db3 -Eb3) 1/5
+	CHORD (E1 D2 G2 A2 -Db3 -Eb3) 2/5
+	CHORD (-E1 -D2 -G2 -A2 Gb3 Bb3) 2/5
+	CHORD (-E1 -D2 -G2 -A2 -Gb3 -Bb3) 1
+
+	; ----------- measure 173
+
+	CHORD (-E1 -D2 -G2 -A2 -Gb3 -Bb3) 3/5 measure173
+	CHORD (-E1 -D2 G2 A2 D3 Eb3 Ab3) 1/5
+	CHORD (Bb1 Db2 Eb2 -G2 -A2 -D3 -Eb3 -Ab3) 1/5
+	CHORD (-Bb1 -Db2 -Eb2 -G2 -A2 -D3 -Eb3 -Ab3) 1
+	CHORD (-Bb1 -Db2 -Eb2 -G2 -A2 -D3 -Eb3 -Ab3) 8/5
+	CHORD (-Bb1 -Db2 -Eb2 B3 C4 F4) 2/5
+
+	; ----------- measure 174
+
+	CHORD (G2 Bb2 C#3 F#3 -B3 -C4 -F4) 1 measure174
+	CHORD (-G2 -Bb2 -C#3 -F#3 -B3 -C4 -F4) 1/5
+	CHORD (G2 Bb2 C#3 F#3 -B3 -C4 -F4) 3/5
+	CHORD (-G2 -Bb2 -C#3 -F#3 B3 C4 F4) 1/5
+	CHORD (-G2 -Bb2 -C#3 -F#3 -B3 -C4 -F4) 2/5
+	CHORD (G2 Bb2 C#3 F#3 -B3 -C4 -F4) 1/5
+	CHORD (-G2 -Bb2 -C#3 -F#3 B3 C4 F4) 2/5
+	CHORD (-G2 -Bb2 -C#3 -F#3 -B3 -C4 -F4) 3/5
+	CHORD (G2 Bb2 C#3 F#3 B3 C4 F4) 2/5
+
+	; ----------- measure 175
+
+	CHORD (-G2 -Bb2 -C#3 -F#3 -B3 -C4 -F4) 1 measure175
+	CHORD (-G2 -Bb2 -C#3 -F#3 Bb4 C#5 D5) 1/5
+	CHORD (E3 G3 Eb4 -Bb4 -C#5 -D5) 4/5
+	CHORD (-E3 -G3 -Eb4 -Bb4 -C#5 -D5) 3/5
+	CHORD (F#2 A2 Bb2 -Bb4 -C#5 -D5) 2/5
+	CHORD (-F#2 -A2 -Bb2 -Bb4 -C#5 -D5) 3/5
+	CHORD (F#2 C#3 G3 F4 Ab4) 2/5
+
+	; ----------- measure 176
+
+	CHORD (-F#2 -C#3 -G3 -F4 -Ab4) 4/5 measure176
+	CHORD (B3 E4 Bb4 C#5 D5) 6/5
+	CHORD (A2 E3 G#3 C4 G4 Bb4 Db5) 1
+	CHORD (-A2 -E3 -G#3 -C4 -G4 -Bb4 -Db5) 2/3
+	CHORD (G#3 A3 C4 F#4 D#5 E5 G5) 1/3
+
+	; ----------- measure 177
+
+	CHORD (-G#3 -A3 -C4 -F#4 -D#5 -E5 -G5) 1/3 measure177
+	CHORD (C3 -G#3 -A3 -C4 -F#4 -D#5 -E5 -G5) 1/12
+	CHORD (G#2 -G#3 -A3 -C4 -F#4 -D#5 -E5 -G5) 1/12
+	CHORD (A2 -G#3 -A3 -C4) 1/12
+	CHORD (D#2 -G#3 -A3 -C4) 1/12
+	CHORD (-D#2 -G#3 -A3 -C4) 1/3
+	NOTE -D#2 2/3
+	NOTE -D#2 2/3
+	CHORD (Ab3 D4 Eb4 G4 C5 Db5 F5 B5) 2/3
+	CHORD (-Ab3 -D4 -Eb4 -G4 -C5 -Db5 -F5 -B5) 1
+
+	; ----------- measure 178
+
+	CHORD (-Ab3 -D4 -Eb4 -G4 -C5 -Db5 -F5 -B5) 2/3 measure178
+	CHORD (F#3 D4 F4 G4 E5 A5 Bb5) 4/3
+	CHORD (-F#3 -D4 -F4 -G4 -E5 -A5 -Bb5) 1/3
+	CHORD (D4 G4 C#5 D#5) 2/3
+	CHORD (-D4 -G4 -C#5 -D#5) 1
+
+	; ----------- measure 179
+
+	NOTE 0 4
+
+	; ----------- measure 180
+
+	CHORD (D#1 F#2) 1/6 measure180
+	CHORD (-D#1 -F#2 G3 E4) 1/12
+	CHORD (-D#1 -F#2 G3 E4) 1/12
+	CHORD (-D#1 -F#2 -G3 -E4) 1/3
+	CHORD (-D#1 -F#2 Ab2 C3 A3 Bb3) 1/3
+	CHORD (-Ab2 -C3 Bb3 Db5) 1/12
+	CHORD (-Ab2 -C3 A3 -Bb3 -Db5) 1/12
+	CHORD (C3 A3 -Bb3 -Db5) 1/12
+	CHORD (C3 A3 -Bb3 -Db5) 1/12
+	CHORD (-C3 -A3 -Bb3 -Db5) 1/3
+	CHORD (Ab2 G3) 1/3
+	CHORD (F#2 G#2 G3) 1/12
+	CHORD (F#2 G#2 -G3) 1/12
+	CHORD (-F#2 -G#2 G3 E4) 1/6
+	CHORD (-F#2 -G#2 -G3 -E4) 1/4
+	CHORD (D#1 F#2 -G3 -E4) 1/12
+	CHORD (-D#1 -F#2 -G3 -E4) 1/12
+	CHORD (-D#1 -F#2 Bb3 Db5) 1/4
+	CHORD (C3 A3 -Bb3 -Db5) 1/4
+	CHORD (-C3 G3 -A3 E4) 1/12
+	CHORD (C3 -G3 A3 -E4) 1/4 @fermata
+	CHORD (D#1 F#2 -G3 -E4) 1/12 @fermata
+	CHORD (-D#1 -F#2 -G3 -E4) 1/3 @fermata
+
+	; ----------- measure 181
+
+	CHORD (C#3 F#3 C4 F4) 1/5 measure181
+_event_ 4
+	; ******* 0 4 ------------------------ 60; ********
+		trec bang;
+		ramp 127;
+		rmax 127;
+		rspeed 6;
+		tto4 127;
+		ftor 116;
+		ttor 116;
+		rout 127;
+		rto4 127;
+		ttof 116;
+		fpos 127;
+		fneg 127;
+		fsfre 60;
+		fto4 127;
+		spatinc 68;
+		spaton bang;
+		ptoh 117;
+; ***************
+	CHORD (D2 G2 -F#3 -C4 -F4) 1/10
+	CHORD (G#1 -F#3 -C4 -F4) 1/13
+	CHORD (-G#1 D#6 E6) 1/8
+	TRILL ((G#1 D2 G2 D#6 E6) (G#1 D2 G2 E6)) 1/2
+	CHORD (B3 F4 Bb4 G#5 A5) 1/8
+	TRILL ((B3 F4 Bb4 G#5 A5) (B3 F4 Bb4)) 3/11
+	TRILL ((G#5 A5 C6 D6) (C6 D6)) 3/5
+	NOTE 0 1
+
+	; ----------- measure 182
+
+	CHORD (Bb3 D4 C#5) 2/5 measure182
+	CHORD (A1 G#2 C3 -Bb3 -D4 -C#5) 1/10
+	CHORD (-A1 -G#2 -C3 -Bb3 -D4 -C#5) 3/10
+	CHORD (-A1 -G#2 -C3 Eb4 Gb4 E5 G5) 1/5
+	CHORD (-A1 -G#2 -C3 -Eb4 -Gb4 -E5 -G5) 1/2
+	CHORD (D2 F#2 Eb3 G3 Gb4 A4) 2/5
+	CHORD (Bb3 Db4 A4 C5) 1/10
+	CHORD (-Bb3 -Db4 -A4 -C5) 1
+
+	; ----------- measure 183
+
+	TRILL ((C#2 D2) (C#2)) 0 measure183
+_event_ 5
+	; ******* 0 5 ------------------------ 70; ********
+		frog1-sampno 70;
+		tplay 0;
+		rspeed 2;
+		tplay 1;
+		4500ms tplay 26;
+		7000ms tplay 78;
+		7500ms tplay 111;
+		2000ms rspeed 0;
+		4000ms rspeed 2;
+; ***************
+	TRILL ((B1 D2 D2) (B1 D2)) 1/4
+	TRILL ((D2 D2) (D2)) 1/4
+	TRILL ((D2 D2) (D2)) 1/2
+	TRILL ((D2 D2) (D2)) 1/5
+	CHORD (-D2 G2 F#3 F4 A4) 1/5
+	CHORD (-D2 -F#3 -F4 -A4) 3/5
+	TRILL ((D2 F#3 F4 A4) (F#3 F4 A4)) 4/5
+	CHORD (D#3 -F#3 -F4 -A4) 0
+	TRILL ((G1 C2 E3 F#3 F4 A4) (G1 C2 F#3 F4 A4)) 1/5
+	TRILL ((E3 F#3 F4 A4) (F#3 F4 A4)) 3/5
+	TRILL ((F1 Ab1 C#3 E3) (F1 Ab1 C#3)) 1/5
+	TRILL ((F1 Ab1 E3) (F1 Ab1)) 1/5
+
+	; ----------- measure 184
+
+	CHORD (-F1 -Ab1 -E3) 2 measure184
+	NOTE Bb3 0
+	TRILL ((F1 Ab1 C#3 F#3 B3) (F1 Ab1 C#3 F#3)) 1/5
+	NOTE B3 1/5
+	TRILL ((D2 G2 B3) (D2 G2)) 8/5
+
+	; ----------- measure 185
+
+	CHORD (-D2 -G2 -B3) 4/5 measure185
+	TRILL ((D2 G2 B3 Bb4 C5 A5) (D2 G2 B3 Bb4 C5)) 1/5
+	TRILL ((D2 G2 A5) (D2 G2)) 1/5
+	TRILL ((B2 D3 C#4 Bb4 A5) (B2 D3 C#4 Bb4)) 1/5
+	TRILL ((D3 C#4 Bb4 A5) (D3 C#4 Bb4)) 3/5
+	TRILL ((D3 C#4 Bb4 A5) (D3 C#4 Bb4)) 2
+	NOTE G#5 0
+
+	; ----------- measure 186
+
+	CHORD (C4 F4 -A5) 2 measure186
+	CHORD (C4 -F4 -A5) 4/5
+	CHORD (F#4 B4 -A5) 2/5
+	CHORD (-F#4 -B4 E6) 0
+	TRILL ((F#4 B4 C#6 D6 F6) (F#4 B4 C#6 D6)) 1/4
+	TRILL ((F#4 B4 F6) (F#4 B4)) 3/20
+	TRILL ((Eb2 F#4 B4 F6) (Eb2 F#4 B4)) 2/5
+	NOTE 0 1/5
+
+	; ----------- measure 187
+
+	CHORD (-Eb2 F4 -B4 -F6) 2 measure187
+	NOTE -F6 2/5
+	TRILL ((G#5 C7) (G#5)) 0
+	TRILL ((A5 C7) (A5)) 1/5
+	NOTE -A5 7/5
+
+	; ----------- measure 188
+
+	NOTE -A5 2 measure188
+	NOTE 0 2
+
+	; ----------- measure 189
+
+	NOTE 0 2 measure189
+	CHORD (C#2 F#2 D5 C6) 2 ; harmonics
+
+	; ----------- measure 190
+
+	NOTE 0 6/11 measure190
+	CHORD (C4 F4) 6/11
+_event_ 6
+	; ******* 0 6 ------------------------ 80; ********
+		fsfre-random 0;
+		ptof 117;
+		fneg 127;
+		fpos 127;
+		20ms fsfre 1;
+		fto4 127;
+		spaton bang;
+		spatinc 66;
+		ftor 0;
+		rspeed 127;
+		hto2 0;
+		hto4 127;
+		ptoh 120;
+; ***************
+	CHORD (C#2 F#2) 6/11
+	CHORD (C4 F4) 4/11
+	CHORD (C4 F4) 6/11
+	NOTE 0 10/11
+	NOTE Bb2 2/11
+_event_ 7
+	; ******* 0 7 ------------------------ 100; ********
+		fto4 0;
+; ***************
+	NOTE E3 2/11
+	NOTE A3 2/11
+
+	; ----------- measure 191
+
+	NOTE Eb4 2/11 measure191
+	NOTE Ab4 2/11
+	NOTE D5 2/11
+	NOTE B4 2/11
+	NOTE Db4 2/11
+	NOTE C6 2/11
+	NOTE 0 6/11
+	CHORD (D3 G3) 4/11
+	NOTE 0 6/11
+	CHORD (C#2 F#2) 6/11
+	NOTE 0 6/11
+	CHORD (C4 F4) 4/11
+
+	; ----------- measure 192
+
+	CHORD (D3 G3) 6/11 measure192
+	NOTE G#4 2/11
+_event_ 9
+	; ******* 0 9 ------------------------ 130; ********
+		fto4 0;
+; ***************
+	NOTE B4 2/11
+	NOTE Bb4 2/11
+	NOTE A5 2/11
+_event_ 10
+	; ******* 0 10 ------------------------ 210; ********
+		spatinc 65;
+		fto4 64, 127 1000;
+; ***************
+	NOTE 0 8/11
+	CHORD (C4 F4) 6/11
+	NOTE 0 6/11
+	NOTE D4 2/11
+_event_ 11
+	; ******* 0 11 ------------------------ 230; ********
+		fto4 0;
+; ***************
+	NOTE F3 2/11
+	NOTE E5 2/11
+	NOTE C5 2/11
+	NOTE C#5 2/11
+
+	; ----------- measure 193
+
+	NOTE G4 2/11 measure193
+	NOTE B4 2/11
+	NOTE Bb4 2/11
+	NOTE A5 2/11
+_event_ 12
+	; ******* 0 12 ------------------------ 240; ********
+		spatinc 72;
+		fto4 64, 127 1000;
+; ***************
+	NOTE 0 10/11
+	NOTE 0 4/11
+	CHORD (C#2 F#2) 6/11
+	NOTE 0 4/11
+	CHORD (D3 G3) 4/11
+	CHORD (C4 F4) 6/11
+	NOTE 0 2/11
+
+	; ----------- measure 194
+
+	NOTE 0 6/11 measure194
+	NOTE F#4 2/11
+_event_ 13
+	; ******* 0 13 ------------------------ 250; ********
+		fto4 0;
+; ***************
+	NOTE Bb3 1/6
+	NOTE -Bb3 0.013672
+	NOTE Ab3 2/11
+	NOTE G2 2/11
+	NOTE B3 1/7
+	NOTE -B3 1/27
+	NOTE C5 2/11
+	NOTE F5 2/11
+	NOTE D#6 2/11
+	NOTE C#6 2/11
+	NOTE D#7 2/11
+_event_ 14
+	; ******* 0 14 ------------------------ 260; ********
+		spatinc 67;
+		fto4 64, 127 1000;
+; ***************
+	NOTE 0 8/11
+	NOTE 0 10/11
+
+	; ----------- measure 195
+
+	CHORD (C#2 F#2) 6/11 measure195
+	CHORD (D3 G3) 6/11
+	NOTE 0 6/11
+	CHORD (C4 F4) 4/11
+	CHORD (C#2 F#2) 1/4
+	NOTE 0 7/4
+
+	; ----------- measure 196
+
+	CHORD (D2 F2 C3 E3 G3 Bb3 Db4) 3/7 measure196
+_event_ 15
+	; ******* 0 15 ------------------------ 270; ********
+		fto4 0;
+		ptof 0;
+; ***************
+	CHORD (-D2 -F2 -C3 C5 F5 B5) 1/7
+	CHORD (G3 Bb3 A4 -C5 -F5 -B5) 3/7
+	CHORD (C5 F#5 B5 Eb6 A6 D7) 3/7
+	CHORD (F3 Ab3 Bb3 B3 -Eb6 -A6 -D7) 1/7
+	CHORD (-F3 -Ab3 -Bb3 -B3 G4 C5 C#5 D5 F#5) 3/7
+	CHORD (-F3 -Ab3 -Bb3 -B3 -G4 -C5 C#5 -D5 -F#5) 1 @fermata
+
+	; ----------- measure 197
+
+	NOTE D3 1/7 measure197
+	NOTE F3 1/7
+	NOTE Db3 1/7
+	NOTE C3 1/7
+	CHORD (A2 B3) 1/7
+	NOTE G#2 1/7
+	NOTE D#2 1/7
+	NOTE E2 1/7
+	NOTE Bb1 1/7
+	NOTE 0 3/7
+	NOTE 0 2/7
+
+	; ----------- measure 198
+
+	CHORD (D2 F2 C3 Bb3 Db4) 1/4 measure198
+_event_ 16
+	; ******* 0 16 ------------------------ 280; ********
+		frog1-sampno 71;
+		tplay 0;
+		rspeed 0;
+		ramp 123;
+		spatinc 65;
+		hto4 0;
+		hto2 127;
+; ***************
+	NOTE 0 3/4
+	NOTE D2 1/7
+	NOTE B0 1/7
+	NOTE Db5 1/7
+	NOTE Bb3 1/7
+	CHORD (F1 C6) 1/7
+	NOTE Ab2 1/7
+	NOTE F#5 1/7
+	CHORD (D#4 C6) 1/7
+	NOTE A4 1/7
+	NOTE D7 1/7
+	NOTE B0 1/7
+	CHORD (Ab2 Bb3 C6) 1/7
+	CHORD (F1 Db5 A5) 1/7
+	CHORD (D2 C6) 1/7
+	NOTE E3 1/7
+	NOTE G4 1/7
+	NOTE 0 1/7
+	CHORD (B0 A5) 1/7
+	NOTE 0 1/7
+	NOTE A2 1/7
+	NOTE 0 1/7
+
+	; ----------- measure 199
+
+	CHORD (C5 F5) 1/8 measure199
+_event_ 17
+	; ******* 0 17 ------------------------ 100; ********
+		rspeed 5;
+; ***************
+	CHORD (G3 Bb3 Db4 Ab4 -C5 -F5) 7/8
+	CHORD (-G3 -Bb3 -Db4 -Ab4 -C5 -F5) 1 @fermata
+
+	; ----------- measure 200
+
+	NOTE B5 1/4 measure200
+_event_ 18
+	; ******* 0 18 ------------------------ 120; ********
+		rspeed 0;
+; ***************
+	NOTE 0 7/4
+	NOTE Bb0 1/7
+	NOTE Db2 1/7
+	NOTE G4 1/7
+	NOTE A6 1/7
+	CHORD (D3 F#5) 1/7
+	NOTE B1 1/7
+	NOTE Ab7 1/7
+
+	; ----------- measure 201
+
+	NOTE F5 1/7 measure201
+	CHORD (Eb2 E6) 1/7
+	NOTE C4 1/7
+	NOTE C#7 1/7
+	NOTE D3 1/7
+	NOTE B1 1/7
+	NOTE E4 1/7
+	NOTE G4 1/7
+	NOTE G4 1/7
+	NOTE Bb0 1/7
+	NOTE A6 1/7
+	NOTE Db6 1/7
+	NOTE 0 1/7
+	NOTE Db2 1/7
+	NOTE Bb0 1/4
+	NOTE 0 3/4
+
+	; ----------- measure 202
+
+	CHORD (Eb6 A6) 1/8 measure202
+_event_ 19
+	; ******* 0 19 ------------------------ 130; ********
+		rspeed 4;
+; ***************
+	CHORD (C#5 F#5 B5 -Eb6 -A6) 7/8
+	CHORD (-C#5 -F#5 -B5 -Eb6 -A6) 1 @fermata
+
+	; ----------- measure 203
+
+	NOTE D7 1/4 measure203
+_event_ 20
+	; ******* 0 20 ------------------------ 210; ********
+		rspeed 0;
+; ***************
+	NOTE 0 3/4
+	NOTE G4 1/7
+	CHORD (F#2 Bb6) 1/7
+	NOTE A3 1/7
+	NOTE 0 2/7
+	NOTE F1 1/7
+	CHORD (Ab3 E6) 1/7
+	NOTE C#5 1/7
+	NOTE 0 2/7
+	NOTE D2 1/7
+	CHORD (B0 G4) 1/7
+	NOTE Bb6 1/7
+	NOTE 0 3/7
+	NOTE F#2 1/7
+	NOTE A3 1/7
+	NOTE 0 3/7
+
+	; ----------- measure 204
+
+	CHORD (F3 G3 Ab3) 1/8 measure204
+_event_ 21
+	; ******* 0 21 ------------------------ 230; ********
+		rspeed 4;
+; ***************
+	CHORD (-F3 -G3 -Ab3 Bb3 B3) 7/8
+	CHORD (-F3 -G3 -Ab3 -Bb3 -B3) 1 @fermata
+
+	; ----------- measure 205
+
+	CHORD (G3 Ab3 C5 D5) 1/4 measure205
+_event_ 22
+	; ******* 0 22 ------------------------ 240; ********
+		rspeed 0;
+		revfb 117;
+		ttor 137 5000;
+; ***************
+	NOTE 0 7/4
+
+	; ----------- measure 206
+
+	NOTE Db7 1/7 measure206
+	CHORD (B1 Bb5) 1/7
+	NOTE D2 1/7
+	NOTE 0 3/7
+	NOTE C2 1/7
+	CHORD (Eb3 E4) 1/8
+	NOTE -E4 1/55
+	NOTE G4 1/7
+	NOTE 0 3/7
+	NOTE 0 2/7
+
+	; ----------- measure 207
+
+	CHORD (G4 A4) 1/8 measure207
+_event_ 23
+	; ******* 0 23 ------------------------ 250; ********
+		rspeed 4;
+; ***************
+	CHORD (-G4 -A4 B#4 C#5 D#5 F#5) 7/8
+	CHORD (-G4 -A4 -B#4 -C#5 -D#5 -F#5) 1
+
+	; ----------- measure 208
+
+	NOTE Bb1 1/4 @staccato measure208
+_event_ 24
+	; ******* 0 24 ------------------------ 260; ********
+		rspeed 0;
+		8000ms rspeed 4;
+		1000ms tto4 0 5000;
+		tto2 0 5000;
+		ttof 0 5000;
+		ttoh 0 5000;
+		ttor 0 5000;
+		ttoR 0 5000;
+; ***************
+	NOTE 0 3/4
+	NOTE 0 1
+	NOTE F#2 1/7
+	CHORD (A3 Db7) 1/7
+	NOTE Bb5 1/7
+	NOTE 0 1/7
+	NOTE B1 1/7
+	NOTE D2 1/7
+	NOTE 0 8/7
+
+	; ----------- measure 209
+
+	NOTE G4 1/4 measure209
+_event_ 25
+	; ******* 0 25 ------------------------ 270; ********
+		ttof 0;
+		ttoh 0;
+		rspeed 128;
+		usedel 0;
+		hto4 120;
+		hto2 120;
+		tto2 113;
+		frog2-dur 2000;
+		frog2-sampno 72;
+		ptoh 127;
+		2500ms sol 1;
+; ***************
+	NOTE 0 15/4
+
+	; ----------- measure 210
+
+	BPM 60
+	NOTE G4 1/8 measure210
+	NOTE D#5 1/8
+	NOTE F#5 1/8
+	NOTE C#6 1/8
+	NOTE D6 1/8
+	NOTE 0 3/8
+	NOTE Bb5 1/8
+	NOTE Db6 1/8
+	CHORD (G#6 C7) 1/8
+	NOTE E4 1/8
+	NOTE G4 1/8
+	NOTE D#5 1/8
+	NOTE Ab5 1/8
+	CHORD (F5 F#6 A6) 1/8
+	NOTE 0 1
+	NOTE G4 1/8
+	NOTE D4 1/8
+	NOTE G#4 1/8
+	NOTE A4 1/8
+	NOTE C5 1/8
+	NOTE C#4 1/8
+	NOTE G4 1/8
+	NOTE Bb5 1/8
+
+	; ----------- measure 211
+
+	BPM 60
+	NOTE B4 1/8 measure211
+	NOTE F#5 1/8
+	NOTE B4 1/8
+	NOTE D4 1/8
+	NOTE B4 1/8
+	NOTE Eb6 3/8
+	NOTE 0 1/2
+	NOTE C5 1/8
+	CHORD (G#5 E6 B6) 1/8
+	NOTE 0 5/4
+	NOTE G4 1/8
+	NOTE D4 1/8
+	NOTE F#5 1/8
+	NOTE Bb4 1/8
+	NOTE E5 1/8
+	NOTE A5 1/8
+	NOTE D#5 1/8
+	NOTE C#6 1/8
+
+	; ----------- measure 212
+
+	BPM 60
+	NOTE 0 5/4 measure212
+	CHORD (Eb3 D4 G4 C#5) 1/4 @staccato
+	NOTE 0 1/4
+	CHORD (Ab3 C4 D4 F4 C5 F5) 1/4 @staccato
+
+	; ----------- measure 213
+
+	NOTE 0 1 measure213
+	NOTE G4 1/8
+	NOTE D4 1/8
+	NOTE F#5 1/8
+	NOTE Bb5 1/8
+	NOTE B4 1/8
+	NOTE D4 1/8
+	NOTE Db6 1/8
+	NOTE Bb5 1/8
+	NOTE C7 1/8
+	NOTE A6 1/8
+	NOTE F5 1/8
+	NOTE Ab5 1/8
+	NOTE F#6 1/8
+	NOTE D#6 1/8
+	NOTE B4 1/8
+	NOTE D4 1/8
+	NOTE Db6 1/8
+	NOTE Bb5 1/8
+	NOTE E7 1/8
+	NOTE F#6 1/8
+	NOTE D4 1/8
+	NOTE F5 1/8
+	NOTE E7 1/8
+	NOTE C7 1/8
+
+	; ----------- measure 214
+
+	BPM 60
+	NOTE C#7 1/8 measure214
+	NOTE 0 7/8
+	CHORD (A4 C5 G#5 B5) 1/4 @staccato
+	NOTE 0 1/4
+	CHORD (Eb4 D5 C#6 F6) 1/4 @staccato
+	NOTE 0 1/2
+	CHORD (A2 C3 G#3 B3 D4 G4) 3/4
+_event_ 26
+; ******* 0 26 ------------------------ 280; ********
+		ptoR 127;
+		stoR~ 127
+		Revfb 127;
+		Rout 127;
+		Rto4 116;
+		solde 3456 4567 5463 0 70;
+		mv-spatinc 1;
+		spat-radius 156;
+		100ms Rgate 128;
+		sampler2_ sample73;
+		200ms Rgate 0;
+; ***************
+	NOTE 0 1/4
+	CHORD (Ab3 G4 Bb4 F#5) 1/4 @staccato
+	NOTE 0 1/2
+
+	; ----------- measure 215
+
+	NOTE G4 1/8 measure215
+	NOTE Bb5 1/8
+	NOTE B4 1/8
+	NOTE A6 1/8
+	NOTE F6 1/8
+	NOTE F#5 1/8
+	NOTE D5 1/8
+	NOTE C7 1/8
+	NOTE F#5 1/8
+	NOTE C#6 7/8 @fermata
+
+	; ----------- measure 216
+
+	BPM 60
+	NOTE 0 1/2 measure216
+	CHORD (C#4 D4 Eb4 F#4 G4 B4 C5 F5) 1/4 @staccato
+	NOTE 0 1/4
+	CHORD (A4 Eb5 E5 F5 Ab5 Bb5) 1/4 @staccato
+	NOTE 0 1/2
+	CHORD (C3 Bb3 B3 D4 F4 G4 C#5) 1/4 @staccato
+	NOTE 0 1
+
+	; ----------- measure 217
+
+	NOTE G4 1/8 measure217
+	NOTE D4 1/8
+	NOTE Ab3 1/8
+	NOTE B4 1/8
+	NOTE Bb5 1/8
+	NOTE F5 1/8
+	NOTE C7 1/8
+	NOTE A6 1/8
+	NOTE E5 1/8
+	NOTE A6 1/8
+	NOTE Eb6 1/8
+	NOTE D4 1/8
+	NOTE Ab3 1/2 @fermata
+
+	; ----------- measure 218
+
+	NOTE 0 1/2 measure218
+	CHORD (B4 C5 E5 F5 Gb5) 1/4 @staccato
+	NOTE 0 1/4
+	CHORD (G4 C5 B5 E6 Bb6) 1/4 @staccato
+	NOTE 0 3/4
+
+	; ----------- measure 219
+
+	NOTE G4 1/8 measure219
+	NOTE Eb5 1/8
+	NOTE Ab5 1/8
+	NOTE Bb6 1/8
+	NOTE Db6 1/8
+	NOTE E6 1/8
+	NOTE F#7 1/8
+	NOTE A6 1/8
+	NOTE 0 1
+
+	; ----------- measure 220
+
+	BPM 60
+	NOTE 0 1/10 measure220
+	NOTE C6 1/10
+_event_ 27
+	; ******* 0 27 ------------------------ 100; ********
+		Revfb 110;
+		mv-spatinc 0;
+; ***************
+	NOTE A5 1/10
+	NOTE Gb2 1/10
+	NOTE Db4 1/10
+	NOTE G4 1/10 @staccato
+	NOTE Db4 1/10
+	NOTE Gb2 1/10
+	NOTE B6 1/10
+	NOTE D6 1/10
+	NOTE D6 1/10
+	NOTE F5 1/10
+	NOTE G4 1/10
+	NOTE G4 1/10 @staccato
+	NOTE F#3 1/10
+	NOTE D#2 1/10
+	NOTE G4 1/10
+	NOTE B4 1/10
+	NOTE G4 1/10 @staccato
+	NOTE Ab5 1/10
+	NOTE F5 1/10
+	NOTE Ab5 1/10
+	NOTE B6 1/10
+	NOTE G4 1/10 @staccato
+	NOTE C6 1/10
+	NOTE A5 1/10
+	NOTE Bb2 1/10
+	NOTE Db4 1/10
+	NOTE G4 1/10 @staccato
+	NOTE 0 1/10
+
+	; ----------- measure 221
+
+	NOTE 0 1/2 measure221
+	NOTE G4 1/10 @staccato
+	NOTE D6 1/10
+	NOTE Ab5 1/10
+	NOTE 0 7/10
+	NOTE G4 1/10
+	NOTE C6 1/10
+	NOTE Bb2 1/10 @staccato
+	NOTE 0 6/5
+
+	; ----------- measure 222
+
+	NOTE 0 1/10 measure222
+	NOTE F#2 1/10
+_event_ 28
+	; ******* 0 28 ------------------------ 120; ********
+		rwind 53;
+		rfreq 64;
+		rspeed 1;
+		Rgate 0;
+		Revfb 110;
+; ***************
+	NOTE A3 1/10
+	NOTE Ab6 1/10
+	NOTE F5 1/10
+	NOTE B2 1/10
+	NOTE D4 1/10
+	NOTE E6 1/10
+	NOTE C#5 1/10
+	NOTE G4 1/10
+	NOTE Bb5 1/10
+	NOTE F#2 1/10
+	NOTE A3 1/10
+	NOTE F6 1/10 @staccato
+	NOTE 0 3/5
+	NOTE 0 2
+
+	; ----------- measure 223
+
+	NOTE C#4 1/4 measure223
+
+_event_ 29
+		frog1-sampno 73;
+		rwind 40;
+		tplay 0;
+		usedel 0;
+		rspeed 1;
+		spaton 1;
+		spatinc 65, 71 38000;
+		ttor 127;
+		revfb 115;
+		rto4 80, 117 10000;
+		tto4 127, 117 10000;
+		ptoh 0;
+		spat-radius 45;
+		38000ms spatinc 6 30000;
+		spat-radius 99 10000;
+		30000ms spatinc 66 10000;
+		30000ms spatinc 51 15000;
+		15000ms spatinc 66 15000;
+		15000ms spaton 0;
+		rto4 0 20000;
+
+	antescofo::pedal 0
+	NOTE 0 3/4
+	CHORD (B6 D7) 1/4 @staccato
+	NOTE 0 3/4
+	CHORD (C5 Eb6) 1/4 @staccato
+	NOTE 0 7/4
+
+	; ----------- measure 224
+	NOTE 0 1 measure224
+	CHORD (G4 E5) 1/4 @staccato
+	NOTE 0 3/4
+	CHORD (F#6 A6) 1/4 @staccato
+	NOTE 0 7/4
+
+	; ----------- measure 225
+	NOTE 0 1 measure225
+	CHORD (Bb4 Db6) 1/4 @staccato
+	NOTE 0 3/4
+	CHORD (B6 D7) 1/4 @staccato
+	NOTE 0 7/4
+
+	; ----------- measure 226
+	NOTE 0 2 measure226
+	NOTE Eb1 1/4 @staccato
+	NOTE 0 7/4
+
+	; ----------- measure 227
+	NOTE 0 4
+
+	; ----------- measure 228
+
+	NOTE 0 4
+
+	; ----------- measure 229
+
+	NOTE 0 4
+
+	; ----------- measure 230
+
+	NOTE 0 4
+

@@ -1,0 +1,3110 @@
+; Antescofo score generated using native importer version 0.2.9
+; Original file: untitled.xml
+; exported from Sibelius 7.0.0 ~ Direct export, not from Dolet
+; MusicXML version 2.0
+; Credits: Vc.
+
+; start
+
+; ----------- measure 1 --- beat 0 --- time signature 7/8
+
+BPM 46 ; ( ← 𝅘𝅥𝅮 =92) 
+@set_max_message_sent_instantaneously(4000)
+
+NOTE A2 1/10 measure1
+NOTE C3 1/10
+NOTE B2 1/10
+NOTE G#2 1/10
+NOTE E3 1/10
+NOTE D#3 1/10
+NOTE B2 1/10
+NOTE C3 1/10
+NOTE F2 1/10
+NOTE D3 1/10
+NOTE B2 1/10
+NOTE A#2 1/10
+NOTE D#2 1/10
+NOTE A2 1/10
+NOTE C3 1/10
+NOTE D3 1/10
+NOTE E3 1/10
+NOTE D#3 1/10
+NOTE C3 1/10
+NOTE F2 1/10
+NOTE F#2 1/10
+NOTE D2 1/10
+NOTE D#2 1/10
+NOTE C#2 1/10
+NOTE C2 1/10
+NOTE D2 1/10
+NOTE F2 1/10
+NOTE F#2 1/10
+NOTE A2 1/10
+NOTE A#2 1/10
+NOTE C3 1/10
+NOTE C#3 1/10
+NOTE A2 1/10
+NOTE F2 1/10
+NOTE B2 1/10
+
+; ----------- measure 2 --- beat   3.5 --- time signature 7/8
+
+NOTE E3 1/10 measure2
+NOTE D#3 1/10
+NOTE E3 1/10
+NOTE B2 1/10
+NOTE D3 1/10
+NOTE F3 1/10
+NOTE C3 1/10
+NOTE G#2 1/10
+NOTE D3 1/10
+NOTE B2 1/10
+NOTE A#2 1/10
+NOTE G2 1/10
+NOTE A2 1/10
+NOTE F2 1/10
+NOTE D#2 1/10
+NOTE C#2 1/10
+NOTE F2 1/10
+NOTE E2 1/10
+NOTE C2 1/10
+NOTE C#2 1/10
+NOTE D2 1/10
+NOTE F2 1/10
+NOTE E2 1/10
+NOTE G#2 1/10
+NOTE A2 1/10
+NOTE F2 1/10
+NOTE B2 1/10
+NOTE D3 1/10
+NOTE C#3 1/10
+NOTE C3 1/10
+NOTE E3 1/10
+NOTE B2 1/10
+NOTE F2 1/10
+NOTE B2 1/10
+NOTE E3 1/10
+
+; ----------- measure 3 --- beat 7 --- time signature 4/8
+
+NOTE F3 1/10 measure3
+NOTE D#3 1/10
+NOTE C3 1/10
+NOTE B2 1/10
+NOTE G#2 1/10
+NOTE C3 1/10
+NOTE B2 1/10
+NOTE F2 1/10
+NOTE E2 1/10
+NOTE D#2 1/10
+NOTE D2 1/10
+NOTE F2 1/10
+NOTE C#2 1/10
+NOTE G2 1/10
+NOTE A2 1/10
+NOTE G#2 1/10
+NOTE D3 1/10
+NOTE C#3 1/10
+NOTE D3 1/10
+NOTE D#3 1/10
+
+; ----------- measure 4 --- beat 9 --- time signature 3/8
+
+NOTE E3 1/10 measure4
+NOTE F3 1/10
+NOTE B3 1/10
+NOTE G#3 1/10
+NOTE F3 1/10
+NOTE G#3 1/10
+NOTE E3 1/10
+NOTE F3 1/10
+NOTE D#3 1/10
+NOTE B2 1/10
+NOTE D3 1/10
+NOTE E3 1/10
+NOTE F3 1/10
+NOTE D#3 1/10
+NOTE F3 1/10
+
+; ----------- measure 5 --- beat  10.5 --- time signature 7/8
+
+NOTE F#3 1/10 measure5
+NOTE A3 1/10
+NOTE B3 1/10
+NOTE F3 1/10
+NOTE D#3 1/10
+NOTE D4 1/10
+NOTE B3 1/10
+NOTE E3 1/10
+NOTE G#3 1/10
+NOTE C4 1/10
+NOTE A3 1/10
+NOTE D4 1/10
+NOTE D#4 1/10
+NOTE B3 1/10
+NOTE F3 1/10
+NOTE D#3 1/10
+NOTE F#3 1/10
+NOTE D3 1/10
+NOTE C#3 1/10
+NOTE F3 1/10
+NOTE E3 1/10
+NOTE A#2 1/10
+NOTE A2 1/10
+NOTE G#2 1/10
+NOTE F2 1/10
+NOTE B2 1/10
+NOTE G2 1/10
+NOTE D#2 1/10
+NOTE D2 1/10
+NOTE G2 1/10
+NOTE E2 1/10
+NOTE D#2 1/10
+NOTE C2 1/10
+NOTE C#2 1/10
+NOTE D2 1/10
+
+; ----------- measure 6 --- beat 14 --- time signature 7/8
+
+NOTE D#2 1/10 measure6
+NOTE G2 1/10
+NOTE F#2 1/10
+NOTE A2 1/10
+NOTE F2 1/10
+NOTE D#2 1/10
+NOTE B2 1/10
+NOTE C3 1/10
+NOTE C#3 1/10
+NOTE A2 1/10
+NOTE D3 1/10
+NOTE F3 1/10
+NOTE D3 1/10
+NOTE G#3 1/10
+NOTE G3 1/10
+NOTE E3 1/10
+NOTE F3 1/10
+NOTE D#3 1/10
+NOTE B3 1/10
+NOTE G#3 1/10
+NOTE D4 1/10
+NOTE E4 1/10
+NOTE B3 1/10
+NOTE F3 1/10
+NOTE E4 1/10
+NOTE A#3 1/10
+NOTE D4 1/10
+NOTE C#4 1/10
+NOTE A3 1/10
+NOTE G#3 1/10
+NOTE A#3 1/10
+NOTE D4 1/10
+NOTE F4 1/10
+NOTE E4 1/10
+NOTE D#4 1/10
+
+; ----------- measure 7 --- beat  17.5 --- time signature 3/8
+
+NOTE A3 1/10 measure7
+NOTE D4 1/10
+NOTE D#4 1/10
+NOTE C4 1/10
+NOTE C#4 1/10
+NOTE A3 1/10
+NOTE E4 1/10
+NOTE E4 1/10
+NOTE F4 1/10
+NOTE D#4 1/10
+NOTE D4 1/10 ; harmonics
+NOTE D4 1/10 ; harmonics
+NOTE D4 1/10
+NOTE E4 1/10
+NOTE D4 1/10
+
+; ----------- measure 8 --- beat 19 --- time signature 3/8
+
+NOTE D4 1/10 measure8
+NOTE D4 1/10 ; harmonics
+NOTE F4 1/10
+NOTE D4 1/10
+NOTE G#3 1/10
+NOTE E4 1/10
+NOTE D4 1/10
+NOTE G4 1/10
+NOTE D4 1/10
+NOTE A#3 1/10
+NOTE D4 1/10
+NOTE D4 1/10 ; harmonics
+NOTE F4 1/10
+NOTE E4 1/10
+NOTE G#3 1/10
+
+; ----------- measure 9 --- beat  20.5 --- time signature 4/8
+
+CHORD (B3 D4) 1/4 measure9
+NOTE 0 5/8
+CHORD (A#3 D4) 1/8
+NOTE 0 1
+
+; ----------- measure 10 --- beat  22.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 11 --- beat  24.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 12 --- beat  26.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 13 --- beat  28.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 14 --- beat  30.5 --- time signature 4/8
+
+BPM 44 ; ( ← 𝅘𝅥𝅮 =88) 
+NOTE 0 2
+
+; ----------- measure 15 --- beat  32.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 16 --- beat  34.5 --- time signature 4/8
+
+NOTE 0 2 measure16
+
+; ----------- measure 17 --- beat  36.5 --- time signature 4/8
+
+NOTE 0 1/10 measure17
+NOTE D4 1/10
+NOTE G#3 1/10
+NOTE E3 1/10
+NOTE F3 1/10
+NOTE B3 1/8
+NOTE C4 1/8
+NOTE A3 1/8
+NOTE D4 1/8
+CHORD (D3 E4) 1/8
+CHORD (G3 F4) 1/8
+NOTE A3 1/8
+NOTE D#4 1/8
+NOTE G4 1/8
+NOTE F4 1/8
+NOTE A3 1/8
+CHORD (D3 E4) 1/8
+
+; ----------- measure 18 --- beat  38.5 --- time signature 4/8
+
+NOTE C#4 1/8 measure18
+NOTE A3 1/8
+CHORD (D3 E4) 1/8
+NOTE B3 1/8
+NOTE A#3 1/10
+NOTE A3 1/10
+NOTE E4 1/10
+NOTE G#3 1/10
+NOTE A3 1/10
+NOTE F3 1/10
+NOTE C#4 1/5
+NOTE C4 1/10
+NOTE A3 1/10
+CHORD (G3 A3) 1/10
+CHORD (G3 A3) 1/10
+NOTE D4 1/10
+CHORD (G3 A3) 1/10
+NOTE E4 1/10
+
+; ----------- measure 19 --- beat  40.5 --- time signature 4/8
+
+NOTE C#4 1/10 measure19
+NOTE D4 1/10
+NOTE A4 3/10
+NOTE -A4 1/10
+NOTE E4 1/10
+NOTE E4 1/10
+CHORD (D4 E4) 1/10
+NOTE E4 1/10
+NOTE A#3 1/10
+NOTE A3 1/10
+NOTE A3 1/10
+NOTE G3 1/10
+NOTE G#3 1/10
+NOTE D4 1/10
+CHORD (D4 E4) 1/10
+NOTE E4 1/10
+NOTE F4 1/10
+NOTE 0 1/10
+
+; ----------- measure 20 --- beat  42.5 --- time signature 4/8
+
+NOTE 0 2 measure20
+
+; ----------- measure 21 --- beat  44.5 --- time signature 4/8
+
+NOTE 0 3/2 measure21
+NOTE D#2 1/2
+
+; ----------- measure 22 --- beat  46.5 --- time signature 4/8
+
+NOTE D#2 2 measure22
+
+; ----------- measure 23 --- beat  48.5 --- time signature 4/8
+
+NOTE D#2 1 measure23
+NOTE G5 1 ; harmonics
+
+; ----------- measure 24 --- beat  50.5 --- time signature 5/8
+
+NOTE 0 3/4 measure24
+NOTE A2 1/4
+NOTE -A2 1
+NOTE -A2 1/2
+
+; ----------- measure 25 --- beat 53 --- time signature 5/8
+
+NOTE 0 5/2 measure25
+
+; ----------- measure 26 --- beat  55.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 27 --- beat  57.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 28 --- beat  59.5 --- time signature 4/8
+
+NOTE 0 2
+
+; ----------- measure 29 --- beat  61.5 --- time signature 4/8
+
+NOTE 0 2 measure29
+
+; ----------- measure 30 --- beat  63.5 --- time signature 4/8
+
+NOTE 0 1/2 measure30
+NOTE A4 1/2
+NOTE -A4 1/4
+NOTE F#4 1/8
+NOTE F4 1/8
+NOTE -F4 1/2
+
+; ----------- measure 31 --- beat  65.5 --- time signature 4/8
+
+NOTE F4 1/2 measure31
+NOTE E4 1
+NOTE 0 1/8
+NOTE A4 1/8
+NOTE E4 1/4
+
+; ----------- measure 32 --- beat  67.5 --- time signature 4/8
+
+NOTE E4 1/8 measure32
+NOTE D#4 3/8
+NOTE -D#4 1/2
+NOTE 0 3/4
+NOTE D4 1/4
+
+; ----------- measure 33 --- beat  69.5 --- time signature 4/8
+
+NOTE D4 3/4 measure33
+NOTE 0 3/8
+NOTE A4 1/8
+NOTE C4 1/2
+NOTE C#4 1/4
+
+; ----------- measure 34 --- beat  71.5 --- time signature 4/8
+
+NOTE C#4 1/2 measure34
+NOTE A#3 3/2
+
+; ----------- measure 35 --- beat  73.5 --- time signature 4/8
+
+NOTE 0 1/8 measure35
+NOTE A4 7/8 ; harmonics
+NOTE -A4 1 ; harmonics
+
+; ----------- measure 36 --- beat  75.5 --- time signature 4/8
+
+NOTE A4 3/2 measure36 ; harmonics
+NOTE 0 1/2
+
+; ----------- measure 37 --- beat  77.5 --- time signature 3/4
+
+NOTE E2 3/2 measure37
+NOTE -E2 3/2
+
+; ----------- measure 38 --- beat  80.5 --- time signature 5/4
+
+NOTE E2 1/10 measure38
+NOTE D3 1/10
+NOTE E3 1/10
+NOTE C#3 1/10
+NOTE C#3 1/10
+NOTE D3 1/10
+NOTE B2 1/10
+NOTE F2 1/10
+NOTE E3 1/10
+NOTE D3 1/10
+NOTE G#2 1/10
+NOTE F2 1/10
+NOTE G3 1/10
+NOTE D#3 1/10
+NOTE D3 1/10
+NOTE F#3 1/10
+NOTE C3 1/10
+NOTE B2 1/10
+NOTE A#2 1/10
+NOTE C#3 1/10
+NOTE E2 1/10
+NOTE G2 1/10
+NOTE C#2 1/10
+NOTE C2 1/10
+NOTE E2 1/10
+NOTE F#2 1/10
+NOTE D2 1/10
+NOTE C#2 1/10
+NOTE E2 1/10
+NOTE -D#2 1/10
+NOTE B2 1/10
+NOTE C3 1/10
+NOTE B2 1/10
+NOTE F#2 1/10
+NOTE B2 1/10
+NOTE F2 1/8
+NOTE D3 3/8
+NOTE -D3 1
+
+; ----------- measure 39 --- beat  85.5 --- time signature 7/8
+
+NOTE 0 1/10 measure39
+NOTE G2 1/10
+NOTE E2 1/10
+NOTE E2 1/10
+NOTE D#2 1/10
+NOTE F2 1/10
+NOTE E2 1/10
+NOTE G2 1/10
+NOTE E2 1/10
+NOTE D#2 1/10
+NOTE E2 1/10
+NOTE A2 1/10
+NOTE A2 1/10
+NOTE A2 1/10
+NOTE F#2 1/10
+NOTE F2 1/10
+NOTE G#2 1/10
+NOTE G2 1/10
+NOTE E2 1/10
+NOTE E2 1/10
+NOTE D#2 1/10
+NOTE C2 1/10
+NOTE C#2 1/10
+NOTE F2 1/10
+NOTE E2 1/10
+NOTE E2 1/10
+NOTE D2 1/10
+NOTE D#2 1/10
+NOTE D2 1/10
+NOTE E2 1/10
+NOTE D#2 1/10
+NOTE C#2 1/10
+NOTE D2 1/10
+NOTE C2 1/5
+
+; ----------- measure 40 --- beat 89 --- time signature 5/8
+
+NOTE C#2 1/2 measure40
+NOTE -C#2 1/10
+NOTE G2 1/10
+NOTE E2 1/10
+NOTE F2 1/10
+NOTE F#2 1/10
+NOTE A2 1/10
+NOTE G2 1/10
+NOTE A#2 1/10
+NOTE F#2 1/10
+NOTE G2 1/10
+NOTE C#3 1/10
+NOTE C3 1/10
+NOTE B2 1/10
+NOTE G2 1/10
+NOTE G#2 1/10
+NOTE D3 1/2
+
+; ----------- measure 41 --- beat  91.5 --- time signature 5/8
+
+NOTE G3 1/10 measure41
+NOTE G#3 1/10
+NOTE F#3 1/10
+NOTE G3 1/10
+NOTE F3 1/10
+NOTE G#3 1/10
+NOTE G3 1/10
+NOTE E3 1/10
+NOTE F3 1/10
+NOTE B3 1/10
+NOTE D4 1/10
+NOTE A#3 1/10
+NOTE C#4 1/10
+NOTE G3 1/10
+NOTE A3 1/10
+TRILL (D#4) 1
+
+; ----------- measure 42 --- beat 94 --- time signature 5/8
+
+TRILL (G#4) 3/2 measure42
+TRILL (D5) 1
+
+; ----------- measure 43 --- beat  96.5 --- time signature 5/8
+
+TRILL (C6) 1/2 measure43
+TRILL (G5) 2
+
+; ----------- measure 44 --- beat 99 --- time signature 5/8
+
+TRILL (A4) 3/2 measure44
+TRILL (E4) 1
+
+; ----------- measure 45 --- beat 101.5 --- time signature 5/8
+
+NOTE A#3 1/2 measure45
+NOTE 0 1/10
+NOTE A3 1/10
+NOTE G#3 1/10
+NOTE B3 1/10
+NOTE A#3 1/10
+NOTE F3 1/10
+NOTE F#3 1/10
+NOTE E3 1/10
+NOTE A#3 1/10
+NOTE G3 1/10
+NOTE D3 1/10
+NOTE C#3 1/10
+NOTE C3 1/10
+NOTE G#2 1/10
+NOTE A2 1/10
+NOTE G2 1/10
+NOTE E2 1/10
+NOTE D#2 1/10
+NOTE F2 1/10
+NOTE C#2 1/10
+
+; ----------- measure 46 --- beat 104 --- time signature 5/8
+
+NOTE 0 5/2 measure46
+
+; ----------- measure 47 --- beat 106.5 --- time signature 3/8
+
+NOTE 0 3/2 measure47
+
+; ----------- measure 48 --- beat 108 --- time signature 5/8
+
+NOTE 0 5/2 measure48
+
+; ----------- measure 49 --- beat 110.5 --- time signature 3/8
+
+NOTE 0 3/2 measure49
+
+; ----------- measure 50 --- beat 112 --- time signature 5/8
+
+NOTE 0 5/2 measure50
+
+; ----------- measure 51 --- beat 114.5 --- time signature 3/8
+
+NOTE 0 3/2 measure51
+
+; ----------- measure 52 --- beat 116 --- time signature 5/8
+
+NOTE A3 1 measure52 ; harmonics
+NOTE -A3 3/2 ; harmonics
+
+; ----------- measure 53 --- beat 118.5 --- time signature 3/8
+
+NOTE 0 3/2 measure53
+
+; ----------- measure 54 --- beat 120 --- time signature 5/8
+
+NOTE A#3 3/8 measure54
+NOTE A3 1/8
+NOTE G4 1/4
+NOTE E4 1/8
+NOTE F4 1/8
+NOTE C#4 1/8
+NOTE C4 1/8
+NOTE E4 1/8
+NOTE F4 1/8
+NOTE D4 1/8
+NOTE E4 1/8
+NOTE -A4 1/8
+NOTE G4 1/8
+NOTE G4 1/8
+NOTE -D4 1/8
+NOTE -E4 1/4
+
+; ----------- measure 55 --- beat 122.5 --- time signature 5/8
+
+NOTE F4 1/8 measure55
+NOTE D4 1/8
+NOTE C4 1/8
+NOTE A3 1/4
+NOTE D4 1/8
+NOTE E4 1/8
+NOTE A#3 1/8
+NOTE A4 1/4
+NOTE A4 1/2
+NOTE A4 1/4
+NOTE E4 1/8
+NOTE G3 1/8
+NOTE F3 1/8
+NOTE G#3 1/8
+
+; ----------- measure 56 --- beat 125 --- time signature 5/8
+
+NOTE D4 1/8 measure56
+NOTE B3 1/8
+NOTE C#4 1/8
+NOTE A3 1/8
+NOTE C4 1/8
+NOTE C4 1/8
+NOTE E4 1/8
+NOTE F4 1/8
+NOTE E4 1/8
+NOTE D4 1/8
+NOTE D4 1/8
+NOTE A4 1/8
+NOTE E4 3/8
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE -C#4 1/8
+NOTE C4 1/8
+CHORD (G3 A#3) 1/8
+
+; ----------- measure 57 --- beat 127.5 --- time signature 5/8
+
+NOTE E4 1/8 measure57
+NOTE C#4 1/4
+NOTE C4 1/8
+NOTE F4 1/8
+NOTE A4 1/8
+NOTE G#4 1/8
+NOTE A4 1/8
+NOTE E4 1/8
+NOTE E4 1/4
+NOTE G4 1/8
+NOTE F4 1/8
+NOTE E4 1/4
+NOTE C#4 1/4
+NOTE C4 1/4
+NOTE A3 1/8
+
+; ----------- measure 58 --- beat 130 --- time signature 5/8
+
+NOTE G#3 1/8 measure58
+NOTE A3 1/8
+NOTE E4 1/8
+NOTE F4 3/8
+NOTE C4 1/8
+NOTE C#4 1/8
+NOTE A3 1/8
+NOTE F4 1/8
+NOTE F4 1/4
+NOTE G4 1/8
+NOTE E4 1/8
+NOTE A3 1/8
+NOTE G4 1/8
+NOTE C#4 1/8
+NOTE E4 1/8
+NOTE D4 1/8
+NOTE -F4 1/8
+
+; ----------- measure 59 --- beat 132.5 --- time signature 5/8
+
+NOTE F4 1/8 measure59
+NOTE C#4 1/8
+NOTE G4 1/8
+NOTE A3 1/8
+NOTE E4 1/8
+NOTE E4 1/8
+NOTE A3 1/8
+NOTE E4 1/8
+NOTE F4 1/8
+NOTE D4 1/8
+NOTE A#3 1/8
+NOTE E4 1/8
+NOTE -E4 1/2
+NOTE E4 1/2
+
+; ----------- measure 60 --- beat 135 --- time signature 5/8
+
+NOTE C#4 1/8 measure60
+NOTE G3 1/8
+NOTE G#3 1/8
+NOTE D4 1/8
+NOTE F4 1/8
+NOTE E4 1/8
+NOTE B3 1/8
+NOTE A#3 1/4
+NOTE A3 1/4
+NOTE D4 1/8
+NOTE G3 1/8
+NOTE A3 1/8
+NOTE D4 1/8
+NOTE E4 1/8
+NOTE A#3 1/8
+NOTE G3 1/8
+NOTE D4 1/8
+NOTE E4 1/8
+
+; ----------- measure 61 --- beat 137.5 --- time signature 5/8
+
+NOTE E4 3/4 measure61
+NOTE D4 1/4
+NOTE A4 3/2 ; harmonics
+
+; ----------- measure 62 --- beat 140 --- time signature 6/4
+
+NOTE 0 6
+
+; ----------- measure 63 --- beat 146 --- time signature 6/4
+
+NOTE 0 6
+
+; ----------- measure 64 --- beat 152 --- time signature 5/8
+
+NOTE A3 1/8 measure64
+NOTE A3 1/8
+NOTE C4 1/8
+NOTE C4 1/8
+NOTE A3 1/8
+NOTE D#4 1/8
+NOTE D4 1/8
+NOTE B3 1/8
+NOTE G#3 1/8
+NOTE F4 1/8
+NOTE E4 1/4
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE B3 1/8
+NOTE G3 1/8
+NOTE D4 1/8
+NOTE A3 1/8 ; harmonics
+NOTE E4 1/8
+NOTE C#4 1/8
+
+; ----------- measure 65 --- beat 154.5 --- time signature 5/8
+
+NOTE A3 1/8 measure65
+NOTE D4 1/2
+NOTE C#4 1/8
+NOTE F4 1/8
+NOTE A3 1/8
+NOTE E3 1/8
+NOTE D4 1/8
+NOTE G4 1/8
+NOTE A3 1/8
+NOTE F4 1/8
+NOTE G4 1/8
+NOTE E4 1/8
+NOTE A#3 1/8
+NOTE D3 1/8
+NOTE A3 1/8
+NOTE G#4 1/4
+
+; ----------- measure 66 --- beat 157 --- time signature 5/8
+
+NOTE G#4 1/4 measure66
+NOTE E4 1/8
+NOTE E4 1/8
+NOTE F4 1/8
+NOTE E4 1/8
+NOTE G#4 1/8
+NOTE A3 1/8
+NOTE -A3 1/4
+NOTE A3 1/8
+NOTE A#4 1/8 ; harmonics
+NOTE -A#4 1 ; harmonics
+
+; ----------- measure 67 --- beat 159.5 --- time signature 5/8
+
+NOTE 0 1/8 measure67
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A3 1/8
+NOTE C#4 1/8
+NOTE A3 1/8
+NOTE G3 1/8
+NOTE A3 1/8
+NOTE D4 1/8
+NOTE E4 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+
+; ----------- measure 68 --- beat 162 --- time signature 5/8
+
+NOTE E2 1/8 measure68
+NOTE E2 1/8
+NOTE F2 1/8
+NOTE E2 1/8
+NOTE E2 1/8
+NOTE G2 1/4
+NOTE A#2 1/8
+NOTE A2 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE A2 1/8
+NOTE A2 1/8
+NOTE G#2 1/8
+NOTE A2 1/8
+NOTE A#2 1/8
+NOTE E3 1/8
+NOTE D3 1/8
+NOTE F3 1/8
+
+; ----------- measure 69 --- beat 164.5 --- time signature 5/8
+
+NOTE C#3 1/8 measure69
+NOTE D3 1/8
+NOTE D3 1/8
+NOTE B2 1/8
+NOTE E3 1/8
+NOTE G#2 1/8
+NOTE F2 1/8
+NOTE G2 1/8
+NOTE G2 1/8
+NOTE C#2 1/8
+NOTE D2 1/8
+NOTE E2 1/8
+NOTE D2 1/8
+NOTE F2 1/8
+NOTE G2 1/8
+NOTE G2 1/8
+NOTE E2 1/8
+NOTE A#2 1/4
+NOTE G2 1/8
+
+; ----------- measure 70 --- beat 167 --- time signature 5/8
+
+NOTE D3 1/8 measure70
+NOTE F3 1/8
+NOTE F3 1/8
+NOTE D3 1/8
+NOTE D3 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE E3 1/8
+NOTE F3 1/8
+NOTE D3 1/8
+NOTE E3 1/8
+NOTE A#2 1/8
+NOTE A2 1/8
+NOTE A2 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE A2 1/8
+NOTE E2 1/8
+NOTE F2 1/8
+NOTE E2 1/8
+
+; ----------- measure 71 --- beat 169.5 --- time signature 5/8
+
+NOTE D#2 1/8 measure71
+NOTE D3 1/8
+NOTE G3 1/2
+NOTE C#3 1/8
+NOTE A2 1/8
+NOTE A2 1/8
+NOTE E3 1/8
+NOTE D4 1/2
+NOTE C4 1/8
+NOTE C4 1/8
+NOTE 0 1/8
+CHORD (G2 A2) 3/8
+
+; ----------- measure 72 --- beat 172 --- time signature 5/8
+
+CHORD (G2 A2) 3/2 measure72
+CHORD (-G2 A#2) 1/2
+NOTE 0 1/2
+
+; ----------- measure 73 --- beat 174.5 --- time signature 5/8
+
+NOTE 0 1/8 measure73
+NOTE D2 1/8
+NOTE A2 1/8
+NOTE E3 1/8
+NOTE F3 1/8
+NOTE C3 1/8
+NOTE A2 1/8
+NOTE E2 1/8
+NOTE G2 1/8
+NOTE A#2 1/8
+NOTE E3 1/8
+NOTE D4 1/8
+NOTE C4 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A#3 1/8
+NOTE E3 1/8
+NOTE D4 1/8
+NOTE F3 1/8
+NOTE D4 1/8
+
+; ----------- measure 74 --- beat 177 --- time signature 5/8
+
+NOTE D4 1/8 measure74
+NOTE E4 1/8
+NOTE C#4 1/8
+NOTE G3 1/8
+NOTE A2 1/8
+NOTE F3 1/8
+NOTE A2 1/8
+NOTE G3 1/8
+NOTE C#4 1/8
+NOTE G#3 1/8
+NOTE G3 1/8
+NOTE A3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE E3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE E3 1/8
+NOTE B3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE G3 1/8
+NOTE A3 1/8 ; harmonics
+
+; ----------- measure 75 --- beat 179.5 --- time signature 3/8
+
+NOTE F#3 1/8 measure75
+NOTE A3 1/8 ; harmonics
+NOTE D3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE C3 1/8
+NOTE F3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE G#3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE E4 1/8
+NOTE A3 1/4 ; harmonics
+
+; ----------- measure 76 --- beat 181 --- time signature 5/4
+
+NOTE 0 5 measure76
+
+; ----------- measure 77 --- beat 186 --- time signature 5/4
+
+BPM 56
+NOTE 0 5 measure77
+
+; ----------- measure 78 --- beat 191 --- time signature 5/4
+
+NOTE 0 10/3 measure78
+NOTE F#6 2/3 ; harmonics
+NOTE -F#6 1/3 ; harmonics
+CHORD (-F4 B4) 2/3 ; harmonics
+
+; ----------- measure 79 --- beat 196 --- time signature 5/4
+
+NOTE 0 4/3 measure79
+NOTE G6 2/3 ; harmonics
+NOTE -G6 3 ; harmonics
+
+; ----------- measure 80 --- beat 201 --- time signature 5/4
+
+NOTE B6 4 measure80 ; harmonics
+NOTE -B6 1 ; harmonics
+
+; ----------- measure 81 --- beat 206 --- time signature 5/4
+
+NOTE B6 1/2 measure81 ; harmonics
+NOTE 0 1/2
+TRILL (G#3) 1
+TRILL (-G#3) 1
+NOTE 0 1/2
+NOTE B6 3/2 ; harmonics
+
+; ----------- measure 82 --- beat 211 --- time signature 5/4
+
+NOTE A#6 3 measure82 ; harmonics
+NOTE A6 2 ; harmonics
+
+; ----------- measure 83 --- beat 216 --- time signature 3/4
+
+NOTE G#6 1/2 measure83 ; harmonics
+NOTE 0 3/4
+NOTE F2 3/4 ; harmonics
+NOTE -F2 1 ; harmonics
+
+; ----------- measure 84 --- beat 219 --- time signature 5/4
+
+TRILL (F2 F#2) 3 measure84 ; harmonics
+TRILL (F2 F#2) 2 ; harmonics
+
+; ----------- measure 85 --- beat 224 --- time signature 5/4
+
+TRILL (F2 F#2) 2 measure85 ; harmonics
+NOTE F2 1/2
+NOTE F2 1/2
+TRILL (-F2) 2
+
+; ----------- measure 86 --- beat 229 --- time signature 5/4
+
+TRILL (F2 F#2) 3 measure86 ; harmonics
+TRILL (F2 F#2) 2 ; harmonics
+
+; ----------- measure 87 --- beat 234 --- time signature 4/4
+
+NOTE F#2 1 measure87 ; harmonics
+NOTE F2 3 ; harmonics
+
+; ----------- measure 88 --- beat 238 --- time signature 5/4
+
+NOTE 0 5/2 measure88
+CHORD (D6 D#6) 1/2
+CHORD (-D6 -D#6) 2
+
+; ----------- measure 89 --- beat 243 --- time signature 5/4
+
+CHORD (D6 D#6) 2 measure89
+CHORD (-D6 -D#6) 3
+
+; ----------- measure 90 --- beat 248 --- time signature 5/4
+
+CHORD (D6 D#6) 2 measure90
+CHORD (-D6 -D#6) 3
+
+; ----------- measure 91 --- beat 253 --- time signature 9/8
+
+BPM 37.33 @modulate ; ( ← 𝅘𝅥 =56) 
+NOTE 0 3 measure91
+
+; ----------- measure 92 --- beat 256 --- time signature 9/8
+
+NOTE 0 7/3 measure92
+CHORD (F2 -G2) 2/3
+
+; ----------- measure 93 --- beat 259 --- time signature 5/4
+
+BPM 56 @modulate
+CHORD (F2 G2) 3 measure93
+CHORD (-F2 -G2) 2
+
+; ----------- measure 94 --- beat 264 --- time signature 4/4
+
+CHORD (F2 G2) 4 measure94
+
+; ----------- measure 95 --- beat 268 --- time signature 5/4
+
+CHORD (F2 G2) 3 measure95
+CHORD (-F2 -G2) 2
+
+; ----------- measure 96 --- beat 273 --- time signature 5/4
+
+NOTE 0 3/2 measure96
+NOTE D2 0
+NOTE D2 1/2
+NOTE 0 3/2
+NOTE D2 3/4
+NOTE -D2 3/4
+
+; ----------- measure 97 --- beat 278 --- time signature 5/4
+
+NOTE 0 5/2 measure97
+NOTE F2 1/8 ; harmonics
+NOTE G2 1/8 ; harmonics
+NOTE F2 1/8 ; harmonics
+NOTE G#2 1/8 ; harmonics
+NOTE G2 1/8 ; harmonics
+NOTE E2 1/8 ; harmonics
+NOTE D#2 1/8 ; harmonics
+NOTE C#2 1/8 ; harmonics
+NOTE 0 3/2
+
+; ----------- measure 98 --- beat 283 --- time signature 5/4
+
+NOTE 0 1/10 measure98
+NOTE D2 1/10
+NOTE D2 1/10
+NOTE G2 1/10
+NOTE A2 1/10
+NOTE F#2 1/10
+NOTE C3 1/10
+NOTE D#3 1/10
+NOTE D3 1/10
+NOTE C#3 1/10
+NOTE A2 1/10
+NOTE A2 1/10
+NOTE G2 1/10
+NOTE C3 1/10
+NOTE F2 1/10
+NOTE E2 1/10
+NOTE G#2 1/10
+NOTE G2 1/10
+NOTE D2 1/10
+NOTE D2 1/10
+NOTE 0 3
+
+; ----------- measure 99 --- beat 288 --- time signature 5/4
+
+NOTE 0 3 measure99
+TRILL (D2) 2 ; square notehead
+
+; ----------- measure 100 --- beat 293 --- time signature 5/4
+
+NOTE 0 5
+
+; ----------- measure 101 --- beat 298 --- time signature 5/4
+
+NOTE 0 5
+
+; ----------- measure 102 --- beat 303 --- time signature 5/4
+
+NOTE 0 1/10 measure102
+NOTE D2 1/10
+NOTE D#2 1/10
+NOTE F#2 1/10
+NOTE F2 1/10
+NOTE D2 1/10
+NOTE C#2 1/10
+NOTE C2 1/10
+NOTE D#2 1/10
+NOTE 0 11/10
+TRILL (G3 G#3) 3 ; harmonics
+
+; ----------- measure 103 --- beat 308 --- time signature 5/4
+
+NOTE 0 1 measure103
+TRILL ((C3 G3) (G#4)) 3 ; harmonics
+NOTE 0 1
+
+; ----------- measure 104 --- beat 313 --- time signature 4/4
+
+NOTE 0 4
+
+; ----------- measure 105 --- beat 317 --- time signature 4/4
+
+NOTE 0 4
+
+; ----------- measure 106 --- beat 321 --- time signature 5/4
+
+NOTE G#4 1/6 measure106 ; harmonics
+NOTE G5 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+TRILL (G#4 G5) 1 ; harmonics
+NOTE 0 1/6
+NOTE D2 1/12
+NOTE 0 1/12
+NOTE D4 1/12 ; harmonics
+NOTE 0 1/12
+NOTE D2 1/12
+NOTE -D2 1/12
+CHORD (-D2 D4) 1/12 ; harmonics
+NOTE -D2 1/12
+NOTE D2 1/12
+NOTE -D2 1/12
+TRILL (D4 D2) 3/2 ; harmonics
+NOTE -D4 1/2 ; harmonics
+
+; ----------- measure 107 --- beat 327 --- time signature 5/4
+
+TRILL (G#4 G5) 1 measure107 ; harmonics
+TRILL ((C#3 G#3) (C#3 G#3)) 1/21 ; harmonics
+NOTE 0 1/19
+CHORD (D#3 A#3) 1/19 ; harmonics
+NOTE 0 1/19
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (-C#3 -G#3 A#4) 1/19 ; harmonics
+CHORD (-C#3 -G#3) 1/19 ; harmonics
+CHORD (-C#3 -G#3) 1/19 ; harmonics
+CHORD (-C#3 -G#3) 1/19 ; harmonics
+CHORD (D#3 A#3) 1/21 ; harmonics
+NOTE 0 1/19
+CHORD (C#3 G#3) 1/19 ; harmonics
+NOTE 0 1/19
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (-D#3 -A#3 G#4) 1/19 ; harmonics
+CHORD (-D#3 -A#3) 1/19 ; harmonics
+CHORD (-D#3 -A#3) 1/19 ; harmonics
+CHORD (-D#3 -A#3) 1/19 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+CHORD (D#3 A#3) 1/10 ; harmonics
+CHORD (C#3 G#3) 1/10 ; harmonics
+TRILL ((D#3 G3 A#3) (D#3 G3 A#3)) 1/10 ; harmonics
+TRILL ((C#3 G#3 G5) (C#3 G#3 G5)) 1/10 ; harmonics
+TRILL ((D#3 G3 A#3) (D#3 G3 A#3)) 1/10 ; harmonics
+TRILL ((C#3 G#3 G5) (C#3 G#3 G5)) 1/10 ; harmonics
+TRILL ((D#3 G3 A#3) (D#3 G3 A#3)) 1/10 ; harmonics
+TRILL (G#4 G5) 3/2 ; harmonics
+NOTE -G#4 1/2 ; harmonics
+
+; ----------- measure 108 --- beat 333 --- time signature 5/4
+
+TRILL (D4 D2) 1 measure108 ; harmonics
+NOTE D4 1/12 ; harmonics
+NOTE 0 1/12
+NOTE D2 1/12
+NOTE 0 1/12
+NOTE D4 1/12 ; harmonics
+NOTE 0 1/12
+TRILL ((D2 G5) (D2 G5)) 1/12 ; harmonics
+TRILL (G5 ) 1/12 ; harmonics
+TRILL ((D4 G5) (D4 G5)) 1/12 ; harmonics
+TRILL (G5 ) 1/12 ; harmonics
+TRILL ((D2 G5) (D2 G5)) 1/12 ; harmonics
+TRILL (G5 ) 1/12 ; harmonics
+TRILL (G#4 G5) 1 ; harmonics
+TRILL ((G#4 G#4) (G#2 C#3 G5)) 1/6 ; harmonics
+TRILL ((G#4 G5) (D#3 G3 G5)) 1/6 ; harmonics
+TRILL ((G#4 G#4) (G#2 C#3 G5)) 1/6 ; harmonics
+TRILL ((G#4 G5) (D#3 G3 G5)) 1/6 ; harmonics
+TRILL ((G#4 G#4) (G#2 C#3 G5)) 1/6 ; harmonics
+TRILL ((G#4 G5) (D#3 G3 G5)) 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+NOTE G#4 1/6 ; harmonics
+NOTE G5 1/6 ; harmonics
+
+; ----------- measure 109 --- beat 338 --- time signature 5/4
+
+NOTE G#2 1/10 measure109
+NOTE F2 1/10
+NOTE G2 1/10
+NOTE D3 1/10
+NOTE D#3 1/10
+NOTE B3 1/10
+NOTE G3 1/10
+NOTE F#3 1/10
+NOTE C3 1/10
+NOTE D3 1/10
+NOTE A3 1/10
+NOTE A3 1/10
+NOTE G3 1/10
+NOTE C4 1/10
+NOTE E3 1/10
+NOTE F3 1/10
+NOTE E3 1/10
+NOTE D#3 1/10
+NOTE B2 1/5
+NOTE 0 3
+
+; ----------- measure 110 --- beat 343 --- time signature 2/4
+
+NOTE 0 2 measure110
+
+; ----------- measure 111 --- beat 345 --- time signature 5/4
+
+NOTE B2 1/8 measure111
+NOTE D3 1/4
+NOTE C3 1/8
+NOTE F#3 1/8
+NOTE D3 1/8
+NOTE D#3 3/8
+NOTE G#3 1/8
+NOTE G3 1/8
+NOTE E3 1/8
+NOTE F3 1/8
+NOTE D3 1/8
+NOTE G3 1/8
+NOTE D#3 1/8
+NOTE C3 1/8
+NOTE A#2 1/8
+NOTE B2 1/8
+NOTE G#2 1/8
+NOTE D3 1/8
+NOTE D#3 1/8
+NOTE C3 1/8
+NOTE B2 1/8
+NOTE C3 1/8
+NOTE D#3 1/8
+NOTE G#2 1/8
+NOTE -A2 1/8
+NOTE F2 1/8
+NOTE B2 1/8
+NOTE G3 1/8
+NOTE F4 1/8
+NOTE 0 1
+
+; ----------- measure 112 --- beat 350 --- time signature 9/4
+
+NOTE 0 9 measure112
+
+; ----------- measure 113 --- beat 359 --- time signature 3/4
+
+BPM 40
+NOTE E4 1/3 measure113
+NOTE E4 2/3
+NOTE E4 1/3
+NOTE E4 2/3
+NOTE E4 1/3
+NOTE E4 2/3
+
+; ----------- measure 114 --- beat 362 --- time signature 3/4
+
+NOTE 0 1/3 measure114
+NOTE E4 1/3
+NOTE E4 1/3
+NOTE -E4 1/3
+NOTE E4 2/3
+NOTE E4 2/3
+NOTE D4 1/3
+
+; ----------- measure 115 --- beat 365 --- time signature 5/4
+
+NOTE 0 4/3 measure115
+NOTE E4 1/3
+NOTE E4 1/3
+NOTE -E4 1/3
+NOTE E4 1/3
+NOTE -E4 1/3
+NOTE -E4 1/3
+NOTE D#4 2/3
+NOTE 0 1/3
+NOTE D4 2/3
+
+; ----------- measure 116 --- beat 370 --- time signature 5/4
+
+NOTE 0 3/2 measure116
+NOTE A4 1
+NOTE B4 1
+NOTE A4 1
+NOTE B4 1/2
+
+; ----------- measure 117 --- beat 375 --- time signature 5/4
+
+NOTE B4 3/2 measure117
+NOTE A4 1
+NOTE B4 1/2
+NOTE 0 1/2
+NOTE D2 1/4 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+NOTE -D2 1/8 ; square notehead
+
+; ----------- measure 118 --- beat 380 --- time signature 5/4
+
+NOTE 0 3/2 measure118
+NOTE A4 2
+NOTE A4 0
+NOTE -G#4 3/2
+
+; ----------- measure 119 --- beat 385 --- time signature 5/4
+
+NOTE B4 3/2 measure119
+NOTE A#4 0
+NOTE A4 2
+NOTE A4 0
+NOTE 0 3/2
+
+; ----------- measure 120 --- beat 390 --- time signature 4/4
+
+NOTE G3 2 measure120
+NOTE B3 1/2
+NOTE B3 1
+NOTE G#3 1/2
+
+; ----------- measure 121 --- beat 394 --- time signature 4/4
+
+NOTE G#3 3 measure121
+NOTE C3 1/2
+NOTE D3 1/2
+
+; ----------- measure 122 --- beat 398 --- time signature 4/4
+
+NOTE D3 1/4 measure122
+NOTE C3 3/4
+NOTE -C3 2
+NOTE D#2 1
+
+; ----------- measure 123 --- beat 402 --- time signature 4/4
+
+NOTE D#2 2 measure123
+NOTE A2 1
+NOTE -A2 1
+
+; ----------- measure 124 --- beat 406 --- time signature 4/4
+
+NOTE F3 1 measure124
+NOTE F5 3 ; harmonics
+
+; ----------- measure 125 --- beat 410 --- time signature 4/4
+
+NOTE E6 3 measure125 ; harmonics
+NOTE 0 1
+
+; ----------- measure 126 --- beat 414 --- time signature 5/4
+
+BPM 66
+NOTE 0 1/2 measure126
+NOTE F3 1/2
+NOTE 0 5/2
+NOTE F#2 3/2 ; harmonics
+
+; ----------- measure 127 --- beat 419 --- time signature 5/4
+
+NOTE F#2 3 measure127 ; harmonics
+NOTE -F#2 2 ; harmonics
+
+; ----------- measure 128 --- beat 424 --- time signature 5/4
+
+NOTE F#2 3 measure128 ; harmonics
+NOTE -F#2 2 ; harmonics
+
+; ----------- measure 129 --- beat 429 --- time signature 5/4
+
+NOTE 0 5 measure129
+
+; ----------- measure 130 --- beat 434 --- time signature 5/4
+
+NOTE 0 1/2 measure130
+NOTE E2 1/2
+NOTE -E2 2/3
+NOTE F2 1/3
+NOTE 0 1/3
+NOTE B2 1/3
+NOTE A2 1/3
+NOTE -A2 1/2
+NOTE F2 1/2 ; harmonics
+NOTE -F2 1 ; harmonics
+
+; ----------- measure 131 --- beat 439 --- time signature 5/4
+
+NOTE F2 1 measure131 ; harmonics
+NOTE 0 1/8
+NOTE A2 1/8
+NOTE F3 1/4
+NOTE F3 1/2
+NOTE -F3 1/4
+NOTE C#3 3/4
+NOTE -C#3 1/3
+NOTE F5 2/3 ; harmonics
+NOTE -F5 1 ; harmonics
+
+; ----------- measure 132 --- beat 444 --- time signature 5/4
+
+NOTE F5 1 measure132 ; harmonics
+NOTE G5 3/2 ; harmonics
+NOTE E5 1/2 ; harmonics
+NOTE -E5 2 ; harmonics
+
+; ----------- measure 133 --- beat 449 --- time signature 3/4
+
+NOTE 0 3 measure133
+
+; ----------- measure 134 --- beat 452 --- time signature 5/4
+
+BPM 40
+NOTE D#3 1/3 measure134
+NOTE D3 2/3
+NOTE D#3 1/3
+NOTE D3 2/3
+NOTE 0 1/3
+NOTE F5 2/3 ; harmonics
+NOTE -F5 1 ; harmonics
+NOTE F#5 1/8 ; harmonics
+NOTE D#3 1/8
+NOTE -D3 3/4
+
+; ----------- measure 135 --- beat 457 --- time signature 5/4
+
+NOTE 0 1 measure135
+TRILL ((C#3 G#3) (A#4)) 4 ; harmonics
+
+; ----------- measure 136 --- beat 462 --- time signature 5/4
+
+NOTE 0 1/8 measure136
+NOTE B3 1/8
+NOTE A#3 3/4
+NOTE C#4 1
+NOTE -C#4 1/8
+NOTE B3 1/8
+NOTE B3 3/4
+NOTE G5 2 ; harmonics
+
+; ----------- measure 137 --- beat 467 --- time signature 5/4
+
+NOTE E4 1 measure137
+NOTE 0 1/8
+NOTE B3 1/8
+NOTE B3 3/4
+NOTE 0 1/3
+TRILL (A3 ) 2/3
+TRILL (A3 D4) 2/3
+NOTE 0 1/4
+NOTE F4 1/12
+NOTE -F4 2/3
+NOTE G4 1
+
+; ----------- measure 138 --- beat 472.7 --- time signature 5/4
+
+NOTE 0 1/3 measure138
+NOTE D#2 1/3
+NOTE D2 1/3
+NOTE 0 1/3
+NOTE E2 1/3
+NOTE E2 1/3
+NOTE G2 2
+NOTE A2 3/4
+NOTE -A2 1/4
+
+; ----------- measure 139 --- beat 477.7 --- time signature 5/4
+
+NOTE 0 1/3 measure139
+NOTE D2 2/3
+NOTE -D2 1
+NOTE D2 3
+
+; ----------- measure 140 --- beat 482.7 --- time signature 5/4
+
+NOTE 0 5 measure140
+
+; ----------- measure 141 --- beat 487.7 --- time signature 5/4
+
+NOTE 0 1 measure141
+TRILL ((C#3 G#3) (A#4)) 4 ; harmonics
+
+; ----------- measure 142 --- beat 492.7 --- time signature 3/4
+
+BPM 68
+NOTE 0 5/3 measure142
+NOTE E4 1/3 @staccato
+NOTE 0 2/3
+NOTE E4 1/3 @staccato
+
+; ----------- measure 143 --- beat 495.7 --- time signature 4/4
+
+NOTE E6 1/3 @staccato measure143 ; harmonics
+NOTE 0 1/3
+NOTE E6 1/3 @staccato ; harmonics
+NOTE 0 2/3
+NOTE E6 1/3 @staccato ; harmonics
+NOTE 0 5/3
+NOTE E6 1/3 @staccato ; harmonics
+
+; ----------- measure 144 --- beat 499.7 --- time signature 2/4
+
+NOTE 0 2 measure144
+
+; ----------- measure 145 --- beat 501.7 --- time signature 4/4
+
+NOTE G6 2 measure145 ; harmonics
+NOTE -G6 2 ; harmonics
+
+; ----------- measure 146 --- beat 505.7 --- time signature 4/4
+
+NOTE 0 1/3 measure146
+NOTE E6 1/3 @staccato ; harmonics
+NOTE 0 1
+NOTE E6 1/3 @staccato ; harmonics
+NOTE 0 1/3
+NOTE E6 1/3 @staccato ; harmonics
+NOTE 0 1/3
+NOTE E6 1/3 @staccato ; harmonics
+NOTE 0 1/3
+NOTE E6 1/3 @staccato ; harmonics
+
+; ----------- measure 147 --- beat 509.7 --- time signature 4/4
+
+CHORD (G#7 G#9) 1/8 measure147 ; harmonics
+CHORD (-G#7 C#9) 1/62 ; harmonics
+CHORD (C#7 -C#9) 1/9 ; harmonics
+NOTE -C#7 1/28 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+NOTE G#7 1/7 ; harmonics
+NOTE C#7 1/7 ; harmonics
+
+; ----------- measure 148 --- beat 513.7 --- time signature 5/4
+
+TRILL (E4) 3 measure148
+TRILL (D#4) 2
+
+; ----------- measure 149 --- beat 518.7 --- time signature 4/4
+
+TRILL (G4) 4 measure149
+
+; ----------- measure 150 --- beat 522.7 --- time signature 4/4
+
+TRILL (F5) 2 measure150
+TRILL (B4) 2
+
+; ----------- measure 151 --- beat 526.7 --- time signature 4/4
+
+TRILL (G#4) 2 measure151
+TRILL (E4) 3/2
+NOTE G6 1/2 ; harmonics
+
+; ----------- measure 152 --- beat 530.7 --- time signature 4/4
+
+BPM 46 ; ( ← 𝅘𝅥𝅮 =92) 
+NOTE G6 2 measure152 ; harmonics
+NOTE 0 1/4
+NOTE E2 3/4 ; harmonics
+NOTE F2 0 ; harmonics
+NOTE -E2 1 ; harmonics
+
+; ----------- measure 153 --- beat 534.7 --- time signature 4/4
+
+NOTE E2 2 measure153 ; harmonics
+NOTE 0 2
+
+; ----------- measure 154 --- beat 538.7 --- time signature 4/4
+
+NOTE 0 1/4 measure154
+NOTE E4 3/4
+NOTE -E4 0
+NOTE E4 1
+NOTE F4 1
+NOTE F4 0
+NOTE E4 1
+
+; ----------- measure 155 --- beat 542.7 --- time signature 4/4
+
+NOTE 0 4 measure155
+
+; ----------- measure 156 --- beat 546.7 --- time signature 4/4
+
+NOTE 0 2 measure156
+NOTE B5 2 ; harmonics
+
+; ----------- measure 157 --- beat 550.7 --- time signature 4/4
+
+NOTE B5 2/5 measure157 ; harmonics
+NOTE G#5 1/10 ; harmonics
+NOTE -G#5 1/2 ; harmonics
+NOTE -G#5 8/27 ; harmonics
+NOTE A5 1/5 ; harmonics
+NOTE -A5 1 ; harmonics
+NOTE -A5 1/2 ; harmonics
+NOTE B5 1 ; harmonics
+
+; ----------- measure 158 --- beat 554.7 --- time signature 2/4
+
+NOTE B5 1 measure158 ; harmonics
+NOTE A#5 1 ; harmonics
+
+; ----------- measure 159 --- beat 556.7 --- time signature 2/4
+
+NOTE C6 1 measure159 ; harmonics
+NOTE E5 1 ; harmonics
+
+; ----------- measure 160 --- beat 558.7 --- time signature 2/4
+
+NOTE E5 1/2 measure160 ; harmonics
+NOTE -E5 1/10 ; harmonics
+NOTE D#5 2/5 ; harmonics
+NOTE -D#5 8/27 ; harmonics
+NOTE A5 1/5 ; harmonics
+NOTE -A5 1/2 ; harmonics
+
+; ----------- measure 161 --- beat 560.7 --- time signature 2/4
+
+NOTE A5 3/2 measure161 ; harmonics
+NOTE 0 1/2
+
+; ----------- measure 162 --- beat 562.7 --- time signature 4/4
+
+NOTE 0 4
+
+; ----------- measure 163 --- beat 566.7 --- time signature 4/4
+
+NOTE 0 4
+
+; ----------- measure 164 --- beat 570.7 --- time signature 4/4
+
+NOTE 0 4 measure164
+
+; ----------- measure 165 --- beat 574.7 --- time signature 4/4
+
+NOTE 0 2 measure165
+NOTE A5 2
+NOTE A#5 0
+
+; ----------- measure 166 --- beat 578.7 --- time signature 4/4
+
+NOTE A5 1 measure166
+NOTE 0 3
+
+; ----------- measure 167 --- beat 582.7 --- time signature 5/4
+
+NOTE 0 5 measure167
+
+; ----------- measure 168 --- beat 587.7 --- time signature 4/4
+
+NOTE 0 5/2 measure168
+NOTE G3 1/2 @staccato
+NOTE 0 1
+
+; ----------- measure 169 --- beat 591.7 --- time signature 4/4
+
+NOTE 0 3 measure169
+NOTE -E3 1/2 @staccato
+NOTE 0 1/2
+
+; ----------- measure 170 --- beat 595.7 --- time signature 4/4
+
+NOTE 0 5/8 measure170
+NOTE F2 1/8
+NOTE G#2 1/8
+NOTE G2 1/8
+NOTE A2 1/10
+NOTE D3 1/10
+NOTE C#3 1/10
+NOTE C3 1/10
+NOTE E3 1/10
+CHORD (A2 F3) 1/6
+NOTE D3 1/6
+CHORD (D3 E3) 1/6
+NOTE A#3 1/10
+NOTE E3 1/10
+NOTE G#3 1/10
+NOTE G3 1/10
+NOTE -A3 1/10
+NOTE D3 1/10
+NOTE D3 1/10
+NOTE C4 1/10
+NOTE A3 1/10
+NOTE A3 1/10
+NOTE A3 1
+
+; ----------- measure 171 --- beat 599.7 --- time signature 4/8
+
+NOTE F3 1/10 measure171
+NOTE E3 1/10
+NOTE E3 1/10
+NOTE G#3 1/10
+NOTE G3 1/10
+NOTE D3 1/10
+NOTE D3 1/10
+NOTE F#3 1/10
+NOTE F3 1/10
+NOTE D3 1/10
+NOTE E3 1/10
+NOTE E3 1/10
+NOTE E3 1/10
+NOTE A#2 1/10
+NOTE G#2 1/10
+NOTE C3 1/10
+NOTE C3 1/10
+NOTE F3 1/10
+NOTE E3 1/10
+NOTE G2 1/10
+
+; ----------- measure 172 --- beat 601.7 --- time signature 4/8
+
+NOTE G2 1/2 measure172
+NOTE -G2 1/10
+NOTE G#2 1/10
+NOTE A#2 1/10
+NOTE A2 1/10
+NOTE G#2 1/10
+NOTE B2 1/10
+NOTE C3 1/10
+NOTE D#3 1/10
+NOTE D3 1/10
+NOTE D3 1/10
+NOTE F3 1/10
+NOTE F#3 1/10
+NOTE D#3 1/10
+NOTE G2 1/10
+NOTE D3 1/10
+
+; ----------- measure 173 --- beat 603.7 --- time signature 7/8
+
+NOTE A3 1/8 measure173
+NOTE 0 3/8
+NOTE F2 1/4 @staccato
+NOTE C#2 1/8 @staccato
+NOTE C2 1/8 @staccato
+NOTE G2 1/8 @staccato
+NOTE G2 1/8 @staccato
+NOTE E2 1/8 @staccato
+NOTE D#2 1/8 @staccato
+NOTE 0 1/4
+NOTE G2 1/8 @staccato
+NOTE G2 1/8 @staccato
+NOTE G#2 1/8 @staccato
+NOTE D3 1/4 @staccato
+NOTE C3 1/8 @staccato
+NOTE D#3 1/8 @staccato
+NOTE D3 1/8 @staccato
+NOTE F3 1/8 @staccato
+NOTE F3 1/8 @staccato
+NOTE G#3 1/8 @staccato
+NOTE E3 1/8 @staccato
+NOTE E3 1/8 @staccato
+NOTE F3 1/8 @staccato
+
+; ----------- measure 174 --- beat 607.2 --- time signature 7/8
+
+NOTE 0 1/8 measure174
+NOTE D#3 1/8 @staccato
+NOTE A3 1/8 @staccato
+NOTE A3 1/8 @staccato
+NOTE A#3 1/8 @staccato
+NOTE B3 1/8 @staccato
+NOTE B3 1/8 @staccato
+NOTE D4 1/8 @staccato
+NOTE D#4 1/8 @staccato
+NOTE A3 1/8 @staccato
+NOTE G#3 1/8 @staccato
+NOTE C4 1/8 @staccato
+NOTE D4 1/8 @staccato
+NOTE D4 1/8 @staccato
+NOTE F4 1/8 @staccato
+NOTE -D4 1/8 @staccato
+NOTE D4 1/8 @staccato
+NOTE G4 1/8 @staccato
+NOTE G#4 1/8 @staccato
+NOTE E4 1/8 @staccato
+NOTE G4 1/8 @staccato
+NOTE C#5 1/8 @staccato
+NOTE A4 1/8 @staccato
+NOTE A#4 1/8 @staccato
+NOTE E5 1/8 @staccato
+NOTE F5 1/8 @staccato
+NOTE E5 1/8 @staccato
+NOTE G#5 1/8 @staccato
+
+; ----------- measure 175 --- beat 610.7 --- time signature 7/8
+
+NOTE E4 1 measure175
+NOTE -E4 1
+NOTE -E4 1
+NOTE -E4 1/2
+
+; ----------- measure 176 --- beat 614.2 --- time signature 2/4
+
+NOTE 0 2 measure176
+
+; ----------- measure 177 --- beat 616.2 --- time signature 7/8
+
+NOTE B3 1/6 @staccato measure177
+NOTE 0 1/3
+NOTE F4 1/6 @staccato
+NOTE 0 7/6
+NOTE F4 1/6 @staccato
+NOTE 0 1/3
+NOTE F4 1/6 @staccato
+NOTE 0 2/3
+NOTE E4 1/6 @staccato
+NOTE 0 1/6
+
+; ----------- measure 178 --- beat 619.7 --- time signature 7/8
+
+NOTE 0 1/6 measure178
+NOTE F4 1/6 @staccato
+NOTE 0 4/3
+NOTE D4 1/6 @staccato
+NOTE 0 1/3
+NOTE D4 1/6 @staccato
+NOTE 0 7/6
+
+; ----------- measure 179 --- beat 623.2 --- time signature 4/4
+
+BPM 68
+NOTE 0 1/2 measure179
+NOTE F4 1/2 @staccato
+NOTE 0 1
+TRILL (D2 A3) 2
+
+; ----------- measure 180 --- beat 627.2 --- time signature 4/4
+
+TRILL (D2 A3) 2 measure180
+TRILL (D2 A3) 2
+
+; ----------- measure 181 --- beat 631.2 --- time signature 4/4
+
+TRILL (D2 A3) 2 measure181
+TRILL (D2 A3) 2
+
+; ----------- measure 182 --- beat 635.2 --- time signature 4/4
+
+TRILL (D2 A3) 2 measure182
+TRILL (D2 A3) 2
+
+; ----------- measure 183 --- beat 639.2 --- time signature 4/4
+
+NOTE 0 3/2 measure183
+TRILL (F4) 1/2
+TRILL (F4) 2
+
+; ----------- measure 184 --- beat 643.2 --- time signature 4/4
+
+TRILL (F4) 4 measure184
+
+; ----------- measure 185 --- beat 647.2 --- time signature 4/4
+
+TRILL (F4) 4 measure185
+
+; ----------- measure 186 --- beat 651.2 --- time signature 4/4
+
+TRILL (F4) 2 measure186
+NOTE 0 1/2
+TRILL ((D#3 A#3)) 3/2 ; square notehead
+
+; ----------- measure 187 --- beat 655.2 --- time signature 5/4
+
+BPM 48
+TRILL ((B2 F#3)) 1 measure187 ; square notehead
+TRILL ((F2 C3)) 2/3 ; square notehead
+TRILL ((G#2 D#3)) 1/3 ; square notehead
+CHORD (G2 D3) 1 ; square notehead
+CHORD (D2 A2) 1 ; square notehead
+CHORD (C3 G3) 1 ; square notehead
+
+; ----------- measure 188 --- beat 660.2 --- time signature 4/4
+
+CHORD (D2 A2) 2 measure188 ; square notehead
+CHORD (D2 A2) 2 ; square notehead
+
+; ----------- measure 189 --- beat 664.2 --- time signature 5/4
+
+TRILL ((D2 A2)) 3/4 measure189 ; square notehead
+CHORD (A#2 F3) 1/8 ; square notehead
+TRILL ((F2 C3)) 1/8 ; square notehead
+TRILL ((F2 C3)) 3/4 ; square notehead
+CHORD (C#3 A3) 1/8 ; square notehead
+TRILL ((A2 E3)) 1/8 ; square notehead
+TRILL ((A2 E3)) 3/4 ; square notehead
+CHORD (A#2 F3) 1/8 ; square notehead
+TRILL ((F2 C3)) 1/8 ; square notehead
+CHORD (F2 C3) 3/2 ; square notehead
+CHORD (C#2 G#2) 1/2 ; square notehead
+
+; ----------- measure 190 --- beat 669.2 --- time signature 4/4
+
+CHORD (C#2 G#2) 2 measure190 ; square notehead
+CHORD (C#2 G#2) 2 ; square notehead
+
+; ----------- measure 191 --- beat 673.2 --- time signature 2/4
+
+NOTE 0 2 measure191
+
+; ----------- measure 192 --- beat 675.2 --- time signature 5/4
+
+NOTE 0 25/12 measure192
+NOTE D3 1/12
+NOTE D3 1/12
+NOTE B2 1/12
+NOTE G#3 1/12
+NOTE G3 1/12
+NOTE F#3 1/12
+NOTE D3 1/12
+NOTE D3 1/12
+NOTE D3 1/12
+NOTE C4 1/12
+NOTE B5 1/12 ; harmonics
+NOTE -B5 3/4 ; harmonics
+NOTE -B5 1/4 ; harmonics
+NOTE 0 1
+
+; ----------- measure 193 --- beat 680.2 --- time signature 4/4
+
+NOTE D2 4 measure193 ; harmonics
+
+; ----------- measure 194 --- beat 684.2 --- time signature 4/4
+
+NOTE D2 3 measure194 ; harmonics
+NOTE 0 1/4
+TRILL (A2) 3/4 ; square notehead
+
+; ----------- measure 195 --- beat 688.2 --- time signature 4/4
+
+NOTE A2 1 measure195 ; square notehead
+NOTE 0 1/8
+CHORD (D3 E3) 7/8
+CHORD (-D3 -E3) 2
+
+; ----------- measure 196 --- beat 692.2 --- time signature 4/4
+
+NOTE D3 1/5 measure196
+NOTE D3 1/5
+NOTE D3 1/5
+CHORD (C#3 D3) 1/5
+NOTE D3 1/5
+NOTE D3 1/6
+NOTE D3 1/6
+CHORD (D3 D#3) 1/6
+NOTE D3 1/6
+CHORD (C#3 D3) 1/6
+CHORD (D3 F3) 1/6
+NOTE 0 3/2
+NOTE G2 1/10
+NOTE G#2 1/10
+NOTE G2 1/10
+NOTE C3 1/10
+NOTE B2 1/10
+
+; ----------- measure 197 --- beat 696.2 --- time signature 5/4
+
+NOTE G#2 1 measure197
+NOTE 0 1/2
+TRILL (A2) 1 ; square notehead
+NOTE B2 2 ; square notehead
+NOTE -F2 1/2 ; square notehead
+
+; ----------- measure 198 --- beat 701.2 --- time signature 5/4
+
+NOTE F2 3 measure198 ; square notehead
+NOTE F2 2 ; square notehead
+
+; ----------- measure 199 --- beat 706.2 --- time signature 4/4
+
+NOTE A2 3 measure199 ; square notehead
+NOTE 0 1/2
+NOTE E4 1/2
+
+; ----------- measure 200 --- beat 710.2 --- time signature 4/4
+
+NOTE E4 4 measure200
+
+; ----------- measure 201 --- beat 714.2 --- time signature 4/4
+
+NOTE E4 2 measure201
+NOTE 0 1/2
+CHORD (A2 E3) 1/4 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+
+; ----------- measure 202 --- beat 718.2 --- time signature 4/4
+
+CHORD (A2 E3) 1/4 measure202 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+CHORD (-A2 -E3) 1/8 ; square notehead
+NOTE 0 1
+TRILL (D2) 3/2 ; square notehead
+
+; ----------- measure 203 --- beat 722.2 --- time signature 3/4
+
+NOTE D2 3/2 measure203 ; square notehead
+NOTE D2 3/2 ; square notehead
+
+; ----------- measure 204 --- beat 725.2 --- time signature 4/4
+
+NOTE 0 1/2 measure204
+TRILL (A2) 2 ; square notehead
+TRILL (E4) 3/2 ; square notehead
+
+; ----------- measure 205 --- beat 729.2 --- time signature 3/4
+
+NOTE 0 3 measure205
+
+; ----------- measure 206 --- beat 732.2 --- time signature 4/4
+
+CHORD (A2 D3) 4 measure206
+
+; ----------- measure 207 --- beat 736.2 --- time signature 6/4
+
+CHORD (A2 D3) 4 measure207
+NOTE 0 2
+
+; ----------- measure 208 --- beat 742.2 --- time signature 4/4
+
+BPM 68
+NOTE 0 2/3 measure208
+NOTE E4 1/3 @staccato
+NOTE 0 1
+NOTE E4 1/2 @staccato
+NOTE 0 7/6
+NOTE E4 1/3 @staccato
+
+; ----------- measure 209 --- beat 746.2 --- time signature 4/4
+
+NOTE 0 3/2 measure209
+NOTE E4 1/2 @staccato
+NOTE 0 5/3
+NOTE E4 1/3 @staccato
+
+; ----------- measure 210 --- beat 750.2 --- time signature 6/4
+
+NOTE 0 7/3 measure210
+NOTE E6 2/3 @staccato ; harmonics
+NOTE 0 1
+NOTE E6 1/2 @staccato ; harmonics
+NOTE 0 7/6
+NOTE E6 1/3 @staccato ; harmonics
+
+; ----------- measure 211 --- beat 756.2 --- time signature 4/4
+
+BPM 46 ; ( ← 𝅘𝅥𝅮 =92) 
+NOTE 0 1/10 measure211
+NOTE E5 2/5 @staccato ; harmonics
+NOTE 0 1/10
+NOTE D5 2/5 @staccato ; harmonics
+NOTE 0 1/5
+NOTE G5 3/10 @staccato ; harmonics
+NOTE 0 1/2
+NOTE E5 1/2 @staccato ; harmonics
+NOTE 0 1/10
+NOTE G#5 1/10 @staccato ; harmonics
+NOTE 0 1/5
+NOTE F5 1/10 @staccato ; harmonics
+NOTE 0 2/5
+NOTE C6 1/10 @staccato ; harmonics
+NOTE 0 1/2
+
+; ----------- measure 212 --- beat 760.2 --- time signature 4/4
+
+NOTE G#5 1/2 measure212 ; harmonics
+NOTE 0 1/10
+NOTE D5 2/5 @staccato ; harmonics
+NOTE 0 1/2
+NOTE B5 1/2 ; harmonics
+NOTE 0 2
+
+; ----------- measure 213 --- beat 764.2 --- time signature 4/4
+
+BPM 44 ; ( ← 𝅘𝅥𝅮 =88) 
+NOTE 0 1/2 measure213
+NOTE D2 1/2 ; harmonics
+NOTE -D2 3 ; harmonics
+
+; ----------- measure 214 --- beat 768.2 --- time signature 4/4
+
+NOTE D2 4 measure214
+
+; ----------- measure 215 --- beat 772.2 --- time signature 2/4
+
+NOTE D2 2 measure215 ; harmonics
+
+; ----------- measure 216 --- beat 774.2 --- time signature 16/4
+
+NOTE 0 16 measure216
+
+; ----------- measure 217 --- beat 790.2 --- time signature 4/4
+
+BPM 60
+NOTE A#4 1/2 @staccato measure217 ; harmonics
+NOTE 0 11/6
+NOTE F#4 1/3 @staccato
+NOTE 0 4/3
+
+; ----------- measure 218 --- beat 794.2 --- time signature 4/4
+
+NOTE 0 1 measure218
+NOTE E4 1/2
+NOTE 0 13/6
+NOTE A4 1/3
+
+; ----------- measure 219 --- beat 798.2 --- time signature 4/4
+
+NOTE 0 4 measure219
+
+; ----------- measure 220 --- beat 802.2 --- time signature 4/4
+
+NOTE 0 3/2 measure220
+NOTE E6 1/2 ; harmonics
+NOTE -E6 2 ; harmonics
+
+; ----------- measure 221 --- beat 806.2 --- time signature 4/4
+
+NOTE F6 2 measure221 ; harmonics
+NOTE E6 2 ; harmonics
+
+; ----------- measure 222 --- beat 810.2 --- time signature 4/4
+
+NOTE 0 4 measure222
+
+; ----------- measure 223 --- beat 814.2 --- time signature 5/4
+
+BPM 44
+NOTE 0 1/4 measure223
+NOTE F2 1/4
+NOTE G2 1/4
+NOTE G2 1/4
+NOTE -G2 1/3
+NOTE E3 2/3
+NOTE C3 3/2
+NOTE A#4 1/2 ; harmonics
+NOTE -A#4 3/4 ; harmonics
+NOTE C#5 1/4 ; harmonics
+
+; ----------- measure 224 --- beat 819.2 --- time signature 4/4
+
+NOTE 0 1/3 measure224
+NOTE A2 1/3
+NOTE -A2 1/3
+NOTE D3 3/4
+NOTE E3 1/4
+NOTE -E3 1/8
+NOTE E3 3/4
+NOTE B3 1/8
+NOTE 0 1/2
+NOTE G2 1/2
+
+; ----------- measure 225 --- beat 823.2 --- time signature 5/4
+
+NOTE G2 1 measure225
+NOTE A2 3/2 ; harmonics
+NOTE A#2 3/2 ; harmonics
+NOTE 0 1
+
+; ----------- measure 226 --- beat 828.2 --- time signature 4/4
+
+NOTE A#2 2 measure226 ; harmonics
+NOTE -A#2 2 ; harmonics
+
+; ----------- measure 227 --- beat 832.2 --- time signature 4/4
+
+NOTE F2 1/3 measure227
+NOTE E2 2/3
+NOTE F2 1/3
+NOTE E2 2/3
+TRILL (D3 D4) 2 ; harmonics
+
+; ----------- measure 228 --- beat 836.2 --- time signature 4/4
+
+NOTE 0 1 measure228
+NOTE D#3 3 ; harmonics
+
+; ----------- measure 229 --- beat 840.2 --- time signature 4/4
+
+NOTE D#3 4 measure229 ; harmonics
+
+; ----------- measure 230 --- beat 844.2 --- time signature 4/4
+
+BPM 66
+NOTE 0 1/2 measure230
+NOTE G#3 1/2
+NOTE -G#3 1/3
+NOTE G4 1/3
+CHORD (C#4 A4) 1/3
+CHORD (-C#4 -A4) 1/2
+NOTE A4 3/2
+
+; ----------- measure 231 --- beat 848.2 --- time signature 4/4
+
+NOTE 0 1/5 measure231
+NOTE D2 1/5
+NOTE D2 1/5
+NOTE C2 1/5
+NOTE G2 1/5
+NOTE A#2 1/6
+NOTE A2 1/6
+NOTE A2 1/6
+NOTE E2 1/6
+NOTE C#3 1/6
+NOTE A3 1/6 ; harmonics
+NOTE -A3 2 ; harmonics
+
+; ----------- measure 232 --- beat 852.2 --- time signature 5/4
+
+NOTE A3 3 measure232 ; harmonics
+NOTE A#3 2 ; harmonics
+
+; ----------- measure 233 --- beat 857.2 --- time signature 4/4
+
+NOTE A#3 4 measure233 ; harmonics
+
+; ----------- measure 234 --- beat 861.2 --- time signature 5/4
+
+NOTE A3 2 measure234 ; harmonics
+NOTE -A3 3 ; harmonics
+
+; ----------- measure 235 --- beat 866.2 --- time signature 4/4
+
+NOTE A#3 4 measure235 ; harmonics
+
+; ----------- measure 236 --- beat 870.2 --- time signature 4/4
+
+NOTE A#3 4 measure236 ; harmonics
+
+; ----------- measure 237 --- beat 874.2 --- time signature 4/4
+
+NOTE A3 4 measure237 ; harmonics
+
+; ----------- measure 238 --- beat 878.2 --- time signature 3/8
+
+CHORD (A2 E3) 1 measure238 ; square notehead
+CHORD (A2 E3) 1/2 ; square notehead
+
+; ----------- measure 239 --- beat 879.7 --- time signature 4/4
+
+BPM 44
+NOTE 0 2 measure239
+NOTE C6 2 ; harmonics
+
+; ----------- measure 240 --- beat 883.7 --- time signature 5/4
+
+NOTE C6 1 measure240 ; harmonics
+NOTE 0 1/5
+NOTE E3 1/5
+NOTE G3 1/5
+NOTE G3 1/5
+NOTE F3 1/5
+NOTE G#3 1/3
+NOTE G3 2/3
+TRILL (B3 B5) 1
+NOTE -A2 1
+
+; ----------- measure 241 --- beat 888.7 --- time signature 5/4
+
+NOTE A2 1/8 measure241
+NOTE D3 1/8
+NOTE D#3 1/8
+NOTE D3 3/8
+NOTE G#3 1/12
+NOTE A2 1/12
+NOTE E3 1/12
+NOTE F4 3/2
+NOTE G3 1/2 ; harmonics
+NOTE -G3 2 ; harmonics
+
+; ----------- measure 242 --- beat 893.7 --- time signature 5/4
+
+NOTE B2 3/2 measure242
+NOTE F2 3/2
+NOTE E5 2 ; harmonics
+
+; ----------- measure 243 --- beat 898.7 --- time signature 4/4
+
+NOTE 0 1/3 measure243
+NOTE C4 1/3 ; harmonics
+NOTE F2 1/3 ; harmonics
+NOTE C4 1/3
+NOTE C4 1/3 ; harmonics
+NOTE C5 1/3 ; harmonics
+NOTE 0 1/3
+NOTE C4 1/3
+NOTE F2 1/3 ; harmonics
+NOTE 0 1
+
+; ----------- measure 244 --- beat 902.7 --- time signature 4/4
+
+NOTE 0 1/6 measure244
+NOTE D4 1/6
+NOTE D#4 1/6
+NOTE D4 1/3
+NOTE B3 1/6
+NOTE F4 1/4
+NOTE F4 3/8
+NOTE E4 1/4
+NOTE D#4 1/8
+NOTE -D#4 1/6
+NOTE A3 1/3
+NOTE C4 1/6
+NOTE C4 1/3
+NOTE -C4 1/2
+NOTE 0 1/2
+
+; ----------- measure 245 --- beat 906.7 --- time signature 4/4
+
+CHORD (G5 A5) 2 measure245 ; harmonics
+CHORD (-G5 -A5) 2 ; harmonics
+
+; ----------- measure 246 --- beat 910.7 --- time signature 5/4
+
+CHORD (G5 A5) 3 measure246 ; harmonics
+CHORD (-G5 -A5) 2 ; harmonics
+
+; ----------- measure 247 --- beat 915.7 --- time signature 5/4
+
+BPM 56
+NOTE 0 21/10 measure247
+NOTE D2 1/10
+NOTE D#2 1/10
+NOTE F#2 1/10
+NOTE F2 1/10
+NOTE D2 1/10
+NOTE C#2 1/10
+NOTE C2 1/10
+NOTE G#2 1/10
+NOTE 0 3/5
+NOTE D4 3/2
+
+; ----------- measure 248 --- beat 920.7 --- time signature 5/4
+
+NOTE 0 5 measure248
+
+; ----------- measure 249 --- beat 925.7 --- time signature 5/8
+
+BPM 46 ; ( ← 𝅘𝅥𝅮 =92) 
+NOTE 0 5/3 measure249
+NOTE G#3 1/3
+NOTE -G#3 1/2
+
+; ----------- measure 250 --- beat 928.2 --- time signature 5/8
+
+NOTE A3 1/8 measure250
+NOTE A3 3/8
+NOTE G#3 1/2
+NOTE G3 1/3
+NOTE A3 1/6
+NOTE A#3 1/2
+NOTE -A#3 1/8
+NOTE F4 3/8
+
+; ----------- measure 251 --- beat 930.7 --- time signature 5/8
+
+NOTE 0 1/8 measure251
+NOTE B3 1/8
+NOTE B3 1/4
+NOTE -B3 1/8
+NOTE G4 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE -A3 1/8
+NOTE F3 1/8
+NOTE G3 1/4
+NOTE -G3 3/4
+NOTE -G#3 1/4
+
+; ----------- measure 252 --- beat 933.2 --- time signature 5/8
+
+NOTE E4 3/2 measure252
+NOTE 0 1/8
+NOTE D#4 1/8
+NOTE B3 1/8
+NOTE C4 1/4
+NOTE C4 1/4
+NOTE C#4 1/8
+
+; ----------- measure 253 --- beat 935.7 --- time signature 5/8
+
+NOTE C#4 1/8 measure253
+NOTE D4 3/4
+NOTE G4 1/8
+NOTE -G4 1/2
+NOTE -G4 3/8
+NOTE E4 1/8
+NOTE C4 1/6
+NOTE C4 1/6
+NOTE A#3 1/6
+
+; ----------- measure 254 --- beat 938.2 --- time signature 5/8
+
+NOTE E4 1/8 measure254
+NOTE C#4 1/8
+NOTE A3 1/4
+NOTE E4 1/8
+NOTE C4 1/8
+NOTE D4 1/8
+NOTE D#4 1/8
+NOTE B3 1/8
+NOTE F3 1/8
+NOTE F3 1/8
+NOTE D3 1/8
+NOTE F#3 1/8
+NOTE C4 1/8
+NOTE C#4 1/8
+NOTE D4 1/8
+NOTE D4 1/8
+NOTE D4 3/8
+
+; ----------- measure 255 --- beat 940.7 --- time signature 5/8
+
+NOTE A3 1/8 measure255
+NOTE A3 1/8
+NOTE C4 1/8
+NOTE C4 1/8
+NOTE A3 1/8
+NOTE D#4 1/8
+NOTE D4 1/8
+NOTE B3 1/8
+NOTE G#3 1/8
+NOTE F4 1/8
+NOTE E4 1/4
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE B3 1/8
+NOTE G3 1/8
+NOTE D4 1/8
+NOTE A3 1/8 ; harmonics
+NOTE E4 1/8
+NOTE C#4 1/8
+
+; ----------- measure 256 --- beat 943.2 --- time signature 5/8
+
+NOTE A3 1/8 measure256
+NOTE D4 1/2
+NOTE C#4 1/8
+NOTE F4 1/8
+NOTE A3 1/8
+NOTE E3 1/8
+NOTE D4 1/8
+NOTE G4 1/8
+NOTE A3 1/8
+NOTE F4 1/8
+NOTE G4 1/8
+NOTE E4 1/8
+NOTE A#3 1/8
+NOTE D3 1/8
+NOTE A3 1/8
+NOTE G#4 1/4
+
+; ----------- measure 257 --- beat 945.7 --- time signature 5/8
+
+NOTE G#4 1/4 measure257
+NOTE E4 1/8
+NOTE E4 1/8
+NOTE F4 1/8
+NOTE E4 1/8
+NOTE G#4 1/8
+NOTE A3 1/8
+NOTE -A3 1/4
+NOTE A3 1/8
+NOTE A#4 1/8 ; harmonics
+NOTE -A#4 1 ; harmonics
+
+; ----------- measure 258 --- beat 948.2 --- time signature 5/8
+
+NOTE 0 1/8 measure258
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A3 1/8
+NOTE C#4 1/8
+NOTE A3 1/8
+NOTE G3 1/8
+NOTE A3 1/8
+NOTE D4 1/8
+NOTE E4 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE A3 1/8
+
+; ----------- measure 259 --- beat 950.7 --- time signature 5/8
+
+NOTE E2 1/8 measure259
+NOTE E2 1/8
+NOTE F2 1/8
+NOTE E2 1/8
+NOTE E2 1/8
+NOTE G2 1/4
+NOTE A#2 1/8
+NOTE A2 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE A2 1/8
+NOTE A2 1/8
+NOTE G#2 1/8
+NOTE A2 1/8
+NOTE A#2 1/8
+NOTE E3 1/8
+NOTE D3 1/8
+NOTE F3 1/8
+
+; ----------- measure 260 --- beat 953.2 --- time signature 5/8
+
+NOTE C#3 1/8 measure260
+NOTE D3 1/8
+NOTE D3 1/8
+NOTE B2 1/8
+NOTE E3 1/8
+NOTE G#2 1/8
+NOTE F2 1/8
+NOTE G2 1/8
+NOTE G2 1/8
+NOTE C#2 1/8
+NOTE D2 1/8
+NOTE E2 1/8
+NOTE D2 1/8
+NOTE F2 1/8
+NOTE G2 1/8
+NOTE G2 1/8
+NOTE E2 1/8
+NOTE A#2 1/4
+NOTE G2 1/8
+
+; ----------- measure 261 --- beat 955.7 --- time signature 5/8
+
+NOTE D3 1/8 measure261
+NOTE F3 1/8
+NOTE F3 1/8
+NOTE D3 1/8
+NOTE D3 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE E3 1/8
+NOTE F3 1/8
+NOTE D3 1/8
+NOTE E3 1/8
+NOTE A#2 1/8
+NOTE A2 1/8
+NOTE A2 1/8
+NOTE C3 1/8
+NOTE C3 1/8
+NOTE A2 1/8
+NOTE E2 1/8
+NOTE F2 1/8
+NOTE E2 1/8
+
+; ----------- measure 262 --- beat 958.2 --- time signature 5/8
+
+NOTE D#2 1/8 measure262
+NOTE D3 1/8
+NOTE G3 1/2
+NOTE C#3 1/8
+NOTE A2 1/8
+NOTE A2 1/8
+NOTE E3 1/8
+NOTE D4 1/2
+NOTE C4 1/8
+NOTE C4 1/8
+NOTE 0 1/8
+CHORD (G2 A2) 3/8
+
+; ----------- measure 263 --- beat 960.7 --- time signature 5/8
+
+CHORD (G2 A2) 3/2 measure263
+CHORD (-G2 A#2) 1/2
+NOTE 0 1/2
+
+; ----------- measure 264 --- beat 963.2 --- time signature 5/8
+
+NOTE 0 1/8 measure264
+NOTE D2 1/8
+NOTE A2 1/8
+NOTE E3 1/8
+NOTE F3 1/8
+NOTE C3 1/8
+NOTE A2 1/8
+NOTE E2 1/8
+NOTE G2 1/8
+NOTE A#2 1/8
+NOTE E3 1/8
+NOTE D4 1/8
+NOTE C4 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A#3 1/8
+NOTE E3 1/8
+NOTE D4 1/8
+NOTE F3 1/8
+NOTE D4 1/8
+
+; ----------- measure 265 --- beat 965.7 --- time signature 5/8
+
+NOTE D4 1/8 measure265
+NOTE E4 1/8
+NOTE C#4 1/8
+NOTE G3 1/8
+NOTE A2 1/8
+NOTE F3 1/8
+NOTE A2 1/8
+NOTE G3 1/8
+NOTE C#4 1/8
+NOTE G#3 1/8
+NOTE G3 1/8
+NOTE A3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE E3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE E3 1/8
+NOTE B3 1/8
+NOTE A3 1/8 ; harmonics
+NOTE G3 1/8
+NOTE A3 1/8 ; harmonics
+
+; ----------- measure 266 --- beat 968.2 --- time signature 6/8
+
+BPM 30.67 @modulate ; ( ← 𝅘𝅥𝅮 =92) 
+NOTE F#3 1/12 measure266
+NOTE A3 1/12 ; harmonics
+NOTE D3 1/12
+NOTE A3 1/12 ; harmonics
+NOTE C3 1/12
+NOTE F3 1/12
+NOTE A3 1/12 ; harmonics
+NOTE G#3 1/12
+NOTE A3 1/12 ; harmonics
+NOTE E4 1/12
+NOTE A3 1/12 ; harmonics
+NOTE G4 1/12
+NOTE E4 1/12
+NOTE A3 1/12 ; harmonics
+NOTE B3 1/12
+NOTE A3 1/12 ; harmonics
+NOTE A#3 1/12
+NOTE A3 1/12 ; harmonics
+NOTE A3 1/12
+NOTE A3 1/12 ; harmonics
+NOTE D4 1/12 ; harmonics
+NOTE A3 1/6 ; harmonics
+NOTE D4 1/12 ; harmonics
+
+; ----------- measure 267 --- beat 970.2 --- time signature 5/8
+
+BPM 46 @modulate ; ( ← 𝅘𝅥𝅮 =92) 
+NOTE 0 5/2
+
+; ----------- measure 268 --- beat 972.7 --- time signature 5/8
+
+NOTE 0 5/2
+
+; ----------- measure 269 --- beat 975.2 --- time signature 5/8
+
+NOTE 0 3/4 measure269
+NOTE F3 1/8
+NOTE E3 1/8
+NOTE E3 1/8
+NOTE D4 1/8
+NOTE E4 1/4
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A3 1/8
+NOTE E3 1/8
+NOTE G3 3/8
+
+; ----------- measure 270 --- beat 977.7 --- time signature 5/8
+
+NOTE G3 1/8 measure270
+NOTE G3 1/8
+NOTE F3 1/8
+NOTE C#3 1/8
+NOTE D3 1/8
+NOTE G3 1/8
+NOTE F#3 1/8
+NOTE E3 1/8
+NOTE D4 1/2
+NOTE A#3 1/8
+NOTE E4 1/8
+NOTE D3 1/8
+NOTE E4 1/8
+NOTE F3 1/8
+NOTE C#4 3/8
+
+; ----------- measure 271 --- beat 980.2 --- time signature 5/8
+
+NOTE G#3 1/8 measure271
+NOTE F3 1/8
+NOTE E4 1/8 ; harmonics
+NOTE D3 1/8
+NOTE E4 1/8 ; harmonics
+NOTE A3 1/8
+NOTE F3 1/8
+NOTE G3 1/8
+NOTE -G3 1/4
+NOTE A#2 1/8
+NOTE A2 1/8
+NOTE A2 1/8
+NOTE G3 1/8
+NOTE A2 1/8
+NOTE A4 1/8 ; harmonics
+NOTE A2 1/8
+NOTE E3 1/8
+NOTE F3 1/8
+NOTE G3 1/8
+
+; ----------- measure 272 --- beat 982.7 --- time signature 5/8
+
+NOTE E4 3/4 measure272 ; harmonics
+NOTE E4 1/8
+NOTE D3 1/8
+NOTE G3 1/8
+NOTE A#3 1/8
+NOTE A3 1/8
+NOTE C#4 1/8
+NOTE E3 1/8
+NOTE G3 1/8
+NOTE G3 1/8
+NOTE G#3 1/8
+NOTE D4 3/8
+NOTE F4 1/8
+
+; ----------- measure 273 --- beat 985.2 --- time signature 5/8
+
+NOTE F4 1/8 measure273
+NOTE D#4 1/8
+NOTE F4 1/8
+NOTE E4 1/8
+NOTE E4 1/8
+NOTE G4 1/8
+NOTE C#4 1/8
+NOTE A3 1/8
+NOTE D4 3/8 ; harmonics
+NOTE E4 1/8
+NOTE G4 1/2
+NOTE -G4 1/8
+NOTE F4 1/8
+NOTE E4 1/8
+NOTE E4 1/8
+
+; ----------- measure 274 --- beat 987.7 --- time signature 5/8
+
+NOTE D4 1/8 measure274
+NOTE D4 1/8 ; harmonics
+NOTE B3 1/8
+NOTE C4 1/8
+NOTE C4 1/8
+NOTE F#3 1/4
+NOTE A3 1/8
+NOTE A3 1/8
+NOTE G#3 1/8
+NOTE A3 1/8
+NOTE E3 1/8
+NOTE E3 1/8
+NOTE G3 1/8
+NOTE B3 1/8
+NOTE C4 1/8
+NOTE C#4 1/8
+NOTE A3 1/8
+NOTE E3 1/8
+NOTE G3 1/8 ; harmonics
+
+; ----------- measure 275 --- beat 990.2 --- time signature 5/8
+
+NOTE G3 2 measure275 ; harmonics
+NOTE A#3 1/8
+NOTE G3 1/8
+NOTE G3 1/8
+NOTE F4 1/8
+
+; ----------- measure 276 --- beat 992.7 --- time signature 5/8
+
+NOTE 0 5/2
+
+; ----------- measure 277 --- beat 995.2 --- time signature 5/8
+
+NOTE 0 5/2
+
+; ----------- measure 278 --- beat 997.7 --- time signature 4/8
+
+NOTE 0 2 measure278
+
+; ----------- measure 279 --- beat 999.7 --- time signature 60/4
+
+BPM 60
+NOTE 0 60 measure279
+
+; ----------- measure 280 --- beat 1059.7 --- time signature 4/4
+
+BPM 46
+NOTE 0 10/3 measure280
+NOTE D4 2/3 ; harmonics
+
+; ----------- measure 281 --- beat 1063.7 --- time signature 3/4
+
+NOTE D4 3 measure281 ; harmonics
+
+; ----------- measure 282 --- beat 1066.7 --- time signature 4/4
+
+NOTE D4 4 measure282 ; harmonics
+
+; ----------- measure 283 --- beat 1070.7 --- time signature 4/4
+
+NOTE D4 3 measure283 ; harmonics
+NOTE 0 1
+
+; ----------- measure 284 --- beat 1074.7 --- time signature 4/4
+
+TRILL ((D3 A3)) 2 measure284 ; square notehead
+TRILL ((-D3 -A3)) 2 ; square notehead
+
+; ----------- measure 285 --- beat 1078.7 --- time signature 2/4
+
+NOTE 0 2 measure285
+
+; ----------- measure 286 --- beat 1080.7 --- time signature 4/4
+
+TRILL (D2) 4 measure286
+
+; ----------- measure 287 --- beat 1084.7 --- time signature 4/4
+
+TRILL (D2) 4 measure287
+
+; ----------- measure 288 --- beat 1088.7 --- time signature 2/4
+
+NOTE 0 2 measure288
+
+; ----------- measure 289 --- beat 1090.7 --- time signature 5/4
+
+NOTE 0 5 measure289
+
+; ----------- measure 290 --- beat 1095.7 --- time signature 4/4
+
+NOTE 0 4 measure290
+
+; ----------- measure 291 --- beat 1099.7 --- time signature 4/4
+
+NOTE 0 4 measure291
+
+; ----------- measure 292 --- beat 1103.7 --- time signature 6/4
+
+NOTE G2 3/2 measure292
+NOTE -G2 1/2
+NOTE -G2 1
+NOTE -G2 3
+
+; ----------- measure 293 --- beat 1109.7 --- time signature 4/4
+
+NOTE G2 4 measure293
+
+; ----------- measure 294 --- beat 1113.7 --- time signature 4/4
+
+NOTE G2 4 measure294
+
+; ----------- measure 295 --- beat 1117.7 --- time signature 4/4
+
+NOTE G2 4 measure295
+
+; ----------- measure 296 --- beat 1121.7 --- time signature 4/4
+
+NOTE 0 4 measure296
+
+; ----------- measure 297 --- beat 1125.7 --- time signature 9/8
+
+BPM 30.67 ; ( ← 𝅘𝅥𝅮 =92) 
+NOTE G2 1 measure297
+NOTE G2 2 ; harmonics
+
+; ----------- measure 298 --- beat 1128.7 --- time signature 9/8
+
+NOTE G2 1 measure298
+NOTE G2 2 ; harmonics
+
+; ----------- measure 299 --- beat 1131.7 --- time signature 9/8
+
+NOTE G2 1 measure299
+NOTE G2 2 ; harmonics
+
+; ----------- measure 300 --- beat 1134.7 --- time signature 9/8
+
+NOTE G2 1 measure300 ; harmonics
+NOTE -G2 1 ; harmonics
+NOTE -G2 1 ; harmonics
+
+; ----------- measure 301 --- beat 1137.7 --- time signature 9/8
+
+NOTE 0 3 measure301
+
+; ----------- measure 302 --- beat 1140.7 --- time signature 9/8
+
+NOTE 0 1 measure302
+TRILL ((G2 D3)) 1 ; square notehead
+TRILL ((-G2 -D3)) 1 ; square notehead
+
+; ----------- measure 303 --- beat 1143.7 --- time signature 6/8
+
+NOTE 0 5/3 measure303
+CHORD (D3 D#3) 1/3
+
+; ----------- measure 304 --- beat 1145.7 --- time signature 3/8
+
+BPM 46 @modulate ; ( ← 𝅘𝅥𝅮 =92) 
+CHORD (D3 D#3) 3/2 measure304
+
+; ----------- measure 305 --- beat 1147.2 --- time signature 9/8
+
+BPM 30.67 @modulate ; ( ← 𝅘𝅥𝅮 =92) 
+NOTE D3 1/3 measure305
+NOTE D3 2/3
+NOTE D3 1/3
+CHORD (D3 D#3) 4/3
+NOTE -D3 1/3
+
+; ----------- measure 306 --- beat 1150.2 --- time signature 9/8
+
+NOTE D3 2 measure306
+NOTE -D3 1
+
+; ----------- measure 307 --- beat 1153.2 --- time signature 9/8
+
+NOTE D3 2 measure307
+NOTE -D3 1
+
+; ----------- measure 308 --- beat 1156.2 --- time signature 9/8
+
+NOTE D3 2 measure308
+NOTE 0 1
+
+; ----------- measure 309 --- beat 1159.2 --- time signature 9/8
+
+NOTE A5 1 measure309
+NOTE -A5 2
+
+; ----------- measure 310 --- beat 1162.2 --- time signature 9/8
+
+NOTE D#6 8/3 measure310
+NOTE G6 1/3
+
+; ----------- measure 311 --- beat 1165.2 --- time signature 9/8
+
+NOTE G6 1 measure311
+NOTE 0 2

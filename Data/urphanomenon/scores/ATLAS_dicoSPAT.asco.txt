@@ -1,0 +1,491 @@
+; -------------------------------------------------------------------------------------------------------
+; --- DONNEES D'INITIALISATION ET DICTIONNAIRES POUR LA SPATIALISATION ----------------------------------
+; -- sasha blondeau - 2020 ------------------------------------------------------------------------------
+
+; -- FONCTIONS DE SPATIALISATION ------------------------------------------------------------------------
+; receivers concernés : to_matrix, to_hoa, to_vbap
+;
+; fonctions principales :
+; - @current_assign_tab($spat_type)  : donne l'etat du tableau d'assignation des sources de $spat_type
+; - @set_all_spat_tempo($x)   : change le tempo de l'ensemble des objets spat utilisés
+;
+; obj::spat
+; -- $spat_son1 := obj::spat($sound_name,$duration,$source_of_sound_name,$spat_type,$traj_type,$procArgs)
+; -- _ := $spat_son1.set_synchro([4]) 
+; -- _ := $spat_son1.set_tempo(180) 
+; -- _ := $spat_son1.current_sound_assign()  : chemin du son au spat~ => CS_synth1 hoa 1
+;
+; Mouvements disponibles ($traj_type) :
+; -- ::spat_traj_fun($sound_name,[$procSPAT,$dist,$speed,$offset,$elevation])
+; -- ::spat_traj_pos($sound_name,[$a,$d,$e])
+; -- ::spat_traj_ade($sound_name,[[$a1,$d1,$e1,$a2,$d2,$e2,$interp1,$dur1],[$a3,$d3,$e3,$a4,$d4,$e4,$interp2,$dur2]])
+; -- ::spat_traj_xye($sound_name,[[$x1,$y1,$e1,$x2,$y2,$e2,$interp1,$dur1],[$x3,$y3,$e3,$x4,$y4,$e4,$interp2,$dur2]])
+;
+; Miscellenous
+; -- ::spat_presence($sound_name,$presence) 
+;
+; -------------------------------------------------------------------------------------------------------
+
+; DONNEES A ENTRER SELON LA CONFIGURATION
+
+$factDist := 1.
+
+$C1 := [0.,2.,0.]
+$L1 := [-45.,2.,0.]
+$R1 := [45.,2.,0.]
+$C0 := [0.,0.,0.]
+$L0 := [-90.,2.,0.]
+$R0 := [90.,2.,0.]
+$C_1 := [180.,2.,0.]
+$L_1 := [-135.,2.,0.]
+$R_1 := [135.,2.,0.]
+$C2 := [0.,4.,0.]
+$L2 := [-45.,4.,0.]
+$R2 := [45.,4.,0.]
+$L02 := [-90.,4.,0.]
+$R02 := [90.,4.,0.]
+$C_2 := [180.,4.,0.]
+$L_2 := [-135.,4.,0.]
+$R_2 := [135.,4.,0.]
+
+$XC1 := [0.,2.,0.]
+$XL1 := [-2.,2.,0.]
+$XR1 := [2.,2.,0.]
+$XC0 := [0.,0.,0.]
+$XL0 := [-2.,0.,0.]
+$XR0 := [2.,0.,0.]
+$XC_1 := [0.,-2.,0.]
+$XL_1 := [-2.,-2.,0.]
+$XR_1 := [2.,-2.,0.]
+$XC2 := [0.,4.,0.]
+$XL2 := [-4.,4.,0.]
+$XR2 := [4.,4.,0.]
+$XL02 := [-4.,0.,0.]
+$XR02 := [4.,0.,0.]
+$XL_2 := [-4.,-4.,0.]
+$XC_2 := [0.,-4.,0.]
+$XR_2 := [4.,-4.,0.]
+
+$target_spat_gen := 2 ; stratégie de synchro pour la spatialisation (horizon temporel)
+$grain_spat := 0.08 ; grain des curves d'envoi au spat (en secondes)
+
+; tableaux d'affectation des sources automatique
+
+$nombre_de_sources_vbap := 16
+
+
+; -------------------------------------------------------------------------------------------------------
+
+$type_of_spat := map {("vbap",[ 0 | ($nombre_de_sources_vbap)])}
+
+$assign_spat := map {  } ; de type map { ("sound_name", ["Csound1","hoa",1]) }
+
+; dictionnaire envoyant les données à la matrice (à rentrer à la main...)
+$matrix_in := map { ("csound1",0),("csound2",1),("csound3",2),("csound4",3),("csound5",4),
+					("csound6",5),("csound7",6),("csound8",7),("csound9",8),
+					("Player1",9),("Player2",10),("Player3",11),
+					("Player4",12),("Player5",13),("Player6",14),("treats",15),("transp",16)} ; 
+
+$matrix_out := map { ("vbap1",0),("vbap2",1),("vbap3",2),("vbap4",3),("vbap5",4),("vbap6",5),("vbap7",6),("vbap8",7),
+					 ("vbap9",8),("vbap10",9),("vbap11",10),("vbap12",11),("vbap13",12),("vbap14",13),("vbap15",14),("vbap16",15)}
+
+; ------- OBJET GENERAL SPAT ---------
+; objet-macro commun
+ 
+@obj_def spat($sound_name,$duration,$source_of_sound_name,$spat_type,$traj_type,$procArgs)
+	{	
+		@local $obj_temp,$sync_strat,$temp_orig,$source_num
+
+		@init 	{ ; assignation d'une source
+					$temp_orig := true
+					$sync_strat := $target_spat_gen
+					$obj_temp := $RT_TEMPO
+
+					if (@size($type_of_spat($spat_type)) == @reduce(@+,$type_of_spat($spat_type)))
+						{
+							print "all sources of " $spat_type " are used !"
+							print "the " $sound_name "'s spatialization have been aborted"
+							abort $THISOBJ
+						}
+					else 
+						{ 
+							::spat_assign($sound_name,$source_of_sound_name,$spat_type) 
+							
+							$source_num := (($assign_spat($sound_name))[2])
+							print $NOW "-----" ($type_of_spat($spat_type)) $spat_type $sound_name "source : " $source_num
+							group spat_ @tempo := ( $temp_orig ? $RT_TEMPO : $obj_temp) @target [$sync_strat]
+								{ 
+									:: $traj_type($sound_name,$procArgs) 
+
+									; abort final
+									$duration let ($type_of_spat($spat_type)[$source_num-1]) := 0
+									to_matrix ($matrix_in($source_of_sound_name)) ($matrix_out(($spat_type + $source_num))) 0
+									$assign_spat := @remove($assign_spat,$sound_name)
+									abort $THISOBJ ; ceci est un suicide !
+								}
+						}
+				}
+
+		@proc_def current_sound_assign() 
+			{ print "chemin de " $sound_name " = " ($assign_spat($sound_name)[0]) " > " ($assign_spat($sound_name)[1]) ($assign_spat($sound_name)[2]) }
+
+		@method_def set_tempo($x) 
+			{ 
+				$obj_temp := $x 
+				$temp_orig := false ; pour couper l arrivee de RT_TEMPO pour group spat
+			}
+
+		@method_def set_synchro($y) { $sync_strat := $y }
+
+		@broadcast @set_all_spat_tempo($z) { $obj_temp := $x }
+
+	}
+
+@macro_def @current_assign_tab($spat_type) 
+	{ print "tableau d'assignation du " $spat_type " [ " ($type_of_spat($spat_type)) " ]" } ; état du tableau d'assignations
+
+; ------------- Affectation d'une source sonore à une source du spat
+; - cela évite de devoir se demander à quelle source on envoie le son
+; - Ici la fonction ::spat_assign regarde quelles sont les sources libres et assigne
+; - automatiquement  une source du Spat au module sonore utilisé, puis envoie les infos
+; nécessaires à la matrice
+
+@fun_def @fun_assign_spat($tab,$index)
+	{
+	    if (!$tab.is_tab() || $tab.empty()) { return 0 } ; vérifie que $tab est un tableau et
+	    								; qu'il n'est pas vide puis envoie une valeur bidon
+		    else
+		    {
+		         if ($tab[0] == 0) { return ($index+1) }
+		         else { return @fun_assign_spat((@cdr($tab)),($index+1)) }
+		    }
+	}
+
+
+@proc_def ::spat_assign($sound_name,$source_of_sound_name,$spat_type)
+	{
+		@local $source_num
+		$source_num := (@fun_assign_spat(($type_of_spat($spat_type)),0))
+		$assign_spat := @add_pair($assign_spat,$sound_name,[$source_of_sound_name,$spat_type,$source_num])
+
+		to_matrix ($matrix_in($source_of_sound_name)) ($matrix_out(($spat_type + $source_num))) 1
+		let ($type_of_spat($spat_type)[$source_num-1]) := 1
+
+	} ; on ajoute une entrée au dictionnaire des assignations
+	  ; puis on envoie à la matrice les données correspondant à la clef de dico de matrice
+	  ; [CS_synth1,hoa_s1] si la source 1 est libre.
+	  ; on met enfin à jour $vbap ou $hoa
+	  ; ::spat_assign("synth1mes34","CS_synth1","hoa")
+
+@proc_def ::spat_trans($source_of_sound_name,$dur)
+	{
+		to_matrix ($matrix_in($source_of_sound_name)) 16 1
+		$dur to_matrix ($matrix_in($source_of_sound_name)) 16 0
+	}
+
+; ------------------------------------------------------------------------------------------------
+; ------------------------------------------------------------------------------------------------
+; -- ::spat_traj_fun($sound_name,[$procSPAT,$dist,$speed,$offset,$elevation])
+@proc_def ::spat_traj_fun($sound_name,$tab_args) 
+	{
+		@local $source, $spat_type,$procSPAT,$dist,$speed,$offset,$elevation
+
+		; arguments du proc
+		$procSPAT := $tab_args[0]
+		$dist := $tab_args[1]
+		$speed := $tab_args[2]
+		$offset := $tab_args[3]
+		$elevation := $tab_args[4]
+
+		$source := (($assign_spat($sound_name))[2])
+		$spat_type := ("to_" + (($assign_spat($sound_name))[1]))
+		:: $procSPAT($spat_type,$source,$dist,$speed,$offset,$elevation)
+	}
+
+; -- ::spat_traj_pos($sound_name,[$a,$d,$e]) 
+@proc_def ::spat_traj_pos($sound_name,$tab_args) 
+	{
+		@local $source, $spat_type,$a,$d,$e,$dd
+		
+		; arguments du proc
+		$a := $tab_args[0]
+		$d := $tab_args[1]
+		$e := $tab_args[2]
+
+		$source := (($assign_spat($sound_name))[2])
+		$spat_type := ("to_" + (($assign_spat($sound_name))[1]))
+		$dd := ($d*$factDist)
+		@command(("track/" + $source + "/ade")) $a $dd $e
+	}
+
+; -- ::spat_traj_ade($sound_name,[[[$a1,$d1,$e1],[$a2,$d2,$e2],$interp1,$dur1],[[$a3,$d3,$e3],[$a4,$d4,$e4],$interp2,$dur2]])
+@proc_def ::spat_traj_ade($sound_name,$tab)
+	{
+		@local $tab_args,$dur_segment
+		
+		$tab_args := $tab[0]
+		$dur_segment := $tab_args[3]
+		if (@size($tab) == 1) { ::spat_traj_ade_($sound_name,$tab_args) }
+			else { 
+					::spat_traj_ade_($sound_name,$tab_args) 
+					$dur_segment ::spat_traj_ade($sound_name,@cdr($tab))
+				}
+	}
+
+; -- ::spat_traj_ade_($sound_name,[[$a1,$d1,$e1],[$a2,$d2,$e2],$interp,$dur])
+@proc_def ::spat_traj_ade_($sound_name,$tab_args)
+	{
+		@local $source,$spat_type,$aa,$dd,$ee,$a1,$a2,$d1,$d2,$e1,$e2,$interp,$dur_segment
+
+		; arguments du proc
+		$a1 := $tab_args[0,0]
+		$d1 := $tab_args[0,1]
+		$e1 := $tab_args[0,2]
+		$a2 := $tab_args[1,0]
+		$d2 := $tab_args[1,1]
+		$e2 := $tab_args[1,2]
+		$interp := $tab_args[2]
+		$dur_segment := $tab_args[3]
+
+		$source := (($assign_spat($sound_name))[2])
+		$spat_type := ("to_" + (($assign_spat($sound_name))[1]))
+		curve traj @grain := $grain_spat s, @Action := @command(("track/" + $source + "/ade")) $aa ($dd*$factDist) $ee
+			{ $aa, $dd, $ee
+				{
+								 { $a1 $d1 $e1 } @type $interp
+					$dur_segment { $a2 $d2 $e2 }
+				}
+			}
+	}
+
+; -- ::spat_traj_xye_($sound_name,[[$x1,$y1,$e1],[$x2,$y2,$e2],$interp,$dur])
+@proc_def ::spat_traj_xye($sound_name,$tab)
+	{
+		@local $tab_args,$dur_segment
+		
+		$tab_args := $tab[0]
+		$dur_segment := $tab_args[3]
+		if (@size($tab) == 1) { ::spat_traj_xye_($sound_name,$tab_args) }
+			else { 
+					::spat_traj_xye_($sound_name,$tab_args) 
+					$dur_segment ::spat_traj_xye($sound_name,@cdr($tab))
+				}
+
+	}
+
+@proc_def ::spat_traj_xye_($sound_name,$tab_args)
+	{
+		@local $source,$spat_type,$xx,$yy,$ee,$x1,$x2,$y1,$y2,$e1,$e2,$interp,$dur_segment
+
+		; arguments du proc
+		$x1 := $tab_args[0,0]
+		$y1 := $tab_args[0,1]
+		$e1 := $tab_args[0,2]
+		$x2 := $tab_args[1,0]
+		$y2 := $tab_args[1,1]
+		$e2 := $tab_args[1,2]
+		$interp := $tab_args[2]
+		$dur_segment := $tab_args[3]
+
+		$source := (($assign_spat($sound_name))[2])
+		$spat_type := ("to_" + (($assign_spat($sound_name))[1]))
+		curve traj @grain := $grain_spat s, @Action := @command(("track/" + $source + "/xyz")) $xx $yy $ee
+						{ $xx, $yy, $ee
+							{
+											 { $x1 $y1 $e1 } @type $interp
+								$dur_segment { $x2 $y2 $e2 }
+							}
+						}
+	}
+
+
+; -- ::spat_presence($sound_name,$presence) 
+@proc_def ::spat_presence($sound_name,$presence) 
+	{
+		@local $source, $spat_type,$a,$d,$e
+
+		$source := (($assign_spat($sound_name))[2])
+		$spat_type := ("to_" + (($assign_spat($sound_name))[1]))
+		
+		@command(("track/" + $source + "/pres")) $presence
+	}
+
+; pour tester ....
+;    $spat_son1 := obj::spat("son1",10,"csound1","hoa",::spat_traj_ade,[[0,1,0,320,0.5,0,"linear",10]])
+;    $spat_son2 := obj::spat("son2",10,"csound2","hoa",::spat_traj_fun,[::lissaj5,1,20,0,0])
+;    @current_assign_tab("hoa")
+;    
+;    5 $spat_son3 := obj::spat("son3",7,"csound1","hoa",::spat_traj_xye,[[-1,1,0,1,-1,0,"linear",7]])
+;    $spat_son4 := obj::spat("son4",10,"csound2","hoa",::spat_traj_fun,[::lissaj4,1,20,0,0])
+;    @current_assign_tab("hoa")
+
+
+; --------------------------------------------------
+; --- MACROS DE SPATIALISATION ---------------------
+;-------------------------------- voir shémas ------
+$pi := 3.1415926535897
+	; --------> SPAT COURBE1 % RT_TEMPO 
+	; la vitesse détermine le temps de la courbe complète
+
+	; une sorte de papillon favorisant avant-arrière (un coup L un coup R
+	@proc_def ::lissaj1($SPAT,$sourceNum,$distanceL1,$vitesse1,$offset,$elevation) 
+		{
+			@local $liss1x
+			$liss1x := 0.
+			loop LISSAJOU1 $vitesse1
+				{
+					;abort liss1
+					curve liss1 @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss1x+$offset)*2.)*($distanceL1*$factDist)) ((@sin($liss1x*5.)*($distanceL1*$factDist))) $elevation
+						{ $liss1x
+							{
+											{ $liss1x }
+								$vitesse1 	{ ($liss1x+6.2831853071) }
+							}
+						}
+				}
+		}
+
+	; la version plus circulaire avec passage à côté du milieu
+	@proc_def ::lissaj2($SPAT,$sourceNum,$distanceL2,$vitesse2,$offset,$elevation)
+		{
+			@local $liss2x
+			$liss2x := 0.
+			loop LISSAJOU2 $vitesse2
+				{
+					;abort liss2
+					curve liss2 @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss2x+$offset)*3.)*($distanceL2*$factDist)) ((@sin($liss2x*5.)*($distanceL2*$factDist))) $elevation
+						{ $liss2x
+							{
+											{ $liss2x }
+								$vitesse2 	{ ($liss2x+6.2831853071) }
+							}
+						}
+				}
+		}
+
+	@proc_def ::lissaj2inv($SPAT,$sourceNum,$distanceL2,$vitesse2inv,$offset,$elevation)
+		{
+			@local $liss2invx
+			$liss2invx := 6.2831853071
+			loop LISSAJOU2 $vitesse2inv
+				{
+					;abort liss2inv
+					curve liss2inv @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss2invx+$offset)*3.)*($distanceL2*$factDist)) ((@sin($liss2invx*5.)*($distanceL2*$factDist))) $elevation
+						{ $liss2invx
+							{
+											{  ($liss2invx)  }
+								$vitesse2inv 	{ ($liss2invx-6.2831853071) }
+							}
+						}
+				}
+		}
+
+	; celui-là fait une diagonale en passant au milieu, donc à utiliser avec aperture = 180
+	@proc_def ::lissaj3($SPAT,$sourceNum,$distanceL3,$vitesse3,$offset,$elevation)
+		{
+			@local $liss3x
+			$liss3x := 0.
+			loop LISSAJOU3 $vitesse3
+				{
+					;abort liss3
+					curve liss3 @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss3x+$offset)*3.)*($distanceL3*$factDist)) ((@sin($liss3x*4.)*($distanceL3*$factDist))) $elevation
+						{ $liss3x
+							{
+											{ $liss3x }
+								$vitesse3 	{ ($liss3x+6.2831853071) }
+							}
+						}
+				}
+		}
+
+	@proc_def ::lissaj3inv($SPAT,$sourceNum,$distanceL3,$vitesse3inv,$offset,$elevation)
+		{
+			@local $liss3invx
+			$liss3invx := 6.2831853071
+			loop LISSAJOU3inv $vitesse3inv
+				{
+					;abort liss3inv
+					curve liss3inv @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss3invx+$offset)*3.)*($distanceL3*$factDist)) ((@sin($liss3invx*4.)*($distanceL3*$factDist))) $elevation
+						{ $liss3x
+							{
+											{ ($liss3invx) }
+								$vitesse3inv 	{ ($liss3invx-6.2831853071) }
+							}
+						}
+				}
+		}
+
+	; Renforcement des diagonales, sans passage au milieu
+	@proc_def ::lissaj4($SPAT,$sourceNum,$distanceL4,$vitesse4,$offset,$elevation)
+		{
+			@local $liss4x
+			$liss4x := 0.
+			loop LISSAJOU4 $vitesse4
+				{
+					;abort liss4
+					curve liss4 @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss4x+$offset)*4.)*($distanceL4*$factDist)) ((@sin($liss4x*5.)*($distanceL4*$factDist))) $elevation
+						{ $liss4x
+							{
+											{ $liss4x }
+								$vitesse4 	{ ($liss4x+6.2831853071) }
+							}
+						}
+				}
+		}
+
+	@proc_def ::lissaj4inv($SPAT,$sourceNum,$distanceL4,$vitesse4inv,$offset,$elevation)
+		{
+			@local $liss4invx
+			$liss4invx := 6.2831853071
+			loop LISSAJOU4inv $vitesse4inv
+				{	;abort liss4inv
+					curve liss4inv @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss4invx+$offset)*4.)*($distanceL4*$factDist)) ((@sin($liss4invx*5.)*($distanceL4*$factDist))) $elevation
+						{ $liss4invx
+							{
+											{ ($liss4invx) }
+								$vitesse4inv { ($liss4invx-6.2831853071) }
+							}
+						}
+				}
+		}
+
+	; parcours couvrant
+	@proc_def ::lissaj5($SPAT,$sourceNum,$distanceL5,$vitesse5,$offset,$elevation)
+		{	
+			@local $liss5x, $nom
+			$liss5x := 0.
+			loop LISSAJOU5 $vitesse5 
+				{	;abort liss5
+					curve liss5 @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss5x+$offset)*7.)*($distanceL5*$factDist)) ((@sin($liss5x*5.)*($distanceL5*$factDist))) $elevation
+						{ $liss5x
+							{
+											{ $liss5x }
+								$vitesse5 	{ ($liss5x+6.2831853071) }
+							}
+						}
+				}
+		}
+
+	; panoramique du devant vers arrière
+	@proc_def ::lissaj6($SPAT,$sourceNum,$distanceL6,$vitesse6,$offset,$elevation)
+		{
+			@local $liss6x
+			$liss6x := 0.
+			loop LISSAJOU6 $vitesse6
+				{	
+					abort liss6
+					curve liss6 @grain := $grain_spat s, @Action := @command(("track/" + $sourceNum + "/xyz")) (@cos(($liss6x+$offset)*7.)*($distanceL6*$factDist)) ((@sin($liss6x*1.)*($distanceL6*$factDist))) $elevation
+						{ $liss6x
+							{
+											{ $liss6x }
+								$vitesse6 	{ ($liss6x+6.2831853071) }
+							}
+						}
+				}
+		}
+
+
+
+
+
+

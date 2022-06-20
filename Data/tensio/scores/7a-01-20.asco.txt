@@ -1,0 +1,1973 @@
+@INSERT "macros_def.txt"	; definition des fonctions et macros
+antescofo::bypass_temporeset "on"
+dummysilence on
+
+TEMPO ON
+BPM 90
+antescofo::tempo 90
+
+ v1_up_time 4
+ v2_up_time 4
+ a_up_time 4
+ c_up_time 4
+
+	sndfonk_on 1
+	sndfonk_play 1
+	sndfonk_on 1
+	
+	; reglage gains sur evt 31 pour les niveaux
+	v1_fk_gain 1.1;
+	v2_fk_gain 1.1;
+	a_fk_gain 1.1;
+	c_fk_gain 3.1;
+
+antescofo-mess analysis 2048 256
+
+	direct_out.pgm 1 ; all off
+	
+	4t_player_on 1
+	3fc_snd_on 1
+	sndfonk_on 1
+	
+	spat1_traj 0
+	spat2_traj 0
+	spat3_traj 0
+	
+	; *********
+	; SPAT INIT
+	; *********
+	spat1_dist 1
+	spat2_dist 1
+	spat3_dist 1
+	spat1_pres 90
+	spat3_pres 90
+	spat2_pres 90
+	
+	v1_fk_on 0
+	v2_fk_on 0
+	a_fk_on 0
+	c_fk_on 0
+	
+	;deltas_pm.pgm 70
+
+
+	VARIANCE 0.2
+	
+	antescofo-mess tune 442.0
+	obs_gate 1 ;  antescofo input ON 
+
+	spat1_aperture 20
+	spat2_aperture 20
+	spat3_aperture 20
+	fx_pgm 1	; matrice à zero  
+	
+	spat3_traj 0 
+	
+
+	
+;KILLFWD		loop3_1
+;	KILLFWD		loop3_2
+;	KILLFWD		loop3_3
+
+; routing
+	
+3fc_snd 0 ; niveau du fichier le fichier en sortie direct
+	3fc_snd_play 		loop 0					; stop loop
+	3fc_snd_play 		0						; stop lecture
+	3fc_snd_cmd 		open tensio_4t.aif 		; charge fichier
+	
+	4t_player_cmd 		open tensio_4t.aif 		; charge fichier
+	4t_player_play 		0
+	
+	sndfonk_cmd 		open tensio_4t.aif 		; charge fichier
+	sndfonk_play 		0
+	; direct_out.pgm 4 ; lecture de l'enregistrement du quatuor en direct
+	
+	
+		; set synful vlc pizz
+		
+	syn_voices 1 pgm 41 bnk 2 vol 100 "expr" 100;
+	syn_voices 2 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 3 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 4 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 5 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 6 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 7 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 8 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 9 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 10 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 11 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 12 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 13 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 14 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 15 pgm 41 bnk 2 vol 100 "expr" 100;;
+	syn_voices 16 pgm 41 bnk 2 vol 100 "expr" 100;;
+
+	Bsyn_voices 1 pgm 41 bnk 2 vol 100 "expr" 100;
+	Bsyn_voices 2 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 3 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 4 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 5 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 6 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 7 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 8 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 9 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 10 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 11 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 12 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 13 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 14 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 15 pgm 41 bnk 2 vol 100 "expr" 100;;
+	Bsyn_voices 16 pgm 41 bnk 2 vol 100 "expr" 100;;
+	
+	3fc_snd 0 ; niveau du fichier le fichier en sortie direct
+	3fc_snd_play 		loop 0					; stop loop
+	3fc_snd_play 		0						; stop lecture
+	3fc_snd_cmd 		open tensio_4t.aif 		; charge fichier
+	
+		; init smerdyakov 
+	
+	3fc_sm stop
+	3fc_sm clear
+	3fc_sm_walk walk202.txt ; this builts markov matrix
+
+       3fc_sm2 stop
+       3fc_sm2 clear
+       3fc_sm2_walk walk202.txt ; this builts markov matrix avec walk_nouveau
+
+	; cut off sigmund
+	
+	v1_sigmund 0
+	v2_sigmund 0
+	al_sigmund 0
+	cl_sigmund 0
+	
+	; init sigmund pitch analysis
+	f3c_pgm 1	; matrice suivi de pitch vers calcul des frequences à zero
+	
+	
+	
+	3fctosp2 100
+	Bsyntosp3 100
+
+	
+	spat1 100
+	spat2 100  
+	spat3 100  
+
+	s_reset bang	; reset string parameters  
+	
+	
+			syn_voices 1 flush 1; turn notes off 
+			syn_voices 2 flush 1; turn notes off 
+			Bsyn_voices 1 flush 1; turn notes off 
+			Bsyn_voices 2 flush 1; turn notes off 
+
+	
+		bouge 0				; bouge les spats aleatoire 
+	
+	; Set initial pitch bends
+			syn_voices 1 xbend 0; 
+			syn_voices 2 xbend 0; 
+			syn_voices 3 xbend 0; 
+			syn_voices 4 xbend 0; 
+			syn_voices 5 xbend 0;  
+			
+	
+	
+		; synful_vst read strings-ctls4.fxb 
+	
+	 
+	 ;110		; envoie synful dans spat1 
+	 
+	 ; set initial vibratos on available channels
+			syn_voices 3 vibrato 0.2, 4 vibrato 0.2, 5 vibrato 0.2, 6 vibrato 0.2	; etc  
+	
+			sampler2 120 
+			sampler1 100
+			
+			h0	0 
+			h1	0 
+			h2	0 
+			h3	0 
+			h4	0
+			h0_init bang
+			h1_init bang
+			h2_init bang
+			h3_init bang
+			h4_init bang
+			
+			h0_a 0.1
+			h0_hf_gain -6
+			h0_cut_pitch 96
+			
+			h1_a 0.1
+			h1_hf_gain -6
+			h1_cut_pitch 96
+			
+			h2_a 0.1
+			h2_hf_gain -6
+			h2_cut_pitch 96
+			
+			h3_a 0.1
+			h3_hf_gain -6
+			h3_cut_pitch 96
+			
+			h4_a 0.1
+			h4_hf_gain -6
+			h4_cut_pitch 96
+			
+			master_toupie_freq 0
+			
+	
+		Bsynful 95			; Volume en DB 
+		synful 120; 84 			; volume synful et spat1 en DB 
+		
+		
+		h0tosp1 100
+		h1tosp1 100
+		h2tosp1 100
+		h3tosp1 100
+		h4tosp1 100
+		
+		; init spat positions
+		; spat1_ctl source Az 0 5
+		spat1_az 0 ; front
+		spat1_dist 5; 5 m
+		spat1_width 30
+		; spat1_ctl width 30
+		; spat1_aperture 30
+		; spat1_ctl fact rev 55
+		spat1_rev 55
+		
+		read_traj cercle1.traj	; 			
+		read_traj2 test1.traj	;			
+		read_traj3 cercle.traj
+		
+		spat1_traj_loop 1; 
+		traj_spat1 1 traj @b(100) 3 ; 
+		spat2_traj_loop 1 
+		traj_spat2 1 traj2 @b(8) 3 ;
+		spat3_traj_loop 1 
+		traj_spat3 1 traj3 @b(8) 3 ;
+
+		3fctosp1 100
+     	3fctosp2 100
+       	3fctosp3 0
+       	
+       	syntosp1 100
+		Bsyntosp1 100
+		syntosp3 100
+		Bsyntosp3 100
+	 
+	
+
+
+
+; a suprrimer lors de l'enchaînement à la section II
+
+spat1_traj_loop 1 
+
+spat2_traj_loop 1 
+
+; traj_spat1 1 traj2 @b(8) 3 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+; traj_spat2 1 traj2 @b(8) 3 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+	
+
+
+
+	; cut off sigmund
+	
+	v1_sigmund 0
+	v2_sigmund 0
+	al_sigmund 0
+	cl_sigmund 0
+
+	; init spat
+	
+	v1tosp1 0
+	3fctosp2 0 
+	syntosp1 0
+
+	traj_spat1 0
+	traj_spat2 0
+	traj_spat3 0
+	
+	 print "Press space to start"  
+/*		
+	;read_traj lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+read_traj mvt_combines2.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+;read_traj2 mvt_combines2.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+read_traj3 lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+
+		spat2_traj_loop 1; 
+		traj_spat2 1 traj @b(100) 8.5 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+	3 	spat1_traj_loop 1; 
+		traj_spat1 1 traj @b(100) 10 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+		spat3_traj_loop 1; 
+		traj_spat3 1 traj3 @b(6) 3 ; on/off, nom de la trajectoire ,durée de la boucle, distance 
+		
+*/
+
+print "York 7a Ready"
+print auto_next
+0.05s antescofo-mess nextlabel
+
+ ;**************************************************************
+ ;**************************************************************
+ ;**************************************************************
+ 
+CHORD ( 9200 6900 ) 0.2500			VII...EVT-1
+
+				;deltas_pm.pgm 70
+				deltas_pm.pgm 8
+
+				; spat1_pres 113
+				; spat1_prer 33
+				spat1_rev 55
+				spat1_aperture 106
+				spat1_az -63
+				spat1_dist 4.7
+				spat1_prer 70
+				spat1_rev 55
+				
+				; spat2_pres 120
+				; spat2_prer 70
+				spat2_rev 55
+				spat2_aperture 106
+				spat2_az -63
+				spat2_dist 4.7
+				spat2_prer 70
+				spat2_rev 55
+				
+				; spat3_pres 112
+				spat3_prer 80; 117
+				spat3_rev 80
+				spat3_aperture 85
+				spat3_az 1
+				spat3_dist 2
+			
+				spat1_traj 1
+				spat1_traj_loop 1
+				spat1_traj_time 16000
+				spat2_traj 1
+				spat2_traj_loop 1
+				spat2_traj_time 16000
+				
+				3fctosp1 0
+				3fctosp3 104
+				syntosp1 0
+				Bsyntosp1 0
+				syntosp2 120;100
+				Bsyntosp2 120;100
+				syntosp3 0
+				Bsyntosp3 0
+				
+				3fc_sm2_base 29
+
+	sy1_ sy1.07.01.aif
+	sy2_ sy2.07.01.aif
+
+		3fc 100
+		3fc_snd 97
+	
+	
+		v1_sigmund 1
+		v2_sigmund 1
+		al_sigmund 1
+		cl_sigmund 1
+		
+		v1_mato3fc_1 1	
+		v1_mato3fc_2 0
+		v1_mato3fc_3 0
+		v2_mato3fc_1 0	
+		v2_mato3fc_2 1
+		v2_mato3fc_3 0
+		al_mato3fc_1 0
+		al_mato3fc_2 0	
+		al_mato3fc_3 1	
+		cl_mato3fc_1 1	
+		cl_mato3fc_2 0
+		cl_mato3fc_3 0
+		
+		v1_minpower 53	 
+		v1_stable_time 33
+		v1_sigmund_trans 12
+		
+		v2_minpower 53 
+		v2_stable_time 33
+	 	v2_sigmund_trans 12
+	 	
+		al_minpower 53	 
+		al_stable_time 33
+		al_sigmund_trans 12
+		
+		cl_minpower 53 
+		cl_stable_time 33
+	 	cl_sigmund_trans 12
+		
+		
+		3fc_attack 1 		
+		3fc_time_length 17	
+		3fc_proba 1
+		3fc_amp_jitter 50
+		3fc_max_freqs 16
+				
+				; Boucle sur sampling de cordes synful
+				LOOP loop1 4 @tempo 60
+				{
+				sampler1_spl adsr 10 5 100 5000
+				sampler1_play2 Ab_92.aif 0 8 500 8000
+				}
+				
+				sampler1 100
+				smp1toh0 100
+				smp1toh1 100
+				smp1toh2 100
+				smp1toh3 100
+				smp1toh4 100
+				
+				h0tosp1 100
+				h1tosp1 100
+				h2tosp1 100
+				h3tosp1 100
+				h4tosp1 100
+		
+				;syn_voices 1 92 120
+			
+				
+				master_toupie_freq 12
+					
+				
+				h0	91 100
+				h0_trans 0
+				
+				3fc_sm_substitute 0
+				3fc_sm2_substitute 0
+				3fc_sm_ambitus 0
+				3fc_sm2_ambitus 0
+				3fc_sm_base 92
+				3fc_sm2_base 92
+				3fc_sm_tempo 27.2
+				3fc_sm2_tempo 27
+				3fc_sm_onoff 1
+				3fc_sm2_onoff 1
+				
+				Bsynful 101			
+				synful 101	
+	
+				;================= A supprimer dans la version live ==================
+				/*
+				GFWD	play1			
+					{
+								3fc_snd_time 15 46.84
+								4t_player_time 15 46.84
+								sndfonk_time 15 46.84
+						13s		3fc_snd_play 0   
+								4t_player_play 0
+								sndfonk_play 0
+					}
+					*/
+				;================= A supprimer dans la version live ==================
+				
+	 
+ 
+ 
+ 
+NOTE 0 1.2500
+NOTE 7700 0.5000			VII...EVT-2
+
+				h0tosp2 100
+				h1tosp2 100
+				h2tosp2 100
+				h3tosp2 100
+				h4tosp2 100
+				
+				
+				
+				h1_leslie_mode 4
+				h1_trans -1500
+				0.01s  h1	89 100
+
+	
+
+
+
+NOTE 8800 0.5000 			VII...EVT-3
+
+			h2 100 50
+			h1 82 500
+			h2_leslie_mode 4
+			h2_trans -400
+
+	
+
+
+
+
+NOTE 7400 0.5000 			VII...EVT-4
+
+			h3 88 100
+			h2 75 100
+			h3_leslie_mode 4
+			h3_trans -1900
+ 
+
+
+
+
+
+NOTE 8300 0.5000 			VII...EVT-5
+
+			h4 100 50
+			h3 82 100
+			h4_leslie_mode 4
+			h4_trans -900
+			
+			syntosp2 110
+			Bsyntosp2 110
+
+
+
+
+
+NOTE 0 1.5000
+
+
+NOTE 9600 1.5000 			VII...EVT-6
+
+			h1 95
+			h2 72
+			h3 63
+			h4 66
+			h1_trans 400
+
+
+
+
+
+NOTE 0 0.5000
+
+NOTE 10200 1.0000			VII...EVT-7
+
+			h2 90
+			h1 83
+			h2_trans 1000
+
+
+
+
+
+
+NOTE 10000 1.5000 			VII...EVT-8
+
+			h3 100
+			h2 83
+			h3_trans 900
+
+
+
+
+NOTE 0 0.5000
+NOTE 10500 1.5000			VII...EVT-9
+
+			h4 109
+			h3 82
+			h4_trans 1300
+
+
+
+
+
+NOTE 0 3.0000			VII...EVT-10
+
+			master_toupie_freq 3 3500 
+			h4 95 2000
+
+		v1_sigmund 0
+		v2_sigmund 0
+		al_sigmund 0
+		cl_sigmund 0
+
+
+
+
+NOTE 7700 0.2500			VII...EVT-11
+	master_toupie_freq 3
+
+			h1 82
+			h1_leslie_mode 2
+			h1_leslie_filter_gain 12
+			h1_trans -1500
+			h2 0 500
+			h3 0 500
+			h4 0 500
+
+	sy1_ sy1.07.11.aif
+	sy2_ sy2.07.11.aif
+			
+			3fc_sm_base 77
+			3fc_sm2_base 77
+			synful 91
+			Bsynful 91
+			
+			;================= A supprimer dans la version live ==================
+			/*
+						3fc_snd_time 16 1.2
+						4t_player_time 16 1.2
+						sndfonk_time 16 1.2
+				1s		3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+			
+
+
+
+
+
+
+NOTE 0 1.0835
+NOTE 8300 0.6667			VII...EVT-12
+			h2 99
+			h2_leslie_mode 2
+			h2_trans 1500
+			
+			v1_sigmund 1
+			v2_sigmund 1
+			al_sigmund 1
+			cl_sigmund 1
+			
+			;================= A supprimer dans la version live ==================
+			/*
+					3fc_snd_time 16 2.61
+					4t_player_time 16 2.61
+					sndfonk_time 16 2.61
+			12s		3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+
+NOTE 9700 1.5000 			VII...EVT-13
+
+			3fc 91
+			
+			h3 96
+			h3_leslie_mode 2
+			h3_trans -500
+			h2 85
+			
+			h4 104
+			h4_leslie_mode 2
+			h4_leslie_filter_gain 12
+			h4_trans 500
+			
+			synful 85 12000
+			Bsynful 85 12000
+		
+			
+			;================= A supprimer dans la version live ==================
+			/*
+			GFWD	play13			
+				{
+						3fc_snd_time 16 15
+						4t_player_time 16 15
+						sndfonk_time 16 15
+					33s	3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+				}
+				*/
+			;================= A supprimer dans la version live ==================
+
+TRILL (9700)	2.0
+BPM 60.000000 @modulate
+TRILL (10000) 1.75
+TRILL (9700 9900)	1.0	; TALK.. ADDED 97
+TRILL (9600)	1.0		; TALK Doesn't exist but played!
+TRILL (9700)	1.5
+
+NOTE 0 7.0 			VII...EVT-14			
+
+			sampler1 95 5000
+
+			spat1_traj_loop 1; 
+			traj_spat1 1 traj @b(100) 10 ; 
+			spat1_rev 80; 95
+			; spat1_pres 85
+			
+			
+			spat2_rev 80; 95
+			; spat2_pres 85
+			
+			
+			h0 58 5000
+			h1 53 5000
+			h2 55 5000
+			h3 51 5000    
+			h4 47 5000
+
+			synful 0 5000
+			Bsynful 0 5000
+			
+			v1_sigmund 0
+			v2_sigmund 0
+			al_sigmund 0
+			cl_sigmund 0
+
+
+TRILL ( (7600 7000) ) 1.0000			VII...EVT-15
+
+				3fc_sm_onoff 0
+				3fc_sm2_onoff 0
+
+				h0tosp1 110
+				h1tosp1 0
+				h2tosp1 0
+				h3tosp1 0
+				h4tosp1 0
+				h1tosp2 110
+				h2tosp2 110
+				h3tosp2 110
+				h4tosp2 110
+				
+				synful 57  
+				h0 78 
+				h1 0 
+				h2 0 
+				h3 0 
+				h4 0
+				
+				smp1toh0 0
+				smp1toh1 0
+				smp1toh2 0
+				smp1toh3 0
+				smp1toh4 0
+				smp2toh0 100
+				smp2toh1 100
+				smp2toh2 100
+				smp2toh3 100
+				smp2toh4 100
+				
+				sampler1 0
+				abort loop1
+				
+				;Boucle sur sampling de cordes synful
+				LOOP loop2 4 @tempo 60
+				{
+				sampler2_spl adsr 5 5 100 5000
+				sampler2_play2 E_76.aif 0 8 500 8000
+				}
+				
+				master_toupie_freq 16
+				;syn_voices 1 92 0
+				;syn_voices 2 76 120
+				
+				h0_leslie_filter_freq_rate 2
+				h0_leslie_filter_gain 10
+				h0_leslie_filter_q 0.7
+				h1_leslie_filter_gain 12
+				h1_leslie_filter_q 0.7
+				h2_leslie_filter_gain 12
+				h2_leslie_filter_q 0.7
+				h3_leslie_filter_gain 12
+				h3_leslie_filter_q 0.7
+				h4_leslie_filter_gain 13
+				h4_leslie_filter_q 0.7
+	
+			;================= A supprimer dans la version live ==================
+			/*
+				GFWD	play15			
+				{
+							3fc_snd_time 16 48.5
+							4t_player_time 16 48.5
+							sndfonk_time 16 48.5
+					5.4s	3fc_snd_play 0 ;  
+							4t_player_play 0
+							sndfonk_play 0
+				}
+				*/
+			;================= A supprimer dans la version live ==================
+				
+
+
+
+
+ 
+TRILL (6100)	1.0				VII...EVT-16
+
+				h1 91 100
+
+
+
+
+
+ 
+TRILL ( (7200 6700) ) 1.0000 			VII...EVT-17
+
+
+				h2 91 100
+				h1 91 100
+
+
+
+
+ 
+TRILL ( (7100 7000) ) 1.0000 			VII...EVT-18
+
+				h3 93 100
+				h0 78 
+				h1 82
+				h2 82
+				
+ 
+ 
+ 
+ 
+TRILL ( (8100 7700) ) 2.0000 			VII...EVT-19
+
+				h4 93 100
+				h0 84 
+				h1 79
+				h2 79
+				h3 82
+
+			
+ 
+ 
+ 
+ 
+NOTE 0 1.0000
+
+; ---------- measure 526 beat 1864.00 ---------
+
+NOTE 7600 0.1250
+NOTE 8100 0.1250
+NOTE 7700 0.1250
+NOTE 7800 0.1250
+NOTE 8400 0.1250
+NOTE 8300 0.1250
+NOTE 8200 0.1250
+NOTE 8800 0.1250	
+
+BPM 60.000000 @modulate
+TRILL (9100 6900)	4.0			VII...EVT-20
+
+
+				h0_leslie_filter_freq_rate 2
+				h1_leslie_filter_freq_rate 1
+				h2_leslie_filter_freq_rate 2
+				h3_leslie_filter_freq_rate 1
+				h4_leslie_filter_freq_rate 2
+				h0_leslie_filter_gain 6
+				h0_leslie_filter_q 3
+				h1_leslie_filter_gain 11
+				h1_leslie_filter_q 3
+				h2_leslie_filter_gain 13
+				h2_leslie_filter_q 3
+				h3_leslie_filter_gain 15
+				h3_leslie_filter_q 2
+				h4_leslie_filter_gain 13
+				h4_leslie_filter_q 3
+				
+				h1_leslie_mode 4
+				h2_leslie_mode 4
+				h3_leslie_mode 4
+				h4_leslie_mode 4
+				
+				h1_trans -1500
+				h2_trans 1500
+				h3_trans -2500
+				h4_trans 2500
+				
+				h0 91
+				h1 84
+				h2 79
+				h3 86 
+				h4 82
+				
+			;================= A supprimer dans la version live ==================
+			/*
+						3fc_snd_time 16 54
+						4t_player_time 16 54
+						sndfonk_time 16 54
+					15s	3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+						*/
+			;================= A supprimer dans la version live ==================
+
+
+
+
+
+
+NOTE 9400 0.2500 			VII...EVT-21
+
+				spat1_traj_time 6000
+				spat2_traj_time 16000
+				spat1_traj_dist 4
+				spat2_traj_dist 1
+				; spat2_pres 38 
+				spat2_prer 82 
+				spat2_dist_min 3
+				
+				direct_out.pgm 1
+				
+				v1tosp1 110
+				v2tosp1 110
+				atosp1 110
+				ctosp1 110
+				
+				h0_leslie_filter_gain 6
+				h1_leslie_filter_gain 6
+				h2_leslie_filter_gain 6
+				h3_leslie_filter_gain 6
+				h4_leslie_filter_gain 6
+				h0_leslie_filter_q 3
+				h1_leslie_filter_q 3
+				h2_leslie_filter_q 3
+				h3_leslie_filter_q 3
+				h4_leslie_filter_q 3
+				
+				;syn_voices 2 76 0
+				;syn_voices 1 69 120
+				
+				smp1toh0 100
+				smp1toh1 100
+				smp1toh2 100
+				smp1toh3 100
+				smp1toh4 100
+				smp2toh0 0
+				smp2toh1 0
+				smp2toh2 0
+				smp2toh3 0
+				smp2toh4 0
+				
+				; sampler1 86
+				sampler2 0
+				abort loop2
+				
+				sampler1 100 500
+				; Boucle sur sampling de cordes synful
+				LOOP loop3 4 @tempo 60
+				{
+				sampler1_spl adsr 5 5 100 5000
+				sampler1_play2   A_69.aif 0 8 500 8000
+				}
+				
+				h0 86
+				h1 93
+				h2 95
+				h3 91
+				h4 88
+
+			;================= A supprimer dans la version live ==================
+			/*
+					3fc_snd_time 17 09
+					4t_player_time 17 09
+					sndfonk_time 17 09
+			26s		3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+
+
+TRILL (69) 3.75		
+; ---------- measure 531 beat 1885.00 ---------
+BPM 60.000000 @modulate
+TRILL ( 9400) 3.0000 			VII...EVT-21.1
+
+				; direct_out.pgm 4
+				
+				v1tosp1 0
+				v2tosp1 0
+				atosp1 0
+				ctosp1 0
+			;================= A supprimer dans la version live ==================
+			/*
+					3fc_snd_time 17 36
+					4t_player_time 17 36
+					sndfonk_time 17 36
+			9s		3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+
+
+
+
+
+
+
+CHORD ( 9400 8400 ) 0.2500 			VII...EVT-22
+
+				; spat2_pres 56 5000
+				
+				h1_trans -90 @b(9)
+				master_toupie_freq 23, 12 @b(16)
+
+				;================= A supprimer dans la version live ==================
+				/*
+				GFWD	play22			
+					{
+							3fc_snd_time 17 45
+							4t_player_time 17 45
+							sndfonk_time 17 45
+						30s	3fc_snd_play 0 ;  
+							4t_player_play 0
+							sndfonk_play 0
+					}
+					*/
+				;================= A supprimer dans la version live ==================
+	
+	 
+	 
+ 
+ 
+ 
+TRILL ( 9400)	1.75
+
+CHORD ( 9400 8100 ) 0.2500			VII...EVT-23
+
+				h2_trans 90 @b(9)
+
+ 
+ 
+ 
+ 
+ 
+TRILL ( 9400)	2.0
+
+TRILL (9100)	 0.2500 			VII...EVT-24
+
+				h4_trans -60 @b(9)
+
+ 
+ 
+ 
+ 
+TRILL (9200) 0.5
+TRILL (9000)	0.5
+TRILL (8900)	0.5
+
+TRILL (8700)	0.6667	VII...EVT-25
+
+				h3_trans 60 @b(9)
+
+
+
+
+
+
+
+TRILL (8800)	0.6667
+TRILL (8500)	0.333
+TRILL (8400)	0.584
+; ---------- measure 533 beat 1893.00 ---------
+TRILL (8000)	0.5
+TRILL (8100)	0.5833
+TRILL (8000)	0.3334
+TRILL (7700)	0.6666
+TRILL (7800)	0.3334
+
+TRILL (7600)	0.6666
+TRILL (7300)	0.3334
+TRILL (7400)	0.3333
+; ---------- measure 534 beat 1897.00 ---------
+TRILL (7500)	0.5
+TRILL (7200)	0.75
+TRILL (7100)	0.5
+TRILL (7000)	0.75
+
+TRILL (6900)	2.5
+TRILL (6900)	10.0 			VII...EVT-26
+
+		 v1_up_time 2
+ v2_up_time 2
+ a_up_time 2
+ c_up_time 2
+ 
+
+			master_toupie_freq 12, 4.5 @b(9)
+			
+				h1_trans 0 @b(3)
+			2	h2_trans 0 @b(3)
+			2	h3_trans 0 @b(3)
+			2	h4_trans 0 @b(3)
+			
+ 
+
+ 
+ 
+ 
+NOTE 0	8.0	
+
+
+NOTE 69	8.0		VII...EVT-27
+
+				v1_fk_gain 5; gn15
+				print "check v1_fk gain gn 15"
+				v2_fk_gain 5;
+				a_fk_gain 2;
+				c_fk_gain 3;
+
+				v1_final_pitch 1600
+				v2_final_pitch 800
+				a_final_pitch -1000
+				c_final_pitch -1300
+			
+				GFWD fonks
+				{
+				v1_fk_on 1
+				v2_fk_on 1
+				a_fk_on 1
+				c_fk_on 1
+				
+				10s v1_fk_on 0
+				v2_fk_on 0
+				a_fk_on 0
+				c_fk_on 0
+				}
+				
+
+				;Vl1 --> leslie 1
+				;Vl2 --> leslie 2
+				;alt --> leslie 3
+				;Vlc --> leslie 4
+				
+				v1_down_time 4	; was 8
+				v2_down_time 4
+				a_down_time 4
+				c_down_time 4
+				
+				h1 86 @b(2)
+				h2 93 @b(2)
+				h3 93 @b(2)
+				h4 97 @b(2)
+				
+				h1_leslie_mode 1
+				h2_leslie_mode 1
+				h3_leslie_mode 1
+				h4_leslie_mode 1
+				
+				print lalalalalalala
+				h0 0 1000
+				h1_trans 0 
+				h2_trans 0 
+				h3_trans 0 
+				h4_trans 0 
+
+				; transpositions d'arrivée des descentes
+				
+				v1_final_pitch 1600
+				v2_final_pitch 800
+				a_final_pitch -1000
+				c_final_pitch -1300
+
+				master_toupie_freq 8 							
+
+			;================= A supprimer dans la version live ==================
+			/*
+			GFWD	play27			
+				{
+							3fc_snd_time 18 15
+							4t_player_time 18 15
+							sndfonk_time 18 15
+					11.35s	3fc_snd_play 0 ;  
+							4t_player_play 0
+							sndfonk_play 0
+				}
+			*/
+			;================= A supprimer dans la version live ==================
+			
+; ---------- measure 542 beat 1929.00 ---------
+
+NOTE 0 16 @fermata ; print fermata shit
+			print avant28
+TRILL (8300)	2.0 			VII...EVT-28 @fermata ; gn20
+
+			h0 0
+			print après_28
+			
+			4s v1_fk_on 0
+			v2_fk_on 0
+			a_fk_on 0
+			c_fk_on 0
+			
+
+ 
+NOTE 0 0.333
+
+NOTE	7900	0.3334 			VII...EVT-29
+
+
+			;transpositions d'arrivée des descentes
+			
+			v1_final_pitch 1800
+			v2_final_pitch 1300
+			a_final_pitch -1300
+			c_final_pitch -300
+
+			v1_fk_on 1
+			v2_fk_on 1
+			a_fk_on 1
+			c_fk_on 1
+						
+			;================= A supprimer dans la version live ==================
+			/*
+			GFWD	play29			
+				{
+							3fc_snd_time 18 26.4
+							4t_player_time 18 26.4
+							sndfonk_time 18 26.4
+					23.6s	3fc_snd_play 0 ;  
+							4t_player_play 0
+							sndfonk_play 0
+				}
+				*/
+			;================= A supprimer dans la version live ==================
+
+			5s v1_fk_on 0
+			v2_fk_on 0
+			a_fk_on 0
+			c_fk_on 0
+
+NOTE 0 3.3331 @fermata ; gn20
+
+
+TRILL ( 8700) 3.125 			VII...EVT-30
+								
+				v1_fk_on 0
+				v2_fk_on 0
+				a_fk_on 0
+				c_fk_on 0
+
+ 
+NOTE 8600 0.1250
+NOTE 8800 0.1250
+NOTE 8700 0.1250
+NOTE 9000 0.1250
+NOTE 8900 0.1250
+NOTE 8600 0.1250
+NOTE 8700 2.0
+; ---------- measure 547 beat 1940.00 ---------
+NOTE 7600 0.1250
+NOTE 8700 0.1250
+NOTE 8300 0.1250
+NOTE 8600 0.1250
+NOTE 8500 0.1250
+NOTE 9300 0.1250
+NOTE 9000 0.1250
+TRILL ( 8700)  6.500	@fermata ; gn20	; 4.75 + 0.5 of repeated notes + 1.0 + 0.25 SUSTAINED
+; ---------- measure 550 beat 1952.00 ---------
+BPM 80.000000 @modulate
+NOTE 0 1.2500
+NOTE 7400 0.1250
+NOTE 7300 0.1250
+NOTE 7400 0.1250
+NOTE 7800 0.1250
+NOTE 7700 0.1250
+NOTE 8100 0.1250
+NOTE 8300 0.1250
+NOTE 8200 0.1250
+NOTE 8100 0.1250
+NOTE 8400 0.1250
+NOTE 8700 0.1250
+NOTE 8800 0.1250
+; ---------- measure 551 beat 1955.00 ---------
+NOTE 9100 0.1250
+NOTE 8900 0.1250
+NOTE 9000 0.1250
+NOTE 9100 1.6250			VII...EVT-31 @fermata ; gn20
+
+				master_toupie_freq 16
+				;h1_leslie_mode 3
+				;h2_leslie_mode 3
+				;h3_leslie_mode 3
+				;h4_leslie_mode 3
+				
+				v1_down_time 16
+				v2_down_time 16
+				a_down_time 16
+				c_down_time 16
+				
+				v1_final_pitch -3500
+				v2_final_pitch -3100
+				a_final_pitch -2700
+				c_final_pitch -3800
+
+				v1_fk_on 1
+				v2_fk_on 1
+				a_fk_on 1
+				c_fk_on 1
+
+			;================= A supprimer dans la version live ==================
+			/*
+							3fc_snd_time 18 50
+							4t_player_time 18 50
+							sndfonk_time 18 50
+					9.8s	3fc_snd_play 0 ;  
+							4t_player_play 0
+							sndfonk_play 0
+							*/
+			;================= A supprimer dans la version live ==================
+		
+; ---------- measure 554 beat 1967.00 ---------
+NOTE 0 4 @fermata ; gn2020
+
+NOTE 9500 0.5000
+NOTE 0 3.5000
+
+; ---------- measure 555 beat 1971.00 ---------
+
+NOTE 10100 0.5000
+NOTE 0 3.5000
+
+; ---------- measure 556 beat 1975.00 ---------
+
+NOTE 9300 0.5000
+NOTE 0 3.5000
+
+; ---------- measure 557 beat 1979.00 ---------
+
+NOTE 9900 0.5000
+NOTE 0 7.5000  @fermata
+
+; WATCH OUT.. UNDETERMINED NUMBER OF REPEATS! MUST DO BY HAND!!!
+
+NOTE 9000 0.2500 			VII...EVT-32 @fermata
+
+			; stop glissandi
+			
+			v1_fk_on 0
+			v2_fk_on 0
+			a_fk_on 0
+			c_fk_on 0
+			
+			GFWD stop_trans_32 {
+			print "stop transpo"
+			0.3s h1_trans.bl stop
+			h2_trans.bl stop
+			h3_trans.bl stop
+			h4_trans.bl stop }
+			
+			; balancer les harmo de spat2 dans spat 3 (très lointain...)
+
+			;================= A supprimer dans la version live ==================
+			/*
+					3fc_snd_time 19 40.82
+					4t_player_time 19 40.82
+					sndfonk_time 19 40.82
+			1s		3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+		
+
+NOTE 0 0.7500
+NOTE 7500 0.2500			VII...EVT-33  @fermata ; gn20
+
+			; continuation glissandi
+			
+			v1_trig_down bang
+			v2_trig_down bang
+			a_trig_down bang
+			c_trig_down bang
+			
+			; rebalancer les harmo de spat2 
+
+			;================= A supprimer dans la version live ==================
+			/*
+					3fc_snd_time 19 45
+					4t_player_time 19 45
+					sndfonk_time 19 45
+			1s		3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+
+NOTE 0 0.7500
+NOTE 9300 0.2500			VII...EVT-34 @fermata ; gn20
+
+			; stop glissandi
+			; balancer les harmo de spat2 dans spat 3 (très lointain...)
+			
+			h1_trans.bl stop
+			h2_trans.bl stop
+			h3_trans.bl stop
+			h4_trans.bl stop
+			
+			;================= A supprimer dans la version live ==================
+			/*
+					3fc_snd_time 19 48.5
+					4t_player_time 19 48.5
+					sndfonk_time 19 48.5
+			1s		3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+
+NOTE 0 0.7500
+NOTE 7000 0.2500			VII...EVT-35  @fermata ; gn20
+
+				spat2_prer 80   ; 95
+				spat2_rev 80   ; 100
+				spat2_dist 86
+				spat2_aperture 83 
+
+			; continuation glissandi
+			; rebalancer les harmo de spat2 
+			
+				h1 93 @b(1)
+				h2 88 @b(1)
+				h3 88 @b(1)
+				h4 95 @b(1)
+			
+			h1_leslie_mode 1 ; mode relatif
+			h2_leslie_mode 1
+			h3_leslie_mode 1
+			h4_leslie_mode 1
+			
+			v1_trig_down bang
+			v2_trig_down bang
+			a_trig_down bang
+			c_trig_down bang
+ 
+ 			;================= A supprimer dans la version live ==================
+ 			/*
+					3fc_snd_time 19 52.5
+					4t_player_time 19 52.5
+					sndfonk_time 19 52.5
+			1s		3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+
+
+NOTE 0 4.7500
+TRILL (5900)	0.8 			VII...EVT-36 @fermata ; gn20
+								
+				sampler1 102
+				
+				; spat2_pres 86
+				spat2_prer 80; 95
+				spat2_rev 80; 100
+				spat2_dist 86
+				spat2_aperture 83 
+
+				h1_trans -3500
+				h2_trans -3100
+				h3_trans -2700
+				h4_trans -3800
+				
+				h1 93
+				h2 88
+				h3 88
+				h4 95
+		
+ 			;================= A supprimer dans la version live ==================
+ 			/*
+					3fc_snd_time 19 59.5
+					4t_player_time 19 59.5
+					sndfonk_time 19 59.5
+			2s	3fc_snd_play 0 ;  
+					4t_player_play 0
+					sndfonk_play 0
+					*/
+			;================= A supprimer dans la version live ==================
+
+ 
+NOTE 6500 0.2000			VII...EVT-37 @fermata ; gn20
+
+				h4 86 300
+				h4tosp2 0 0
+				h4tosp1 110 100
+				h4_hf_gain 0
+				h4_trans 3800
+	
+				;================= A supprimer dans la version live ==================
+				/*
+						3fc_snd_time 20 3
+						4t_player_time 20 3
+						sndfonk_time 20 3
+				4.3s	3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+						*/
+				;================= A supprimer dans la version live ==================
+
+
+TRILL (5900)	0.8 
+CHORD ( 5600 61) 0.2000		; TALK added 61
+TRILL (5900)	0.8 			VII...EVT-38 @fermata ; gn20
+	
+				
+				h4tosp2 110 100
+				h4tosp1 0 500
+				h4_hf_gain -6
+				
+				h4_trans -3800
+	
+				;================= A supprimer dans la version live ==================
+				/*
+						3fc_snd_time 20 7.49
+						4t_player_time 20 7.49
+						sndfonk_time 20 7.49
+				3s		3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+						*/
+				;================= A supprimer dans la version live ==================
+
+
+NOTE 6100 0.2000
+
+TRILL (5900)	0.8  			VII...EVT-39 @fermata ; gn20
+
+
+				h2 97
+				h3 75
+				h3tosp2 0 500
+				h3tosp1 110 100
+				h3_hf_gain 0
+				
+				h3_trans 2700
+				
+				1s h2tosp2 0 500
+				h2 70
+				h2tosp1 110 100
+				h2_hf_gain 0
+				h2_trans 3500
+	
+				;================= A supprimer dans la version live ==================
+				/*
+						3fc_snd_time 20 11
+						4t_player_time 20 11
+						sndfonk_time 20 11
+				3.3s	3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+						*/
+				;================= A supprimer dans la version live ==================
+
+
+NOTE 5500 0.2000			VII...EVT-40 @fermata ; gn20
+
+				h2tosp2 110 100
+				h2tosp1 0 500
+				h3tosp2 110 100
+				h3tosp1 0 500
+				h3_hf_gain -6
+				
+				h3_trans -2700
+				h2_trans -3500
+				
+				h1 93
+				h2 88
+				h3 88
+				h4 95
+
+				;================= A supprimer dans la version live ==================
+				/*
+						3fc_snd_time 20 14.4
+						4t_player_time 20 14.4
+						sndfonk_time 20 14.4
+				10.5s	3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+						*/
+				;================= A supprimer dans la version live ==================
+
+ 
+ 
+ 
+ 
+ 
+ 
+TRILL (5900)	1.0
+; ---------- measure 562 beat 2000.00 ---------
+
+BPM 60.000000 ; @modulate
+TEMPO OFF
+NOTE 6800 0.2500			VII...EVT-41
+
+/*
+				v1_final_pitch -600
+				v2_final_pitch -1500
+				a_final_pitch -2400
+				c_final_pitch -4000
+
+				v1_fk_on 1
+				v2_fk_on 1
+				a_fk_on 1
+				c_fk_on 1
+				
+				GFWD stop_fonk_41 
+				{
+				4s v1_fk_on 0
+				v2_fk_on 0
+				a_fk_on 0
+				c_fk_on 0
+				}
+
+				;================= A supprimer dans la version live ==================
+				
+				GFWD	play41			
+					{
+								3fc_snd_time 20 19
+								4t_player_time 20 19
+								sndfonk_time 20 19
+						15s		3fc_snd_play 0 ;  
+								4t_player_play 0
+								sndfonk_play 0
+					}
+				
+				;================= A supprimer dans la version live ==================
+
+*/
+ 
+TEMPO ON
+NOTE 0 1.0835
+NOTE 7400 0.3333
+NOTE 0 2.3331
+; ---------- measure 564 beat 2004.00 ---------
+BPM 60.000000 @modulate
+
+MULTI ( (5900 6500)' (6550 7000)' (7100 7450)' (7200 7500)' (7100 7450)' (7000 7400)' ) 3.5 VII...EVT-42
+; Nothing?!
+
+ 
+NOTE 0 0.5
+
+MULTI ( (7600 7900)' (7900 8300)' (8100 8700)' ) 3.0
+; ---------- measure 566 beat 2010.00 ---------
+MULTI ( (6800 7700)' (7000 7900)' (8600 9500)' ) 2.5
+NOTE 0 0.5
+
+; ---------- measure 567 beat 2013.00 ---------
+MULTI ((7700 8300)' ( 7900 8200)') 1.5			VII...EVT-43
+
+				h0_trans 100
+				h0 0, 73 3000
+				
+				; valeurs d'arrivées des glissandi
+/*				
+				h1 93 1000
+				h2 99 1000
+				h3 104 1000
+				h4 115 1000
+				
+				
+				;h1_trans -600
+				;h2_trans -1500
+				;h3_trans -2400
+				;h4_trans -4000
+			
+
+				;================= A supprimer dans la version live ==================
+				; slash etoile
+						3fc_snd_time 20 34
+						4t_player_time 20 34
+						sndfonk_time 20 34
+				4.5s	3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+				; etoile slah
+				;================= A supprimer dans la version live ==================
+			
+ 
+ 
+ 
+ 
+ */
+ 
+MULTI ((7500 7800)' (8500 8900)' (8800 9200)') 1.5
+; ---------- measure 568 beat 2016.00 ---------
+TRILL ( (8900 8500) ) 0.5000
+
+MULTI ( (8300 8600)' (8200 8800)' (8700 9300)' )	2.0
+
+; ---------- measure 569 beat 2019.00 ---------
+MULTI ( (8500 9400)' (8900 9800)' (9300 10000)' ) 3.0
+
+TRILL (9700) 1.0 			VII...EVT-44
+
+				; spat2_pres 85
+				
+				sampler1 95
+				sampler2 110
+				smp2tosp1 120
+				sampler2_play cloche.22_do#6.wav 0 8
+				sampler2_play cloche.10_do#5.wav 0 6
+				
+				spat1_dist_min 2
+				h0 93 1000
+				h1 95 1000
+				h2 86 1000
+				h3 95 1000
+				h4 120 1000
+				
+				h0_trans 100
+				h1_trans -600
+				h2_trans -1500
+				h3_trans -2400
+				h4_trans -4000
+				
+					
+	
+				;================= A supprimer dans la version live ==================
+				/*
+				GFWD play44
+				{
+						3fc_snd_time 20 38.5
+						4t_player_time 20 38.5
+						sndfonk_time 20 38.5
+				11s	3fc_snd_play 0 ;  
+						4t_player_play 0
+						sndfonk_play 0
+				}
+				*/
+				;================= A supprimer dans la version live ==================
+
+ 		7s		sampler1 82 8000 
+ 
+ 
+NOTE 0 2.0000
+
+BPM 60.000000 ; @modulate
+NOTE 9700 0.1667
+NOTE 0 0.1669
+NOTE 9700 0.6667
+NOTE 0 4.9999
+
+; ---------- measure 573 beat 2031.00 ---------
+NOTE 9000 1.0000			VII...EVT-45
+
+				abort loop3
+
+		sy1_ sy1.07.45.aif
+
+				spat2_traj_dist 1
+				; spat2_pres 101
+				
+				syntosp1 0
+				syntosp2 0
+				syntosp3 0
+				
+				spat1_traj_time 15000
+				spat1_dist_min 7
+				; spat1_pres 100
+				spat1_prer 92
+				spat1_rev 80; 100
+				spat1_aperture 106
+				
+				
+				spat2_prer 70
+				spat2_rev 70
+				
+			
+				syn_voices 1 pgm 40 bnk 0 vol 120
+				syn_voices 1 pgm 40 bnk 0 vol 120
+				
+			0.3	syn_voices 1 69 120 , 1 vol 120
+			
+				synful 90; 88
+				
+				
+				
+				syntoh0 100
+				syntoh1 100
+				syntoh2 100
+				syntoh3 100
+				syntoh4 100
+				
+				smp1toh0 0
+				smp1toh1 0
+				smp1toh2 0
+				smp1toh3 0
+				smp1toh4 0
+				smp2toh0 0
+				smp2toh1 0
+				smp2toh2 0
+				smp2toh3 0
+				smp2toh4 0
+
+				h0tosp1 110 100
+				h1tosp1 110 100
+				h2tosp1 110 100
+				h3tosp1 110 100
+				h4tosp1 110 100
+				h0tosp2 0 100
+				h1tosp2 0 100
+				h2tosp2 0 100
+				h3tosp2 0 100
+				h4tosp2 0 100
+			
+				sampler2_play cloche.15_fa#5.wav -2400 3
+				sampler2_play cloche.15_fa#5.wav -1800 3
+				
+				LOOP		loop7_45 9.0  ; @s2b(18.5)
+					{
+						sampler1_play Gliss-DPA-denoise.aif -1500 2 427 4583 ; nom  trans amp  début durée
+						sampler1_play Gliss-DPA-denoise-3m37s.aif -1300 2 427 14700
+					}
+
+
+				
+				
+				sampler2 100
+				smp2tosp1 110
+				
+			
+				smp1tosp2 0, 115 2000
+				sampler1 0, 86 4000
+
+
+
+
+
+NOTE 0 2.0000
+
+; ---------- measure 574 beat 2034.00 ---------
+
+NOTE 9900 1.0000			VII...EVT-46
+
+				sampler1 84
+				sampler2_play cloche.1_mi4.wav -1900 3
+				
+				LOOP		loop7_46 6.0  ; @s2b(18.5)
+					{
+						sampler1_play Gliss-DPA-denoise-3m37s.aif -400 2 427 14700; nom  trans amp  début durée
+						sampler1_play Gliss-DPA-denoise.aif -600 2 427 4583
+					}
+
+NOTE 0 2.0000
+
+; ---------- measure 575 beat 2037.00 ---------
+
+NOTE 10600 0.5000			VII...EVT-47
+
+				sampler2_play cloche.7_la#4.wav -1200 3
+
+				LOOP		loop7_47 4.0  ; @s2b(18.5)
+					{
+						sampler1_play Gliss-DPA-denoise.aif 100 2 427 4583; nom  trans amp  début durée
+						sampler1_play Gliss-DPA-denoise-3m37s.aif 300 2 427 14700
+					}
+
+ 				sampler1 80
+ 
+ 
+ 
+ 
+NOTE 0 2.5000
+NOTE 9700 1.0000			VII...EVT-48
+
+spat2_traj_dist 10 5000
+spat2_aperture 123 5000
+sampler1 52 10000
+
+ 
+ 
+ 
+ 
+ 
+NOTE 0 5.0000
+
+; ---------- measure 577 beat 2043.00 ---------
+; ---------- measure 578 beat 2046.00 ---------
+
+NOTE 10500 1.0000 			VII...EVT-49
+
+      
+				synful 94 6000
+				h4 104 2000
+				
+				
+				h0_trans 2700 8600
+				h0_hf_gain 0 8600
+				h0_cut_pitch 96
+				h0 91 8600
+				
+				
+				3s h1_trans 2700 8600
+				h1_hf_gain 0 8600
+				h1_cut_pitch 96 
+				h1 91 8600
+				
+				3s h2_trans 2700 8600
+				h2_hf_gain 0 8600
+				h2_cut_pitch 96 
+				h2 91 8600
+				
+				3s h3_trans 2700 8600
+				h3_hf_gain 0 8600
+				h3_cut_pitch 96 
+				h3 91 8600
+				
+
+ 
+NOTE 0 5.0000
+; ---------- measure 579 beat 2049.00 ---------
+; ---------- measure 580 beat 2052.00 ---------
+NOTE 10000 1.0000			VII...EVT-50
+
+				master_toupie_freq 2.0 15000
+
+
+ 
+NOTE 0 2.0000
+; ---------- measure 581 beat 2055.00 ---------
+NOTE 10400 1.0000			VII...EVT-51
+			
+				sampler1 51 7000
+				sampler2  45 10000
+				h4 55 20000
+				3s h3 0 5000
+				3s h2 0 5000
+				3s h1 0 5000
+				h4 1 3000
+
+
+; ---------- measure 582 beat 2058.00 ---------
+NOTE 10800 1.0000			VII...EVT-52
+				
+				h4 1 500
+				sampler1 0 8000
+				sampler2 93
+				; sampler2_play cloche.22_do#6.wav -100 8
+				syntoh4 0
+				smp2toh4 120
+				h4_hf_gain 0
+				h4_cut_pitch 96
+				; h4 106
+				h4_trans 1200
+				
+				0.6s h4 106
+				sampler2_play cloche.22_do#6.wav -100 8
+
+
+
+NOTE 0	1.0 VII...FIN
+
+
+NOTE 8500 0.3 			VII...EVT-53
+
+abort		loop7_45
+abort		loop7_46
+abort		loop7_47
+
+
+suivi 0	
+NOTE 0. 1
+;**************************************************************
+NOTE 0. 1 EVT-54

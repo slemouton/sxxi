@@ -1,0 +1,2317 @@
+@INSERT "macros_def.txt"	; definition des fonctions et macros
+antescofo::bypass_temporeset "on" ; le super trick pour éviter que antescofo s'arrête si la machine d'écoute est arrêtée
+@set_max_message_sent_instantaneously(3333)
+dummysilence on
+
+	;print "Wroclaw 2015 version"
+	;print "Nimes 2020 version"
+	print "La Meije 2021 version"
+
+	; synful_unpad 18 ; is -18 dans le patch
+
+	antescofo-mess temposmoothness 0.8 ; was 0.95
+	antescofo-mess tune 442.0
+
+obs_gate 1 ;  observation input on
+deltas_pm.pgm 3
+;deltas_pm.pgm 20
+monitors.pgm 1 ; all off
+; direct_out.pgm 1
+BPM 61 
+antescofo::tempo 61
+
+suivi 0
+
+; en principe l'init remet les presence de spat à 90 pour une distance de 1m
+
+; *********
+; SPAT INIT
+; *********
+spat1_dist 1
+spat2_dist 1
+spat3_dist 1
+spat1_pres 90
+spat3_pres 90
+spat2_pres 90
+
+; TEMPO ON
+	spat1_aperture 20
+	spat2_aperture 20
+	spat3_aperture 20
+	fx_pgm 1	; matrice à zero  
+	print "String Example"  
+	
+	s_loop 0
+	s_stop bang ; arrete le string
+	; s_config 1;
+
+
+	stosp3 0		; string > spat1  
+	spat3_traj 0 
+
+; routing
+	stosp1 120		; string > spat1  
+	"s" 75 		; was string before 
+	s_tempo 251
+	spat1 100  
+	spat3 0
+	s_reset bang	; reset string parameters  
+	h1 86
+	h2 86
+	h3 86
+	stoh1 106
+	stoh2 106
+	stoh3 106
+	
+			syn_voices 1 flush 1; turn notes off 
+			syn_voices 2 flush 1; turn notes off 
+			Bsyn_voices 1 flush 1; turn notes off 
+			Bsyn_voices 2 flush 1; turn notes off 
+
+	
+		bouge 0				; bouge les spats aleatoire 
+	
+	; Set initial pitch bends
+			syn_voices 1 xbend 0; 
+			syn_voices 2 xbend 0; 
+			syn_voices 3 xbend 0; 
+			syn_voices 4 xbend 0; 
+			syn_voices 5 xbend 0;  
+	
+		; synful_vst read strings-ctls4.fxb 
+	
+	 
+	 ;110		; envoie synful dans spat1 
+	 
+	 ; set initial vibratos on available channels
+			syn_voices 3 vibrato 0.2, 4 vibrato 0.2, 5 vibrato 0.2, 6 vibrato 0.2	; etc  
+	
+			sampler2 100 
+			smp2tosp2 100 
+	
+			smp1tosp2	120 
+			spat1		100 
+			spat2		100 
+			spat3		100 
+			; spat4		100 
+			sampler1	100
+			h0	100 
+			h1	100 
+			h2	100 
+			h3	100 
+			h4	100 
+	
+			master_toupie_freq 0
+			h1_leslie_mode 0 
+			h2_leslie_mode 0 
+			h3_leslie_mode 0 
+			h4_leslie_mode 0 
+	
+		Bsynful 95			; Volume en DB 
+		synful 95 			; volume synful et spat1 en DB 
+	
+		print "WARNING missing partiels_xbend_range line 108"
+		; partiels_xbend_range 12 
+		
+		; init spat positions
+		; spat1_ctl source Az 0 5
+		spat1_az 0 ; front
+		;spat1_dist 5; 5 m
+		spat1_width 30
+		; spat1_ctl width 30
+		; spat1_aperture 30
+		; spat1_ctl fact rev 55
+		spat1_rev 55
+		
+		spat2_az 0 ; front
+		;spat2_dist 5; 5 m
+		spat2_width 30
+		;spat2_aperture 20; 5 m
+		
+		spat3_az 0 ; front
+		;spat3_dist 5; 5 m
+		spat3_width 30
+		;spat3_aperture 20; 5 m
+		
+	
+	print "Wroclaw 2015 version"	
+	print "Press space to start"  
+
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+BPM 60	 
+; TRILL (72 73 74) 8.0	IIA...EVT-1
+NOTE 73 10.0	IIA...EVT-1 ; gn15 test with multi ? WAS 8 beat
+
+		
+		master 100 ; was 90
+
+		; reglage spat1
+		spat1_dist_min 0.5
+		spat1_dist 17
+		
+		spat1_pres 83 
+		spat1_az -268
+		spat1_prer 80; 111 ; spat1_ctl fact prer 80
+		spat1_revp 30
+		spat1_env 19
+		spat1_rev 70 ; 91
+		spat1_aperture 30
+		spat1_width 30
+		spat1_dopp 0
+		
+		; reglage spat2
+		spat2_dist_min 0.5
+		spat2_dist 17
+		spat2_prer 80; 111 ; spat1_ctl fact prer 80
+		spat2_revp 30
+		spat2_env 19
+		spat2_rev 91
+		spat2_aperture 30
+		spat2_width 30
+		spat2_dopp 0
+		
+		; reglage spat3
+		spat3 _dist_min 0.5
+		spat3_dist 17
+		spat3_prer 74 ; 111 ; spat1_ctl fact prer 80
+		spat3_revp 30
+		spat3_env 19
+		spat3_rev 91
+		spat3_aperture 30
+		spat3_width 30
+		spat3_dopp 0
+		
+		; niveau des spats
+		spat1 100
+		spat2 100
+		spat3 100
+		
+		st1_ st1.02.01.aif
+
+		; s_config 1 ; 7 strings
+		;s_buffer replace string2A_4tmps.wav ; remplace .wav par .aif : compatibilité avec waveform JW2021
+		s_buffer replace string2A_4tmps.aif	; charge données geste sur corde  
+		;  s_ps_data_start;
+		s_dist_scale 1.;
+		s_force_scale 1.64; 
+		s_loop 1;
+		s_pitch 73.; 
+		s_sel_end 500.;
+		s_sel_start 100.;
+		; s_speed 1.7; correspond ici à 255
+		s_tempo 640
+		s_trans_scale 0;
+		s_vel_scale 3.73;
+		"s" 75
+		s_dur 2
+		
+		s_loop 1
+		stosp1 97
+		;s_startloop bang
+		s_start bang
+
+		read_traj2	traj2_evt2.traj ; lit une trajectoire implicitement dans traj2.traj
+
+	2 GROUP harm ; GFWD 2 harm_2.1
+	{
+	h1_trans 0
+	h2_trans -288
+	h3_trans -560 ; 650
+	h0 100
+	h1 100
+	h2 100
+	h3 100
+	h4 0
+	stoh1 113
+	stoh2 113
+	stoh3 113
+	stoh4 113
+	h1tosp1 100 @b(2)
+	h2tosp1 100 @b(2.1)
+	h3tosp1 100 @b(2.3)
+	h4tosp1 100 @b(2.5)
+	}
+
+TRILL ( 73 )	3.9	
+
+NOTE 70 0.5
+	print "trille sib lancé après 2s"
+			
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+; BPM	60
+TRILL ( 73 ) 24 IIA...EVT-2 @fermata ; gn20 ; gn15 trill bug  check si 25 alors dans les choux
+; TRILL ( 73 70 (70 73) ) 0.25 			IIA...EVT-2
+
+	; suivi 1 ; gn15 car avance
+
+	monitors.pgm 5 ; string 
+	
+	syntosp2 112
+	sy1_ sy1.02.02.aif
+	st1_ st1.02.02.aif	
+	syn_voices 1	pgm 40 bnk 0	vol 60		; vlon arco
+	syn_voices 2	pgm 40 bnk 0	vol 60		; vlon arco
+	syn_voices 2 	vol 60 "expr" 40
+	syn_voices 2 	vol 60 "expr" 40
+	syn_voices 1 	vol 60 "expr" 40
+		
+	; bug commentaire dans GFWD interprete les fonctions ???
+	; gros bug
+	/*
+	GFWD 
+	{
+		@cresc(1,88,100,12,60,127,40,110,33)	; VOIX,NOTE,VEL,DUR en beat,VOL1,VOL2,EXPR1,EXPR2
+		print lalal
+		@cresc2(2,93,98,12,40,127,40,110,33)	; VOIX,NOTE,VEL,DUR en beat,VOL1,VOL2,EXPR1,EXPR2	
+	}
+	*/
+	
+	group
+	{
+	@cresc(1,88,100,12,80,127,40,110,20)	; VOIX,NOTE,VEL,DUR en beat,VOL1,VOL2,EXPR1,EXPR2 ;
+	; second cresc
+	syn_voices 2 	vol 60 "expr" 40
+	syn_voices 2 	vol 60 "expr" 40
+	syn_voices 2	93 98 @b(12)
+	2.4	syn_voices 2 	vol 127 @b(9.6)  "expr" 110 @b(9.6)
+	}
+
+	; s_speed 1.7, 0.62 @b(10);
+	s_tempo 120 @b(10)  ; WAS 90
+	
+	spat2_traj_loop 0;
+	;traj_spat2 1 traj2_evt2b 30000 3 ; on/off tr01 en 20s distance 5m
+	; read_traj2	traj2_evt2.traj ; lit une trajectoire implicitement dans traj2.traj
+	;traj_spat2 1 traj2_evt2 @b(10) 3 ; on/off tr01 en 20s distance 5m
+	traj_spat2 1 traj2 @b(10) 3 ; on/off tr01 en 20s distance 5m
+
+	spat2_prer 94
+	
+	read_traj cercle.traj
+
+	GFWD cercle-lent 
+	{
+		0.2	spat3_traj_loop 1; 
+			traj_spat1 1 traj @b(20) 17 ; on/off, nom de la trajectoire ,durée de la boucle, distance		
+	}
+	
+; suivi 1 ; gn15 car avance
+print "mettre le suivi on à la main !!!!! pour 3"
+print "waiting for a silence"
+
+;**************************************************************
+BPM 90
+TEMPO OFF ; does it make sens ? (gn15)
+
+;NOTE 0 1 @fermata ; gn20 fermata gn15
+
+PIZZSECTION ON
+NOTE 73 0.33 IIB...EVT-at-3
+print "sur 3 tempo still 90 and OFF"
+; TEMPO ON
+NOTE 76 0.33 		IIB...EVT-3-just-after	
+	print new_test_2a
+	
+	;deltas_pm.pgm 21
+	syn_voices 1 flush 1;
+	spat2_traj 0
+	;suivi 1
+NOTE	77	0.34
+TEMPO ON
+;BPM	90.1
+
+NOTE	81	0.33
+NOTE	80	0.33
+NOTE	83	0.34
+
+; repetition
+
+NOTE 73 0.33
+NOTE 76 0.33
+NOTE	77	0.34
+NOTE	81	0.33
+NOTE	80	0.33
+NOTE	83	0.34
+
+
+;**************************************************************	
+;TEMPO OFF
+NOTE	7500 0.5 			IIB...EVT-4
+
+;PIZZSECTION OFF
+
+	;suivi 0
+	print "event 4 suivi stays on (2015)"
+	
+	;deltas_pm.pgm 25
+	
+	syn_voices 3	pgm 0 bnk 2 vol 127		; pizz
+	syn_voices 3	 vol 127		; pizz
+spat2_az -45 ; pizz avant droit
+spat2_dist 2; 2 m
+spat2_prer 83 ; spat2_ctl fact prer 110
+spat2_rev 77
+; spat2_pres 110; presence (90 à 110 pour volume si trop loin)
+sy1_ sy1.02.04.aif
+synful 110 ;  @b(2)
+
+	h1 84 @b(2)
+	h2 84 @b(2)
+	h3 84 @b(2)
+
+	"s" 85 200
+
+GFWD	Pizzicati-2.4
+	{
+		syn_voices 3 vol 127
+		syn_voices 3	pgm 0 bnk 2 vol 127		; pizz
+		syn_voices 3	 vol 127
+		0.333	syn_voices 3	75 120 100 vol 127
+				syn_voices 3	72 120 100 vol 127
+				syn_voices 3	66 120 100
+				syn_voices 3	64 120 100
+		0.333	syn_voices 3	77 120 100
+				syn_voices 3	74 120 100
+				syn_voices 3	69 120 100
+				syn_voices 3	66 120 100
+		0.333	syn_voices 3	78 127 120
+				syn_voices 3	75 127 120
+				syn_voices 3	70 127 120
+				syn_voices 3	67 127 110
+		0.333	syn_voices 3	81 120 100
+				syn_voices 3	77 120 100
+				syn_voices 3	72 120 100
+				syn_voices 3	70 120 100
+		0.333	syn_voices 3	84 120 100
+				syn_voices 3	77 120 100
+				syn_voices 3	75 120 100
+				syn_voices 3	74 120 100
+		0.333	syn_voices 3	86 127 110
+				syn_voices 3	83 127 110
+				syn_voices 3	77 127 110
+				syn_voices 3	75 127 110
+	}
+
+NOTE 0 1.88		; 0.5 + 1.0 + 0.33
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 	86	0.33
+NOTE	83	0.33
+NOTE 	89  0.5 			IIB...EVT-5
+	
+	spat2_az 45 ; pizz avant droit
+
+	sy1_ sy1.02.05.aif
+
+	GFWD	Pizzicati-2.5
+	{
+		syn_voices 3 vol 127	
+		syn_voices 3	 vol 127
+		0.333	syn_voices 3	86 120 100
+				syn_voices 3	80 120 100
+				syn_voices 3	72 120 100
+				syn_voices 3	69 120 100
+		0.333	syn_voices 3	83 120 100
+				syn_voices 3	74 120 100
+				syn_voices 3	69 120 100
+				syn_voices 3	63 120 100
+		0.333	syn_voices 3	89 127 120
+				syn_voices 3	83 127 120
+				syn_voices 3	75 127 120
+				syn_voices 3	66 127 110
+	}
+
+	;s_speed 1.7 @b(3);
+	s_tempo 675  @b(1.5)
+	
+NOTE 	0 	0.88
+NOTE	78	0.33
+NOTE	84	0.34
+;**************************************************************	
+NOTE	87	0.33		IIB...EVT-6
+;TRILL	(87 88)	0.33		IIB...EVT-6
+
+PIZZSECTION OFF
+
+		s_buffer replace string2b_5tmps.aif	; charge données geste sur corde  
+		read_traj3 lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+
+	GFWD		harm
+	{
+	h1_trans -490 @b(3)
+	h2_trans -573 @b(3) 
+	h3_trans -1050 @b(3)
+	s_tempo 60  @b(3)
+	; s_speed 0.4 @b(3)
+	s_trans_scale 3 @b(3)
+	}
+	"s" 90 @b(3)	
+	spat2_az -140 ; pizz arrière gauche
+
+	sy1_ sy1.02.06.aif
+	st1_ st1.02.06.aif
+
+	GFWD	Pizzicati-2.6
+	{
+		syn_voices 3 vol 127	
+		syn_voices 3	 vol 127
+		0.333	syn_voices 3	87 120 100
+				syn_voices 3	83 120 100
+				syn_voices 3	74 120 100
+				syn_voices 3	70 120 100
+		0.333	syn_voices 3	78 120 100
+				syn_voices 3	75 120 100
+				syn_voices 3	67 120 100
+				syn_voices 3	63 120 100
+		0.333	syn_voices 3	84 127 120
+				syn_voices 3	81 127 120
+				syn_voices 3	70 127 120
+				syn_voices 3	67 127 110
+		0.333	syn_voices 3	81 127 120
+				syn_voices 3	81 127 120
+				syn_voices 3	71 127 120
+				syn_voices 3	63 127 110
+		0.333	syn_voices 3	70 127 120
+				syn_voices 3	66 127 120
+				syn_voices 3	72 127 120
+				syn_voices 3	64 127 110				
+		0.333	syn_voices 3	86 127 120
+				syn_voices 3	80 127 120
+				syn_voices 3	72 127 120
+				syn_voices 3	69 127 110
+		0.333	syn_voices 3	71 127 120
+				syn_voices 3	68 127 120
+				syn_voices 3	69 127 120
+				syn_voices 3	66 127 110
+		0.333	syn_voices 3	89 127 120
+				syn_voices 3	83 127 120
+				syn_voices 3	75 127 120
+				syn_voices 3	66 127 110
+		0.333	syn_voices 3	90 127 120
+				syn_voices 3	84 127 120
+				syn_voices 3	76 127 120
+				syn_voices 3	67 127 110
+		0.333	syn_voices 3	87 120 100
+				syn_voices 3	83 120 100
+				syn_voices 3	74 120 100
+				syn_voices 3	70 120 100
+		0.333	syn_voices 3	93 127 120
+				syn_voices 3	88 127 120
+				syn_voices 3	82 127 120
+				syn_voices 3	73 127 110
+	}
+ 
+NOTE	0	0.33
+NOTE	78	0.33
+NOTE	84	0.33	
+NOTE	81	0.33
+
+NOTE 0 0.67	
+
+PIZZSECTION ON
+print "PIZZSECTION ON"
+
+NOTE	83	0.33
+NOTE	89	0.33
+
+PIZZSECTION OFF
+NOTE	0	0.33
+NOTE	87	0.33
+NOTE	93	0.34	; la
+	
+;**************************************************************	
+
+BPM 60
+TEMPO ON
+PIZZSECTION ON
+NOTE	90 	0.5 			IIB...EVT-7
+BPM 60
+	
+s_force_scale 0.25 @b(1.5);	
+s_dist_scale 3.07 @b(1.5)
+smp1tosp2 120
+sampler1_play cloche.17_sol#5.wav -100 4; nom, transpop; nivo, longueur
+sampler1_play cloche.17_sol#5.wav -200 4;
+
+	spat3_prer 80; 115 ;spat3_ctl fact prer 110
+		spat3_rev 97
+		spat3_warm 7 ; supprime les infra-basses
+
+	st2_ st2.02.07.aif
+
+	GFWD  mf2.7
+	{
+	s2_buffer replace grains.aif  
+		s2tosp3 110
+		s2tosp1 0
+		s2_dist_scale 2.725;  
+		s2_loop 0;
+		s2_pitch 75.;
+		s2_sel_end 971.91;
+		s2_sel_start 14.3;
+		s2_speed 0.16;
+		s2_trans_scale 4.02;
+		s2_vel_scale 0.1;
+		s2_force_scale 4.06;
+		s2_start bang
+		s2 111 
+		bouge 0 
+		traj_spat2 0 ; s2top la trajectoire du spat2
+		; c'est mieux de lire la trajectoire un peu avant 
+		; read_traj tr_04.traj	; lit une trajectoire dans le coll prédéfini traj.taj
+		spat3_traj_loop 1; 
+	 	traj_spat3 1 traj3 @b(10) 2 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+	 6.3	s2 0 200  ; was 9.2
+	 		smp1tosp2 85
+	 		sampler1_play cloche.17_sol#5.wav 300 2;
+	}
+
+NOTE 	0 	4.0
+
+
+BPM 60	
+NOTE 	77	0.2
+NOTE	78	0.2
+NOTE	79	0.2
+NOTE	74	0.2
+NOTE	75	0.2
+NOTE	72	1.0		; five repeated notes ; gn15 trill bug
+NOTE	68	0.2
+NOTE	69	0.2
+NOTE	70	0.2
+NOTE	67	0.2
+NOTE	66	0.2
+;**************************************************************	
+NOTE	68 	0.25 			IIB...EVT-8
+
+	"s" 97
+	; suivi 1
+	
+	sy1_ sy1.02.08.aif
+	st1_ st1.02.08.aif
+
+GFWD g8 {
+	GFWD	Pizzicati-2.2
+	{
+		spat2_az -140, -360 @b(2.5); pizz avant droit
+		syn_voices 3 vol 127	
+		syn_voices 3	 vol 127
+		syn_voices 3	87 120 100
+		synful 100
+				syn_voices 3	76 120 100
+				syn_voices 3	77 120 100
+		0.2		syn_voices 3	76 120 100
+				syn_voices 3	80 120 100
+		0.2		syn_voices 3	76 120 100
+				syn_voices 3	78 120 100
+		0.2		syn_voices 3	76 120 100
+				syn_voices 3	79 120 100
+		0.2		syn_voices 3	76 127 120
+				syn_voices 3	81 127 120
+				
+					syn_voices 3	75 127 120
+					syn_voices 3	70 127 110
+		0.2	    	syn_voices 3	74 127 120
+					syn_voices 3	70 127 120
+		0.2			syn_voices 3	71 127 120
+					syn_voices 3	70 127 110
+		0.2			syn_voices 3	70 127 120
+					syn_voices 3	72 127 110
+						syn_voices 3	79 127 120
+						syn_voices 3	83 127 110
+		0.2			syn_voices 3	70 127 120
+					syn_voices 3	73 127 110
+						syn_voices 3	79 127 120
+						syn_voices 3	84 127 110
+		0.2 			syn_voices 3	79 127 120
+						syn_voices 3	81 127 120
+							syn_voices 3	72 127 120
+							syn_voices 3	77 127 110	
+		0.2 			syn_voices 3	79 127 120
+						syn_voices 3	80 127 120
+							syn_voices 3	72 127 120
+							syn_voices 3	76 127 110		
+		0.2 			syn_voices 3	79 127 120
+						syn_voices 3	82 127 120
+							syn_voices 3	72 127 120
+							syn_voices 3	75 127 110	
+								syn_voices 3	68 127 120
+								syn_voices 3	71 127 110	
+		0.2 				syn_voices 3	72 127 120
+							syn_voices 3	74 127 110	
+								syn_voices 3	68 127 120
+								syn_voices 3	69 127 110	
+		0.2 				syn_voices 3	72 127 120
+							syn_voices 3	73 127 110	
+								syn_voices 3	68 127 120
+								syn_voices 3	72 127 120
+		0.2						syn_voices 3	68 127 120
+								syn_voices 3	71 127 120
+								; set_tempo 60, 30 @b(3) ; simulation du rall provoqué par les instruments
+								synful 75 @b(3)
+		0.2						syn_voices 3	68 127 120
+								syn_voices 3	70 127 120					
+ 		0.2						syn_voices 3	68 127 120
+								syn_voices 3	69 127 120
+		0.2						syn_voices 3	68 127 120
+								syn_voices 3	68 127 120
+		0.2						syn_voices 3	68 127 120
+								syn_voices 3	67 127 120
+		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120					
+ 		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120
+		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120					
+ 		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120
+		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120					
+ 		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120
+		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120					
+ 		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120
+		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120					
+ 		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120
+		0.2						syn_voices 3	67 127 120
+								syn_voices 3	67 127 120
+	}	
+	
+	GFWD		harm2-8
+	{
+	h1 93
+	h2 95
+	h3 97
+	h4 0
+	h1_trans -305 @b(3)
+	h2_trans -676 @b(3)
+	h3_trans -702 @b(3)
+	h4_trans -1640 @b(3)
+	h1_del 100
+	h2_del 150	
+	h3_del 200
+	h4_del 0 
+	stoh4 0, 86 @b(3)
+	; s_speed 0.4 @b(3)
+	s_trans_scale -6 @b(3);
+	s_force_scale 1.37 @b(3)
+	s_vel_scale 2.83 @b(3)
+	s_dist_scale 1.21 @b(3)
+	}
+}
+	
+NOTE	0	2.75 ; back on gn15
+
+;2s suivi 1 ; saute evt9 si avant silence pourquoi
+
+;**************************************************************	
+PIZZSECTION ON
+NOTE 67	1/3	IIB...EVT-9 ; gn15 trill bug
+
+ 
+ 	monitors.pgm 2 ; open strings to v1 et v2
+	pitch-syn_voice3 67
+	synful 95 
+	; set_tempo 60
+	"s" 97
+	
+	h1 91
+	h2 82
+	h3 84
+	h4 108
+	
+NOTE	67	1/3
+NOTE	67	1/3
+NOTE	67	1/3
+NOTE	67	1/3
+NOTE	67	1/3
+NOTE	67	1/3
+NOTE	67	1/3
+NOTE	67	1/3
+; TRILL (67)	3.0
+
+BPM 60 ; pour être effectif le BPM doit être placé avant l'événement qui sera updaté dès que l'event est reconnu
+antescofo::tempo 60 ; pour forcer le tempo i.e. le $RT_TEMPO
+;**************************************************************	
+CHORD  (67 64) 0.5 			IIB...EVT-10
+
+	PIZZSECTION OFF
+	print "PIZZSECTION OFF"
+	;suivi 0
+	;print "suivi OFF because picks up the other instruments :( gn15"
+	TEMPO OFF
+	;deltas_pm.pgm 22
+	/*
+	GROUP synful_level {
+		@command("synful_∆") -1
+		0.1s @command("synful_∆") -1
+		print "set synful delta level to -1"
+	}
+	*/
+	;print "deltas just sent"
+	; synful_∆ 0 ; gn15
+	;BPM 60
+	;LFWD	loop2_10 2
+
+	;sy1_ sy1.02.10.aif
+	pizz-sample sy1.02.10.pizz.aif
+	LOOP	loop2_10 2
+	{
+		@command("pizz-loop2-10") bang
+		print "boucle pizz" $RT_TEMPO $NOW
+		;syn_voices 3	67 127 120
+	}
+	/*LOOP test_second 1s {
+		print test_second $NOW $RT_TEMPO $NOW
+	}
+
+	LOOP test_beat 1 {
+		print test_beat $NOW $RT_TEMPO $NOW
+	}*/
+
+	read_traj2 lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+	; 0.1 synful_∆ -1 ; gn15
+
+BPM 60
+NOTE	0	8.0
+NOTE	0	8.0
+;**************************************************************	
+TRILL 	(82 84) 	0.34			IIC...EVT-11
+
+	;synful_∆ -3 ; gn15
+	@command("synful_∆") -1
+
+	
+ 	spat2_traj_loop 1 
+	traj_spat2 1 traj2 @b(8) 2 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+
+	st2_ st2.02.11.aif
+
+	"s" 93
+	s2_buffer replace grains.aif  
+	s2_dist_scale 2.725;  
+	s2_force_scale 3.;  
+	s2_loop 1;  
+	s2_pitch 75.;  
+	s2_sel_end 971.91;  
+	s2_sel_start 14.3;  
+	s2_speed 0.133333;  
+	s2_trans_scale 0.;  
+	s2_vel_scale 0.2; 
+	s2_start bang
+	s2 98; 110
+	s2toh0 100
+	s2tosp3 112 
+	h0tosp2 104
+	h0 100
+	h0_del 3000
+	stosp1 107 2000
+	h0_trans 500
+	syntosp2 112 @b(2)
+	
+	; spat1_pres 95
+	spat3_prer 74
+	spat3_rev 83
+	spat3_dist 0.25
+	spat3_dopp 1
+	
+	;LFWD		loop2_9 22 @tempo 60; @s2b(18.5)
+	LOOP		loop2_9 22 @tempo 60; @s2b(18.5)
+	{
+			h0_trans  1700 3500
+	3.5	h0_trans 900 5500
+	5.5	h0_trans 1500 4000
+	4.0	h0_trans 20 5500
+	5.5	h0_trans 500 5500
+	}
+
+NOTE	0	14.0
+
+;**************************************************************	
+BPM 56
+TRILL	((60	67))	 4.0 			IIC...EVT-12
+
+
+
+	"s" 93 @b(1)
+	h1_trans -475 
+	h2_trans -723
+	h3_trans -1140
+	h4 0
+	h1_del 0
+	h2_del 0
+	h3_del 0
+	h4_del 0
+	
+; TEMPO ON
+
+;**************************************************************	
+
+CHORD (67 56) 	0.5 			IIC...EVT-13
+		s_buffer replace string2c_7tmps.aif	; charge données geste sur corde  
+		s_tempo 56
+		s_dur 2 
+		
+		; syntosp1 102
+		
+	h1 106 @b(1)
+	h2 106 @b(1)
+	h3 106 @b(1)
+	h4 106 @b(1)
+	"s" 91 @b(1)
+	stosp1 120
+	print "modif gn15 sto h1-4 ++"
+	stoh1 120
+	stoh2 120
+	stoh3 120
+	stoh4 120
+	read_traj loin_proche_coins.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+
+NOTE	0	12.0
+
+BPM		56
+CHORD	(64	67)	0.28
+CHORD	(63 67)	0.28
+CHORD	(65 70)	0.28
+CHORD	(65 69)	0.28
+CHORD	(65 72)	0.28
+CHORD	(70 76)	0.28
+CHORD	(76 71) 0.29
+
+CHORD	(71 74) 0.28
+CHORD	(71 77)	0.28
+CHORD	(70	75)	0.28
+CHORD	(75 72)	0.28
+CHORD	(75 71)	0.28
+CHORD	(73 69)	0.28
+CHORD	(69 74)	0.28
+
+CHORD	(74 71)	0.28
+CHORD	(74 70)	0.28
+CHORD	(74 68)	0.28
+CHORD	(74 70)	0.28
+CHORD	(74 69)	0.28
+CHORD	(74 70)	0.28
+CHORD	(70 73)	0.28
+
+CHORD	(72	76)	0.28
+CHORD	(71 74)	0.28
+CHORD	(74 68)	0.28
+CHORD	(74 71)	0.28
+CHORD	(74 72)	0.28
+CHORD	(74 69)	0.28
+;CHORD	(74 70)	0.29
+
+;**************************************************************	
+CHORD	(74	70)	4.0			IIC...EVT-14
+
+	;suivi 1
+	;spat1_traj_loop 1
+	;traj_spat1 1 traj @b(30) 100 ; joue le coll traj chargé précédemment
+	;spat1_ctl fact prer 110
+	
+	
+	
+	st1_ st1.02.14.aif
+
+	"s" 81  @b(3)
+	s2 88 300
+		
+		s_dist_scale 2.9
+		s_force_scale 2.03
+		s_vel_scale 2.5;
+		
+	h1_trans -320 
+	h2_trans -400 
+	h3_trans -715  
+	h4_trans -1310  
+	s_trans_scale 1
+	stoh4 104
+	h1 100 @b(3)
+	h2 100 @b(3)
+	h3 100 @b(3)  
+	h4 100 @b(3)
+	h1tosp1 95
+	h2tosp1 92
+	h3tosp1 97
+	h4tosp1 90
+	
+	; spat1_pres 80
+	spat1_prer 80; 104
+	spat1_revp 30
+	spat1_env 11
+	spat1_rev 98
+	spat1_aperture 43
+	spat1_width 40
+	
+NOTE 0 6
+;**************************************************************	
+BPM 60
+TEMPO ON
+NOTE	67	0.25 			IID...EVT-15
+	; set_tempo 60, 90 @b(4) ; simulation du rall provoqué par les instruments
+	; syntosp2 112
+
+NOTE	64	0.25
+NOTE	70	0.25
+CHORD	(69 66)	0.25
+
+NOTE	65	0.25
+NOTE	73	0.25
+NOTE	72	0.25
+NOTE	69	0.25
+
+NOTE	75	0.25
+NOTE	71	0.25
+NOTE	74	0.25
+NOTE	77	0.25
+
+NOTE	76	0.25
+NOTE	78	0.25
+NOTE	81	0.25
+NOTE	80	0.25
+TEMPO OFF
+BPM 90
+
+;**************************************************************	
+; BPM		90 ;	@modulate ; tempo non forcé gn15
+
+
+NOTE	83	0.25 IID...EVT-16
+;TEMPO ON
+	monitors.pgm 3
+	
+	synful 97
+	pitch-syn_voice3 70
+	pizz-sample sy1.02.16.pizz.aif
+
+;print "a" @local
+NOTE	83	0.25
+;print "b" @local
+NOTE	83	0.25
+;print "c" @local
+NOTE	83	0.25
+;print "d" @local
+
+NOTE	83	0.25
+;print "e" @local
+NOTE	83	0.25
+;print "f" @local
+NOTE	83	0.25
+;print "g" @local
+NOTE	83	0.25
+;print "h" @local
+NOTE	83	0.25 IID...EVT-16-end
+;print "i" @local
+
+BPM 90
+NOTE	0	0.75 
+
+;TRILL	(83) 2.25 	IID...EVT-16
+
+	;sy1_ sy1.02.16.aif
+
+	;suivi 0
+
+	"s" 81 @b(2)
+;NOTE	83	0.25 
+;NOTE	83	0.25 
+;NOTE	83	0.25 
+;NOTE	83	0.25
+;TRILL	(83) 1.0
+
+NOTE	0	8.0
+
+NOTE	70	0.25
+NOTE	67	0.25
+NOTE	77	0.25
+NOTE	76	0.25
+NOTE	81	1
+
+
+NOTE	70	0.25
+NOTE	80	0.25
+NOTE	77	0.25
+NOTE	69	0.25
+NOTE	70	0.25
+NOTE	64	0.25
+NOTE	74	0.25
+; new measure
+NOTE	71	0.25
+NOTE	70	0.75
+
+
+NOTE	70	0.25
+NOTE	73	0.75
+
+		; PONT
+NOTE	64	0.16
+NOTE	67	0.16
+NOTE	70	0.17
+NOTE	74	0.16
+NOTE	73	0.16
+NOTE	77	0.17
+NOTE	78	0.16
+NOTE	81	0.16
+NOTE	80	0.17
+
+;new measure
+NOTE	84	0.16
+NOTE	83	0.16
+NOTE	87	0.67
+
+NOTE	70	0.5
+NOTE	80	1
+
+NOTE	70	0.5
+NOTE	85	0.5
+NOTE	76	1
+
+; new measure
+NOTE	70	0.16
+NOTE	69	0.16
+NOTE	70	0.17
+NOTE	62	0.16
+NOTE	59	0.16
+NOTE	67	0.17
+
+NOTE	70	0.16
+NOTE	76	0.16
+NOTE	73	0.17
+NOTE	81	0.16
+NOTE	84	0.16
+NOTE	81	0.17
+NOTE	73	0.16
+NOTE	81	0.16
+NOTE	89	0.17
+NOTE 	0   1
+
+;**************************************************************	
+NOTE	70	0.25 			IID...EVT-17 
+	; syntosp2 102 @b(2) 
+	spat1_dist 4 @b(2)
+
+	st1_ st1.02.17.aif
+
+		s_buffer replace string2d_9tmps.aif	; charge données geste sur corde  
+		"s" 81 @b(1)
+		s_tempo 56
+		s_dur 4
+		s_sel_end 504.;
+		s_sel_start 74.43;
+		s_dist_scale 1.814173;
+		s_force_scale 1.370079;
+		s_loop 1; 
+		s_pitch 73.;
+		s_trans_scale -2.98;
+		s_vel_scale 3.496063;
+	
+	h1_trans -300 
+	h2_trans -800 
+	h3_trans -1000  
+	h4_trans -1310  
+ 	h1tosp1 110 ; 90 ; gn15
+	h2tosp1 110 ;94
+	h3tosp1 110 ;96
+	h4tosp1 110 ; 81
+
+NOTE	0	3.75
+
+; new measure (suivre tempo E) -- 9/8
+; BPM		63			; or demi = 126
+NOTE 	70	0.25
+NOTE	66	0.25
+NOTE	67	0.25
+NOTE	63	0.25
+
+NOTE	62	1.0
+
+NOTE	70	0.5
+NOTE	76	0.5
+NOTE	81	0.5
+NOTE	78	0.5
+
+NOTE	89	1.0
+
+NOTE	73	0.5
+NOTE	65	0.5
+NOTE	70	0.5
+NOTE	69	0.5
+NOTE	70	0.5
+NOTE	76	0.5
+NOTE	79	0.5
+NOTE	70	0.5
+
+;**************************************************************	
+NOTE	83	0.5 			IID...EVT-18
+
+	st2_ st2.02.18.aif
+
+	spat1_dist 88 @b(2)
+ s2_vel_scale 1.46 @b(2)
+ s2_force_scale 6 @b(6)
+ spat3_dist 0.01 @b(2)
+
+
+
+NOTE	0	12
+;**************************************************************	
+NOTE	70	0.5 			IIE...EVT-19
+	; Alto et vlc dans spat3
+	
+	;suivi 1
+	
+	atosp3 110
+	ctosp3 110
+	
+	"s" 76 @b(2)
+	s2 105 @b(2)
+
+print "warning 8.5 beat to wait !!!"
+;**************************************************************	
+NOTE 	0	8.5	
+BPM		90		; 4/4
+CHORD	(70 69)	0.5 			IIE...EVT-20
+ 
+ antescofo-mess temposmoothness 0.7
+ 
+ 	TEMPO ON
+ ; set_tempo 90, 126 @b(4) ; simulation du accel provoqué par les instruments
+ 
+
+ 
+ syntosp1 0
+ 
+
+ spat1_dist 88 @b(2)
+ s2_vel_scale 2.36 @b(2)
+ spat3_dist 0.01 @b(2)
+
+;**************************************************************	
+NOTE 5900 0.5000
+NOTE 6200 0.5000
+NOTE 7300 0.5000
+NOTE 7000 0.5000
+CHORD ( 6600 5700 ) 0.5000
+NOTE 6900 0.5000
+NOTE 7700 0.5000
+
+NOTE 7100 0.5000
+NOTE 7000 0.5000
+CHORD ( 6600 5800 ) 0.5000
+NOTE 6500 0.5000
+NOTE 7600 0.5000
+NOTE 7300 0.5000
+NOTE 7600 0.5000
+NOTE 7700 0.5000
+
+NOTE 0 0.5	
+
+; BPM 126.0 ; @modulate ; gn15 tempo forcé viré
+; TEMPO OFF
+CHORD ( 7600 7000 ) 0.5000 			IIE...EVT-21
+
+	
+	atosp3 0 @b(2)
+	ctosp3 0 @b(2)
+	
+	synful 100
+	pitch-syn_voice3 76
+	;read_traj2 lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+	 s2_vel_scale 0.47 @b(6)
+	
+	 s2_trans_scale -15 @b(6)
+	 s2 102 @b(2)
+;**************************************************************	
+
+NOTE 0 5.5000
+BPM 126
+NOTE 7600 0.3333			IIE...EVT-22
+
+antescofo-mess temposmoothness 0.65 ; WAS 0.95
+ 
+;read_traj lacet.traj	; lit une trajectoire dans le coll prédéfini traj.traj
+ s2_vel_scale 0.47 @b(6)
+ s2_trans_scale -15 @b(6)
+ s2 90 @b(2)
+ ;spat2_traj_loop 1 
+	 	;traj_spat2 1 traj2 @b(8) 3 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+	
+	; set_tempo 126, 90 @b(4) ; simulation du accel provoqué par les instruments
+
+	h0tosp2 112 @b(3)
+	h0tosp3 0 @b(3)
+	;KILLFWD	loop2_9
+	abort		loop2_9
+3.0	h0_trans 0
+
+;**************************************************************	
+NOTE 7000 0.3333
+NOTE 7500 0.3333
+NOTE 7600 0.3333
+NOTE 7300 0.3333
+NOTE 8400 0.3333
+NOTE 0 0.3333
+NOTE 7600 0.3333
+NOTE 7300 0.3333
+NOTE 7200 0.3333
+NOTE 6900 0.3333
+NOTE 6600 0.3333
+
+NOTE 7000 0.3333
+NOTE 0 0.3333
+NOTE 8400 0.3333
+NOTE 7500 0.3333
+NOTE 7600 0.3333
+NOTE 7000 0.3333
+NOTE 0 0.3333
+NOTE 7600 0.3333
+NOTE 0 0.3333
+NOTE 8400 0.3333
+NOTE 0 0.3333
+NOTE 7000 0.3333
+
+NOTE 7900 0.3333
+NOTE 7800 0.3333
+NOTE 6900 0.3333
+NOTE 7500 0.3333
+NOTE 7600 0.3333
+NOTE 6600 0.3333
+NOTE 7200 0.3333
+NOTE 6900 0.3333
+NOTE 0 0.3333
+NOTE 7200 0.3333
+NOTE 6600 0.3333
+NOTE 6300 0.3333
+
+NOTE 6900 0.3333
+NOTE 7600 0.3333
+NOTE 7500 0.3333
+NOTE 7200 0.3333
+NOTE 7000 0.3333
+NOTE 7100 0.3333
+NOTE 6800 0.3334
+NOTE 6500 0.3333
+NOTE 6400 0.3333
+NOTE 6700 0.3334
+NOTE 6800 0.3333
+NOTE 7600 0.3333
+; ---------- measure 92 beat 338.00 ---------
+
+NOTE 7200 0.3334
+NOTE 6900 0.3333
+NOTE 7100 0.3333
+NOTE 7200 0.3334
+NOTE 6600 0.3333
+NOTE 7200 0.3333
+
+; BPM 90.000000 ; @modulate ; gn15 removed pas de tempo forcé
+CHORD ( 7200 6600 ) 0.5000	IIF...EVT-23	
+
+	;suivi 0
+	TEMPO OFF
+	sy1_ sy1.02.23.aif
+	st2_ st2.02.23.aif
+
+	pizz-sample sy1.02.23.pizz.aif
+	
+	pitch-syn_voice3 72
+	synful 100 @b(4)
+	s2 102 @b(2)
+	s2_trans_scale -30 @b(16)
+	s2_vel_scale 0.01 @b(16)
+	
+	s_dist_scale 0.655118;
+	s_force_scale 2.267717;
+	s_loop 1;
+	s_pitch 73.;
+	s_sel_end 504.;
+	s_sel_start 74.43;
+	s_speed 0.100233;
+	s_tempo 56.;
+	s_trans_scale -1.;
+	s_vel_scale 5.102362;
+	"s" 80 @b(2)
+
+	spat1_prer 80; 140
+	spat1_dist_min 35
+	h1_trans -300 
+	h2_trans -800 
+	h3_trans -1100  
+	h4_trans -1400  
+ 
+	h1 97
+	h2 102
+	h3 102
+	h4 106
+	
+	 ; monitor change
+ ;syntomon1 0 1000 ; was 40 ; off annulé gn15
+ ;syntomon2 0 1000 ; was 40 ; off annulé fn15
+ ; syn to monitor doit rester !!! gn15
+	
+
+;**************************************************************	
+NOTE 0 7.0000
+
+; ---------- measure 94 beat 346.00 ---------
+
+CHORD ( 7200 6600 ) 0.5000
+CHORD ( 7200 6600 ) 0.5000
+CHORD ( 7200 6900 ) 1.0000
+NOTE 0 0.5000
+;CHORD ( 7200 6900 ) 0.5000
+; Measure 95
+TRILL ( (7200 6900) ) 1.0	
+CHORD ( 7200 6800 ) 1.0000	IIF...EVT-24
+
+s_dist_scale 0.3;
+
+	h1_trans -400 
+	h2_trans -500   
+	h3_trans -900  
+	h4_trans -1400  
+
+;**************************************************************	
+NOTE 0 0.5000
+;CHORD ( 6700 6300 ) 0.5000
+;CHORD ( 6700 6300 ) 0.5000
+;CHORD ( 6700 6300 ) 0.5000
+;CHORD ( 6700 6300 ) 1.0000
+TRILL ( (6700 6300) ) 2.5000
+
+CHORD ( 7200 6800 ) 4.0000			IIF...EVT-25
+
+	st2_ st2.02.25.aif
+
+	; deltas_pm.pgm 23
+	s2_vel_scale 0.36
+ 
+	synful 85  
+	"s" 72 @b(10)
+	s2 109
+	s2_tempo 10
+	h0_trans -500
+
+;**************************************************************	
+
+NOTE 0 3.0	
+
+NOTE 8600 4.0000 			IIF...EVT-26
+
+v1tosp2 113
+v2tosp2 113
+atosp2 113
+ctosp2 113
+
+	 ; monitor change
+ syntomon1 40 1000 ; was 40
+ syntomon2 40 1000 ; was 40
+
+;**************************************************************	
+
+NOTE 0 4.0	  
+
+TEMPO OFF
+CHORD (8100 7200) 32			
+
+NOTE 0 16
+
+; BPM 90.000000 ;@modulate ; gn15 off tempo forcé
+; ---------- measure 101 beat 375.00 ---------
+CHORD ( 7200 6400 5800 ) 0.2500
+NOTE 0 8
+CHORD ( 7200 6400 ) 0.2500
+NOTE 0 8
+; ---------- measure 102 beat 379.50 ---------
+
+TRILL ( (7200 6800) ) 8
+
+NOTE 0 16.0000
+
+; BPM 90.000000 ;@modulate ; gn15 tempo forcé off
+NOTE 7200 1.3334 		IIG...EVT-27 ; gn15 trill bug
+	st2_ st2.02.27.aif
+	s2_vel_scale 0.2, 0.5 @b(18) 
+	h0_trans -600
+
+;**************************************************************	
+NOTE 0 2.6667
+
+TRILL (6100 72)	2.75
+
+NOTE 0 2.2500
+
+
+; ---------- measure 114 beat 402.00 ---------
+
+NOTE 7200 0.1667			; IIG...EVT-28
+
+NOTE 0 0.75000
+
+MULTI ( (6200 5900)' (63 60)' (64 61)' (65 62)' (66 63)' (67 64)' (68 65)' (69 66)' )  1.0	 ;ev28-g1
+
+;suivi 0
+
+NOTE 0 0.75000 IIG...EVT-28
+
+	st2_ st2.02.28.aif
+
+		synful 94
+	;h0_trans 2000, 0 @b(12)
+	h0_trans 2000, 0 @b(12) ;test jw
+	s2_trans_scale -30, 30 @b(10) 
+	s2_vel_scale 0.9, 0.01 @b(20) ; s2_vel_scale 0.9, 0.01 @b(20) valeur d'origine, jw
+	
+	"s" 68 @b(2)
+	s2 115 @b(2)
+	s2toh0 120
+	h1tosp1 120
+	stosp1 110
+	;spat3_pres 120
+	
+	syn_voices 2	pgm 0 bnk 2 vol 127		; pizz
+;***********************************************************	
+	; antescofo-mess suivi 0
+
+; NOTE 0 0.75000
+; MULTI ( (6200 5900)' (63 60)' (64 61)' (65 62)' (66 63)' (67 64)' (69 66)' )  1.0	; g1
+
+NOTE 0	0.33
+
+MULTI ( (69 63)' (70 65)' (71 67)' (72 69)' (74 71)' (76 73)' )	1.0 ;	ev28-g2
+
+NOTE 0 0.33
+
+MULTI ( (75 72)' (82 78)' (89 86)' )	1.0	;ev28-g3
+
+MULTI ( (89 86)' (93 91)' (97)' )	1.0	;ev28-g4
+
+MULTI ( (99)' (100)' (101)' (102)' )	2.0		;ev28-last_gliss
+
+NOTE 0 8.0000		; Before_29
+	; antescofo-mess suivi 1
+
+
+BPM 69.000000 ;@modulate
+TEMPO ON
+NOTE 7200 0.3333 			IIH...EVT-29
+	; set_tempo 69
+	;KILLFWD loop2-10 
+	abort loop2_10 
+	
+	synful 72 @b(3)
+
+	h0_trans 0 
+	s2_trans_scale 30 
+	s2_vel_scale 0.01
+
+	syn_voices 3	 vol 127
+	syn_voices 2	pgm 0 bnk 2 vol 127		; pizz
+	syn_voices 3	 vol 127
+
+	pitch-syn_voice2 72
+	pitch-syn_voice3 72
+	
+	
+LFWD	loop2-29a 2
+	{
+		pizz-loop2-29a bang
+		pizz-loop2-29b bang
+		;syn_voices 3	67 127 120
+	}
+
+"s" 0 @b(3)
+stoh1 0
+stoh2 0
+stoh3 0
+stoh4 0
+
+;**************************************************************	
+
+NOTE 7500 0.3333
+NOTE 7400 0.3333
+NOTE 6600 0.3334
+NOTE 6900 0.3333
+NOTE 7700 0.8333
+; NOTE 0 0.5000
+NOTE 6900 0.5000
+NOTE 6300 0.5000
+NOTE 7400 2.0000
+
+; ---------- measure 120 beat 426.00 ---------
+
+; NOTE 0 1.5000
+NOTE 7200 0.5000
+NOTE 6900 0.3333
+NOTE 8000 0.3333
+NOTE 7700 0.3333
+NOTE 6600 0.3334
+NOTE 6300 0.3333
+NOTE 7400 0.6667
+; NOTE 0 0.3334
+
+; ---------- measure 121 beat 430.00 ---------
+
+NOTE 6900 0.3332
+NOTE 7200 0.6667
+; NOTE 0 0.3334
+NOTE 7500 0.3332
+NOTE 7400 0.3333
+NOTE 7500 0.3334
+NOTE 6600 0.3333
+NOTE 7200 0.8333
+; NOTE 0 0.5000
+NOTE 6900 0.5000
+
+; ---------- measure 122 beat 434.00 ---------
+
+CHORD ( 6900 7200 ) 0.5000
+NOTE 6300 0.5000
+NOTE 7800 0.5000
+NOTE 0 0.8334
+CHORD ( 8200 7500 ) 0.3332
+NOTE 6600 0.3333
+NOTE 7200 0.3334
+NOTE 6900 0.3333
+NOTE 6900 0.3333
+
+; ---------- measure 123 beat 438.00 ---------
+
+NOTE 6600 0.3334
+NOTE 7500 0.3333
+NOTE 7200 0.3333
+NOTE 8000 0.3334
+NOTE 6900 0.3333
+NOTE 7800 0.3333
+; TEMPO OFF
+
+; ---------- measure 124 beat 440.00 ---------
+
+BPM 84 ; @modulate
+TEMPO ON
+NOTE 8600 0.5000	 	IIH...EVT-30
+
+stosp1 0;
+stosp2 114
+"s" 102 @b(1)
+spat2_dist_min 0.35
+
+	;sy1_ sy1.02.30.aif
+	st1_ st1.02.30.aif
+	st2_ st2.02.30.aif
+
+synful 91 @b(3) 
+
+syn_voices 2 pgm 40 bnk 2 vol 127;
+syn_voices 3 pgm 40 bnk 2 vol 120
+	
+; set_tempo 84; simulation du suivi de tempo Vl I
+
+	pizz-sample sy1.02.30.pizz.aif
+	pitch-syn_voice2 86
+	pitch-syn_voice3 80
+	 
+syn_voices 2 pgm 40 bnk 2 vol 127;
+syn_voices 3 pgm 40 bnk 2 vol 120
+	
+	s_buffer replace string2e.aif	; charge données geste sur corde
+	s_dist_scale 2.847244;
+	s_force_scale 4.771654;
+	s_loop 1;
+	s_pitch 73.;
+	s_sel_end 504.;
+	s_sel_start 74.43;
+	s_speed 0.008949;
+	s_tempo 5.;
+	s_trans_scale 18.661417;
+	s_vel_scale 0.01;
+	
+	s2_dist_scale 3.2;
+	s2_force_scale 6.;
+	s2_loop 1;
+	s2_pitch 75.;
+	s2_sel_end 971.91;
+	s2_sel_start 14.3;
+	s2_speed 0.159602;
+	s2_tempo 10.;
+	s2_trans_scale 29.6;
+	s2_vel_scale 0.08;
+
+;**************************************************************	
+
+NOTE 0 4.0000
+
+; ---------- measure 125 beat 444.00 ---------
+
+NOTE 8000 0.2500
+NOTE 0 0.7500
+NOTE 9400 1.5000
+NOTE 0 1.6666
+
+; ---------- measure 126 beat 448.00 ---------
+
+NOTE 10000 0.8333
+NOTE 0 1.1667
+NOTE 8900 0.6667
+NOTE 0 0.6667
+
+; ---------- measure 127 beat 452.00 ---------
+
+NOTE 7500 2.1667
+NOTE 0 1.1667
+;NOTE 10000 0.9167
+TRILL (10000 7200) 0.9167
+; ---------- measure 128 beat 456.00 ---------
+
+NOTE 0 1.2500
+NOTE 9400 2.0000
+NOTE 0 4.8334
+
+
+
+NOTE 8000 0.3332 			IIH...EVT-31
+
+;suivi 1
+; set_tempo 84, 96 @b(4) ; simulation du accel provoqué par les instruments
+;s2_vel_scale 0.03, 0.16 @b(2)
+s2_dist_scale 3.2;
+s2_force_scale 6.;
+s2_loop 1;
+s2_pitch 75.;
+s2_sel_end 971.91; 
+s2_sel_start 14.3;
+s2_speed 0.159602;
+s2_tempo 10.;
+;s2_trans_scale 13.9;
+
+;**************************************************************	
+NOTE 7200 0.3333
+NOTE 8600 0.3334
+NOTE 7600 0.3333
+NOTE 7900 0.3333
+NOTE 6900 0.3334
+NOTE 7500 0.3333
+TRILL ( 8300 82) 0.3333		;;; TALK
+TRILL ( 8900 87) 0.3334		;;; TALK.. added the wrongly played note 87
+NOTE 8100 0.3333
+NOTE 7500 0.3333
+
+
+;BPM 96.000000 @modulate
+NOTE 8900 0.5000 			IIH...EVT-32
+
+;suivi 0
+
+	; set_tempo 84, 96 @b(4) ; simulation du accel provoqué par les instruments
+	
+	st1_ st1.02.32.aif
+	st2_ st2.02.32.aif
+
+	;deltas_pm.pgm 26
+	pitch-syn_voice2 89
+	pitch-syn_voice3 75
+	
+	s_dist_scale 2.35;
+	s_force_scale 6.;
+	s_loop 1;
+	s_pitch 73.;
+	s_sel_end 504.;
+	s_sel_start 74.43;
+	s_speed 0.100233;
+	s_tempo 5.;
+	s_trans_scale 22;
+	s_vel_scale 0.01;
+	s_start bang
+	
+	h1_trans 280
+	stoh1 112
+	h1tosp1 0
+	h1tosp2 112
+	
+	 
+	s2 90 @b(1)
+	s2_vel_scale 0.03 @b(2);
+	
+; bug arshia on ne devrait pas etre obligé de mettre le GFWD	
+GFWD da_loop_label
+	{
+		"s" 91, 120 @b(2) ; Il ne le prend pas ? Ni le délay à la ligne suivante !
+	3	"s" 120, 74 @b(2)
+	}
+/*
+GFWD Simultation_pizz_quatuor
+	{
+	son1 open violon_pizz
+	son2 open alto_pizz
+	son3 open cello_pizz
+	}
+*/
+;**************************************************************	
+
+
+NOTE 0 3.9000
+
+; ---------- measure 132 beat 472.00 ---------
+
+NOTE 7200 0.4000			IIi...EVT-33
+
+/*GFWD Simultation_pizz_quatuor1
+	{
+	son1 loop 1, 1
+	son2 loop 1, 1
+	son3 loop 1, 1
+	son1tosp2 113
+	son2tosp2 113
+	son3tosp3 113
+	}*/
+;**************************************************************	
+NOTE 0 0.4000
+NOTE 6400 0.4000
+NOTE 6800 0.4000
+NOTE 0 0.5000
+NOTE 6500 0.2500
+NOTE 6200 0.2500
+NOTE 7300 0.2500
+NOTE 7200 0.2500
+NOTE 7500 0.2500
+NOTE 0 0.2500
+; ---------- measure 133 beat 476.00 ---------
+
+CHORD ( 7500 7000 ) 0.5000
+NOTE 6200 0.5000
+NOTE 6700 0.3333
+NOTE 0 0.3333
+CHORD ( 6900 5600 ) 0.3333
+NOTE 0 0.3334
+CHORD ( 6700 6400 ) 0.3332
+NOTE 7500 0.3333
+NOTE 6100 0.3334
+NOTE 0 0.3333
+CHORD ( 7800 7400 ) 0.3333
+
+; ---------- measure 134 beat 480.00 ---------
+
+NOTE 7500 0.5000
+NOTE 0 0.8334
+CHORD ( 6800 6200 ) 0.3332
+CHORD ( 7600 6500 ) 0.3333
+NOTE 0 0.3334
+CHORD ( 6700 5900 ) 0.3332
+NOTE 6400 0.3333
+CHORD ( 7500 7200 ) 0.3333
+NOTE 5700 0.3333
+NOTE 6800 0.3333
+
+; ---------- measure 135 beat 484.00 ---------
+
+NOTE 7000 0.3334
+NOTE 6500 0.3333
+CHORD ( 7500 7100 ) 0.3333
+NOTE 6200 0.3334
+CHORD ( 6800 5700 ) 0.3333
+NOTE 0 0.3333
+  
+NOTE 8100 0.3333 			IIi...EVT-34
+
+
+
+GFWD Simultation_pizz_quatuor2
+{
+	son1toh1 112	
+}
+
+v1toh1  115
+h1_trans 300
+h1_del 1500
+
+	st1_ st1.02.34.aif
+
+s_buffer replace grains.aif  
+		stosp3 110
+		stosp1 0
+		s_dist_scale 3.2;
+		s_force_scale 6.;
+		s_loop 1;
+		s_pitch 75.;
+		s_sel_end 971.91;
+		s_sel_start 14.3;
+		s_speed 0.18;
+		s_tempo 5.;
+		s_trans_scale 13.9;
+		s_vel_scale 0.03;
+		s_start bang
+		
+		s2_dist_scale 2.66;
+		s2_force_scale 6.;
+		s2_loop 1;
+		s2_pitch 75.;
+		s2_sel_end 971.91;
+		s2_sel_start 14.3;
+		s2_speed 0.159602;
+		s2_tempo 10.;
+		s2_trans_scale 13.9;
+		s2_vel_scale 0.01;
+		
+		"s" 102 
+		s2 102 
+		
+;**************************************************************	
+NOTE 7800 0.3333
+NOTE 7000 0.3333
+NOTE 0 0.3334
+NOTE 8900 0.3333
+NOTE 0 0.3333
+ 
+; ---------- measure 136 beat 488.00 ---------
+
+CHORD ( 7200 6600 ) 0.3333
+NOTE 0 0.3333
+NOTE 7500 0.3333
+NOTE 6900 0.5000
+CHORD ( 6800 6500 ) 0.5000
+CHORD ( 7200 6600 ) 0.3333
+NOTE 0 0.3333
+NOTE 7100 0.3333
+NOTE 7500 0.3334
+CHORD ( 6900 6100 ) 0.3333
+NOTE 0 0.3333
+
+; ---------- measure 137 beat 492.00 ---------
+
+CHORD ( 7500 7000 ) 0.3333 			IIi...EVT-35
+	v2toh2  115
+
+;**************************************************************	
+NOTE 7400 0.3333
+CHORD ( 7300 6700 ) 0.3333
+NOTE 0 0.3334
+CHORD ( 7500 6000 ) 0.3333
+NOTE 0 0.3333
+CHORD ( 6600 5800 ) 1.0000
+CHORD ( 7200 6400 ) 0.5000
+NOTE 7500 0.5000
+
+; ---------- measure 138 beat 496.00 ---------
+
+NOTE 7900 0.5000
+NOTE 0 0.5000
+
+NOTE 7600 0.2500 			IIi...EVT-36
+
+atoh3  115
+ctoh4  115
+
+	st1_ st1.02.36.aif
+
+"s" 120
+
+h2_trans -300
+h2_del 1500
+h2tosp2 0
+h2tosp3 111
+	h3_trans -900
+	h3_del 1500
+	h3tosp2 0
+	h3tosp2 111
+	h4_del 1500
+	
+s_dist_scale 3.2;
+s_force_scale 6.;
+s_loop 1;
+s_pitch 75.;
+s_sel_end 971.91;
+s_sel_start 14.3;
+s_speed 0.01;
+s_tempo 5.;
+s_trans_scale 23.;
+s_vel_scale 0.01;
+
+GFWD Simultation_pizz_quatuor3
+{
+	son2toh2 112
+	son3toh3 112	
+}
+
+;**************************************************************	
+CHORD ( 7600 7500 ) 0.2500
+CHORD ( 7600 7200 ) 0.2500
+CHORD ( 7900 6800 ) 0.2500
+NOTE 0 0.5000
+CHORD ( 8900 8000 ) 0.5000
+NOTE 0 0.3334
+NOTE 7700 0.3332
+NOTE 7700 0.3333
+
+; ---------- measure 139 beat 500.00 ---------
+
+NOTE 7800 0.5000
+NOTE 0 0.5000
+NOTE 8900 0.5000
+CHORD ( 8300 7500 ) 0.5000
+CHORD ( 7200 6400 ) 0.6667
+CHORD ( 7500 6600 ) 0.6667
+NOTE 0 0.6667
+; ---------- measure 140 beat 504.00 ---------
+
+NOTE 7500 0.4000
+NOTE 0 0.4000
+NOTE 6400 0.4000
+NOTE 6900 0.4000
+NOTE 0 0.9000
+NOTE 7500 0.2500
+NOTE 7400 0.2500
+NOTE 6500 0.2500
+NOTE 6700 0.2500
+NOTE 5700 0.5000
+
+; ---------- measure 141 beat 508.00 ---------
+
+NOTE 6600 0.2500 			IIi...EVT-37
+
+synful 90
+syn_voices 2 vol 122
+syn_voices 3 vol 127
+
+pitch-syn_voice2 66
+pitch-syn_voice3 75
+	pizz-sample sy1.02.37.pizz.aif
+
+;	sy1_ sy1.02.37.aif
+	st2_ st2.02.37.aif
+
+s2_dist_scale 3.2;
+s2_force_scale 6.;
+s2_loop 1;
+s2_pitch 75.;
+s2_sel_end 971.91;
+s2_sel_start 14.3;
+s2_tempo 1.2;
+s2_trans_scale 23.1;
+s2_vel_scale 0.2;
+
+GFWD Pourquoi
+{
+s2 120 @b(2)
+5 s2 97 @b(2)
+}
+s_buffer replace string_dist_droite.aif
+s2_buffer replace string_dist_droite.aif
+
+;**************************************************************	
+NOTE 7500 0.2500
+NOTE 7200 0.2500
+NOTE 6800 0.2500
+NOTE 6400 0.2500
+NOTE 6100 0.2500
+NOTE 0 0.5000
+CHORD ( 6900 6500 ) 0.6667
+NOTE 7500 0.3333
+CHORD ( 7200 6400 ) 0.3333
+NOTE 7500 0.6667
+NOTE 0 0.3333
+
+; ---------- measure 142 beat 512.00 ---------
+
+CHORD ( 7200 6600 ) 0.3333
+NOTE 6900 0.3334
+NOTE 6200 0.3333
+NOTE 5900 0.3333
+NOTE 5800 0.3334
+NOTE 0 0.3333
+NOTE 7200 0.3333
+NOTE 6900 0.3334
+NOTE 5900 0.3333
+CHORD ( 6500 5600 ) 0.3333
+NOTE 0 0.3334
+
+; ---------- measure 143 beat 516.00 ---------
+
+CHORD ( 6900 6300 ) 0.4000
+NOTE 6600 0.3999
+NOTE 5800 0.4000
+NOTE 6300 0.3999
+NOTE 5500 0.4000
+NOTE 0 0.5000
+CHORD ( 6900 6100 ) 0.5000
+CHORD ( 6500 5500 ) 0.5000
+NOTE 0 0.5000
+
+; ---------- measure 144 beat 520.00 ---------
+
+TRILL ( 6900 6300 ) 0.5000 			IIi...EVT-38
+
+pitch-syn_voice2 72
+pitch-syn_voice3 69
+
+v1toh1  0
+h0 118 @b(2)
+h1 118 @b(2)
+	st1_ st1.02.38.aif
+	st2_ st2.02.38.aif
+	;sy1_ sy1.02.38.aif
+	pizz-sample sy1.02.38.pizz.aif
+
+GFWD pourquoi2
+{
+	"s" 120
+	s2 120
+2  	"s" 99 @b(2)
+ 	s2 115 @b(2)
+}
+
+s_dist_scale 2.94;
+s_force_scale 6.;
+s_loop 1;
+s_pitch 75.;
+s_sel_end 971.91;
+s_sel_start 14.3;
+s_speed 0.01995;
+s_tempo 5.;
+s_trans_scale 21.4;
+s_vel_scale 0.04;
+
+s2_dist_scale 3.2;
+s2_force_scale 6.;
+s2_loop 1;
+s2_pitch 75.;
+s2_sel_end 971.91;
+s2_sel_start 14.3;
+s2_speed 0.019152;
+s2_tempo 1.2;
+s2_trans_scale 18.;
+s2_vel_scale 0.04;
+
+
+;**************************************************************	
+NOTE 6400 0.5000
+NOTE 6000 0.3333
+NOTE 0 0.3334
+CHORD ( 6400 5600 ) 0.3333
+NOTE 0 0.5000
+TRILL ( 7200 6500 5900 ) 1.5000
+;NOTE 7200 1.0000
+
+; ---------- measure 145 beat 524.00 ---------
+
+TRILL (  7200 6200 5600 ) 1.0
+;CHORD ( 7200 7200 ) 0.3000
+;NOTE 7200 0.3000
+TRILL ( 7200 6300 5500 ) 1.0
+;NOTE 7200 1.0000
+TRILL ( 7200 6600 5800 ) 1.0
+;NOTE 7200 0.7500
+TRILL ( 7200 6200 5600 ) 1.0		IIi...EVT-39
+
+	atoh3  0
+/*	
+	s_dist_scale 3.2;
+	s_force_scale 6.;
+	s_loop 1;
+	s_pitch 75.;
+	s_sel_end 971.91;
+	s_sel_start 14.3;
+	s_speed 0.01995;
+	s_tempo 5.;
+	s_trans_scale -2.1;
+	s_vel_scale 0.01;
+*/	
+
+;**************************************************************	
+
+; ---------- measure 146 beat 528.00 ---------
+
+NOTE 0 2.0000
+CHORD ( 6900 6200 5600 ) 0.1667
+NOTE 6900 1.1666
+CHORD ( 6800 6200 ) 0.1667
+NOTE 6900 0.6667
+
+; ---------- measure 147 beat 532.00 ---------
+
+CHORD ( 7900 7100 ) 0.3333
+NOTE 0 0.3334
+NOTE 7500 0.3333
+NOTE 7100 0.3333
+NOTE 6400 0.3333
+NOTE 0 0.6667
+CHORD ( 7800 6800 ) 0.3333
+NOTE 7400 0.3334
+NOTE 0 0.3333
+CHORD ( 6900 6000 ) 0.3333
+NOTE 7400 0.3334
+
+; ---------- measure 148 beat 536.00 ---------
+
+CHORD ( 7500 7200 ) 0.6667 			IIi...EVT-40
+
+synful 75 @b(6)
+pitch-syn_voice2 70
+pitch-syn_voice3 69
+	pizz-sample sy1.02.40.pizz.aif
+
+	st1__ stopall 100
+	st2__ stopall 100
+;	sy1_ sy1.02.40.aif
+
+v2toh2  115
+ctoh4  0
+s_stop bang
+s2_stop bang
+"s" 0
+s2 0
+
+s_buffer replace string2f.aif
+s2_buffer replace string2f.aif
+
+GFWD Simultation_pizz_quatuor6
+{
+	son3toh3 0	
+}
+ ;**************************************************************	
+NOTE 6400 0.3333
+NOTE 7100 0.3333
+NOTE 6800 0.3333
+NOTE 5800 0.3334
+NOTE 0 0.3333
+CHORD ( 7400 7000 ) 0.3333
+NOTE 6300 0.3334
+CHORD ( 7000 6700 ) 0.3333
+NOTE 6600 0.3333
+NOTE 0 2.8334
+
+; ---------- measure 149 beat 540.00 ---------
+
+CHORD ( 7000 6600 ) 0.5000
+NOTE 6000 0.5000
+NOTE 0 1.1667
+
+; ---------- measure 150 beat 544.00 ---------
+
+CHORD ( 6900 6500 ) 0.6666
+CHORD ( 6400 5500 ) 0.6667
+NOTE 0 8.0000
+	
+
+; ---------- measure 152 beat 552.00 ---------
+
+CHORD ( 8900 8300 ) 0.2500			IIi...EVT-41
+GFWD Simultation_pizz_quatuor1
+{
+	son1 0
+	son2 0
+	son3 0
+}
+
+pizz-loop2-29a 0
+pizz-loop2-29b 0
+
+	st1_ st1.02.41.aif
+	st2_ st2.02.41.aif
+
+s_dist_scale 3.1;
+s_force_scale 6.;
+s_loop 1;
+s_pitch 73.;
+s_sel_end 504.;
+s_sel_start 74.43;
+s_speed 0.008949;
+s_tempo 5.;
+s_trans_scale 30.;
+s_vel_scale 0.01;
+s_start bang
+
+
+s2_dist_scale 3.1;
+s2_force_scale 6.;
+s2_loop 1;
+s2_pitch 73.;
+s2_sel_end 504.;
+s2_sel_start 74.43;
+s2_speed 0.008949;
+s2_tempo 5.;
+s2_trans_scale 30.;
+s2_vel_scale 0.01;
+s2_start bang
+
+	"s" 120
+	s2 120
+	stoh1 120
+	stoh3 120
+	stoh2 0
+	stoh4 0
+	stosp2 0
+	stosp3 0
+	
+	s2toh2 120
+	s2toh4 120
+	s2toh1 0
+	s2toh3 0
+	s2tosp2 0
+	s2tosp3 0	
+	
+			h1_trans 1280
+			h1_del 0
+			h1 120
+			
+			h3_trans -100
+			h3_del 0
+			h3 106
+			
+			h2_trans 643
+			h2_del 0
+			h2 93
+			
+			h4_trans -100
+			h4_del 0
+			h4 103
+
+		h0 0
+		h1tosp2 116
+		h2tosp3 116
+		h3tosp2 116
+		h4tosp3 116
+		h1tosp1 0
+		h2tosp1 0
+		h3tosp1 0
+		h4tosp1 0
+		
+GFWD decresc2-41
+	{
+		h1 118 
+		h2 110 
+		h3 93 
+		h4 95 
+	8	h1 59 @b(10)
+		h2 35 @b(10) 
+		h3 60 @b(10) 
+		h4 18 @b(10) 
+		
+		spat2_prer 90 @b(6)
+		spat2_rev 60 @b(6)
+		spat2_dist_min 30 @b(6) ; was 300
+		
+		spat3_prer 90 @b(6)
+		spat3_rev 60 @b(6)
+		spat3_dist_min 30 @b(6)
+	}	
+NOTE 0 0.5	 ; IIA...fin
+
+suivi 0	
+NOTE 0. 1
+;**************************************************************
+NOTE 0. 1 EVT-42-LOAD-3a
+
+antescofo_score 3a_01_20.asco.txt ; gn20
