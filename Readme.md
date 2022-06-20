@@ -31,6 +31,12 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
 - Anthèmes 2 (Pierre Boulez) *TODO*
 - Dornroschen (Michael Jarrell) *TODO*
 
+### flute
+- Jupiter *TODO*
+
+### other databases (eventually)
+- https://github.com/flippy-fyp/QualScofo
+
 ## howtos
 ### generer des markers de references à partir d'un fichier son enregistré
 
