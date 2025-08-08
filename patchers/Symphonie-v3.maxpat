@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 1,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1724.0, 999.0 ],
+		"rect" : [ 34.0, 100.0, 1660.0, 983.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -129,8 +129,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 1,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -635,8 +635,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 1,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1126,8 +1126,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 1,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1240,8 +1240,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 1,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1433,7 +1433,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ -0.666664481163025, 226.333333373069763, 111.0, 22.0 ],
+					"patching_rect" : [ -4.666664481163025, 222.0, 111.0, 22.0 ],
 					"text" : "receive~ sound-in~"
 				}
 
@@ -1512,8 +1512,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 1,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1557,8 +1557,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 1,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1700,7 +1700,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 35.0, 730.0, 71.0, 22.0 ],
+					"patching_rect" : [ 3.333335518836975, 778.0, 71.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1723,8 +1723,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 1,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1953,7 +1953,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 12.0, 454.0, 1296.333335518836975, 267.333333373069763 ],
+					"patching_rect" : [ 3.333335518836975, 498.0, 1296.333335518836975, 267.333333373069763 ],
 					"viewvisibility" : 1
 				}
 
@@ -1972,8 +1972,8 @@
 					"name" : "sym.antescofo.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ -9.666664481163025, 224.166666686534882, 843.708331704139709, 228.333333373069763 ],
+					"offset" : [ -25.0, 18.0 ],
+					"patching_rect" : [ -4.666664481163025, 246.0, 843.708331704139709, 248.333333373069763 ],
 					"viewvisibility" : 1
 				}
 
@@ -2085,6 +2085,7 @@
 			"obj-4::obj-12::obj-23" : [ "rslider", "rslider", 0 ],
 			"obj-4::obj-2" : [ "umenu[1]", "umenu[1]", 0 ],
 			"obj-4::obj-43::obj-2" : [ "toggle", "toggle", 0 ],
+			"obj-4::obj-44" : [ "umenu", "umenu", 0 ],
 			"obj-4::obj-49" : [ "live.text", "live.text", 0 ],
 			"obj-4::obj-67" : [ "live.text[1]", "live.text", 0 ],
 			"obj-7::obj-19" : [ "umenu[4]", "umenu", 0 ],
@@ -2203,6 +2204,10 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "imubu.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "ircamdescriptor~.mxo",
 				"type" : "iLaX"
 			}
@@ -2222,6 +2227,14 @@
 			}
 , 			{
 				"name" : "mubu.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mubu.play.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mubu.track.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -2354,6 +2367,13 @@
 				"bootpath" : "~/Projets/Symphonie2020/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "weights_to_editor.js",
+				"bootpath" : "~/Projets/Symphonie2020/other",
+				"patcherrelativepath" : "../other",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

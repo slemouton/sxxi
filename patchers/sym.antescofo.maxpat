@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -1793.0, 103.0, 945.0, 774.0 ],
+		"rect" : [ 450.0, 261.0, 945.0, 774.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -383,8 +383,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -939,7 +939,7 @@
 					"bgfillcolor_type" : "gradient",
 					"fontsize" : 12.0,
 					"id" : "obj-80",
-					"items" : [ "ev4-1", ",", "bar2", ",", "bar3", ",", "bar4", ",", "bar5", ",", "bar6", ",", "bar7", ",", "bar8", ",", "bar9", ",", "bar10", ",", "bar11", ",", "bar12", ",", "bar13", ",", "bar14", ",", "bar15", ",", "bar16", ",", "bar17", ",", "bar18", ",", "bar19", ",", "bar20", ",", "bar21", ",", "bar22", ",", "bar23", ",", "bar24", ",", "ev4-2", ",", "bar26", ",", "ev4-3", ",", "bar28", ",", "ev4-3.6", ",", "bar30", ",", "bar31", ",", "bar32", ",", "bar33", ",", "bar34", ",", "bar35", ",", "bar36", ",", "bar37", ",", "bar38", ",", "bar39", ",", "ev4-4", ",", "bar41", ",", "bar42", ",", "bar43", ",", "bar44", ",", "bar45", ",", "bar46", ",", "bar47", ",", "bar48", ",", "bar49", ",", "bar50", ",", "ev4-5", ",", "bar52", ",", "bar53", ",", "bar54", ",", "bar55", ",", "bar56", ",", "bar57", ",", "bar58", ",", "bar59", ",", "bar60", ",", "bar61", ",", "bar62", ",", "ev4-6", ",", "bar64", ",", "ev4-7", ",", "bar66", ",", "bar67", ",", "bar68", ",", "bar69", ",", "bar70", ",", "bar71", ",", "bar72", ",", "bar73", ",", "bar74", ",", "bar75", ",", "ev4-8", ",", "ev4-9", ",", "ev4-9-SECTION-V" ],
+					"items" : [ "ev4-1", ",", "bar2", ",", "bar3", ",", "bar4", ",", "bar5", ",", "bar6", ",", "bar7", ",", "bar8", ",", "bar9", ",", "bar10", ",", "bar11", ",", "bar12", ",", "bar13", ",", "bar14", ",", "bar15", ",", "bar16", ",", "bar17", ",", "bar18", ",", "bar19", ",", "bar20", ",", "bar21", ",", "bar22", ",", "bar23", ",", "bar24", ",", "ev4-2", ",", "bar26", ",", "ev4-3", ",", "bar28", ",", "ev4-3.6", ",", "bar30", ",", "bar31", ",", "bar32", ",", "bar33", ",", "bar34", ",", "bar35", ",", "bar36", ",", "bar37", ",", "bar38", ",", "bar39", ",", "ev4-4", ",", "bar41", ",", "bar42", ",", "bar43", ",", "bar44", ",", "bar45", ",", "bar46", ",", "bar47", ",", "bar48", ",", "bar49", ",", "bar50", ",", "ev4-5", ",", "bar52", ",", "bar53", ",", "bar54", ",", "bar55", ",", "bar56", ",", "bar57", ",", "bar58", ",", "bar59", ",", "bar60", ",", "bar61", ",", "bar341", ",", "bar62", ",", "ev4-6", ",", "bar64", ",", "ev4-7", ",", "bar66", ",", "bar67", ",", "bar68", ",", "bar69", ",", "bar70", ",", "bar71", ",", "bar72", ",", "bar73", ",", "bar74", ",", "bar75", ",", "ev4-8", ",", "ev4-9", ",", "ev4-9-SECTION-V" ],
 					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -990,8 +990,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1557,7 +1557,7 @@
 					"allowdrag" : 0,
 					"fontsize" : 10.0,
 					"id" : "obj-27",
-					"items" : [ "ev4-1", ",", "bar2", ",", "bar3", ",", "bar4", ",", "bar5", ",", "bar6", ",", "bar7", ",", "bar8", ",", "bar9", ",", "bar10", ",", "bar11", ",", "bar12", ",", "bar13", ",", "bar14", ",", "bar15", ",", "bar16", ",", "bar17", ",", "bar18", ",", "bar19", ",", "bar20", ",", "bar21", ",", "bar22", ",", "bar23", ",", "bar24", ",", "ev4-2", ",", "bar26", ",", "ev4-3", ",", "bar28", ",", "ev4-3.6", ",", "bar30", ",", "bar31", ",", "bar32", ",", "bar33", ",", "bar34", ",", "bar35", ",", "bar36", ",", "bar37", ",", "bar38", ",", "bar39", ",", "ev4-4", ",", "bar41", ",", "bar42", ",", "bar43", ",", "bar44", ",", "bar45", ",", "bar46", ",", "bar47", ",", "bar48", ",", "bar49", ",", "bar50", ",", "ev4-5", ",", "bar52", ",", "bar53", ",", "bar54", ",", "bar55", ",", "bar56", ",", "bar57", ",", "bar58", ",", "bar59", ",", "bar60", ",", "bar61", ",", "bar62", ",", "ev4-6", ",", "bar64", ",", "ev4-7", ",", "bar66", ",", "bar67", ",", "bar68", ",", "bar69", ",", "bar70", ",", "bar71", ",", "bar72", ",", "bar73", ",", "bar74", ",", "bar75", ",", "ev4-8", ",", "ev4-9", ",", "ev4-9-SECTION-V" ],
+					"items" : [ "ev4-1", ",", "bar2", ",", "bar3", ",", "bar4", ",", "bar5", ",", "bar6", ",", "bar7", ",", "bar8", ",", "bar9", ",", "bar10", ",", "bar11", ",", "bar12", ",", "bar13", ",", "bar14", ",", "bar15", ",", "bar16", ",", "bar17", ",", "bar18", ",", "bar19", ",", "bar20", ",", "bar21", ",", "bar22", ",", "bar23", ",", "bar24", ",", "ev4-2", ",", "bar26", ",", "ev4-3", ",", "bar28", ",", "ev4-3.6", ",", "bar30", ",", "bar31", ",", "bar32", ",", "bar33", ",", "bar34", ",", "bar35", ",", "bar36", ",", "bar37", ",", "bar38", ",", "bar39", ",", "ev4-4", ",", "bar41", ",", "bar42", ",", "bar43", ",", "bar44", ",", "bar45", ",", "bar46", ",", "bar47", ",", "bar48", ",", "bar49", ",", "bar50", ",", "ev4-5", ",", "bar52", ",", "bar53", ",", "bar54", ",", "bar55", ",", "bar56", ",", "bar57", ",", "bar58", ",", "bar59", ",", "bar60", ",", "bar61", ",", "bar341", ",", "bar62", ",", "ev4-6", ",", "bar64", ",", "ev4-7", ",", "bar66", ",", "bar67", ",", "bar68", ",", "bar69", ",", "bar70", ",", "bar71", ",", "bar72", ",", "bar73", ",", "bar74", ",", "bar75", ",", "ev4-8", ",", "ev4-9", ",", "ev4-9-SECTION-V" ],
 					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -1582,8 +1582,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2146,8 +2146,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2515,8 +2515,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2935,8 +2935,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3165,7 +3165,7 @@
 						"valueof" : 						{
 							"parameter_invisible" : 1,
 							"parameter_longname" : "umenu[1]",
-							"parameter_mmax" : 9.0,
+							"parameter_mmax" : 11.0,
 							"parameter_shortname" : "umenu[1]",
 							"parameter_type" : 3
 						}
@@ -3434,7 +3434,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 163.0, 284.5, 122.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 64.0, 279.0, 122.0, 20.0 ],
+					"presentation_rect" : [ 681.0, 207.0, 122.0, 20.0 ],
 					"text" : ">Use as a sequencer"
 				}
 
@@ -3450,7 +3450,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 125.5, 280.5, 33.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 31.0, 280.0, 33.0, 22.0 ],
+					"presentation_rect" : [ 648.0, 208.0, 33.0, 22.0 ],
 					"text" : "play"
 				}
 
@@ -3713,8 +3713,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3878,7 +3878,7 @@
 					"allowdrag" : 0,
 					"fontsize" : 10.0,
 					"id" : "obj-6",
-					"items" : [ "ev4-1", ",", "bar2", ",", "bar3", ",", "bar4", ",", "bar5", ",", "bar6", ",", "bar7", ",", "bar8", ",", "bar9", ",", "bar10", ",", "bar11", ",", "bar12", ",", "bar13", ",", "bar14", ",", "bar15", ",", "bar16", ",", "bar17", ",", "bar18", ",", "bar19", ",", "bar20", ",", "bar21", ",", "bar22", ",", "bar23", ",", "bar24", ",", "ev4-2", ",", "bar26", ",", "ev4-3", ",", "bar28", ",", "ev4-3.6", ",", "bar30", ",", "bar31", ",", "bar32", ",", "bar33", ",", "bar34", ",", "bar35", ",", "bar36", ",", "bar37", ",", "bar38", ",", "bar39", ",", "ev4-4", ",", "bar41", ",", "bar42", ",", "bar43", ",", "bar44", ",", "bar45", ",", "bar46", ",", "bar47", ",", "bar48", ",", "bar49", ",", "bar50", ",", "ev4-5", ",", "bar52", ",", "bar53", ",", "bar54", ",", "bar55", ",", "bar56", ",", "bar57", ",", "bar58", ",", "bar59", ",", "bar60", ",", "bar61", ",", "bar62", ",", "ev4-6", ",", "bar64", ",", "ev4-7", ",", "bar66", ",", "bar67", ",", "bar68", ",", "bar69", ",", "bar70", ",", "bar71", ",", "bar72", ",", "bar73", ",", "bar74", ",", "bar75", ",", "ev4-8", ",", "ev4-9", ",", "ev4-9-SECTION-V" ],
+					"items" : [ "ev4-1", ",", "bar2", ",", "bar3", ",", "bar4", ",", "bar5", ",", "bar6", ",", "bar7", ",", "bar8", ",", "bar9", ",", "bar10", ",", "bar11", ",", "bar12", ",", "bar13", ",", "bar14", ",", "bar15", ",", "bar16", ",", "bar17", ",", "bar18", ",", "bar19", ",", "bar20", ",", "bar21", ",", "bar22", ",", "bar23", ",", "bar24", ",", "ev4-2", ",", "bar26", ",", "ev4-3", ",", "bar28", ",", "ev4-3.6", ",", "bar30", ",", "bar31", ",", "bar32", ",", "bar33", ",", "bar34", ",", "bar35", ",", "bar36", ",", "bar37", ",", "bar38", ",", "bar39", ",", "ev4-4", ",", "bar41", ",", "bar42", ",", "bar43", ",", "bar44", ",", "bar45", ",", "bar46", ",", "bar47", ",", "bar48", ",", "bar49", ",", "bar50", ",", "ev4-5", ",", "bar52", ",", "bar53", ",", "bar54", ",", "bar55", ",", "bar56", ",", "bar57", ",", "bar58", ",", "bar59", ",", "bar60", ",", "bar61", ",", "bar341", ",", "bar62", ",", "ev4-6", ",", "bar64", ",", "ev4-7", ",", "bar66", ",", "bar67", ",", "bar68", ",", "bar69", ",", "bar70", ",", "bar71", ",", "bar72", ",", "bar73", ",", "bar74", ",", "bar75", ",", "ev4-8", ",", "ev4-9", ",", "ev4-9-SECTION-V" ],
 					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -3904,8 +3904,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4474,7 +4474,7 @@
 					"patching_rect" : [ 174.5, 495.5, 216.0, 31.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 75.0, 191.0, 120.0, 31.0 ],
-					"text" : "bar15"
+					"text" : "ev4-1"
 				}
 
 			}

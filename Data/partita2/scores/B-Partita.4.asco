@@ -3,6 +3,8 @@
 BPM 66
 
 @INSERT "macros_def.asco"	; definition des fonctions et macros
+@set_max_message_sent_instantaneously(2048)
+antescofo::bypass_temporeset ON
 	
 GFWD Init-Synful-sec4
 	{
@@ -20,10 +22,10 @@ GFWD Init-Synful-sec4
 antescofo-mess analysis 2048 128, tune 442
 VARIANCE 0.2
 
-NOTE 69 0.125 ev4-1
+NOTE 69 0.125 ev4_1
 3fc_mode antescofo_t ; or antescofo
 print PERPETUUM MOBILE
-group perpetuum_sequence1 @latency:= 10 ms @target:={ev4_1,bar2,bar4,bar6,bar8,bar10,bar12,bar14,bar18,bar20,bar22,bar24,bar26,bar28,bar30,bar32,bar34,bar36,bar38,bar40,bar42,bar44,bar46,bar48,bar50,bar52,bar54,bar56,bar58,bar60,bar62,bar64,bar66,bar68,bar70,bar72,bar74}
+group perpetuum_sequence1 @latency:= 10 ms @target:={ev4_1,bar2,bar4,bar6,bar8,bar10,bar12,bar14,bar18,bar20,bar22,bar24,bar26,bar28,bar30,bar32,bar34,bar36,bar38,ev4_4,bar42,bar44,bar46,bar48,bar50,bar52,bar54,bar56,bar58,bar60,bar62,bar64,bar66,bar68,bar70,bar72,bar74}
 {
 0.0  tnote  69 0.125 ev4_1
 0.125  tnote  62 0.125 
@@ -2098,7 +2100,7 @@ NOTE 71 0.125
 NOTE 62 0.125  
 NOTE 70 0.125 
 /*******************************************/
-NOTE 76 0.125 ev4-4
+NOTE 76 0.125 ev4_4
 	3fc_attack 13;
 	3fc_time_length 24;
 	3fc_proba 1;

@@ -23,6 +23,7 @@ VARIANCE 0.25
 ;antescofo::analysis 2048 1024
 antescofo::analysis 1024 512
 ;antescofo-pedal 0
+antescofo::bypass_temporeset ON
 
 ;suivi 0
 ;suivi 1

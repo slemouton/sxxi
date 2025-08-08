@@ -1,0 +1,13 @@
+; Antescofo score generated using native importer version 0.2.9
+; Original file: T6.mid
+; MIDI file type 1 (multiple tracks)
+
+; start
+
+group playback_track_2 @tight @local {
+    ; delay msgrecvr pitch velocity channel
+    0 mnote 60 96 0
+    0.166667 mnote 60 0 0 ;noteoff
+    2.08333 mnote 59 96 0
+    0.166667 mnote 59 0 0 ;noteoff
+}
