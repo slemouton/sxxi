@@ -2,7 +2,7 @@
 	"name" : "Symphonie2020",
 	"version" : 1,
 	"creationdate" : 3662749949,
-	"modificationdate" : 3787656687,
+	"modificationdate" : 3840005937,
 	"viewrect" : [ 0.0, 100.0, 300.0, 500.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
@@ -40,16 +40,6 @@
 
 			}
 ,
-			"TensioSimul.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1,
-				"singleton" : 				{
-					"bootpath" : "~/Projets/Symphonie2020/patchers",
-					"projectrelativepath" : "./patchers"
-				}
-
-			}
-,
 			"perpetuumMidiPlayer.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1,
@@ -72,7 +62,12 @@
 ,
 			"Mubu_offline.maxpat" : 			{
 				"kind" : "patcher",
-				"local" : 1
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Projets/Symphonie2020/patchers",
+					"projectrelativepath" : "./patchers"
+				}
+
 			}
 
 		}

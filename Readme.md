@@ -37,6 +37,15 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
 ### other databases (eventually)
 - https://github.com/flippy-fyp/QualScofo
 
+## patches
+### versions du patch principal
+- symphonie-v1.maxpat : all modules
+- symphonie-v2.maxpat : sfplayer.v2 : mubu remplace waveform
+- symphonie-v3.maxpat ; gesturefollower remplacé par af.full
+ 
+### other
+- quatuor : suivi audio continu polyphonique
+
 ## howtos
 ### generer des markers de references à partir d'un fichier son enregistré
 
@@ -105,7 +114,3 @@ version ?
 ### chunky
 version ?
 
-## versions du patch principal
-- symphonie-v1.maxpat : all modules
-- symphonie-v2.maxpat : sfplayer.v2 : mubu remplace waveform
-- symphonie-v3.maxpat ; gesturefollower remplacé par af.full
