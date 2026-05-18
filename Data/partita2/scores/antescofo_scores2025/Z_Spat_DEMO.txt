@@ -1,0 +1,58 @@
+	@INSERT "macros_def.asco"	; definition des fonctions et macros
+
+BPM 60
+EVENT 1 Spat_init
+; *********
+; SPAT INIT
+; *********
+
+		spat1_az 0 ; front
+		spat1_dist 5; 5 m
+		spat1_width 30
+		spat1_dist 0.8;
+		spat1_pres 85;
+		spat1_prer 95;
+		spat1_dopp 0
+		spat1_rev 55
+		spat1_traj 0
+	    spat1_aperture 20
+		
+		spat2_az 1 ; 
+		spat2_dist 0.8;
+		spat2_pres 85;
+		spat2_prer 95;
+		spat2_width 30
+		spat2_rev 50;
+		spat2_aperture 120
+		spat2_width 30
+		spat2_dopp 0
+		spat2_traj 0
+		
+		
+		spat3_az 1 ; 
+		spat3_dist 1.5;
+		spat3_pres 90;
+		spat3_prer 80;
+		spat3_width 30
+		spat3_rev 70;
+		spat3_aperture 30
+		spat3_width 30
+		spat3_dopp 0
+		spat3_traj 0 
+	
+	
+	spat1 100 
+	spat2 100 
+	spat3 100
+NOTE 0 1
+
+EVENT 2 rotation_lente
+	read_traj cercle.traj
+	traj1_dist 3
+	spat1_traj_loop 1
+	traj_spat1 1 traj @b(20) 1 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+	spat1_aperture 140
+NOTE 0 1
+
+EVENT 3 stop_rotation
+spat1_traj_loop 0

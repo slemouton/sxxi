@@ -1,0 +1,28 @@
+BPM 60
+EVENT 1  synful_on
+		syntosp1 101
+		synful 0, 40 0.3;
+		syn_voices 1 pgm 40 bnk 0 vol 120		; vlon arco
+		syn_voices 1 92 127 
+NOTE 0 1
+	
+EVENT 2 coupe_synful
+syn_voices 1 vibrato 100	
+1 synful 40,0 0.3;
+syn_voices 1 92 0 
+NOTE 0 1
+	
+EVENT 3 pizz_bartok
+synful 40;
+syn_voices 1 pgm 40 bnk 3 vol 120		; pizz_bartok
+syn_voices 1 92 127 
+NOTE 0 1
+
+EVENT 3 pizz_bartok
+synful 40;
+syn_voices 1 pgm 40 bnk 7 vol 120		; pizz_bartok
+syn_voices 1 64 127 
+NOTE 0 1
+		
+EVENT 4 kill_all
+synful_flush bang

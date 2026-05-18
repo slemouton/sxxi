@@ -1,0 +1,738 @@
+@INSERT "macros_def.asco"	; definition des fonctions et macros
+; antescofo-mess temposmoothness 0.95 ; is now obsolete, please check at https://antescofo-doc.ircam.fr/Reference/tempo_inference/ if you need to deal with tempo inference
+
+antescofo-mess tune 442
+antescofo-mess analysis 4096 512
+antescofo-mess tempo  63 
+
+obs_gate 1 ;  observation input on
+deltas_pm.pgm 20
+; monitors.pgm 1 ; all off
+; direct_out.pgm 1
+
+master 100 
+	
+suivi 0
+TEMPO ON
+	
+	samplors_ stopall 10
+
+	fx_pgm 1	; matrice à zero  
+	
+	s_loop 0
+	s_stop bang ; arrete le string
+	; s_config 1;
+
+	stosp3 0		; string > spat1  
+
+	; routing
+	stosp1 120		; string > spat1  
+	string1 75 		; was string before 
+	s_tempo 251
+	s_reset bang	; reset string parameters  
+	h1 86
+	h2 86
+	h3 86
+	
+	; arrête synful lorsqu'on reprend la séquenceau début
+	syn_voices 4 72 0;
+	syn_voices 4 64 0;
+	   
+	syn_voices 1 flush 1; turn notes off 
+	syn_voices 2 flush 1; turn notes off 
+	Bsyn_voices 1 flush 1; turn notes off 
+	Bsyn_voices 2 flush 1; turn notes off 
+
+	bouge 0				; bouge les spats aleatoire 
+		
+	;init synful
+	; Set initial pitch bends
+	syn_voices 1 xbend 0; 
+	syn_voices 2 xbend 0; 
+	syn_voices 3 xbend 0; 
+	syn_voices 4 xbend 0; 
+	syn_voices 5 xbend 0;  
+	
+	; synful_vst read strings-ctls4.fxb 
+		 
+	 ; set initial vibratos on available channels
+	syn_voices 3 vibrato 0.2, 4 vibrato 0.2, 5 vibrato 0.2, 6 vibrato 0.2	; etc  
+	
+					
+	sampler1_ adsr 2 2 100 5
+	sampler2_ adsr 2 2 100 5
+	
+	sampler1	112
+	smp1tosp2	115
+	sampler2 112 
+	smp2tosp3 115
+
+	h0	100 
+	h1	100 
+	h2	100 
+	h3	100 
+	h4	100 
+
+	master_toupie_freq 0
+	h1_leslie_mode 0 
+	h2_leslie_mode 0 
+	h3_leslie_mode 0 
+	h4_leslie_mode 0 
+	
+	Bsynful 0			; Volume en DB 
+	synful 0 			; volume synful et spat1 en DB 
+	;;;;;;;;;;;;;;;;;;
+	; 3fc synthesis parameters
+	
+	3fc 0
+	3fc_mode off
+	3fctosp1 0
+	3fctosp2 0
+	
+	v1_minpower 39	; 0-100 seuil energie faible=bcp activite eleve=peu activite
+	v1_stable_time 39	; en ms seuil temporel faible=bcp activite eleve=peu activite
+	v1_vibrato 0.47 ; en demi-ton pour considerer le vibrato
+	v1_sigmund_trans 0 ; transposition en demi-ton	
+	v2_sigmund_trans 0 ; transposition en demi-ton	
+	v3_sigmund_trans 0 ; transposition en demi-ton
+;	s1_sigmund_trans 0 ; transposition en demi-ton
+;	s2_sigmund_trans 0 ; transposition en demi-ton	
+	3fc_ph_mfreq 0	; phasing à zéro
+	3fc_ph_mix 0
+	3fc_fl_freq 0 ; flanger à zéro
+	3fc_fl_del 0
+	3fc_fl_fback 100
+	3fc_fl_mix 100
+	v1_sigmund 1
+;	s1_sigmund 0
+;	s2_sigmund 0
+	3fc_attack 73 ; ms
+	3fc_time_length 35 ; constante de temps 1(tres court)-100(très long) 
+	3fc_proba 11; proba spectre faible=varié fort=fixe
+	3fc_max_freqs 1; nombre de partiels	
+	3fc_amp_jitter 0	; porba pour avoir des différences d'amplitudes entre les partiels
+	3fc_mode off
+
+; *********
+; SPAT INIT
+; *********
+
+		spat1_az 0 ; front
+		;spat1_dist 5; 5 m
+		spat1_width 30
+		spat1_rev 55
+		spat1_traj 0
+	    spat1_aperture 20
+		
+		spat2_az 1 ; 
+		spat2_dist 0.8;
+		spat2_pres 85;
+		spat2_prer 95;
+		spat2_width 30
+		spat2_rev 50;
+		spat2_aperture 120
+		spat2_width 30
+		spat2_dopp 0
+		spat2_traj 0
+		
+		
+		spat3_az 1 ; 
+		spat3_dist 1.5;
+		spat3_pres 90;
+		spat3_prer 80;
+		spat3_width 30
+		spat3_rev 70;
+		spat3_aperture 30
+		spat3_width 30
+		spat3_dopp 0
+		spat3_traj 0 
+	
+	
+		spat1 100 
+		spat2 100 
+		spat3 100
+		
+		syn_voices 1	pgm 40 bnk 5 vol 127		; vlon trem
+				
+	v1_sigmund_trans 0 ; transposition en demi-ton	
+	v2_sigmund_trans 0 ; transposition en demi-ton	
+	v3_sigmund_trans 0 ; transposition en demi-ton
+;	v1_sigmund_del 0 ; delai en ms	
+;	v2_sigmund_del 0 
+;	v3_sigmund_del 0 	
+
+	 print "Press space to start"  
+
+
+TEMPO ON
+
+NOTE 92 0.250 ev1-1
+
+suivi 1
+antescofo-mess tempo  63
+
+	syntosp1 101
+	synful 0, 40 0.3;
+	syn_voices 1	pgm 40 bnk 5 vol 120		; vlon trem
+	syn_voices 1 92 127 
+	
+	;	read_traj1	traj1_evt2.traj ; lit une trajectoire implicitement dans traj2.traj
+	read_traj cercle.traj
+	;    traj1_dist 3
+	spat1_traj_loop 1
+	 
+	sy1_ P2_SY1_1.01.aif
+
+	GFWD cercle-lent 
+	{
+	
+		0.2	spat3_traj_loop 1; 
+			traj_spat1 1 traj @b(20) 1 ; on/off, nom de la trajectoire ,durée de la boucle, distance
+		
+	}
+	
+		spat1_aperture 140
+		3fc_boost 100
+
+
+NOTE 0 3.350  
+;-------- 11/8
+NOTE 69 0.101 
+NOTE 70 0.100  
+NOTE 74 0.101  
+NOTE 72 0.100  
+NOTE 73 0.700  
+NOTE 72 0.100  
+NOTE 75 0.101  
+NOTE 74 0.300  
+NOTE 73 0.100  
+NOTE 69 0.101  
+NOTE 72 0.100  
+NOTE 71 0.100  
+NOTE 70 0.101  
+NOTE 73 0.100  
+NOTE 71 0.101  
+NOTE 72 0.300  
+NOTE 70 0.100  
+NOTE 71 0.400  
+NOTE 72 0.100  
+NOTE 73 0.101  
+NOTE 69 0.100  
+NOTE 70 0.700  
+NOTE 72 0.100  
+NOTE 71 0.101  
+NOTE 74 0.100  
+NOTE 73 0.100  
+NOTE 70 0.101  
+NOTE 69 0.500  
+NOTE 74 0.100  
+NOTE 72 0.101  
+NOTE 73 0.100  
+;-------- 2/4
+NOTE 71 0.100 
+//#if @VERSION == @PARTITA_2
+NOTE 70 0.101  
+NOTE 69 0.100  
+//#else
+//NOTE 69 0.101  
+//NOTE 70 0.100  
+//#endif
+NOTE 75 1.200 ev1-2 
+
+	spat1_rev 100
+	synful 0 1000
+
+
+	 
+NOTE 0 0.667  
+NOTE 83 0.166 ev1-3
+	
+	syn_voices 1 92 0 
+	3fc 75
+
+	4t_player 100
+
+; route sigmund analysis :
+	3fc_mode sigmund
+	
+	3fctosp1 100 200
+	3fctosp2 100 200
+
+	v2_minpower 22
+	al_minpower 22
+	cl_minpower 22
+
+
+
+NOTE 89 0.167  
+NOTE 87 0.167  
+NOTE 79 0.166  
+NOTE 93 0.167  
+NOTE 0 0.167  
+NOTE 90 0.166  
+NOTE 82 0.167  
+NOTE 93 0.167  
+NOTE 0 0.166  
+NOTE 85 0.167  
+NOTE 93 0.167  
+NOTE 77 0.166  
+NOTE 0 0.334  
+NOTE 87 0.166  
+NOTE 100 0.167  ev1-4
+
+	3fc 0 1000
+	3fc_mode off
+
+
+NOTE 0 1.250  
+;-------- 5/4
+CHORD ( 79 73 ) 0.250 
+CHORD ( 79 74 ) 0.250  
+CHORD ( 79 75 ) 0.100  
+NOTE 79 0.150  
+CHORD ( 77 86 ) 0.250  
+CHORD ( 83 80 ) 0.250  
+CHORD ( 80 82 ) 0.250  
+CHORD ( 81 89 ) 0.250  
+CHORD ( 76 71 ) 0.250  
+CHORD ( 76 72 ) 0.250  
+CHORD ( 76 75 ) 0.250  
+CHORD ( 76 73 ) 0.250  
+CHORD ( 76 74 ) 0.250  
+CHORD ( 83 77 ) 0.250  
+CHORD ( 83 80 ) 0.250  
+CHORD ( 69 70 ) 0.250   
+CHORD ( 80 90 ) 0.250  
+CHORD ( 76 84 ) 0.250  
+NOTE 95 0.250 ev1-5  
+
+	syn_voices 1 95 100
+	synful 40
+
+	sy1_ P2_SY1_1.05.aif
+
+;**************************************************************	
+
+NOTE 0 2.250  
+NOTE 69 0.500
+NOTE 0 0.100  
+NOTE 68 0.101 ev1-6 
+	v1tosp2 0,115 1000
+	;v1tohp1 100 100
+	spat2_az 45
+	spat2 100
+
+NOTE 69 0.100  
+NOTE 72 0.101  
+NOTE 71 0.100  
+NOTE 70 0.500  
+NOTE 0 0.100  
+NOTE 72 0.101 ev1-7 	
+	v1tohp1 0 100
+	;v1tohp4 100 100
+	spat2_az -145
+
+
+NOTE 71 0.100  
+NOTE 73 0.101  
+NOTE 69 0.100  
+NOTE 68 0.100  
+NOTE 71 0.101  
+NOTE 75 0.100  
+NOTE 74 0.400  
+NOTE 73 0.100 ev1-8 
+v1tohp4 0 100
+;v1tohp5 100 100
+spat2_az 145
+	
+
+NOTE 69 0.101  
+NOTE 70 0.100  
+NOTE 72 0.700  
+NOTE 0 0.100  
+NOTE 69 0.101 ev1-9  
+v1tohp5 0 100
+;v1tohp1 100 100
+spat2_az 45
+
+	
+NOTE 68 0.100  
+;-------- 9/8
+NOTE 71 0.100 
+NOTE 72 0.101  
+NOTE 69 0.100  
+NOTE 70 0.101  
+NOTE 73 0.300  
+NOTE 74 0.100  
+NOTE 75 0.101 ev1-10
+v1tohp1 0 100
+;v1tohp6 100 100
+spat2_az 90
+	
+NOTE 72 0.899  
+NOTE 76 0.101 ev1-11
+v1tohp6 0 100
+;v1tohp2 100 100
+spat2_az -45
+
+NOTE 75 0.399  
+NOTE 0 0.101  
+NOTE 72 0.100  ev1-12
+v1tohp2 0 100
+;v1tohp3 100 100
+spat2_az -90
+
+	
+NOTE 75 0.100  
+NOTE 73 0.101  
+NOTE 71 0.100  
+NOTE 70 0.101  
+NOTE 74 0.199  
+NOTE 72 0.101  
+NOTE 71 0.100  
+NOTE 69 0.101  
+NOTE 70 0.100  
+NOTE 73 1.000  
+NOTE 71 0.100 ev1-13
+v1tohp3 0 100
+;v1tohp6 100 100
+spat2_az 90
+
+	
+NOTE 72 0.101  
+NOTE 68 0.100  
+NOTE 69 0.700  
+NOTE 71 0.100  ev1-14	
+v1tohp6 0 100
+;v1tohp2 100 100
+spat2_az -45
+	
+NOTE 70 0.101  
+NOTE 72 1.100  
+NOTE 0 0.101  
+NOTE 73 0.100  ev1-15
+v1tohp2 0 100
+;v1tohp5 100 100
+spat2_az 145
+
+NOTE 74 0.100  
+NOTE 75 0.101  
+NOTE 72 0.100  
+NOTE 70 0.101  
+NOTE 71 1.100 
+;NOTE 0	2.0
+NOTE 72 0.100 ev1-16
+v1tohp5 0 100
+;v1tohp1 100 100
+spat2_az 45
+	
+NOTE 74 0.101  
+NOTE 75 0.100  
+NOTE 73 0.101  
+NOTE 71 0.100  
+NOTE 72 0.100  
+NOTE 73 0.200  
+NOTE 70 0.101 ev1-17
+v1tohp1 0 100
+;v1tohp2 100 100
+spat2_az -45
+	
+NOTE 71 1.100  
+NOTE 0 0.100  
+NOTE 64 0.101  ev1-18
+v1tohp2 0 100
+v1tosp2 0 100
+3fc 79 200
+3fctosp2 0 100
+
+3fc_mode samplor
+v1_sigmund 1
+s1_sigmund 1
+s2_sigmund 1
+3fc_max_freqs 3; nombre de partiels	
+	
+NOTE 65 0.100  
+NOTE 66 0.101  
+NOTE 69 0.100  
+NOTE 72 0.300  
+NOTE 71 1.200  ev1-19
+	sampler1_ 0. f3-1.19 0. 0. 1. 1.
+NOTE 0 0.100 
+NOTE 67 0.101  
+NOTE 72 0.100  
+NOTE 73 0.101  
+NOTE 77 0.100  
+NOTE 76 0.100  
+NOTE 75 0.101  
+NOTE 74 0.100  
+NOTE 71 0.700  
+NOTE 69 0.600 ev1-20  
+
+	sy1_ P2_SY1_1.20.aif
+
+ 		syn_voices 1 95 0
+ 0.01s	syn_voices 1 91 120
+
+sampler2_ 0. f2-1.20 0. 0. 1. 1.
+
+; syntosp1 90
+
+	
+NOTE 71 0.101  
+NOTE 70 0.100  
+NOTE 72 0.101  
+NOTE 73 5.700  ev1-21
+
+	sy1_ P2_SY1_1.21.aif
+
+group
+{		syn_voices 1 91 0
+ 0.01s	syn_voices 1 92 120
+ sampler1_ 0. f3-1.19 0. 0. 1. 0.
+ sampler1_ 0. f3-1.21 0. 0. 1. 1.
+ 0.5 sampler2_ 0. f2-1.20 0. 0. 1. 0.
+sampler2_ 0. f2-1.21 0. 0. 1. 1.
+}
+spat2_pres 100
+spat3_pres 100
+3fctosp2 0 100
+
+	
+NOTE 0 0.100 
+NOTE 61 0.101 
+NOTE 64 0.100  
+NOTE 65 0.101  
+NOTE 70 0.100  
+NOTE 66 0.100  
+NOTE 69 0.101  
+NOTE 72 0.500 ev1-22  
+
+ sampler1_ 0. f3-1.21 0. 0. 1. 0.
+ sampler1_ 0. f3-1.22 0. 0. 1. 1.
+
+	
+NOTE 67 0.100  
+NOTE 70 0.101  
+NOTE 71 0.800  ev1-23
+	sampler2_ 0. f2-1.21 0. 0. 1. 0.
+	sampler2_ 0. f2-1.23 0. 0. 1. 1.
+
+	
+NOTE 74 2.400  ev1-24
+
+	sy1_ P2_SY1_1.24.aif
+
+		syn_voices 1 92 0
+ 0.01s	syn_voices 1 89 120
+  sampler2_ 0. f2-1.23 0. 0. 1. 0.
+sampler2_ 0. f2-1.24 0. 0. 1. 1.
+0.6 sampler1_ 0. f3-1.22 0. 0. 1. 0.
+ sampler1_ 0. f3-1.24 0. 0. 1. 1.
+
+
+NOTE 71 0.101  
+NOTE 70 0.100  
+NOTE 67 0.101  
+NOTE 77 0.100  
+NOTE 76 0.100  
+NOTE 73 0.500 ev1-25 
+
+sampler1_ 0. f3-1.24 0. 0. 1. 0.
+sampler1_ 0. f3-1.25 0. 0. 1. 1.
+
+	
+NOTE 72 0.101  
+NOTE 69 0.100  
+NOTE 70 0.500  ev1-26
+
+sampler2_ 0. f2-1.24 0. 0. 1. 0.
+sampler2_ 0. f2-1.26 0. 0. 1. 1.
+
+	
+NOTE 72 0.101 
+
+NOTE 71 0.100  
+NOTE 68 0.100  
+NOTE 67 0.101  
+NOTE 69 0.500 ev1-27 
+
+sampler1_ 0. f3-1.25 0. 0. 1. 0.
+sampler1_ 0. f3-1.27 0. 0. 1. 1.
+	
+
+NOTE 72 0.100  
+NOTE 73 0.101  
+NOTE 75 0.100  
+NOTE 74 2.500  ev1-28
+
+		syn_voices 1 89 0
+ 0.01s	syn_voices 1 90 120
+  sampler2_ 0. f2-1.26 0. 0. 1. 0.
+sampler2_ 0. f2-1.28 0. 0. 1. 1.
+
+
+NOTE 72 0.600 ev1-29
+
+	sy1_ P2_SY1_1.29.aif
+
+		syn_voices 1 90 0
+ 0.01s	syn_voices 1 93 120
+  sampler2_ 0. f2-1.28 0. 0. 1. 0.
+sampler2_ 0. f2-1.29 0. 0. 1. 1.
+3fc 97 100
+3fc_attack 40 ; ms
+
+
+NOTE 69 0.101  
+NOTE 68 0.100  
+NOTE 65 0.101  
+NOTE 66 0.100  
+NOTE 62 0.100  
+NOTE 63 0.101  
+NOTE 67 0.100  
+NOTE 66 0.101  
+NOTE 69 0.100  
+NOTE 72 0.100  
+NOTE 71 0.101  
+NOTE 70 0.100  
+NOTE 73 0.800  ev1-30
+
+sampler1_ 0. f3-1.27 0. 0. 1. 0.
+sampler1_ 0. f3-1.30 0. 0. 1. 1.
+	
+
+NOTE 72 0.101  
+NOTE 70 0.100  
+NOTE 71 2.300  ev1-31
+
+	sy1_ P2_SY1_1.31.aif
+
+		syn_voices 1 93 0
+ 0.01s	syn_voices 1 92 120
+sampler2_ 0. f2-1.29 0. 0. 1. 0.
+sampler2_ 0. f2-1.31 0. 0. 1. 1.
+
+
+NOTE 71 0.101 
+NOTE 69 0.100  
+NOTE 70 0.900 ev1-32 
+	sampler1_ 0. f3-1.30 0. 0. 1. 0.
+	sampler1_ 0. f3-1.32 0. 0. 1. 1.
+
+	
+
+NOTE 68 0.100 
+
+//#if @VERSION == @B_PARTITA 
+//NOTE 69 0.200  ev1-33
+//#else
+NOTE 69 1.200  ev1-33
+//#endif
+
+	syn_voices 1 92 0
+ 	0.01s	syn_voices 1 94 120
+	sampler2_ 0. f2-1.31 0. 0. 1. 0.
+	sampler2_ 0. f2-1.33 0. 0. 1. 1.
+
+NOTE F#4 2.0 ev1-34x
+
+	sampler1_ 0. f3-1.32 0. 0. 1. 0.
+	sampler1_ 0. f3-1.34 0. 0. 1. 1.
+	2s sampler2_ 0. f2-1.33 0. 0. 1. 0.
+	sampler2_ 0. f2-1.34 0. 0. 1. 1.
+
+NOTE 0 0.1
+NOTE B3 0.100
+NOTE G#3 0.100
+NOTE A3 0.100
+NOTE C4 0.100
+NOTE F4 0.100
+NOTE F#4 0.100
+NOTE Ab4 0.100
+NOTE G4 0.100
+NOTE A4 0.100
+NOTE Bb4 0.100
+NOTE Db5 0.100
+NOTE C5 0.100
+NOTE E5 0.100
+NOTE F5 0.300 ev1-35
+
+	sy1_ P2_SY1_1.35.aif
+
+		syn_voices 1 94 0
+ 0.01s	syn_voices 1 91 120
+
+	sampler1_ 0. f3-1.34 0. 0. 1. 0.
+	sampler1_ 0. f3-1.35 0. 0. 1. 1.
+
+NOTE D5 0.100
+NOTE F5 0.100  
+NOTE G#5 0.100  
+NOTE A5 2.00  ev1-36
+
+	sampler2_ 0. f2-1.34 0. 0. 1. 0.
+	sampler2_ 0. f2-1.36 0. 0. 1. 1.
+
+NOTE B4 0.100 
+NOTE F5 0.100 
+NOTE F#5 0.100  
+NOTE A5 2.200  ev1-37
+
+	sampler1_ 0. f3-1.35 0. 0. 1. 0.
+	sampler1_ 0. f3-1.37 0. 0. 1. 1.
+	2. sampler2_ 0. f2-1.36 0. 0. 1. 0.
+	sampler2_ 0. f2-1.37 0. 0. 1. 1.	
+
+NOTE E5 0.100  
+NOTE F5 0.100
+NOTE F#5 0.100
+NOTE G#5 0.100
+NOTE A5 2.200  ev1-38
+
+group 
+{
+synful 0 500
+sampler1 0 500 
+sampler2 0 500
+
+0.5s syn_voices 1 91 0
+	sampler1_ 0. f3-1.37 0. 0. 1. 0.
+	sampler2_ 0. f2-1.37 0. 0. 1. 0.
+	3fc_mode off
+}
+NOTE A3 0.100  
+NOTE C4 0.100
+NOTE Eb4 0.100
+NOTE C#4 0.100
+NOTE D4 0.100
+NOTE E4 0.100  
+NOTE Eb4 0.100
+NOTE F4 0.100
+NOTE F#4 0.100
+NOTE G#4 0.100
+NOTE A4 0.100  
+NOTE F#4 0.100
+NOTE C5 0.100
+NOTE A4 0.100
+NOTE B4 0.100
+NOTE Bb4 0.100  
+NOTE C#5 0.100
+NOTE E5 0.100
+NOTE Eb5 0.100
+NOTE D5 0.100
+NOTE F5 0.100  
+NOTE F#5 0.100
+NOTE G5 0.100
+NOTE Ab5 0.100
+NOTE G#5 0.100
+NOTE A5 0.100  
+NOTE C6 0.100
+NOTE A5 0.100
+NOTE G#5 0.100
+NOTE C6 0.100 SECTION_II
+antescofo_score Partita2.2.asco
+NOTE A5 0.100  
+NOTE Bb5 0.100
+NOTE B5 0.100
+NOTE C6 0.100
+TRILL (Eb6 D6) 2.100 

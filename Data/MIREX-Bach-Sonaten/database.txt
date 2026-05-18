@@ -1,0 +1,3 @@
+vs1-1ada.aiff	vs1-1ada.score.mid	references/vs1-1ada.reference.txt
+vs1-4prs.aiff	vs1-4prs.score.mid	references/vs1-4prs.reference.txt
+vs2-4alg.aiff	vs2-4alg.score.mid	references/vs2-4alg.reference.txt

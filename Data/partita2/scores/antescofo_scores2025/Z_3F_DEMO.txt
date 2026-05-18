@@ -1,0 +1,51 @@
+	;;;;;;;;;;;;;;;;;;;;
+	;;;;;;;;;; 3F
+	;;;;;;;;;;;
+	
+		; niveau de sortie 3fc
+		3fc 0
+		3fc 77 200
+			
+		;  sigmund analysis off
+		;v1_sigmund 0
+		;  sigmund analysis on
+		v1_sigmund 1
+			
+		;3F vers spats
+		3fctosp1 100 1000
+		3fctosp2 0
+		3fctosp3 0
+		
+		;3F vers direct
+		3fctohp1 50,80 4000
+		3fctohp2 50,80 4000
+		3fctohp3 50,80 4000
+		3fctohp4 50,80 4000
+		3fctohp5 50,80 4000
+		3fctohp6 50,80 4000
+
+		;3F parameters
+		3fc_attack 4;
+		3fc_time_length 15;
+		3fc_proba 1;
+		3fc_amp_jitter 50;
+		3fc_max_freqs 6;
+		
+		; pitch detection parameters :
+		
+		v1_minpower 48; ;thresh
+		v1_stable_time 46;
+		v1_vibrato 0.5;
+		v1_sigmund_trans 0;
+		v2_sigmund_trans 12;
+		v3_sigmund_trans 24;
+
+
+		; 3f est controlé par antescofo
+		;3fc_mode antescofo
+		; 3f est controlé par suivi de hauteur live
+		3fc_mode sigmund
+		; 3f est controlé par echantillons dans sigmund
+		;3fc_mode samplor
+		; 3f est controlé par rien
+		;3fc_mode off

@@ -26,6 +26,7 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
     - version Danielle Hennicot (dh)
 - partita 2 (P.M.)
 - Tensio (P.M)
+    - version decembre 2010
     - version 2015 (Yun-Peng Zhao / Diotima)
     - version 2021 (Ayane Kawamura / CNSMDP)
 - Anthèmes 2 (Pierre Boulez) *TODO*
@@ -33,6 +34,20 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
 
 ### flute
 - Jupiter *TODO*
+- ...Explosante-fixe... (P.B.)
+    - **_Solo fl 4061_** : sophie Cherrier
+        - T7 uniquement avec markers
+    - **fa** : Féderico Altare (ensemble Next/CNSMDP), uniquement T5 et originel
+        - 7/6/2025 : 2 versions studio
+        - 19 et 20/6/2025 : 2 versions repetitions avec orchestre
+    - **jbj** : Julie Brunet-Jailly (Le Balcon); integrale
+        - 14/8/2025 
+    - ...
+
+### string quartet
+
+### ISMIR 2007
+- reference
 
 ### other databases (eventually)
 - https://github.com/flippy-fyp/QualScofo
@@ -45,6 +60,15 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
  
 ### other
 - quatuor : suivi audio continu polyphonique
+    - demo :
+        - clic on init
+        - clear mubu
+        - choose _CNSM_I_quadri_norm.aif_
+        - learn and play in sync
+        - follow
+        - activate warpingview and likelyhood
+        - play / pause
+        - try with another version of the same section (par exemple decembre 2010)
 
 ## howtos
 ### generer des markers de references à partir d'un fichier son enregistré
@@ -63,6 +87,11 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
     - possibilité d'ajouter et d'editer des markers dans l'imubu (to add : cmd-clic)
 
 ### generer un coll a partir d'une partition antescofo
+
+### afficher les markers d'un fichier aiff dans mubu
+
+- select the soundfile in _aiffMarkers_ mode
+- exemple : partita1
 
 ### embed the markers in the aiff file 
 
@@ -98,6 +127,8 @@ references marquees
 logiciels lisant les markers : 
 
 - Wave Editor
+- SoundStudio
+
 ##### C2 : coll
 format for max
 ##### csv

@@ -1,0 +1,868 @@
+@INSERT "macros_def.asco"	; definition des fonctions et macros
+
+BPM 60
+	
+; antescofo-mess temposmoothness 0.95 ; is now obsolete, please check at https://antescofo-doc.ircam.fr/Reference/tempo_inference/ if you need to deal with tempo inference
+
+obs_gate 1 ;  observation input on
+deltas_pm.pgm 20
+antescofo-mess analysis 4096 512
+
+;master 100 	
+
+TEMPO ON
+	print "final"  
+	v1tosp2 0 100
+	v1toh1 0 100
+	v1toh2 0 100
+	v1toh3 0 100
+	v1toh4 0 100
+	3fctosp1 0 100
+	3fctosp3 0 100
+	h1tosp1 0 100
+	h2tosp1 0 100
+	s2tohp1 0
+	s2tohp2 0
+	s2tohp3 0
+	s2tohp4 0
+	s2tohp5 0
+	s2tohp6 0
+	
+	s_loop 0
+	s_stop bang ; arrete le string
+	stosp3 0		; string > spat1  
+	stosp1 0		 
+	string1 0 		
+	s_reset bang	; reset string parameters  
+		
+	sampler2 100 
+	sampler1	100
+	h0	100 
+	h1	100 
+	h2	100 
+	h3	100 
+	h4	100 
+	h1_trans 26
+	h2_trans -26
+	h3_trans 12
+	h4_trans -12
+	
+	master_toupie_freq 0
+	h1_leslie_mode 0 
+	h2_leslie_mode 0 
+	h3_leslie_mode 0 
+	h4_leslie_mode 0 
+	
+	h1_del 0
+	h2_del 0
+	h3_del 0
+	h4_del 0
+		3fc_mode sigmund
+
+	; sigmund parameters
+	v1_minpower 20	; 0-100 seuil energie faible=bcp activite eleve=peu activite
+	v1_stable_time 40	; en ms seuil temporel faible=bcp activite eleve=peu activite
+	v1_vibrato 0.47 ; en demi-ton pour considerer le vibrato
+	v1_sigmund_trans 0 ; transposition en demi-ton	
+	v2_sigmund_trans 4 ; transposition en demi-ton	
+	v3_sigmund_trans 8 ; transposition en demi-ton
+	s1_sigmund_trans 0 ; transposition en demi-ton	
+	s2_sigmund_trans 0 ; transposition en demi-ton	
+
+	; 3fc synthesis parameters 
+	3fc_attack 11 		; ms
+	3fc_time_length 40	; constante de temps 1
+	3fc_proba 1	; proba spectre
+	3fc_amp_jitter 50	; porba pour avoir des
+	3fc_ph_mfreq 0
+	3fc_ph_mix 0
+	3fc_fl_freq 0 ; flanger
+	3fc_fl_del 0
+	3fc_fl_fback 100
+	3fc_fl_mix 100
+	3fc_max_freqs 6
+
+	; start sigmund analysis
+	v1_sigmund 0
+	s1_sigmund 0
+	s2_sigmund 0	
+	
+1 3fctosp1 100 100
+	3fctosp2 100 100
+	3fctohp1 100 100
+	3fctohp2 100 100
+	3fctoh1 0
+	3fctoh2 0
+	3fctoh3 0
+	3fctoh4 0
+	h1tosp1  100 100
+	h2tosp1  100 100
+	h3tosp1  100 100
+	h4tosp1  100 100
+	h1tohp1  100 100
+	h2tohp2  100 100
+	h3tohp3  100 100
+	h4tohp6  100 100
+
+	3fc 80 300
+		
+; *********
+; SPAT INIT
+; *********
+
+		spat1_az 0 ; front
+		;spat1_dist 5; 5 m
+		spat1_width 30
+		
+		spat1_rev 55
+		spat1_traj 0
+	    spat1_aperture 20
+		
+		spat2_az 1 ; 
+		spat2_dist 0.8;
+		spat2_pres 85;
+		spat2_prer 95;
+		spat2_width 30
+		spat2_rev 50;
+		spat2_aperture 120
+		spat2_width 30
+		spat2_dopp 0
+		spat2_traj 1	
+		
+		spat3_az 1 ; 
+		spat3_dist 1.5;
+		spat3_pres 90;
+		spat3_prer 80;
+		spat3_width 30
+		spat3_rev 70;
+		spat3_aperture 30
+		spat3_width 30
+		spat3_dopp 0
+		spat3_traj 0 
+		
+		spat1 100 1000
+		spat2 100 
+		spat3 100
+		read_traj cercle.traj
+;	spat1_traj_dist 3
+	spat1_traj_loop 1
+	;traj_spat2 1 traj2 9000 1
+	spat2_traj_time 9000
+	group cercle-lent 
+	{
+		0.2	spat3_traj_loop 1
+	}
+	
+	s2_buffer replace Partita2_string2_5.1.aif
+	
+	 print "Press space to start"  
+
+TEMPO ON
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 0 1.0 ev5-1 
+
+;play_simul "ev5-1 "
+;3fc_mode antescofo
+	3fc_mode sigmund
+
+
+	; start sigmund analysis
+	v1_sigmund 1
+
+	
+NOTE    6200                  0.125     
+NOTE    6500                  0.125     
+NOTE    7100                  0.125               ;B
+NOTE    7000                  0.125               ;Bb
+NOTE    7900                  0.125               ;G
+NOTE    7600                  0.125               ;E
+NOTE    8100                  0.125               ;A
+NOTE    8400                  0.125               ;C
+NOTE    9000                  0.122917            ;F#
+NOTE    7600                  0.125               ;E
+NOTE    7300                  0.125               ;C#
+NOTE    8300                  0.125               ;B
+NOTE    7900                  0.125               ;G
+NOTE    8700                  0.125               ;Eb
+NOTE    8400                  0.125               ;C
+NOTE    8100                  0.125               ;A
+NOTE    7700                  0.125               ;F
+NOTE    7800                  0.122917            ;F#
+;	3fctosp1 75 4000
+;	3fctosp2 75 4000
+;	3fctohp1 0 4000
+;	3fctohp2 0 4000
+;	3fctohp3 0 4000
+;	3fctohp4 0 4000
+;	3fctohp5 0 4000
+;	3fctohp6 0 4000
+;	3fctoh1 75 100
+;	3fctoh2 75 100
+;	3fctoh3 0 100
+;	3fctoh4 0 100
+
+;.5	3fc_attack 73 		; ms
+;	3fc_time_length 35
+	
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+BPM 56
+
+TRILL   ( 6000 )              1         ev5-2
+play_simul "ev5-2 "
+
+	v1torev 0 100
+	revtohp1 0
+	revtohp2 0
+	v1_sigmund 1
+	3fc_attack 73 		; ms
+	3fc_time_length 35
+	3fc_proba 11
+	3fc_amp_jitter 50
+	3fc_max_freqs 1
+	
+.5	3fc_mode sigmund
+	v1_sigmund 1
+	3fctoh1 75 100
+	3fctoh2 75 100
+	3fctoh3 0 100
+	3fctoh4 0 100
+	3fctosp1 75 100
+	3fctosp2 75 100
+	h1tosp1 75 100
+	h1tosp2 75 100
+	h1_trans 10 100
+	h2_trans -10 100
+
+TRILL   ( 6800 )              1               ;G#
+TRILL   ( 7400 )              1               ;D
+TRILL   ( 6600 )              1               ;F#
+TRILL   ( 7500 )              1                   ;Eb
+TRILL   ( 8500 )              1.0             ;C#
+TRILL   ( 7600 )              0.333328   
+TRILL   ( 7900 )              0.333344  
+TRILL   ( 7000 )              0.331238        ;Bb
+NOTE    0                     1.0            ;PAUSE
+TRILL   ( 6500 )              0.333344        ;F
+TRILL   ( 8000 )              0.331238            ;G#
+NOTE    0                     0.335419            ;PAUSE
+TRILL   ( 8400 )              0.333344            ;C
+TRILL   ( 7600 )              0.333328            ;E
+TRILL   ( 8700 )              0.5                 ;Eb
+TRILL   ( 8400 )              0.5                 ;C
+TRILL   ( 7000 )              0.5                 ;Bb
+TRILL   ( 7400 )              0.5                 ;D
+TRILL   ( 7800 )              1                   ;F#
+TRILL   ( 7500 )              1                   ;Eb
+TRILL   ( 8900 )              1
+ 
+NOTE 0 2 
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+BPM 30
+CHORD   ( 6900 8400 )         2         ev5-3     ;A,C 
+
+;play_simul "ev5-3 "
+
+	syntosp1 0
+
+	3fc_mode sigmund
+	v1tosp1 0 100
+	v1tosp2 0 100
+	v1toh1 100 20 
+	v1toh2 100 20
+	v1toh3 100 20
+	v1toh4 100 20
+	3fctosp1 80 20
+	3fctosp2 80 20
+	h1tosp1 100 20
+	h2tosp2 100 20
+	h3tosp1 100 20
+	h4tosp1 100 20
+	h1_trans -1250
+	h2_trans -2300
+	h3_trans 15
+	h4_trans -15
+	3fc 93
+	3fctoh1 0 20
+	3fctoh2 0 20
+	3fctoh3 0 20
+	3fctoh4 0 20
+	v1_minpower 50
+	v1_stable_time 40
+	
+	spat1_pres 30
+	spat2_pres 30
+	spat1_prer 120
+	spat2_prer 120
+	spat1_rev 100
+	spat2_rev 100
+	spat1_aperture 100
+	spat2_aperture 100
+	spat1_heav 50
+	spat2_heav 50
+	spat1_live 100
+	spat2_live 100
+	
+	spat1_traj 1
+	spat1_traj_loop 1
+	spat2_traj 1
+	spat3_traj_loop 1
+
+NOTE 0	1	
+CHORD   ( 6600 7500 )         2              ;F#,Eb
+NOTE 0	1
+CHORD   ( 7600 9400 )         2              ;E,Bb
+NOTE	0	2
+CHORD   ( 6900 7250 )         2              ;A,C+
+NOTE 0	1
+CHORD   ( 5800 8600 )         2              ;Bb,D
+NOTE 0	1
+CHORD   ( 8400 8700 )         2              ;C,Eb
+NOTE 	0	1
+CHORD   ( 7000 8000 )         2    
+CHORD   ( 6650 6900 )         2
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 0 1.0     ev5-4     ;D
+;play_simul "ev5-4 "
+
+	v1tosp1 0
+	v1tosp2 120
+	h1tosp2 120
+	h2tosp2 120
+	h1tosp1 0
+	h3tosp1 0
+	h4tosp1 0
+	h1_trans 15
+	h2_trans -15
+	
+	v1torev 0
+	h1torev 0
+	h2torev 0
+	v1toh1 0 20 
+	v1toh2 0 20
+	v1toh3 0 20
+	v1toh4 0 20
+	revtohp1 100
+	revtohp2 100
+	rev_tr 12
+	rev_trl 0
+	rev_trm 2
+	rev_trh 6
+	h1tohp1  0 100
+	h2tohp2  0 100
+	h3tohp3  0 100
+	h4tohp6  0 100
+
+	3fc_mode off
+	
+	traj_spat2 1 traj2 10000 2;
+	spat2_traj 1
+	spat2_traj_loop 1
+	spat2_traj_time 5000
+	spat2_prer 0
+	spat2_pres 115
+0.1		spat2_pres 115
+BPM 60
+NOTE    6200                  0.125
+NOTE    5900                  0.125            ;B
+NOTE    6700                  0.125           ;G
+NOTE    7300                  0.125               ;C#
+NOTE    7600                  0.122917            ;E
+NOTE    5500                  0.125       ;G    
+NOTE    6400                  0.125          ;E
+NOTE    7000                  0.125           ;Bb
+NOTE    6200                  0.125            ;D
+NOTE    6900                  0.125            ;A
+NOTE    7700                  0.125            ;F
+NOTE    7300                  0.125               ;C#
+NOTE    7600                  0.125               ;E
+NOTE    8400                  0.125            ;C
+NOTE    0                     1.0            ;PAUSE
+NOTE    6100                  0.125               ;C#
+NOTE    6200                  0.125               ;D
+NOTE    6500                  0.125               ;F
+NOTE    6400                  0.125               ;E
+NOTE    6700                  0.125               ;G
+NOTE    6800                  0.125               ;G#
+NOTE    7100                  0.125               ;B
+NOTE    7000                  0.125               ;Bb
+NOTE    7200                  0.125               ;C
+NOTE    7500                  0.125               ;Eb
+NOTE    7400                  0.125               ;D
+NOTE    7700                  0.125               ;F
+NOTE    7800                  0.125               ;F#
+NOTE    8200                  0.125               ;Bb
+NOTE    8100                  0.125               ;A
+NOTE    8400                  0.125            ;C
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 81 0.500 ev5-5
+play_simul "ev5-5 "
+	
+	3fc_mode sigmund
+	3fc 80
+
+	3fctosp1 100
+	3fctosp2 0
+	v1tosp2 0
+	v1torev 0
+	h1torev 0
+	h2torev 0
+	v1toh1 0
+	v1toh2 0
+	v1toh3 0
+	v1toh4 0
+	spat2_pres 100
+		
+NOTE 91 0.500  
+NOTE 88 0.500  
+NOTE 85 0.500  
+NOTE 95 0.500  
+NOTE 94 0.500  
+NOTE 87 0.500  
+NOTE 0 2.0
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE E7 4.000 ev5-6
+
+	v1_sigmund 0
+	st2_ P2_ST2_5.06.aif
+	group evt5.1
+	{
+		s2_start 1
+		s2tosp3 100
+		s2 50, 120 1000
+		s2_buffer replace Partita2_string2_5.1.aif
+		s2_force_scale 6.;
+		s2_loop 1;  
+		s2_pitch 89.;  
+		s2_sel_end 432;  
+		s2_sel_start 88;  
+		s2_speed 0.022;  
+		s2_trans_scale 0.;  
+	}
+	
+	loop evt5.6a 12s
+	{
+		s2_vel_scale 0.68, 0.13 6000
+	6s 	s2_vel_scale 0.68 6000
+	}
+
+	loop evt5.6b 18s
+	{
+		s2_dist_scale 3.2, 2.61 9000
+	9s 	s2_dist_scale 3.2 9000
+	}
+
+s2toh1 100
+h1 118
+h1tosp2 0 100
+h1tosp3 107
+h1_trans 1260
+spat1_pres 82.
+spat1_prer 82.
+spat3_prer 0.
+master_toupie_freq 1.0
+
+	loop evt5.6-leslie 15s
+		{
+				h1_leslie_rate 0.55, 18 7000
+		7.5s 	h1_leslie_rate 18, 0.55 7000
+		}
+		
+	read_traj rotations-centre-bords.traj
+	spat3_dist_min 0.5
+	read_traj2 diagonale2.traj
+	traj_spat2 0 traj2 @b(20) 11 	
+	  
+	group rotations-centre-bords
+	{
+	
+		0.2	spat3_traj_loop 1; 
+	}
+	
+NOTE 0 3.0  
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE D#4 0.25 ev5-7
+
+group ev5-7g
+	{
+	spat2_traj_loop 0; 
+	spat2_traj 0
+	spat3_traj_loop 0; 
+	spat3_traj 0
+	read_traj2 diagonale2.traj
+	traj_spat2 0 traj2 @b(20) 11 
+	spat2_pres 100.
+	spat2_prer 0.
+
+	v1_sigmund 1
+	h1tosp1 0
+ 	h2tosp1 0
+ 	h3tosp1 0
+ 	h4tosp1 0
+	h1tosp3 0
+	h1tosp2 93
+	s2tosp3 0
+	s2tosp2 109
+	sp2_low_time 300
+	sp2_high_time 10
+	v1tosp1 0
+	v1tosp2 0
+}
+spat2_traj_idx 176 200
+NOTE 0 2.0
+
+NOTE 85 0.25 
+spat2_traj_idx 823 200
+NOTE 0 2.0 
+
+NOTE 57 0.25 
+spat2_traj_idx 0 200
+NOTE 0 2.0  
+
+NOTE 91 0.25  
+spat2_traj_idx 995 200
+NOTE 0 2.0 
+
+NOTE 72 0.250  
+spat2_traj_idx 441 200
+
+NOTE 0 2.0  
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+CHORD ( F#4 E5 ) 5.000 ev5-8
+ 
+	v1_sigmund 1
+	v2_sigmund_trans 0 ; transposition en demi-ton	
+	v3_sigmund_trans 0 ; transposition en demi-ton
+	3fc_attack 1 		; ms
+	3fc_time_length 55	; constante de temps
+	3fc_proba 1	; proba spectre faible
+	3fc_amp_jitter 50
+	3fc_max_freqs 7
+	h1tosp3 100 100
+	h1tosp2 0 100
+	h1tosp1 0 100
+	s2tosp3 100 100
+	s2tosp2 0 100
+	spat3_traj_loop 1 
+	spat3_traj 1
+	spat3_traj_dist 3
+	spat3_pres 44
+	spat3_prer 40
+	revtohp1 100
+	revtohp2 100
+	v1torev 88 
+	rev_tr 18
+	rev_trl 1
+	rev_trm 1
+	rev_trh 1
+	
+	s2_pitch 85.;
+
+	st2_ P2_ST2_5.08.aif
+	
+	group rotations-centre-bords2
+	{
+		0.2	spat3_traj_loop 1; 
+		traj_spat3 1 traj @b(20) 11 ; on/off, nom de la trajectoire
+	}
+	
+NOTE 	0		1.0
+	
+CHORD ( A4 C#6 ) 5.000 	
+	
+NOTE 	0		1.0
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TRILL (79 80) 1.000 ev5-9
+	
+	v1torev 0
+	v1_sigmund 0
+
+NOTE 	0		1.0
+	
+TRILL  (88 89) 1.000 
+
+ 	
+NOTE 0 2
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+
+BPM 56
+CHORD ( 65.5 69 ) 4/3 ev5-10
+	
+	s2_pitch 69.; 
+	h1_trans 1200
+;	spat3_pres 95
+;	spat3_prer 75
+	spat3_aperture 180
+	spat3_traj_dist 3
+;	s2tosp3 95
+;	h1tosp3 95
+
+	st2_ P2_ST2_5.10.aif
+
+CHORD ( 69 73 ) 1/3  
+CHORD ( 69 72 ) 0.583  
+CHORD ( 67 69 ) 0.500  
+CHORD ( 67 70 ) 0.917  
+CHORD ( 64 69 ) 1.000  
+CHORD ( 65 69 ) 1.333  
+
+NOTE 0	3
+
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TRILL (66) 0.500 ev5-11
+
+	v1_sigmund 1
+	3fc_max_freqs 3
+;	s2tosp3 85
+;	h1tosp3 85
+	3fc 85
+	
+TRILL (76) 0.500  
+TRILL (84) 0.500  
+TRILL ( 81) 0.500  
+TRILL ( Bb5) 0.500  
+TRILL ( G5 ) 0.500  
+TRILL ( F6 ) 1.500  
+TRILL ( D6 ) 0.500
+TRILL ( Eb6 ) 2.000  
+TRILL ( C6 ) 0.333
+TRILL ( A5 ) 0.334  
+TRILL ( G6 ) 0.666  
+TRILL ( F#6) 1.667 
+
+NOTE 	0 	3
+ 
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TEMPO OFF
+NOTE 75 0.250 ev5-12
+
+	abort evt5.6b
+
+	st2_ P2_ST2_5.12.aif
+	
+	loop evt5.12 18s
+	{
+		s2_dist_scale 3.097, 2.89 9000
+		9s 	s2_dist_scale 3.097 9000
+	}
+
+	s2_pitch 75.; 
+	v1_sigmund 0
+	s2tosp2 100;
+	s2tosp3 0
+	h1tosp2 100;
+	h1tosp3 0
+	spat2_traj_idx 529	
+
+NOTE 0 3.0  
+
+NOTE 91 0.250 
+	spat2_traj_idx 1000
+NOTE 0 3.0
+ 
+NOTE 66 0.250
+	spat2_traj_idx 264
+NOTE 0 1.0
+
+NOTE 84 0.250  EV5-12.5
+	spat2_traj_idx 794
+	s2_pitch 84.;
+
+	st2_ P2_ST2_5.12.5.aif
+
+NOTE 0 3.0  
+
+NOTE 108 3.000 ev5-13
+	abort evt5.12
+	loop evt5.13 18s
+	{
+		s2_dist_scale 3.2, 2.61 9000
+		9s 	s2_dist_scale 3.2 9000
+	}
+	v1_sigmund 1
+
+	v1torev 90 500
+	revtohp1 80
+	revtohp2 80
+	spat1_pres 40
+	spat1_prer 120
+	spat1_rev 100
+	spat1_aperture 180
+	s2tosp3 95  600;
+	s2tosp2 0  100
+	h1tosp3 100  600;
+	h1tosp2 0  100
+	h1tosp1 0  100
+;	s2 91 2000
+	
+NOTE 0 2.  
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TEMPO ON
+TRILL ( 83 ) 0.334 ev5-14
+
+	v1torev 0
+	v1_sigmund 1
+	3fc 75
+	3fctosp1 100
+	v2_sigmund_trans 3 ; transposition en demi-ton	
+	v3_sigmund_trans -3 ; 
+	spat1_pres 82.
+	spat1_prer 82.
+
+TRILL ( G5) 0.333  
+TRILL ( A6) 1.000  
+NOTE 0 2
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+TRILL (79 80) 2.000 ev5-15
+
+	v1_sigmund 0
+	v1tosp1 0
+
+TRILL (89 90) 2.000  
+TRILL (94 93) 2.000
+NOTE 0 2
+
+TRILL (74 78) 2.0 ev5-16
+	
+	v1_sigmund 1
+	v2_sigmund_trans 0 ; transposition en demi-ton	
+	v3_sigmund_trans 12 ; 
+	3fc_time_length 53	
+	3fc 75
+
+;MULTI   ( (71 75)' -> (73 89)' )  2.0
+TRILL (71 75) 1.
+TRILL (73 79) 1.
+NOTE 0 4
+
+BPM 56
+NOTE 108 3.000 ev5-17
+
+	3fctosp2 0
+	3fctosp3 95
+	v1tosp1 110
+	loop do-loop 6s
+	{
+	sampler1_ 0. doSuraigu 0. 0. 1. 1.
+	}
+	smp1tosp1 110 500
+	;spat1-pres 110
+
+NOTE 0 4.000  
+
+	v1_sigmund 0
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 58 0.250 ev5-18
+
+	v1_sigmund 0
+	s2_pitch 87.;
+	;s2_force_scale 0.57
+	v1tosp1 0
+	s2tosp2 100;
+	s2tosp3 0
+	h1tosp2 100;
+	h1tosp3 0
+	spat2_traj_dist 3;
+	spat2_traj_idx 29
+
+	st2_ P2_ST2_5.18.aif
+	
+NOTE 0 1  
+NOTE 87 0.250 
+	spat2_traj_idx 882
+NOTE 0 1 
+NOTE 66 0.250  
+	spat2_traj_idx 264
+NOTE 0 4.  
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 108 3.000 ev5-19
+
+	v1_sigmund 1
+	3fc 79 500
+	s2tosp3 100 100
+	h1tosp3 100 100
+	s2tosp2 0 100
+	h1tosp2 0 100
+	
+NOTE 105 2.0  
+NOTE 108 3.000 
+NOTE 0	3 
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 75 0.250 ev5-20
+	spat2_traj_idx 50
+	s2_pitch 87.
+	s2tosp2 100;
+	s2tosp3 0
+	h1tosp2 100
+	h1tosp3 0
+NOTE 0 4.0  
+NOTE 85 0.250  
+spat2_traj_idx 1176
+NOTE 0 4.
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 108 3.000 ev5-21
+	s2tosp3 100  100
+	s2tosp2 0  100
+	h1tosp3 100  100
+	h1tosp2 0  100
+NOTE 0 3.000  
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 66 0.250 ev5-22
+	s2tosp2 100
+	s2tosp3 0
+	h1tosp2 100
+	h1tosp3 0
+spat2_traj_idx 264 
+NOTE 0 2.  
+;**************************************************************	
+;**************************************************************	
+;**************************************************************	
+NOTE 108 0.250 ev5-23
+	3fc 0 200
+	s2tosp3 100 100
+	s2tosp2 0 500
+	h1tosp3 100 100
+	h1tosp2 0 500
+;s2 40 30000
+NOTE 0 0.250 

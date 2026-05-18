@@ -1,0 +1,16 @@
+s01/s01-ef-t5-dgg-sc-trim.wav	s01/s01.score.mid	references/s01.reference.txt
+s03/s03-ef-t5-dgg-sc-trim.wav	s03/s03.score.mid	references/s03.reference.txt
+s04/s04-ef-t5-dgg-sc-trim.wav	s04/s04.score.mid	references/s04.reference.txt
+s05/s05-ef-t5-dgg-sc-trim.wav	s05/s05.score.mid	references/s05.reference.txt
+s06/s06-ef-t5-dgg-sc-trim.wav	s06/s06.score.mid	references/s06.reference.txt
+s07/s07-ef-t5-dgg-sc-trim.wav	s07/s07.score.mid	references/s07.reference.txt
+s08/s08-ef-t5-dgg-sc-trim.wav	s08/s08.score.mid	references/s08.reference.txt
+s09/s09-ef-t5-dgg-sc-trim.wav	s09/s09.score.mid	references/s09.reference.txt
+s11/s11-ef-t5-dgg-sc-trim.wav	s11/s11.score.mid	references/s11.reference.txt
+s12/s12-ef-t5-dgg-sc-trim.wav	s12/s12.score.mid	references/s12.reference.txt
+s13/s13-ef-t5-dgg-sc-trim.wav	s13/s13.score.mid	references/s13.reference.txt
+s14/s14-ef-t5-dgg-sc-trim.wav	s14/s14.score.mid	references/s14.reference.txt
+s15/s15-ef-t5-dgg-sc-trim.wav	s15/s15.score.mid	references/s15.reference.txt
+s18/s18-ef-t5-dgg-sc-trim.wav	s18/s18.score.mid	references/s18.reference.txt
+s19/s19-ef-t5-dgg-sc-trim.wav	s19/s19.score.mid	references/s19.reference.txt
+s20/s20-ef-t5-dgg-sc-trim.wav	s20/s20.score.mid	references/s20.reference.txt

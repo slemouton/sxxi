@@ -1,0 +1,4 @@
+@macro_def @PARTITA_2 { "version solo" }
+@macro_def @B_PARTITA { "version avec ensemble" }
+
+@macro_def @VERSION { @PARTITA_2 }

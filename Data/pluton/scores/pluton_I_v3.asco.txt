@@ -18,7 +18,7 @@
 	antescofo-mess preventzigzag on
 	antescofo-mess analysis 8192 512
 	;dummysilence on
-
+@set_max_message_sent_instantaneously(4000)
 	NOTE B1 1 IA_measure1
 	section_ 1
 _section_ IA

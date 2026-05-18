@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -1921.0, 62.0, 1425.0, 982.0 ],
+		"rect" : [ 34.0, 100.0, 1626.0, 982.0 ],
 		"openinpresentation" : 1,
 		"default_fontsize" : 9.0,
 		"default_fontname" : "Verdana",
@@ -18,6 +18,30 @@
 		"gridsize" : [ 11.0, 11.0 ],
 		"gridsnaponopen" : 2,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1122.0, 825.0, 34.0, 19.0 ],
+					"saved_object_attributes" : 					{
+						"dirtypatcher" : 1,
+						"embed" : 0,
+						"externalfiles" : 1,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0,
+						"resamplefiles" : 0,
+						"savegui" : 0,
+						"snaprate" : 1000.0,
+						"verbose" : 0
+					}
+,
+					"text" : "mubu"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-32",
 					"maxclass" : "newobj",
@@ -31,13 +55,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-31",
-					"linecount" : 7,
+					"linecount" : 14,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 902.0, 561.0, 50.0, 85.0 ],
-					"text" : "view 1 timeselection 11835.166667 11835.166667"
+					"patching_rect" : [ 902.0, 561.0, 50.0, 162.0 ],
+					"text" : "readall 1 6 \"Macintosh HD:/Users/lemouton/Projets/Symphonie2020/Data/tensio/scores/tensio1_v2n.mubu\""
 				}
 
 			}
@@ -161,7 +185,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -1282.0, 155.0, 562.0, 784.0 ],
+						"rect" : [ 34.0, 155.0, 562.0, 784.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -269,8 +293,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 271.0, 122.0, 50.0, 102.0 ],
-									"text" : "view 1 timeselection 11835.166667 11835.166667"
+									"patching_rect" : [ 271.0, 122.0, 100.0, 102.0 ],
+									"text" : "readall 1 6 \"Macintosh HD:/Users/lemouton/Projets/Symphonie2020/Data/tensio/scores/tensio1_v2n.mubu\""
 								}
 
 							}
@@ -421,7 +445,13 @@
 										"mubuplayer2-buf.12" : "Tensio_decembre2010_1_quadri_norm.aiff",
 										"mubuplayer2-buf.13" : "Tensio_CNSM_I_quadri_norm.aiff",
 										"mubuplayer2-buf.14" : "Tensio_Wroclaw2015_Tensio1_quadri_norm.aiff",
-										"mubuplayer2-buf.15" : "Tensio_decembre2010_1_quadri_norm.aiff"
+										"mubuplayer2-buf.15" : "Tensio_decembre2010_1_quadri_norm.aiff",
+										"mubuplayer2-buf.16" : "Tensio_CNSM_I_quadri_norm.aiff",
+										"mubuplayer2-buf.17" : "Tensio_Wroclaw2015_Tensio1_quadri_norm.aiff",
+										"mubuplayer2-buf.18" : "Tensio_decembre2010_1_quadri_norm.aiff",
+										"mubuplayer2-buf.19" : "Tensio_CNSM_I_quadri_norm.aiff",
+										"mubuplayer2-buf.20" : "Tensio_Wroclaw2015_Tensio1_quadri_norm.aiff",
+										"mubuplayer2-buf.21" : "Tensio_decembre2010_1_quadri_norm.aiff"
 									}
 ,
 									"id" : "obj-56",
@@ -1354,7 +1384,7 @@
 					"numoutlets" : 7,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 43.5, 265.0, 48.0, 136.0 ],
+					"patching_rect" : [ 518.25, 631.0, 48.0, 136.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1320.0, 231.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
@@ -1892,7 +1922,7 @@
 					"cursor_noringoffset" : 0,
 					"cursor_numextracursors" : 0,
 					"cursor_outputdata" : 0,
-					"cursor_position" : [ 0.0, 0.0 ],
+					"cursor_position" : [ 205760.0, 0.0 ],
 					"cursor_shape" : "bar",
 					"cursor_size" : 3,
 					"cursor_sizeunit" : 0,
@@ -1904,7 +1934,7 @@
 					"cursor_symbolwidth" : 3.0,
 					"cursor_visible" : 1,
 					"dirtypatcher" : 1,
-					"domain_bounds" : [ 0.0, 206385.854166666656965 ],
+					"domain_bounds" : [ 0.0, 191080.0 ],
 					"domainruler_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"domainruler_bgcolordefault" : 0,
 					"domainruler_fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -1983,7 +2013,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 11.0, 33.0, 99.0, 21.0 ],
+					"patching_rect" : [ 185.5, 407.0, 99.0, 21.0 ],
 					"text" : "/open $1, /info, 1"
 				}
 
@@ -2083,7 +2113,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 708.5, 178.0, 87.0, 21.0 ],
+					"patching_rect" : [ 759.0, 177.0, 87.0, 21.0 ],
 					"text" : "prepend readall"
 				}
 
@@ -2518,7 +2548,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 277.0, 389.0, 39.0, 21.0 ],
+					"patching_rect" : [ 264.0, 341.0, 39.0, 21.0 ],
 					"text" : "thru2"
 				}
 
@@ -3119,7 +3149,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.5, 408.0, 32.0, 19.0 ],
+					"patching_rect" : [ 528.25, 774.0, 32.0, 19.0 ],
 					"text" : "dac~"
 				}
 
@@ -3164,6 +3194,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
+					"order" : 1,
+					"source" : [ "obj-103", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"order" : 0,
 					"source" : [ "obj-103", 0 ]
 				}
 
@@ -3178,6 +3217,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 3 ],
+					"order" : 1,
 					"source" : [ "obj-107", 3 ]
 				}
 
@@ -3185,6 +3225,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 2 ],
+					"order" : 1,
 					"source" : [ "obj-107", 2 ]
 				}
 
@@ -3192,6 +3233,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 1 ],
+					"order" : 1,
 					"source" : [ "obj-107", 1 ]
 				}
 
@@ -3199,6 +3241,39 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
+					"order" : 1,
+					"source" : [ "obj-107", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 3 ],
+					"order" : 0,
+					"source" : [ "obj-107", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 2 ],
+					"order" : 0,
+					"source" : [ "obj-107", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 1 ],
+					"order" : 0,
+					"source" : [ "obj-107", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"order" : 0,
 					"source" : [ "obj-107", 0 ]
 				}
 

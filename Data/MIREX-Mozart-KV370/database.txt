@@ -1,0 +1,4 @@
+mozart_k370.030.wav	mozart_k370.030.score.mid	mozart_k370.030.reference.txt
+mozart_k370.032.wav	mozart_k370.032.score.mid	mozart_k370.032.reference.txt
+mozart_k370.034.wav	mozart_k370.034.score.mid	mozart_k370.034.reference.txt
+mozart_k370.036.wav	mozart_k370.036.score.mid	mozart_k370.036.reference.txt

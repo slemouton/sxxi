@@ -1,0 +1,295 @@
+; partita2 Reset 
+
+BPM 121				; Tempo now controlled by BPM command
+
+		// dsp_overdrive 1
+		print "Max in overdrive?"
+		dsp takeover 1
+		fx 100
+		3fc_boost 100
+		print "------- Reset"
+
+		samplors_ stopall 10
+		
+		3fc_snd_on 0
+		sndfonk_on 0
+		
+		direct_out.pgm 1
+		;	monitors.pgm 1
+		
+		; cut sons précédents
+		son1 0
+		son2 0
+		son3 0
+		
+		3fc 0
+		synful 0
+		Bsynful 0
+		sampler1 0
+		sampler2 0
+		f1 0
+		
+		; 3fc_snd 0
+		3fc_snd_autoplay 0
+		3fc_snd_loop 0
+		3fc_snd_play 0
+		
+		3fc_sm_onoff 0
+		3fc_sm2_onoff 0
+		3fc_sm_ambitus 100
+		3fc_sm2_ambitus 100
+		
+		; cut sigmund analysis
+		v1_sigmund 0
+		v2_sigmund 0
+		al_sigmund 0
+		cl_sigmund 0
+		
+		spat1_traj 0
+		spat2_traj 0
+		spat3_traj 0
+		
+		s_loop 0
+		s_stop bang ; arrete le string
+		s_config 1
+		
+		s2_loop 0
+		s2_stop bang ; arrete le string
+		s2_config 1
+		evt_3.0 0
+		evt_3.0b 0
+		evt_3.4 0
+		; cut descriptors
+	;	descriptors_on 0
+		son1 0
+		son2 0
+		son3 0
+		
+		master 0
+		to_spats wclose ; ferme fenetre graphique spat
+		all_off bang   
+	 	reset bang ; reset  menu display   
+
+		midifaders BCF2000   
+		midifaders_on 1  
+		
+		v1_fk_on 0
+		v2_fk_on 0
+		a_fk_on 0
+		c_fk_on 0	
+		
+	 0.5	print "Antescofo setting"   
+	
+	VARIANCE 0.2
+	obs_gate 1 ; cut antescofo observation input   
+	
+	fx_pgm 1;
+	
+	; reset synful
+	syn_voices 1 xbend 0;   
+	syn_voices 2 xbend 0;   
+	syn_voices 3 xbend 0;   
+	syn_voices 4 xbend 0;   
+	syn_voices 5 xbend 0; 
+	syn_voices 6 xbend 0;   
+	syn_voices 7 xbend 0;   
+	syn_voices 8 xbend 0;   
+	syn_voices 9 xbend 0;   
+	syn_voices 10 xbend 0; 
+	syn_voices 11 xbend 0;   
+	syn_voices 12 xbend 0;   
+	syn_voices 13 xbend 0;   
+	syn_voices 14 xbend 0;   
+	syn_voices 15 xbend 0; 
+	syn_voices 16 xbend 0; 
+	
+	Bsyn_voices 1 xbend 0;   
+	Bsyn_voices 2 xbend 0;   
+	Bsyn_voices 3 xbend 0;   
+	Bsyn_voices 4 xbend 0;   
+	Bsyn_voices 5 xbend 0; 
+	Bsyn_voices 6 xbend 0;   
+	Bsyn_voices 7 xbend 0;   
+	Bsyn_voices 8 xbend 0;   
+	Bsyn_voices 9 xbend 0;   
+	Bsyn_voices 10 xbend 0; 
+	Bsyn_voices 11 xbend 0;   
+	Bsyn_voices 12 xbend 0;   
+	Bsyn_voices 13 xbend 0;   
+	Bsyn_voices 14 xbend 0;   
+	Bsyn_voices 15 xbend 0; 
+	Bsyn_voices 16 xbend 0; 
+	
+	synful_flush bang
+	Bsynful_flush bang
+			
+	; reset harmos
+	h0 0
+	h1 0
+	h2 0
+	h3 0
+	h4 0
+	h0_init bang
+	h1_init bang
+	h2_init bang
+	h3_init bang
+	h4_init bang
+	
+	/*
+	h0_leslie_mode 0
+	h1_leslie_mode 0
+	h2_leslie_mode 0
+	h3_leslie_mode 0
+	h4_leslie_mode 0
+	h1_leslie_mode 0 
+			h2_leslie_mode 0 
+			h3_leslie_mode 0 
+			h4_leslie_mode 0 
+			h0_leslie_filter_freq_rate 4
+			h1_leslie_filter_freq_rate 4
+			h2_leslie_filter_freq_rate 4
+			h3_leslie_filter_freq_rate 4
+			h4_leslie_filter_freq_rate 4
+			h0_leslie_filter_freq_gain 6
+			h1_leslie_filter_freq_gain 6
+			h2_leslie_filter_freq_gain 6
+			h3_leslie_filter_freq_gain 6
+			h4_leslie_filter_freq_gain 6
+			h0_leslie_filter_q 3
+			h1_leslie_filter_q 3
+			h2_leslie_filter_q 3
+			h3_leslie_filter_q 3
+			h4_leslie_filter_q 3
+	*/
+	
+	; reset strings 
+	string1 0
+	s2 0
+
+	bouge 0   
+	
+	; reset sigmund	
+	v1_sigmund 0
+	v2_sigmund 0
+	al_sigmund 0
+	cl_sigmund 0
+;	v1toh0 0
+	v1toh1 0
+	v1toh2 0
+	v1toh3 0
+	v1toh4 0
+	v1torev 0
+	revtohp1 0
+	revtohp2 0
+	revtohp3 0
+	revtohp4 0
+	revtohp5 0
+	revtohp6 0
+	3fctohp1 0
+	3fctohp2 0
+	3fctohp3 0
+	3fctohp4 0
+	3fctohp5 0
+	3fctohp6 0
+	
+	; *************
+	; sons
+	; *************
+	son1 loop 1, 0
+	son2 loop 1, 0
+	son3 loop 1, 0
+	
+	
+	; *************
+	; spats
+	; *************
+		
+		to_spats reset
+
+		/*
+		1	spat1_ctl bang   
+		print "spat1 reset done"   
+		1	spat2_ctl bang   
+		print "spat2 reset done"   
+		1	spat3_ctl bang   
+		print "spat3 reset done" 
+		*/
+		
+		1 print "Updating Concert Hall Settings ..."   
+		
+		;print "center set to 0.001 to avoid jump"    
+	 	;print "Studio 2 Spat Reverb settings"   
+		spat1_ctl radius 0.1, width 20, fact warm 30, fact bril 30, fact prer 48, fact revp 46, fact env 39, fact rev 59, fact heav 21, fact live 19, source air 0, source Dopp 0   
+		spat2_ctl radius 0.1, width 20, fact warm 30, fact bril 30, fact prer 48, fact revp 46, fact env 39, fact rev 59, fact heav 21, fact live 19, source air 0, source Dopp 0   
+		spat3_ctl radius 0.1, width 20, fact warm 30, fact bril 30, fact prer 48, fact revp 46, fact env 39, fact rev 59, fact heav 21, fact live 19, source air 0, source Dopp 0   
+
+		; 1	print "Studio 2 Corners position"   
+	 	spat1_ctl corners 35 -35 -145 145 , speedlim 30, DISPLAY 1   
+	 	spat2_ctl corners 35 -35 -145 145 , speedlim 30, DISPLAY 1   
+	 	spat3_ctl corners 35 -35 -145 145 , speedlim 30, DISPLAY 1   
+	 	
+	 	; une initialisation des spats car bug du reset sur la presence
+	 	
+	 	; init spat1
+	 	/*
+		spat1_dist_min 0.5
+		spat1_dist 1	; cette distance est fondamentale pour le niveau, l'altérer revient à modifier tous les niveaux
+		spat1_az 0
+		spat1_pres 90	; idem pour la presence, la distance et la presence sont liés dans le spat
+		spat1_prer 80 ; spat1_ctl fact prer 80
+		spat1_revp 30
+		spat1_env 19
+		spat1_rev 80
+		spat1_aperture 30
+		spat1_width 30
+		spat1_dopp 0
+		*/
+		
+		spat1_ctl radius 0.1, dist_min 0.5, aperture 30, width 30, warm 30,  bril 30,  prer 80,  revp 30,  env 19,  rev 90,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		
+		
+		; reglage spat2
+		/*
+		spat2_dist_min 0.5
+		spat2_dist 1
+		spat2_az  30
+		spat2_pres 90
+		spat2_prer 80 ; spat1_ctl fact prer 80
+		spat2_revp 30
+		spat2_env 19
+		spat2_rev 80
+		spat2_aperture 30
+		spat2_width 30
+		spat2_dopp 0
+		*/
+		
+		spat2_ctl radius 0.1, dist_min 0.5, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 85,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+		
+		; reglage spat3
+		/*
+		spat3 _dist_min 0.5
+		spat3_dist 1
+		spat3_az  30
+		spat2_pres 90
+		spat3_prer 80 ; spat1_ctl fact prer 80
+		spat3_revp 30
+		spat3_env 19
+		spat3_rev 80
+		spat3_aperture 30
+		spat3_width 30
+		spat3_dopp 0
+		*/
+		
+		spat3_ctl radius 0.1, dist_min 0.5, aperture 30, width 30, warm 30,  bril 30,  prer 75,  revp 30,  env 19,  rev 85,  heav 21,  live 19,  air 0,  doppler 0, az 0, dist 1, pres 90  
+	 	spat1 100
+	 	spat2 100
+	 	spat3 100
+	 	master 100 100
+	 	deltas_pm.pgm 1 ; all zero
+
+	 	spat.clear bang
+
+	 1	print "------- Reset OK "   
+
+NOTE 72 0.5		Reset_done		; begining
+		print "Ready ..."

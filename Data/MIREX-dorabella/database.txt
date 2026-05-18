@@ -1,0 +1,4 @@
+mozart_dorabella.001.wav	mozart_dorabella.001.score.mid	references-dorabella/mozart_dorabella.001.reference.txt
+mozart_dorabella.002.wav	mozart_dorabella.002.score.mid	references-dorabella/mozart_dorabella.002.reference.txt
+mozart_dorabella.003.wav	mozart_dorabella.003.score.mid	references-dorabella/mozart_dorabella.003.reference.txt
+mozart_dorabella.004.wav	mozart_dorabella.004.score.mid	references-dorabella/mozart_dorabella.004.reference.txt
