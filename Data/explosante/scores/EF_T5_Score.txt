@@ -1,0 +1,7798 @@
+
+; Explosante Fixe - 2° movement
+; TRANSITOIRE V  -  Score-2017
+
+	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 1
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+//@INSERT EF_Process.txt ; c'est là qu'il y a tous les processus !
+VARIANCE 0.5  ; was 0.3   
+
+$temposection1 := 62
+BPM  62 	;
+	
+	 suivi-cur-mvt 2  
+	 antescofo-in 1
+	 antescofo::gamma -1 
+	 get_speakers bang
+	 get_reverberance bang 
+	 0.01 print speakers_az $HP_az
+	 	  print reverberance $Reverberance
+NOTE 63 0.151 Q0101
+	 suivi-cur-sec 1
+ group IO_Levels
+{
+ EF_Matrix recall 31
+EF_Levels recall 31
+EF_Deltas recall 31
+}
+	 ;inter -7 1000 ; set interstitiel level 
+	 cuename 1
+group filt
+{
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 0;
+
+}
+group hr_init
+{
+hr_init bang;
+hr_in_db -20
+hr3-p 0;
+hr3-d 0;
+hr3_db -96;
+hr4-p 0;
+hr4-d 0;
+hr4_db -96;
+hr5-p 0;
+hr5-d 0;
+hr5_db -96;
+hr6-p 0;
+hr6-d 0;
+hr6_db -96;
+hr7-p 0;
+hr7-d 0;
+hr7_db -96;
+}
+ir1-params reverb tr0 40
+ir2-params reverb tr0 20
+hr-ir-on-off 0;
+50 ms
+group flute_IR @tempo $temposection1 ; ESSAYYER SUIVI TEMPO ON
+{
+ir1_db 0 100
+::Makenote(63, 100, 5, 20) ; 20 ?? 200 c'est mieux non ? 
+1/6 ::Makenote(68, 100, 5, 20) ; échantillon déclenché sans durée ? à vérifier
+1/6 ::Makenote(76, 100, 5, 20)
+3/6 ::Makenote(74, 100, 5, 20)
+}
+group flute_FS
+{
+fd_1_del 0;
+fd_1_freq 12;
+fd_1_db -6;
+fd_2_del 0;
+fd_2_freq 0.;
+fd_2_db -96;
+fd_db 0 300
+}
+group spat
+{
+	;
+;
+;
+to_spats room 1 reverberance ($Reverberance*1.2);
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+to_spats source 2 az 0
+to_spats source 2 pres 100
+to_spats source 2 prer 50
+to_spats source 3 az -180 ; la flute
+to_spats source 3 pres 80
+to_spats source 3 prer 60
+to_spats source 4 az -180 ; le tr
+to_spats source 4 pres 90 ; was 100
+to_spats source 4 prer 90 ; was 50
+}
+
+NOTE 68 0.155 
+NOTE 76 0.155   
+NOTE 73 0.151   
+NOTE 73 0.155   
+NOTE 74 1.230   
+NOTE 73 0.155 Q0102
+	 cuename 2  
+group flute_FS
+{
+	fd_db -18 1000
+	1000 ms
+	fd_db -96 500
+}
+NOTE 82 0.155
+NOTE 87 0.151   
+NOTE 74 0.155   
+NOTE 79 0.155   
+NOTE 84 0.151 Q0103
+	 cuename 3 
+group flute_IR 
+{
+ir1_db -30 3000
+3000 ms
+ir1_db -96 600
+} 
+NOTE 85 0.155
+NOTE 78 0.155   
+NOTE 77 0.151   
+NOTE 74 0.155   
+NOTE 69 0.155   
+NOTE 63 0.151 Q0104
+	 cuename 4  
+group flute_FS
+{
+fd_1_del 0;
+fd_1_freq 12;
+fd_1_db -6;
+fd_2_del 0;
+fd_2_freq 0.;
+fd_2_db -96;
+fd_db 0 300
+}
+group harmo
+{
+hr_init bang;
+hr1-p -2;
+hr1-d 0;
+hr1_db -6;
+hr2-p 0;
+hr2-d 0;
+hr2_db -96;
+10 ms
+hr_db -60
+hr_db 0 300
+}
+NOTE 74 0.923   
+NOTE 72 0.155 Q0105
+	 cuename 5 
+group harmo
+{
+hr_db 6
+hr_db -60 2000
+}
+group flute_FS
+{
+	fd_db -30 500
+	1000 ms
+	fd_db -96 100
+}
+NOTE 73 0.155
+NOTE 66 0.151   
+NOTE 72 0.155   
+NOTE 65 0.155 Q0106
+	 cuename 6 
+group harmo
+{
+ir2_db -12  800
+2000 ms
+ir2_db -96 600
+}
+NOTE 63 0.151 Q0107
+	 cuename 7  
+group harmo
+{
+;
+hr1-p -2;
+hr1-d 0;
+hr1_db -6;
+hr2-p -8;
+hr2-d 0;
+hr2_db -6;
+hr_db -60
+hr_db 0 300
+}
+group flute_FS
+{
+fd_1_del 0;
+fd_1_freq 12;
+fd_1_db -6;
+fd_2_del 0;
+fd_2_freq 0.;
+fd_2_db -96;
+fd_db 0 300
+}
+NOTE 82 0.155   
+NOTE 76 0.768   
+NOTE 89 0.155 Q0108
+	 cuename 8 
+group harmo
+{
+hr_db 6
+hr_db -60 2000
+}
+group flute_FS
+{
+	fd_db -30 100
+	1000 ms
+	fd_db -96 100
+} 
+NOTE 82 0.155
+NOTE 80 0.151   
+NOTE 76 0.155   
+NOTE 74 0.155   
+NOTE 69 0.151 Q0109
+	 cuename 9 
+group harmo
+{
+ir2_db -12  1000
+2000 ms
+ir2_db -96 200
+}
+NOTE 68 0.155   
+NOTE 72 0.155   
+NOTE 65 0.151   
+NOTE 66 0.155   
+NOTE 64 0.155   
+NOTE 63 0.151 Q0110
+	 cuename 10 
+group harmo
+{
+hr1-p -2;
+hr1-d 0;
+hr1_db -6;
+hr2-p -8;
+hr2-d 0;
+hr2_db -6;
+hr_db -60
+hr_db 0 300
+}
+group flute_FS
+{
+fd_1_del 0;
+fd_1_freq 12;
+fd_1_db -6;
+fd_2_del 0;
+fd_2_freq 0.;
+fd_2_db -96;
+fd_db 0 300
+} 
+NOTE 73 0.155   
+NOTE 68 0.155   
+NOTE 73 1.691   
+NOTE 65 0.155 Q0111
+	 cuename 11 
+group harmo
+{
+hr_db 6
+hr_db -60 2000	
+}
+group flute_FS
+{
+	fd_db -30 1000
+	1000 ms
+	fd_db -96 100
+}  
+NOTE 73 0.151   
+NOTE 71 0.155   
+NOTE 72 0.155   
+NOTE 68 0.151 Q0112
+	 cuename 12  
+group harmo
+{
+ir2_db -12  1000
+2000 ms
+ir2_db -96 600
+}
+NOTE 66 0.155   
+NOTE 67 0.155   
+NOTE 70 0.151   
+NOTE 64 0.155   
+NOTE 69 0.155   
+NOTE 63 0.151 Q0113
+cuename 13 
+group flute_FS
+{
+fd_1_del 0;
+fd_1_freq 12;
+fd_1_db -6;
+fd_2_del 0;
+fd_2_freq 0.;
+fd_2_db -96;
+fd_db 0 300
+} 
+group flute_IR @tempo $temposection1
+{
+ir1_db 0 100
+::Makenote(63, 100, 5, 20) ; 20 ?? 200 c'est mieux non ?
+1/6::Makenote(76, 100, 5, 20)
+1/6::Makenote(73, 100, 5, 20)
+1/6::Makenote(68, 100, 5, 20)
+1/6::Makenote(74, 100, 5, 20)
+} 
+NOTE 76 0.155   
+NOTE 73 0.155   
+NOTE 68 0.151   
+NOTE 74 0.462   
+NOTE 71 0.155 Q0114
+cuename 14 
+group flute_FS
+{
+	fd_db -30 1000
+	1000 ms
+	fd_db -96 100
+}  
+NOTE 77 0.155
+NOTE 79 0.151   
+NOTE 85 0.155   
+NOTE 82 0.155   
+NOTE 87 0.151   
+NOTE 81 0.155   
+NOTE 84 0.155   
+NOTE 79 0.151   
+NOTE 82 0.155   
+NOTE 76 0.155   
+NOTE 74 1.385   
+NOTE 69 0.151   
+NOTE 71 0.155   
+NOTE 66 0.155   
+NOTE 72 0.151   
+NOTE 64 0.155   
+NOTE 61 0.155   
+NOTE 74 0.613   
+NOTE 79 0.155   
+NOTE 76 0.155   
+NOTE 77 0.151   
+NOTE 71 0.155   
+NOTE 72 0.155   
+NOTE 75 0.151 Q0115
+	 cuename 15  
+group flute_IR 
+{
+ir1_db -30 3000
+3000 ms
+ir1_db -96 200
+} 
+NOTE 69 0.155
+NOTE 68 0.155   
+NOTE 66 0.151   
+NOTE 67 0.155   
+NOTE 64 0.155   
+NOTE 74 1.154
+NOTE 0 0.75 
+; was 0.33 
+	 print end_T5_s1
+
+
+
+	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 2
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ VARIANCE 0.3
+
+ BPM  144  ; 120 
+		
+$temposection2 := 144
+NOTE 63 0.125 
+	suivi-cur-sec 2
+NOTE 68 0.125   
+NOTE 73 0.125   
+NOTE 76 0.125   
+NOTE 74 0.125   
+NOTE 82 0.125
+ ; 5/4  
+NOTE 83 0.250 Q0201 
+	 cuename 1 
+ group IO_Levels
+{
+ EF_Matrix recall 32
+EF_Levels recall 32
+EF_Deltas recall 32
+} 
+group filt
+{
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+group nominal_levels
+{
+;spat-a-src3-bal 0;
+;
+hr_init bang;
+hr4-p 0;
+hr4-d 0;
+hr4_db -96;
+hr5-p 0;
+hr5-d 0;
+hr5_db -96;
+hr6-p 0;
+hr6-d 0;
+hr6_db -96;
+hr7-p 0;
+hr7-d 0;
+hr7_db -96;
+;
+hr_in_db -20;
+hr_db 0;
+;
+// samp7a-db 0;
+;spat-a-src2-bal 0;
+;
+// samp4a-db 0;
+;spat-a-src1-bal 0;
+}
+group spat
+{
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 100
+to_spats source 2 prer 50
+to_spats source 3 az -180
+to_spats source 3 pres 100
+to_spats source 3 prer 50
+	;
+;
+;
+to_spats room 1 reverberance $Reverberance;	
+}
+10 ms
+group fragments @tempo $temposection2 ;ou ;(@mytempo($RT_TEMPO));(172 quoi) ; $pitch, $vel, $chan, $dur, $period,$minvel, liste des transpos (et donc nbre de répétitions)
+{ ; ESSAYER TEMPO SUIVI ON
+	::ShadowPlay(83 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(79 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(77 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(72 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(64 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(68 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(74 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(79 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(77 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(83 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(84 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0] )
+}
+
+NOTE 79 0.250
+NOTE 77 0.250   
+NOTE 72 0.250
+   
+NOTE 64 0.250   
+NOTE 70 0.250   
+NOTE 68 0.250   
+NOTE 74 0.250   
+
+NOTE 78 0.250   
+NOTE 79 0.250   
+NOTE 77 0.205   
+NOTE 83 0.141  
+ ; grace note
+NOTE 76 0.0   
+NOTE 84 0.220
+ ; silence  
+NOTE 0 1.750  
+;  3/4
+NOTE 70 0.250 Q0202  
+	 cuename 2 
+group fragments @tempo $temposection2 ;SUIVI TEMPO ON ; si pas bon donner tempo 144
+{
+ 	::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(67 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(66 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(60 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(61 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(67 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(66 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+1/4 ::ShadowPlay(81 , 100, 5, 200, 1/4, 50, [0, 0, 0, 0] )
+}
+NOTE 67 0.250 
+NOTE 66 0.250   
+NOTE 60 0.250   
+NOTE 61 0.250   
+NOTE 67 0.250   
+NOTE 66 0.250   
+NOTE 70 0.158
+ ; grace note  
+NOTE 75 0.0  ; length was 0.141
+NOTE 81 0.215   
+NOTE 0 0.750 
+
+; 4/4 
+NOTE 84 0.250 Q0203 
+	 cuename 3 
+group fragments @tempo $temposection2 ;SUIVI TEMPO ON
+{
+	::ShadowPlay(84, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(78, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(77, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(70, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(64, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(69, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(67, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(74, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(75, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(69, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(73, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(82, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(76, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(79, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(78, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+1/4 ::ShadowPlay(84, 100, 5, 200, 1/4, 50, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] )
+} 
+NOTE 78 0.250
+NOTE 77 0.250   
+NOTE 70 0.250
+   
+NOTE 64 0.250   
+NOTE 69 0.250   
+NOTE 67 0.250   
+NOTE 74 0.250   
+
+NOTE 75 0.250   
+NOTE 69 0.250   
+NOTE 73 0.250   
+NOTE 82 0.250  
+ 
+NOTE 76 0.250   
+NOTE 79 0.250   
+NOTE 78 0.250   
+NOTE 84 0.250 
+
+; 5/8  
+NOTE 78 0.0 
+; length was 0.141   
+NOTE 84 0.109
+; silence   
+NOTE 0 2.250  
+; 3/4
+NOTE 70 0.125 
+ TRILL (8100 8200) 5.442 Q0204  
+	 cuename 4 
+group multiphonics
+{
+::MakeChord([55, 62, 48], 100, 8, 3000)
+}
+NOTE 76 0.0  Q0205 
+	 cuename 5 
+group flute_Harm
+{
+hr_init bang;
+hr2-d 208
+hr3-d 312
+hr1-p -7;
+hr1_db 9;
+hr2-p -13;
+hr2_db 9;
+hr3-p -2;
+hr3_db 9;
+hr_db 0 50
+} 
+NOTE 83 0.500
+
+NOTE 0 0.500 
+; 5/4 
+NOTE 81 0.0  Q0206
+	 cuename 6 
+group flute_Harm ; ICI c'est pas clair pour les harmo
+{
+hr_in_db -96 
+10 ms
+hr_in_db -20; -20 c'est le niveau de base
+hr1-p -3;
+hr1_db 9;
+hr2-p -4;
+hr2_db 9;
+hr3-p 11;
+hr3_db 9;
+hr_db 12 50
+}    
+NOTE 70 0.5
+
+NOTE 0 0.5 
+ 
+NOTE 81 0.0   
+ TRILL ( 7600 7700 ) 4.0 Q0207  
+	 cuename 7 
+group flute_Harm
+{
+hr_in_db -96;
+}
+group multiphonics
+{
+::MakeChord([50, 57, 43], 100, 8, 3000)
+}
+NOTE 84 0.0  Q0208 
+cuename 8 
+group flute_Harm
+{
+hr_in_db -20;
+hr1-p -6;
+hr1_db 9;
+hr2-p -8;
+hr2_db 9;
+hr3-p -2;
+hr3_db 9;
+hr_db 12 50
+} 
+NOTE 78 0.5 
+
+NOTE 0 0.500
+NOTE 76 0.0  
+NOTE 86 0.135 
+; added fixed D note pour declencher le trill - cl 2011
+ TRILL ( 8600 8700 ) 7.000 Q0209 
+	 cuename 9 
+group flute_Harm
+{
+	hr_in_db -96;
+}
+group multiphonics
+{
+::MakeChord([61, 54, 68], 100, 8, 3000)
+}
+	 5 print end_T5_s2
+NOTE 0 2.0	 
+	
+	
+	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 3
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+ VARIANCE 0.3
+ 
+ BPM  50 	;		  
+
+	
+NOTE 77 0.4 Q0301
+	 suivi-cur-sec 3
+ group IO_Levels
+{
+ EF_Matrix recall 33
+EF_Levels recall 33
+EF_Deltas recall 33
+}
+	 cuename 1 
+group filt
+{
+samp4-filt-on-off 1;
+samp4-filt-cfreq 60;
+samp4-filt-q 50;
+samp1-filt-on-off 1;
+samp1-filt-cfreq 60;
+samp1-filt-q 50;
+}
+;
+ir1-params reverb tr0 40;
+//hr-off bang // no match
+group spat
+{
+	;
+;
+;
+to_spats room 1 reverberance $Reverberance;
+
+to_spats source 1 az -100
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+to_spats source 4 az 100 ; ajout pour symetrie
+to_spats source 4 pres 100
+to_spats source 4 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 100
+to_spats source 2 prer 50
+to_spats source 3 az 0
+to_spats source 3 pres 100
+to_spats source 3 prer 50
+}
+150 ms
+group eol
+{
+	::Makenote(77, 100, 1, 2000)
+}
+group flute_chords
+{
+	::MakeChord([69, 71], 80, 5, 250)
+}
+group flute_FS
+{
+fd_db 0 100
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db 0;
+fd_2_db -96;
+fd_1_freq 16.;
+fd_2_freq 0.;
+}
+
+NOTE 69 0.0   
+NOTE 80 0.0  
+NOTE 75 0.4   
+NOTE 80 0.4   
+NOTE 69 0.4   
+NOTE 77 0.4  
+ ; 3/8
+TRILL ( 80 ) 1.5 Q0302 
+	 print "flatterzung"  
+	 cuename 2 
+group eol
+{
+	::Makenote(74, 100, 1, 1000)
+}  
+group flute_chords
+{
+	::MakeChord([69, 77, 66, 63, 60, 52, 49], 80, 5, 250)
+	::MakeChord([46, 43], 100, 5, 250)
+}
+; 2/8
+NOTE 69 0.33 Q0303  	; WAS 69 ! WRONG NOTE IN SCORE??
+	 cuename 3 
+group eol
+{
+	::Makenote(69, 100, 1, 1000)
+}  
+group flute_chords
+{
+	::MakeChord([77, 75, 67, 61, 59], 80, 5, 250)
+	::MakeChord([55], 90, 5, 250)
+	::MakeChord([53], 100, 5, 250)
+}
+NOTE 77 0.   
+NOTE 80 0.33   
+NOTE 69 0.34   
+; 3/4
+; bug sur la prochaine flaterz
+TRILL (75) 3.0 Q0304  ; note was 75 and length was 3.0
+	 cuename 4 
+	 print "flatterzung"  
+group eol
+{
+	::Makenote(75, 100, 1, 1000)
+}  
+group flute_chords
+{
+	::MakeChord([77, 69, 61, 59], 80, 5, 250)
+}
+; 6/8
+; 89 0.5 V	;5 ; fausse note pour bloquer YES ça marche sinon pas
+;	PFWD print fausse note avant e5 (t5s3)
+;	FWD cuename 5 Q0305
+NOTE 88 0.5 Q0305 
+	 cuename 5 
+group eol
+{
+	::Makenote(66, 100, 1, 2000)
+}  
+group flute_chords
+{
+	::MakeChord([77, 72, 71], 80, 5, 250)
+}
+; grace note
+NOTE 80 0. ; WAS 0.25   
+; grace note
+NOTE 77 0. ; WAS 0.25  
+NOTE 69 0.500   
+NOTE 77 0.500   
+NOTE 80 0.500   
+NOTE 75 0.500   
+NOTE 88 0.500 Q0306 
+	 cuename 6 
+group flute_chords
+{
+ir1_db -30 5000
+5000 ms
+ir1_db -96 200
+}
+group flute_FS
+{
+	fd_db -96 500
+}
+	 0.8 print end_T5_s3
+NOTE 0 4.0	 
+
+	 	
+	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 4
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+
+ BPM  64 	;
+
+$temposection4 :=66; was 64
+NOTE 79 0.125 Q0401 
+	 suivi-cur-sec 4
+ group IO_Levels
+{
+ EF_Matrix recall 34
+EF_Levels recall 34
+EF_Deltas recall 34
+}
+	 cuename 1 
+group filt
+{
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+group spat
+{
+print augmenter TR ici
+;CHECK PLUS DE REVERB
+abort ::Random_HP
+abort ::SwishSpat
+to_spats room 1 reverberance ($Reverberance*1.23);
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+abort ::Spat_Rotation
+::Spat_Rotation(1, 4, 175)
+::Spat_Rotation(2, 4, 175)
+}
+100 ms
+group fragments @tempo $temposection4
+{
+	::ShadowPlay(79 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(77 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(72 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(71 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(73 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(75 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(69 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(68 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(69 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+1/8 ::ShadowPlay(70 , 100, 5, 200, 1/2, 50, [0, -6, -11])
+}
+group multiphonics_line @tempo $temposection4
+{	::Makenote(82 , 100, 9, 700) ; dur was 1000 - shorter-clearer
+1/8 ::Makenote(80 , 100, 9, 700)
+1/8 ::Makenote(75 , 100, 9, 700)
+1/8 ::Makenote(74 , 100, 9, 700)
+1/8 ::Makenote(76 , 100, 9, 700)
+1/8 ::Makenote(78 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(72 , 100, 9, 700)
+1/8 ::Makenote(71 , 100, 9, 700)
+1/8 ::Makenote(72 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(73 , 100, 9, 700)
+}
+NOTE 71 0.125   
+NOTE 73 0.125   
+NOTE 75 0.125   
+NOTE 74 0.125   
+NOTE 69 0.125   
+NOTE 68 0.125   
+NOTE 69 0.125   
+NOTE 74 0.125   
+NOTE 70 0.125   
+NOTE 0 5.000  
+NOTE 73 0.125 Q0402 
+	 cuename 2 
+group fragments @tempo $temposection4
+{
+	::ShadowPlay(73 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(72 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(75 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(73 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(79 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(72 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(78 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(77 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(73 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(77 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(78 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(71 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(72 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+1/8 ::ShadowPlay(70 , 100, 5, 200, 1/8, 50, [0, 6, 0, 1] )
+}
+group multiphonics_line @tempo $temposection4
+{
+	::Makenote(76 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(75 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(78 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(76 , 100, 9, 700)
+1/8 ::Makenote(82 , 100, 9, 700)
+1/8 ::Makenote(75 , 100, 9, 700)
+1/8 ::Makenote(81 , 100, 9, 700)
+1/8 ::Makenote(80 , 100, 9, 700)
+1/8 ::Makenote(76 , 100, 9, 700)
+1/8 ::Makenote(80 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(81 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(74 , 100, 9, 700)
+1/8 ::Makenote(75 , 100, 9, 700)
+1/8 ::Makenote(73 , 100, 9, 700)
+}
+NOTE 76 0.125
+NOTE 74 0.125
+NOTE 72 0.125   
+NOTE 76 0.125   
+NOTE 75 0.125   
+NOTE 76 0.125   
+NOTE 73 0.125   
+NOTE 79 0.125   
+NOTE 72 0.125   
+NOTE 78 0.125   
+NOTE 77 0.125   
+NOTE 73 0.125   
+NOTE 77 0.125   
+NOTE 76 0.125   
+NOTE 78 0.125   
+NOTE 74 0.125   
+NOTE 71 0.125   
+NOTE 72 0.125   
+NOTE 70 0.125   
+NOTE 0 0.500  
+NOTE 68 0.125 Q0403 
+	 cuename 3 
+group fragments @tempo $temposection4
+{ 
+	::ShadowPlay(72 , 100, 5, 200, 3/4, 50, [0, 13] )
+1/8 ::ShadowPlay(73 , 100, 5, 200, 3/4, 50, [0, 13] )
+1/8 ::ShadowPlay(74 , 100, 5, 200, 3/4, 50, [0, 13] )
+1/8 ::ShadowPlay(79 , 100, 5, 200, 3/4, 50, [0, 13] )
+1/8 ::ShadowPlay(78 , 100, 5, 200, 3/4, 50, [0, 13] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 3/4, 50, [0, 13] )
+1/8 ::ShadowPlay(77 , 100, 5, 200, 3/4, 50, [0, 13] )
+}
+group multiphonics_line @tempo $temposection4
+{
+	::Makenote(75 , 100, 9, 700)
+1/8 ::Makenote(76 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(82 , 100, 9, 700)
+1/8 ::Makenote(81 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(80 , 100, 9, 700)
+
+}
+NOTE 72 0.125
+NOTE 73 0.125   
+NOTE 74 0.125   
+NOTE 79 0.125   
+NOTE 78 0.125   
+NOTE 76 0.125   
+NOTE 77 0.125 
+; 0 3.0
+NOTE  0 3.0 
+; HOOK WAS HERE
+NOTE 74 0.125 Q0404 
+	 cuename 4 
+group fragments @tempo $temposection4
+{ 
+	::ShadowPlay(74 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(68 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(69 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(61 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(64 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(69 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(68 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(71 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(73 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(71 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(69 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(66 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(65 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(68 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(69 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(72 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(78 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(79 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(77 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(73 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(70 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(76 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(80 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(81 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(74 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(79 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+1/8 ::ShadowPlay(78 , 100, 5, 200, 1/4, 50, [0, -11, -6, -1, 0, -6, 5, -1, 7 ] )
+}
+group multiphonics_line @tempo $temposection4
+{
+	::Makenote(74 , 100, 9, 700)
+1/8 ::Makenote(73 , 100, 9, 700)
+1/8 ::Makenote(71 , 100, 9, 700)
+1/8 ::Makenote(72 , 100, 9, 700)
+1/8 ::Makenote(64 , 100, 9, 700)
+1/8 ::Makenote(67 , 100, 9, 700)
+1/8 ::Makenote(72 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(71 , 100, 9, 700)
+1/8 ::Makenote(74 , 100, 9, 700)
+1/8 ::Makenote(73 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(76 , 100, 9, 700)
+1/8 ::Makenote(73 , 100, 9, 700)
+1/8 ::Makenote(74 , 100, 9, 700)
+1/8 ::Makenote(72 , 100, 9, 700)
+1/8 ::Makenote(75 , 100, 9, 700)
+1/8 ::Makenote(69 , 100, 9, 700)
+1/8 ::Makenote(68 , 100, 9, 700)
+1/8 ::Makenote(73 , 100, 9, 700)
+1/8 ::Makenote(71 , 100, 9, 700)
+1/8 ::Makenote(72 , 100, 9, 700)
+1/8 ::Makenote(75 , 100, 9, 700)
+1/8 ::Makenote(81 , 100, 9, 700)
+1/8 ::Makenote(82 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(80 , 100, 9, 700)
+1/8 ::Makenote(76 , 100, 9, 700)
+1/8 ::Makenote(73 , 100, 9, 700)
+1/8 ::Makenote(79 , 100, 9, 700)
+1/8 ::Makenote(83 , 100, 9, 700)
+1/8 ::Makenote(84 , 100, 9, 700)
+1/8 ::Makenote(77 , 100, 9, 700)
+1/8 ::Makenote(82 , 100, 9, 700)
+1/8 ::Makenote(81 , 100, 9, 700)
+	}
+NOTE 70 0.125
+NOTE 68 0.125
+NOTE 69 0.125   
+NOTE 61 0.125   
+NOTE 64 0.125   
+NOTE 69 0.125   
+NOTE 74 0.125   
+NOTE 68 0.125   
+NOTE 71 0.125   
+NOTE 70 0.125   
+NOTE 76 0.125   
+NOTE 73 0.125   
+NOTE 70 0.125   
+NOTE 71 0.125   
+NOTE 69 0.125   
+NOTE 74 0.125   
+NOTE 66 0.125   
+NOTE 65 0.125   
+NOTE 70 0.125   
+NOTE 68 0.125   
+NOTE 69 0.125   
+NOTE 72 0.125   
+NOTE 78 0.125   
+NOTE 79 0.125   
+NOTE 76 0.125   
+NOTE 74 0.125   
+NOTE 77 0.125   
+NOTE 73 0.125   
+NOTE 70 0.125   
+NOTE 76 0.125   
+NOTE 80 0.125   
+NOTE 81 0.125   
+NOTE 74 0.125   
+NOTE 79 0.125   
+NOTE 78 0.125 Q0405 
+	 cuename 5 
+group spat
+{
+abort ::Spat_Rotation
+}
+	 0.5 print end_T5_s4
+NOTE 0 2.5	 
+	 	
+	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 5
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+; Simplified for repeated notes
+VARIANCE 0.3
+
+BPM  72 	;  60
+
+NOTE 0 0.175  ; added to recognize the trill - cl 2011
+	 suivi-cur-sec 5
+
+	 antescofo::gamma -1   ; (gamma default value)
+NOTE 74 0;
+TRILL (74) 0.5	Q0501 
+	 cuename 1 
+ group IO_Levels
+{
+ EF_Matrix recall 35
+EF_Levels recall 35
+EF_Deltas recall 35
+}
+cb_1-peakw 21.;
+cb_1-intens 0.7;
+cb_2-peakw 29.7;
+cb_2-intens 0.7;
+group spat
+{
+;
+; print TR NORMAL ici
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+}
+10 ms
+group flute_FS
+{
+	fd_db 0 100
+	;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 523.;
+fd_2_freq -261.;
+}
+NOTE 0 0.5
+;74 0.124 1 
+; 74 0.124   
+; 74 0.124   
+; 74 0.124 
+; NOTE 92 0 ; pour bloquer why  needed ????
+NOTE 74 0
+TRILL (79)	1.0	Q0502 
+	 cuename 2 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 880.;
+fd_2_freq -415.;
+
+}
+; 79 0.130 2 
+; 79 0.123   
+; 79 0.123   
+; 79 0.123   
+; 79 0.123   
+; 79 0.123  
+NOTE 0 1.5
+; NOTE 69 0 ; pour bloquer why  needed ????
+NOTE 74 0 
+	 print appoggiature sur III OK  
+TRILL (73)	0.5	Q0503 
+	 cuename 3 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 493.;
+fd_2_freq -246.;
+
+}
+; NOTE 0 2.5
+NOTE 0 4
+;73 0.125 3 
+;73 0.125   
+;73 0.125   
+;73 0.125   
+; NOTE 0 1.5 ; was 4 !! HOOK WAS THERE !!
+NOTE 74 0  
+TRILL (68) 0.5	Q0504
+	 cuename 4 
+group flute_FS
+{
+;
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 207.;
+fd_2_freq -123.;
+2000 ms
+fd_db -96 500
+}
+	 1 print end_T5_s5
+NOTE 0 1.0
+	  	
+	
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 6
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+ 
+ BPM  72  ;60  ???
+	
+
+$tempo6 := 66	; was 72 // 
+
+
+NOTE 66 0.164 Q0601 ;1 
+	 suivi-cur-sec 6
+ group IO_Levels
+{
+ EF_Matrix recall 36
+EF_Levels recall 36
+EF_Deltas recall 36
+} 
+	 cuename 1 
+group filt
+{
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+group spat
+{
+ print augmenter TR ici
+abort ::Spat_Rotation
+to_spats room 1 reverberance ($Reverberance*1.23);
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+::Spat_Rotation(1, 4, 175)
+::Spat_Rotation(2, 4, 175)
+}
+10 ms
+group fragments @tempo $tempo6 ; ici on donne le tempo mais en fait c'est censé être RT
+{
+	::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(69 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(75 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(79 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(65 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(79 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(69 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 13, -1, 13, 0 ] )
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(72 , 100, 9, 700) ; dur was 1000 shorter = clearer
+1/6 ::Makenote(75 , 100, 9, 700)
+1/6 ::Makenote(74 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+1/6 ::Makenote(79 , 100, 9, 700)
+1/6 ::Makenote(77 , 100, 9, 700)
+1/6 ::Makenote(85 , 100, 9, 700)
+1/6 ::Makenote(77 , 100, 9, 700)
+1/6 ::Makenote(75 , 100, 9, 700)
+1/6 ::Makenote(71 , 100, 9, 700)
+1/6 ::Makenote(76 , 100, 9, 700)
+1/6 ::Makenote(80 , 100, 9, 700)
+1/6 ::Makenote(85 , 100, 9, 700)
+1/6 ::Makenote(79 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+1/6 ::Makenote(72 , 100, 9, 700)
+1/6 ::Makenote(75 , 100, 9, 700)
+1/6 ::Makenote(74 , 100, 9, 700)
+}	
+NOTE 69 0.168   
+NOTE 68 0.168   
+NOTE 72 0.164   
+NOTE 75 0.168   
+NOTE 73 0.168   
+NOTE 79 0.164   
+NOTE 71 0.168   
+NOTE 68 0.168   
+NOTE 65 0.164   
+NOTE 70 0.168   
+NOTE 74 0.168   
+NOTE 79 0.164   
+NOTE 73 0.168   
+NOTE 72 0.168   
+NOTE 66 0.164   
+NOTE 69 0.168   
+NOTE 68 0.168   
+NOTE 71 0.164 Q0602
+	 cuename 2 
+group fragments @tempo $tempo6 ; ici on donne le tempo mais en fait c'est censé être RT
+{
+	::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(65 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(63 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(62 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(61 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(64 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(60 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(63 , 100, 5, 200, 1/6, 50, [0, -6] )
+1/6 ::ShadowPlay(65 , 100, 5, 200, 1/6, 50, [0, -6] )
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(77 , 100, 9, 700)
+1/6 ::Makenote(72 , 100, 9, 700)
+1/6 ::Makenote(76 , 100, 9, 700)
+1/6 ::Makenote(71 , 100, 9, 700)
+1/6 ::Makenote(69 , 100, 9, 700)
+1/6 ::Makenote(68 , 100, 9, 700)
+1/6 ::Makenote(72 , 100, 9, 700)
+1/6 ::Makenote(67 , 100, 9, 700)
+1/6 ::Makenote(70 , 100, 9, 700)
+1/6 ::Makenote(66 , 100, 9, 700)
+1/6 ::Makenote(69 , 100, 9, 700)
+1/6 ::Makenote(71 , 100, 9, 700)
+}
+NOTE 66 0.168   
+NOTE 70 0.168   
+NOTE 65 0.164   
+NOTE 63 0.168   
+NOTE 62 0.168   
+NOTE 66 0.164   
+NOTE 61 0.168   
+NOTE 64 0.168   
+NOTE 60 0.164   
+NOTE 63 0.168   
+NOTE 65 0.168   
+NOTE 66 0.164 Q0603
+	 cuename 3 
+group fragments @tempo $tempo6 ; ici on donne le tempo mais en fait c'est censé être RT
+{	 
+	::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(63 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(60 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(69 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, -6 ] )
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(72 , 100, 9, 700 )
+1/6 ::Makenote(77 , 100, 9, 700 )
+1/6 ::Makenote(69 , 100, 9, 700 )
+1/6 ::Makenote(66 , 100, 9, 700 )
+1/6 ::Makenote(74 , 100, 9, 700 )
+1/6 ::Makenote(75 , 100, 9, 700 )
+1/6 ::Makenote(79 , 100, 9, 700 )
+1/6 ::Makenote(72 , 100, 9, 700 )
+1/6 ::Makenote(77 , 100, 9, 700 )
+}
+NOTE 71 0.168   
+NOTE 63 0.168   
+NOTE 60 0.164   
+NOTE 68 0.168   
+NOTE 69 0.168   
+NOTE 73 0.164   
+NOTE 66 0.168   
+NOTE 71 0.168   
+NOTE 65 0.164 Q0604
+	 cuename 4 
+group fragments @tempo $tempo6
+{
+	::ShadowPlay(65 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(76 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+1/6 ::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, 6, 1])
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(71 , 100, 9, 700)
+1/6 ::Makenote(76 , 100, 9, 700)
+1/6 ::Makenote(74 , 100, 9, 700)
+1/6 ::Makenote(79 , 100, 9, 700)
+1/6 ::Makenote(82 , 100, 9, 700)
+1/6 ::Makenote(76 , 100, 9, 700)
+1/6 ::Makenote(72 , 100, 9, 700)
+1/6 ::Makenote(79 , 100, 9, 700)
+1/6 ::Makenote(80 , 100, 9, 700)
+}
+NOTE 70 0.168   
+NOTE 68 0.168   
+NOTE 73 0.164   
+NOTE 76 0.168   
+NOTE 70 0.168   
+NOTE 66 0.164   
+NOTE 73 0.168   
+NOTE 74 0.168   
+NOTE 71 0.164 Q0605
+	 cuename 5
+group fragments @tempo $tempo6
+{
+	::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(63 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(69 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(65 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+1/6 ::ShadowPlay(76 , 100, 5, 200, 1/6, 50, [0, -5, -6 ] )
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(77 , 100, 9, 700 )
+1/6 ::Makenote(76 , 100, 9, 700 )
+1/6 ::Makenote(78 , 100, 9, 700 )
+1/6 ::Makenote(72 , 100, 9, 700 )
+1/6 ::Makenote(69 , 100, 9, 700 )
+1/6 ::Makenote(75 , 100, 9, 700 )
+1/6 ::Makenote(71 , 100, 9, 700 )
+1/6 ::Makenote(74 , 100, 9, 700 )
+1/6 ::Makenote(82 , 100, 9, 700 )
+}
+NOTE 70 0.168   
+NOTE 72 0.168   
+NOTE 66 0.164   
+NOTE 63 0.168   
+NOTE 69 0.168   
+NOTE 65 0.164   
+NOTE 68 0.168   
+NOTE 76 0.168   
+NOTE 0 0.500  
+NOTE 79 0.164 Q0606
+	 cuename 6 
+group fragments @tempo $tempo6
+{
+ 	::ShadowPlay(79 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(77 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(75 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(76 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+1/6 ::ShadowPlay(69 , 100, 5, 200, 1/6, 50, [0, -11, -5, -11, 0 ])
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(85 , 100, 9, 700)
+1/6 ::Makenote(80 , 100, 9, 700)
+1/6 ::Makenote(83 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+1/6 ::Makenote(77 , 100, 9, 700)
+1/6 ::Makenote(82 , 100, 9, 700)
+1/6 ::Makenote(76 , 100, 9, 700)
+1/6 ::Makenote(82 , 100, 9, 700)
+1/6 ::Makenote(75 , 100, 9, 700)
+}
+NOTE 74 0.168   
+NOTE 77 0.168   
+NOTE 72 0.164   
+NOTE 71 0.168   
+NOTE 75 0.168   
+NOTE 70 0.164   
+NOTE 76 0.168   
+NOTE 69 0.168   
+NOTE 68 0.164 Q0607
+	 cuename 7 
+group fragments @tempo $tempo6
+{
+	::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 5, 0, 11 ])
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, 5, 0, 11 ])
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, 5, 0, 11 ])
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, 5, 0, 11 ])
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, 5, 0, 11 ])
+1/6 ::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, 5, 0, 11 ])
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(74 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+1/6 ::Makenote(77 , 100, 9, 700)
+1/6 ::Makenote(79 , 100, 9, 700)
+1/6 ::Makenote(76 , 100, 9, 700)
+1/6 ::Makenote(80 , 100, 9, 700)
+}
+NOTE 72 0.168   
+NOTE 71 0.168   
+NOTE 73 0.164   
+NOTE 70 0.168   
+NOTE 74 0.168   
+NOTE 68 0.164 Q0608
+	 cuename 8 
+group fragments @tempo $tempo6
+{
+	::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 11])
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, 11])
+1/6 ::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, 11])
+1/6 ::ShadowPlay(79 , 100, 5, 200, 1/6, 50, [0, 11])
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, 11])
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, 11])
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(74 , 100, 9, 700)
+1/6 ::Makenote(79 , 100, 9, 700)
+1/6 ::Makenote(80 , 100, 9, 700)
+1/6 ::Makenote(85 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+1/6 ::Makenote(77 , 100, 9, 700)	
+}
+NOTE 73 0.168   
+NOTE 74 0.168   
+NOTE 79 0.164   
+NOTE 72 0.168   
+NOTE 71 0.168   
+NOTE 0 2.000  
+NOTE 68 0.164 Q0609
+	 cuename 9 
+group fragments @tempo $tempo6
+{	 
+	::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 13, -5, 0, 0 ] )
+1/6 ::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(79 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(81 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(66 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(63 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(65 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(64 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+1/6 ::ShadowPlay(72 , 100, 5, 200, 1/6, 50, [0, 13, -1, 0, 0 ] )
+}
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(74 , 100, 9, 700)
+1/6 ::Makenote(80 , 100, 9, 700)
+1/6 ::Makenote(85 , 100, 9, 700)
+1/6 ::Makenote(87 , 100, 9, 700)
+1/6 ::Makenote(77 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+1/6 ::Makenote(74 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+1/6 ::Makenote(72 , 100, 9, 700)
+1/6 ::Makenote(69 , 100, 9, 700)
+1/6 ::Makenote(71 , 100, 9, 700)
+1/6 ::Makenote(70 , 100, 9, 700)
+1/6 ::Makenote(74 , 100, 9, 700)
+1/6 ::Makenote(79 , 100, 9, 700)
+1/6 ::Makenote(78 , 100, 9, 700)
+}
+NOTE 74 0.168   
+NOTE 79 0.168   
+NOTE 81 0.164   
+NOTE 71 0.168   
+NOTE 72 0.168   
+NOTE 68 0.164   
+NOTE 72 0.168   
+NOTE 66 0.168   
+NOTE 63 0.164   
+NOTE 65 0.168   
+NOTE 64 0.168   
+NOTE 68 0.164   
+NOTE 73 0.168   
+NOTE 72 0.168   
+NOTE 74 0.164 Q0610
+	 cuename 10 
+group fragments @tempo $tempo6
+{	
+	::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(67 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(69 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(68 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(71 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(70 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(74 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(78 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+1/6 ::ShadowPlay(73 , 100, 5, 200, 1/6, 50, [0, -6, 0, 5, 1] )
+} 
+group multiphonics_line @tempo $tempo6
+{
+	::Makenote(80, 100, 9, 700)
+1/6 ::Makenote(73, 100, 9, 700)
+1/6 ::Makenote(75, 100, 9, 700)
+1/6 ::Makenote(74, 100, 9, 700)
+1/6 ::Makenote(77, 100, 9, 700)
+1/6 ::Makenote(76, 100, 9, 700)
+1/6 ::Makenote(80, 100, 9, 700)
+1/6 ::Makenote(84, 100, 9, 700)
+1/6 ::Makenote(79, 100, 9, 700)
+} 	
+NOTE 67 0.168   
+NOTE 69 0.168   
+NOTE 68 0.164   
+NOTE 71 0.168   
+NOTE 70 0.168   
+NOTE 74 0.164   
+NOTE 78 0.168   
+NOTE 73 0.168   
+NOTE 79 0.164 Q0611
+	 cuename 11 
+abort ::Spat_Rotation
+NOTE 74 0.168   
+NOTE 77 0.168   
+NOTE 73 0.164 Q0612
+	 cuename 12 
+abort ::Spat_Rotation
+print "dummy"
+NOTE 72 0.168   
+NOTE 68 0.168 
+	 print end_T5_s6 
+	  	
+	  	
+	  	
+	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 7
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+ 
+ BPM  72	;  110 
+	
+NOTE 79 0.0 
+ 	 suivi-cur-sec 7
+
+;  TRILL (68 66) 5.0 I; 0.166 I;1 
+ NOTE 68 0.17 Q0701
+	 cuename 1 ; les vraies notes à la place du trill
+ group IO_Levels
+{
+ EF_Matrix recall 37
+EF_Levels recall 37
+EF_Deltas recall 37
+};
+cb_1-peakw 21.;
+cb_1-intens 0.7;
+cb_2-peakw 29.7;
+cb_2-intens 0.7;
+group spat
+{	;
+;
+print tr nromal
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+}
+50 ms
+group flute_FS
+{
+fd_db 0 150
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 523.;
+fd_2_freq -196.;
+}
+ NOTE 66 0.17
+ NOTE 68 0.16
+ NOTE 0 4.5
+	 ; si declenche trop tot alors move evenement suivant  
+	 ; cuename 1 
+ ;66 0.167 ; as in TRILL
+ ;68 0.167 ; as in TRILL  
+ ; 0 4.5 
+ ; 7/8
+NOTE 79 0.0  
+ TRILL (66 65) 3.5 Q0702; 0.166 II;2 
+	 cuename 2 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 329.;
+fd_2_freq -138.;
+}
+; suite virée car dans le trill silence
+; 65 0.166   
+; 66 0.166   
+; 65 0.166   
+; 66 0.166   
+; 65 0.166   
+; 66 0.166   
+; 65 0.166   
+; 66 0.166   
+; HOOK 0 2.0 
+
+; 3/4
+NOTE 79 0.0  
+;TRILL ( 65 68 ) 3.0 III; 0.166 III;3 
+	 cuename 3 ; ERROR was 1 
+; suite virée car dans le trill silence
+group flute_FS
+{	;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 174.;
+fd_2_freq -103.;
+}
+
+NOTE 65 0.166
+NOTE 68 0.166
+NOTE 65 0.166
+NOTE 68 0.166   
+NOTE 65 0.166   
+NOTE 68 0.166   
+NOTE 0 5.5 
+
+; TRILL (79)	3.0	IV; length was 1
+NOTE 79 0.166 Q0704
+	 cuename 4 
+group flute_FS
+{	;
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 329.;
+fd_2_freq -261.;
+}
+NOTE 79 0.166
+NOTE 79 0.166
+NOTE 79 0.166
+NOTE 79 0.166
+NOTE 79 0.166
+NOTE 79 0.166 
+NOTE 0 5.5 
+
+NOTE 79 0.0   
+TRILL (68)	3.5	Q0705; length was 1.5
+;NOTE 68 0.166 V 
+	cuename 5
+group flute_FS
+{	
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 523.;
+fd_2_freq -196.;
+}
+;
+;NOTE 68 0.166
+;NOTE 68 0.166
+;NOTE 68 0.166
+;NOTE 68 0.166
+;NOTE 68 0.166 
+;NOTE 68 0.166
+;NOTE 68 0.166
+;NOTE 68 0.166   
+NOTE 0 2.0  
+
+NOTE 79 0.0  
+ TRILL (66)	3.0 Q0706; 		length was 0.5
+	 cuename 6 
+group flute_FS
+{	
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 329.;
+fd_2_freq -138.;
+}
+;NOTE 66 0.166
+;NOTE 66 0.166
+;NOTE 66 0.166
+
+NOTE 79 0.0
+ TRILL (65)	3.0 Q0707 ; length was 0.5
+;NOTE 66 0.166 VII
+	 cuename 7
+group flute_FS
+{	
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 174.;
+fd_2_freq -103.;
+2000 ms
+fd_db -96 500
+}	
+	 2.5 print end_T5_s7
+;NOTE 66 0.166
+;NOTE 66 0.166
+NOTE 0 10.5
+
+
+	 	  	
+	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 8
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ 
+ VARIANCE 0.3
+
+ BPM  156 ;  132
+		  
+	
+NOTE 72 0.244 Q0801
+	 suivi-cur-sec 8
+ group IO_Levels
+{
+ EF_Matrix recall 38
+EF_Levels recall 38
+EF_Deltas recall 38
+}
+	 cuename 1 
+;
+cb_1-peakw 21.;
+cb_1-intens 0.7;
+cb_2-peakw 29.7;
+cb_2-intens 0.7;
+group spat
+{	;
+;
+;
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+}
+50 ms
+group flute_FS
+{
+	fd_db 0 100
+	;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 329.;
+fd_2_freq -146.;
+} 
+
+NOTE 0 0.088  
+NOTE 66 0.244   
+NOTE 0 0.088  
+NOTE 72 0.248   
+NOTE 0 0.088  
+NOTE 72 0.244   
+NOTE 0 0.088  
+NOTE 79 0.244   
+NOTE 0 0.088  
+NOTE 72 0.248   
+NOTE 0 3.088  
+NOTE 79 0.310 Q0802
+	 cuename 2 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq -207.;
+fd_2_freq -130.;
+
+} 
+NOTE 0 0.088  
+NOTE 72 0.310
+NOTE 0 0.088  
+NOTE 77 0.314   
+NOTE 0 0.088  
+NOTE 72 0.310   
+NOTE 0 0.088  
+NOTE 79 0.314   
+NOTE 0 6.088  
+NOTE 66 0.244 Q0803
+	 cuename 3 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 277.;
+fd_2_freq -146.;
+
+} 
+NOTE 0 0.088  
+NOTE 79 0.244
+NOTE 0 0.088  
+NOTE 72 0.248
+NOTE 0 0.088  
+NOTE 80 0.244   
+NOTE 0 0.088  
+NOTE 70 0.244   
+NOTE 0 0.088  
+NOTE 80 0.248   
+NOTE 0 0.088  
+NOTE 72 0.244   
+NOTE 0 0.088  
+NOTE 79 0.244   
+NOTE 0 0.088  
+NOTE 66 0.248   
+NOTE 0 8.588  
+NOTE 85 0.412 Q0804
+	 cuename 4  
+group flute_FS
+{
+	;
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 392.;
+fd_2_freq 207.;
+}
+NOTE 0 0.088  
+NOTE 80 0.412
+NOTE 0 0.088  
+NOTE 72 0.412
+NOTE 0 0.088  
+NOTE 70 0.412   
+NOTE 0 0.088  
+NOTE 71 0.412   
+NOTE 0 0.088  
+NOTE 70 0.412   
+NOTE 0 0.088  
+NOTE 72 0.412   
+NOTE 0 0.088  
+NOTE 80 0.412   
+NOTE 0 0.088  
+NOTE 85 0.412   
+NOTE 0 0.088  
+NOTE 77 0.244   
+NOTE 0 0.088  
+NOTE 72 0.244   
+NOTE 0 0.088  
+NOTE 79 0.248   
+NOTE 0 0.088  
+NOTE 71 0.244   
+NOTE 0 0.088  
+NOTE 77 0.244   
+NOTE 0 0.088  
+NOTE 72 0.248 Q0805
+	 cuename 5
+group flute_FS
+{
+500 ms
+fd_db -96 500 
+}
+	 0.5 print end_T5_s8
+NOTE 0 16.0
+		 	  	
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 9
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+
+ BPM  64 	;  60
+
+$temposection9 := 66;was 72
+
+
+NOTE 74 0.500 Q0901
+	 suivi-cur-sec 9
+ group IO_Levels
+{
+ EF_Matrix recall 39
+EF_Levels recall 39
+EF_Deltas recall 39
+}
+	 cuename 1 
+group filt
+{
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+samp3-filt-on-off 0;
+samp3-filt-cfreq 0;
+samp3-filt-q 50;
+}
+group spat
+{	;
+;
+;
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 60
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 90
+to_spats source 2 prer 50
+to_spats source 3 az 0
+to_spats source 3 pres 100
+to_spats source 3 prer 50
+}
+100 ms
+group flute_FS
+{
+fd_db 0 100
+fd_1_del 0;
+fd_1_freq 12;
+fd_1_db -6;
+fd_2_del 0;
+fd_2_freq 0.;
+fd_2_db -96;
+}
+
+group @tempo $temposection9;
+{
+	group multiphonics ;1
+	{
+	::Makenote(74, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(74, 1, 4, 250)
+	} 
+1/2
+	group multiphonics ;2
+	{
+	::Makenote(73, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(73, 1, 4, 250)
+	}
+1/2
+	group multiphonics ;3
+	{
+	::Makenote(79, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(79, 1, 4, 250)
+	}
+}
+
+NOTE 73 0.500 ;Q0902
+	 ;cuename 2  
+NOTE 79 1.000 Q0903
+	 ;cuename 3 
+NOTE 73 1.000 Q0904 ;B
+
+	group multiphonics;
+	{
+	::Makenote(73, 100, 9, 1500)
+	::Makenote(58, 100, 13, 4000)
+	}
+	group pizzi
+	{
+	::Makenote(73, 5 , 4, 250)
+	}
+	 ;cuename 4  
+NOTE 0 3.500  
+to_spats source 1 az 135; 2025 
+NOTE 79 0.250 Q0905
+	 cuename 5  
+to_spats source 1 az 135; 2025 
+
+group @tempo $temposection9;
+{
+	group multiphonics ;5
+	{
+	::Makenote(79, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(79, 10, 4, 250)
+	}
+1/4
+	group multiphonics ;6
+	{
+	::Makenote(70, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(70, 10, 4, 250)
+	}
+1/4
+	group multiphonics;7
+	{
+	::Makenote(71, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(71, 10, 4, 250)
+	} 
+1/4
+	group multiphonics;8
+	{
+	::Makenote(66, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(66, 10, 4, 250)
+	}
+1/4 
+	group multiphonics ;9
+	{
+	::Makenote(73, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(73, 10, 4, 250)
+	} 
+1/4
+	group multiphonics;10
+	{
+	::Makenote(74, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(74, 10, 4, 250)
+	} 
+1/4
+	group multiphonics;11
+	{
+	::Makenote(68, 100, 9, 1500)
+	::Makenote(52, 100, 13, 3000)
+	}
+	group pizzi
+	{
+	::Makenote(68, 10, 4, 250)
+	}
+
+	
+}
+
+NOTE 70 0.250 ;Q0906
+	 ;cuename 6  
+NOTE 71 0.250 ;Q0907
+	 ;cuename 7 
+NOTE 66 0.250 ;Q0908
+	 ;cuename 8 
+NOTE 73 0.250 ;Q0909
+	 ;cuename 9 
+NOTE 74 0.250 ;Q0910
+	 ;cuename 10 
+NOTE 68 1.250 Q0911 C
+	 ;cuename 11 
+	 ::Makenote(52, 100, 13, 4000)
+NOTE 0 2.250  
+to_spats source 1 az -135; 2025 
+NOTE 73 0.250 Q0912
+	 cuename 12 
+to_spats source 1 az -135; 2025 
+
+group @tempo $temposection9;
+{
+	group multiphonics ;12
+	{
+	::Makenote(73, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(73, 20, 4, 250)
+	} 
+1/4
+	group multiphonics ;13
+	{
+	::Makenote(68, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(68, 20, 4, 250)
+	}
+1/4
+	group multiphonics;14
+	{
+	::Makenote(60, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(60, 20, 4, 250)
+	} 
+1/4
+	group multiphonics;15
+	{
+	::Makenote(63, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(63, 20, 4, 250)
+	}
+1/4
+	group multiphonics ;16
+	{
+	::Makenote(66, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(66, 20, 4, 250)
+	}
+1/4
+	group multiphonics ;17
+	{
+	::Makenote(74, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(74, 20, 4, 250)
+	}
+1/4
+	group multiphonics;18
+	{
+	::Makenote(68, 100, 9, 1500)
+	::Makenote(52, 100, 13, 2000)
+	}
+	group pizzi
+	{
+	::Makenote(68, 20, 4, 250)
+	}
+}
+
+NOTE 68 0.250 Q0913
+	 ;cuename 13
+NOTE 60 0.250 Q0914
+	 ;cuename 14 
+NOTE 63 0.250 Q0915
+	 ;cuename 15  
+NOTE 66 0.250 Q0916
+	 ;cuename 16 
+NOTE 74 0.250 Q0917
+	 ;cuename 17  
+NOTE 68 2.000 Q0918 C
+	 ;cuename 18 
+NOTE 0 0.500
+to_spats source 1 az -180; 2025 
+NOTE 74 0.164 Q0919
+	 cuename 19 
+to_spats source 1 az -180; 2025 
+group @tempo $temposection9;
+{
+	group multiphonics;19
+	{
+	::Makenote(74, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(74, 30, 4, 250)
+	} 
+
+1/6
+	group multiphonics;20
+	{
+	::Makenote(66, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(66, 30, 4, 250)
+	}
+1/6
+	group multiphonics;21
+	{
+	::Makenote(63, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(63, 30, 4, 250)
+	}
+1/6
+	group multiphonics;22
+	{
+	::Makenote(73, 100, 9, 1500)
+	::Makenote(58, 100, 13, 4500)
+	}
+	group pizzi
+	{
+	::Makenote(73, 30, 4, 250)
+	} 
+}
+
+NOTE 66 0.168 ;Q0920
+	 ;cuename 20 
+NOTE 63 0.168 ;Q0921
+	 ;cuename 21 
+NOTE 73 2.000 ;Q0922 B
+	 ;cuename 22 
+NOTE 0 4.668  
+to_spats source 1 az 90; 2025 
+NOTE 79 3.000 Q0923 A
+	 cuename 23 
+to_spats source 1 az 90; 2025 
+group multiphonics
+{
+::Makenote(79, 100, 9, 1500)
+::Makenote(64, 100, 13, 3500)
+}
+group pizzi
+{
+::Makenote(79, 40, 4, 250)
+} 
+NOTE  0 2.000   
+to_spats source 1 az -90; 2025 
+NOTE 68 0.250 Q0924 HOOK
+	 cuename 24  
+to_spats source 1 az -90; 2025 
+
+
+group de24a26 @tempo $temposection9
+{
+	group multiphonics;24
+	{
+	::Makenote(68, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(68, 75, 4, 250)
+	}
+1/4
+	group multiphonics;25
+	{
+	::Makenote(76, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(76, 75, 4, 250)
+	} 
+1/4
+	group multiphonics;26
+	{
+	::Makenote(79, 100, 9, 1500)
+	::Makenote(64, 100, 13, 2300)
+	}
+	group pizzi
+	{
+	::Makenote(79, 75, 4, 250)
+	}
+} 
+
+NOTE 76 0.250 ;Q0925
+	 ;cuename 25 
+NOTE 79 2.000 ;Q0926 A
+	 ;cuename 26  
+NOTE 0 0.500 
+to_spats source 1 az 0; 2025  
+NOTE 73 0.164 Q0927
+	 cuename 27 ; ON GROUPE 27 28 ET 29
+to_spats source 1 az 0; 2025 
+group de27a30 @tempo $temposection9
+{
+	group multiphonics
+	{
+	::Makenote(73, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(73, 40, 4, 250)
+	} 
+1/6
+	group multiphonics28
+	{
+	::Makenote(79, 100, 9, 1500)
+	}
+	group pizzi28
+	{
+	::Makenote(79, 40, 4, 250)
+	}
+1/6
+	group multiphonics29
+	{
+	::Makenote(68, 100, 9, 1500)
+	}
+	group pizzi29
+	{
+	::Makenote(68, 40, 4, 250)
+	}
+1/6
+
+group multiphonics ;30
+	{
+	::Makenote(66, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(66, 40, 4, 250)
+	} 
+1/8 
+	group multiphonics31;31
+	{
+	::Makenote(70, 100, 9, 1500)
+	}
+	group pizzi31
+	{
+	::Makenote(70, 40, 4, 250)
+	}  
+1/8
+	group multiphonics32;30
+	{
+	::Makenote(71, 100, 9, 1500)
+	}
+	group pizzi33
+	{
+	::Makenote(71, 40, 4, 250)
+	} 
+1/8
+	group multiphonics33
+	{
+	::Makenote(63, 100, 9, 1500)
+	}
+	group pizzi33
+	{
+	::Makenote(63, 40, 4, 250)
+	} 
+1/8
+	group multiphonics34
+	{
+	::Makenote(60, 100, 9, 1500)
+	}
+	group pizzi34
+	{
+	::Makenote(60, 40, 4, 250)
+	} 
+1/8
+	group multiphonics35
+	{
+	::Makenote(66, 100, 9, 1500)
+	}
+	group pizzi35
+	{
+	::Makenote(66, 40, 4, 250)
+	} 
+1/8
+	group multiphonics36
+	{
+	::Makenote(64, 100, 9, 1500)
+	}
+	group pizzi36
+	{
+	::Makenote(64, 40, 4, 250)
+	} 
+1/8
+	group multiphonics37
+	{
+	::Makenote(67, 100, 9, 1500)
+	}
+	group pizzi37
+	{
+	::Makenote(67, 40, 4, 250)
+	}
+1/8
+	group multiphonics38
+		{
+		::Makenote(68, 100, 9, 1500)
+		::Makenote(52, 100, 13, 1800)
+		}
+		group pizzi38
+		{
+		::Makenote(68, 40, 4, 250)
+		} 
+}
+NOTE 79 0.168 ;Q0928
+	 ;cuename 28  
+NOTE 68 0.168 ;Q0929
+	 ;cuename 29  
+NOTE 66 0.125 Q0930
+	 ;cuename 30 
+NOTE 70 0.125 ;Q0931
+	 ;cuename 31
+NOTE 71 0.125 ;Q0932
+	 ;cuename 32 
+NOTE 63 0.125 ;Q0933
+	 ;cuename 33 
+NOTE 60 0.125 ;Q0934
+	 ;cuename 34 
+NOTE 66 0.125 ;Q0935
+	 ;cuename 35
+NOTE 64 0.125 ;Q0936
+	 ;cuename 36 
+NOTE 67 0.125 ;Q0937
+	 ;cuename 37  
+NOTE 68 0.750 Q0938 ;C
+	 ;cuename 38 
+
+NOTE 0 2.250 
+to_spats source 1 az 135; 2025 
+NOTE 73 3.000 Q0939 B
+	 cuename 39  
+to_spats source 1 az 135; 2025 
+group multiphonics
+{
+::Makenote(73, 100, 9, 1500)
+::Makenote(58, 100, 13, 4400)
+}
+group pizzi
+{
+::Makenote(73, 20, 4, 250)
+}
+NOTE  0 2.000  ; HOOK
+to_spats source 1 az -135; 2025 
+NOTE 74 0.125 Q0940 ; ON GROUPE 40 A 43
+	 cuename 40 
+to_spats source 1 az -135; 2025 
+group de40a43 @target := {Q0947, Q0950} //@tempo $temposection9
+{
+	group multiphonics
+	{
+	::Makenote(74, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(74, 15, 4, 250)
+	} 
+1/8
+	group multiphonics41
+	{
+	::Makenote(70, 100, 9, 1500)
+	}
+	group pizzi41
+	{
+	::Makenote(70, 15, 4, 250)
+	} 
+1/8
+	group multiphonics42
+	{
+	::Makenote(71, 100, 9, 1500)
+	}
+	group pizzi42
+	{
+	::Makenote(71, 15, 4, 250)
+	} 
+1/8
+	group multiphonics43
+	{
+	::Makenote(69, 100, 9, 1500)
+	}
+	group pizzi43
+	{
+	::Makenote(69, 15, 4, 250)
+	}
+1/8
+	group multiphonics44
+	{
+	::Makenote(73, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(73, 15, 4, 250)
+	}
+1/6
+	group multiphonics45
+	{
+	::Makenote(77, 100, 9, 1500)
+	}
+	group pizzi45
+	{
+	::Makenote(77, 15, 4, 250)
+	} 
+1/6
+	group multiphonics46
+	{
+	::Makenote(76, 100, 9, 1500)
+	}
+	group pizzi46
+	{
+	::Makenote(76, 15, 4, 250)
+	}
+1/6
+	group multiphonics47
+	{
+	::Makenote(70, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(70, 15, 4, 250)
+	}
+1/6
+	group multiphonics48
+	{
+	::Makenote(69, 100, 9, 1500)
+	}
+	group pizzi48
+	{
+	::Makenote(69, 15, 4, 250)
+	} 
+1/6
+	group multiphonics49
+	{
+	::Makenote(63, 100, 9, 1500)
+	}
+	group pizzi49
+	{
+	::Makenote(63, 15, 4, 250)
+	} 
+1/6
+	group multiphonics50
+	{
+	::Makenote(68, 100, 9, 1500)
+	::Makenote(52, 100, 13, 6000)
+	}
+	group pizzi
+	{
+	::Makenote(68, 15, 4, 250)
+	}
+}
+NOTE 70 0.125 Q0941
+	 ;cuename 41 
+NOTE 71 0.125 Q0942
+	 ;cuename 42 
+NOTE 69 0.125 Q0943
+	 ;cuename 43  
+NOTE 73 0.164 Q0944
+	 ;cuename 44  
+NOTE 77 0.168 Q0945
+	 ;cuename 45 
+NOTE 76 0.168 Q0946
+	 ;cuename 46  
+NOTE 70 0.164 Q0947
+	 ;cuename 47  
+NOTE 69 0.168 Q0948
+	 ;cuename 48 
+NOTE 63 0.168 Q0949
+	 ;cuename 49 
+NOTE 68 3.5 Q0950 C
+	 ;cuename 50  
+NOTE 0 3.500  
+to_spats source 1 az -180; 2025 
+NOTE 60 0.250 Q0951
+	 cuename 51
+to_spats source 1 az -180; 2025 
+group de51a56 //@tempo $temposection9
+{
+	group multiphonics ;51
+	{
+	::Makenote(60, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(60, 1, 4, 250)
+	}  
+1/4
+	group multiphonics ;52
+	{
+	::Makenote(70, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(70, 1, 4, 250)
+	}
+	group flute_FS
+	{
+		fd_db -30 500
+		500 ms
+		fd_db -96 100
+	}
+1/4
+	group multiphonics ;53
+	{
+	::Makenote(66, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(66, 1, 4, 250)
+	} 
+1/4
+	group multiphonics ;54
+	{
+	::Makenote(73, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(73, 1, 4, 250)
+	}
+1/4 
+	group multiphonics ;55
+	{
+	::Makenote(74, 100, 9, 1500)
+	}
+	group pizzi
+	{
+	::Makenote(74, 1, 4, 250)
+	}
+1/2
+	group multiphonics; 56
+	{
+	::Makenote(79, 100, 9, 1500)
+	::Makenote(64, 100, 13, 6000)
+	}
+	group pizzi
+	{
+	::Makenote(79, 1, 4, 250)
+	} 
+	1.5 print end_T5_s9
+}
+
+; ---------------
+
+NOTE 70 0.250 ;Q0952
+	 ;cuename 52  
+NOTE 66 0.250 ;Q0953
+	 ;cuename 53 
+NOTE 73 0.250 ;Q0954
+	 ;cuename 54  
+NOTE 74 0.500 ;Q0955
+	 ;cuename 55  
+NOTE 79 1.250 ;Q0956 A
+	 ;cuename 56 
+NOTE 0 5.0	 		 	  	
+
+
+; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+;  T_5    Section 10
+; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ VARIANCE 0.25
+
+ BPM   92	; 120
+ 
+$temposection10 := 92
+NOTE 69 0.336 Q1001
+     suivi-cur-sec 10
+ group IO_Levels
+{
+ EF_Matrix recall 40
+EF_Levels recall 40
+EF_Deltas recall 40
+} 
+	 cuename 1 
+group filt
+{
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+group previous
+{
+150 ms
+print "was fs-off"
+//fs-off bang // no match ???
+}
+group spat
+{
+;
+;
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 90
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 90
+to_spats source 2 prer 50
+abort ::SwishSpat
+::SwishSpat(1, 90, 1000)
+}
+10 ms
+
+group flute_line @tempo $temposection10
+{
+	group flute_line_main @tempo $temposection10
+	{
+	 	::Makenote(69, 100, 5, 200)
+	1/3 ::Makenote(71, 100, 5, 200)
+	1/3 ::Makenote(63, 100, 5, 200)
+	1/3 ::Makenote(77, 100, 5, 200)
+	1/3 ::Makenote(74, 100, 5, 200)
+	1/3 ::Makenote(66, 100, 5, 200)
+	1/3 ::Makenote(71, 100, 5, 200)
+	1/3 ::Makenote(69, 100, 5, 200)
+	1/3 ::Makenote(73, 100, 5, 200)
+	1/3 ::Makenote(67, 100, 5, 200)
+	1/3 ::Makenote(82, 100, 5, 200)
+	}
+	4/3	
+	group flute_line_echo1 @tempo $temposection10*1.1
+	{
+	 	::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(66 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(82, 100, 5, 200)
+	}
+	3/3
+	group flute_line_echo2 @tempo $temposection10*1.2
+	{
+		::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(66 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(82, 100, 5, 200)
+	}
+	2/3
+	group flute_line_echo3 @tempo $temposection10*1.3
+	{
+	 	::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(66 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(82, 100, 5, 200)
+	}
+}
+;samp4a-bal -3 ; less flute sample 
+
+NOTE 71 0.332   
+NOTE 63 0.332   
+NOTE 77 0.336   
+NOTE 74 0.332   
+NOTE 66 0.332   
+NOTE 71 0.336   
+NOTE 69 0.332   
+NOTE 73 0.332   
+NOTE 67 0.336   
+NOTE 0 0.148  
+; 82 2.341 2 
+TRILL ( 8200 8300 ) 2.5 Q1002
+	 cuename 2 
+group harmo1
+{	;
+hr_init bang;
+;
+	group hr_in_db
+	{
+	hr_in_db -5
+	300ms
+	hr_in_db -96
+	}
+//hr_in_db -20
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db 0;
+hr6_db -96; 
+hr7_db -96;
+;
+hr1-p -6;
+hr2-p -11;
+hr3-p -13;
+hr4-p -19;
+hr5-p -21;
+hr6-p 0;
+hr7-p 0;
+@local $basedelay
+$basedelay := 258
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+10 ms
+hr_db 0 200
+}
+NOTE 82 0.5  
+NOTE 73 0.5 Q1003
+	 cuename 3  
+group harmo2
+{
+	hr_db -96 2000
+}	;
+NOTE 74 0.5  
+NOTE 69 0.5  
+NOTE 77 0.0  
+NOTE 82 0.25  Q1004
+	 cuename 4  
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ; ancien 13 C'ETAIT INTERVERTI !!!!!!!!
+{
+	group flute_line_main @tempo $temposection10
+	{
+		::Makenote(82 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	}
+; 0
+	group flute_line_echo1 @tempo $temposection10 ;à partir d'ici remplaçable par shadiwplay, mais pas très explicite
+	{	
+		::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(54 , 100, 5, 200)
+	1/3 ::Makenote(52 , 100, 5, 200)
+	1/3 ::Makenote(55 , 100, 5, 200)
+	1/3 ::Makenote(44 , 100, 5, 200)
+	1/3 ::Makenote(50 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10
+	{		
+		::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	1/3 ::Makenote(58 , 100, 5, 200)
+	1/3 ::Makenote(61 , 100, 5, 200)
+	1/3 ::Makenote(50 , 100, 5, 200)
+	1/3 ::Makenote(56 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10
+	{		
+		::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(62 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(52 , 100, 5, 200)
+	1/3 ::Makenote(58 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10
+	{		
+		::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(64 , 100, 5, 200)
+	1/3 ::Makenote(62 , 100, 5, 200)
+	1/3 ::Makenote(65 , 100, 5, 200)
+	1/3 ::Makenote(54 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10
+	{		
+		::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(65 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(66 , 100, 5, 200)
+	1/3 ::Makenote(55 , 100, 5, 200)
+	1/3 ::Makenote(61 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10
+	{		
+		::Makenote(82 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	}
+}   ; cue vide il ya un décalage
+NOTE 73 0.250
+NOTE 71 0.250   
+NOTE 74 0.250   
+NOTE 63 0.250   
+NOTE 69 0.250   
+NOTE 0 4.66  
+NOTE 67 0.336 Q1005
+	 cuename 5 
+::SwishSpat(1, 90, 1000) 
+group flute_line @tempo $temposection10
+{
+	group flute_line_main @tempo $temposection10
+	{
+		::Makenote(67 , 100, 5, 200)
+	1/3	::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	}
+4/3
+	group flute_line_echo1 @tempo $temposection10*1.1
+	{	
+		::Makenote(67 , 100, 5, 200)
+	1/3	::Makenote(71 , 100, 5, 200)
+	1/3	::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	}
+3/3
+	group flute_line_echo2 @tempo $temposection10*1.2
+	{	
+		::Makenote(67 , 100, 5, 200)
+	1/3	::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	}
+2/3
+	group flute_line_echo3 @tempo $temposection10*1.3
+	{	
+		::Makenote(67 , 100, 5, 200)
+	1/3	::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo4 @tempo $temposection10*1.4
+	{	
+		::Makenote(67 , 100, 5, 200)
+	1/3	::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo5 @tempo $temposection10*1.5
+	{
+		::Makenote(67 , 100, 5, 200)
+	1/3	::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo6 @tempo $temposection10*1.6
+	{	
+		::Makenote(67 , 100, 5, 200)
+	1/3	::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	}
+}
+
+NOTE 71 0.332   
+NOTE 77 0.332   
+NOTE 73 0.336   
+NOTE 76 0.332   
+NOTE 74 0.332   
+NOTE 69 0.336   
+NOTE 73 0.332   
+NOTE 77 0.332   
+NOTE 74 0.336   
+NOTE 76 0.332   
+NOTE 71 0.332   
+NOTE 67 0.336 
+TRILL ( 6300 6400 ) 4.0 Q1006
+	 cuename 6 
+group harmo3
+{
+hr_init bang;
+//hr_in_db -20
+	group hr_in_db
+	{
+	hr_in_db -10
+	300ms
+	hr_in_db -96
+	}
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db 0;
+hr6_db 0;
+hr7_db -96;
+;
+hr1-p -3;
+hr2-p -7;
+hr3-p -9;
+hr4-p -10;
+hr5-p -16;
+hr6-p -21;
+hr7-p 0;
+@local $basedelay
+$basedelay := 295
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+10 ms
+hr_db 0 200
+}
+; 63 2.989 6 
+NOTE 63 0.5  
+NOTE 71 0.5 Q1007
+	 cuename 7  
+group harmo4
+{
+	hr_db -96 2500
+}	
+NOTE 69 0.5
+NOTE 73 0.5  
+NOTE 77 0.5  
+NOTE 74 0.5  
+NOTE 63 0.0  
+NOTE 74 0.250 Q1008
+	 cuename 8 
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ;ancien 16 était interverti
+{
+	group flute_line_main @tempo $temposection10 
+	{
+		::Makenote(74 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	1/4 ::Makenote(73 , 100, 5, 200)
+	1/4 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200) ; pb de rythlme
+	1/3 ::Makenote(67 , 100, 5, 200)
+	}
+; 0
+	group flute_line_echo1 @tempo $temposection10 
+	{	
+		::Makenote(64 , 100, 5, 200)
+	1/4 ::Makenote(59 , 100, 5, 200)
+	1/4 ::Makenote(63 , 100, 5, 200)
+	1/4 ::Makenote(61 , 100, 5, 200)
+	1/3 ::Makenote(66 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(57 , 100, 5, 200)
+	}
+1/4
+	group flute_line_echo2 @tempo $temposection10
+	{		
+		::Makenote(66 , 100, 5, 200)
+	1/4 ::Makenote(61 , 100, 5, 200)
+	1/4 ::Makenote(65 , 100, 5, 200)
+	1/4 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(68 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(59 , 100, 5, 200)
+	}
+1/4
+	group flute_line_echo3 @tempo $temposection10
+	{	
+		::Makenote(68 , 100, 5, 200)
+	1/4 ::Makenote(63 , 100, 5, 200)
+	1/4 ::Makenote(67 , 100, 5, 200)
+	1/4 ::Makenote(65 , 100, 5, 200)
+	1/3 ::Makenote(70 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(61 , 100, 5, 200)	
+; on ne sait pas le rythme transpo -10
+	}
+1/4
+	group flute_line_echo4 @tempo $temposection10
+	{
+		::Makenote(70 , 100, 5, 200)
+	1/4 ::Makenote(65 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	1/4 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(72 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)		
+	}
+1/4
+	group flute_line_echo5 @tempo $temposection10
+	{	
+		::Makenote(71 , 100, 5, 200)
+	1/4 ::Makenote(66 , 100, 5, 200)
+	1/4 ::Makenote(70 , 100, 5, 200)
+	1/4 ::Makenote(68 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(64 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo6 @tempo $temposection10
+	{	
+		::Makenote(72 , 100, 5, 200)
+	1/4 ::Makenote(67 , 100, 5, 200)
+	1/4 ::Makenote(71 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(75 , 100, 5, 200)
+	1/3 ::Makenote(65 , 100, 5, 200)	
+	}
+1/3
+	group flute_line_echo7 @tempo $temposection10
+	{	
+		::Makenote(74 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	1/4 ::Makenote(73 , 100, 5, 200)
+	1/4 ::Makenote(71 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)	
+	}
+}       
+NOTE 69 0.250
+NOTE 73 0.250   
+NOTE 71 0.250   
+NOTE 76 0.332   
+NOTE 77 0.332  
+NOTE 63 0.0  
+NOTE 67 0.336   
+NOTE 0 14.0  
+NOTE 77 0.332 Q1009
+	 cuename 9
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ; ancien 5
+{
+	group flute_line_main @tempo $temposection10
+	{
+		::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(72 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(64 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+3/3
+	group flute_line_echo1 @tempo $temposection10*1.1
+	{	
+		::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(72 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(64 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+2/3
+	group flute_line_echo2 @tempo $temposection10*1.2
+	{	
+		::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(72 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(64 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+2/3
+	group flute_line_echo3 @tempo $temposection10*1.3
+	{	
+		::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(72 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(64 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo4 @tempo $temposection10*1.4
+	{	
+		::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(72 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(64 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(73 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+}
+
+NOTE 63 0.332   
+NOTE 69 0.336   
+NOTE 71 0.332   ; was note 72
+NOTE 76 0.332   
+NOTE 63 0.336   ; was 64
+NOTE 77 0.332   
+NOTE 67 0.332   
+NOTE 73 0.336   
+TRILL ( 7600 7700 ) 4.0 Q1010
+cuename 10
+group harmo5
+{
+	group hr_in_db
+	{
+	hr_in_db -10
+	300ms
+	hr_in_db -96
+	}
+//hr_in_db -20
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db 0;
+hr6_db 0;
+hr7_db -96;
+;
+hr1-p -6;
+hr2-p -11;
+hr3-p -17;
+hr4-p -22;
+hr5-p -27;
+hr6-p -33;
+hr7-p 0;
+@local $basedelay
+$basedelay := 295
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+10 ms
+hr_db 0 200
+}	
+; 76 3.278 10 
+NOTE 76 0.5 ; was 0.0 par gn 2010 - cl 2011
+NOTE 73 0.5 Q1011
+	 cuename 11  
+group harmo6
+{
+	hr_db -96 2500
+}
+NOTE 77 0.5
+NOTE 67 0.5
+NOTE 63 0.5  
+NOTE 76 0.0   
+NOTE 67 0.250 Q1012
+	 cuename 12  
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ; ancien 17 - etait interverti
+{
+	group flute_line_main ;@tempo 92
+	{
+		::Makenote(67 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	1/4 ::Makenote(63 , 100, 5, 200)
+	1/4 ::Makenote(76 , 100, 5, 200)
+	1/4 ::Makenote(77 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	1/4 ::Makenote(76 , 100, 5, 200)
+	1/4 ::Makenote(67 , 100, 5, 200)
+	}
+	; REMPLACABLE PAR SHADOWPLAY AVEC LISTE TRANSPO et minvel 100
+	group flute_line_echo1to6 ;@tempo 92 ; on remplace par shadowplay parce que c'est possible
+	{	;$pitch, $vel, $chan, $dur, $period, $minvel, $transpo_list
+		::ShadowPlay(67 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	1/4 ::ShadowPlay(69 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	1/4 ::ShadowPlay(63 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	1/4 ::ShadowPlay(77 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	1/4 ::ShadowPlay(69 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	1/4 ::ShadowPlay(67 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -5, -4, 0])
+	; TROP DROIT ? ??? à cause de la grace note ? le tempo est-il variable même une fois le gpe lancé ?
+	}
+}
+NOTE 69 0.250
+NOTE 63 0.250   
+NOTE 76 0.250 
+NOTE 69 0.0   
+NOTE 77 0.250   
+NOTE 69 0.250   
+NOTE 76 0.250   
+NOTE 67 0.250   
+NOTE 76 0.0		; grace note 
+NOTE 69 0.33   
+NOTE 63 0.33   
+NOTE 76 0.34   
+NOTE 69 0.0   
+NOTE 63 0.5  
+NOTE 71 0.5   
+NOTE 0 11.66  
+NOTE 67 0.336 Q1013
+	 cuename 13 
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ; ancien 8
+{
+	group flute_line_main @tempo $temposection10
+	{
+		::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(82 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	}
+2/3
+	group flute_line_echo1 @tempo $temposection10*1.1
+	{	
+		::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(82 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	}
+2/3
+	group flute_line_echo2 @tempo $temposection10*1.2
+	{		
+		::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(82 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)		
+	}
+1/3
+	group flute_line_echo3 @tempo $temposection10*1.3
+	{	
+		::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(82 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo4 @tempo $temposection10*1.4
+	{
+		::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	1/3 ::Makenote(82 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(77 , 100, 5, 200)
+	1/3 ::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(71 , 100, 5, 200)	
+	}
+} 
+
+NOTE 76 0.332
+NOTE 82 0.332   
+NOTE 69 0.336   
+NOTE 77 0.332   
+NOTE 63 0.332   
+NOTE 71 0.336 
+TRILL ( 7300 7400 ) 7.0 Q1014
+	 cuename 14 
+group harmo7
+{	
+	group hr_in_db
+	{
+	hr_in_db -10
+	300ms
+	hr_in_db -96
+	}
+//hr_in_db -20;
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db 0;
+hr6_db -96;
+hr7_db -96;
+;
+hr1-p -2;
+hr2-p -7;
+hr3-p -13;
+hr4-p -17;
+hr5-p -23;
+hr6-p 0;
+hr7-p 0;
+@local $basedelay
+$basedelay := 400
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+10 ms
+hr_db 0 200
+}
+; 73 5.547 14 
+NOTE 73 0.500   
+NOTE 82 0.500 Q1015
+	 cuename 15  
+group harmo8
+{
+	hr_db -96 2500
+
+}	;
+NOTE 69 0.500 
+NOTE 73 0.0  
+NOTE 77 0.221 Q1016; 16 ; was 79  ; FA ou SOL ??? il y aun doute ici, fa, sur partition d'andrew annotée
+	 cuename 16 
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ; ancien 20 : on utilise shadowplay parce que c'est possible
+{
+	group flute_line_main @tempo $temposection10
+	{
+		::Makenote(77 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	1/4 ::Makenote(76 , 100, 5, 200)
+	1/4 ::Makenote(67 , 100, 5, 200)
+	1/4 ::Makenote(63 , 100, 5, 200)
+	1/4 ::Makenote(69 , 100, 5, 200)
+	}
+	group flute_line_echo1to5 @tempo $temposection10
+	{
+		::ShadowPlay(77 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -1,0])
+	1/4 ::ShadowPlay(69 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -1,0])
+	1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -1,0])
+	1/4 ::ShadowPlay(67 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -1,0])
+	1/4 ::ShadowPlay(63 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -1,0])
+	1/4 ::ShadowPlay(69 , 100, 5, 200, 1/4, 100, [-14, -10, -8, -1,0])
+	}
+}	
+NOTE 69 0.25 ; 16 
+NOTE 76 0.25
+NOTE 67 0.25  
+NOTE 63 0.25   
+NOTE 69 0.25   
+NOTE 0 7.0  
+NOTE 63 0.332 Q1017
+	 cuename 17  
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ;ancien 9
+{
+	group flute_line_main @tempo $temposection10
+	{
+		::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+2/3
+	group flute_line_echo1 @tempo $temposection10*1.1
+	{	
+		::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10*1.2
+	{		
+		::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)	
+	}
+1/3
+	group flute_line_echo3 @tempo $temposection10*1.3
+	{	
+		::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo4 @tempo $temposection10*1.4
+	{
+		::Makenote(63 , 100, 5, 200)
+	1/3 ::Makenote(74 , 100, 5, 200)
+	1/3 ::Makenote(67 , 100, 5, 200)
+	1/3 ::Makenote(69 , 100, 5, 200)
+	1/3 ::Makenote(60 , 100, 5, 200)
+	1/3 ::Makenote(76 , 100, 5, 200)
+	}
+}  
+
+NOTE 74 0.332
+NOTE 67 0.336   
+NOTE 69 0.332   
+NOTE 60 0.332   
+NOTE 76 0.336 
+; 68 4.682 18 
+TRILL ( 6800 6900 ) 6.0 Q1018
+	 cuename 18 
+group harmo9
+{
+//hr_in_db -20
+	group hr_in_db
+	{
+	hr_in_db -10
+	300ms
+	hr_in_db -96
+	}
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db 0;
+hr6_db 0;
+hr7_db -96;
+;
+hr1-p -1;
+hr2-p -2;
+hr3-p -5;
+hr4-p -11;
+hr5-p -13;
+hr6-p -16;
+hr7-p 0;
+@local $basedelay
+$basedelay := 333
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+10 ms
+hr_db 0 200
+}
+NOTE 68 0.500   
+NOTE 74 0.500 Q1019
+	 cuename 19 
+group harmo10
+{
+	hr_db -96 2500
+}	;
+NOTE 0 2.0  
+NOTE 68 0.0  
+NOTE 67 0.33 Q1020
+	 cuename 20 
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ; ancien 21 ; shadowplay possibleDEMANDER RYTHME A ANDREW
+{
+	group flute_line_main @tempo $temposection10 ; pas exact sur le fichier midi
+	{
+		::Makenote(67 ,100,5, 200)
+	1/3 ::Makenote(76 ,100,5, 200)
+	1/3 ::Makenote(63 ,100,5, 200)
+	}
+	group flute_line_echo1 @tempo $temposection10 ; pas exact sur le fichier midi
+	{
+		 ::ShadowPlay(67 ,100,5, 200, 1/3, 100, [-13, -10, 0])
+	1/3  ::ShadowPlay(76 ,100,5, 200, 1/3, 100, [-13, -10, 0])
+	1/3  ::ShadowPlay(63 ,100,5, 200, 1/3, 100, [-13, -10, 0])
+	}
+}
+NOTE 76 0.33   
+NOTE 63 0.34   
+NOTE 0 4.66  
+NOTE 76 0.336 Q1021
+	 cuename 21 
+::SwishSpat(1, 90, 1000) 
+group flute_line @tempo $temposection10 ;ancien 12
+{
+	group flute_line_main @tempo $temposection10
+	{
+		::Makenote(76 , 100, 5, 200)
+	1/3	::Makenote(73 , 100, 5, 200)
+	1/3	::Makenote(63 , 100, 5, 200)
+	1/3	::Makenote(60 , 100, 5, 200)
+	1/3	::Makenote(74 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo1 @tempo $temposection10*1.1
+	{	
+		::Makenote(76 , 100, 5, 200)
+	1/3	::Makenote(73 , 100, 5, 200)
+	1/3	::Makenote(63 , 100, 5, 200)
+	1/3	::Makenote(60 , 100, 5, 200)
+	1/3	::Makenote(74 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10*1.2
+	{		
+		::Makenote(76 , 100, 5, 200)
+	1/3	::Makenote(73 , 100, 5, 200)
+	1/3	::Makenote(63 , 100, 5, 200)
+	1/3	::Makenote(60 , 100, 5, 200)
+	1/3	::Makenote(74 , 100, 5, 200)
+	}
+1/3
+	group flute_line_echo2 @tempo $temposection10*1.3
+	{		
+		::Makenote(76 , 100, 5, 200)
+	1/3	::Makenote(73 , 100, 5, 200)
+	1/3	::Makenote(63 , 100, 5, 200)
+	1/3	::Makenote(60 , 100, 5, 200)
+	1/3	::Makenote(74 , 100, 5, 200)
+	}
+}  
+
+NOTE 73 0.332
+ TRILL  (63 75) 0.332   
+ TRILL (60 72) 0.336
+TRILL ( 7400 7600 ) 2.5 Q1022
+	 cuename 22 
+group harmo11
+{
+//hr_in_db -20
+	group hr_in_db
+	{
+	hr_in_db -10
+	300ms
+	hr_in_db -96
+	}
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db -96;
+hr5_db -96;
+hr6_db -96;
+hr7_db -96;
+;
+hr1-p -6;
+hr2-p -11;
+hr3-p -19;
+hr4-p 0;
+hr5-p 0;
+hr6-p 0;
+hr7-p 0;
+@local $basedelay
+$basedelay := 260
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+10 ms
+hr_db 0 200
+}
+ ; 74 0.5   
+NOTE 74 0.500 ; 74 est une fausse note bloque suivi gn 2010 ; -- was 72 (cl 2011)
+NOTE 73 0.500 Q1023  ; XXIII;23 
+	 cuename 23 
+group harmo12
+{
+	hr_db -96 2500
+	1500 ms hr_in_db -96
+}	
+NOTE 76 0.500
+NOTE 63 0.5  
+NOTE 74 0.0   
+NOTE 76 0.5 Q1024 ;XXIV;24
+	 cuename 24 
+::SwishSpat(1, 90, 1000)
+group flute_line ;@tempo 92 ; DEMANDER RYTHME A ANDREW
+{
+	group flute_line_main ;@tempo 92 ; pas exact sur le fichier midi
+	{
+			::Makenote(76 , 100, 5, 200) ; pas les bonds rythmes
+		1/2 ::Makenote(63 , 100, 5, 200)
+		1/2 ::Makenote(73 , 100, 5, 200)
+		1/2 ::Makenote(60 , 100, 5, 200)
+	}
+	group flute_line_echo1to4 ;@tempo 92 ; pas exact sur le fichier midi
+	{
+			::ShadowPlay(76 , 100, 5, 200, 1/2, 100, [-16, -13, -3, 0]) ; pas les bonds rythmes
+		1/2 ::ShadowPlay(63 , 100, 5, 200, 1/2, 100, [-16, -13, -3, 0])
+		1/2 ::ShadowPlay(73 , 100, 5, 200, 1/2, 100, [-16, -13, -3, 0])
+		1/2 ::ShadowPlay(60 , 100, 5, 200, 1/2, 100, [-16, -13, -3, 0])
+	}
+	
+}
+
+NOTE 63 0.5  
+NOTE 73 0.5   
+NOTE 60 0.5   
+NOTE 0 1.000  
+NOTE 74 0.0   
+NOTE 60 0.5 Q1025 XXV;25
+	 cuename 25 
+::SwishSpat(1, 90, 1000)
+group flute_line ;@tempo 92 ; donner de la spouplesse
+{
+	group flute_line_main ;@tempo 92 ; pas exact sur le fichier midi
+	{
+		::Makenote(60, 100, 5, 200)
+	1/2 ::Makenote(73, 100, 5, 200)
+	1/2 ::Makenote(63, 100, 5, 200)
+	}
+	group flute_line_echo1to3
+	{
+		::ShadowPlay(60, 100, 5, 200, 1/2, 100, [-13, -10, 0])
+	1/2 ::ShadowPlay(73, 100, 5, 200, 1/2, 100, [-13, -10, 0])
+	1/2 ::ShadowPlay(63, 100, 5, 200, 1/2, 100, [-13, -10, 0])
+	}
+}
+NOTE 73 0.5   
+NOTE 63 0.500   
+NOTE 0 2.000  
+NOTE 74 0.0   
+NOTE 63 0.5 Q1026 ; XXVI  ; 26 - was 0.0 (cl 2011)
+	 cuename 26 
+::SwishSpat(1, 90, 1000)
+group flute_line @tempo $temposection10 ; DEMANDER RYTHME A ANDREW ; pas mal comme ça
+{
+	group flute_line_main @tempo $temposection10 ; pas exact sur le fichier midi
+	{
+		 	::Makenote(63 , 100, 5, 200)
+		1/2 ::Makenote(76 , 100, 5, 200)
+	}
+	group flute_line_echo1to2 ; nuances ??
+	{
+		 	::ShadowPlay(63 , 100, 5, 200, 1/2, 80, [-13, 0])
+		1/2 ::ShadowPlay(76 , 100, 5, 200, 1/2, 80, [-13, 0])
+	}
+}
+	 0.7 print end_T5_s10
+NOTE 0 3.0
+	 		 	  	
+	 		 	  	
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 11
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	 
+	 
+ VARIANCE 0.3	 
+
+ BPM  50 ;  60
+	
+NOTE 0 3.0
+NOTE 69 0.125 
+
+NOTE 77 0.125   
+NOTE 75 0.125   
+NOTE 83 2.000 Q1101
+	 suivi-cur-sec 11
+	 cuename 1 
+ group IO_Levels
+{
+ EF_Matrix recall 41
+EF_Levels recall 41
+EF_Deltas recall 41
+}
+group filt
+{
+samp4-filt-on-off 1;
+samp4-filt-cfreq 60;
+samp4-filt-q 50;
+samp1-filt-on-off 1;
+samp1-filt-cfreq 60;
+samp1-filt-q 50;
+}
+ir1-params reverb tr0 40
+group spat
+{
+	;
+;
+; print augmenter TR
+to_spats room 1 reverberance ($Reverberance*1.23);
+to_spats source 1 az -180
+to_spats source 1 pres 50
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 100
+to_spats source 2 prer 50
+to_spats source 3 az 0
+to_spats source 3 pres 70
+to_spats source 3 prer 50
+::Spat_Rotation(1, 4, 200)
+}
+10 ms
+group wobble
+{
+	::Wobble([69], [1050, 50], 100, 1, 1000)
+}
+group flute_chords
+{
+	ir1_db -6 300
+	::MakeChord([77, 75, 69, 61], 80 , 5, 250 )
+	::MakeChord([54, 52], 100 , 5, 250 )
+}
+NOTE 82 0.125   
+NOTE 77 0.125   
+NOTE 83 0.125   
+NOTE 69 0.125   
+NOTE 75 0.750   
+NOTE 0 0.875
+
+NOTE 76 0.125   
+NOTE 82 0.125   
+NOTE 71 0.125   
+NOTE 77 1.500   
+NOTE 0 0.500  
+NOTE 67 0.125 Q1102
+	 cuename 2 
+group flute_chords ;off
+{
+	ir1_db -60 5000
+}
+NOTE 69 0.125   
+NOTE 71 0.125   
+NOTE 74 0.125   
+NOTE 76 0.125   
+NOTE 77 0.125   
+NOTE 82 0.125   
+NOTE 83 0.125 
+
+NOTE 88 0.500 Q1103 
+	 cuename 3 
+group flute_chords
+{
+	ir1_db -6 300
+	::MakeChord([88, 82, 77, 69, 62, 61], 80 , 5, 250 )
+	::MakeChord([56], 90 , 5, 250 )
+	::MakeChord([51, 50, 42], 100 , 5, 250 )
+}
+group flute_FS
+{
+	fd_db 0 100
+	;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db 0;
+fd_2_db -96;
+fd_1_freq 16.;
+fd_2_freq 0.;
+}
+NOTE 83 0      ; was 0.117    
+NOTE 77 0.500   
+NOTE 88 1.500 
+NOTE 83 0      ; was 0.102   
+NOTE 77 0	   ; was 0.129   
+NOTE 69 0.250 Q1104  ; was 0.270 
+	 cuename 4 
+group flute_FS ;off
+{
+	fd_db -96 500
+}
+group flute_chords ;off
+{
+	ir1_db -60 5000
+}
+NOTE 77 0.125   
+NOTE 69 0.125   
+NOTE 75 0.125   
+NOTE 82 0.125   
+NOTE 83 1.500 Q1105 
+	 cuename 5 
+group flute_chords
+{
+	ir1_db -6 300
+	::MakeChord([883, 75, 69, 67, 61, 60], 80 , 5, 250 )
+	::MakeChord([54], 90 , 5, 250 )
+	::MakeChord([46], 100 , 5, 250 )
+}
+NOTE 0 0.750  
+
+; VARIANCE 0.5
+NOTE 96 0.125 Q1106 
+	 cuename 6 
+group flute_chords ;off
+{ 
+	ir1_db -60 5000
+}
+NOTE 91 0.125
+NOTE 89 0.125
+NOTE 88 0.125   
+NOTE 85 0.125   
+NOTE 83 0.125   
+
+NOTE 82 0.20 Q1107 
+	 cuename 7 
+group flute_FS
+{
+	fd_db 0 100
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db 0;
+fd_2_db -96;
+fd_1_freq 16.;
+fd_2_freq 0.;
+}
+group flute_chords
+{
+	ir1_db -6 300
+	::MakeChord([82, 77, 75, 69, 65, 61], 80 , 5, 250 )
+}
+NOTE 83 0  ; was 0.117
+; VARIANCE 0.3
+NOTE 77 0.20  ; was 0.122   
+NOTE 84 0  ; was 0.129   
+NOTE 83 0.20 ; was 0.138   
+; NOTE 0 0.015  
+NOTE 88 0.20 ;    
+NOTE 80 0.40 ; was 0.20
+
+; NOTE 0 0.015  
+NOTE 82 0 ; was 0.084   
+; NOTE 0 0.017  
+NOTE 83 0 ; was 0.083   
+NOTE 77 0.20 ; was 0.167   
+; NOTE 0 0.032  
+NOTE 80 0.20 ;was 0.153   
+; NOTE 0 0.022  
+NOTE 69 0.20 ; was 0.128   
+NOTE 77 0    ; was 0.141   
+NOTE 82 0.20   
+
+NOTE 75 0 ; was 0.129   
+NOTE 69 0.50 Q1108 ; was 0.371 
+	 cuename 8 
+group flute_FS ;off
+{
+	fd_db -96 500
+}
+group flute_chords ;off
+{
+	ir1_db -60 5000
+}
+NOTE 0 0.25    ; was 0.027  
+NOTE 80 0  ; was 0.106   
+NOTE 75 0  ; was 0.117   
+NOTE 77 0.750   
+NOTE 73 0.125   
+NOTE 74 0.125   
+NOTE 80 0.125   
+NOTE 81 0.125   
+NOTE 75 1.250 Q1109 
+	 cuename 9 
+abort ::Spat_Rotation
+group flute_chords
+{
+	ir1_db -6 300
+	::MakeChord([77, 75, 69, 68], 80 , 5, 250 )
+	::MakeChord([59], 90 , 5, 250 )
+	::MakeChord([55], 100 , 5, 250 )
+}
+group wobble
+{
+	abort ::Wobble
+}
+5000 ms
+group flute_chords ;off
+{
+	ir1_db -60 5000
+}
+NOTE 0 2.0 
+	 print end_T5_s11
+
+	 		 	  	
+
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 12
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ VARIANCE 0.3
+
+ BPM  78 ;  132 	 
+ 
+	
+; NOTE 0 6.0 ; added pause to avoid triggering first event too early (cl 2011) 
+NOTE 71 0.500 Q1201
+	 suivi-cur-sec 12
+ group IO_Levels
+{
+ EF_Matrix recall 42
+EF_Levels recall 42
+EF_Deltas recall 42
+} 
+	 cuename 1 
+	 ;fd-bal -12 ; less freq shift 
+	 ;two-comb-bal 3 ; more comb delay 
+group comb
+{;
+cb_1-peakw 21.;
+cb_1-intens 0.7;
+cb_2-peakw 29.7;
+cb_2-intens 0.7;
+}
+group spat
+{
+	;
+;
+print tr normal
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+}
+50 ms
+group flute_FS
+{
+	fd_db 0 100
+	;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 130.;
+fd_2_freq -174.;
+}
+NOTE 72 0.500
+NOTE 85 0.500   
+NOTE 71 0.500   
+NOTE 85 0.332   
+NOTE 72 0.332   
+NOTE 85 0.336   
+NOTE 72 0.332   
+NOTE 85 0.332   
+NOTE 71 0.336   
+NOTE 72 0.332   
+NOTE 71 0.332   
+NOTE 72 0.336   
+NOTE 0 7.000  
+NOTE 72 0.398 Q1202 
+	 cuename 2 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq -174.;
+fd_2_freq -187.;
+}
+NOTE 70 0.398
+NOTE 71 0.402   
+NOTE 70 0.398   
+NOTE 72 0.402   
+NOTE 71 0.398   
+NOTE 70 0.398   
+NOTE 72 0.402   
+NOTE 71 0.402   
+NOTE 0 0.398  
+NOTE 70 0.500   
+NOTE 71 0.500   
+NOTE 0 11.000  
+
+NOTE 74 0.332 Q1203 
+	 cuename 3 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 207.;
+fd_2_freq -174.;
+
+}
+NOTE 72 0.332
+NOTE 85 0.336   
+NOTE 71 0.332   
+NOTE 74 0.332   
+NOTE 72 0.336   
+NOTE 85 0.332   
+NOTE 72 0.332   
+NOTE 85 0.336   
+NOTE 71 0.332   
+NOTE 85 0.332   
+NOTE 74 0.336   
+NOTE  0 6.000  ; HOOK
+
+	NOTE 69 0 ; fausse note pour bloquer
+NOTE 72 4.000 Q1204 
+	 cuename 4 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 261.;
+fd_2_freq -174.;
+}
+NOTE 70 0.250   
+NOTE 85 0.250   
+NOTE 71 0.250   
+NOTE  0 1.250  ; hook
+NOTE 71 12.000 Q1205 
+	 cuename 5 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 392.;
+fd_2_freq -220.; 440 ??
+}
+NOTE 72 0.250   
+NOTE 71 0.250   
+NOTE 85 0.250   
+NOTE 70 0.250   
+NOTE 74 0.250   
+NOTE  0 2.750  ; hook
+NOTE 74 20.000 Q1206 
+	 cuename 6 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 349.;
+fd_2_freq -185.;
+}
+NOTE 70 0.250   
+NOTE 80 0.250   
+NOTE 74 0.250   
+NOTE 71 0.250   
+NOTE 85 0.250   
+NOTE 72 0.250   
+NOTE  0 2.500  ; hook
+NOTE 85 18.000 Q1207 
+	 cuename 7 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 138.;
+fd_2_freq -207.;
+}
+NOTE 77 0.250   
+NOTE 85 0.250   
+NOTE 71 0.250   
+NOTE 81 0.250   
+NOTE 70 0.250   
+NOTE 80 0.250   
+NOTE 70 0.250   
+NOTE 77 0.250   
+NOTE 79 0.250   
+NOTE 66 0.250   
+NOTE 79 0.250   
+NOTE 0 3.250  
+NOTE 79 8.000 Q1208
+	 cuename 8 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 329.;
+fd_2_freq -138.;
+}
+NOTE 72 0.250   
+NOTE 0 3.750  
+NOTE 74 0.332 Q1209 
+	 cuename 9 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 277.;
+fd_2_freq -207.;
+}
+NOTE 72 0.332
+NOTE 80 0.336
+NOTE 71 0.500   
+NOTE 72 0.500   
+NOTE 70 0.500   
+NOTE 71 0.500   
+NOTE 80 0.332   
+NOTE 72 0.332   
+NOTE 74 0.336   
+NOTE 0 22.000  
+NOTE 71 0.398 Q1210 
+	 cuename 10 
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 261.;
+fd_2_freq -196.;
+}
+
+NOTE 70 0.398   
+NOTE 72 0.402   
+NOTE 70 0.398   
+NOTE 71 0.402 Q1211 
+	 cuename 11
+500 ms
+group flute_FS
+{
+	fd_db -96 500
+}
+	 0.7 print end_T5_s12
+NOTE 0 6.0
+ 	 		 	  	
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 13
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ VARIANCE 0.3
+
+ BPM  72  ; 63 	
+ 
+$temposection13 := 63
+NOTE 73 0.250 
+NOTE 74 0.250 Q1301 ; delayed cuename (gn)  
+	 suivi-cur-sec 13
+ group IO_Levels
+{
+ EF_Matrix recall 43
+EF_Levels recall 43
+EF_Deltas recall 43
+}
+	 cuename 1 
+group filt
+{
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+// fs_db -96 ????
+group spat
+{
+;
+print augmenter tr
+to_spats room 1 reverberance ($Reverberance*1.23);
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+abort ::Spat_Rotation
+::Spat_Rotation(1, 4, 175)
+::Spat_Rotation(2, 4, 175)
+}
+10 ms
+group flute_line ;@tempo $temposection13 ; minvel était 50 plus proche de l'original comme ça
+{
+	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, 6, 1])
+1/4	::ShadowPlay(74, 100, 5, 200, 1/4, 40, [0, 6, 1])
+1/4	::ShadowPlay(79, 100, 5, 200, 1/4, 40, [0, 6, 1])
+1/4	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, 6, 1])
+1/4	::ShadowPlay(74, 100, 5, 200, 1/4, 40, [0, 6, 1])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, 6, 1])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(81, 100, 9, 700) ; was 1000 shoreter clearer
+1/4	::Makenote(82, 100, 9, 700)
+1/4	::Makenote(87, 100, 9, 700)
+1/4	::Makenote(81, 100, 9, 700)
+1/4	::Makenote(82, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+}	
+;10 ms
+;group fragments @tempo 63 ; on pourra enlever l'attribut' pour être en suivi de tempo
+NOTE 79 0.250   
+NOTE 73 0.250   
+NOTE 74 0.250   
+NOTE 68 0.250   
+NOTE 73 0.250 Q1302
+	cuename 2
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, 6, -1, 0, -7])
+1/4	::ShadowPlay(65, 100, 5, 200, 1/4, 40, [0, 6, -1, 0, -7])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, 6, -1, 0, -7])
+1/4	::ShadowPlay(66, 100, 5, 200, 1/4, 40, [0, 6, -1, 0, -7])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(81, 100, 9, 700)
+1/4	::Makenote(73, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+1/4	::Makenote(74, 100, 9, 700)
+}	
+NOTE 65 0.250
+NOTE 68 0.250   
+NOTE 66 0.250   
+NOTE 60 0.250 Q1303
+	cuename 3
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(60, 100, 5, 200, 1/4, 40, [0, 6, 1, 0, -7, -13, -7])
+1/4	::ShadowPlay(71, 100, 5, 200, 1/4, 40, [0, 6, 1, 0, -7, -13, -7])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, 6, 1, 0, -7, -13, -7])
+1/4	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, 6, 1, 0, -7, -13, -7])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(68, 100, 9, 700)
+1/4	::Makenote(79, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+1/4	::Makenote(81, 100, 9, 700)
+}	
+NOTE 71 0.250
+NOTE 68 0.250   
+NOTE 73 0.250   
+NOTE 0 1.500  
+NOTE 60 0.250 Q1304
+	cuename 4 
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(60, 100, 5, 200, 1/4, 40, [0, 11, 6, 13, 19])
+1/4	::ShadowPlay(66, 100, 5, 200, 1/4, 40, [0, 11, 6, 13, 19])
+1/4	::ShadowPlay(65, 100, 5, 200, 1/4, 40, [0, 11, 6, 13, 19])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, 11, 6, 13, 19])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(68, 100, 9, 700)
+1/4	::Makenote(74, 100, 9, 700)
+1/4	::Makenote(73, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+}	
+NOTE 66 0.250
+NOTE 65 0.250   
+NOTE 68 0.250   
+NOTE 71 0.250 Q1305
+	cuename 5 
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(71, 100, 5, 200, 1/4, 40, [0, 5, 2, 9])
+1/4	::ShadowPlay(65, 100, 5, 200, 1/4, 40, [0, 5, 2, 9])
+1/4	::ShadowPlay(66, 100, 5, 200, 1/4, 40, [0, 5, 2, 9])
+1/4	::ShadowPlay(60, 100, 5, 200, 1/4, 40, [0, 5, 2, 9])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(79, 100, 9, 700)
+1/4	::Makenote(73, 100, 9, 700)
+1/4	::Makenote(74, 100, 9, 700)
+1/4	::Makenote(68, 100, 9, 700)
+}	
+NOTE 65 0.250
+NOTE 66 0.250   
+NOTE 60 0.250   
+NOTE 73 0.250 Q1306
+	cuename 6 
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, 6])
+1/4	::ShadowPlay(74, 100, 5, 200, 1/4, 40, [0, 6])
+1/4	::ShadowPlay(79, 100, 5, 200, 1/4, 40, [0, 6])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, 6])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(81, 100, 9, 700)
+1/4	::Makenote(82, 100, 9, 700)
+1/4	::Makenote(87, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+}	
+NOTE 74 0.250
+NOTE 79 0.250   
+NOTE 68 0.250   
+NOTE 0 0.250  
+NOTE 65 0.250 Q1307
+	cuename 7 
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, 5, -1])
+1/4	::ShadowPlay(74, 100, 5, 200, 1/4, 40, [0, 5, -1])
+1/4	::ShadowPlay(79, 100, 5, 200, 1/4, 40, [0, 5, -1])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, 5, -1])
+1/4	::ShadowPlay(79, 100, 5, 200, 1/4, 40, [0, 5, -1])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, 5, -1])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(81, 100, 9, 700)
+1/4	::Makenote(82, 100, 9, 700)
+1/4	::Makenote(87, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+1/4	::Makenote(87, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+}	
+NOTE 66 0.250
+NOTE 76 0.250   
+NOTE 72 0.250   
+NOTE 73 0.250   
+NOTE 68 0.250   
+NOTE 70 0.250 Q1308
+	cuename 8
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(70, 100, 5, 200, 1/4, 40, [0, -6])
+1/4	::ShadowPlay(65, 100, 5, 200, 1/4, 40, [0, -6])
+1/4	::ShadowPlay(64, 100, 5, 200, 1/4, 40, [0, -6])
+1/4	::ShadowPlay(71, 100, 5, 200, 1/4, 40, [0, -6])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(78, 100, 9, 700)
+1/4	::Makenote(73, 100, 9, 700)
+1/4	::Makenote(72, 100, 9, 700)
+1/4	::Makenote(79, 100, 9, 700)
+}	
+NOTE 65 0.250
+NOTE 64 0.250   
+NOTE 71 0.250   
+NOTE 0 4.000  
+NOTE 66 0.250 Q1309 
+	cuename 9
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(66, 100, 5, 200, 1/4, 40, [0, -1])
+1/4	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, -1])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, -1])
+1/4	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, -1])
+1/4	::ShadowPlay(65, 100, 5, 200, 1/4, 40, [0, -1])
+1/4	::ShadowPlay(60, 100, 5, 200, 1/4, 40, [0, -1])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(74, 100, 9, 700)
+1/4	::Makenote(81, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+1/4	::Makenote(81, 100, 9, 700)
+1/4	::Makenote(73, 100, 9, 700)
+1/4	::Makenote(68, 100, 9, 700)
+}	
+NOTE 73 0.250
+NOTE 68 0.250   
+NOTE 74 0.250   
+NOTE 65 0.250   
+NOTE 60 0.250   
+NOTE 66 0.250 Q1310
+	cuename 10 
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(66, 100, 5, 200, 1/4, 40, [0, 13, 5])
+1/4	::ShadowPlay(73, 100, 5, 200, 1/4, 40, [0, 13, 5])
+1/4	::ShadowPlay(79, 100, 5, 200, 1/4, 40, [0, 13, 5])
+1/4	::ShadowPlay(74, 100, 5, 200, 1/4, 40, [0, 13, 5])
+1/4	::ShadowPlay(71, 100, 5, 200, 1/4, 40, [0, 13, 5])
+1/4	::ShadowPlay(70, 100, 5, 200, 1/4, 40, [0, 13, 5])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(74, 100, 9, 700)
+1/4	::Makenote(81, 100, 9, 700)
+1/4	::Makenote(87, 100, 9, 700)
+1/4	::Makenote(82, 100, 9, 700)
+1/4	::Makenote(79, 100, 9, 700)
+1/4	::Makenote(78, 100, 9, 700)
+}	
+NOTE 73 0.250
+NOTE 79 0.250
+NOTE 74 0.250   
+NOTE 71 0.250   
+NOTE 70 0.250   
+NOTE 65 0.250 Q1311
+	cuename 11 
+group flute_line ;@tempo $temposection13
+{
+	::ShadowPlay(65, 100, 5, 200, 1/4, 40, [0, -5])
+1/4	::ShadowPlay(68, 100, 5, 200, 1/4, 40, [0, -5])
+1/4	::ShadowPlay(60, 100, 5, 200, 1/4, 40, [0, -5])
+1/4	::ShadowPlay(64, 100, 5, 200, 1/4, 40, [0, -5])
+1/4	::ShadowPlay(66, 100, 5, 200, 1/4, 40, [0, -5])
+1/4	::ShadowPlay(69, 100, 5, 200, 1/4, 40, [0, -5])
+}
+group multiphonics_line ;@tempo $temposection13
+{
+	::Makenote(73, 100, 9, 700)
+1/4	::Makenote(76, 100, 9, 700)
+1/4	::Makenote(68, 100, 9, 700)
+1/4	::Makenote(72, 100, 9, 700)
+1/4	::Makenote(74, 100, 9, 700)
+1/4	::Makenote(77, 100, 9, 700)
+}	
+group spat
+{
+	1500 ms
+	abort ::Spat_Rotation
+}
+NOTE 68 0.250
+NOTE 60 0.250   
+NOTE 64 0.250   
+NOTE 66 0.250   
+NOTE 69 0.250 
+	 0.5 print end_T5_s13
+
+	  	 	 		 	  	
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 14
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+ 
+ BPM  72 	; 132 		
+	
+NOTE 66 0.250 Q1401  ;1 
+	 suivi-cur-sec 14
+ group IO_Levels
+{
+ EF_Matrix recall 44
+EF_Levels recall 44
+EF_Deltas recall 44
+}
+	 cuename 1 
+group comb
+{
+	;
+cb_1-peakw 21.;
+cb_1-intens 0.7;
+cb_2-peakw 29.7;
+cb_2-intens 0.7;
+}
+group spat
+{	;
+;
+print tr normal
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+}
+50 ms
+group flute_FS
+{
+	fd_db 0 100
+	;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 329.;
+fd_2_freq -138.;
+}
+NOTE 65 0.250   
+NOTE 66 0.250   
+NOTE 65 0.250   
+NOTE 66 0.250   
+NOTE 65 0.250   
+NOTE 0 1.000  
+NOTE 73 0.250 Q1402
+	 cuename 2
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 698.;
+fd_2_freq -392.;
+}
+NOTE 74 0.250   
+NOTE 73 0.250   
+NOTE 74 0.250   
+NOTE 0 3.500  
+NOTE 60 0.250 Q1403
+	 cuename 3 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 110.;
+fd_2_freq -65.;
+}
+NOTE 64 0.250   
+NOTE 0 3.000  
+NOTE 65 0.250 Q1404
+	 cuename 4 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 174.;
+fd_2_freq -103.;
+2000 ms
+hr_db -96 500
+}
+NOTE 71 0.250   
+NOTE 65 0.250   
+NOTE 71 0.250 Q1405
+	 ;tempo_t5s15 1 
+	 cuename 5
+group flute_FS ; secu ?
+{
+hr_db -96 500
+}
+NOTE 0 	15.0 ;  7.750 
+	 14 print end_T5_s14
+
+ 		 	  	
+ 		 	  	
+ 		 	  	
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 15
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+	 ; tempo_t5s15 1 ; semble etre envoyé après le bpm bizarre  
+ BPM  64	; 72	  	
+$tempo15 := 66 ; was 64tempo fixé pour section 15 seulement
+NOTE 0 1.0
+NOTE 64 0.500 Q1501  ;1 
+	 suivi-cur-sec 15
+ group IO_Levels
+{
+EF_Matrix recall 45
+EF_Levels recall 45
+EF_Deltas recall 45
+}
+	 // tempo_t5s15 1 //????
+	 cuename 1 
+	 ;samp7a-bal 3 ; less bell 
+group filt
+{
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+}
+group comb
+{
+cb_1-peakw 21.;
+cb_1-intens 0.7;
+cb_2-peakw 29.7;
+cb_2-intens 0.7;
+}
+group spat
+{
+;
+print augmenter tr
+to_spats room 1 reverberance ($Reverberance*1.23);
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+abort ::Spat_Rotation
+::Spat_Rotation(1, 4, 175)
+::Spat_Rotation(2, 4, 175)
+}
+10 ms
+group flute_line @tempo $tempo15
+{
+	::ShadowPlay(64, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(66, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(71, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(65, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(70, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(81, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(70, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(71, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(63, 100, 5, 200, 1/4, 40, [0])
+1/2	::ShadowPlay(64, 100, 5, 200, 1/4, 40, [0])
+}
+group multiphonics_line @tempo $tempo15
+{
+	::Makenote(78, 100, 9, 700)
+1/2	::Makenote(80, 100, 9, 700)
+1/2	::Makenote(85, 100, 9, 700)
+1/2	::Makenote(79, 100, 9, 700)
+1/2	::Makenote(84, 100, 9, 700)
+1/2	::Makenote(95, 100, 9, 700)
+1/2	::Makenote(84, 100, 9, 700)
+1/2	::Makenote(85, 100, 9, 700)
+1/2	::Makenote(77, 100, 9, 700)
+1/2	::Makenote(78, 100, 9, 700)
+}		
+NOTE 66 0.500   
+NOTE 71 0.500   
+NOTE 65 0.500   
+NOTE 70 0.500   
+NOTE 81 0.500   
+NOTE 70 0.500   
+NOTE 71 0.500   
+NOTE 63 0.500   
+NOTE 64 0.500   
+NOTE 74 0.500 Q1502
+	 cuename 2 
+group flute_line @tempo $tempo15
+{
+	::ShadowPlay(74, 100, 5, 200, 1/4, 100, [0, 6])
+1/2	::ShadowPlay(63, 100, 5, 200, 1/4, 100, [0, 6])
+1/2	::ShadowPlay(68, 100, 5, 200, 1/4, 100, [0, 6])
+1/2	::ShadowPlay(63, 100, 5, 200, 1/4, 100, [0, 6])
+1/2	::ShadowPlay(74, 100, 5, 200, 1/4, 100, [0, 6])
+}
+group multiphonics_line @tempo $tempo15
+{
+	::Makenote(78, 100, 9, 700)
+1/2	::Makenote(77, 100, 9, 700)
+1/2	::Makenote(82, 100, 9, 700)
+1/2	::Makenote(77, 100, 9, 700)
+1/2	::Makenote(88, 100, 9, 700)
+}
+NOTE 63 0.500
+NOTE 68 0.500   
+NOTE 63 0.500   
+NOTE 74 0.500   
+NOTE 60 0.500 Q1503
+	 cuename 3 
+group flute_line @tempo $tempo15
+{
+	::ShadowPlay(60, 100, 5, 200, 1/6, 40, [0, 13, 7])
+1/2	::ShadowPlay(66, 100, 5, 200, 1/6, 40, [0, 13, 7])
+1/2	::ShadowPlay(74, 100, 5, 200, 1/6, 40, [0, 13, 7])
+1/2	::ShadowPlay(79, 100, 5, 200, 1/6, 40, [0, 13, 7])
+1/2	::ShadowPlay(71, 100, 5, 200, 1/6, 40, [0, 13, 7])
+1/2	::ShadowPlay(66, 100, 5, 200, 1/6, 40, [0, 13, 7])
+1/2	::ShadowPlay(73, 100, 5, 200, 1/6, 40, [0, 13, 7])
+1/2	::ShadowPlay(65, 100, 5, 200, 1/6, 40, [0, 13, 7])
+}
+group multiphonics_line @tempo $tempo15
+{
+	::Makenote(74, 100, 9, 700)
+1/2	::Makenote(80, 100, 9, 700)
+1/2	::Makenote(88, 100, 9, 700)
+1/2	::Makenote(93, 100, 9, 700)
+1/2	::Makenote(85, 100, 9, 700)
+1/2	::Makenote(80, 100, 9, 700)
+1/2	::Makenote(87, 100, 9, 700)
+1/2	::Makenote(79, 100, 9, 700)
+}
+NOTE 66 0.500
+NOTE 74 0.500
+NOTE 79 0.500   
+NOTE 71 0.500   
+NOTE 66 0.500   
+NOTE 73 0.500   
+NOTE 65 0.500   
+NOTE 63 0.500 Q1504
+	 cuename 4 
+group flute_line @tempo $tempo15
+{
+	::ShadowPlay(63, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(74, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(60, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(68, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(74, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(81, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(70, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(64, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(63, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(68, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(74, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(66, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(70, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+1/2	::ShadowPlay(81, 100, 5, 200, 1/8, 40, [0, -11, -6, -1])
+}
+group multiphonics_line @tempo $tempo15
+{
+	::Makenote(77, 100, 9, 700)
+1/2	::Makenote(88, 100, 9, 700)
+1/2	::Makenote(74, 100, 9, 700)
+1/2	::Makenote(82, 100, 9, 700)
+1/2	::Makenote(88, 100, 9, 700)
+1/2	::Makenote(95, 100, 9, 700)
+1/2	::Makenote(84, 100, 9, 700)
+1/2	::Makenote(78, 100, 9, 700)
+1/2	::Makenote(77, 100, 9, 700)
+1/2	::Makenote(82, 100, 9, 700)
+1/2	::Makenote(88, 100, 9, 700)
+1/2	::Makenote(80, 100, 9, 700)
+1/2	::Makenote(84, 100, 9, 700)
+1/2	::Makenote(95, 100, 9, 700)
+}
+NOTE 74 0.500
+NOTE 60 0.500   
+NOTE 68 0.500   
+NOTE 74 0.500   
+NOTE 81 0.500   
+NOTE 70 0.500   
+NOTE 64 0.500   
+NOTE 63 0.500   
+NOTE 68 0.500   
+NOTE 74 0.500   
+NOTE 66 0.500   
+NOTE 70 0.500   
+NOTE 81 0.500   
+NOTE 63 1.500 Q1505
+	 cuename 5 
+group spat
+{
+	abort ::Spat_Rotation
+	to_spats source 3 az -180
+	to_spats source 3 pres 100
+	to_spats source 3 prer 50
+}
+group flute_FS
+{
+fd_db 0 100 ; ouvre la sortie gle
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 155.;
+fd_2_freq -92.;
+
+}
+NOTE 0 0.500  
+NOTE 64 1.500 Q1506
+	 cuename 6 
+group flute_FS
+{
+
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 554.;
+fd_2_freq -207.;
+
+}
+NOTE 0 2.500  
+NOTE 74 1.500 Q1507
+	 cuename 7
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 659.;
+fd_2_freq -415.;
+
+} 
+NOTE 0 5.500  
+NOTE 60 1.500 Q1508
+	 cuename 8 
+group flute_FS
+{
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 739.;
+fd_2_freq -185.;
+800ms fd_db -96 500
+}
+	 // tempo_t5s15 0 // no match
+	 1.5 print end_T5_s15
+NOTE 0 10.0 ; pause plus courte..
+	 	  	 	 		 	  	
+
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 16
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+$temposection16 := 144
+ BPM  144   ;  112 	
+ 
+	
+NOTE 68 0.5 Q1601
+	 suivi-cur-sec 16
+ group IO_Levels
+{
+ EF_Matrix recall 46
+EF_Levels recall 46
+EF_Deltas recall 46
+}
+	 cuename 1
+group filt
+{
+samp3-filt-on-off 0;
+samp3-filt-cfreq 0;
+samp3-filt-q 50;
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+group spat
+{;
+;
+print tr normal
+to_spats room 1 reverberance $Reverberance;
+to_spats source 3 az -180
+to_spats source 3 pres 100 ;harm
+to_spats source 3 prer 50
+to_spats source 4 az -180 ; fs
+to_spats source 4 pres 100
+to_spats source 4 prer 50
+
+to_spats source 4 az 0 ; 
+to_spats source 6 az -180 ; 
+}
+10 ms
+group flute_FS
+{
+	fd_db 0 100
+	fd_1_del 0;
+	fd_2_del 0;
+	fd_1_db -6;
+	fd_2_db -6;
+	fd_1_freq 527;523.;
+	fd_2_freq -196;-261.;
+}
+NOTE 73 0.5 Q1602
+cuename 2
+
+to_spats source 4 az -60 ; 
+to_spats source 6 az -120 ; 
+
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 233;880.;
+fd_2_freq -138;-415.;
+}
+NOTE 74 0.5 Q1603 
+cuename 3
+
+
+to_spats source 4 az -120 ; harm
+to_spats source 6 az 60 ; harm
+
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 659;493.;
+fd_2_freq -415;-246.;
+}
+NOTE 79 0.5 Q1604 
+cuename 4
+
+to_spats source 4 az -180 ; harm
+to_spats source 6 az 0 ; harm
+
+group flute_FS
+{
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq 98;207.;
+fd_2_freq -43;-123.;
+}
+NOTE 84 0  ; was     
+NOTE 81 0.250 Q1605 
+cuename 5 
+group flute_FS
+{
+	fd_db -96 500
+}
+group flute_line ;@tempo 144
+{
+ 	::Makenote(81 , 100, 5, 200)
+1/4 ::Makenote(83 , 100, 5, 200)
+1/4 ::Makenote(78 , 100, 5, 200)
+1/4 ::Makenote(81 , 100, 5, 200)
+1/4 ::Makenote(76 , 100, 5, 200)
+1/4 ::Makenote(83 , 100, 5, 200)
+}
+group multiphonics_line ;@tempo 144
+{
+ 	::Makenote(81 , 100, 9, 700) ; was 1000 shorter clearer
+1/4 ::Makenote(83 , 100, 9, 700)
+1/4 ::Makenote(78 , 100, 9, 700)
+1/4 ::Makenote(81 , 100, 9, 700)
+1/4 ::Makenote(76 , 100, 9, 700)
+1/4 ::Makenote(83 , 100, 9, 700)
+}
+group pizz_line ;@tempo 144
+{
+ 	::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(83 , 100, 4, 150)
+1/4 ::Makenote(78 , 100, 4, 150)
+1/4 ::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(83 , 100, 4, 150)
+}
+group spat
+{
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+to_spats source 5 az -180
+to_spats source 5 pres 60
+to_spats source 5 prer 50
+::SwishSpat(1, 90, 1500)
+::SwishSpat(2, 90, 1500)
+::SwishSpat(5, 90, 1500)
+}
+NOTE 83 0.250
+NOTE 78 0.250   
+NOTE 81 0.250   
+NOTE 76 0.250   
+NOTE 83 0.250   
+ TRILL ( 7000 7100 ) 3.5 Q1606
+cuename 6 
+
+
+group harm
+{	;
+hr_init bang;
+;
+	group hr_in_db
+	{
+	hr_in_db 0 20
+	250ms
+	hr_in_db -96
+	}
+//hr_in_db -20
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db -96;
+hr6_db -96;
+hr7_db -96;
+;
+hr1-p -4;
+hr2-p -3;
+hr3-p -10;
+hr4-p -13;
+hr5-p 0;
+hr6-p 0;
+hr7-p 0;
+
+@local $basedelay
+$basedelay := 210
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+10 ms
+hr_db 0 200
+}
+
+::rotation_harmo(3, -0.2,1, 45)
+
+ TRILL ( 7600 7700 ) 1.0	; 2nd was 79!   
+NOTE 81 0.125 ; was 0   
+ TRILL ( 7800 7900 ) 3.0 Q1607
+cuename 7
+abort ::rotation_harmo
+group harm
+{	;
+hr_init bang;
+;
+	group hr_in_db
+	{
+	hr_in_db 0 20
+	300ms
+	hr_in_db -96
+	}
+//hr_in_db -20
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db -96;
+hr6_db -96;
+hr7_db -96;
+;
+hr1-p -4;
+hr2-p -3;
+hr3-p -10;
+hr4-p -13;
+hr5-p 0;
+hr6-p 0;
+hr7-p 0;
+
+@local $basedelay
+$basedelay := 210
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+10 ms
+hr_db 0 200
+}
+
+::rotation_harmo(3, -0.2,1, -45)
+
+
+ TRILL ( 8300 8400 ) 3.5	; 2nd was 86
+NOTE 76 0.125 ; was 0
+NOTE 84 0.250 Q1608
+
+
+cuename 8
+
+abort ::rotation_harmo
+
+group flute_line ;@tempo $temposection16
+{
+ 	::ShadowPlay(81 , 100, 5, 200, 1/4, 40, [0])
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 40, [0])
+1/4 ::ShadowPlay(83 , 100, 5, 200, 1/4, 40, [0])
+1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0])
+1/4 ::ShadowPlay(70 , 100, 5, 200, 1/4, 40, [0])
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 40, [0])
+}
+group multiphonics_line ;@tempo $temposection16
+{
+ 	::Makenote(81 , 100, 9, 700)
+1/4 ::Makenote(78 , 100, 9, 700)
+1/4 ::Makenote(83 , 100, 9, 700)
+1/4 ::Makenote(76 , 100, 9, 700)
+1/4 ::Makenote(70 , 100, 9, 700)
+1/4 ::Makenote(78 , 100, 9, 700)
+}
+group pizz_line ;@tempo $temposection16
+{
+ 	::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(78 , 100, 4, 150)
+1/4 ::Makenote(83 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(70 , 100, 4, 150)
+1/4 ::Makenote(78 , 100, 4, 150)
+}
+;group harmo
+;{
+;hr_db 0 200
+;hr_init bang;
+	;
+;hr1_db 0;
+;;hr2_db 0;
+;hr3_db 0;
+;hr4_db 0;
+;hr5_db -96;
+;hr6_db -96;
+;hr7_db -96;
+;
+;hr1-p -4;
+;hr2-p -9;
+;hr3-p -8;
+;hr4-p -23;
+;hr5-p 0;
+;hr6-p 0;
+;hr7-p 0;
+;}
+
+group spat
+{
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+to_spats source 5 az -180
+to_spats source 5 pres 60
+to_spats source 5 prer 50
+::SwishSpat(1, 90, 1500)
+::SwishSpat(2, 90, 1500)
+::SwishSpat(5, 90, 1500)
+}
+; TRILL ( 76 84) 0.250 8  
+NOTE 86 0.250
+
+NOTE 76 0.125 ; was 0   
+NOTE 81 0.250   
+NOTE 78 0.250   
+NOTE 83 0.250   
+NOTE 76 0.250   
+NOTE 70 0.250   
+NOTE 78 0.250   
+; NOTE 0 0.148  
+ TRILL ( 8400 8500 ) 4 Q1609 ; was 3.85beat
+	 cuename 9 
+group harm
+{	;
+hr_init bang;
+;
+	group hr_in_db
+	{
+	hr_in_db 0 20
+	300ms
+	hr_in_db -96
+	}
+//hr_in_db -20
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db 0;
+hr5_db -96;
+hr6_db -96;
+hr7_db -96;
+;
+hr1-p -4;
+hr2-p -3;
+hr3-p -10;
+hr4-p -13;
+hr5-p 0;
+hr6-p 0;
+hr7-p 0;
+
+@local $basedelay
+$basedelay := 210
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+10 ms
+hr_db 0 200
+
+}
+
+::rotation_harmo(3, -0.2,1, 45)
+
+NOTE 0 2.5 Q1609.1
+abort ::rotation_harmo
+NOTE 78 0.125
+NOTE 77 0.250 Q1610
+	 cuename 10   ; CHECK PARTTION pour harmo il y a peut être un cue de décalage
+
+
+
+group flute_line @tempo $temposection16
+{
+ 	::ShadowPlay(77 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(81 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(75 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(80 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(81 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(82 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(83 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(77 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(85 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(79 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(84 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(81 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(83 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(82 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(86 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0])
+}
+group multiphonics_line ;@tempo $temposection16
+{
+ 	::Makenote(77 , 100, 9, 700)
+1/4 ::Makenote(78 , 100, 9, 700)
+1/4 ::Makenote(81 , 100, 9, 700)
+1/4 ::Makenote(75 , 100, 9, 700)
+1/4 ::Makenote(80 , 100, 9, 700)
+1/4 ::Makenote(76 , 100, 9, 700)
+1/4 ::Makenote(81 , 100, 9, 700)
+1/4 ::Makenote(82 , 100, 9, 700)
+1/4 ::Makenote(83 , 100, 9, 700)
+1/4 ::Makenote(77 , 100, 9, 700)
+1/4 ::Makenote(85 , 100, 9, 700)
+1/4 ::Makenote(79 , 100, 9, 700)
+1/4 ::Makenote(84 , 100, 9, 700)
+1/4 ::Makenote(81 , 100, 9, 700)
+1/4 ::Makenote(83 , 100, 9, 700)
+1/4 ::Makenote(82 , 100, 9, 700)
+1/4 ::Makenote(86 , 100, 9, 700)
+}
+group pizz_line ;@tempo $temposection16
+{
+ 	::Makenote(77 , 100, 4, 150)
+1/4 ::Makenote(78 , 100, 4, 150)
+1/4 ::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(75 , 100, 4, 150)
+1/4 ::Makenote(80 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(82 , 100, 4, 150)
+1/4 ::Makenote(83 , 100, 4, 150)
+1/4 ::Makenote(77 , 100, 4, 150)
+1/4 ::Makenote(85 , 100, 4, 150)
+1/4 ::Makenote(79 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(83 , 100, 4, 150)
+1/4 ::Makenote(82 , 100, 4, 150)
+1/4 ::Makenote(86 , 100, 4, 150)
+}
+group harmo
+{
+hr_db 0 200
+hr_init bang;
+	;
+hr1_db 0;
+hr2_db 0;
+hr3_db 0;
+hr4_db -96;
+hr5_db -96;
+hr6_db -96;
+hr7_db -96;
+;
+hr1-p -6;
+hr2-p -8;
+hr3-p -14;
+hr4-p 0;
+hr5-p 0;
+hr6-p 0;
+hr7-p 0;
+}
+group spat
+{
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+to_spats source 5 az -180
+to_spats source 5 pres 60
+to_spats source 5 prer 50
+::SwishSpat(1, 90, 1500)
+::SwishSpat(2, 90, 1500)
+::SwishSpat(5, 90, 1500)
+}
+NOTE 78 0.250
+NOTE 81 0.250   
+NOTE 75 0.250   
+NOTE 80 0.250   
+NOTE 76 0.250   
+NOTE 81 0.250   
+NOTE 82 0.250   
+NOTE 83 0.250   
+NOTE 77 0.250   
+NOTE 85 0.250   
+NOTE 79 0.250   
+NOTE 84 0.250   
+NOTE 81 0.250   
+NOTE 83 0.250   
+NOTE 82 0.250   
+NOTE 86 0.250   
+NOTE 0 1.250
+
+NOTE 78 0.125 ; was 0   
+NOTE 84 0.250  Q1611
+	 cuename 11 
+group flute_line @tempo $temposection16
+{
+ 	::ShadowPlay(84 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(83 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(81 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(79 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(75 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(74 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(77 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(70 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0, 0, 0, 0])
+}
+group multiphonics_line ;@tempo $temposection16
+{
+ 	::Makenote(84, 100, 9, 700)
+1/4 ::Makenote(83, 100, 9, 700)
+1/4 ::Makenote(78, 100, 9, 700)
+1/4 ::Makenote(81, 100, 9, 700)
+1/4 ::Makenote(78, 100, 9, 700)
+1/4 ::Makenote(76, 100, 9, 700)
+1/4 ::Makenote(79, 100, 9, 700)
+1/4 ::Makenote(75, 100, 9, 700)
+1/4 ::Makenote(74, 100, 9, 700)
+1/4 ::Makenote(78, 100, 9, 700)
+1/4 ::Makenote(77, 100, 9, 700)
+1/4 ::Makenote(76, 100, 9, 700)
+1/4 ::Makenote(70, 100, 9, 700)
+}
+group pizz_line ;@tempo $temposection16
+{
+ 	::Makenote(84, 100, 4, 150)
+1/4 ::Makenote(83, 100, 4, 150)
+1/4 ::Makenote(78, 100, 4, 150)
+1/4 ::Makenote(81, 100, 4, 150)
+1/4 ::Makenote(78, 100, 4, 150)
+1/4 ::Makenote(76, 100, 4, 150)
+1/4 ::Makenote(79, 100, 4, 150)
+1/4 ::Makenote(75, 100, 4, 150)
+1/4 ::Makenote(74, 100, 4, 150)
+1/4 ::Makenote(78, 100, 4, 150)
+1/4 ::Makenote(77, 100, 4, 150)
+1/4 ::Makenote(76, 100, 4, 150)
+1/4 ::Makenote(70, 100, 4, 150)
+}
+group harmo
+{
+	hr_db -96 1500 ; ou alors c'est décalé ?
+}
+group spat
+{
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+to_spats source 5 az -180
+to_spats source 5 pres 60
+to_spats source 5 prer 50
+::SwishSpat(1, 90, 1500)
+::SwishSpat(2, 90, 1500)
+::SwishSpat(5, 90, 1500)
+}
+NOTE 83 0.250
+NOTE 78 0.250
+NOTE 81 0.250   
+NOTE 78 0.250   
+NOTE 76 0.250   
+NOTE 79 0.250   
+NOTE 75 0.250   
+NOTE 74 0.250   
+NOTE 78 0.250   
+NOTE 77 0.250   
+NOTE 76 0.250   
+NOTE 70 0.250   
+NOTE 0 2.250 
+
+NOTE 81 0.125 ; was 0 
+NOTE 76 0.250 Q1612
+	 cuename 12 
+group flute_line @tempo $temposection16
+{
+ 	::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(75 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(74 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(71 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(72 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(73 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(71 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(70 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(72 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(74 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(73 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(72 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(75 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(71 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(78 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(77 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(72 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(75 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(76 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(79 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(75 , 100, 5, 200, 1/4, 40, [0, 0, 0, 0, 0, 0])
+1/4 ::ShadowPlay(81 , 100, 7, 200, 1/4, 40, [0, 0, 0, 0, 0, 0]); 2025 7 repetition, was 5
+}
+group multiphonics_line ;@tempo $temposection16
+{
+	::Makenote(76 , 100, 9, 700)
+1/4 ::Makenote(75 , 100, 9, 700)
+1/4 ::Makenote(74 , 100, 9, 700)
+1/4 ::Makenote(71 , 100, 9, 700)
+1/4 ::Makenote(72 , 100, 9, 700)
+1/4 ::Makenote(73 , 100, 9, 700)
+1/4 ::Makenote(71 , 100, 9, 700)
+1/4 ::Makenote(76 , 100, 9, 700)
+1/4 ::Makenote(70 , 100, 9, 700)
+1/4 ::Makenote(72 , 100, 9, 700)
+1/4 ::Makenote(74 , 100, 9, 700)
+1/4 ::Makenote(73 , 100, 9, 700)
+1/4 ::Makenote(72 , 100, 9, 700)
+1/4 ::Makenote(75 , 100, 9, 700)
+1/4 ::Makenote(76 , 100, 9, 700)
+1/4 ::Makenote(71 , 100, 9, 700)
+1/4 ::Makenote(78 , 100, 9, 700)
+1/4 ::Makenote(77 , 100, 9, 700)
+1/4 ::Makenote(72 , 100, 9, 700)
+1/4 ::Makenote(75 , 100, 9, 700)
+1/4 ::Makenote(76 , 100, 9, 700)
+1/4 ::Makenote(79 , 100, 9, 700)
+1/4 ::Makenote(75 , 100, 9, 700)
+1/4 ::Makenote(81 , 100, 9, 700)
+
+}
+group pizz_line ;@tempo $temposection16
+{
+	::Makenote(76 , 100, 4, 1000)
+1/4 ::Makenote(75 , 100, 4, 1000)
+1/4 ::Makenote(74 , 100, 4, 1000)
+1/4 ::Makenote(71 , 100, 4, 1000)
+1/4 ::Makenote(72 , 100, 4, 1000)
+1/4 ::Makenote(73 , 100, 4, 1000)
+1/4 ::Makenote(71 , 100, 4, 1000)
+1/4 ::Makenote(76 , 100, 4, 1000)
+1/4 ::Makenote(70 , 100, 4, 1000)
+1/4 ::Makenote(72 , 100, 4, 1000)
+1/4 ::Makenote(74 , 100, 4, 1000)
+1/4 ::Makenote(73 , 100, 4, 1000)
+1/4 ::Makenote(72 , 100, 4, 1000)
+1/4 ::Makenote(75 , 100, 4, 1000)
+1/4 ::Makenote(76 , 100, 4, 1000)
+1/4 ::Makenote(71 , 100, 4, 1000)
+1/4 ::Makenote(78 , 100, 4, 1000)
+1/4 ::Makenote(77 , 100, 4, 1000)
+1/4 ::Makenote(72 , 100, 4, 1000)
+1/4 ::Makenote(75 , 100, 4, 1000)
+1/4 ::Makenote(76 , 100, 4, 1000)
+1/4 ::Makenote(79 , 100, 4, 1000)
+1/4 ::Makenote(75 , 100, 4, 1000)
+1/4 ::Makenote(81 , 100, 4, 1000)
+}
+group spat
+{
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+to_spats source 5 az -180
+to_spats source 5 pres 60
+to_spats source 5 prer 50
+::SwishSpat(1, 250, 2500); 2025 acceleration, was 90 in 2000ms
+::SwishSpat(2, 250, 2500)
+::SwishSpat(5, 250, 2500)
+}
+NOTE 75 0.250
+NOTE 74 0.250   
+NOTE 71 0.250   
+NOTE 72 0.250   
+NOTE 73 0.250   
+NOTE 71 0.250   
+NOTE 76 0.250   
+NOTE 70 0.250   
+NOTE 72 0.250   
+NOTE 74 0.250   
+NOTE 73 0.250   
+NOTE 72 0.250   
+NOTE 75 0.250   
+NOTE 76 0.250   
+NOTE 71 0.250   
+NOTE 78 0.250   
+NOTE 77 0.250   
+NOTE 72 0.250   
+NOTE 75 0.250   
+NOTE 76 0.250   
+NOTE 79 0.250   
+NOTE 75 0.250   
+NOTE 81 0.250   
+NOTE 83 0.250; 2025 
+abort   ::SwishSpat // stop rotation
+NOTE 83 0.250   
+NOTE 81 0.250   
+NOTE 75 0.250   
+NOTE 70 0.250   
+NOTE 67 0.250   
+NOTE 62 0.250
+	 0.5 print end_T5_s16
+NOTE 0 4.250
+	 
+
+	 
+ 	 	  	 	 		 	  
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 17
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+
+ BPM  144 
+	
+;NOTE 0 0.5
+NOTE 83 0.25  
+NOTE 81 0.125   
+NOTE 81 0.125   
+NOTE 81 0.125   
+NOTE 81 0.125   
+TRILL ( 8300 8400 ) 3.75	; 2nd was 86   
+NOTE 78 0.0		; grace   
+NOTE 83 0.25 Q1701
+	 suivi-cur-sec 17
+ group IO_Levels
+{
+ EF_Matrix recall 47
+EF_Levels recall 47
+EF_Deltas recall 47
+}  
+	 cuename 1 
+group filt
+{
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+samp5-filt-on-off 0;
+samp5-filt-cfreq 0;
+samp5-filt-q 0;
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 0;
+}
+ir1-params reverb tr0 20
+group spat
+{
+abort ::SwishSpat ; juste au cas où
+abort ::Random_HP
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+to_spats source 2 az -180
+to_spats source 2 pres 80
+to_spats source 2 prer 50
+to_spats source 3 az -180
+to_spats source 3 pres 80
+to_spats source 3 prer 50
+::Random_HP(2, 100)
+::Random_HP(3, 100)
+}
+; 3/4
+50 ms ; spat glitch
+group flute_IR
+{
+	::MakeChord([83, 78, 69], 80, 5, 250)
+}
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(29, $period,[83, 78, 69],80, 7, 250 )
+}
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(29, $period,[83],100, 9, 200 )
+}
+NOTE 0 7 ; was 3.430 
+
+; 3/4
+NOTE 81 0.0  
+NOTE 83 0.25  
+		NOTE 96 0.0		; fausse note pour bloquer  
+NOTE 77 0.25 ; 2 was here 
+NOTE 83 0.25   Q1702
+	 cuename 2 
+20 ms
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(28,$period,[91],100, 12, 250 )
+	::NChords(28, $period,[77, 69],80, 12, 250 )
+}
+20 ms
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(28, $period,[83],100, 9, 200 )
+}
+20 ms
+group flute_IR
+{
+	::MakeChord([83, 77, 69], 80, 5, 250)
+}
+NOTE 0 6.75
+
+; 3/4
+NOTE 83 0.25  
+NOTE 78 0.125 ; should be 0.25  
+NOTE 78 0.125   
+NOTE 78 0.125  
+	    ; NOTE 84 0.0		; fausse note pour bloquer  ;  was NOTE fausse (cl 2011)
+NOTE 83 0.25  Q1703
+	 cuename 3 
+20 ms
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(32, $period,[79, 72, 68, 61],80, 12, 250 )
+}
+20 ms
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(32, $period,[83],100, 9, 200 )
+}
+20 ms
+group flute_IR
+{
+	::MakeChord([83, 79, 72], 80, 5, 250)
+}	 
+NOTE 0 7.750   ; was 6.5 ; was 3.756  
+
+NOTE 81 0. ; 0.055   
+NOTE 78 0. ; 0.064   
+NOTE 83 0.25 
+		; NOTE 97 0.0		; fausse note pour bloquer ;  
+; 4/4
+NOTE 84 0.125   
+NOTE 84 0.125   
+NOTE 84 0.125   
+NOTE 84 0.125 
+		;  82 0.0		; fausse note pour bloquer   
+NOTE 83 0.25  Q1704
+	 cuename 4 
+20 ms
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(32, $period,[88, 72, 66, 61],80, 12, 250 )
+}
+20 ms
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(32, $period,[83],100, 9, 200 )
+}
+20 ms
+group flute_IR
+{
+	::MakeChord([83, 74, 70], 80, 5, 250)
+}	
+NOTE 0 6 ; 3.000 
+
+; 5/4
+NOTE 83 0.25   
+		; NOTE 97 0.0		; fausse note pour bloquer 
+		; TRILL ( 84 ) 0.75 combiné dans trill suivant
+print 01
+NOTE 84 0.25
+print 02
+NOTE 84 0.25   
+print 03
+NOTE 84 0.25
+print 03
+  TRILL ( 8300 8400 ) 4.5 ; was 4.5  ; 1.5	; 2nd was 8600
+print trill
+NOTE 74 0  ; was 0  
+print grace-note
+NOTE 83 0.25  Q1705
+	 cuename 5 
+20 ms
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(32, $period,[79, 74, 70, 66, 61],80, 12, 250 )
+	::NChords(32, $period,[57],100, 12, 250 )
+}
+20 ms
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(32, $period,[83],100, 9, 200 )
+}
+20 ms
+group flute_IR
+{
+	::MakeChord([83], 80, 5, 250)
+}	
+; 4/4
+NOTE 0 6.75 ; 3.375   
+
+NOTE 83 0.25   
+		; NOTE 97 0.0		; fausse note pour bloquer 
+ 		; TRILL ( 77 ) 0.5 ; 0.25   
+NOTE 77 0.25
+NOTE 77 0.25
+NOTE 83 0.25  Q1706; was 0.5 (cl 2011)
+	 cuename 6 
+20 ms
+group flute_chords_multiphonics ; @tempo 144 ; CHECK PARTITION - multiphonics channel 10 et 8 aussi ?
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(27, $period,[83],100, 9, 200 )
+	;::NChords(27, 100,[83],$period, 10, 200 )
+	;::NChords(27, 100,[83],$period, 8, 200 )
+}
+20 ms
+group flute_IR
+{
+	::MakeChord([83, 80, 66], 80, 5, 250)
+}	
+; 5/4
+NOTE 0 6.5 ; 3.5  
+
+NOTE 84 0.125   ; was 0  cl 2011
+NOTE 78 0.125  ; was 0
+NOTE 83 0.25  
+		; NOTE 97 0.0		; fausse note pour bloquer 
+		; TRILL ( 78 )	1 ; 0.5
+NOTE 78 0.25  ; was 0.125 pour toutes les notes (cl 2011)
+NOTE 78 0.25   
+NOTE 78 0.25   
+NOTE 78 0.25   
+NOTE 83 0.25  Q1707
+	 cuename 7 
+20 ms
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, $period,[80, 72, 69, 66],80, 12, 250 )
+	::NChords(19, $period,[55, 52],100, 12, 250 )
+}
+30 ms
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, $period,[83],100, 9, 200 )
+}
+30 ms
+group flute_IR
+{
+	::MakeChord([83, 76, 70], 80, 5, 250)
+}	
+; 3/4
+NOTE 0 4.5 ; 2.250  
+
+NOTE 78 0.125 ; was 0  (cl)   
+NOTE 83 0.25   
+		; NOTE 97 0.0		; fausse note pour bloquer 
+		; TRILL ( 77 ) 0.75 ; 0.375
+NOTE 77 0.25   
+NOTE 77 0.25   
+NOTE 77 0.25   
+NOTE 83 0.25  Q1708
+	 cuename 8 
+20 ms
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, $period,[89, 76, 70, 63],80, 12, 250 )
+}
+20 ms
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, $period,[83],100, 9, 200 )
+}
+20 ms
+group flute_IR
+{
+	::MakeChord([83, 75], 80, 5, 250)
+}	
+NOTE 0 6.25 ; 3.125 
+
+NOTE 83 0.25   
+NOTE 84 0.25	
+NOTE 84 0.25   
+		; NOTE 97 0.0		; fausse note pour bloquer 
+  TRILL ( 8300 8400 ) 4  ; was 4.75 	; 2nd was 86!
+NOTE 75 0.125 ; check real note ; should be 77 
+	 print "appoggiature sur 9 OK"  
+; TRILL ( 74 75 77 ) 0. ; check la note appoggiature trill pour 2 notes possibles  
+NOTE 83 0.25  Q1709
+	 cuename 9 
+20ms
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, $period,[75, 67],80, 12, 250 )
+}
+20ms
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, $period,[83],100, 9, 200 )
+}
+30ms
+group flute_IR
+{
+	::MakeChord([83, 78, 69], 80, 5, 250)
+}	
+NOTE 0 9.5 ; 4.750 
+  
+NOTE 83 0.25   
+		; NOTE 97 0.0		; fausse note pour bloquer 
+ 		; TRILL ( 77 ) 1 ; 	0.5
+NOTE 77 0.25   
+NOTE 77 0.25   
+NOTE 77 0.25   
+NOTE 77 0.25   
+NOTE 83 0.25  Q1710
+	 cuename 10 
+group flute_chords ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, $period,[92],100, 12, 250 )
+	::NChords(19, $period,[78, 69], 80 , 12, 250 )
+}
+group flute_chords_multiphonics ; @tempo 144
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(19, 100,[83],$period, 9, 200 )
+}
+group spat
+{
+abort ::Random_HP
+abort ::Random_HP
+}
+NOTE 0 14.50 ; was 1 
+	 print end_T5_s17
+	 
+	 
+	 
+ 	 	  	 	 		 	  
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 18
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ VARIANCE 0.3
+ 
+ BPM  46 	;
+$temposection18 := 72	  
+	
+NOTE 83 0.125  
+TRILL (88 81) 0.125   ; E ou A ?
+NOTE 82 5.750  Q1801
+ suivi-cur-sec 18
+	 cuename 1 
+	 ;antescofo-in 1 ; suivi off => manual triggering
+ group IO_Levels
+{
+EF_Matrix recall 48
+EF_Levels recall 48
+EF_Deltas recall 48
+}
+group filt
+{
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+}
+group spat
+{;
+;
+;
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 90
+to_spats source 1 prer 50
+to_spats source 2 az 0    ; 2025 change nm to source 2 ET 3
+to_spats source 2 pres 100
+to_spats source 2 prer 50
+}
+
+
+
+10 ms
+
+
+group noise
+{
+	group spatialisation_nm_
+	{
+		@local $time := 2000 
+		::balance_s18(2, -45, 90,$time)
+		::balance_s18(3, -90, 45,$time)
+	}
+	nm_db 0 250
+	curve @command{nm-modfac } 10, 50 7843 ms
+}
+group multiphonics_line @tempo $temposection18 
+{
+	::Makenote(82, 110, 9, 1000)
+1/8	::Makenote(74, 110, 9, 1000)
+1/8	::Makenote(72, 110, 9, 1000)
+1/8	::Makenote(66, 110, 9, 1000)
+}
+group multiphonics_pitch
+{
+	::Makenote(63, 100, 13,  1000)
+}
+NOTE 0 1.500 ;  HOOK; fausse note ajouté pour problème note repetées
+NOTE 78 0.125 
+NOTE 82 5.0   Q1802
+	 cuename 2 
+group spat
+{
+to_spats source 1 az ($HP_az[@rand_int(6)])
+}
+20 ms ; spat glitch
+group multiphonics_pitch
+{
+	::Makenote(63, 100, 13, 1000); was 64, rallonger avec wobolp
+}
+group noise
+{
+	group spatialisation_nm_
+	{
+		abort ::balance_s18 
+		@local $time := 2000 
+		::balance_s18(2, -45, 45,$time)
+		::balance_s18(3, -45, 45,$time)
+	}
+	curve @command{nm-modfac } 50, 10 6479 ms
+	nm_db 0 250
+}
+
+NOTE 80 0.125
+NOTE 75 0.125   
+NOTE 69 0.125   
+NOTE 77 0.125   
+NOTE 82 0.125   
+NOTE 83 14.5  Q1803
+	 cuename 3 
+group noise
+{
+	group spatialisation_nm_
+	{
+		abort ::balance_s18
+		@local $time := 2000 
+		::balance_s18(2, -50, 50,$time)
+		::balance_s18(3, -135, -225,$time)
+	}
+	nm_db 0 250
+	curve @command{nm-modfac } 10, 50 19778 ms
+}
+ antescofo-in 0 ; suivi off => manual triggering
+group spat
+{
+to_spats source 1 az ($HP_az[@rand_int(6)])
+}
+20 ms ; spat glitch
+group multiphonics_line @tempo $temposection18
+{
+ 	::Makenote(83 ,110, 9, 1000)
+1/8 ::Makenote(77 ,110, 9, 1000)
+1/8 ::Makenote(76 ,110, 9, 1000)
+1/8 ::Makenote(72 ,110, 9, 1000)
+1/8 ::Makenote(69 ,110, 9, 1000)
+1/8 ::Makenote(66 ,110, 9, 1000)
+1/8 ::Makenote(64 ,110, 9, 1000)
+}
+group multiphonics_pitch
+{
+	::Makenote(58, 100, 13, 1000);was58
+}
+
+; NOTE 82 0.125  ; fausse note ajouté pour problème note repetées
+; print AA
+NOTE 0 3.500  ; HOOK
+print BB
+NOTE 81 0.125  ; fausse note ajouté pour problème note repetées
+print CC
+NOTE 83 3.250  Q1804
+	 cuename 4 
+
+group noise
+{
+	group spatialisation_nm_
+	{
+		abort ::balance_s18
+		@local $time := 2000 
+		::balance_s18(2, -50, 50,$time)
+		::balance_s18(3, -135, -225,$time)
+	}
+	nm_db 0 250
+	curve @command{nm-modfac } 50, 10 4092 ms
+}
+group spat
+{
+to_spats source 1 az ($HP_az[@rand_int(6)])
+}
+20 ms ; spat glitch
+group multiphonics_pitch
+{
+	::Makenote(58, 100, 13, 1000)
+}
+
+NOTE 75 0.125   
+NOTE 77 0.125   
+NOTE 88 0.125   
+NOTE 82 0.125   
+NOTE 83 5.750  Q1805
+	 cuename 5
+
+group noise
+{
+	group spatialisation_nm_
+	{
+		abort ::balance_s18
+		@local $time := 2000 
+		::balance_s18(2, -45, 90,$time)
+		::balance_s18(3, -90, 45,$time)
+	}
+	nm_db 0 250
+	curve @command{nm-modfac } 10, 50 7843 ms
+}
+
+group multiphonics_line @tempo 72
+{
+	::Makenote(83 , 110, 9, 1000)
+1/8 ::Makenote(77 , 110, 9, 1000)
+1/8 ::Makenote(75 , 110, 9, 1000)
+1/8 ::Makenote(69 , 110, 9, 1000)
+1/8 ::Makenote(67 , 110, 9, 1000)
+1/8 ::Makenote(62 , 110, 9, 1000)
+1/8 ::Makenote(61 , 110, 9, 1000)
+1/8 ::Makenote(54 , 110, 9, 1000)
+1/8 ::Makenote(48 , 110, 9, 1000)
+} 
+group spat
+{
+to_spats source 1 az ($HP_az[@rand_int(6)])
+}
+20 ms ; spat glitch
+group multiphonics_pitch
+{
+	::Makenote(58, 100, 13, 1000)
+}
+print DD	 
+NOTE 82 0.125  ; fausse note ajouté pour problème note repetées	 
+print EE	 
+NOTE  0 1.750  ; HOOK
+print FF
+NOTE 83 0.125  ; fausse note ajouté pour problème note repetées
+print GG
+NOTE 82 2.875  Q1806
+	 cuename 6 
+
+group noise
+{
+	group spatialisation_nm_
+	{
+		abort ::balance_s18
+		@local $time := 2000 
+		::balance_s18(2, -45, 45,$time)
+		::balance_s18(3, -45, 45,$time)
+	}
+	nm_db 0 250
+	curve @command{nm-modfac} 50, 10 3751 ms
+}
+
+group spat
+{
+to_spats source 1 az ($HP_az[@rand_int(6)])
+}
+20 ms ; spat glitch
+group multiphonics_pitch
+{
+	::Makenote(63, 100, 13, 1000)
+}
+
+NOTE 75 0.125   
+NOTE 77 0.125   
+NOTE 69 0.125   
+NOTE 82 7.875  Q1807
+	 cuename 7 
+
+group noise
+{
+	group spatialisation_nm_
+	{
+		abort ::balance_s18
+		@local $time := 2000 
+		::balance_s18(2, -45, 90,$time)
+		::balance_s18(3, -90, 45,$time)
+	}
+	nm_db 0 250
+	curve @command{nm-modfac} 10, 50 5115 ms
+}
+
+group spat
+{
+to_spats source 1 az ($HP_az[@rand_int(6)])
+}
+20 ms ; spat glitch
+group multiphonics_line @tempo $temposection18
+{
+	::Makenote(82 ,110, 9, 1000)
+1/8 ::Makenote(80 ,110, 9, 1000)
+1/8 ::Makenote(77 ,110, 9, 1000)
+1/8 ::Makenote(75 ,110, 9, 1000)
+1/8 ::Makenote(74 ,110, 9, 1000)
+1/8 ::Makenote(72 ,110, 9, 1000)
+1/8 ::Makenote(69 ,110, 9, 1000)
+1/8 ::Makenote(66 ,110, 9, 1000)
+1/8 ::Makenote(64 ,110, 9, 1000)
+1/8 ::Makenote(60 ,110, 9, 1000)
+} 
+group multiphonics_pitch
+{
+	::Makenote(63, 100, 13, 1000)
+}
+
+NOTE 70 0.125  ; fausse note ajouté pour problème note repetées
+	 
+NOTE 82 0.125  Q1808
+	 cuename 8 
+	 antescofo-in 1	; suivi on => back to suivi
+group spat
+{
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 50
+}
+20 ms ; spat glitch
+group multiphonics_line @tempo $temposection18
+{
+	::Makenote(82 ,110, 9, 1000)
+1/8 ::Makenote(80 ,110, 9, 1000)
+1/8 ::Makenote(77 ,110, 9, 1000)
+1/8 ::Makenote(76 ,110, 9, 1000)
+1/8 ::Makenote(74 ,110, 9, 1000)
+1/8 ::Makenote(72 ,110, 9, 1000)
+1/8 ::Makenote(69 ,110, 9, 1000)
+} 
+
+NOTE 0 3.375 
+ 	 print end_T5_s19
+
+abort ::balance_s18 	 	 	 
+ 	 	
+
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 19
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	 
+ 
+ VARIANCE 0.3
+ 
+ BPM  50 	; 60 	
+ 
+	
+NOTE 0 1.5    	
+	
+NOTE 83 0.250  Q1901
+abort ::balance_s18
+	 suivi-cur-sec 19
+ group IO_Levels
+{
+ EF_Matrix recall 49
+EF_Levels recall 49
+EF_Deltas recall 49
+} 
+	 cuename 1 
+group filt
+{
+samp4-filt-on-off 1;
+samp4-filt-cfreq 60;
+samp4-filt-q 50;
+samp1-filt-on-off 1;
+samp1-filt-cfreq 60;
+samp1-filt-q 50;
+samp2-filt-on-off 1;
+samp2-filt-cfreq 60;
+samp2-filt-q 50;
+
+}
+group spat
+{
+;
+print augmenter tr
+to_spats room 1 reverberance ($Reverberance*1.23);
+to_spats source 1 az -180
+to_spats source 1 pres 80
+to_spats source 1 prer 80
+to_spats source 2 az -180
+to_spats source 2 pres 80
+to_spats source 2 prer 50
+to_spats source 3 az -180
+to_spats source 3 pres 80
+to_spats source 3 prer 50
+::Spat_Rotation(1, 4, 200)
+}
+10 ms
+group flute_FS
+{
+fd_db 0 100
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db 0;
+fd_2_db -96;
+fd_1_freq 16.;
+fd_2_freq 0.;
+}
+group eol
+{
+ smp1_db 0 500
+ ::Wobble([69], [1010, 150], 100, 1, 1000)
+}
+group flute_chords
+{
+ ::MakeChord([83, 80, 77, 72, 69, 66], 80, 5, 250)
+ ::MakeChord([63, 55], 90, 5, 250)
+ ::MakeChord([52, 49, 46], 100, 5, 250)
+}
+NOTE 77 0.082   
+NOTE 86 0.082   
+NOTE 80 0.086   
+NOTE 75 0.500   
+NOTE 88 0.500   
+NOTE 80 0.500   
+NOTE 69 0.500   
+NOTE 83 1.750 Q1902
+	 cuename 2 
+group flute_FS
+{
+fd_db -96 500
+
+}
+group eol
+{
+ abort ::Wobble
+ smp1_db -40 2000
+}
+group spat
+{
+	1500 ms
+	abort ::Spat_Rotation
+}
+NOTE 0 4.125  
+
+NOTE 69 0.125   
+NOTE 73 0.125   
+NOTE 70 0.125   
+NOTE 71 0.125   
+NOTE 72 0.125   
+NOTE 76 0.125   
+NOTE 74 0.125   
+
+NOTE 77 2.000 Q1903
+	 cuename 3 
+group eol
+{
+ smp1_db 0 500
+ ::Wobble([69], [1010, 150], 100, 1, 1000)
+}
+group flute_chords
+{
+ ::MakeChord([77, 73, 69, 61, 59, 55], 80, 5, 250)
+}
+::Spat_Rotation(1, 4, 200)
+NOTE 0 0.750  
+
+	NOTE 68 0 ; fausse note bloque avancement
+NOTE 69 0.252 Q1904 
+	 cuename 4 
+group flute_FS
+{
+fd_db 0 100
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db 0;
+fd_2_db -96;
+fd_1_freq 16.;
+fd_2_freq 0.;
+}
+group flute_chords
+{
+ ::MakeChord([83, 77, 75, 69, 62, 61], 80, 5, 250)
+ ::MakeChord([56], 90, 5, 250)
+ ::MakeChord([54, 48, 40], 100, 5, 250)
+}
+;NOTE 0 0.018  
+
+NOTE 80 0 
+NOTE 77 0
+
+;NOTE 0 0.017  
+;NOTE 77 0.102   
+
+NOTE 83 0.5  
+NOTE 77 0.5   
+NOTE 80 0.5   
+
+NOTE 69 2.000 Q1905
+	 cuename 5 
+group flute_FS
+{
+fd_db -96 500
+}
+group eol
+{
+ abort ::Wobble
+ smp1_db -40 2000
+}
+group spat
+{
+	1500 ms
+	abort ::Spat_Rotation
+} 
+NOTE 0 0.25 ; 2.313  
+NOTE 91 0.063   
+NOTE 89 0.063   
+NOTE 86 0.063   
+NOTE 85 0.063   
+NOTE 83 0.063   
+NOTE 82 0.063   
+NOTE 81 0.063   
+NOTE 80 0.063   
+NOTE 78 0.063   
+NOTE 77 0.063   
+NOTE 76 0.063   
+NOTE 75 2.750 Q1906
+	 cuename 6 
+group eol
+{
+ smp1_db 0 500
+ ::Wobble([69], [1010, 150], 100, 1, 1000)
+}	
+group flute_chords
+{
+ ::MakeChord([83, 77, 75, 69, 67, 61], 80, 5, 250)
+ ::MakeChord([59], 90, 5, 250)
+ ::MakeChord([55, 53, 44], 100, 5, 250)
+} 
+::Spat_Rotation(1, 4, 200)
+NOTE 0 0.250  
+NOTE 80 0.248 Q1907 
+	 cuename 7 
+group flute_FS
+{
+fd_db 0 100
+;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db 0;
+fd_2_db -96;
+fd_1_freq 16.;
+fd_2_freq 0.;
+}
+group flute_chords
+{
+ ::MakeChord([80, 75, 69, 64, 61, 58], 80, 5, 250)
+ ::MakeChord([56], 90, 5, 250)
+ ::MakeChord([55, 50], 100, 5, 250)
+} 
+;NOTE 0 0.029  
+
+NOTE 77 0 ; .106   
+NOTE 83 0 ; .117   
+NOTE 69 0.5   
+NOTE 77 0.5   
+NOTE 80 2.250 Q1908
+	 cuename 8
+group flute_FS
+{
+fd_db -96 500
+}
+group eol
+{
+ abort ::Wobble
+ smp1_db -40 2000
+}	
+group spat
+{
+	1500 ms
+	abort ::Spat_Rotation
+} 
+	 6 print end_t5_s20
+NOTE 0 9.25
+
+	 	 
+ 	 	  	 
+ 	 	  	 
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 20
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ VARIANCE 0.35
+ 
+ BPM  156   ;   80 	
+		  	
+	
+NOTE 72 0.500 Q2001
+	 suivi-cur-sec 20
+		 cuename 1 
+ group IO_Levels
+{
+EF_Matrix recall 50
+EF_Levels recall 50
+EF_Deltas recall 50
+}
+group spat
+{
+;
+print tr normal
+to_spats room 1 reverberance $Reverberance;
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+}
+group flute_FS
+{
+	fd_db 0 100
+	;
+fd_1_del 0;
+fd_2_del 0;
+fd_1_db -6;
+fd_2_db -6;
+fd_1_freq -329.;
+fd_2_freq -207.;
+}
+NOTE 70 0.500   
+NOTE 71 0.500   
+NOTE 72 0.500   
+NOTE 85 0.4   
+NOTE 72 0.4   
+NOTE 71 0.4   
+NOTE 72 0.4   
+NOTE 85 0.4 Q2002
+	 cuename 2 
+group flute_FS
+{
+	fd_db -96 500
+}
+NOTE 0 18.0  ; was 18.0 ; was 2
+	 print end_T5_s20
+
+
+ 	 	 
+ 	 	  	 	 		 	  
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 21
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ VARIANCE 0.3
+ 
+ BPM   144 	;   126
+	   
+	 
+NOTE 76 0.0 
+	 suivi-cur-sec 21
+
+NOTE 77 0.250  Q2101
+	 cuename 1  ; delayed cuenumber (gn)
+ group IO_Levels
+{
+ EF_Matrix recall 51
+EF_Levels recall 51
+EF_Deltas recall 51
+}
+group filt
+{
+
+samp7-filt-on-off 0;
+samp7-filt-cfreq 0;
+samp7-filt-q 0;
+
+samp3-filt-on-off 0;
+samp3-filt-cfreq 0;
+samp3-filt-q 50;
+
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+group spat
+{
+;
+print augmenter tr
+to_spats room 1 reverberance ($Reverberance*1.23);
+to_spats source 1 az 0
+to_spats source 1 pres 100
+to_spats source 1 prer 50
+to_spats source 2 az 0
+to_spats source 2 pres 70
+to_spats source 2 prer 50
+to_spats source 3 az 0
+to_spats source 3 pres 90
+to_spats source 3 prer 50
+to_spats source 4 az -180
+to_spats source 4 pres 90
+to_spats source 4 prer 50
+}
+group flute_line ;@tempo 144 tempo follow
+{
+	::Makenote(77 , 100, 5, 200)
+1/4 ::Makenote(70 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(76 , 100, 5, 200)
+1/4 ::Makenote(77 , 100, 5, 200)
+1/4 ::Makenote(76 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(77 , 100, 5, 200)
+1/4 ::Makenote(81 , 100, 5, 200)
+1/4 ::Makenote(76 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(86 , 100, 5, 200)
+1/4 ::Makenote(78 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(77 , 100, 5, 200)
+1/4 ::Makenote(78 , 100, 5, 200)
+1/4 ::Makenote(86 , 100, 5, 200)
+1/4 ::Makenote(81 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(76 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(78 , 100, 5, 200)
+1/4 ::Makenote(76 , 100, 5, 200)
+1/4 ::Makenote(77 , 100, 5, 200)
+}
+group multiphonics_line ;@tempo 144 tempo follow
+{
+	::Makenote(77 , 100, 9, 1000)
+1/4 ::Makenote(70 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(76 , 100, 9, 1000)
+1/4 ::Makenote(77 , 100, 9, 1000)
+1/4 ::Makenote(76 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(77 , 100, 9, 1000)
+1/4 ::Makenote(81 , 100, 9, 1000)
+1/4 ::Makenote(76 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(86 , 100, 9, 1000)
+1/4 ::Makenote(78 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(77 , 100, 9, 1000)
+1/4 ::Makenote(78 , 100, 9, 1000)
+1/4 ::Makenote(86 , 100, 9, 1000)
+1/4 ::Makenote(81 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(76 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(78 , 100, 9, 1000)
+1/4 ::Makenote(76 , 100, 9, 1000)
+1/4 ::Makenote(77 , 100, 9, 1000)
+
+}
+group pizz_line ;@tempo 144 tempo follow
+{
+	::Makenote(77 , 100, 4, 150)
+1/4 ::Makenote(70 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(77 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(77 , 100, 4, 150)
+1/4 ::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(86 , 100, 4, 150)
+1/4 ::Makenote(78 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(77 , 100, 4, 150)
+1/4 ::Makenote(78 , 100, 4, 150)
+1/4 ::Makenote(86 , 100, 4, 150)
+1/4 ::Makenote(81 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(78 , 100, 4, 150)
+1/4 ::Makenote(76 , 100, 4, 150)
+1/4 ::Makenote(77 , 100, 4, 150)
+}
+NOTE 70 0.250
+NOTE 84 0.250   
+NOTE 76 0.250  
+
+NOTE 77 0.250   
+NOTE 76 0.250   
+NOTE 84 0.250   
+NOTE 77 0.250   
+
+NOTE 81 0.250   
+NOTE 76 0.250   
+NOTE 84 0.250   
+NOTE 86 0.250
+print AA
+NOTE 78 0.250   
+NOTE 84 0.250   
+NOTE 77 0.250   
+NOTE 78 0.250   
+print BB
+NOTE 86 0.125   
+NOTE 81 0.125 
+NOTE 84 0.125   
+NOTE 76 0.125   
+print CC
+NOTE 84 0.125   
+NOTE 78 0.125   
+NOTE 76 0.125   
+NOTE 77 0.125 
+;NOTE 81 0.125 ; ***** fausse note pour bloquer avance  
+TRILL ( 8100 8200 ) 9.0 Q2102 	; 2nd was 84
+	 cuename 2
+
+group harmo
+{
+hr_init bang
+100ms
+//hr_in_db -20
+	 group hr_in_db
+	 {
+	 	hr_in_db -10 50
+	 	300ms
+	 	hr_in_db -96
+	 }
+hr1_db -3;
+hr2_db -3;
+hr3_db -3;
+hr4_db -3;
+hr5_db -3;
+hr6_db -3;
+hr7_db -3;
+;
+hr1-p -7;
+hr2-p -10;
+hr3-p -16;
+hr4-p -18;
+hr5-p -23;
+hr6-p -29;
+hr7-p -37;
+@local $basedelay
+$basedelay := (((60/$RT_TEMPO)*1000)/4) ; doubles à 144 soit 104 ms
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+10 ms
+hr_db 0 200
+}
+
+	 	 	;  antescofo-in 0 ; REMOVE JUST TO CHECK
+	 	    ; stop-flute bang ; REMOVE JUST TO CHECK
+
+NOTE 78 0	; 0.25 ; WAS grace note null length
+ 			; NOTE 79 0.25 ; ***** fausse note pour bloquer avance  
+			; NOTE 71 0.25 ; ***** fausse note pour bloquer avance  
+NOTE 70 0.25  Q2103
+	 cuename 3 
+group harmo
+{
+hr_init bang
+;
+	group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 }
+hr1_db -3;
+hr2_db -3;
+hr3_db -3;
+hr4_db -3;
+hr5_db -3;
+hr6_db -3;
+hr7_db -96;
+;
+hr1-p -2;
+hr2-p -3;
+hr3-p -6;
+hr4-p -8;
+hr5-p -9;
+hr6-p -11;
+hr7-p 0;
+@local $basedelay
+$basedelay := (((60/$RT_TEMPO)*1000)/4) ; doubles à 144 soit 104 ms
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+}
+	 	   ; antescofo-in 0  ; REMOVE JUST TO CHECK
+	 	   ; stop-flute bang ; REMOVE JUST TO CHECK
+	 	  
+NOTE 0 0.5  
+NOTE 70 0.0   
+NOTE 67 0.250   
+NOTE 0 0.25  
+NOTE 72 0.0   
+NOTE 68 0.25   
+NOTE 0 0.5  
+NOTE 78 0.0   
+NOTE 67 0.250   
+NOTE 0 0.25  
+NOTE 72 0.0   
+NOTE 70 0.250   
+NOTE 0 0.25  
+NOTE 67 0.0   
+NOTE 68 0.250   
+NOTE 0 0.5  
+NOTE 78 0.0   
+NOTE 70 0.250   
+NOTE 0 1.250  
+NOTE 76 0.0   Q2104
+	 cuename 4 
+group harmo
+{
+;
+hr_init bang;
+	group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	100ms
+	 	hr_in_db -96
+	 }
+hr1_db -3;
+hr2_db -3;
+hr3_db -3;
+hr4_db -3;
+hr5_db -3;
+hr6_db -96;
+hr7_db -96;
+;
+hr1-p -7;
+hr2-p -13;
+hr3-p -17;
+hr4-p -22;
+hr5-p -27;
+hr6-p -35;
+hr7-p -40;
+@local $basedelay
+$basedelay := (((60/$RT_TEMPO)*1000)/4) ; doubles à 144 soit 104 ms
+hr1-d (1*$basedelay)
+hr2-d (2*$basedelay)
+hr3-d (3*$basedelay)
+hr4-d (4*$basedelay)
+hr5-d (5*$basedelay)
+hr6-d (6*$basedelay)
+hr7-d (7*$basedelay)
+hr_db -96 1500
+}
+group multiphonics_line ;@tempo 144 ; tempo follow
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(11, $period,[78],100, 9, 500 )
+}
+group pizz_line
+{
+	::Makenote(78, 100, 4, 150)
+}
+NOTE 78 0.25
+NOTE 0 0.25  
+NOTE 84 0.0    Q2105
+	 cuename 5 
+group multiphonics_line ;@tempo 144 ; tempo follow
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(9, $period,[86],100, 9, 500 )
+}
+group pizz_line
+{
+	::Makenote(86, 100, 4, 150)
+}
+NOTE 86 0.250
+NOTE 0 0.75  
+NOTE 73 0.0    Q2106
+	 cuename 6 
+group multiphonics_line ;@tempo 144 ; tempo follow
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(5, $period,[76],100, 9, 500 )
+}
+group pizz_line
+{
+	::Makenote(76, 100, 4, 150)
+}
+NOTE 76 0.250
+NOTE 0 1.250  
+NOTE 84 0.0   
+NOTE 83 0.25 Q2107
+	 cuename 7 
+group harmo
+{
+	group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	100ms
+	 	hr_in_db -96
+	 }
+hr_db 0 200 ; et après on coupe jamais ? CHECK PARTITION
+}
+NOTE 88 0.25
+NOTE 84 0.250   
+NOTE 90 0.250   
+NOTE 85 0.250   
+NOTE 88 0.250   
+NOTE 83 0.250  Q2107bis
+	group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 } 
+NOTE 77 0.250   
+NOTE 85 0.250   
+NOTE 85 0.250   
+NOTE 83 0.250   
+NOTE 90 0.250   
+NOTE 83 0.250  Q2108
+	 cuename 8 
+	 group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 }
+group flute_line
+{
+	::Makenote(83 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+1/4 ::Makenote(88 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(83 , 100, 5, 200)
+1/4 ::Makenote(90 , 100, 5, 200)
+1/4 ::Makenote(91 , 100, 5, 200)
+1/4 ::Makenote(88 , 100, 5, 200)
+1/4 ::Makenote(90 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+}
+NOTE 85 0.250   
+NOTE 88 0.250   
+NOTE 84 0.250   
+NOTE 85 0.250   
+NOTE 84 0.250   
+NOTE 83 0.250   Q2108bis
+	group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 }
+NOTE 90 0.250   
+NOTE 91 0.250   
+NOTE 88 0.250   
+NOTE 90 0.250   
+NOTE 85 0.250   
+NOTE 83 0.250  Q2109
+	 cuename 9 
+	 group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 }
+group flute_line ; @tempo 144 follow on
+{
+
+	::Makenote(83 , 100, 5, 200)
+1/4 ::Makenote(88 , 100, 5, 200)
+1/4 ::Makenote(90 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+1/4 ::Makenote(77 , 100, 5, 200)
+1/4 ::Makenote(83 , 100, 5, 200)
+1/4 ::Makenote(77 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+1/4 ::Makenote(88 , 100, 5, 200)
+}
+group multiphonics_line ; @tempo 144 follow on
+{
+	::Makenote(83 , 100, 9, 1000)
+1/4 ::Makenote(88 , 100, 9, 1000)
+1/4 ::Makenote(90 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(85 , 100, 9, 1000)
+1/4 ::Makenote(77 , 100, 9, 1000)
+1/4 ::Makenote(83 , 100, 9, 1000)
+1/4 ::Makenote(77 , 100, 9, 1000)
+1/4 ::Makenote(85 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(85 , 100, 9, 1000)
+1/4 ::Makenote(88 , 100, 9, 1000)
+}
+NOTE 88 0.250   
+NOTE 90 0.250   
+NOTE 84 0.250   
+NOTE 85 0.250   
+NOTE 77 0.250   
+NOTE 83 0.250   Q2109bis
+	group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 }
+NOTE 77 0.250   
+NOTE 85 0.250   
+NOTE 84 0.250   
+NOTE 85 0.250   
+NOTE 88 0.250  
+
+NOTE 83 0.250  Q2110 ;was 84  error in score, now OK
+	 cuename 10 
+	 group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 }
+group flute_line
+{
+	::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(88 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+1/4 ::Makenote(90 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(83 , 100, 5, 200)
+1/4 ::Makenote(91 , 100, 5, 200)
+1/4 ::Makenote(85 , 100, 5, 200)
+1/4 ::Makenote(88 , 100, 5, 200)
+1/4 ::Makenote(84 , 100, 5, 200)
+1/4 ::Makenote(77 , 100, 5, 200)
+}
+group multiphonics_line ;@tempo 144 tempo follow
+{
+	::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(88 , 100, 9, 1000)
+1/4 ::Makenote(85 , 100, 9, 1000)
+1/4 ::Makenote(90 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(83 , 100, 9, 1000)
+1/4 ::Makenote(91 , 100, 9, 1000)
+1/4 ::Makenote(85 , 100, 9, 1000)
+1/4 ::Makenote(88 , 100, 9, 1000)
+1/4 ::Makenote(84 , 100, 9, 1000)
+1/4 ::Makenote(77 , 100, 9, 1000)
+}
+group pizz_line ;@tempo 144 tempo follow
+{
+	::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(88 , 100, 4, 150)
+1/4 ::Makenote(85 , 100, 4, 150)
+1/4 ::Makenote(90 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(83 , 100, 4, 150)
+1/4 ::Makenote(91 , 100, 4, 150)
+1/4 ::Makenote(85 , 100, 4, 150)
+1/4 ::Makenote(88 , 100, 4, 150)
+1/4 ::Makenote(84 , 100, 4, 150)
+1/4 ::Makenote(77 , 100, 4, 150)
+}
+NOTE 84 0.250  ; was 85  error in score, now OK  
+NOTE 88 0.250   
+NOTE 85 0.250   
+NOTE 90 0.250   
+NOTE 85 0.250   ; was 84  ERROR in score, now OK
+NOTE 83 0.250   Q2110bis
+	group hr_in_db
+	 {
+	 	hr_in_db -10
+	 	110ms
+	 	hr_in_db -96
+	 }
+NOTE 91 0.250   
+NOTE 85 0.250   
+NOTE 88 0.250   
+NOTE 84 0.250   
+NOTE 77 0.250   
+; grace note
+NOTE 77 0.0  
+NOTE 81 0.25  Q2111
+	 cuename 11 
+hr_db -96 1500
+group multiphonics_line ;@tempo 144 ; tempo follow
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(5, $period,[81],100, 9, 500 )
+}
+group pizz_line
+{
+	::Makenote(81, 100, 4, 150)
+}
+NOTE 0 1.25  
+NOTE 76 0.0   
+NOTE 78 0.250  Q2112
+	 cuename 12 
+group multiphonics_line ;@tempo 144 ; tempo follow
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(5, $period,[78],100, 9, 500 )
+}
+group pizz_line
+{
+	::Makenote(78, 100, 4, 150)
+}
+NOTE 0 1.125  
+NOTE 83 0.0   
+NOTE 81 0.250  Q2113
+	 cuename 13 
+group multiphonics_line ;@tempo 144 ; tempo follow
+{
+	@local $period ; le processus est utilisé ailleurs en absolu du coup on convertit
+	$period := ((60/$RT_TEMPO)/4)*1000
+	::NChords(5, $period,[81],100, 9, 500 )
+}
+group pizz_line
+{
+	::Makenote(81, 100, 4, 150)
+}
+NOTE 0 20 ; should be 27 (7 is at the beg of next Section)
+	 print end_T5_s21
+
+
+	 	 	 
+ 	 	  	 	 		 	  
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	;  T_5    Section 22
+	; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+VARIANCE 0.3
+
+BPM   66	; 120
+$temposection22 := 68
+NOTE 0 7    ; pause added to init Section
+
+NOTE 82 0.375 	Q2201
+	 suivi-cur-sec 22
+$S22AccVel := 55
+$S22BkgVel := 45
+ group IO_Levels
+{
+ EF_Matrix recall 52
+EF_Levels recall 52
+EF_Deltas recall 52
+} 
+	
+	 cuename 1 
+group filt
+{
+samp1-filt-on-off 0;
+samp1-filt-cfreq 0;
+samp1-filt-q 0;
+samp5-filt-on-off 0;
+samp5-filt-cfreq 0;
+samp5-filt-q 0;
+samp3-filt-on-off 0;
+samp3-filt-cfreq 0;
+samp3-filt-q 50;
+samp4-filt-on-off 0;
+samp4-filt-cfreq 0;
+samp4-filt-q 50;
+}
+nm-modfac 5;
+group spat
+{
+;
+print tr encore "+" grand
+to_spats room 1 reverberance ($Reverberance*1.38);
+to_spats source 1 az -180
+to_spats source 1 pres 100
+to_spats source 1 prer 70
+to_spats source 4 az -180
+to_spats source 4 pres 50
+to_spats source 4 prer 80
+to_spats source 5 az 0
+to_spats source 5 pres 100
+to_spats source 5 prer 50
+::SwishSpat(1, 90, 500)
+}
+10 ms
+group flute_slant @tempo $temposection22 ;on mettra $RT_tempo 
+{		
+	;::Makenote(82, 120, 5, 100) ??? ou pas ?
+	group slant1
+	{		
+	::Slant([[82, 10, -1], [77, 6, -1]], 68, 100, 5, 200)
+	} ; on fait des gammes chromatiques à partir de notes de base à un certain tempo (triples croches)
+3/16	;::Makenote(77, 120, 1, 100)
+	group slant1
+	{	
+	::Slant([[82, 10, -1], [77, 6, -1]], 68, 100, 5, 200)
+	} 
+1/16	;::Makenote(69, 120, 1, 100)
+	group slant1
+	{		
+	::Slant([[82, 10, -1], [77, 6, -1]], 68, 100, 5, 200)
+	} 
+}
+NOTE 77 0.125   
+NOTE 69 0.500   
+NOTE 0 2.500  
+NOTE 76 0.250 Q2202  
+	 cuename 2 
+group flute_slant @tempo $temposection22 ;on mettra $RT_tempo 
+{		
+	;::Makenote(76, 120, 5, 100) ??? ou pas ?
+	group slant1
+	{		
+	::Slant([[76, 7, -1], [71, 3, -1], [63, 6, 1]], 68, 100, 5, 200)
+	} ; on fait des gammes chromatiques à partir de notes de base à un certain tempo (triples croches)
+1/8	;::Makenote(71, 120, 1, 100)
+	group slant1
+	{	
+	::Slant([[76, 7, -1], [71, 3, -1], [63, 6, 1]], 68, 100, 5, 200)
+	} 
+1/16	;::Makenote(63, 120, 1, 100)
+	group slant1
+	{		
+	::Slant([[76, 7, -1], [71, 3, -1], [63, 6, 1]], 68, 100, 5, 200)
+	} 
+1/16	;::Makenote(69, 120, 1, 100)
+	group slant1
+	{		
+	::Slant([[76, 7, -1], [71, 3, -1], [63, 6, 1]], 68, 100, 5, 200)
+	} 
+}
+::SwishSpat(1, 90, 500)
+NOTE 71 0.125   
+NOTE 63 0.125   
+NOTE 69 0.500   
+NOTE 0 2.500  
+NOTE 63 0.375 Q2203
+	 cuename 3 
+group flute_slant @tempo $temposection22 ;on mettra $RT_tempo 
+{		
+	;::Makenote(63, 120, 5, 100) ??? ou pas ?
+	group slant1
+	{		
+	::Slant([[63, 6, 1], [68, 2, 1]], 68, 100, 5, 200)
+	} ; on fait des gammes chromatiques à partir de notes de base à un certain tempo (triples croches)
+3/16	;::Makenote(68, 120, 1, 100)
+	group slant1
+	{	
+	::Slant([[63, 6, 1], [68, 2, 1]], 68, 100, 5, 200)
+	} 
+1/16	;::Makenote(69, 120, 1, 100)
+	group slant1
+	{		
+	::Slant([[63, 6, 1], [68, 2, 1]], 68, 100, 5, 200)
+	} 
+}
+::SwishSpat(1, 90, 500)
+NOTE 68 0.125   
+NOTE 69 0.500   
+NOTE 0 2.500  
+NOTE 67 0.375 Q2204
+	 cuename 4 
+group flute_slant @tempo $temposection22 ;on mettra $RT_tempo 
+{		
+	;::Makenote(67, 120, 5, 100) ??? ou pas ?
+	group slant1
+	{		
+	::Slant([[73, 5, -1], [67, 3, 1]], 68, 100, 5, 200)
+	} ; on fait des gammes chromatiques à partir de notes de base à un certain tempo (triples croches)
+3/16	;::Makenote(63, 120, 1, 100)
+	group slant1
+	{	
+	::Slant([[73, 5, -1], [67, 3, 1]], 68, 100, 5, 200)
+	} 
+1/16	;::Makenote(69, 120, 1, 100)
+	group slant1
+	{		
+	::Slant([[73, 5, -1], [67, 3, 1]], 68, 100, 5, 200)
+	} 
+}
+::SwishSpat(1, 90, 500)
+NOTE 73 0.125   
+NOTE 69 0.500   
+NOTE 0 2.500  
+ 
+NOTE 69 0 ;    
+ TRILL ( 60 ) 3.5 Q2205
+	 cuename 5
+group ChaCha22 ;Période Fixe, même si les instruments ralentissent, cf partition
+{
+	@local $period
+	$period := 110 ; (((60/$RT_TEMPO)*1000)/8) ;si on veut faire adaptatifr
+	;::ChaChaS22($pitch_list, $startperiod, $accvel, $noaccvel, $accproba, $pizzproba)
+	::ChaChaS22([60, 69], $period, $S22AccVel, $S22BkgVel, 3/5, 1/5)
+
+}
+group spat
+{
+to_spats source 1 pres 80
+to_spats source 1 prer 80
+to_spats source 2 az -180
+to_spats source 2 pres 80
+to_spats source 2 prer 50
+to_spats source 3 az -180
+to_spats source 3 pres 80
+to_spats source 3 prer 60
+::Random_HP(2, 500)
+::Random_HP(3, 500)
+}
+NOTE 69 0   
+NOTE 63 0.500 Q2206
+	 cuename 6 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([60, 69, 63], 110, $S22AccVel, $S22BkgVel, 3/5, 1/5)
+}
+NOTE 0 2.5  
+NOTE 69 0.0   
+NOTE 74 0.500 Q2207 
+	 cuename 7 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([60, 69, 63, 74], 110, $S22AccVel, $S22BkgVel, 1/2, 1/5)
+}
+NOTE 0 2.000
+
+NOTE 69 0.0   
+NOTE 66 0.5 Q2208 
+	 cuename 8 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([60, 69, 63, 74, 66], 110, $S22AccVel, $S22BkgVel, 2/5, 1/5)
+}
+NOTE 0 0.625  
+NOTE 60 0.125   
+NOTE 69 0.0 ; appoggiature was 0 gn 26 I 10
+	 print "appogiature sur 9"  
+; 60 1.0	9
+TRILL (60) 1.0	Q2209	
+	 cuename 9 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([60, 69, 63, 74, 66, 73], 110, $S22AccVel, $S22BkgVel, 3/5, 1/5)
+}
+; 60 0.125 9 
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+NOTE 69 0.1  ; appoggiature was 0 gn 26 I 10 
+; 60 0.75	10
+TRILL (60) 0.75	Q2210
+	 cuename 10 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([60, 69, 63, 74, 66, 73, 67], 110,$S22AccVel, $S22BkgVel, 1/5, 1/5)
+}
+
+; 60 0.125 10 
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+; 60 0.125   
+NOTE 63 0.129   
+NOTE 69 0.121 Q2211
+	 cuename 11 
+group flute_chords
+{
+	::MakeChord([74, 73, 69, 67, 66, 63, 60], 127, 12, 250) ; on joue dans la voix des accents plutôt
+}
+NOTE 60 0.139   
+NOTE 67 0.117   
+NOTE 69 0.164 Q2212
+	 cuename 12 
+group flute_chords
+{
+	::MakeChord([77, 74, 69, 67], 127, 12, 250)	
+}
+NOTE 67 0.15   
+NOTE 69 0.15  
+NOTE 69 0.0   
+NOTE 68 0.125 Q2213 
+	 cuename 13 
+group flute_chords
+{
+	::MakeChord([74, 69, 68], 127, 12, 250)	
+}
+NOTE 74 0.125   
+NOTE 68 0.125   
+NOTE 74 0.125   
+NOTE 69 0.0   
+NOTE 71 3.371 Q2214 
+	 cuename 14 
+group noise
+{
+	nm_db 0 250
+	nm-modfac 15
+}
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	abort ::ChaChaS22 ; synchro ? pas forcément nécessaire ? tuer des voix ?
+	::ChaChaS22([69, 71], 110, 55, 0.001, 1/5 , 0) ; pas de pizz; un peu tôt partition vs patch ; il n'y déjà plus que les accents ? c'est brutal
+}
+
+NOTE 63 0.125 Q2215 
+	 cuename 15 
+group ChaCha22 ; tempo adaptatif ? les channels sont données en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([63, 69, 76, 82], 110, 55, 0.0001, 1/5, 0) ; pas de pizz; un peu tôt partition vs patch
+}
+NOTE 69 0.125   
+NOTE 82 3.000   
+NOTE 74 0.125 Q2216 
+	 cuename 16 
+group ChaCha22 ; tempo adaptatif ? les channels sont données en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([68, 69, 73, 74, 76], 110, $S22AccVel, 0.001, 1/5, 0) ; pas de pizz; un peu tôt partition vs patch
+}
+NOTE 69 0.125   
+NOTE 68 0.125   
+NOTE 73 0.125   
+NOTE 76 1.750   
+NOTE 77 0.125 Q2217 
+	 cuename 17 
+group ChaCha22 ; tempo adaptatif ? les channels sont données en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([60, 66, 69, 77], 110, $S22AccVel, 0.001, 1/5, 0) ; pas de pizz; un peu tôt partition vs patch
+}
+NOTE 68 0.125
+NOTE 69 0.125   
+NOTE 60 2.250   
+NOTE 69 0.125 Q2218 
+	 cuename 18 
+group ChaCha22 ; tempo adaptatif ? les channels sont données en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([63, 69, 76, 82], 110, $S22AccVel, 0.001, 1/5, 0) ; pas de pizz; un peu tôt partition vs patch
+}
+NOTE 82 0.125   
+NOTE 76 0.125   
+NOTE 63 4.250   
+NOTE 67 0.125   
+NOTE 63 0.125   
+NOTE 69 0.125 Q2219 
+	 cuename 19 
+group noise
+{
+	nm_db -96 250
+	nm-modfac 15
+}
+group wobble
+{
+	::Wobble([60], [525, 150], 100, 1, 500)
+}
+NOTE 76 0.125   
+	 print "mi apres 19"  
+NOTE 82 0.125  
+	 print "Sib apres 19"   
+NOTE 0 0.625  
+NOTE 82 0.1 ; appoggiature was 0 
+	 print "appoggiature sur 20"   
+  
+;6 9	2.0	20
+
+TRILL ( 69 )	3.0	Q2220 ; was 2beats
+	 print "trill sur 20"  
+	 cuename 20 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	abort ::ChaChaS22 ; on peut et c'est plus sûr
+	::ChaChaS22([69], 110, $S22AccVel, $S22BkgVel, 3/10, 0) ; pas de pizz; background audible
+}
+; 0 1.25  
+ TRILL ( 6300 6400 ) 1.75 ; length was 0.75 bug  
+	 print "trill sur Eb"   
+ ; 0 1.0  ; vire bug trill silence
+
+NOTE 67 0.1 ;   appoggiature was 0 
+	 print "appogiature sur 21"  
+
+TRILL ( 69 ) 1.75 Q2221 ; was 1beat
+	 print "trill sur 21"  
+	 cuename 21 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([69], 110, $S22AccVel, $S22BkgVel, 3/10, 0) ; pas de pizz; background audible
+}
+; 0 0.750  
+NOTE 66 1.000  
+	 print "FAd avant 22"   
+NOTE 0 0.75 
+ 
+NOTE 60 0.1   ;   appoggiature was 0
+TRILL ( 69 ) 3.5 Q2222  ; was 1.75 length
+	 print "trill sur 22"  
+	 cuename 22 
+group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([69], 110, $S22AccVel, $S22BkgVel, 3/10, 0) ; pas de pizz; background audible
+}
+; NOTE 69 2.0 
+
+NOTE 0 1.50 ; WAS 1.75
+  
+NOTE 68 2.250   
+NOTE 0 1.25 ; WAS 1.5
+  
+NOTE 74 0.1 ;  appoggiature was 0
+
+TRILL (69) 3.25	Q2223 ; was 0.75 beat
+	 print "trill sur 23"  
+	 cuename 23 
+	 group ChaCha22 ; tempo adaptatif ? les channels sont donner en fixe (5 pr le fond,  4 et 12 pour les accents)
+{
+	::ChaChaS22([69], 110, $S22AccVel, 0.0001, 3/10, 0) ; pas de pizz; background audible
+}
+antescofo_remoteONOFF 0 ; couper le suivi
+
+;  0 2.500  
+NOTE 63 1.250 Q2224
+	 cuename 24 
+group spat
+{
+	abort ::Random_HP
+}
+; il doit y avoir une courbe
+NOTE 69 4.000 Q2225
+	 cuename 25
+group wobble
+{
+	4000 ms ; was 2000
+	abort ::Wobble
+}
+abort ::ChaChaS22 ; pas une courbe de volume avant ?
+	 2.5 print END_T5
+ 
+antescofo_remoteONOFF 0 ; couper le suivi
+
+EVENT 1.0 Q2226 ; pour lancer l'intersticiel
+intrst_db -10
+intrst_player EF_IT_2_2025.wav -22 100
+5000 ms antescofo-score EF_Originel_Score.txt
+ 
+ 
+; %%%%%%%%%%%%%%%%%      End of Transitoire_5      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	 
+ 
+ 
+	 
+ 
+ 	 
+	 
+	 
+ 
+ 

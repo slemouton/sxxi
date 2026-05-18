@@ -1,0 +1,757 @@
+; Explosante Fixe - PROCESSUS
+; A Muller - 2017
+
+@global $HP_az := [-45, 45, 90, 135, -135, -90] ; config HP de basee
+@global $Reverberance := 65 ; reverberance de base
+group proc_var_init
+{
+@global  $RanRep, $RanRep_1, $ChaCha, $Chug, $Wobble, $Slant, $ChaChaS22
+let $RanRep := 0
+let $RanRep_1 := 0
+let $ChaCha := 0
+let $Chug := 0
+let $Wobble := 0
+let $Slant := 0
+let $ChaChaS22 := 0
+let $RepeatChords_OS2 := 0
+let $Sequence_OS2 := 0
+let $EFLSync := 0
+let $GAccent := [0, 0]
+let $RandomHP := 0
+let $RandomAz := 0
+}
+
+ @proc_def ::Makenote($pitch, $velocity, $channel, $dur) ; pour jouer le midi, via le receive EF_samples_in
+ @abort { $d ms EF_samples_in $p 0 $c } 
+{
+	@local $p, $v, $c, $d ; il faut faire ça parce que sinon on a des pb dans les séquences rapides 
+	$p := $pitch 
+	$v := $velocity
+	$c := $channel 
+	$d := $dur
+	group
+	{
+		EF_samples_in $p $v $c
+		$d ms EF_samples_in $p 0 $c
+	}
+}
+@proc_def ::MakeChord($pitchlist, $velocity, $channel, $dur) ; cas des accords, c'est plus simple de séparer les cas
+{
+@local $p
+	forall $p in $pitchlist
+		{
+		::Makenote($p, $velocity, $channel, $dur)
+		}
+}
+
+
+@proc_def ::Random_HP($source, $period)
+{
+	$RandomHP := $MYSELF
+	loop randomHPloop ($period) ms
+	@abort {
+		$RandomHP := 0
+	 	 }
+		{
+			to_spats source $source az ($HP_az[@rand_int(@size(6))]) 
+		}
+}
+@proc_def ::Random_Az($source, $period)
+@abort :=
+	{
+		$RandomAz := 0
+	}
+{
+	$RandomAz := $MYSELF
+	loop randomAzloop ($period) ms
+	@abort :=
+	{
+		$RandomAz := 0
+	}
+		{
+			to_spats source $source az (@rand_int(360)) 
+		}
+}
+@proc_def ::Spat_Rotation($source, $step, $period)
+{
+	$Spat_Rotation := $MYSELF
+	@local $az
+	$az := 0
+	loop spatrotation ($period) ms
+		{
+			to_spats source $source az ((@abs($az))%360)
+			$az := $az + $step
+		}
+}
+@proc_def ::SwishSpat($source, $width, $duration) 
+{
+	@local $startaz, $endaz, $swishaz, $x
+	$startaz := $HP_az[@rand_int(@size(6))]
+	$endaz := $startaz + $width
+	curve SwishAz  @Grain := 0.1s, @Action := {$swishaz := @floor($x)
+												to_spats source $source az $swishaz
+												} ;on fait abstraction du delai de 20ms pour le départ de la courbe
+			{
+				$x 
+				{
+					{ $startaz } @type "linear"
+				$duration ms   { $endaz }
+				}
+			}
+
+} 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;										EFLOOP
+;						SEQUENCEUR DE BASE DES PROCESSUS MIDI 
+;
+; voies de séquenceur midi. Boucle jouant des accords avec paramètres harmoniques, rythmiques et dynamiques	 ;
+; En gl utilisé en mode seq, mais quelques cas particuliers. L'essentiel des processus appelés				 ;	
+; dans explosante font appel à une ou plusieurs instances de cet objet
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;			FONCTIONS NECESSAIRES
+/* les fonctions  nextpitch et nextperiod utilisées pur chaque mode
+on passe toujours thisobj et tous les arguments pour ne faire qu'une sorte d'appel dans la boucle principale 
+*/
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@fun_def pitch_chords($obj) ; Pour tous sauf slant et ranrep
+	{	
+		return $obj.$pitch_in
+	}
+@fun_def random_pitch_from_tab($obj) ; pour ranrep
+	{
+		@local $PT
+		$PT := [($obj.$pitch_in[@rand_int(@size($obj.$pitch_in))])]
+		return $PT
+	}
+@fun_def transpose_pitch($obj) ; pour Slant
+	{
+		@local $PT ; il faut passer par un tableau pour pouvoir gérer le cas accord pour wobble
+	if (@abs($obj.$current_pitch[0] - $obj.$pitch_in[0])< ($obj.$pitch_in[1]-1)) ;
+		{
+		$PT := [($obj.$current_pitch[0] + $obj.$pitch_in[2])] ; -1 (descendant) ou 1 (ascendant)
+		return $PT
+		}		
+		else { return 0 }
+	}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@fun_def increment_period_cycle($count, $obj)  ; Pour tous sauf ranrep et wobble
+	{
+	@local $i
+	$i := $obj.$count%(@size($obj.$cycle))
+	return ($obj.$base_period * ($obj.$cycle[$i]))
+	}
+@fun_def random_period_from_tab($obj) ; pour ranrep
+	{
+	return ($obj.$base_period[@rand_int(@size($obj.$base_period))]* ($obj.$cycle)) 
+	}
+
+@fun_def compute_period_wobble($obj) ; pour wobble
+	{
+	return (($obj.$base_period[0]) + @rand_int($obj.$base_period[1] * $obj.$cycle))	
+	}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 								OBJET EFLOOP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@obj_def EFLoop($mode, $pitch_in, $cycle, $base_period, $chan, $dur, $accvel, $noaccvel, $accproba) 
+{
+	@local $current_period, $current_pitch, $rand, $vel, $next_period, $next_pitch, $body, $curve, $x, $go, $AccentPitch, $IsAccent, $count
+	@init
+	 {
+	 	$body := 0
+	 	$count := 0
+	 	switch ($mode) ; on regarde le mode,  et on choisit la fonction next_pitch en conséquence; possible de choisir la fonction depuis l'extérieur 
+	 	{
+	 		case "seq" :  ;Séquenceur : Cas de Chug, ChaCha, Repeat, Seq ... on répète un accord avec un rythme donné (séquence rythmique et tempo)
+	 			$current_pitch := $pitch_in ; déjà un tableau
+	 			$next_pitch := @pitch_chords()
+	 			$current_period := @increment_period_cycle(0, $THISOBJ);
+	 			$next_period := @increment_period_cycle($count) ; currification	 			
+	 		case "ranrep": ; cas des ranreps : séquenceur aléatoire, on tire au sort des notes et des périodes (mode arpeggio quoi)
+	 			$current_pitch := @random_pitch_from_tab($THISOBJ)
+	 			$next_pitch := @random_pitch_from_tab() 
+	 			$current_period := @random_period_from_tab($THISOBJ)
+	 			$next_period := @random_period_from_tab()
+	 		case "slant" : ; cas des slant ; même gestion rythmique par contre on fait des gammes
+	 			$current_pitch := [$pitch_in[0]]
+				$next_pitch := @transpose_pitch()
+	 			$current_period := @increment_period_cycle(0,$THISOBJ)   
+	 			$next_period := @increment_period_cycle($count) 
+	 		case "wobble" : ;cas des wobble ; on joue des accords par contre la gestion des rymes est différente (variation autour d'une période de base)
+	 			$current_pitch := $pitch_in ; déjà un tableau
+	 			$next_pitch := @pitch_chords()
+	 			$current_period := @compute_period_wobble($THISOBJ)
+	 			$next_period := @compute_period_wobble() 
+	 	}
+	}
+	@broadcast EFL_Sync($ancestor) ; restart de touts les EFLoop
+	{
+		if (@exe_child_of($THISOBJ, $ancestor)) ; pour pouvoir faire des sous-groupe par stratégie
+		{
+		 $go := false
+				abort $body
+				$body := 0
+		$go := true 
+		}
+	}
+	@broadcast EFL_Period($ancestor, $ch_period)
+	{ ; variation de la période 
+		if (@exe_child_of($THISOBJ, $ancestor))
+		{
+		$base_period := $ch_period 
+		}
+	}
+		
+	@broadcast EFL_Accents($ancestor, $ch_accvel, $ch_noaccvel, $ch_accodds) ; modification des vélocités (accents, bckgnd, proba)
+	{
+		if (@exe_child_of($THISOBJ, $ancestor))
+		{
+		$accvel := $ch_accvel
+		$noaccvel := $ch_noaccvel
+		$accproba := $ch_accodds
+		}
+	}
+	@method_def EFL_Rythm($ch_cycle) ; changements de rythme par instance pour chugs
+	{
+		$cycle := $ch_cycle 
+	}
+	@method_def EFL_Pitch($ch_pitch) ; changements de pitch par instance 
+	{
+		$pitch_in := $ch_pitch ; 
+	}
+	@whenever ($go)  ;Corps de l'objet, la boucle a proprement parler. les changements de période interviennent à la loop suivante
+	{
+		$body := 0
+		$count := 0
+		abort $body
+		$body := {
+				 loop ef_loop ($current_period) ms
+					{
+						$rand := @rand(1) ; tirage au sort pour la vélocité
+						if ($rand <= $accproba) 
+							{ $vel := $accvel}
+						else 
+							{ $vel := $noaccvel}
+					if (($vel>0) && ($current_pitch>0)) 
+						{
+						::MakeChord($current_pitch, $vel, $chan, $dur) 
+						$current_period := $next_period($THISOBJ) ; calcul de la prochaine période (selon le cas num ou tab)
+						$current_pitch := $next_pitch($THISOBJ); calcul du pitch (selon le cas num ou tab) on repasse tous les arguments pour vérifier s'il ya eu un changement.
+						$EFLSync  := $THISOBJ
+						$count := ($count+1)
+						}
+					}	
+				}
+	}	
+	@whenever ($current_pitch == [0]) ; le pitch 0 arrête l'instance
+	{
+		$go := false
+		abort $body
+		$body := 0
+	}
+	@whenever ($vel == $accvel)
+	{
+		$IsAccent := 1
+		$GAccent := [$THISOBJ, $current_pitch]
+	}
+	@init
+	{	$go := true }		 ; il faut le mettre après 								;
+} 
+
+;$test := obj::EFLoop("seq", [60, 63, 67, 70], [1/4, 1/12, 1/12, 1/12 ,1/4, 1/12, 1/12, 1/12, 1/4, 1/4], 1000, 1, 100, 120, 70, 3/4)
+;abort $test
+;abort ef_loop
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;$test := obj::EFLoop("ranrep", [72, 74, 76], 1, [200, 100, 150], 1, 100, 127, 64, 1/2)
+;$test := obj::EFLoop("slant", [72, 10, 1], 1, 100, 1, 100, 127, 64, 1)
+;$test := obj::EFLoop("wobble", [66, 68], 1, [50, 200], 1, 100, 127, 64, 1)
+;_ := @EFL_Period($test, 1000)
+;_:= @EFL_Sync($test)
+;abort ef_loop
+;_:= $test.EFL_Pitch(0)
+;$test2 := obj::EFLoop(74, 1,[100, 200, 600], 1, 100, 127, 64, 1/3)
+; @obj_def EFLoop($pitch_in, $cycle, $base_period, $chan, $dur, $accvel, $noaccvel, $accproba)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;PROCESSUS (appelent EFLoop)
+@proc_def ::RanRep($p_list, $d_list,$accvel, $noaccvel, $accproba) ; APPEL DES RANREPS (random repeat)
+; $p_list, liste des notes, $d_list, listes des périodes, veloaccents, velofond, proba des accents
+@abort := {   
+				$RanRep := 0
+				$P := 0 ; on a besoin d'une variable pour lister/nommer les processus
+				$Q := 0
+		  }
+{
+	$chan := 5 ; channel fixe
+	$dur := 200 ; durée fixe
+	@local $P, $Q
+	if ($RanRep) ; juste l'update sans redémarrer
+	{
+		_:=$RanRep.$P.EFL_Pitch($p_list) 
+		_:=$RanRep.$Q.EFL_Pitch($p_list)
+		_ := @EFL_Period(::RanRep, $d_list)
+		_ := @EFL_Accents(::RanRep, $accvel, $noaccvel, $accproba)		
+	}
+	else
+	{
+		print newranrep
+		$RanRep := $MYSELF
+		$P := obj::EFLoop("ranrep", $p_list, 1, $d_list, $chan, $dur, $accvel, $noaccvel, $accproba)
+		$Q := obj::EFLoop("ranrep", $p_list, 1, $d_list, $chan, $dur, $accvel, $noaccvel, $accproba)
+	}
+}
+@proc_def ::RanRep_1($p_list, $d_list,$accvel, $noaccvel, $accproba) ; POUR Section 24
+; $p_list, liste des notes, $d_list, listes des périodes, veloaccents, velofond, proba des accents
+; c'est la même chose mais avec une seule couche
+@abort := {   
+				$RanRep_1 := 0
+				$P := 0 ; on a besoin d'une variable pour lister/nommer les processus
+				$Q := 0
+		  }
+{
+	$chan := 5 ; channel fixe
+	$dur := 200 ; durée fixe
+	@local $P
+	if ($RanRep_1) ; juste l'update sans redémarrer
+	{
+		_:=$RanRep_1.$P.EFL_Pitch($p_list) 
+		_ := @EFL_Period(::RanRep, $d_list)
+		_ := @EFL_Accents(::RanRep, $accvel, $noaccvel, $accproba)		
+	}
+	else
+	{
+		$RanRep_1 := $MYSELF
+		$P := obj::EFLoop("ranrep", $p_list, 1, $d_list, $chan, $dur, $accvel, $noaccvel, $accproba)
+	}
+}
+;test
+;$R:= ::RanRep([90, 88], [93, 111], 1, 100, 120, 80, 1/3 )
+;$R:= ::RanRep([92, 94], [93, 111], 1, 100, 127, 32, 1/5 )
+;$R:= ::RanRep([92, 94, 96], [93, 111], 1, 100, 127, 32, 1/5 )
+;_:=$R.$P.EFL_Pitch([92, 94, 87]) 
+;_:=$R.$Q.EFL_Pitch([92, 94, 87])
+;_ := @EFL_Period($ranrep, $d_list)
+;abort ::RanRep
+
+@proc_def ::Chug($pitch_cycle_list, $denom_period, $accvel, $noaccvel, $accodd, $chan, $dur) ; APPEL DES CHUGS (polyrythmie à partir d'une période commune)
+; liste des couples [note, périodicité(cycle)],periode de base (ms), veloaccents, elofond, proba des accents, chan, dur
+@abort := {   
+				$P := [] ; on a besoin d'une variable pour lister/nommer les processus
+				$Chug := 0
+			}
+{
+	
+	@local $accproba,$P, $p, $i
+	$accproba := $accodd*(1/@size($pitch_cycle_list))
+	if ($Chug) ; juste l'update sans redémarrer
+	{
+
+		forall $p in ($pitch_cycle_list) 
+		{
+			
+			$i := @occurs(($pitch_cycle_list), $p) ; on récupère l'index
+			if ($i < @size($Chug.$P))
+			{			
+			_:=($Chug.$P[$i]).EFL_Pitch([($pitch_cycle_list[$i])[0]]) ; + compliqué
+			_:=($Chug.$P[$i]).EFL_Rythm([($pitch_cycle_list[$i])[1]]) 
+			}
+			else ; ajout de voix ?
+			{
+				@local $q
+				$q := obj::EFLoop("seq",([($pitch_cycle_list[$i])[0]]),([($pitch_cycle_list[$i])[1]]), $denom_period, $chan, $dur, $accvel, $noaccvel, $accproba)
+				$P:= @push_back($Chug.$P, $q) ; on met le nouveau proc dans P
+			}
+		}
+		_:=@EFL_Period(::Chug, $denom_period) 
+		_:=@EFL_Accents(::Chug, $accvel, $noaccvel, $accproba)
+	}
+	else
+	{
+	$Chug := $MYSELF
+	$P := [ obj::EFLoop("seq", [$pc[0]],[$pc[1]], $denom_period, $chan, $dur, $accvel, $noaccvel, $accproba) | $pc in $pitch_cycle_list]
+	}
+
+} 
+	;::Chug([[61, 1], [74, 3]], 200, 120, 60, 1/7, 1, 200)
+;abort ::Chug
+;	::Chug([[61, 1], [73, 2]], 200, 120, 60, 1/7, 1, 200)
+;	::Chug([[0, 1], [0, 2], [0, 5]], 200, 120, 60, 3/7, 1, 200)
+;	::Chug([[61, 1], [73, 2], [68, 3]], 200, 127, 100, 1/7, 1, 200)
+;	_:= @EFL_Sync(::Chug)
+;	::Chug([[61, 1], [73, 2], [68, 3], [90, 4]], 200, 120, 60, 1/7, 1, 200)
+;	::Chug([[60, 1], [72, 6], [67, 3], [89, 5]], 140, 120, 60, 1/7, 1, 200)
+;	_:=($Chug.$P[0]).EFL_Pitch(64)
+;	print ($Chug.$P[0])
+;	let $Chug.$P[2].$pitch_cycle := [61, 2]
+;	let $Chug.$P[0].$pitch_cycle := [60, 3]
+;	let $Chug.$P[0].$pitch_cycle := [60, 1]
+;	abort ::Chug
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@proc_def ::PeriodVar($proc, $line_list) ; variation de la période utile aux chacha, ([start, dest, temps])
+		{	@local $x, $p, $i, $period
+			curve tempovar @Grain := 0.02s, @Action :={
+													$period := @floor($x)
+									   				_ := @EFL_Period($proc, $period) 
+													};  	broadcast sur le proc											
+			{
+				$x 
+				{
+					{ ($line_list[0]) } @type "linear"
+				($line_list[2]) ms   { ($line_list[1]) }
+				}
+			} ;
+		}
+@proc_def ::ChaCha($pitch_list, $period_list, $accvel, $noaccvel, $chan, $dur) ; APPEL DES CHACHA (accords répétés avec accellération/décéleration)
+;liste des notes, arguments pour periodvar ([start, dest, temps]), veloaccents, elofond, proba des accents, chan, dur
+@abort := 	{   				
+				$P := [] 
+			}
+{
+	@local $accproba, $P,$p, $i, $q
+	$accproba := (1/@size($pitch_list))
+	if ($ChaCha) ; update
+	{
+		forall $p in ($pitch_list) 
+		{
+			$i := @occurs(($pitch_list), $p)
+			if ($i < @size($ChaCha.$P))
+			{
+				_:=($ChaCha.$P[$i]).EFL_Pitch([($pitch_list[$i])])			
+			}
+			else 
+			{ ; ajout de voix FAIRE LA SUPPRESSION
+				$q := obj::EFLoop("seq", [$p], [1], $period_list[0], $chan, $dur, $accvel, $noaccvel, $accproba) 
+				$ChaCha.$P:= @push_back($ChaCha.$P, $q) ;
+			}
+		}
+		_:=@EFL_Accents(::ChaCha, $accvel, $noaccvel, $accproba)
+	}
+	else ; appel du proc global
+	{
+		$ChaCha := $MYSELF
+		$P := []
+		$P := [ obj::EFLoop("seq", [$p], [1], $period_list[0], $chan, $dur, $accvel, $noaccvel, $accproba) | $p in $pitch_list]	
+	}
+	_:= ::PeriodVar(::ChaCha, $period_list) ; courbe pour tous, et c'est cool parce qu'on peut utiliser juste ça aussi, sans tout réinstancier		
+}
+/*
+::ChaCha([60, 63, 65, 68], [50, 600, 4000], 127, 80, 1, 300)
+::ChaCha([61, 64, 66, 69], [600, 80, 10000], 127, 80, 1, 300)
+;
+::ChaCha([61], [400, 600, 1000], 127, 80, 1, 300)
+abort ::ChaCha
+::ChaCha([61, 90], [400, 600, 1000], 127, 80, 1, 300)
+0.001 ms ; il faut ce délai, pb de double go avec whenever
+_:= @EFL_Sync(::ChaCha)
+print $ChaCha
+::ChaCha([61, 64, 66, 68, 70, 75, 76, 80], [100, 200, 1000], 127, 80, 1, 300)
+;0.00001 ms ; on fait ça pour a
+_:= @EFL_Sync(::ChaCha)
+::PeriodVar(::ChaCha, [100, 1000, 3000])
+*/
+@proc_def ::Wobble($pitch_list, $period_list, $vel, $chan, $dur) ; Ensemble de notes répétées avec une période de base + ou - une valeur random
+; pitch_list : les accords, period_list : la période de base et la valeur random max, vel, channel, durée
+@abort := 	{   				
+				$P := 0
+			}
+{
+	@local $P
+	$Wobble := $MYSELF
+	$P := obj::EFLoop("wobble",$pitch_list, 1, $period_list, $chan, $dur, $vel, $vel, 0) ; on joue en noaccent pour éviter le pb à la fin de T5. 
+}
+/*
+;::Wobble([72, 76, 89], [300, 800], 120, 1, 200)
+;::Wobble([74, 76, 87], [300, 800], 120, 1, 200)
+abort ::Wobble
+*/
+@proc_def ::Slant($slant_list, $tempo, $vel, $chan, $dur) ; on fait des gammes chromatiques à partir de notes de base à un certain tempo (triples croches)
+;slant_list, la liste des triplets [note, longueur, sens], tempo (noire) velocité chan durée
+@abort := 	{   				
+				$P := [] 
+			}
+{
+	@local $P, $period
+	$period := ((60/$tempo)*1000)/8
+		$Slant := $MYSELF
+		$P := []
+		$P := [ obj::EFLoop("slant", $s, [1], $period, $chan, $dur, $vel, $vel, 1) | $s in $slant_list]	
+}
+
+; test
+;::Slant([[60, 5, 1], [72, 9, -1]], 68, 127, 1, 300)
+;::PeriodVar(::Slant, [100, 1000, 4000])
+;abort ::Slant
+;abort ef_loop
+;;;; Rain appraît dans T7 s 11
+;;;; à partir d'un pitch de base on déroule une suite d'intervalles successifs à un période donnée
+@proc_def ::Rain($base_pitch, $period, $intervals, $vel, $chan, $dur)
+{
+	@local $pitch, $i
+	$pitch := $base_pitch
+	$i := 0
+loop rainloop ($period) ms
+{
+	::Makenote($pitch, $vel, $chan, $dur)	
+	if ($i<(@size($intervals))) ; pour ne pas avoir d'erreur à la dernière
+	{
+	$pitch := $pitch + ($intervals[$i])
+	}
+	$i := $i + 1
+
+
+}
+while ($i<=(@size($intervals)))
+}
+@proc_def ::NChords($ntimes, $period, $pitchlist,$vel, $chan, $dur )
+{
+	@local $i
+	$i:= 1
+loop nloop ($period) ms
+{
+	::MakeChord($pitchlist, $vel, $chan, $dur)
+	$i := $i+1
+}
+until ($i > $ntimes)
+}
+@proc_def ::ChaCha24B($chordlist, $maxdensity, $period)
+{
+	@local $P, $Q, $Chord, $Chords_map, $Chords_index, $i, $Chord_proba_1, $Chord_proba_2, $Chord_proba_3, $Chord_proba_4, $Chord_proba_5, $Chord_proba_6
+	$Chord := $chordlist ; ondonne de l'extérieur pour cque ce soit explicite 63, 67, 68, 69, 73, 74
+ 	; on fait pas d'histoire d'update ça va c'est pas très important pour ce proc il n'est utilisé que ds une section
+	; c'est les colls avec les différentes construction d'accords possibles
+	$Chord_proba_1 := map {(1, [1]),(2, [2]),(3, [3]),(4, [4]),(5, [5]),(6, [6])}
+	$Chord_proba_2 := map {(1, [1, 2]),(2, [1, 3]),(3, [1, 4]),(4, [1, 5]),(5, [1, 6]),
+								(6, [2, 3]),(7, [2, 4]),(8, [2, 5]),(9, [2, 6]),
+								(10, [3, 4]),(11, [3, 5]),(12, [3, 6]),
+								(13, [4, 5]),(14, [4, 5]),(15, [4, 6])
+							   }
+	$Chord_proba_3 := map {(1, [1, 2, 3]),(2, [1, 2, 4]),(3, [1, 2, 5]),(4, [1, 2, 6]),
+								(5, [1, 3, 4]),(6, [1, 3, 5]),(7, [1, 3, 6]),(8, [1, 4, 5]),(9, [1, 4, 6]),(10, [1, 5, 6]),
+								(11, [2, 3, 4]),(12, [2, 3, 5]),(13, [2, 3, 6]),(14, [2, 4, 5]),(15, [2, 4, 6]),(16, [2, 5, 6]),
+								(17, [3, 4, 5]),(18, [3, 4, 6]),(19, [3, 5, 6]),(20, [4, 5, 6])
+							   }
+    $Chord_proba_4 := map { (1, [1, 2, 3, 4]),(2, [1, 2, 3, 5]),(3, [1, 2, 3, 6]),(4, [1, 2, 4, 5]),
+    							(5, [1, 2, 4, 6]),(6, [1, 2, 5, 6]),(7, [1, 3, 4, 5]),(8, [1, 3, 4, 6]),(9, [1, 3, 5, 6]),(10, [1, 4, 5, 6]),
+								(11, [2, 3, 4, 5]),(12, [2, 3, 4, 6]),(13, [2, 3, 5, 6]),(14, [2, 4, 5, 6]),
+								(15, [3, 4, 5, 6])
+							  }
+	$Chord_proba_5 := map { 	(1, [1, 2, 3, 4, 5]),
+								(2, [1, 2, 3, 4, 6]),
+								(3, [1, 2, 3, 5, 6]),
+								(4, [1, 2, 4, 5, 6]),
+								(5, [1, 3, 4, 5, 6]),
+								(6, [2, 3, 4, 5, 6])
+							}
+	$Chord_proba_6 := map { (1, [1, 2, 3, 4, 5, 6])}
+
+
+	; on les mets dans un tableau
+	$Proba_list := [$Chord_proba_1, $Chord_proba_2, $Chord_proba_3, $Chord_proba_4, $Chord_proba_5, $Chord_proba_6]
+	loop chacha24b ($period) ms
+	{
+		$Chords_map := $Proba_list[(@rand_int($maxdensity))] ; on viendra changer max density à la demande
+		$Chord_index := $Chords_map(@rand_int(@max_key($Chords_map))+1)
+		;print $Chord_index ; 1 @maxkey
+		forall $i in $Chord_index ; forall et makenote permettent de ne pas fabriquer le tableau des accords, on itère directement
+		{
+			::Makenote($Chord[$i-1], 110, 5, 200) ; 0 - (maxkey-1)
+		}
+
+	}
+
+}
+/* $test := ::ChaCha24B([63, 67, 68, 69, 73, 74],6, 300)
+$test.$maxdensity := 5
+abort ::ChaCha24B 
+*/
+;$test := ::NChords(10, 80, [60, 63, 67], 100, 1, 100)
+; tests
+;$test := ::Rain(60, 80, [1, 1, 2, 2, 3, 3, 4, 1, -3, -4, 12, -4, -3, -1, -1, -1, -2], 100, 1, 100)
+;abort ::Rain
+;print $test
+
+@proc_def ::balance_s18($source, $start_angle, $end_angle,$time) ; Mouvment for section 18 of T5, 2025 
+{
+	loop (2*$time) ms 
+	{
+
+	curve SwishAz  @Grain := 0.1s, @Action := {$swishaz := @floor($x)
+													to_spats source $source az $swishaz
+													} ;on fait abstraction du delai de 20ms pour le départ de la courbe
+				{
+					$x 
+					{
+						{ $start_angle } @type "linear"
+					$time ms   { $end_angle }
+					$time ms   { $start_angle }
+					}
+				}
+	}
+}
+
+
+@proc_def ::ShadowPlay($pitch, $vel, $chan, $dur, $period, $minvel, $transpo_list)
+{
+	@local $c, $rvel, $rpitch, $nrepeat
+	$c := 0
+	$rvel := $vel
+	$nrepeat := @size($transpo_list)
+	loop ($period) 
+	{
+		$rpitch := $pitch + $transpo_list[$c]
+		::Makenote($rpitch, $rvel, $chan, $dur)
+		$c := $c + 1
+		$rvel := @floor(((1-($c/$nrepeat))*100+($c/$nrepeat)*$minvel))
+	}
+	until ($c>= $nrepeat)
+}
+;::ShadowPlay(60, 100, 1, 200, 1/4, 50, [0, 2, -3, -1])
+;abort ::ShadowPlay
+
+@obj_def AccentsS22( $accvel, $chan1, $chan2, $dur, $pizzproba) ; OBJET POUR L'OPTION JOUER UNE VOIE EN PLUS SUR LES ACCENTS S22
+{ 
+@method_def Pizz_Proba($ch_proba) ; changements de pitch par instance 
+	{
+		$pizzproba := $ch_proba ; 
+	}
+@whenever($GAccent)  @override ; GACCENT(Thisobj, current_pitch)
+	{	
+	
+			;(@exe_child_of($GAccent[0], $ChaChaS22)) ; ne marche pas parce que le procesus père n'est lancé et assigné qu'une fois. 
+			;ChaChaS22 ne connait pas ses nouveaux enfants, que ceux qu'il a créé au lancement. il faut tester chacun d'entre eux.
+			if (@member($ChaChaS22.$P, $GAccent[0])) ; OK
+			{
+			@local $rand
+			$rand := @rand(1) ; tirage au sort pour la vélocité
+				if ($rand <= $pizzproba) 
+				{::Makenote($GAccent[1], $accvel, $chan1, $dur)}
+				 ; 4, 250
+				else 	
+				{::Makenote($GAccent[1], $accvel, $chan2, $dur)}
+			}
+				; 12, 250
+	}
+}
+@proc_def ::ChaChaS22($pitch_list, $startperiod, $accvel, $noaccvel, $accproba, $pizzproba) ;PROCESSUS POUR LA SECTION 22 (Accords Répétés + Accents)
+@abort := 	{   				
+				$P := [0]
+				$Q := 0
+			}
+
+{
+	@local $p, $q
+	if ($ChaChaS22) ; juste l'update sans redémarrer
+	{
+		_:=($ChaChaS22.$Q).Pizz_Proba($pizzproba)
+		_:=@EFL_Accents(::ChaChaS22, $accvel, $noaccvel, $accproba)
+		forall $p in ($pitch_list) 
+		{
+			$i := @occurs(($pitch_list), $p)
+			if ($i < @size($ChaChaS22.$P))
+			{
+				_:=($ChaChaS22.$P[$i]).EFL_Pitch([($pitch_list[$i])])			
+			}
+			else 
+			{ ; ajout de voix : trouver une métode de synchro ! ! ! ! ! ! ! 
+
+				whenever ($EFLSync == $ChaChaS22.$P[0]) ; on prebd le premier POUR CREER DES VOIX SYNCHRONES
+				{
+				$q := obj::EFLoop("seq", [$p], [1], $startperiod, 5, 250, 0, $noaccvel, $accproba) 
+				$ChaChaS22.$P:= @push_back($ChaChaS22.$P, $q) ;
+				$ChaChaS22 := $ChaChaS22 ; ??
+				}
+				during [1#] ; DURANT UNE FOIS
+			}
+		}
+	}
+	else 
+	{
+	@local $P, $Q, $p
+	$ChaChaS22 := $MYSELF
+	$P := []
+	$P := [ obj::EFLoop("seq", [$p], [1], $startperiod, 5, 250, 0, $noaccvel, $accproba) | $p in $pitch_list] ; on met accvel à zéro pour ne pas jouer les accents !
+	$Q := obj::AccentsS22($accvel, 4, 12 , 250, $pizzproba)
+	}
+	
+}
+;::ChaChaS22([69, 60], 200, 120, 60, 1/5, 1/5)
+;::ChaChaS22([60, 63, 67, 70], 200, 120, 80, 5/10, 1/3)
+;abort ::ChaChaS22
+
+@proc_def ::RepeatChords_OS2($pitchlist, $period, $vel, $chan, $dur) ; Répétition avec variation de filtre
+@abort { $P := 0}
+{
+	if ($RepeatChords_OS2)
+	{
+		_:=@EFL_Period(::RepeatChords_OS2, $period) 
+		_:=($RepeatChords_OS2.$P).EFL_Pitch(($pitchlist))	
+		_:=@EFL_Accents(::RepeatChords_OS2, $vel, $vel, 1)
+	}
+	else
+	{
+		@local $P, $Q, $p
+		$RepeatChords_OS2 := $MYSELF
+		$P := 0
+		$P := obj::EFLoop("seq", $pitchlist, [1], $period, $chan, $dur, $vel, $vel, 1)
+		whenever ($EFLSync == $RepeatChords_OS2.$P)
+		{
+			samp4-filt-q (@rand_int(20)+10) ; en gros c'est ça
+		}
+	}
+	
+}
+/*
+::RepeatChords_OS2([72, 76, 79], 100, 127, 1, 200)
+abort ::RepeatChords_OS2
+*/
+; devrait être ployophonque non ? c'est pas beau de faire reset à chaque fois je comprned pas l'intéret de résetter.
+@proc_def ::Sequence_OS2($pitchlist, $cycle_list, $period, $vel, $chan, $dur)
+@abort { $P := 0} ; ON LE FAIT PAS POLYPHONIQUE PARCE QUE CE SERA LOURD A ECRIRE DANS LE SCORE 
+{					; ET QUE CHAQUE EVENT FAIT RESET DE TOUTE FACON, DONC PAS D'UPDATE NECESSAIRE, on fait abort à chaque fois.
+	@local $P
+	$P := 0
+	$P := obj::EFLoop("seq", $pitchlist, $cycle_list, $period, $chan, $dur, $vel, $vel, 1)
+}
+/* UTILES
+_:=@EFL_Period(::OrigFluteNotes, $period) 
+_:=($RepeatChords_OS2.$P).EFL_Pitch(($pitchlist))	
+_:=@EFL_Accents(::OrigFluteNotes, $vel, $vel, 1)
+_:=($Sequence_OS2.$P).EFL_Rythm($cycle_list) 
+*/	
+;::Sequence_OS2([68], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+;abort ::Sequence_OS2
+
+
+
+@proc_def ::balance_s18($source, $start_angle, $end_angle,$time)
+{
+	loop (2*$time) ms 
+	{
+
+	curve SwishAz  @Grain := 0.1s, @Action := {$swishaz := @floor($x)
+													to_spats source $source az $swishaz
+													} ;on fait abstraction du delai de 20ms pour le départ de la courbe
+				{
+					$x 
+					{
+						{ $start_angle } @type "linear"
+					$time ms   { $end_angle }
+					}
+				}
+	}
+}
+
+@proc_def ::rotation_harmo($source, $step,$period, $az)
+{
+	$Spat_Rotation := $MYSELF
+	;@local $az
+	loop spatrotation ($period) ms
+		{
+			to_spats source $source az $az;((@abs($az))%360)
+			$az := $az + $step
+
+		}
+}
+
+

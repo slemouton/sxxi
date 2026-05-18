@@ -1,0 +1,1469 @@
+; Explosante Fixe - 3¡ movement --------------------------------------------------------------------------------- ;
+;
+; ORIGINEL -  Score-2017
+;
+; Partial Score following,  only for cues from n. 22 (measure 16 to 50)
+
+//@INSERT EF_Process.txt ; c'est là qu'il y a tous les processus !
+
+VARIANCE 0.3
+
+BPM		72
+	 
+	 ;antescofo-in 0 
+	 
+	 ;antescofo_gamma -1   ; was -1.5 (pour pp) 
+	 print Suivi_BY_HAND_until_evt-21 
+	 get_speakers bang 
+	 get_reverberance bang 
+	 0.01 print loudspeakers az $HP_az
+		  print reverberance $Reverberance
+;
+;  Cues 1 to 21 => by hand
+
+; from cue N. 22 =>   enable suivi, by pressing "s"
+
+TEMPO OFF 		; "libre continu"
+
+EVENT 1.0 Q01
+cuename 1 
+suivi-cur-mvt 3
+suivi-cur-sec 1 
+ group IO_Levels
+{
+EF_Matrix recall 61
+EF_Levels recall 61
+EF_Deltas recall 61
+}
+group filt
+{
+samp1-filt-on-off 1;
+samp1-filt-cfreq 63;
+samp1-filt-q 53; ; was 50
+samp2-filt-on-off 1;
+samp2-filt-cfreq 63;
+samp2-filt-q 53;
+samp3-filt-on-off 1;
+samp3-filt-cfreq 63;
+samp3-filt-q 53;
+samp4-filt-on-off 1;
+samp4-filt-cfreq 63;
+samp4-filt-q 53;
+}
+group spat
+{
+to_spats room 1 reverberance ($Reverberance*1.45); was 1.38
+to_spats source 1 az 0.;
+to_spats source 1 pres 75;
+to_spats source 1 prer 90;
+to_spats source 2 az -90.;
+to_spats source 2 pres 75;
+to_spats source 2 prer 90;
+to_spats source 3 az 90.;
+to_spats source 3 pres 75;
+to_spats source 3 prer 90;
+to_spats source 4 az -180.;
+to_spats source 4 pres 75;
+to_spats source 4 prer 90;
+}
+group choral ; dupliqué pour aller dans toutes les sources; 15, 16 et 17 sont des duplicatas de la voix 1, allant resp. ds src 2 3 & 4
+{
+100 ms
+::Makenote(69, 120, 1,  2000); devant
+::Makenote(61, 80 , 1, 2000);
+::Makenote(58, 80 , 1, 2000);
+::Makenote(69, 120, 15,  2000); left
+::Makenote(61, 80 , 15, 2000);
+::Makenote(58, 80 , 15, 2000);
+::Makenote(69, 120, 16,  2000); right
+::Makenote(61, 80 , 16, 2000);
+::Makenote(58, 80 , 16, 2000);
+::Makenote(69, 120, 17,  2000); derrière
+::Makenote(61, 80 , 17, 2000);
+::Makenote(58, 80 , 17, 2000);
+}
+print Cue_1
+
+EVENT 1.0 Q02
+cuename 2
+print Cue_2
+group choral
+{
+@local $p
+$p := 225
+	group ch
+	{;
+	::Makenote(65, 120, 15,  2000); ; HP 3-6
+	::Makenote(63, 80 , 15, 1000)
+	::Makenote(61, 80 , 15, 2000)
+	::Makenote(65, 120, 16, 2000);
+	::Makenote(63, 80 , 16, 1000)
+	::Makenote(61, 80 , 16, 2000)
+	}
+($p*4) ms
+group ch
+	{;
+	::Makenote(68, 120, 1,  2000);
+	::Makenote(63, 80 , 1, 1000)
+	::Makenote(63, 80 , 17, 1000)
+	::Makenote(58, 80 , 17, 2000)
+	}
+($p*5) ms
+	group ch
+	{;
+	::Makenote(74, 120, 1,  2000);
+	::Makenote(63, 80 , 1, 1000)
+	::Makenote(63, 80 , 17, 1000)
+	::Makenote(56, 80 , 17, 2000)
+	}
+($p*6) ms
+	group ch
+	{;
+	::Makenote(71, 120, 1,  2000);
+	::Makenote(63, 80 , 1, 1000)
+	::Makenote(63, 80 , 17, 1000)
+	::Makenote(61, 80 , 17, 2000)
+	}
+($p*6) ms
+	group ch
+	{;
+	::Makenote(67, 120, 1,  2000);
+	::Makenote(63, 80 , 1, 1000)
+	::Makenote(63, 80 , 17, 1000)
+	::Makenote(59, 80 , 17, 2000)
+	}
+($p*7) ms
+	group ch
+	{;
+	::Makenote(69, 120, 1,  2000);
+	::Makenote(63, 80 , 1, 1000)
+	::Makenote(63, 80 , 17, 1000)
+	::Makenote(52, 80 , 17, 2000)
+	}
+2414 ms
+	group ch_wobble
+	{
+	::Wobble([63], [510, 100], 120, 1, 500)
+	::Wobble([63], [510, 100], 120, 17, 500) ; ????
+	4000 ms
+	abort ::Wobble
+	}
+}
+EVENT 1.0 Q03
+cuename 3
+
+group choral
+{
+	::Makenote(72, 120, 1, 2000);
+	::Makenote(69, 60 , 1, 2000)
+	::Makenote(61, 60 , 1, 2000)
+	::Makenote(72, 120, 15, 2000);
+	::Makenote(69, 60 , 15, 2000)
+	::Makenote(61, 60 , 15, 2000)
+	::Makenote(72, 120, 16, 2000);
+	::Makenote(69, 60 , 16, 2000)
+	::Makenote(61, 60 , 16, 2000)
+	::Makenote(72, 120, 17, 2000);
+	::Makenote(69, 60 , 17, 2000)
+	::Makenote(61, 60 , 17, 2000)
+}
+print Cue_3
+
+EVENT 1.0 Q04
+cuename 4
+print Cue_4
+group choral
+{
+	@local $p
+	$p:= 300
+	group ch
+	{
+	::Makenote(66, 120, 1, 2000);
+	::Makenote(63, 60 , 1, 500)
+	::Makenote(63, 60 , 17, 500)
+	::Makenote(52, 60 , 17, 2000)
+	}
+(4*$p) ms
+	group ch
+	{
+	::Makenote(65, 120, 15, 2000)
+	::Makenote(63, 60 , 15, 500)
+	::Makenote(55, 60 , 15, 2000)
+	::Makenote(65, 120, 16, 2000)
+	::Makenote(63, 60 , 16, 500)
+	::Makenote(55, 60 , 16, 2000)
+	}
+(4*$p) ms
+	group ch
+	{
+	::Makenote(67, 120, 1, 2000)
+	::Makenote(63, 60 , 1, 500)
+	::Makenote(63, 60 , 17, 500)
+	::Makenote(59, 60 , 17, 2000)
+	}
+(5*$p) ms
+	group ch
+	{
+	::Makenote(71, 120, 15, 2000)
+	::Makenote(63, 60 , 15, 500)
+	::Makenote(55, 60 , 15, 2000)
+	::Makenote(71, 120, 16, 2000)
+	::Makenote(63, 60 , 16, 500)
+	::Makenote(55, 60 , 16, 2000)
+	}
+(5*$p) ms
+	group ch
+	{
+	::Makenote(68, 120, 1, 2000)
+	::Makenote(63, 60 , 1, 500)
+	::Makenote(63, 60 , 17, 500)
+	::Makenote(58, 60 , 17, 2000)
+	}
+(6*$p) ms
+	group ch
+	{
+	::Makenote(72, 120, 1, 2000)
+	::Makenote(63, 60 , 1, 500)
+	::Makenote(63, 60 , 17, 500)
+	::Makenote(54, 60 , 17, 2000)
+	}
+(6*$p) ms
+	group ch
+	{
+	::Makenote(69, 120, 15, 2000)
+	::Makenote(63, 60 , 15, 500)
+	::Makenote(61, 60 , 15, 2000)
+	::Makenote(69, 120, 16, 2000)
+	::Makenote(63, 60 , 16, 500)
+	::Makenote(61, 60 , 16, 2000)
+	}
+2414 ms
+	group ch_wobble
+	{
+	::Wobble([63], [510, 100], 120, 1, 500)
+	::Wobble([63], [510, 100], 120, 17, 500)
+	4000 ms
+	abort ::Wobble
+	}
+}
+EVENT 1.0 Q05
+cuename 5
+print Cue_5
+group choral
+{
+	::Makenote(68, 120, 1, 2000)
+	::Makenote(62, 60 , 1, 2000)
+	::Makenote(57, 60 , 1, 2000)
+	::Makenote(68, 120, 15, 2000)
+	::Makenote(62, 60 , 15, 2000)
+	::Makenote(57, 60 , 15, 2000)
+	::Makenote(68, 120, 16, 2000)
+	::Makenote(62, 60 , 16, 2000)
+	::Makenote(57, 60 , 16, 2000)
+	::Makenote(68, 120, 17, 2000)
+	::Makenote(62, 60 , 17, 2000)
+	::Makenote(57, 60 , 17, 2000)
+}
+EVENT 1.0 Q06
+cuename 6
+group choral
+{
+	::Makenote(73, 120, 15, 2000)
+	::Makenote(62, 60 , 15, 2000)
+	::Makenote(53, 60 , 15, 2000)
+	::Makenote(73, 120, 16, 2000)
+	::Makenote(62, 60 , 16, 2000)
+	::Makenote(53, 60 , 16, 2000)
+}
+print Cue_6
+
+EVENT 1.0 Q07
+cuename 7
+group choral
+{
+	@local $p
+	$p := 300
+	group ch
+	{
+		::Makenote(70, 120, 15, 2000)
+		::Makenote(63, 60 , 15, 500)
+		::Makenote(61, 60 , 15, 2000)
+		::Makenote(70, 120, 16, 2000)
+		::Makenote(63, 60 , 16, 500)
+		::Makenote(61, 60 , 16, 2000)
+	}
+(4*$p) ms
+	group ch
+	{
+		::Makenote(74, 120,  1, 2000)
+		::Makenote(63, 60 ,  1, 500)
+		::Makenote(63, 60 ,  17, 500)
+		::Makenote(58, 60 ,  17, 2000)
+	}
+(4*$p) ms
+	group ch
+	{
+		::Makenote(69, 120, 15, 2000)
+		::Makenote(63, 60 , 15, 500)
+		::Makenote(62, 60 , 15, 2000)
+		::Makenote(69, 120, 16, 2000)
+		::Makenote(63, 60 , 16, 500)
+		::Makenote(62, 60 , 16, 2000)
+	}
+(5*$p) ms
+	group ch
+	{
+		::Makenote(64, 120, 1, 2000)
+		::Makenote(63, 60 , 1, 500)
+		::Makenote(63, 60 , 17, 500)
+		::Makenote(59, 60 , 17, 2000)
+	}
+(6*$p) ms
+	group ch
+	{
+		::Makenote(67, 120,  1, 2000)
+		::Makenote(63, 60 ,  1, 500)
+		::Makenote(63, 60 ,  17, 500)
+		::Makenote(56, 60 ,  17, 2000)
+	}
+2414 ms
+	group ch_wobble
+	{
+	::Wobble([63], [510, 100], 120,1, 500)
+	4000 ms 
+	abort ::Wobble
+	}
+}
+
+
+EVENT 1.0 Q08
+cuename 8
+group choral
+{
+	::Makenote(66, 120,  1, 2000)
+	::Makenote(62, 60 ,  1, 2000)
+	::Makenote(55, 60 ,  1, 2000)
+	::Makenote(66, 120,  15, 2000)
+	::Makenote(62, 60 ,  15, 2000)
+	::Makenote(55, 60 ,  15, 2000)
+	::Makenote(66, 120,  16, 2000)
+	::Makenote(62, 60 ,  16, 2000)
+	::Makenote(55, 60 ,  16, 2000)
+	::Makenote(66, 120,  17, 2000)
+	::Makenote(62, 60 ,  17, 2000)
+	::Makenote(55, 60 ,  17, 2000)
+}
+EVENT 1.0 Q09
+cuename 9
+group choral
+{
+	::Makenote(68, 120,  15, 2000)
+	::Makenote(63, 80 ,  15, 2000)
+	::Makenote(57, 80 ,  15, 2000)
+	::Makenote(68, 120,  16, 2000)
+	::Makenote(63, 80 ,  16, 2000)
+	::Makenote(57, 80 ,  16, 2000)
+}
+EVENT 1.0 Q10
+cuename 10
+group choral
+{
+	::Makenote(67, 120,  1, 2000)
+	::Makenote(63, 80 ,  1, 2000)
+	::Makenote(63, 80 ,  17, 2000)
+	::Makenote(59, 80 ,  17, 2000)
+}
+EVENT 1.0 Q11
+cuename 11
+group choral
+{
+	::Makenote(74, 120,  15, 2000)
+	::Makenote(63, 60 ,  15, 2000)
+	::Makenote(56, 60 ,  15, 2000)
+	::Makenote(74, 120,  16, 2000)
+	::Makenote(63, 60 ,  16, 2000)
+	::Makenote(56, 60 ,  16, 2000)
+}
+EVENT 1.0 Q012
+cuename 12
+group choral
+{
+	@local $p
+	$p := 300
+	group ch
+	{
+		::Makenote(65, 120,  15, 2000)
+		::Makenote(63, 60 ,  15, 2000)
+		::Makenote(60, 60 ,  15, 2000)
+		::Makenote(65, 120,  16, 2000)
+		::Makenote(63, 60 ,  16, 2000)
+		::Makenote(60, 60 ,  16, 2000)
+	}
+(4*$p) ms
+	group ch
+	{
+		::Makenote(69, 120,  15, 2000)
+		::Makenote(63, 60 ,  15, 2000)
+		::Makenote(58, 60 ,  15, 2000)
+		::Makenote(69, 120,  16, 2000)
+		::Makenote(63, 60 ,  16, 2000)
+		::Makenote(58, 60 ,  16, 2000)
+	}
+(4*$p) ms
+	group ch
+	{
+		::Makenote(68, 120,  1, 2000)
+		::Makenote(63, 60 ,  1, 2000)
+		::Makenote(63, 60 ,  17, 2000)
+		::Makenote(62, 60 ,  17, 2000)
+	}
+2414 ms
+	group ch_wobble
+	{
+		::Wobble([63], [510, 100], 120, 1, 500)
+		::Wobble([63], [510, 100], 120, 17, 500)
+		4000 ms 
+		abort ::Wobble
+	}
+}
+EVENT 1.0 Q013
+cuename 13
+group choral
+{;
+	::Makenote(67, 127,  1, 7000)
+	::Makenote(58, 60 ,  1, 7000)
+	::Makenote(54, 60 ,  1, 7000)
+	::Makenote(67, 127,  15, 7000)
+	::Makenote(58, 60 ,  15, 7000)
+	::Makenote(54, 60 ,  15, 7000)
+	::Makenote(67, 127,  16, 7000)
+	::Makenote(58, 60 ,  16, 7000)
+	::Makenote(54, 60 ,  16, 7000)
+	::Makenote(67, 127,  17, 7000)
+	::Makenote(58, 60 ,  17, 7000)
+	::Makenote(54, 60 ,  17, 7000)
+}
+
+EVENT 1.0 Q014
+cuename 14
+print Cue_14
+group choral
+{;
+	::Makenote(69, 120,  15, 4000)
+	::Makenote(63, 80 ,  15, 4000)
+	::Makenote(58, 80 ,  15, 4000)
+	::Makenote(69, 120,  16, 4000)
+	::Makenote(63, 80 ,  16, 4000)
+	::Makenote(58, 80 ,  16, 4000)
+}
+EVENT 1.0 Q015
+cuename 15
+group choral
+{
+	@local $p
+	$p := 300
+	group ch
+	{;
+		::Makenote(68, 120,  15, 2000)
+		::Makenote(63, 60 ,  15, 500)
+		::Makenote(53, 60 ,  15, 2000)
+		::Makenote(68, 120,  16, 2000)
+		::Makenote(63, 60 ,  16, 500)
+		::Makenote(53, 60 ,  16, 2000)
+	}
+(6*$p) ms
+	group ch
+	{;
+		::Makenote(73, 120,  15, 2000)
+		::Makenote(63, 80 ,  15, 500)
+		::Makenote(57, 80 ,  15, 2000)
+		::Makenote(73, 120,  16, 2000)
+		::Makenote(63, 80 ,  16, 500)
+		::Makenote(57, 80 ,  16, 2000)
+	}
+(4*$p) ms
+	group ch
+	{;
+		::Makenote(74, 120,  15, 2000)
+		::Makenote(63, 80 ,  15, 500)
+		::Makenote(59, 80 ,  15, 2000)
+		::Makenote(74, 120,  16, 2000)
+		::Makenote(63, 80 ,  16, 500)
+		::Makenote(59, 80 ,  16, 2000)
+	}
+(6*$p) ms
+	group ch
+	{;
+		::Makenote(67, 120,  15, 2000)
+		::Makenote(63, 70 ,  15, 500)
+		::Makenote(52, 70 ,  15, 2000)
+		::Makenote(67, 120,  16, 2000)
+		::Makenote(63, 70 ,  16, 500)
+		::Makenote(52, 70 ,  16, 2000)
+	}
+2414 ms
+	group ch_wobble
+	{
+		::Wobble([63], [510, 100], 120, 1, 500)
+		::Wobble([63], [510, 100], 120, 17, 500)
+		4000 ms 
+		abort ::Wobble
+	}
+}
+; Here starts event 22 which corresponds to CUE 16 - press S!
+
+NOTE 0 5 
+ ; Section2_bridge ; pause added to init Section
+	 suivi-cur-sec 2  
+NOTE 6300 2.000 Q016
+ cuename 16
+  group IO_Levels
+{
+EF_Matrix recall 62
+EF_Levels recall 62
+EF_Deltas recall 62
+}
+group spat 
+{;
+to_spats source 1 az 0.;
+to_spats source 1 pres 40; was 35
+to_spats source 1 prer 90;
+}
+group longEb_eol
+{
+	::Wobble([63],[510, 100], 100, 1, 500)
+}
+group mapIO_eol
+{
+samp1-filt-on-off 1;
+	samp1-filt-on-off 1;
+	samp1-filt-cfreq 63;
+	samp1-filt-q 45;
+}
+NOTE 7300 0.25 	Q017
+cuename 17
+ group IO_Levels
+{
+EF_Matrix recall 62
+EF_Levels recall 62
+EF_Deltas recall 62
+}
+group spat 
+{;
+to_spats room 1 reverberance ($Reverberance*1.38) ; réglage le plus long.
+to_spats source 3 az 0.;
+to_spats source 3 pres 65;
+to_spats source 3 prer 85;  essai
+abort ::Random_HP
+::Random_HP(3, 250)
+}
+group filt
+{
+samp3-filt-on-off 1;
+samp3-filt-cfreq 63;
+samp3-filt-q 0;
+}
+20 ms ; pour spat
+group pizz_seq
+{
+	abort ::Sequence_OS2
+	$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+	$OS2V2 := ::Sequence_OS2([67], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+	$OS2V3 := ::Sequence_OS2([68], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+}
+NOTE 7400 0.25   
+NOTE 8200 1.5	Q018 
+cuename 18
+group spat 
+{;
+to_spats source 2 az 0.;
+to_spats source 2 pres 60;
+to_spats source 2 prer 90;
+}
+ group IO_Levels
+{
+EF_Matrix recall 63
+EF_Levels recall 63
+EF_Deltas recall 63
+}
+group filt
+{
+samp2-filt-on-off 1;
+;
+samp2-filt-cfreq 63;
+samp2-filt-q 45;
+
+}
+group nominal_levels_swish
+{
+;smp2_db -3;
+}
+group swish_eol @tempo 72 ; 278 ms durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(71 , 100, 2, 5000)
+1/3 ::Makenote(73 , 100, 2, 3000)
+1/3 ::Makenote(74 , 100, 2, 2000)
+1/3 ::Makenote(82 , 100, 2, 1000)
+}
+group swish_eol_bal
+{
+	2000 ms
+	print dummy
+	;samp2a-bal ($s5-swish-bal -9) ; à voir il faut peut-être juste baisser la vélocité franchement
+}
+NOTE 7400 0.250 Q019 
+cuename 19
+	
+	group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{  ; et aussi : l'update ne se fait qu'au cycle suivant le message
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([67]))
+		}
+		else 
+		{
+		::Sequence_OS2([67], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([69]))
+		}
+		else 
+		{
+		::Sequence_OS2([69], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 7100 0.250   
+NOTE 6300 2.2   
+NOTE 6600 0.2 	Q020 
+cuename 20
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([66]))
+		}
+		else 
+		{
+		::Sequence_OS2([66], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([67]))
+		}
+		else 
+		{
+		::Sequence_OS2([67], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 7400 0.2 	Q021 
+cuename 21
+group swish_eol @tempo 72 ; 278 ms durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(74 , 100, 2, 3000)
+1/3 ::Makenote(67 , 100, 2, 4000)
+1/3 ::Makenote(66 , 100, 2, 5000)
+}
+NOTE 6700 0.2   
+NOTE 6300 1.70   
+NOTE 6800 0.164 Q022
+cuename 22
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([66]))
+		}
+		else 
+		{
+		::Sequence_OS2([66], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([68]))
+		}
+		else 
+		{
+		::Sequence_OS2([68], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 6000 0.164   
+NOTE 6300 0.168   
+NOTE 7100 1.500 Q023 
+cuename 23
+group swish_eol @tempo 72 ; 278 ms durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(60 , 100, 2, 5000)
+1/3 ::Makenote(68 , 100, 2, 4500)
+1/3 ::Makenote(69 , 100, 2, 4000)
+1/3 ::Makenote(71 , 100, 2, 3500)
+1/3 ::Makenote(73 , 100, 2, 3000)
+1/3 ::Makenote(77 , 100, 2, 2500)
+}
+NOTE 6900 0.250 Q024 
+cuename 24
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([66]))
+		}
+		else 
+		{
+		::Sequence_OS2([66], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([67]))
+		}
+		else 
+		{
+		::Sequence_OS2([67], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 6300 0.250   
+NOTE 7300 0.250   
+NOTE 6000 1.0   
+NOTE 6900 0.2 Q025 
+cuename 25
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update ...
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([68]))
+		}
+		else 
+		{
+		::Sequence_OS2([68], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([69]))
+		}
+		else 
+		{
+		::Sequence_OS2([69], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 7700 0.2
+	 ;;;cuename 25  ; ????? ancienne position ?
+NOTE 6800 0.2   
+NOTE 6300 2.2  
+ 
+NOTE 6600 0.1   
+NOTE 6300 1.15 Q026	; changed dur! was 0.067!!! -- notes repetŽes
+cuename 26
+ group IO_Levels
+{
+EF_Matrix recall 64
+EF_Levels recall 64
+EF_Deltas recall 64
+}
+group spat
+{
+abort ::Random_HP
+to_spats source 1 az 0.;
+to_spats source 1 pres 40; was 35
+to_spats source 1 prer 90;
+to_spats source 2 az 0.;
+to_spats source 2 pres 85
+to_spats source 2 prer 90;
+to_spats source 4 az 0.;
+to_spats source 4 pres 75;
+to_spats source 4 prer 90;
+::Random_HP(4, 384)
+}
+group pizz_seq
+{
+	abort ::Sequence_OS2
+}
+group longEb
+{
+	abort ::Wobble
+	::Wobble([63], [510, 100], 100, 1, 500)
+}
+group filt
+{
+samp1-filt-on-off 1;
+}
+
+group flutenotes
+{	;
+samp4-filt-on-off 1;
+samp4-filt-on-off 1;
+samp4-filt-cfreq 63;
+samp4-filt-q 0;
+::RepeatChords_OS2([63], 384, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+; 0 0.043  
+; 63 0.085   
+; 0 0.040  
+; 63 0.076   
+; 0 0.049  
+; 63 0.125   
+; 63 0.125   
+; 63 0.125   
+; 63 0.125   
+; 63 0.129
+NOTE 6300 0.0
+NOTE 7300 1.2 Q027 ; was 0.144
+cuename 27
+ group IO_Levels
+{
+EF_Matrix recall 65
+EF_Levels recall 65
+EF_Deltas recall 65
+}
+group filt
+{
+samp2-filt-on-off 1;
+samp2-filt-cfreq 63;
+samp2-filt-q 45;
+}
+group melody
+{
+	::Wobble([66], [600, 100], 100, 2, 500) ; base was 510. on pourrait remplacer ce wobble avec juste des bouclages dans samplor LOL
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 327, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+; 73 0.141   
+; 73 0.145   
+; 73 0.141   
+; 73 0.144   
+; 73 0.145   
+; 73 0.112 
+NOTE 6300 0.0   
+NOTE 6800 1.0 Q028	;was 0.168 
+cuename 28
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([67], [600, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 270, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+; 68 0.164   
+; 68 0.168   
+; 68 0.168   
+; 68 0.199   
+; 68 0.070   
+NOTE 6300 0.0   
+NOTE 6900 1.25 Q029 ; was 0.199
+cuename 29
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([69], [600, 100], 100, 2, 500)
+}
+group flutenotes
+{
+	abort ::RepeatChords_OS2
+::RepeatChords_OS2([63], 213, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+; 69 0.199   
+; 69 0.203   
+; 69 0.250   
+; 69 0.250   
+; 69 0.116   
+NOTE 6300 0.0
+NOTE 6700 1.0 Q030 
+cuename 30
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([68], [600, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 156, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+; 67 0.332   
+; 67 0.332   
+; 67 0.336   
+NOTE 6300 0.0   
+NOTE 6600 1.0 Q031	; was 0.356 
+cuename 31
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([71], [600, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 105, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+; 66 0.500   
+NOTE 0 0.332  
+NOTE 6600 0.332   
+NOTE 0 0.336 
+
+NOTE 6300 0.125 Q032 
+cuename 32
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([74], [510, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 156, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+NOTE 7400 0.125   
+NOTE 0 1.000  
+NOTE 8200 0.125   
+NOTE 7000 0.125   
+NOTE 6300 0.250 Q033 
+cuename 33
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([68], [510, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 213, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+NOTE 0 0.582  
+NOTE 7400 0.168   
+NOTE 6300 0.164 Q034 
+cuename 34
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([73], [510, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 270, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+NOTE 7300 1.33	
+; changed dur for repeatednotes   was 0.33
+; 73 0.332   
+; 73 0.332   
+; 73 0.336   
+NOTE 6300 0.125 Q035 
+cuename 35
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([67], [510, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 327, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+NOTE 7600 1.3  
+ ; changed dur.. was .125
+; 76 0.250   
+; 76 0.250   
+; 76 0.182   
+; 0 0.068  
+NOTE 7600 0.153
+NOTE 6300 0.1 Q036 
+cuename 36
+abort melody ; il y a peut être d'autres wobble en cours
+group melody
+{
+	::Wobble([66], [510, 100], 100, 2, 500)
+}
+group flutenotes
+{
+::RepeatChords_OS2([63], 384, 50, 5, 200) ; il  envoie un message à samp4a-bal aussi
+}
+NOTE 7700 1.0 
+	; changed dur was 0.2   
+; 77 0.199   
+; 77 0.203   
+; 77 0.164   
+; 77 0.168   
+; 77 0.121   
+; 0 0.023  
+; 77 0.106   
+NOTE 6900 0.082   
+NOTE 6800 0.086
+NOTE 6300 1.0 Q037
+cuename 37
+abort ::Random_HP
+abort melody
+abort ::RepeatChords_OS2
+;6300 	0.168 37 
+;6300	0.875	; changed dur was 0.125   
+; 63 0.125   
+; 63 0.125   
+; 63 0.125   
+; 63 0.125   
+; 63 0.125   
+; 63 0.125   
+; 63 0.125   
+NOTE 6000 0.0   
+NOTE 6300 3.0 Q038 
+cuename 38
+ group IO_Levels
+{
+EF_Matrix recall 66
+EF_Levels recall 66
+EF_Deltas recall 66
+}
+group longEb
+{
+	abort ::Wobble
+	::Wobble([63],[510, 100], 100, 1, 500)
+}
+group filt
+{
+samp1-filt-on-off 1;
+samp1-filt-cfreq 63;
+samp1-filt-q 45;
+samp2-filt-on-off 1;
+samp2-filt-cfreq 63;
+samp2-filt-q 45;
+samp3-filt-on-off 1;
+samp3-filt-cfreq 63;
+samp3-filt-q 0;
+}
+
+group swish_eol @tempo 72 ; 208 ms durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(60 , 100, 2, 5000)
+1/4 ::Makenote(63 , 100, 2, 4500)
+1/4 ::Makenote(71 , 100, 2, 4000)
+1/4 ::Makenote(68 , 100, 2, 3500)
+1/4 ::Makenote(66 , 100, 2, 3000)
+1/4 ::Makenote(73 , 100, 2, 2500)
+1/4 ::Makenote(74 , 100, 2, 2000)
+}
+NOTE 7300 0.2   
+NOTE 7400 0.2 Q039 
+cuename 39
+group spat 
+{;
+to_spats room 1 reverberance ($Reverberance*1.38) ; réglage le plus long.
+to_spats source 3 az 0.;
+to_spats source 3 pres 65;
+to_spats source 3 prer 85;  essai
+::Random_HP(3, 100)
+}
+group pizz_seq
+{
+	abort ::Sequence_OS2
+	$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+	$OS2V2 := ::Sequence_OS2([66], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+	$OS2V3 := ::Sequence_OS2([68], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+}
+
+NOTE 6600 0.2
+NOTE 7100 0.2   
+NOTE 6800 0.2   
+NOTE 6000 1.2 Q040 
+cuename 40
+group swish_eol @tempo 72 ; 140 ms  durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(60 , 100, 2, 1000)
+1/6 ::Makenote(67 , 100, 2, 1000)
+1/6 ::Makenote(68 , 100, 2, 1000)
+1/6 ::Makenote(73 , 100, 2, 1000)
+1/6 ::Makenote(63 , 100, 2, 1000)
+1/6 ::Makenote(74 , 100, 2, 1000)
+}
+NOTE 6800 0.168 Q041 
+cuename 41
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([67]))
+		}
+		else 
+		{
+		::Sequence_OS2([67], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([68]))
+		}
+		else 
+		{
+		::Sequence_OS2([68], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 6300 0.168   
+NOTE 7300 0.164   
+NOTE 6700 0.168   
+NOTE 7400 1.0   
+NOTE 6800 0.250 Q042 
+cuename 42
+group swish_eol @tempo 72 ; 165 ms  durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(63 , 100, 2, 5000)
+1/5 ::Makenote(68 , 100, 2, 4500)
+1/5 ::Makenote(69 , 100, 2, 4000)
+1/5 ::Makenote(77 , 100, 2, 3500)
+1/5 ::Makenote(71 , 100, 2, 3000)
+}
+NOTE 6300 0.250   
+NOTE 7700 0.250   
+NOTE 6900 0.250   
+NOTE 8200 0.250 Q043 
+cuename 43
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([68]))
+		}
+		else 
+		{
+		::Sequence_OS2([68], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([69]))
+		}
+		else 
+		{
+		::Sequence_OS2([69], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 7100 0.750   
+NOTE 6900 0.250 Q044 
+cuename 44
+group swish_eol @tempo 100 ; 100 ms  durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(63 , 100, 2, 5000)
+1/6 ::Makenote(68 , 100, 2, 4500)
+1/6 ::Makenote(69 , 100, 2, 4000)
+1/6 ::Makenote(67 , 100, 2, 3500)
+1/6 ::Makenote(66 , 100, 2, 3000)
+1/6 ::Makenote(73 , 100, 2, 2500)
+}
+NOTE 6800 0.250   
+NOTE 7300 0.250   
+NOTE 6600 0.250   
+NOTE 6300 0.250 Q045 
+cuename 45
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([66]))
+		}
+		else 
+		{
+		::Sequence_OS2([66], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([67]))
+		}
+		else 
+		{
+		::Sequence_OS2([67], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 6700 1.000 Q046 
+cuename 46
+group swish_eol @tempo 72 ; 165 ms  durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(63 , 100, 2, 5000)
+1/5 ::Makenote(71 , 100, 2, 4500)
+1/5 ::Makenote(69 , 100, 2, 4000)
+1/5 ::Makenote(74 , 100, 2, 3500)
+1/5 ::Makenote(77 , 100, 2, 3000)
+}
+NOTE 7600 0.2   
+NOTE 7700 0.2 Q047 
+cuename 47
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([67]))
+		}
+		else 
+		{
+		::Sequence_OS2([67], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([69]))
+		}
+		else 
+		{
+		::Sequence_OS2([69], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 6900 0.2   
+NOTE 6300 0.2   
+NOTE 7400 0.2   
+NOTE 7100 1.0 Q048 
+cuename 48
+group swish_eol @tempo 72 ; 165 ms  durées rythmiques / tempo inférées CHECK PARTITION
+{
+	::Makenote(63 , 100, 2, 5000)
+1/6 ::Makenote(65 , 100, 2, 4500)
+1/6 ::Makenote(71 , 100, 2, 4000)
+1/6 ::Makenote(68 , 100, 2, 3500)
+1/6 ::Makenote(73 , 100, 2, 3000)
+1/6 ::Makenote(74 , 100, 2, 2500)
+1/6 ::Makenote(82 , 100, 2, 2000)
+}
+NOTE 7300 0.164 Q049 
+cuename 49
+group pizz_seq ; un peu lourd mais quand même mieux - on peut reprendre où on veut. sinon faire juste l'update
+{
+	if ($OS2V1)
+		{
+			_:=($OS2V1.$P).EFL_Pitch(([63]))
+		}
+		else 
+		{
+			$OS2V1 := ::Sequence_OS2([63], [7, 3, 4, 8, 14, 5, 6, 10, 14], 205, 50, 4, 200)
+		}
+	if ($OS2V2)
+		{
+			_:=($OS2V2.$P).EFL_Pitch(([66]))
+		}
+		else 
+		{
+		::Sequence_OS2([66], [6, 14, 3, 7, 10, 4, 5, 8, 10], 205, 50, 4, 200)
+		}
+	if ($OS2V3)
+		{
+			_:=($OS2V3.$P).EFL_Pitch(([67]))
+		}
+		else 
+		{
+		::Sequence_OS2([67], [5, 10, 14, 6, 8, 3, 4, 7, 8], 205, 50, 4, 200)
+		}
+}
+NOTE 8200 0.168   
+NOTE 7400 0.168   
+NOTE 6800 0.164   
+NOTE 7600 0.168   
+NOTE 6300 1.827 Q050 
+cuename 50
+group pizz_seq
+{
+	smp3_db -96 4000
+	3000 ms
+	abort ::Sequence_OS2
+	abort ::Random_HP
+}
+abort ::Wobble
+	antescofo-in 0
+	print suivi_off_go_by_HAND
+; NOTE 0 0.1  
+
+; from cue 50 to the end =>  by hand
+
+EVENT 1.0 Q051 
+cuename 51
+ group IO_Levels
+{
+EF_Matrix recall 67
+EF_Levels recall 67
+EF_Deltas recall 67
+}
+group spat
+{
+abort ::Random_HP
+to_spats room 1 reverberance ($Reverberance*1.45) ; réglage le plus long.
+to_spats source 1 az 0.;
+to_spats source 1 pres 75;
+to_spats source 1 prer 90;
+to_spats source 2 az -90.;
+to_spats source 2 pres 75;
+to_spats source 2 prer 90;
+to_spats source 3 az 90.;
+to_spats source 3 pres 75;
+to_spats source 3 prer 90;
+to_spats source 4 az -180.;
+to_spats source 4 pres 75;
+to_spats source 4 prer 90;
+}
+group filt
+{
+;
+samp1-filt-on-off 1;
+samp1-filt-cfreq 63;
+samp1-filt-q 53; ; q was 50
+samp2-filt-on-off 1;
+samp2-filt-cfreq 63;
+samp2-filt-q 53;
+samp3-filt-on-off 1;
+samp3-filt-cfreq 63;
+samp3-filt-q 53;
+samp4-filt-on-off 1;
+samp4-filt-cfreq 63;
+samp4-filt-q 53;
+}
+group choral
+{
+	::Makenote(70, 120,  1, 4000)
+	::Makenote(64, 70 ,  1, 4000)
+	::Makenote(59, 70 ,  1, 4000)
+	::Makenote(70, 120,  15, 4000)
+	::Makenote(64, 70 ,  15, 4000)
+	::Makenote(59, 70 ,  15, 4000)
+	::Makenote(70, 120,  16, 4000)
+	::Makenote(64, 70 ,  16, 4000)
+	::Makenote(59, 70 ,  16, 4000)
+	::Makenote(70, 120,  17, 4000)
+	::Makenote(64, 70 ,  17, 4000)
+	::Makenote(59, 70 ,  17, 4000)
+	;smp1_db -9
+}
+EVENT 1.0 Q052
+cuename 52
+print Cue_52
+group choral
+{
+	::Makenote(68, 120,  15, 4000)
+	::Makenote(63, 70 ,  15, 4000)
+	::Makenote(57, 70 ,  15, 4000)
+	::Makenote(68, 120,  16, 4000)
+	::Makenote(63, 70 ,  16, 4000)
+	::Makenote(57, 70 ,  16, 4000)
+}
+EVENT 1.0 Q053
+cuename 53
+print Cue_53
+group choral
+{
+	::Makenote(67, 120,  15, 4000)
+	::Makenote(63, 70 ,  15, 4000)
+	::Makenote(62, 70 ,  15, 4000)
+	::Makenote(67, 120,  16, 4000)
+	::Makenote(63, 70 ,  16, 4000)
+	::Makenote(62, 70 ,  16, 4000)
+}
+EVENT 1.0 Q054
+cuename 54
+print Cue_54
+group choral
+{
+	::Makenote(69, 120,  15, 4000)
+	::Makenote(63, 70 ,  15, 4000)
+	::Makenote(58, 70 ,  15, 4000)
+	::Makenote(69, 120,  16, 4000)
+	::Makenote(63, 70 ,  16, 4000)
+	::Makenote(58, 70 ,  16, 4000)
+
+}
+EVENT 1.0 Q055
+cuename 55
+print Cue_55
+group choral
+{
+	@local $p
+	$p := 300
+	group ch
+	{
+	::Makenote(65, 120,  15, 2000) ; was wrong 
+	::Makenote(63, 70 ,  15, 500)
+	::Makenote(59, 70 ,  15, 2000)
+	::Makenote(65, 120,  16, 2000)
+	::Makenote(63, 70 ,  16, 500)
+	::Makenote(59, 70 ,  16, 2000)
+	}
+(5*$p) ms
+	group ch
+	{
+	::Makenote(73, 120,  15, 2000)
+	::Makenote(63, 70 ,  15, 500)
+	::Makenote(53, 70 ,  15, 2000)
+	::Makenote(73, 120,  16, 2000)
+	::Makenote(63, 70 ,  16, 500)
+	::Makenote(53, 70 ,  16, 2000)
+	}
+2414 ms
+	group ch_wobble
+	{
+		::Wobble([63], [510, 100], 120, 1, 500)
+		::Wobble([63], [510, 100], 120, 17, 500)
+		20000 ms ; was 4000
+		abort ::Wobble
+	}
+}
+EVENT 1.0 Q056 
+abort ::Wobble
+
+
+
+; %%%%%%%%%%%%%%%%     End of Originel   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

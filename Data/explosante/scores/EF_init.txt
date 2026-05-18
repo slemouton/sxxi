@@ -1,0 +1,83 @@
+;Explosante-Fixe Init and Reset configuration
+;Score-2017
+//@INSERT EF_Process.txt
+BPM 120
+	 print Initialisation et Reset 
+		antescofo_remoteONOFF 0 ;
+		main_db -60 
+		antescofo-in 0	
+		suivi-cur-sec off; 
+EF_play/stop bang
+group IO_levels
+{
+	EF_Matrix recall 30
+	EF_Levels recall 30
+	EF_Deltas recall 30
+}
+
+
+group fd
+{
+fd1_del 0;
+fd1_fre 0.;
+fd_1_db -96;
+fd2_del 0;
+fd2_fre 0.;
+fd_2_db -96;
+fd_db -96;
+}
+
+group 2InfiniteRev
+{
+ir1_db -96;
+ir1-param reverb tr0 0.5;
+ir2_db -96;
+ir2-param reverb tr0 0.5;
+}
+
+group onenoise
+{
+nm_db -96;
+nm-modfac 0.;
+}
+
+group 7Harms
+{
+hr_in_db 0; ?? check 
+hr-ir-params roomsize 1.;
+hr-ir-params damping 0.1;
+hr-ir-params wet 0.4;
+hr-ir-params dry 0.25;
+hr1_db -96;
+hr2_db -96;
+hr3_db -96;
+hr4_db -96;
+hr5_db -96;
+hr6_db -96;
+hr7_db -96;
+hr_db -96;
+
+}
+
+group 2comb
+{
+cb_db -96;
+}
+
+group spat 
+{
+1s	reset bang; 
+get_speakers bang
+get_reverberance bang
+print spat reset
+0.5s print loudspeakers az $HP_az
+print main reverberance $Reverberance
+}
+
+	
+		0.2s main 100 800 ; wait half second 
+		flute_fx 100 800 ; wait half second 
+
+
+NOTE 8500 0.142
+;9000	0.142
