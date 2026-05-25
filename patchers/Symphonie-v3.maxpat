@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ -1772.0, 62.0, 1610.0, 959.0 ],
+        "rect": [ 12.0, 100.0, 1610.0, 959.0 ],
         "bglocked": 1,
         "boxes": [
             {
@@ -36,7 +36,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -200,7 +200,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -626,7 +626,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1040,7 +1040,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1100,7 +1100,7 @@
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 4.0, 24.0, 683.0, 883.0 ],
                                     "rendermode": 0,
-                                    "url": "file:///Users/lemouton/Projets/Symphonie2020/Readme.md"
+                                    "url": "file://Readme.md"
                                 }
                             }
                         ],
@@ -1142,7 +1142,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1360,7 +1360,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1378,7 +1378,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1492,7 +1492,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1720,7 +1720,7 @@
                     "numoutlets": 1,
                     "offset": [ 0.0, 0.0 ],
                     "outlettype": [ "signal" ],
-                    "patching_rect": [ 8.0, 2.0, 1440.0, 225.0 ],
+                    "patching_rect": [ 19.0, 8.0, 1440.0, 225.0 ],
                     "varname": "sym.sound_player_02Mubu",
                     "viewvisibility": 1
                 }
@@ -1834,12 +1834,19 @@
             "obj-3::obj-55": [ "to-follow", "to-follow", 0 ],
             "obj-3::obj-78": [ "live.text[5]", "live.text", 0 ],
             "obj-4::obj-2": [ "umenu[1]", "umenu[1]", 0 ],
-            "obj-4::obj-43::obj-2": [ "toggle", "toggle", 0 ],
             "obj-4::obj-44": [ "umenu", "umenu", 0 ],
             "obj-4::obj-49": [ "live.text", "live.text", 0 ],
             "obj-4::obj-60": [ "toggle[7]", "toggle[7]", 0 ],
             "obj-4::obj-67": [ "live.text[1]", "live.text", 0 ],
             "obj-7::obj-19": [ "umenu[4]", "umenu", 0 ],
+            "parameterbanks": {
+                "0": {
+                    "index": 0,
+                    "name": "",
+                    "parameters": [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+                    "buttons": [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+                }
+            },
             "parameter_overrides": {
                 "obj-1::obj-14::obj-43::obj-62": {
                     "parameter_longname": "live.text[2]"
@@ -1868,10 +1875,6 @@
                     "parameter_longname": "live.text[5]",
                     "parameter_modmode": 0,
                     "parameter_type": 2
-                },
-                "obj-4::obj-43::obj-2": {
-                    "parameter_initial": 1.0,
-                    "parameter_initial_enable": 1
                 },
                 "obj-4::obj-60": {
                     "parameter_initial": 1.0,

@@ -13,4 +13,4 @@ set sco=$Scores/$3
 set markers=$Sounds/$4
 
 ./antescofo-standalone $5 --dummysilences 1 --preventzigzag 1 --tout $Scores/tmp.tout -a $sf -s $sco
-python3 /Users/lemouton/PycharmProjects/antescofo-plot/ascoplot.py $Scores/tmp.tout $markers
+python3 /Users/lemouton/Projets/Python/PycharmProjects/antescofo-plot/ascoplot.py $Scores/tmp.tout $markers

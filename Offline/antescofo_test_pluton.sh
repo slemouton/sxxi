@@ -15,4 +15,4 @@ set sco=$Path/scores/pluton_II_v5.asco.txt
 #./antescofo-standalone -nofharm 10 --normalization 1 --preventzigzag 1 --tout test_d.tout -a $sf -s $sco4
 #./antescofo-standalone.v2 -nofharm 100 --normalization 1 --preventzigzag 1 --tout test_c.tout -a $sf -s $sco
 #./antescofo-standalone.v2 -nofharm 10 --normalization 1 --preventzigzag 1 --tout test_d.tout -a $sf -s $sco
-python3  /Users/lemouton/PycharmProjects/antescofo-plot/ascoplot.py pluton
+python3  /Users/lemouton/Projets/Python/PycharmProjects/antescofo-plot/ascoplot.py pluton

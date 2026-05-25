@@ -76,7 +76,7 @@ function addmarker()
 {
 	var a = arrayfromargs(messagename, arguments);
 	var i =  findstr(a,'tempo')
-		post("received message " + a + "\n");
+	//	post("received message " + a + "\n");
 	if (i)
 	{
 		t = a[1]

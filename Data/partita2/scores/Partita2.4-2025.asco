@@ -1,6 +1,7 @@
 ; score converted from Ftm Track by AntescofoScore3d 
 BPM 66
 antescofo::bypass_temporeset on
+DUMMYSILENCE ON
 @INSERT "macros_def.asco"	; definition des fonctions et macros
 	
 GFWD Init-Synful-sec4
@@ -22,7 +23,9 @@ VARIANCE 0.2
 
 NOTE 69 0.125 ev4-1
 suivi 1
-
+loop 1s {
+	@print ("tic", $ENERGY)
+}
 samplors_ stopall 10000
 
 3fc_mode antescofo_t ; or antescofo

@@ -2,8 +2,8 @@
     "name": "Symphonie2020",
     "version": 1,
     "creationdate": 3662749949,
-    "modificationdate": 3856424741,
-    "viewrect": [ 0.0, 100.0, 300.0, 500.0 ],
+    "modificationdate": 3862145651,
+    "viewrect": [ -921.0, 110.0, 300.0, 500.0 ],
     "autoorganize": 0,
     "hideprojectwindow": 0,
     "showdependencies": 0,
@@ -14,25 +14,17 @@
                 "kind": "patcher",
                 "local": 1
             },
-            "Quatuor-v3.maxpat": {
+            "Quatuor-v4.maxpat": {
                 "kind": "patcher",
                 "local": 1
             },
-            "Quatuor-v3.a.123.maxpat": {
-                "kind": "patcher",
-                "local": 1
-            },
-            "Quatuor-v3.c.2.maxpat": {
+            "explosanteAutoLabels.maxpat": {
                 "kind": "patcher",
                 "local": 1,
                 "singleton": {
                     "bootpath": "~/Projets/Symphonie2020/patchers",
                     "projectrelativepath": "./patchers"
                 }
-            },
-            "explosanteAutoLabels.maxpat": {
-                "kind": "patcher",
-                "local": 1
             },
             "perpetuumMidiPlayer.maxpat": {
                 "kind": "patcher",
@@ -59,22 +51,6 @@
                 }
             },
             "Quintette-v1.maxpat": {
-                "kind": "patcher",
-                "local": 1,
-                "singleton": {
-                    "bootpath": "~/Projets/Symphonie2020/patchers",
-                    "projectrelativepath": "./patchers"
-                }
-            },
-            "Symphonie-v1.maxpat": {
-                "kind": "patcher",
-                "local": 1,
-                "singleton": {
-                    "bootpath": "~/Projets/Symphonie2020/patchers",
-                    "projectrelativepath": "./patchers"
-                }
-            },
-            "Symphonie-v2.maxpat": {
                 "kind": "patcher",
                 "local": 1,
                 "singleton": {

@@ -4,14 +4,50 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 3,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 291.0, 171.0, 1287.0, 912.0 ],
+        "rect": [ 449.0, 171.0, 1287.0, 912.0 ],
         "openinpresentation": 1,
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-107",
+                    "maxclass": "toggle",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "int" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 487.0, 80.0, 24.0, 24.0 ],
+                    "presentation": 1,
+                    "presentation_rect": [ 845.0, 6.0, 24.0, 24.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-92",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 470.0, 106.0, 71.0, 22.0 ],
+                    "text": "calibrate $1"
+                }
+            },
+            {
+                "box": {
+                    "format": 6,
+                    "id": "obj-90",
+                    "maxclass": "flonum",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 933.0, 232.0, 50.0, 22.0 ]
+                }
+            },
             {
                 "box": {
                     "fontname": "Arial",
@@ -107,7 +143,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 864.0, 680.0, 50.0, 22.0 ],
-                    "text": "79 0"
+                    "text": "59 29"
                 }
             },
             {
@@ -468,13 +504,12 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 3,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
                         "rect": [ 134.0, 172.0, 358.0, 814.0 ],
-                        "visible": 1,
                         "boxes": [
                             {
                                 "box": {
@@ -998,7 +1033,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 3,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1223,53 +1258,6 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-2",
-                                    "maxclass": "toggle",
-                                    "numinlets": 1,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "int" ],
-                                    "parameter_enable": 1,
-                                    "patching_rect": [ 119.0, 175.0, 26.0, 26.0 ],
-                                    "saved_attribute_attributes": {
-                                        "valueof": {
-                                            "parameter_enum": [ "off", "on" ],
-                                            "parameter_initial": [ 1.0 ],
-                                            "parameter_initial_enable": 1,
-                                            "parameter_longname": "toggle",
-                                            "parameter_mmax": 1,
-                                            "parameter_modmode": 0,
-                                            "parameter_shortname": "toggle",
-                                            "parameter_type": 2
-                                        }
-                                    },
-                                    "varname": "toggle"
-                                }
-                            },
-                            {
-                                "box": {
-                                    "bgcolor": [ 1.0, 0.360784, 0.682353, 1.0 ],
-                                    "bgfillcolor_angle": 270.0,
-                                    "bgfillcolor_autogradient": 0.79,
-                                    "bgfillcolor_color": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                                    "bgfillcolor_color1": [ 1.0, 0.360784, 0.682353, 1.0 ],
-                                    "bgfillcolor_color2": [ 0.685, 0.685, 0.685, 1.0 ],
-                                    "bgfillcolor_proportion": 0.39,
-                                    "bgfillcolor_type": "gradient",
-                                    "fontname": "Arial",
-                                    "fontsize": 10.0,
-                                    "gradient": 0,
-                                    "id": "obj-3",
-                                    "maxclass": "message",
-                                    "numinlets": 2,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "" ],
-                                    "patching_rect": [ 119.0, 204.0, 71.0, 20.0 ],
-                                    "text": "calibrate $1",
-                                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
-                                }
-                            },
-                            {
-                                "box": {
                                     "bgcolor": [ 0.866667, 0.866667, 0.866667, 1.0 ],
                                     "fontname": "Arial",
                                     "fontsize": 14.0,
@@ -1425,19 +1413,6 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-3", 0 ],
-                                    "source": [ "obj-2", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-6", 0 ],
-                                    "midpoints": [ 128.5, 251.0, 19.5, 251.0 ],
-                                    "source": [ "obj-3", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-5", 0 ],
                                     "source": [ "obj-4", 0 ]
                                 }
@@ -1529,7 +1504,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 3,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1893,7 +1868,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 3,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -2240,7 +2215,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 3,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -2920,7 +2895,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 3,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -3065,13 +3040,25 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 3,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
                         "rect": [ 40.0, 610.0, 300.0, 265.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "format": 6,
+                                    "id": "obj-12",
+                                    "maxclass": "flonum",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "bang" ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [ 197.0, 206.0, 50.0, 22.0 ]
+                                }
+                            },
                             {
                                 "box": {
                                     "fontname": "Arial",
@@ -3223,6 +3210,13 @@
                             },
                             {
                                 "patchline": {
+                                    "destination": [ "obj-12", 0 ],
+                                    "order": 0,
+                                    "source": [ "obj-8", 1 ]
+                                }
+                            },
+                            {
+                                "patchline": {
                                     "destination": [ "obj-4", 1 ],
                                     "order": 0,
                                     "source": [ "obj-8", 0 ]
@@ -3231,6 +3225,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-5", 0 ],
+                                    "order": 1,
                                     "source": [ "obj-8", 1 ]
                                 }
                             },
@@ -3549,7 +3544,7 @@
                     "patching_rect": [ 215.0, 652.0, 216.0, 31.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 71.0, 191.0, 120.0, 31.0 ],
-                    "text": "bar41"
+                    "text": "bar43"
                 }
             },
             {
@@ -3831,6 +3826,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-92", 0 ],
+                    "source": [ "obj-107", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-71", 0 ],
                     "hidden": 1,
                     "source": [ "obj-11", 0 ]
@@ -4049,6 +4050,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-3", 0 ],
+                    "order": 1,
+                    "source": [ "obj-43", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-90", 0 ],
+                    "order": 0,
                     "source": [ "obj-43", 0 ]
                 }
             },
@@ -4307,6 +4316,12 @@
                 "patchline": {
                     "destination": [ "obj-96", 0 ],
                     "source": [ "obj-9", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-71", 0 ],
+                    "source": [ "obj-92", 0 ]
                 }
             },
             {
