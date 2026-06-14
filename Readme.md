@@ -20,12 +20,35 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
     - Version Midi
     
 ### violon/alto/cello
-- des Mondes ... (S.B.)
-- partita 1 (P.M.)
+- des Mondes ... (Sasha Blondeau)
+- partita 1 (Philippe Manoury)
     - version Desjardin - 5 versions
     - version Danielle Hennicot (dh)
-- partita 2 (P.M.)
-- Tensio (P.M)
+- partita 2 (Philippe Manoury)
+	 - 2012 (Hae Sun Kang)
+	     - filage 160712.aif
+	     - filage 170712.aif
+	     - partita2-1.aif
+	     - partita2-2a-27042012.aif
+	     - partita2-2b-20052012.aif
+	     - partita2-2c.aif
+	     - partita2-3-Nocturno.aif
+	     - partita2-4-Perpetuum.aif
+	     - partita2-5-VIIIB.aif
+	 - 2014 (Hae Sun/Musica)
+	     - partita2_concert_Musica2014.aif
+	     - mardi aprem repetition
+	 - 2016 (Hae Sun)
+	     - B-PartitaMouvement5.aif
+	     - B-PartitaPerpetuumversion1.aif
+	     - B-PartitaPerpetuumversion2.aif
+     - 2018 (hae Sun)
+        - B-Partita-filage-180911_1119.aif
+	 - 2019 (Gael Rassart)
+	     - B-partita-CD-simul_04.aif
+	 - 2024 (Olivia De Prato/Vienna Ensemble XXI)
+	     - Zichy_Violin_Section_B_19032024.wav
+- Tensio (Philippe Manoury)
     - version decembre 2010
     - version 2015 (Yun-Peng Zhao / Diotima)
     - version 2021 (Ayane Kawamura / CNSMDP)
@@ -34,7 +57,7 @@ Modelisation de l'apprentissage : des musiciens qui jouent ensemble s'ameliorent
 
 ### flute
 - Jupiter *TODO*
-- ...Explosante-fixe... (P.B.)
+- ...Explosante-fixe... (Pierre Boulez)
     - **_Solo fl 4061_** : sophie Cherrier
         - T7 uniquement avec markers
     - **fa** : Féderico Altare (ensemble Next/CNSMDP), uniquement T5 et originel
@@ -104,8 +127,9 @@ exemple :
 ### evaluer un suivi offline
 
 - *offline/antescofo_test.sh* permet de faire tourner des suivi en batch et de plotter les resultats
+- use the python virtual environment located in _venv_ (venv/bin/acitvate)
    - exemples : 
-     -cd Offline; ./antescofo_test_partita1d.sh
+     - cd Offline; ./antescofo_test_partita1d.sh
      - Offline/antescofo_test_pluton.sh 
      - ./antescofo_test.sh /Users/lemouton/Projets/Symphonie2020/Data/desMondes violon_contact_ms85_101.aif DesMondes_violon1Sib7.asco.txt violon_contact_ms85_101.coll '-nofharm 1'
 
